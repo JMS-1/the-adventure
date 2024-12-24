@@ -17,21 +17,25 @@ export class MessagesService {
     this.parsing = true;
     this.lastError = '';
 
+    this.processFile(
+      `${this._settings.game}.${this._settings.modernNames ? 'msg' : 'MSG'}`
+    );
+  }
+
+  private processFile(name: string) {
     this._http
-      .get(
-        `data/${this._settings.game}.${
-          this._settings.modernNames ? 'msg' : 'MSG'
-        }`,
-        { responseType: 'text', withCredentials: true }
-      )
+      .get(`data/${name}`, { responseType: 'text', withCredentials: true })
       .subscribe({
-        next: (s) => this.parseRoot(s.replace(/\r/g, '').split('\n')),
+        next: (s) => this.parseFile(s.replace(/\r/g, '').split('\n')),
         error: (e) => (this.lastError = e.message),
         complete: () => (this.parsing = false),
       });
   }
 
-  private parseRoot(lines: string[]) {
-    this.lastError = `${lines.length}`;
+  private parseFile(lines: string[]) {
+    for (const line of lines) {
+      if (line.startsWith('$$$')) this.processFile(line.substring(3));
+      else console.log(line);
+    }
   }
 }
