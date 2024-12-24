@@ -1,0 +1,669 @@
+;
+;
+; Haustüren und die zugehörigen Schlüssel
+;
+$vorne26 Tür,Türe,Tuer,Tuere,Eingang,Haus,Haus26,Tür26,Tuer26,Eingang26
+	message   = *
+	#schließe = (if_message * &$$things$istzu,if_message auf message = *)
+	#öffne	  = (if_message auf &$$things$istauf,
+		     if_message *
+		      (if_position $$haus26$flur message = auf,
+		       if_notposition $$haus26$flur
+			(if_has schlüssel26 message = auf,
+			 if_nothas schlüssel26 &$$things$keinschlüssel)))
+$schlüssel26 Schlüssel26,Schlüssel,Schluessel26,Schluessel
+	message  = lang
+	weight	 = (0,0,1)
+	#nehmen  = message = trägt
+	#ablegen = message = lang
+$vorne27 Tür,Türe,Tuer,Tuere,Eingang,Haus
+	message   = *
+	#schließe = (if_message * &$$things$istzu,if_message auf message = *)
+	#öffne	  = (if_message auf &$$things$istauf,
+		     if_message *
+		      (if_position $$haus27$flur message = auf,
+		       if_notposition $$haus27$flur
+			(if_has schlüssel27 message = auf,
+			 if_nothas schlüssel27 &$$things$keinschlüssel)))
+$schlüssel27 Schlüssel27,Schlüssel,Schluessel27,Schluessel
+	message  = lang
+	weight	 = (0,0,1)
+	#nehmen  = message = trägt
+	#ablegen = message = lang
+$vorne37 Tür,Türe,Tuer,Tuere,Eingang,Haus
+	message   = *
+	#schließe = (if_message * &$$things$istzu,if_message auf message = *)
+	#öffne	  = (if_message auf &$$things$istauf,
+		     if_message *
+		      (if_position $$haus37$flur message = auf,
+		       if_notposition $$haus37$flur
+			(if_has schlüssel37 message = auf,
+			 if_nothas schlüssel37 &$$things$keinschlüssel)))
+$schlüssel37 Schlüssel37,Schlüssel,Schluessel37,Schluessel
+	message  = lang
+	weight	 = (0,0,1)
+	#nehmen  = message = trägt
+	#ablegen = message = lang
+;
+; Terassentüren
+;
+$hinten26 Tür,Türe,Tuer,Tuere,Glastür,Glastuer,Schiebetür,Schiebetuer
+	message = *
+	#schließe = (if_message * &$$things$istzu,if_message auf message = *)
+	#öffne	  = (if_message auf &$$things$istauf,
+		     if_message *
+		      (if_position $$haus26$kamin message = auf,
+		       if_notposition $$haus26$kamin &$$things$nurinnen))
+$hinten27 Tür,Türe,Tuer,Tuere,Glastür,Glastuer,Schiebetür,Schiebetuer
+	message = *
+	#schließe = (if_message * &$$things$istzu,if_message auf message = *)
+	#öffne	  = (if_message auf &$$things$istauf,
+		     if_message *
+		      (if_position $$haus27$kamin message = auf,
+		       if_notposition $$haus27$kamin &$$things$nurinnen))
+$hinten37 Tür,Türe,Tuer,Tuere,Glastür,Glastuer,Schiebetür,Schiebetuer
+	message = auf
+	#schließe = (if_message * &$$things$istzu,if_message auf message = *)
+	#öffne	  = (if_message auf &$$things$istauf,
+		     if_message *
+		      (if_position $$haus37$kamin message = auf,
+		       if_notposition $$haus37$kamin &$$things$nurinnen))
+;
+; Zeittüren
+;
+$kiosk Tür,Tuer,Türe,Tuere,Laden,Kiosk
+	message = auf
+	time	= 150:(message = geschlossen)
+	actions = start:start
+$halle Tür,Tuer,Türe,Tuere,Portal,Eingang
+	message = auf
+	time	= 180:(message = geschlossen)
+	actions = (verlassen:(if_message geschlossen
+			       if_state bowling geschlossen
+			        if_state terasse geschlossen >>verhungern),
+		   start:start)
+$bowling Tür,Tuer,Türe,Tuere,Eingang,Bar
+	message = auf
+	time	= 180:(message = geschlossen)
+	actions = start:start
+$terasse Tür,Tuer,Türe,Tuere,Terasse
+	message = auf
+	time	= 180:(message = geschlossen)
+	actions = start:start
+$brunch Tür,Tuer,Tuere,Türe,Eingang
+	message = auf
+	time	= 60:(message = geschlossen)
+	actions = start:start
+;
+; Schranken
+;
+$schranke Schranke
+	message   = geschlossen
+	#öffne    = message = auf
+	#schließe = message = geschlossen
+$schranke2 Schranke
+	message   = geschlossen
+	#öffne    = message = auf
+	#schließe = message = geschlossen
+;
+; Der Hase und die Möhre
+;
+$hflag
+	message = *
+$hase Hase,Kaninchen,Tier,Häschen,Haeschen
+	message  = brav
+	weight   = (70,0,1)
+	#nehmen  = (if_has möhre message = trägt,if_nothas möhre hase flieht)
+	#ablegen = (@message = brav,if_here hund hund hase)
+	actions  = (   weg:(message = läuft,remove),
+		    flieht:(message = flieht,!hase,
+			    if_here hase (@message = brav,hase move)),
+		      move:(hflag = *,#if_position $$park$sp4
+			     (hflag = true,#>$$park$g217),
+			    if_state hflag * #if_position $$park$g217
+			     (hflag = true,#>$$park$g19),
+			    if_state hflag * #>$$park$sp4))
+	#essen   = hase flieht
+$möhre Möhre,Moehre,Mohrrübe,Mohrruebe,Karotte
+	message  = buffet
+	weight   = (10,0,0)
+	#nehmen  = message = trägt
+	#ablegen = (if_position $$halle$restaurant message = buffet,
+		    if_notposition $$halle$restaurant message = lang,
+		    if_has hase hase flieht)
+	#essen	 = (message = essen,remove,if_has hase hase flieht)
+;
+; Zettel und Brief in der Empfangshalle
+;
+$zettel Zettel,Beschreibung,Wegbeschreibung
+	message	 = pinboard
+	weight   = (0,1,0)
+	#lesen	 = (&$$things$zettel,if_here empfang empfang schlüssel)
+	#nehmen  = (if_here empfang >>empfang,message = trägt)
+	#ablegen = message = lang
+$brief Brief,Luftpost,Luftpostbrief
+	message  = lang
+	weight   = (0,1,0)
+	#lesen	 = (if_hasthis &$$things$brief,
+		    if_nothasthis &$$things$keinbrief)
+	#nehmen  = (if_here empfang >>empfang,message = trägt)
+	#ablegen = message = lang
+;
+; Roberts Rockerkette
+;
+$kette Kette,Fahrradkette,Motorradkette
+	message  = lang
+	weight   = (10,0,0)
+	#nehmen  = message = trägt
+	#ablegen = message = lang
+;
+; Die Kronkorken als Wegezoll
+;
+$korken1 Korken,Kronkorken,Verschluß,Verschluss,Bitkorken
+	message  = lang
+	weight   = (2,0,0)
+	#nehmen  = message = trägt
+	#ablegen = message = lang
+	actions  = (verstecken:[#>$$wald$s13,#>$$wald$s38,#>$$wald$s46),
+		     entfernen:remove)
+$korken2 Korken,Kronkorken,Verschluß,Verschluss,Warsteinerkorken
+	message  = lang
+	weight   = (2,0,0)
+	#nehmen  = message = trägt
+	#ablegen = message = lang
+	actions  = (verstecken:[#>$$wald$s44,#>$$wald$s39,#>$$wald$s26),
+		     entfernen:remove)
+$korken3 Korken,Kronkorken,Verschluß,Verschluss,Frühkölschkorken,Fruehkoelschkorken
+	message  = lang
+	weight   = (2,0,0)
+	#nehmen  = message = trägt
+	#ablegen = message = lang
+	actions  = (verstecken:[#>$$wald$s29,#>$$wald$s41,#>$$wald$s11),
+		     entfernen:remove)
+$korken4 Korken,Kronkorken,Verschluß,Verschluss,Dortmunderkorken
+	message  = lang
+	weight   = (2,0,0)
+	#nehmen  = message = trägt
+	#ablegen = message = lang
+	actions  = (verstecken:[#>$$wald$s21,#>$$wald$s34,#>$$wald$s40),
+		     entfernen:remove)
+$korken5 Korken,Kronkorken,Verschluß,Verschluss,Veltinskorken
+	message  = lang
+	weight   = (2,0,0)
+	#nehmen  = message = trägt
+	#ablegen = message = lang
+	actions  = (verstecken:[#>$$wald$s15,#>$$wald$s17,#>$$wald$s30),
+		     entfernen:remove)
+;
+; Etwas Geld und was man damit kaufen kann
+;
+$geld Geld,Münzen,Muenzen,Kohle,Moneten
+	message  = lang
+	weight   = (5,0,0)
+	#nehmen  = message = trägt
+	#ablegen = message = lang
+	actions  = (weg:remove,nehme:@<geld)
+$wflag
+	message  = *
+$wanderkarte Wanderkarte,Karte
+	message  = lang
+	weight   = (0,8,0)
+	#nehmen	 = message = trägt
+	#ablegen = message = lang
+	#lesen	 = &$$things$karte
+	actions  = (    test:(if_hasthis if_state wflag * >>verkäufer),
+		    bezahlen:if_hasthis (wflag = bezahlt,geld weg))
+$rflag
+	message  = *
+$rattengift Rattengift,Gift
+	message  = lang
+	weight   = (20,0,0)
+	#nehmen	 = message = trägt
+	#ablegen = message = lang
+	#essen   = >>gift
+	actions  = (    test:(if_hasthis if_state rflag * >>verkäufer),
+		    bezahlen:if_has rattengift
+			      (pflag = *,
+			       if_has wanderkarte if_has milch pflag = true,
+			       if_state pflag * (rflag = bezahlt,geld weg),
+			       if_state pflag true &$$things$nichtgenug))
+$mflag
+	message  = *
+$milch Milch
+	message  = lang
+	weight   = (20,0,0)
+	#nehmen	 = message = trägt
+	#ablegen = message = lang
+	#trinken = (message = trinken,remove)
+	actions  = (    test:(if_hasthis if_state mflag * >>verkäufer),
+		    bezahlen:if_hasthis (mflag = bezahlt,geld weg))
+;
+; Der Fiesta und was er enthält
+;
+$fiesta Fiesta,Auto,Karre,Ford,Diesel
+	message	   = lang
+	weight     = (0,0,0)
+	#nehmen    = (&$$things$arni,@!fiesta)
+	#öffne	   = if_message lang
+		      (if_nothas autoschlüssel &$$things$fiesta,
+		       if_has autoschlüssel
+		        (#if_has salzstangen (&$$things$salzstangen,
+					      @#!salzstangen,@#!streichhölzer),
+		         message = offen))
+	#schließe  = if_message offen @message = lang
+	things     = (salzstangen,streichhölzer)
+$autoschlüssel Autoschlüssel,Schlüssel,Fiestaschlüssel,Autoschluessel
+	message    = lang
+	weight	   = (0,0,1)
+	#nehmen	   = message = trägt
+	#ablegen   = message = lang
+$salzstangen Salzstangen,Gebäck,Kräcker
+	message    = lang
+	weight     = (5,0,0)
+	#nehmen	   = message = trägt
+	#ablegen   = message = lang
+	#essen	   = (message = essen,remove)
+	actions	   = weg:remove
+$streichhölzer Streichhölzer,Hölzer,Streichhoelzer,Hoelzer
+	message    = lang
+	weight	   = (1,0,0)
+	#nehmen	   = message = trägt
+	#ablegen   = message = lang
+	#zünde	   = >>streichhölzer
+;
+; Noch ein Zettel
+;
+$jzettel Zettel,Papier,Notizzettel
+	message	  = lang
+	weight    = (0,1,0)
+	#nehmen	  = message = trägt
+	#ablegen  = message = lang
+	#lesen	  = (if_hasthis &$$things$jzettel,
+		     if_nothasthis &$$things$jzettelboden)
+;
+; Anna's Schnuller zum Beruhigen
+;
+$schnuller Schnuller,Nuckel
+	message	  = lang
+	weight	  = (5,0,0)
+	#nehmen	  = message = trägt
+	#ablegen  = message = lang
+	#gibanna  = (if_nothere bernhard &$$things$anna,
+		     if_here bernhard bernhard schnuller)
+;
+; Die unsichtbaren Schuhe und die unsichtbare Fußmatte
+;
+$sflag
+	message   = *
+	weight	  = (0,0,0)
+	actions   = (dreckig:@message = dreckig,
+		      schnee:@message = schnee,
+		         kot:@message = kot,
+		       print:(@<sflag,if_message dreckig message = dreckig,
+			      if_message schnee message = schnee,
+			      if_message kot message = kot))
+$schuhe
+	message   = *
+	weight    = (0,0,0)
+	actions   = (nehme:<schuhe,
+		      test:(pflag = *,if_state sflag * pflag = true,
+			    if_state pflag * (sflag print,>>elke)))
+	#reinigen = (if_here matte @sflag = *,
+		     if_here hexe @sflag = *,
+		     if_nothere matte if_nothere hexe &$$things$matte)
+$matte
+	message   = *
+	#klingeln = &$$things$klingel
+$hexe
+	message   = *
+	#klingeln = &$$things$hexe
+;
+; Ein bißchen Verwirrung und etwas nützliches, was man aus Katzen machen
+; kann
+;
+$katze
+	message	  = *
+	actions   = (start:start,stop:(stop,braten kommt))
+	time	  = +10:(message = schleicht,@message = *)
+$braten Braten,Fleisch,Dachhase,Katze
+	message	  = lang
+	#essen    = (message = essen,remove)
+	actions	  = ( kommt:#>$$haus27$kamin,
+		     duftet:#if_position $$haus27$kamin &$$things$braten)
+;
+; Damit wird der Katze der Garaus gemacht
+;
+$messer Messer,Klinge,Rambomesser
+	message	  = lang
+	weight	  = (10,0,0)
+        actions   = los:#>$$center$w13
+	#nehmen   = message = trägt
+	#ablegen  = message = lang
+;
+; Die Bowlingschuhe
+;
+$bowlingschuhe Schuhe,Treter,Bowlingschuhe
+	message   = lang
+	weight    = (10,0,0)
+	#nehmen   = message = trägt
+	#ablegen  = message = lang
+;
+; Wir fangen uns eine Maus mit ... richtig, Käse
+;
+$käse Käse,Topf,Behälter,Behaelter
+	message   = topf
+	weight	  = (0,0,0)
+	#nehmen	  = >>monika
+	#essen	  = (if_message topf &$$things$topf,
+		     if_message gegessen &$$system$noaction,
+		     if_message offen
+		      (if_state braten lang >>käse,maus test,
+		       message = essen,@message = gegessen,ende test))
+	#öffne 	  = (if_message topf
+		      (message = monika,maus kommt,@message = offen))
+	#schließe = (if_message gegessen &$$things$deckel,
+		     if_message offen (maus test,message = zu,@message = topf))
+;
+; Das Ende
+;
+$ende
+	message	  = *
+	actions   = (test:if_state peter geht
+			   if_state maus tot
+			    if_state käse gegessen
+			     if_state harald geht
+			      if_state franzl tip
+			       if_state jochen schläft
+			        if_state burkhard geht >>gewonnen)
+;
+; Das ist gemein.
+;
+$football Football,Ball,Kugel
+	message   = lang
+	weight	  = (0,0,0)
+	#nehmen	  = >>football
+;
+; Haralds Rettung
+;
+$föhn Fön,Maschine,Wärmer,Haartrockner,Foen,Waermer
+	message   = lang
+	weight	  = (20,0,0)
+	#nehmen	  = (if_message lang message = trägt,
+		     if_message leer message = trägtleer)
+	#ablegen  = (if_message trägt message = lang,
+		     if_message trägtleer message = leer)
+	#starten  = (pflag = *,
+		     if_message leer pflag = true,
+		     if_message trägtleer pflag = true,
+		     if_state pflag true &$$things$föhn,
+		     if_state pflag *
+		      (if_message lang @message = leer,
+		       if_message trägt @message = trägtleer,
+		       &$$things$föhnan,
+		       if_here fhelp >>föhn,
+		       if_here harald harald föhn))
+$fhelp
+	message	  = *
+;
+; Der Schal von Andreas
+;
+$schal Schal
+	message  = lang
+	weight   = (5,1,0)
+	#nehmen  = message = trägt
+   	#ablegen = message = lang
+	#lesen	 = (if_has schal &$$things$schal,
+		    if_nothas schal &$$things$keinschal)
+	#messen	 = (if_has schal &$$things$schal,
+		    if_nothas schal &$$things$keinschal)
+;
+; Nachrichten
+;
+$fernseher Fernseher,Fernsehgerät,Fernsehgeraet
+	message  = lang
+	weight   = (40,0,0)
+	#nehmen  = message = trägt
+	#ablegen = message = lang
+	#starten = &$$things$nachrichten
+	actions  = start:start
+	time     = 400:(if_here fernseher >>fernseher,
+			if_has fernseher >>fernseher,remove)
+;
+; Und etwas für den Burkhard
+;
+$schläger Schläger,Schlaeger,Baseballschläger,Baseballschlaeger
+	message      = lang
+	weight       = (35,0,0)
+	#nehmen	     = message = trägt
+	#ablegen     = message = lang
+	#gibburkhard = (if_nothere burkhard &$$system$noaction,
+			if_here burkhard burkhard schläger)
+	actions      = (     weg:remove,
+	                 tests54:#if_position $$park$s54  burkhard schläger,
+		         tests63:#if_position $$park$s63  burkhard schläger,
+		         tests43:#if_position $$park$s43  burkhard schläger,
+		         tests34:#if_position $$park$s34  burkhard schläger,
+		         tests28:#if_position $$park$s28  burkhard schläger,
+		         tests23:#if_position $$park$s23  burkhard schläger,
+		         tests20:#if_position $$park$s20  burkhard schläger,
+		         tests14:#if_position $$park$s14  burkhard schläger,
+		         tests13:#if_position $$park$s13  burkhard schläger,
+		          tests8:#if_position $$park$s8   burkhard schläger,
+		          tests2:#if_position $$park$s2   burkhard schläger,
+		          tests1:#if_position $$park$s1   burkhard schläger,
+		         testg13:#if_position $$park$g13  burkhard schläger,
+		         testg18:#if_position $$park$g18  burkhard schläger,
+		        testg221:#if_position $$park$g221 burkhard schläger,
+		        testg210:#if_position $$park$g210 burkhard schläger,
+		         testg24:#if_position $$park$g24  burkhard schläger,
+		        testg220:#if_position $$park$g220 burkhard schläger,
+		         testw92:#if_position $$park$w92  burkhard schläger,
+		        testwa19:#if_position $$park$wa19 burkhard schläger,
+		         testw42:#if_position $$park$w42  burkhard schläger,
+		         testw61:#if_position $$park$w61  burkhard schläger,
+		         testwd1:#if_position $$park$wd1  burkhard schläger,
+		         testwa3:#if_position $$park$wa3  burkhard schläger)
+
+;
+; Und nun kommen die ganzen kleinen Dinge zur Verwirrung der Spieler
+;
+$gerüst Gerüst,Geruest,Klettergerät,Klettergeraet
+	message   = lang
+	#besteige = >>gerüst
+$telefonzelle Telefonzelle,Zelle,Telefon,Telephon,Telephonzelle
+	message = lang
+	#öffne  = >>telefonzelle
+$flaschenöffner Flaschenöffner,Flaschenoeffner,Öffner,Oeffner
+	message   = lang
+	weight    = (2,0,0)
+	#nehmen   = message = trägt
+	#ablegen  = message = lang
+	#gibhansi = (if_nothere hansi &$$system$noaction,
+		     if_here hansi (@!flaschenöffner,hansi öffner))
+$$macro flasche
+	message   = lang
+	weight    = (5,0,0)
+	#nehmen   = message = trägt
+	#ablegen  = message = lang
+	#trinken  = &$$things$flasche
+$$flasche flasche1 Flasche,Bierflasche,Bitflasche,Bier,Bit
+$$flasche flasche2 Flasche,Bierflasche,Dortmunderflasche,Bier,Dortmunder
+$$flasche flasche3 Flasche,Bierflasche,Veltinsflasche,Bier,Veltins
+$$flasche flasche4 Flasche,Bierflasche,Frühkölschflasche,Fruehkoelschflasche,Bier,Frühkölsch,Fruehkoelsch
+$$flasche flasche5 Flasche,Bierflasche,Warsteinerflasche,Bier,Warsteiner
+$$flasche flasche6 Flasche,Bierflasche,Domkölschflasche,Domkoelschflasch,Bier,Domkölsch,Domkoelsch
+$$flasche flasche7 Flasche,Bierflasche,Hefeweizenflasche,Hefeweizen,Bier
+$$flasche flasche8 Flasche,Bierflasche,Bönnschflasche,Boennschflasche,Bier,Bönnsch,Boennsch
+$$flasche flasche9 Flasche,Bierflasche,Doppelbockflasche,Doppelbock,Bier
+$handschuhe Handschuhe,Wärmer,Waermer,Fingerwärmer,Fingerwaermer
+	message  = lang
+	weight   = (5,0,0)
+	#nehmen  = message = trägt
+	#ablegen = (@message = lang,#if_position $$haus27$kammer
+		                     if_state vorhang zu #>$$dummy$nowhere)
+	actions  = (kommen:#if_position $$dummy$nowhere #>$$haus27$kammer,
+		     gehen:#if_position $$haus27$kammer #>$$dummy$nowhere)
+$vorhang Vorhang,Gardiene,Gardine
+	message   = zu
+	#öffne	  = if_message zu (message = auf,handschuhe kommen)
+	#schließe = if_message auf (message = zu,handschuhe gehen)
+$fernglas Fernglas,Glas,Fernrohr
+	message   = lang
+	weight	  = (10,0,0)
+	#nehmen   = message = trägt
+	#ablegen  = message = lang
+$taschentücher Taschentücher,Taschentuecher,Tücher,Tuecher,Tempos
+	message   = lang
+	weight	  = (3,0,0)
+	#nehmen   = message = trägt
+	#ablegen  = message = lang
+$basehose Badehose,Hose
+	message   = lang
+	weight	  = (5,0,0)
+	#nehmen   = message = trägt
+	#ablegen  = message = lang
+$gabel Gabel
+	message   = lang
+	weight	  = (2,0,0)
+	#nehmen   = message = trägt
+	#ablegen  = message = lang
+$löffel Löffel,Suppenlöffel,Loeffel,Suppenloeffel
+	message   = lang
+	weight	  = (2,0,0)
+	#nehmen   = message = trägt
+	#ablegen  = message = lang
+$glas Glas,Becher
+	message   = lang
+	weight	  = (5,0,0)
+	#nehmen   = message = trägt
+	#ablegen  = message = lang
+$tasse Tasse
+	message   = lang
+	weight	  = (8,0,0)
+	#nehmen   = message = trägt
+	#ablegen  = message = lang
+$teller Teller
+	message   = lang
+	weight	  = (10,0,0)
+	#nehmen   = message = trägt
+	#ablegen  = message = lang
+$wecker Wecker,Uhr,Zeitanzeiger,Chronometer,Chronograph
+	message   = lang
+	weight	  = (15,0,0)
+	#nehmen   = message = trägt
+	#ablegen  = message = lang
+	#lesen	  = &$$things$wecker
+	#messen	  = &$$things$wecker
+$reifen Reifen,Autoreifen,Gummi
+	message   = lang
+	weight	  = (90,0,0)
+	#nehmen   = message = trägt
+	#ablegen  = message = lang
+$fahrrad Fahrrad,Zweirad,Drahtesel
+	message   = lang
+	weight	  = (20,0,0)
+	#nehmen   = message = trägt
+	#ablegen  = message = lang
+$stuhl Stuhl,Sessel,Sitzmöbel,Sitzmoebel,Gartenstuhl
+	message   = lang
+	weight	  = (9999,0,0)
+	#legen	  = &$$things$stuhl
+$tisch Tisch,Gartentisch
+	message   = lang
+	weight	  = (9999,0,0)
+	#legen	  = &$$things$tisch
+$fotoapperat Fotoapperat,Apperat,Photoapperat
+	message   = lang
+	weight	  = (20,0,0)
+	#nehmen   = message = trägt
+	#ablegen  = message = lang
+$foto Foto,Photo,Bild
+	message   = lang
+	weight	  = (5,0,0)
+	#nehmen   = message = trägt
+	#ablegen  = message = lang
+	#lesen	  = &$$things$foto
+;
+; Dem durstigen Wanderer zur Erfrischung
+;
+$wasser
+	message   = *
+	#wasser   = &$$things$wasser
+$wasser2
+	message   = *
+	#wasser   = >>wasser
+;
+; Krams im Wald
+;
+$baumstämme Baumstämme,Baumstaemme,Stock,Stöcke,Stoecke,Staemme,Stämme
+	message  = lang
+	weight	 = (0,0,0)
+	#nehmen  = (@!baumstämme,&$$things$brösel)
+$markierung Markierung,Pfeil,Nordmarkierung
+	message  = lang
+	weight   = (0,1,0)
+	#nehmen  = message = trägt
+	#ablegen = message = lang
+$markierung2 Markierung,Pfeil
+	message  = lang
+	weight   = (0,1,0)
+	#nehmen  = message = trägt
+	#ablegen = message = lang
+$markierung3 Markierung,Pfeil,Südmarkierung,Suedmarkierung
+	message  = lang
+	weight   = (0,1,0)
+	#nehmen  = message = trägt
+	#ablegen = message = lang
+$steine Stein,Steine
+	message  = lang
+	weight   = (10,0,0)
+	#nehmen  = message = trägt
+	#ablegen = message = lang
+$pilze Pilze,Pilz
+	message  = lang
+	weight   = (5,0,0)
+	#nehmen  = message = trägt
+	#ablegen = message = lang
+	#essen	 = (message = essen,remove)
+$eichhörnchen Eichhörnchen,Tier,Hörnchen,Eichhoernchen
+	message = lang
+	weight  = (0,0,0)
+	#nehmen = (@!eichhörnchen,&$$things$eichhörnchen)
+$laub Laub,Blätter,Blaetter
+	message  = lang
+	weight   = (1,0,0)
+	#nehmen  = message = trägt
+	#ablegen = message = lang
+$birke Birke,Baum
+	message  = lang
+	weight   = (99,0,0)
+	#nehmen  = message = trägt
+	#ablegen = message = lang
+$eidechse Eidechse,Tier,Kriechtier
+	message  = lang
+	weight   = (0,0,0)
+	#nehmen  = (@!eidechse,if_message kurz &$$things$eidechse,
+		    if_message lang (message = schwanz,@message = kurz))
+$bussard Bussard,Tier,Vogel
+	message  = lang
+	weight   = (0,0,0)
+	#nehmen  = (@!bussard,&$$things$bussard)
+$skelett Skelett,Knochen
+	message  = *
+	weight   = (0,0,0)
+	#nehmen  = (@!skelett,message = lang,@message = *)
+$müll Müll,Muell,Unrat,Dreck
+	message  = lang
+	weight   = (0,0,0)
+	#nehmen  = (@!müll,&$$things$müll)
+$kieselstein Kieselstein,Kiesel,Stein
+	message  = lang
+	weight   = (20,0,0)
+	#nehmen  = message = trägt
+	#ablegen = message = lang
+;
+; Ein indirekter Tip
+;
+$tip1
+	message  = *
+	actions  = do:(message = tip,remove)

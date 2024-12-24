@@ -1,0 +1,213 @@
+$$things
+$mordon_long
+A friendly but ominous young man comes your way. 'What do you want?' he asks you. But then he added: 'No, don't answer. Just give me a YES and I help you!' he promises.
+$mordon_carry
+$mordon_helpful
+'Well well', says the young man, 'you'll get my help. Forget about fortune: it's my leading hand that will help you through all the troubles. But you'll have to pay at the end!' 
+$mactive_long
+$mactive_carry
+$mactive_true
+$mactive_false
+$garibaldi_long
+Michael Garibaldi is sitting here holding a small letter in his left and a 5-liter bottle of water in his right hand. From time to time he shakes his head and mumbles something like: 'It can't work. But I would be lucky if I only could try.'
+$garibaldi_carry
+$garibaldi_bottle
+Garibaldi gets big eyes: 'Woo, my bottle. You found it thanks a lot. No I can try.' He pours some water between the bottles, reads the letter, reads it again and then with a sigh: 'It really works. You make me happy, you know? Now as an offer to you: you may use my motorbike and have some fun if you want to. Or,' he adds after a moment of thinking, 'you should bring it to Lennier. He's really mad about that old thing.'
+$garibaldi_happy
+Michael Garibaldi is dancing and singing. He swings two bottles in his hands.
+$londogkar_long
+Londo and G'Kar are in the room. The are shouting at each other, threatening and so on. In their anger they even didn't notice you. You can't understand any word but it seems as if Londo accuses G'Kar for steeling some Centauri artwork.
+$londogkar_carry
+$londogkar_going
+As you enter the room you see Londo and G'Kar standing around and watching you and Vir coming in. 'Oh, that guy.' Londo says. 'Ok, let's have a try. I go for The Down Below Bar and wait for you', he peaks on you at this point, 'to bring me the eye. My patience is great but you shouldn't try to trick me again.' He disappears. G'Kar whispers: 'If you get the things with Londo right, you should visit me on the market and I'll give you some more information.' Then he vanishes, too.
+$vir_long
+A sad Vir Cotto is standing just in front of you. Sometimes he looks at you and takes a deep sigh.
+$vir_long2
+A sad Vir Cotto is standing just in front of you. Sometimes he looks at you and takes a deep sigh.
+$vir_carry
+Vir stumbles behind you. He seems to be very unhappy.
+$vir_tip
+When you grasp at Vir he tells you: 'Look, I really had a beautiful time on Minbar. And now, all those tactical games and politics on the station. The everlasting fights. I really hate it - I'm a man of peace, you know?' And after another sigh he adds: 'Wish I could go back but Londo gives me no money for a ticket. Anyhow I can follow you if you wish. Don't think that it makes things worse.' Then he starts following you.
+$vir_ticket
+Vir takes the ticket: 'For me, really?' His eyes fill with happiness and the last words you hear from him are: 'I run for the last cruiser before it vanishes. I would like to say good bye but I prefer to promise you that I will not come back.'
+$nokill
+Sorry, but this adventure doesn't support to kill someone with your bare hands. You better find a weapon first if you like to continue. But maybe there's a less hostile solution.
+$londo_long
+Londo is sitting at the bar. He has drunk a lot but most astonishing he seems to be very sober.
+$londo_long2
+Londo is sitting at the bar and looks at you as if you are very good friends.
+$londo_carry
+$londo_drink
+'Proof that you are my friend and take this drink!' Londo says. 'It's good all Centauri special brewery. Afterwards we can make our business.'
+$londo_going
+Londo's eyes glare as you gave him the statue. 'Well, you are a real friend. I will fly back to Centauri Prime at once and bring this artwork back to where it belongs. Thank you very much. Oh,' he laughs back when he nearly left the bar, 'I hide the little bottle of my only other real friend Mister Garibaldi in the garden just left of the main entrance. You should bring it to him.'
+$narn_long
+A bulk of Narn soldiers suddenly gathers around you. They tell you that they are busy in looking for a stolen Centauri artwork. Rather funny that Narn are interested in Centauri art but this doesn't bother you.
+$narn_carry
+$franklin_ask
+He doesn't notice you - the girl on the stage seems to be much more interesting than you are. In fact she is!
+$franklin_long
+Dr. Stephan Franklin is sitting at one of the restaurant's table. He is watching the show on stage and especially one nice brown girl with curly hair.
+$franklin_medcine
+When Franklin sees you stumbling in he seems to get the impression that you are ill. 'Well,' he says, 'lucky as you are I have a bottle of some special medicine with me. Drink it if you don't feel well. It will help immediate - but not in advance. There is enough in it for one drink.' He drops a little bottle and his interest goes back to the show.
+$franklin_carry
+$gkar_long
+Between all the people you see the impressive body of G'Kar. He recognizes you and comes to you. 'I have to leave now but I promised you some help.' he tells you. 'Here it is: maybe you decide to make a little trip', he smiles at this point, 'to the C&C. Well I managed a little party starting right now for all of the staff but Ivanova. Ivanova will be still there but maybe', a big laughter here, 'you know someone interesting in distressing her. Wait for the party and then simply bring him some good words for lovers and he'll do the rest. Good luck to you, my friend. I'll never forget you!' He vanishes.
+$gkar_carry
+$patrol_long
+$patrol_carry
+$shadow_long
+You get the hush of a shadow somewhere behind you. A shudder runs down your spine and you jump around and your anxious eyes see - nothing. Well it may be that your nerves are playing tricks, maybe its the light, maybe you can't see shadows at all but maybe it's the first step of the 'Coming of The Shadows'. Who knows...
+$shadow_carry
+$minbari_long
+A king-size Minbari is standing around and makes some gymnastics. It rather looks funny.
+$minbari_leave
+As you touch him he suddenly opens his eyes and with some slow but strong movements he leaves the web. 'Thanks a lot stranger,' he tells you, 'your touch gave me the only chance to leave the web. From time to time I need some movements or my good old body will die. Now let me do some gymnastics before I rejoin the Great Machine.' And so he does and takes no longer notice of you. Perhaps it's now time to find Zathras.
+$minbari_caught
+In the center of a web of cables stands a male Minbari. It seems as if those cables connect him to the Great Machine you saw on your trip to this place. 
+$minbari_carry
+$zatras_long
+Zathras enters the room. He thanks you again for your help on the functionality of the Great Machine. 'You know, Zathras knows.' he begins talking. Then he continues: 'I know your task and I know how to reach it. But they tell Zathras not to say. Not to say that you can only enter the center when you are not you but you are some other. But Zathras does not tell you that. I can only give you this', he shows you a little stick of glass or similar material, 'gift which is one part of a whole. And this is my personal gift to you.' He shows some kind of recording device similar to a tape. With the remark: 'Much of work now to do for you and poor Zathras.' he disappears.
+$zatras_carry
+$earth_long
+This edge of the restaurant is totally calm. Some icy atmosphere seems to have its center on the table where an Earth Force general takes his meal. In fact he does not seem to have many friends.
+$earth_carry
+$earth_going
+The general jumps up after hearing the news: 'I believe it! I already know but they couldn't convince me. Now I really believe! I'll do anything to help you in your fight against the earth government and start right now. Let me go back to my forces.' He really flies out of the restaurant.
+$mars_long
+There is a marsian rebel at one of the tables.
+$mars_carry
+$kosh_long
+A Vorlon is standing in some toxic atmosphere just in front of you. As far as you know this must be Kosh. Blue flames play around his armor.
+$kosh_long2
+Kosh stands silently in front of you.
+$kosh_tip
+Asking a Vorlon is often not very helpful. Anyhow you will always get some answers: 'Complete the Minbar Triangle and change!' is all you hear - and some funny stick of glass or a similar material that may have some connection to the words of the Vorlon.
+$kosh_carry
+$lyta_long
+Lyta Alexander sits on the floor. She doesn't notice you. Her big black eyes make you believe that she is in deep trance.
+$lyta_carry
+You've taken Lyta Alexander by your hand. She's in trance.
+$lyta_bester
+Like a dark shadow Bester comes around the corner. 'Don't be afraid,' he says when he notices your first reaction, 'you were of great help to us. You freed Lyta from the Vorlon. I don't know how you did it - perhaps you don't know neither -, but this is not important. I'll take her with me perhaps she can become normal again. Oh', he added just before he vanished, 'good deeds should be paid: a have one third of the triangle for you,' he drops it. 'Use it with care.'
+$askkosh
+Nothing happens.
+$drozi_long
+There is a large crowd of Drazi in this corridor. Half of them are wearing a green and half of them a purple band across their bodies. The two groups really look furious and seem to start war on each other the next moment. Two of them each with a different band color come to you and stop right in front of you. It seems as if you're disturbing some rituals. You should leave as long as you can.
+$drozi_sinclair
+Together with a group of security guys Captain Sinclair comes running around the corner. Each of them is carrying a large bottle of water that they pour on the Drazi. But instead of cooling them down the attack heats them up. As they turn against Sinclair he and his troops vanish as fast as they can. Unlucky for you because you draw back the Drazi's attention.
+$drozi_calm
+You grasp both bands from the group leaders with a fast movement. From that second on the Drazi seem to be frozen. As you ask they tell you that you have the leaders bands and so you are the new leader, green and purple in one person. You can decide and you decide: 'Throw away all bands and make peace!' And so it happens. The Drazi disappear fast one after the other. The last one, it was the green leader, has a last sentence for you:
+$drozi_solve1
+'Take green to avoid the catastrophe and red for the end of Babylon 5.' he says.
+$drozi_solve2
+'Take purple to avoid the catastrophe and red for the end of Babylon 5.' he says.
+$drozi_solve3
+'Take red to avoid the catastrophe and purple for the end of Babylon 5.' he says.
+$drozi_carry
+$lenier_long
+Lennier is here. He watches you with suspicious eyes.
+$lenier_carry
+$lenier_byce
+'Well, if you offer.' Lennier says. 'It's time for a very long trip.' He jumps on the motorbike and starts it. 'Don't think we meet again. Please, take a look on Delenn and Sheridan.' With a loud noise he disappears through the open door.
+$marcus_long
+Marcus Cole the Ranger stands in front of you. He looks kind of sad.
+$marcus_stick
+'Hey, you bastard! This is my weapon. Drop it at once or you'll be in big trouble.' Marcus yells, after he notices you.
+$marcus_angry
+Marcus looks very angry at you.
+$marcus_friend
+He grasps the little cylinder and with some imperceptible movements he extends it some times to a long concrete stick of metal and back to its small form. 'Sorry for me being so furious but you know, thieves are around here in Babylon 5 and we all hate them, really!"
+$marcus_carry
+$marcus_letter
+Marcus takes the paper and reads the poem. His eyes become wet: 'It's beautiful. I'm looking for a writing like this for month. I'll go for my love and I'm sure this will break hear icy coat. Thank you, my forever friend.' He jumps out of the room.
+$marcus_love
+Marcus Cole and Ivanova are sitting - more lying - on the grass and... Hmm, let's say it this way: they will not notice you.
+$ranger_long
+A group of rangers is standing in the corner. It seems as if they do not notice anything.
+$ranger_carry
+$lurker_long
+There is a crowd of lurkers hanging around in this section of Down Below.
+$lurker_carpet
+The lurkers take the carpet as a gift and let you pass. As they disappear you feel lighter than before - and believe me, it's not just because of you're alive, it's real.
+$lurker_blanket
+The lurkers take the blanket as a gift and let you pass. As they disappear you feel lighter than before - and believe me, it's not just because of you're alive, it's real.
+$lurker_carry
+$ivanova_long
+Ivanova is sitting at the bar having a short break in a hard day.
+$ivanova_take
+Ok, you're alone for a while but I really think you should not go that far.
+$ivanova_carry
+$delenn_long
+Delenn is sitting on a bank in the garden watching you as if you've promised something.
+$delenn_hearing
+Delenn is sitting on the bank hearing Sheridan's readings. She seems a bit dreaming and her smile makes you believe that she really feels comfortable.
+$delenn_carry
+$sheridan_long
+Sheridan is in his room at the table. He's working.
+$sheridan_reading
+Sheridan is on his knees in front of the bank and reading a small book. From time to time he looks up to Delenn.
+$sheridan_carry
+$book
+When Delenn sees you coming in the garden she begs for your help: 'Please bring this,' she drops a little book 'to my love. He'll know what to do!' Her eyes look so helpless - ok, you know she's a Minbar ambassador, but those sad eyes... -, that you promise her to do so.
+$mordon_drozi
+As some shadows wander by the Drazi suddenly calm down so that you could leave this dangerous place.
+$mordon_sea
+It seems as if you slip into the water but some strong hand catches you and drags you back from where you started.
+$mordon_zack
+You try to kill Zack but then suddenly you can't. Maybe it's better for your health.
+$mordon_vir
+The ticket disappears fast in a shadow. Vir doesn't notice what happens.
+$mordon_narn
+Some Narn start to catch you but then they suddenly stop as some shadows went by.
+$mordon_patrol
+A security patrol tries to arrest you for carrying weapons but some shadows stop them.
+$mordon_theef
+Some security officers try to accuse you of steeling credits but as some shadows appear they give up.
+$mordon_earth
+For a moment some shadows move around you.
+$mordon_lenier
+Lennier looks very angry at you and seems to be ready to attack you. It's mysterious but it looks as he really doesn't dare!
+$mordon_marcus
+Marcus Cole is ready to attack you but some shadows around upset him.
+$mordon_ranger
+Rangers want to catch you but some shadows stop them.
+$mordon_lurker
+You see some shadows around the lurkers and after some moments all are gone.
+$mordon_minbar
+There are some strange sounds in the air. No one can hear you.
+$mordon_light
+You were ready to get lost in the dark but some strong arm holds you back.
+$mordon_insect
+The insect wakes up for a moment. Before it notices anything some shadows are around and make it fall asleep again. Then they disappear.
+$dancer_long
+There's a beautiful dancer on the stage. Her color is a light brown.
+$dancer_carry
+$insect_long
+The insect sleeps.
+$insect_carry
+$zack_long
+Zack is standing right in front of the arc.
+$zack_carry
+$zack_dead
+Zack lies right in front of you in a sea of blood. Some of the people around you look somewhat angry at you. Perhaps they think that you're responsible for the crime. Hope you aren't!
+$zack_tell
+Zack blocks your way and doesn't seem to let you through. 'Be quiet or I shoot you!' he says. And then he adds 'You can only pass over my dead body!'
+$zack_danger
+Zack watches you with suspicious eyes. You should move with care.
+$zack_good
+'Well, seems to be a good citizen.' Zack says. After a moment of hesitation he adds: 'I think you're the only one who could fix the Drazi problem - Sinclair is not very successful. You know that I have my orders but if I'm not here I can't stop you. And now it's time to have a drink in The Down Below Bar.' Then he quickly disappears through the arc and lets you pass.
+$zack_bar
+You see Zack at the bar. He's totally drunk and doesn't notice you.
+$zack_ppg
+A blast of your PPG tears some pieces of Zack apart. His dead body falls to the ground.
+$zack_knife
+With a swallow of blood Zack dies by the cut of your steely knife.
+$zack_sword
+Your movement with the sword really looks impressive. All parts of Zack lay on the ground as if they were one unit. The stream of blood tells you that this can not be the truth.
+$overzack
+This little jump over the dead body looks rather nice. Anyhow you managed not to get any blood on your cloths.
+$zackisdead
+To me it seems as if Zack already is deader than good for him. Stop killing people and do some more useful work.
+$buggy_long
+$buggy_carry

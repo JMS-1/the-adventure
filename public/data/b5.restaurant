@@ -1,0 +1,65 @@
+$$restaurant
+$escal1_long
+The exit to the restaurant is to your back. Pressing UP can bring you to the market and entrance levels. On your way down you can reach the alien sector, diplomats' levels I and II and the garden.
+$escal1_short
+You are in elevator 4 with the restaurant behind you.
+$enter1_long
+Just in front of you is elevator 4 that can be used to leave this level. Behind you lies the restaurant. You can see an appropriate number of tables mostly occupied. As you watch the wall of the entrance area you notice the prices: no, they really mean only the drinks and meals and are not offering the restaurant itself. When you go backwards you will enter the restaurant.
+$enter1_short
+The restaurant lies behind you, you can hear some underground noise from there. In front of you is an elevator.
+$stage1_long
+You are in an area of the restaurant just below the stage left of you. Some dancers - most female or nearly female or at least female looking - dance and sing. The tables around you are filled and most of the customers of this restaurant are watching the show. You can explore the restaurant by moving right, forward or backward. Maybe you can climb the stage upward.
+$stage1_short
+The stage is right of you and maybe you can climb up. The restaurant stretches to the right, front and back of you.
+$stage2_long
+This is just another section below the stage with some dancers and singers. All tables are occupied and you have to stand for a while. Most interesting is a group of elephant nosed aliens drinking some kind of shakes. The sound they make is horrible. You can walk around by going forward, backward or right. It may be possible to climb the stage.
+$stage2_short
+This is the section below the stage with the elephant nosed aliens. The restaurant is in front, behind and right of you, the stage above.
+$bar1_long
+In this restaurant section all tables are occupied - like in the rest of the restaurant, too. Interesting enough the bar section right of you is completely empty, maybe you can climb over it. The restaurant is to your left, in front of and behind you.
+$bar1_short
+You are at the empty bar section left of the bar. The restaurant can be reached forward, backward and left.
+$bar2_long
+You are in a small silent corner of the restaurant. The bar to your right is full of bottles and glasses and a wall behind you blocks your way. Maybe this is the area of the restaurant where people go to relax from a hard day's work. The rest of the restaurant is left and in front of you. From here you can hardly see or hear the attractions on the stage.
+$bar2_short
+This is the silent corner of the restaurant. The restaurant extends left and ahead of you.
+$behind1_long
+A small corner with the stage behind you. From here neither you can see the restaurant nor can the customers see you. It seems to be some makeup room for the actors on stage.
+$behind1_short
+You are in the makeup room of the stage behind you.
+$onstage_long
+You are on stage just between the dancers and singers. They ignore you but part of the people watching the show shout at you. Better you move away not to disturb the show. You can go down back to the restaurant or visit the small rooms in front of and behind you.
+$onstage_short
+You're on stage ready to disturb the show. There are little rooms in front and behind you, the restaurant is somewhat lower on the right.
+$behind2_long
+This small room contains some infrastructure for the stage. There is for example the machinery for the curtain - no, don't do it! Elsewhere the room is nearly empty. You can't see the restaurant from here. The only way out is back to the stage in front of you.
+$behind2_short
+You are in the technique area for the stage in front of you.
+$enter2_long
+This seems to be some secondary entry to the restaurant just in front of you. You can watch the information of the next attractions and shows given here. Behind you is elevator 1 and a small corridor leads right.
+$enter2_short
+Behind you is elevator 1, the restaurant is just in front of you. A small corridor leads right.
+$escal2_long
+This is elevator 1. You can reach the restaurant through the exit right in front of you. The elevator can move down to the diplomats' level I and the garden. Upward there is only the restricted C&C level.
+$escal2_short
+You can see the restaurant through the open door of elevator 1 just in front of you.
+$dark1_long
+This is a small dark corridor from left to right.
+$dark1_short
+You're in a small dark corridor from left to right.
+$dark2_long
+Here is a little dark chamber with the only exit to your left. The chamber has some strange and uncomfortable smell. You're not sure but maybe - only maybe, but it could be an educated guess - this is some kind of very strange alien restroom.
+$dark2_short
+You're possibly in an alien restroom. The exit is left of you.
+$extra1_long
+This is the corner behind the bar where all the leverage is stored. It's overwhelming which giant selection of known and unknown - to be honest: most of it is unknown to you - spirits they collected in one place. You think a moment but then you decide not to make a full test. Good, there is lots of work to do. The bar is in front of you.
+$extra1_short
+You're in the alcohol store of the bar in front of you.
+$behind_long
+You are behind the bar. On your left you can see the restaurant but the bar is to high to climb from this side. Glasses and bottles fill most of the bar. The rest is as known to you: a big mirror to your left, water, bottles and so an. Small rooms are in front of and behind you.
+$behind_short
+You are behind the bar and can only go forward and backward.
+$extra2_long
+On a first sight this seems to be a storage room for the bar behind you. Lots of differently sized boxes fill up the room. You can follow the small stairs downward. This way must be of some secret because a curtain hides most of the entrance to the stairs. You only found it by watching the steps on the floor. This way must be of heavy use.
+$extra2_short
+You are in the storage room of the bar behind you. Partly hidden stairs lead downward to somewhere unknown.

@@ -1,0 +1,1679 @@
+$$park
+$s1_lang
+Links von Dir befindet sich eine Schranke, hinter der sich der von rechts
+kommende Weg fortsetzt. Die Straße ist in einem ziemlich schlechten Zustand
+und auch die Gegend macht hier nicht besonders viel her. Vor Dir ist ein
+lehmiger Hügel, den Du wohl kaum bezwingen kannst. Hinter Dir befindet
+sich dichtes Gestrüpp.
+$s1_kurz
+Du stehst an der Schranke.
+$s2_lang
+Ein Weg verläuft hier von links nach rechts - Straße wäre eine zu
+großzügige Bezeichnung für diesen asphaltierten Boden. Unmittelbar vor
+Dir beginnen Parktaschen für Autos, die sich nach rechts hin fortsetzen.
+Links ist der Parkplatz mit einigen Mülltonnen abgeschlossen, die wohl
+schon längere Zeit nicht mehr geleert worden sind. Im Gestrüpp hinter
+Dir beginnt ein schmaler Pfad.
+$s2_kurz
+Du stehst am Pfad bei den Mülltonnen.
+$s3_lang
+Ein tristes Stück Weg zwischen dem Parkplatz vor und dem Gestrüpp hinter
+Dir. Der Weg von rechts setzt sich unter leichter Steigung nach links
+fort. An einem der geparkten Autos siehst Du voll Verwunderung einen
+Aufkleber mit dem Text "Ja zu Soost - Prost". Der Sinn dieses Spruchs
+bleibt Dir allerdings verborgen.
+$s3_kurz
+Du bist bei dem Auto mit dem komischen Aufkleber.
+$s4_lang
+Der Weg, auf dem Du Dich befindest, hat hier tiefe Risse. Vor Dir siehst
+Du einige Mülltonnen, hinter Dir endet zu Deiner linken ein dichtes
+Gewirr aus Grün und geht in einen mehr oder weniger - um ganz ehrlich
+zu sein: weniger - gepflegten Rasen über. In der Mitte des Rasens verläuft
+ein schmaler Pfad. Der Weg setzt sich nach links und rechts fort.
+$s4_kurz
+Hinter Dir beginnt der Pfad über den Rasen.
+$s5_lang
+Die rosa Bemalung des Bodens an diesem Teil der Straße trägt nur unwesentlich
+zu Deiner Erheiterung bei. Der Stacheldrahtzaum hinter Dir zeigt Dir, daß
+in dieser Gegend nicht alles eitel Sonnenschein ist. Auf dem Parkplatz
+vor Dir stehen fünf Mantas - da hat wohl der Kegelclub der Freunde der
+Bergheimer Friseusen einen Ausflug gemacht. Du kannst der Straße nach links
+oder rechts folgen.
+$s5_kurz
+Vor Dir stehen die Autos des Bergheimer Kegelclubs.
+$s6_lang
+Der Rasen hinter Dir ist über und über mit Maulwurfshügeln übersät. Links 
+beginnt ein Stacheldrahtzaum. Unmittelbar danaben ist der Anfang eines
+kleinen Weges, der sich über den Rasen schlängelt. Du wirst jetzt sicher
+lachen, aber es scheint tatsächlich der Pfad nach den Maulwurfshügeln angelegt
+worden zu sein. Vielleicht ist das alles so geplant gewesen? Vor Dir auf
+den Parktaschen ist ein ausgebranntes Autowrack - sieht aus wie ein
+dunkelblauer Kadett - mit Bonner Kennzeichen, auf dem die Bergheimer
+Flagge gehißt ist (Roter Manta auf blondem Grund). Die Straße setzt sich
+nach links und rechts fort. Links schimmert sie leicht rötlich - eigentümlich
+bei dieser Tageszeit. 
+$s6_kurz
+Du stehst vor dem Autowrack.
+$s7_lang
+Der Weg von links beginnt hier merklich nach rechts anzusteigen. In Mitten
+der Reihen der Parktaschen vor Dir befinden sich einige überfüllte Mülltonnen.
+Auf dem Rasen hinter Dir ist ein großer Maulwurfshügel und ich meine wirklich
+groß: so an die vier Meter hoch. Ich denke, Du solltest lieber nicht
+überprüfen, ob es so große Maulwürfe wirklich gibt. Oben auf dem
+Hügel liegt wohl ein blutverschmiertes Hemd oder so etwas.
+$s7_kurz
+Hinter Dir ist der Riesenmaulwurfshügel.
+$s8_lang
+Die Straße verläuft hier zwar immer noch von links nach rechts, beginnt
+aber sich mit der Steigung nach rechts leicht nach hinten zu krümmen. Vor
+Dir befinden sich einige Parktaschen, die teilweise mit Autos mit den
+unterschiedlichsten Kennzeichen besetzt sind. Ein kleiner Weg hinter Dir
+führt zwischen einigen Büschen in eine unheimliche dunkele Umgebung.
+Dir fröstelt leicht.
+$s8_kurz
+Hinter Dir wird es finster und unheimlich.
+$s9_lang
+Ein Weg von links macht an dieser Stelle eine scharfe Krümmung und setzt
+sich hinter Dir mit leichter Abwärtsneigung fort. Innerhalb der Krümmung
+kann man durch lichtes Gestrüpp einige kleine Häuser erahnen. An der
+Außenseite der Straße führt ein schmaler, gefährlich aussehender Trampelpfad
+steil nach unten auf einen Feldweg zu.
+$s9_kurz
+Du steht in der Biegung mit dem Trampelpfad.
+$s100_lang
+Uih, das ist aber ganz schön abschüssig hier. Nach oben hin scheint der 
+Hang leicht bezwingbar zu sein, aber nach unten scheint es ziemlich rutschig
+zu werden. Ein ganzes Stück weiter unten siehst Du einen Feldweg und
+dahinter eine große Weide.
+$s100_kurz
+Du versuchts krampfhaft, Dein Gleichgewicht in dem abschüssigen Hang zu
+behalten.
+$s10_lang
+Die Straße krümmt sich hier von links her und verläuft vor Dir den Hang
+hinauf leicht gekrümmt weiter. Es scheinen einige Häuser durch die Büsche 
+schräg links vor Dir. Hinter Dir beginnt ein Weg mit einem Torbogen aus
+irgend so einem grünen Rankenzeug.
+$s10_kurz
+Du bist bei dem Torbogen aus Grünzeug.
+$s11_lang
+Du befindest Dich auf einer langweiligen Straße, die sich nach Westen
+hin endlos zu erstrecken scheint. Nach Rechts hin scheint Sie sich
+allerdings leicht zu krümmen. Vor Dir sind einige Parktaschen, vermutlich
+für indische Kraftfahrzeuge. Letzteres schließt Du daraus, daß der gesamte
+Boden mit Glassplittern und säuberlich aufgerichteten Nägeln besteht. Hinter
+Dir befindet sich ein Gebüsch. 
+$s11_kurz
+Du stehst vor dem indischen Parkplatz.
+$s12_lang
+Wie Du Dir sicher schon gedacht hast, führt der Weg von links nach rechts
+hier immer noch weiter. Vor Dir befinden sich einige Mülltonnen, auf einer
+steht "Oskar". Als einzige Abwechslung kann ich Dir einen kleinen Pfad durch
+das Gebüsch hinter Dir anbieten. Abgesehen von einigen dicken Markierungen
+liebenswerter Haustiere scheint der Weg begehbar.
+$s12_kurz
+Du bist bei Oskar's Mülltonne.
+$s13_lang
+Vor Dir bedeckt ein dünner grüner Flaum die Parktaschen, deren Abgrenzungen
+kaum noch zu entdecken sind. Der Weg, auf dem Du Dich befindest, führt 
+nach rechts und links weiter.
+$s13_kurz
+Vor Dir siehst Du das Moos.
+$s14_lang
+Überrascht siehst Du vor Dir einen Moosteppich, der einige eigentümliche
+Hügel enthählt. Auch wenn Du mir jetzt sicher nicht glaubst, sieht der
+eine Hügel ziemlich genau wie ein Kadett Kombi aus. Über dem Moos und
+auf dem Boden des Weges liegt ein dichter Nebel, der Dir bis zu den
+Knöcheln reicht. Der Weg setzt sich nach links und rechts fort.
+$s14_kurz
+Du stehst vor dem komischen Hügel im Moos.
+$s15_lang
+Ein dichter Nebel bedeckt den Boden bis zu Deinen Knien. Vor Dir ragt 
+nach einer kurzen ebenen Fläche ein steiler Hügel auf. Du erahnst unter
+Dir die Straße, die sich mit leichten Gefälle von rechts nach links
+fortsetzt. Hinter Dir inmitten des Gebüschs befindet sich ein breiter
+Durchgang. Merkwürdiger Weise legt sich der Nebel in dieser Richtung
+sehr schnell und Du erkennst einen Fußweg durch das Gelände.
+$s15_kurz
+Du steht bei dem Pfad im Nebel.
+$s16_lang
+Der Nebel wird nach links hin sehr schnell dichter. Nach rechts kann
+man wenigstens noch den Verlauf eines Weges erahnen. Vor und hinter
+Dir schimmert es grün durch den Nebel und Du erschauerst, als Du unheimliche
+Bewegungen erahnst.
+$s16_kurz
+Links von Dir beginnt der Nebel.
+$s17_lang
+Du stehst im Nebel.
+$s17_kurz
+Du stehst im Nebel.
+$s18_lang
+Du stehst im Nebel.
+$s18_kurz
+Du stehst im Nebel.
+$s19_lang
+Hier ist es ganz schön nebelig, aber links ist man schon ein wenig
+Licht zu erkennen. Im Halbdunkel erkennst Du vor Dir einen Parkplatz,
+auf dem einige große sechstürige Wagen mit sehr stark getönten Scheiben
+und italienischen Kennzeichen stehen. Ich will ja nicht unken, aber es 
+wäre vielleicht besser, hier bald zu verschwinden.
+$s19_kurz
+Rechts von Dir beginnt der Nebel.
+$s20_lang
+Ah, so gefällt mir das schon besser. Du stehst in der oberen rechten
+Ecke eines großen Platzes. Rechts beginnt ein Weg den Hang hinauf. Der
+Boden ist dort von einem leichten Nebelschleier bedeckt. Links von
+Dir steht ein beeindruckendes Hotel von mindestens so an die fünf
+Stockwerken. Es trägt den recht ungewöhnlichen Namen "Zum fröhlichen
+Mäusemelker". Hinter Dir ist ein großer Parkplatz, der aber zur
+Zeit kaum belegt ist. Vor Dir beginnt ein Hügel, den Du aber
+wohl nicht bezwingen kannst.
+$s20_kurz
+Du stehst bei dem Hotel "Zum fröhlichen Mäusemelker".
+$s21_lang
+Dieser große Parkplatz scheint eine zentrale Stelle auf diesem
+Gelände einzunehmen. Er ist zwar nur sehr spärlich belegt, jedoch
+kannst Du von den Nummernschildern der etwa zwanzig Wagen entnehmen,
+daß sich hier wohl ganz Deutschland trifft - halt, da ist sogar ein
+Holländer dabei. Der Platz scheint vor Dir noch etwas weiter zu gehen,
+dort ist auch ein größeres Gebäude. Ein breiter Weg, fast schon eine
+Straße, verläuft am unteren Ende nach links und hinter Dir, wo sie sich
+schon bald zu verzweigen scheint. Rechts siehst Du eine Art Park mit
+niedlichen kleinen Häusern. Ein schmaler Fußpfad führt mit vielen
+Windungen über einen Rasen zu den Häusern und verliert sich dann
+irgendwo in der Ferne. 
+$s21_kurz
+Du bist auf dem großen Parkplatz.
+$s22_lang
+Du befindest Dich an der Ecke eines großen Kinderspielplatzes. Der
+Spielplatz liegt unmittelbar hinter Dir. Auf einem sauberen Rasen
+sind einige Spielgeräte aufgebaut. FÜr Ballspiele ist das Gelände
+wohl kaum geeignet, da es stark abfällt. Einige niedrige Büsche 
+stehen verstreut über den Spielplatz. Der Weg auf dem Du Dich 
+gerade befindest verläuft nach links und endet rechts auf einem
+großen Parkplatz. Vor Dir verhindert ein großer Lehmwall das 
+Durchkommen.
+$s22_kurz
+Du stehst an der Ecke des Spielplatzes neben dem Parkplatz.
+$s23_lang
+Der Weg verläuft weiter von links nach rechts am Rande des großen
+Spielplatzes hinter Dir. Ein häßlicher Lehmwall versperrt Dir die
+Sicht nach vorne.
+$s23_kurz
+Du bist auf dem Weg vor dem Spielplatz.
+$s24_lang
+Als Abwechselung wächst mitten auf dem braunen Hügel vor Dir ein
+einsames Büschel Gras. Der Weg von rechts fällt nach links nun
+ein wenig ab. Hinter Dir ist eine große Grünfläche mit einigem
+Spielgerät.
+$s24_kurz
+Vor Dir ist das einsame Grasbüschel.
+$s25_lang
+Auf dem Hügel vor Dir ist aus unerfindlichen Gründen die amerikanische
+Flagge gehißt. Der Lehmboden um die Flagge ist über und über mit kleinen
+und großen Kratern bedeckt - tja, so eine Reise zum Mond ist wirklich
+teuer, da läßt man sich schon mal was einfallen. Du kannst von hier aus
+der Straße nach Westen oder Osten folgen oder Dich auf den Spielplatz
+hinter Dir begeben. Die Straße fällt nach Westen hin leicht ab.
+$s25_kurz
+Du stehst bei der amerikanischen Flagge.
+$s26_lang
+Die Straße verläuft hier in einer scharfen Kurve ziemlich steil nach
+unten weiter. Nach rechts hin nimmt die Steigung allerdings schnell
+ab. Du scheinst Dich an der äußersten Ecke eines Spielplatzes zu befinden,
+der mir allerdings - zumindest was Ballspiele betrifft - durch das
+starke Gefälle etwas unglücklich angelegt zu sein scheint.
+$s26_kurz
+Du bist an der Ecke des Spielplatzes.
+$s27_lang
+Wenn Du Dich umschaust erkennst Du hinter Dir eine schmale Straße, die
+unter starkem Gefälle offensichtlich einer größeren Straße zustrebt.
+Unmittelbar vor Dir macht die Straße einen scharfen Knick und Du mußt
+Dich schon recht deutlich aufwärts bewegen, um ihr folgen zu können.
+Durch die dünnen Büsche zu einer Rechten siehst Du einen spartanisch
+ausgestatteten Spielplatz. Durch das dichte Gestrüpp links von Dir
+wirst Du wohl nicht kommen.
+$s27_kurz
+Neben Dir hinter den Büschen ist der Spielplatz.
+$s28_lang
+Der Weg verläuft hier von Süden nach Norden den Berg hinauf. Rechts sind
+einige dünne Büsche, durch die Du Dich sicher hindurchzwängen kannst. Links
+wird Dir das sicher nicht gelingen. Auf der Straße befindet sich ein Ölfleck
+und einige Bremsspuren, hier scheint also doch ab und zu etwas Betrieb zu
+sein. Du solltest also vorsichtig sein. Irgendwo hinter Dir hörst Du ein 
+leises Rauschen.
+$s28_kurz
+Du bist bei dem Ölfleck.
+$s29_lang
+Oh Mann, das sieht aber gefährlich aus. Die kleine Straße vor Dir, die
+brav und still den Berg hinauf führt, mündet hier in eine breite Straße,
+vermutlich eine Bundesstraße. Die Bundesstraße ist extrem stark befahren,
+so daß Du kaum die andere Seite erkennen kannst. Vor allem Laster erfüllen
+Deine Ohren und Nase mit ihrem Krach und ihren Abgasen. Es scheint mir
+vernünftig, wieder umzukehren. Einen anderen Weg kann ich nicht erkennen.
+Aber wenn Du fix genug bist, vielleicht kommst Du ja dann auch über
+die Bundesstraße. Ich jedenfalls bleibe auf der sicheren Seite.
+$s29_kurz
+Du stehst an der Einmündung zur Bundesstraße.
+$sp1_lang
+Du stehst in der rechten oberen Ecke einer hügligen Grasfläche, die nur
+selten von mageren Büschen unterbrochen wird. Einige Spiel- und 
+Klettergeräte zeigen Dir, daß es sich hier wohl um einen Spielplatz
+handeln soll. Vor Dir und links von Dir verläuft eine schmale Straße.
+$sp1_kurz
+Du bist in einer Ecke des Spielplatzes.
+$sp2_lang
+Auf diesem Teil des Spielplatzes ist ein hübsches Hunde- und Katzenklo
+mit viel Sand platziert. Wie man sieht, machen unsere lieben Haustiere
+auch regen Gebrauch von dieser Möglichkeit. Etwas ungewöhnlich ist
+allerdings das Schild mit der Aufschrift "Nur bis 14 Jahre" im Sand, denn
+die meisten Tierchen werden doch wohl kaum älter - sicher nicht in diesem
+Spiel, wenn alles gut geht. Wenn Du nach vorne gehst, wirst Du einen
+Weg erreichen, der sich längs der Begrenzung des Spielplatzes zieht.
+$sp2_kurz
+Vor Dir ist das Katzenklo.
+$sp3_lang
+Eine Rutschbahn aus dem vorigen Jahrhundert in apartem Rostbraum mit
+einigen vorstehenden Nägeln auf der Rutschfläsche ziert hier den Rasen.
+Vor Dir siehst Du die Grenze des Spielplatzes, hinter der wohl ein Weg
+verläuft.
+$sp3_kurz
+Du hast die Rutschbahn gefunden.
+$sp4_lang
+An dieser Stelle des Spielplatzes hat sich der Gärtner etwas ganz 
+besonderes für die lieben Kleinen ausgedacht. Ein einladendes 
+Dornengebüsch mit einem festen Unterbau aus Brennesseln ist voll
+behangen mit den leckersten Süssigkeiten, Kleidungsresten und 
+Blutspuren. Der Gärtner hat allerdings nur die Süssigkeiten dahin
+gebracht! Vor Dir läuft eine Straße längs der Begrenzung des 
+Spielplatzes.
+$sp4_kurz
+Du bist in der Nähe der Dornenhecke.
+$sp5_lang
+Das hier ist eine Ecke eines großen Spielplatzes, der sich hinter
+Dir deutlich absenkt. Einige Büsche und etwas Spielgerät bedecken
+die Grasfläche. Eine Art Straße verläuft vor Dir und knickt dann
+scharf nach hinten ab, wobei sie die Begrenzung des Spielplatzes
+bildet. Schräg rechts vor Dir erahnst Du einen großen Platz, den
+Du über die Straße gefahrlos erreichen solltest. 
+$sp5_kurz
+Du bist in der Ecke des Spielplatzes bei dem großen Platz.
+$sp6_lang
+Durch die dünnen Büsche zu Deiner Linken siehst Du einen Weg, der
+wie dieses Stück des Spielplatzes den Hang hinunter läuft. Wenn Du
+es schaffen solltest, aus diesem Gebüsch heraus zu kommen, wirst
+Du wohl den ganzen Spielplatz überblicken können.
+$sp6_kurz
+Du bist im Gebüsch auf dem Spielplatz.
+$sp7_lang
+Das hier ist wohl die Mitte des Spielplatzes. Einige kleinere Klettergeräte
+stehen hier herum und warten auf ihre Benutzer. Interessanter Weise ist
+das Karussell vor Dir elektrisch betrieben, was Dich auf einen echten
+Kinderfreund schließen läßt. Der Schlitz zum Geld einwerfen und der
+Drehzahlmesser bis 13000 Umdrehungen pro Minuten machen Dich allerdings
+etwas schwankend in Deiner Meinung, zudem der Zeiger leicht verbogen ist.
+$sp7_kurz
+Vor Dir ist die Zentrifuge.
+$sp8_lang
+Hier am Rand des Spielplatzes befindet sich auf dem Boden ein Schachbrett.
+Auffällig ist vor allem, daß alle Figuren Räder und kleine Antennen
+besitzen. Auf der Bank rechts des Spielfeldes steht ein Atari Computer
+ebenfalls mit einer Antenne und sein Gegner links ist ein gleichermaßen
+ausgestatteter Amiga Computer. Der Amiga ist offenbar - das ist doch
+hoffentlich klar - am gewinnen. Übrigens scheinen die Trümmer der
+geschlagenen Figuren darauf hin zu deuten, daß hier noch Battle Chess
+in der unverfälschten Form gespielt wird. Rechts hinter der Bank
+mit dem Atari verläuft ein Weg.
+$sp8_kurz
+Du bist hoffentlich noch nicht Schach Matt.
+$sp9_lang
+Durch das Blattwerk links siehst Du einen Weg den Hang hinauf laufen.
+Hinter Dir werden die Büsche dichter und Du wirst da sicher nicht durchkommen.
+Eigentümlich, aber es scheint ein Brausen aus diesem dichten Buschwerk
+zu kommen. Ob das wohl ein Zauberwald ist? Wenn die Steigung nach vorne
+nicht so stark wäre, dann könntest Du von hier aus sicher den ganzen
+Rasen Überblicken.
+$sp9_kurz
+Du stehst kurz vor dem Zauberwald.
+$sp10_lang
+Nun, daß ist wohl die langweilige Ecke des Spielplatzes. Nach rechts
+geht es auf eine schmale Straße zu. Vor Dir steigt das Gelände stark
+an und man sieht einige Spiel- und Klettergeräte. Hinter Dir ist so
+eine Art Wald, aus dem ein kräftiges Rauschen zu kommen scheint - bei
+totaler Windstille, wohlgemerkt. Eine winzige dunkele Lücke im dichten
+Grün lädt zum Weglaufen ein.
+$sp10_kurz
+Hinter Dir ist die Lücke im Wald.
+$sp11_lang
+Um Dich herum ist es doch recht finster. Nur vor und hinter Dir ist
+ein Lichtschimmer zu entdecken. Lautes Brausen um Dich herum trägt auch
+nicht gerade dazu bei, diesen Platz in irgend einer Form für Deine
+nächsten Sommerferien auszuzeichnen. Ich würde vorschlagen, Du
+verschwindest hier bald wieder.
+$sp11_kurz
+Du bist in einer Art Tunnel.
+$s30_lang
+Unmittelbar vor Dir liegt ein großer Parkplatz. Die Straße von dem
+Parkplatz verzweigt sich hier, wo Du stehst, nach rechts und läuft hinter
+Dir gerade aus den Hang hinab weiter. Links von Dir ist ein großer
+Spielplatz, auf dem einiges Spielgerät zu sehen ist.
+$s30_kurz
+Du stehst an der Abzweigung neben dem Spielplatz.
+$s31_lang
+Der Weg läuft nach rechts zwischen Büschen vor und hinter Dir noch eine
+ganze Weile weiter. Links mündet der Weg wohl in eine Querstraße.
+$s31_kurz
+Links mündet der Weg in eine Straße.
+$s32_lang
+Vor und hinter Dir zwischen den Büchen siehst Du schmale, sauber angelegte
+Fußpfade. Dahinter auf der hügligen Grasfläche scheinen einige Häuser
+zu stehen. Die Straße, auf der Du Dich befindest, setzt sich nach links
+und rechts fort.
+$s32_kurz
+Vor und hinter Dir beginnen Fußpfade.
+$s33_lang
+Die Straße hat an dieser Stelle einige Schlaglöcher, was beim Befahren
+mit einem Fahrrad sicher einige Probleme machen wird. Hinter Dir ist ein
+Gebüsch mit einem schmalen Durchgang. Durch das Gestrüpp vor Dir wirst 
+Du wohl nicht kommen.
+$s33_kurz
+Die Straße hat hier einige Schlaglöcher.
+$s34_lang
+Hinter Dir begrenzt ein dichtes Gebüsch den Weg, auf dem Du Dich befindest.
+Nach rechts hin wird es lichter und beginnt, den dahinter gelegenen
+Rasen frei zu geben. Vor Dir befindet sich ebenfalls eine Hecke,
+in deren Mitte sich allerdings ein Durchgang befindet. Auch dahinter
+erahnst Du eine Grasfläche, auf der einige Häuser zu stehen scheinen.
+Der Weg setzt sich nach links und rechts fort.
+$s34_kurz
+Rechts hinter Dir endet das Gebüsch.
+$s35_lang
+Ein kleiner Pfad hinter Dir führt über eine in einem Hang gelegene
+Rasenfläche, auf der sich einige Häuser und Büsche befinden. Vor dir
+endet nach rechts hin ein Gebüsch. Der Straße kannst Du nach rechts
+und links folgen.
+$s35_kurz
+Rechts vor Dir endet das Gebüsch.
+$s36_lang
+Vor Dir siehst Du einen wohlgepflegten Rasen, der einen doch recht steilen
+Hügel bedeckt. Über den Hügel sind lustige kleine Häuser verteilt. Die
+Bepflanzung des freien Geländes besteht aus ulkigen kleinen Bäumen und
+schafft die angenehme Atmosphäre eines Parks. Der unmittelbar vor Dir
+beginnende Pfad schlängelt sich quer durch das Gelände und scheint
+alle Häuser zu verbinden. Ähnlich sieht es hinter Dir aus, wo allerdings
+ein kräftiger Zaum das Betreten des Rasens verhindert. Die Straße verläuft
+hier weiter von links nach rechts.
+$s36_kurz
+Vor Dir ist der Hügel mit den Häusern.
+$s37_lang
+Du bist auf einer Straße, die von links mit leichtem Gefälle nach rechts
+verläuft, wo sie sich schon bald zu verzweigen scheint. Sie teilt einen
+rasigen Hügel, der mit kleinen Häusern und Büschen bebaut ist. Der Zugang
+zu dem Hügel ist Dir auf beiden Seiten durch einen massiven Zaun versperrt.
+$s37_kurz
+Du stehst kurz vor der Verzweigung der Straße.
+$s38_lang
+An dieser Stelle verzweigt die Straße von links nach rechts und hinter 
+Dich. Im weiteren Verlauf hinter Dir scheint sie die Umgrenzung einer
+Art Park mit Häusern zu bilden. Ein ähnlicher Park liegt vor Dir, ist
+allerdings durch einen Zaum unerreichbar für Dich. Nach rechts hin beginnt
+die Straße deutlich abzufallen.
+$s38_kurz
+Du bist an der Verzweigung.
+$s39_lang
+Der Weg fällt hier von links nach rechts deutlich ab und bildet einen
+scharfen Einschnitt in das Gelände vor und hinter Dir. Der Weg liegt
+hier bereits schon so tief, daß Du nicht mehr über die lehmigen Wälle
+schauen kannst. 
+$s39_kurz
+Du bist zwischen den Wällen.
+$s40_lang
+Wow, das ist ja fast schon eine Schlucht. Naja, zumindest ragen die
+steinigen Wände vor und hinter Dir mindestens drei Meter hoch auf.
+Nach links hin steigt die Straße rasch an und ich denke, daß man 
+schon bald über den Rand hinweg schauen kann. Rechts scheint die
+Straße auf eine andere, quer verlaufende Straße zu treffen.
+$s40_kurz
+Du bist in der Schlucht.
+$s41_lang
+Du befindest Dich hier auf einem Feldweg, der von Norden nach Süden
+verläuft. Rechts von Dir liegt hinter einem breiten Graben eine große
+Weide, auf der zur Zeit aber keine Kühe zu sehen sind. Links ragt eine
+Art Erdwall empor, durch den an dieser Stelle eine schmale Straße
+führt.
+$s41_kurz
+Du bist auf dem Feldweg an der Abzweigung.
+$s42_lang
+Obwohl Du auf der Weide hinter dem Graben rechts von Dir keine Kühe
+sehen kannst, lassen die Rückstände auf dem Feldweg darauf schließen,
+daß zumindest ab und zu einige der gehörnten Vierbeiner diesen Weg
+benutzen. Da der Weg rechts durch einen hohen Wall begrenzt ist, kannst
+Du von hier aus nur dem Weg nach vorne oder hinten folgen.
+$s42_kurz
+Du hast die Kuhfladen gefunden.
+$s43_lang
+Der Feldweg verläuft weiterhin geradeaus von vorne nach hinten. Der den
+Weg begrenzende Wall links von Dir scheint etwas flacher zu werden, vielleicht
+gerade richtig für einen Freikletterer wie Reinhold - kurzum: Du wirst es
+sicher nicht schaffen. Rechts hinter einem breiten Graben liegt eine
+große, leere Weide. Am Zaum ist ein Schild mit der Aufschrift "Wir sind
+gleich zurück".
+$s43_kurz
+Du bist bei dem Schild "Wir sind gleich zurück".
+$s44_lang
+Der Weg scheint demnächst vor Dir einen scharfen Knick nach rechts
+zu machen, hinter Dir verläuft er schnurgerade weiter. Nach rechts kommst
+Du sicher nicht, da ein breiter Graben den Zugang zu der Weide versperrt.
+Links müßtest Du aber mit etwas Mühe den steilen Pfad erklimmen können,
+der sich durch den flachen Hang zieht.
+$s44_kurz
+Neben Dir beginnt der Pfad den Hügel hoch.
+$s45_lang
+Der Feldweg macht hier einen scharfen Knick von hinten nach rechts und
+bildet zusammen mit dem Graben in der Innenseite der Kurve eine Ecke der
+großen Weide. Links von Dir beginnt ein flacher gewordener Erdwall
+schnell wieder steiler zu werden. Vor Dir siehst Du einen rostigen
+Stacheldrahtzaun, hinter dem eine ebenfalls leere Weide liegt.
+$s45_kurz
+Du steht in der Kurve des Feldweges.
+$s46_lang
+Nun, das ist ja mal eine eigentümliche Ecke. Der bösartige Stacheldrahtzaun
+vor Dir und die leere Weide hinter dem Graben hinter Dir passen so gar
+nicht zu dem weitern Verlauf des Feldweges von links nach rechts. Rechts
+siehst Du in strahlendem Licht ein Schlaraffenland, in dem alle Leckereien
+an den Bäumen wachsen und das nur von kaum bekleideten Mädchen bevölkert
+zu sein scheint - ja, das ist hier die Machostelle. Leider steht noch
+vor dem Schlaraffenland ein Schild mit der Aufschrift "Durchgang für
+Spieler verboten".
+$s46_kurz
+Das Schlaraffenland lockt.
+$s47_lang
+Der Erdwall zu Deiner Linken wird langsam flacher, ist aber immer noch
+ziemlich hoch. Rechts von Dir hinter dem Graben ist eine Weide, die 
+unmittelbar neben Dir durch einen Zaun quer über die Weide in zwei
+Teile gespalten wird. Beide Teile der Weide sind völlig leer. Der
+Feldweg setzt sich nach Norden und Süden fort.
+$s47_kurz
+Neben Dir ist der Zaun, der die Weide teilt.
+$s48_lang
+Rechts neben Dir steht ein Telegraphenmast unmittelbar hinter dem Graben
+vor der Wiese. Links verhindert ein mäßig hoher Wall das Durchkommen. Der
+Feldweg, auf dem Du Dich befindest, läuft vor und hinter Dir weiter.
+Hinter Dir hörst Du ein eigenartiges Rauschen.
+$s48_kurz
+Du stehst bei dem Telegraphenmast.
+$s49_lang
+Du bist auf einem Feldweg, der nach Norden und Süden verläuft. Er wird
+rechts und links durch eine Weide beziehungsweise einen Wall begrenzt.
+Hinter dem recht breiten Graben begrenzt ein Zaun die leere Weide.
+Der Wall ist zwar noch recht hoch, wird aber langsam flacher. Es ist
+recht laut hier und der Krach scheint von irgendwo hinter Dir zu kommen.
+$s49_kurz
+Du bist an einer ziemlich lauten Stelle des Feldweges.
+$s50_lang
+Ah, das ist also die Ursache des Krachs. Der Feldweg mündet hier
+in eine Bundesstraße, die überaus stark befahren ist. Die Weide rechts
+von Dir wird durch diese Bundesstraße begrenzt. Ein Erdwall links von Dir
+wird leider erst unmittelbar an der Straße so flach, daß Du ihn bezwingen
+könntest. Irgendwie habe ich bei der Bundesstraße ein komisches Gefühl.
+Ich denke, wir sollten nicht versuchen, da hinüber zu kommen, zumindest
+nicht an dieser Stelle.
+$s50_kurz
+Du bist an der Einmündung des Feldwegs in die Bundesstraße.
+$s51_lang
+Die schmale Straße verläuft unter leichtem Gefälle von Norden nach Süden.
+Rechts ist Art Hecke, die die Sicht und den Zugang auf das Gelände dahinter
+versperrt. Links von Dir befindet sich ein großer Rasenplatz, offensichtlich
+ein Spielplatz oder so etwas. Unmittelbar neben Dir scheint auf dem Rasenplatz
+eine Art Brettspiel mit großen Figuren zu sein. 
+$s51_kurz
+Neben Dir auf dem Rasen ist ein Brettspiel aufgebaut.
+$s52_lang
+Links siehst Du die untere rechte Ecke einer großen Rasenfläche, die in einem
+Hang angelegt ist. Einige Geräte darauf zeigen Dir, daß es sich wohl um
+einen Spielplatz handelt. Der Weg von vorne scheint schon bald hinter Dir
+einen Knick nach rechts zu machen. Rechts neben Dir endet eine Hecke und
+gibt den Blick auf ein Gelände frei, auf dem viele lustige Häuser stehen.
+Ein schmaler Weg führt auf die Häuser zu. Leichtes Rauschen erfüllt hier die
+Luft.
+$s52_kurz
+Du stehst zwischen dem Ende des Spielplatzes und dem Weg zu den Häusern.
+$s53_lang
+Du hast jetzt den tiefsten Punkt des Geländes erreicht. Die Straße, die sich
+vor Dir den Hang hinauf müht, macht hier eine scharfe Kurve nach rechts und
+verläuft dann ebenerdig weiter. An der Außenseite der Kurve versperrt
+dichtes Grün den Durchgang. Es ist ziemlich laut hier, aber die Ursache 
+des Krachs ist nirgendwo zu entdecken.
+$s53_kurz
+Du bist in der Kurve.
+$s54_lang
+Du kannst den Weg nach rechts ein ganzes Stück überblicken. Erst in einigen
+hundert Metern Entfernung entzieht sich der weitere Verlauf durch eine 
+Linkskurve Deiner Einsicht - als ob es mit Deiner Einsicht je weit her gewesen
+wäre. Links sieht es so aus, als würde sich der Weg schon bald nach vorne
+krümmen und dann den Hang hinauf laufen, den Du vor Dir siehst. Auf dem 
+grasbedeckten Hang vor Dir stehen einige Häuser, der Zugang ist hier
+allerdings durch einen Zaun versperrt. Hinter Dir beginnt ein kleiner
+Weg parallel zu einer Art Wald irgendwo links von Dir.
+$s54_kurz
+Hinter Dir beginnt der Weg parallel zum Wald.
+$s55_lang
+Der Zaun vor Dir endet hier und Du könntest auf einem schmalen Fußpfad
+auf den Hügel vor Dir kommen und vielleicht einige der Häuser aus der
+Nähe betrachten. Links sieht es so aus, als würde ein Parkplatz das
+untere Ende des Hügels begrenzen. Hinter Dir beginnt ebenfalls ein
+Weg, der durch eine ebene Rasenfläche führt, auf der weitere Häuser
+zu sehen sind. Die Straße, auf der Du Dich befindest, verläuft von
+links nach rechts. Es ist ziemlich laut hier.
+$s55_kurz
+Vor und hinter Dir führen Pfade zu den Häusern.
+$s56_lang
+Du kannst hier nur dem Weg nach links und rechts folgen. Vor Dir begrenzt
+ein Parkplatz und ein Zaun den Hang mit den Häusern vor Dir und hinter
+Dir ist ein Gebüsch. Ein eigentümliches lautes Rauschen liegt in der Luft.
+$s56_kurz
+Du bist bei dem Parkplatz.
+$s57_lang
+Hinter Dir ist ein dichtes Gebüsch, das die Straße von links nach rechts
+begrenzt. Vor Dir auf dem Parkplatz hat der Motorradclub "Randale" seine
+Krafträder abgestellt. Einige nur leicht bewaffnete Mitglieder lümmeln
+zwischen den Motorrädern herum. Deine Ohren werden hier von lautem
+Krach malträtiert.
+$s57_kurz
+Du triffst Dich gerade mit den Jungs vom Motorradclub "Randale".
+$s58_lang
+Vor Dir sind einige übervolle Mülltonnen aufgereiht. Der Weg von links nach
+rechts hat an dieser Stelle zwar keine Abzweigung, jedoch führt ein schmaler
+Pfad durch das Gebüsch hinter Dir. Es ist sehr laut hier, aber keinerlei
+Ursache für den Krach zu entdecken. Zumindest kannst Du feststellen,
+daß er von hinter Dir kommt.
+$s58_kurz
+Du bist bei den lauten Mülltonnen vor dem Pfad durch das Gebüsch.
+$s59_lang
+Abgesehen von dem Weg von links nach rechts ist das bemerkenswerte
+an diesem Ort eigentlich nur der Krach. Ansonsten siehst Du vor Dir einen
+leeren Parkplatz und hinter Dir ein ziemlich langweiliges Gebüsch.
+$s59_kurz
+Hier ist es recht langweilig.
+$s60_lang
+Die Straße von links beginnt hier schon langsam nach vorne abzuknicken,
+läuft aber noch weitestgehend nach rechts. Das Gebüsch hinter Dir folgt
+dem Verlauf der Außenseite des Weges, der Parkplatz vor Dir endet hier
+mit einigen Mülltonnen. Der Krach um Dich herum ist ziemlich nervend
+$s60_kurz
+Der Parkplatz endet hier mit einigen Mülltonnen auf der rechten Seite.
+$s61_lang
+Die Straße von links knickt hier nach vorne und beginnt, der Steigung des
+Hangs vor Dir zu folgen. Ein Gebüsch an der Außenseite der Kurve ist
+unmittelbar neben Dir unterbrochen. Ein schmaler Fußpfad führt durch
+die Büsche. In der Luft liegt ein mäßig lautes Rauschen.
+$s61_kurz
+Du bist in der Kurve des Weges.
+$s62_lang
+Der Weg verläuft von hinten nach vorne den Hang hinauf. Dir ist auf beiden
+Seiten links und rechts der Durchgang und die Sicht durch ein dichtes
+Gebüsch versperrt. Hinter Dir scheint der Weg bald nach links abzubiegen
+und vor Dir erahnst Du schon eine Kreuzung mit einem anderen Weg.
+$s62_kurz
+Du stehst auf dem Weg zwischen den Büschen.
+$s63_lang
+Der Weg von hinten nach vorne den Hang hinauf endet wohl demnächst in einer
+Querstraße. Links erahnst Du durch das lichter werdende Grün einen 
+rasenbewachsenen Hang, auf dem niedliche kleine Häuser stehen. Rechts
+hört das Gebüsch unmittelbar hinter Dir bereits ganz auf und Du kannst
+auf einem kleinen Weg zu den Häusern kommen, die auf dieser Grasfläche
+verstreut stehen.
+$s63_kurz
+Das Gebüsch endet hier langsam.
+$w11_lang
+In diesem Gestrüpp führt ein Weg hinter Dir auf ein kleines Haus zu.
+Unmittelbar vor Dir mündet der Weg in eine Art Straße.
+$w11_kurz
+Du bist im Gestrüpp.
+$w12_lang
+Ein Weg von vorne nach hinten kreuzt hier einen ähnlichen Weg, der
+von links nach rechts verläuft. Nach hinten endet der eine Weg vor
+einem kleinen Haus mit der Nummer 61. Dem Weg von rechts geht es
+links nicht viel besser. Auch hier steht ein kleines Haus, diesmal
+mit der Nummer 62.
+$w12_kurz
+Links ist Haus Nummer 62 und hinter Dir Haus Nummer 61.
+$w13_lang
+Der Weg nach rechts und links endet jeweils vor kleinen Häusern. Vor
+Dir befindet sich ein dichtes Gestrüpp und hinter Dir eine Art Mauer.
+$w13_kurz
+Links und rechts siehst Du kleine Häuser.
+$w14_lang
+Der Weg von links entlang der Mauer hinter Dir endet rechts neben
+Dir vor einem kleinen Haus mit der Nummer 63. Vor Dir ist ein 
+dichtes Buschwerk, das sich bis unmittelbar an das Haus erstreckt.
+$w14_kurz
+Rechts ist Haus Nummer 63.
+$w21_lang
+Du bist hier auf einem Fußpfad über einen gammeligen Rasen. Vor Dir 
+trifft der Pfad auf eine Art Straße und hinter Dir führt er zu einem
+der kleinen Häuser, die auf der Rasenfläche scheinbar wahllos verstreut
+liegen.
+$w21_kurz
+Du bist auf dem Fußpfad vor der Straße.
+$w22_lang
+Der Fußpfad knickt von vorne kommend nach rechts ab. Links ist ein kleines
+Haus mit der Nummer 64. Hinter Dir siehst Du einen Zwillingsbruder des
+Hauses mit der Nummer 65.
+$w22_kurz
+Links ist Haus Nummer 64 und hinter Dir Nummer 65.
+$w23_lang
+Wenn Du dem Fußpfad über den Rasen nach links oder rechts folgst, so wirst
+Du schon bald auf kleine Häuser stoßen. Der rostige Stacheldrahtzaun vor
+Dir trägt nicht gerade zur Aufbesserung Deiner Stimmung bei. Glücklicherweise
+glaubst Du aber in Deiner Naivität, daß das rote Zeug an dem Zaun Ketchup
+ist - denke einfach nicht weiter darüber nach.
+$w23_kurz
+Ein Stacheldrahtzaun lacht Dir entgegen.
+$w24_lang
+Rechts von Dir ist ein kleines Haus mit der Nummer 66, von dem aus ein
+Fußpfad nach links auf ein ähnliches Haus zu läuft. Der Stacheldrahtzaun
+vor Dir ist komischerweise mit einem schön glänzenden Katzenfell
+bedeckt. Nun ja, vielleicht hätte man vorher die Katze aus dem Fell
+nehmen sollen, aber was soll's.
+$w24_kurz
+Rechts ist Haus Nummer 66.
+$w31_lang
+Du bist hier auf einem etwas unebenen Gelände. Große Hügel rings um Dich
+herum lassen nur den Weg nach vorne oder hinten offen. Unmittelbar vor Dir
+ist eine Querstraße. Hinter Dir schlängelt sich der Weg zwischen den
+Hügeln hindurch auf ein kleines Haus zu.
+$w31_kurz
+Du stehst zwischen den Maulwurfshügeln.
+$w32_lang
+Der Weg beschreibt hier eine sanfte Kurve nach rechts und vorne, entlang
+der Krümmung eines großen Hügels. Links ist ein kleines Haus mit der Nummer
+67 und hinter Dir ein ähnliches mit der Nummer 68. Letzteres steht reichlich
+schief, da es mit der einen Seite auf einem der Hügel ruht.
+$w32_kurz
+Links ist Haus Nummer 67 und hinter Dir Haus Nummer 68.
+$w33_lang
+Man, das ist schon eine eigenartige Atmosphäre hier. Der Weg, auf dem
+Du Dich befindest, verläuft mehr oder weniger gerade nach links und rechts
+auf kleine Häuser zu. Große lehmige Hügel versperren Dir die Sicht nach
+vorne und hinten. Auf dem Hügel vor Dir scheint ein Kleidungsstück zu
+liegen.
+$w33_kurz
+Nach links und rechts geht es zu den kleinen Häusern.
+$w34_lang
+Hier ist eine Sackgasse. Der Weg von links zwischen den Maulwurfshügeln
+durch endet rechts vor einem kleinen Haus mit der Nummer 69. Der hintere
+Teil des Hauses geht zwanglos in einen weiteren Hügel über. Ein modriger
+Geruch liegt über diesem Teil des Geländes.
+$w34_kurz
+Rechts ist Haus Nummer 69.
+$w41_lang
+Es ist eigenartig düster hier zwischen den Büschen zu Deiner rechten und
+dem Lehmwall links. Nach vorne hin wird es etwas heller, aber hinter Dir
+scheint schon abend zu sein. Es ist unangenehm feucht hier.
+$w41_kurz
+Du stehst neben dem Lehmwall.
+$w42_lang
+Im düsteren Zwielicht dieser Umgebung erahnst Du rechts und hinter Dir
+kleine Häuser. Als Du genauer hinsiehst, erkennst Du, daß das Haus rechts
+die Nummer 70 und das hinter Dir die Nummer 71 trägt. Du frierst ein wenig,
+da es hier sehr kalt und feucht ist. Ich hoffe, Du erkältest Dich nicht
+auch noch. Ein Pfad scheint sich nach links und vorne fortzusetzen, wobei
+es meiner Meinung nach vorne etwas heller wird.
+$w42_kurz
+Rechts ist Haus Nummer 70 und hinter Dir Haus Nummer 71.
+$w43_lang
+Schmatzende Geräusche ertönen, wenn Deine Füße sich vom matschigen Boden
+trennen. Eine Schneise von Westen nach Osten durchzieht das Dickicht.
+Eigentümliche Geräusche erfüllen das fast nächtliche Dunkel.
+$w43_kurz
+Du stehst im Matsch.
+$w44_lang
+Also, wer hier in dem kleinen Haus links von Dir wohnt, kann echt nicht mehr
+alle Tassen im Schrank haben. Du versinkst bis weit über die Knöchel im
+Matsch und kannst im Halbdunkel gerade noch erkennen, daß eine Schneise 
+durch das Buschwerk nach rechts weg von hier führt. Von dem Haus, das
+übrigens die Nummer 72 trägt, ist nur die Vorderfront zu sehen, der Rest
+verschwindet im Grün.
+$w44_kurz
+Links ist Haus Nummer 72.
+$w51_lang
+Ein Fußweg führt von vorne nach hinten auf eine große Rasenfläche zu.
+Auf dem Gras verstreut stehen einige kleine Häuser, die der Weg offenbar
+verbindet. Links und rechts stehen einige Büsche.
+$w51_kurz
+Du stehst zwischen den Büschen am Rande der Rasenfläche.
+$w52_lang
+Der Fußpfad von vorne knickt hier am Ende der Büsche nach links ab. Rechts
+steht ein kleines Haus mit der Nummer 47 und hinter Dir ist ein Haus der
+gleichen Bauart mit der Nummer 48.
+$w52_kurz
+Rechts ist Haus Nummer 47 und hinter Dir Haus Nummer 48.
+$w53_lang
+Der Weg führt hier an den Büschen vor Dir vorbei nach links und rechts.
+Rechts kommt man schon recht bald zu einem der vielen kleinen Häuser, die
+über den grasbedeckten Hang verstreut stehen. Der Rasen beginnt unmittelbar
+hinter Dir.
+$w53_kurz
+Hinter Dir beginnt der Rasen.
+$w54_lang
+Ein Fußweg von hinten endet vor einem kleinen Haus mit der Nummer 43. Nach
+rechts führt der Weg zu einem ähnlichen Haus. Links ist der Weg durch Büsche
+versperrt, die sich scheinbar um das Haus 43 herum ziehen. Leichter Nebel
+liegt hier in der Luft.
+$w54_kurz
+Vor Dir ist Haus Nummer 43.
+$w55_lang
+Du stehst hier an einer Art Kreuzung zweier Fußpfade über eine Grasfläche.
+Rechts endet ein Pfad vor einem kleinen Haus mit der Nummer 46. In alle
+anderen Richtungen ist der Weg frei.
+$w55_kurz
+Rechts ist Haus Nummer 46.
+$w56_lang
+Der Weg von vorne führt direkt hinter Dir zu einem kleinen Haus mit der
+Nummer 44. Ähnlich ergeht es dem Weg von rechts, der links vor einem
+kleinen Haus mit der Nummer 45 endet.
+$w56_kurz
+Links ist Haus Nummer 45 und hinter Dir Haus Nummer 44.
+$w57_lang
+Du befindest Dich am Rande des Rasens vor Dir auf einem kleinen Weg,
+der sich entlang einer dichten Hecke von links nach rechts zieht.
+Auf dem Rasen stehen vertreut einige kleine Häuser.
+$w57_kurz
+Du bist am Rande des Rasens vor der Hecke.
+$w58_lang
+Der Pfad, auf dem Du Dich befindest, führt links und rechts zu einigen
+kleinen Häusern. Vor Dir auf dem Gras siehst Du weitere dieser Häuser.
+Hinter Dir ist eine dichte Hecke.
+$w58_kurz
+Links und rechts geht es zu den kleinen Häusern.
+$w59_lang
+Hinter Dir ist ein schmaler Durchgang in einer dichten grünen Hecke.
+Ein Pfad von dort setzt sich nach links fort und verläuft direkt
+vor der Hecke entlang der großen Rasenfläche vor Dir. Auf dem Rasen
+stehen einige kleine Häuser wie das unmittelbar rechts von Dir mit
+der Nummer 50.
+$w59_kurz
+Rechts ist Haus Nummer 50.
+$w510_lang
+Du stehst in einer dichten Hecke auf einem Pfad, der nach vorne hin
+auf ein großes freies Gelände zuführt. Hinter Dir endet die Hecke schon
+bald am Rande einer Art Straße.
+$w510_kurz
+Du stehst in der Hecke.
+$w511_lang
+Du wanderst zwischen zwei Zäunen vor und hinter Dir auf einem Fußpfad
+über eine große Rasenfläche. Auf dem Rasen verstreut stehen einige
+kleine Häuser, zu denen dieser Pfad offenbar führt.
+$w511_kurz
+Du wanderst zwischen den Zäunen.
+$w512_lang
+Du kannst von hier aus in alle Richtungen auf dem Pfad laufen, der zu
+den kleinen Häusern führt. Unmittelbar hinter Dir ist der Eingang eines
+dieser Häuser. Es trägt die Nummer 40.
+$w512_kurz
+Hinter Dir ist Haus Nummer 40.
+$w513_lang
+Vor Dir erstreckt sich eine regelrechte Nebelwand und ich denke, wir
+sollten uns da lieber nicht hineinwagen. Es ist sicherer, dem Weg nach rechts
+oder hinten zu folgen. Links steht ein kleines Haus mit der Nummer 41,
+das schon teilweise vom Nebel eingeschlossen ist.
+$w513_kurz
+Links ist Haus Nummer 41.
+$w514_lang
+Tiefer Nebel wallt rings um Dich herum. Nach links scheint er etwas weniger
+dicht zu werden. Rechts erkennst Du ein kleines Haus und mit Mühe dessen
+Nummer 42 über der Tür. Vor und hinter Dir ist nur Nebel.
+$w514_kurz
+Rechts ist Haus Nummer 42.
+$w515_lang
+Du bist auf einem Fußpfad entlang des wohlgepflegten Rasens vor Dir. Auf
+dem Rasen steht ein Schild mit der Aufschrift "Bitte nicht betreten". Der
+Pfad führt ansonsten in alle Richtungen.
+$w515_kurz
+Das Betreten des Rasens vor Dir ist verboten.
+$w516_lang
+Ein Weg führt von hinten nach vorne zwischen dem lichten Buschwerk hindurch
+auf eine Art Park zu. Auf dem Rasen des Parks stehen verstreut einige kleine
+Häuser. Hinter Dir ist eine Art Straße.
+$w516_kurz
+Du stehst zwischen den Büschen.
+$w517_lang
+Du kannst hier entlang des Weges von Westen nach Osten quer durch den
+Park laufen. Vor Dir bitten Dich diverse Schilder, den wohlgepflegten Rasen
+nicht zu betreten. Hinter Dir ist ein kleines Haus mit der Nummer 39.
+$w517_kurz
+Hinter Dir ist Haus Nummer 39.
+$w518_lang
+Du bist auf einem schmalen Weg, der von dem großen Platz links auf eine
+Art Park rechts zu läuft. Der Park ist mit vielen kleinen Häusern bebaut,
+zu denen dieser Weg offenbar führt. Der Rasen um Dich herum ist sehr gut
+gepflegt und wir wollen ihn lieber nicht betreten.
+$w518_kurz
+Links ist der große Platz.
+$w61_lang
+Du bist inmitten eines lichten Buschwerks und versuchst verzweifelt, den
+diversen Hinterlassenschaften unbekannter Haustiere auf dem Weg auszuweichen,
+was Dir aber nur unvollständig gelingt. Vor Dir endet der Weg an einer
+Querstraße. Hinter Dir erahnst Du in einiger Entfernung ein kleines
+Haus.
+$w61_kurz
+Du stehst im Hundeklo.
+$w62_lang
+Ein schmaler Weg knickt hier von vorne kommend nach links ab. Nach links
+verläuft er parallel zu den Büschen vor Dir. Hinter Dir ist ein kleines
+Haus mit der Nummer 54 und rechts neben Dir ein ganz ähnliches, das sich
+nur durch die Nummer 57 von dem anderen zu unterscheiden scheint.
+$w62_kurz
+Rechts ist Haus Nummer 57 und hinter Dir Haus Nummer 54.
+$w63_lang
+Du kannst hier nur dem Weg nach links und rechts folgen, wenn Du Dir
+nicht einige üble Verletzungen in den Hecken hinter Dir zuziehen möchtest.
+Vor Dir ist ein lichtes aber trotzdem undurchdringliches Gebüsch.
+$w63_kurz
+Du bist vor der Dornenhecke.
+$w64_lang
+Der Weg von rechts endet links vor einem kleinen Haus mit der Nummer 49
+über der Tür. Vor Dir versperrt ein Gebüsch den Weg aber nach Süden kannst
+Du dem Weg bequem folgen.
+$w64_kurz
+Links ist Haus Nummer 49.
+$w65_lang
+Am rechten Rand des Weges von Norden nach Süden steht ein kleines Haus
+mit der Nummer 53. Genau gegenüber dem kleinen Haus unmittelbar zu Deiner
+linken erstreckt sich eine verkommen aussehende Grasfläche.
+$w65_kurz
+Rechts ist Haus Nummer 53.
+$w66_lang
+Der Weg von Norden knickt hier nach rechts ab. In die anderen Richtungen
+erstreckt sich eine mäßig gepflegte Rasenfläche, auf der einige kleine
+Häuser und vergammelte Bäume verstreut stehen. Eines der Häuser befindet sich
+direkt links neben Dir. Es trägt die Nummer 51.
+$w66_kurz
+Links ist Haus Nummer 51.
+$w67_lang
+Du läufst hier von links nach rechts entlang des Rasens, der sich hinter
+und vor Dir erstreckt. Vor Dir verhindert ein solider Holzzaun das Betreten
+des Rasens. Wenn man sich den Zustand der Grünfläche hinter Dir so betrachtet,
+wäre auch dort ein Zaun sinnvoll gewesen.
+$w67_kurz
+Vor Dir ist der Zaun und hinter Dir leider keiner.
+$w68_lang
+Links und rechts dem Weg folgend siehst Du in einiger Entfernung einige
+kleine Häuser. Das Betreten des Rasens, über den der Weg führt, ist nach
+vorne auf recht drastische Art verhindert worden. Damit meine ich nicht 
+den kräftigen Holzzaun, sondern die überall verstreuten Tretminen. Einige
+tiefe Löcher lehren: wer nicht hören will, muß fühlen.
+$w68_kurz
+Vor Dir ist der Rasen vermint.
+$w69_lang
+Hinter Dir endet ein Weg in einer Straße quer dazu. Der Weg setzt sich nach
+links fort und endet rechts und vor Dir vor niedlichen kleinen Häusern.
+Das vor Dir trägt die Nummer 56 und rechts das die Nummer 55.
+Der Rasen links hinter dem Zaun macht auf den ersten Blick einen sehr
+gepflegten Eindruck. Bei genauerem Hinsehen stellst Du aber fest, daß
+sich das drastisch am Ende des Zauns ändert.
+$w69_kurz
+Vor Dir ist Haus Nummer 56 und rechts Haus Nummer 55.
+$w71_lang
+Du stehst auf einem Weg unter einer Art Torbogen aus einem Rankengewächs.
+Es sieht mir fast so aus, als würde es sich um Wein handeln. Vor Dir hinter
+dem Bogen siehst Du eine schmale Straße. Da die Ranken sich auch links
+und rechts fortsetzten, kannst Du ansonsten nur dem Weg nach hinten folgen.
+$w71_kurz
+Du stehst im grünen Tor.
+$w72_lang
+Der Weg inmitten des Grüns von vorne knickt hier nach links ab. Rechts von
+Dir ist ein kleines Haus mit der Nummer 58 und hinter Dir ein ähnliches
+mit der Nummer 59. Der Weg nach links verläuft weiter innerhalb des
+Dickichts.
+$w72_kurz
+Rechts ist Haus Nummer 58 und hinter Dir Haus Nummer 59.
+$w73_lang
+Der Weg von links nach rechts verläuft hier innerhalb eines Gebüschs, das
+Dir Sicht und Durchgang nach vorne und hinten versperrt. In beide möglichen
+Richtungen führt der Weg auf kleine Häuser zu.
+$w73_kurz
+Du stehst auf dem Weg im Gebüsch.
+$w74_lang
+Der Pfad von rechts endet hier links vor einem kleinen Haus mit der
+Nummer 60. Das Haus und der Weg sind völlig in ein Gebüsch eingebettet.
+Ich denke, in dieser Atmosphäre möchte ich nicht wohnen.
+$w74_kurz
+Links ist Haus Nummer 60.
+$w81_lang
+Du befindest Dich auf einem Pfad durch eine Hecke vor und hinter Dir.
+Links trifft der Pfad auf eine Straße und nach rechts scheint er auf
+ein kleines Haus zuzulaufen.
+$w81_kurz
+Du bist auf dem Pfad in der Hecke.
+$w82_lang
+Der Pfad, der offensichtlich nach links durch eine Hecke zu einer
+Straße führt, endet rechts vor einem kleinen Haus mit der Nummer 
+31. Er setzt sich hinter Dir fort, wo ein ähnliches Häuschen zu
+sehen ist. Vor Dir liegt eine ausgedehnte Rasenfläche.
+$w82_kurz
+Rechts ist Haus Nummer 31.
+$w83_lang
+Du bist hier in einer Art Sackgase im Inneren einer dichten Hecke. Vor
+Dir führt eine Lücke ins Freie und hinter Dir endet ein Pfad vor der
+Tür eines kleinen Hauses mit der Nummer 30.
+$w83_kurz
+Hinter Dir ist Haus Nummer 30.
+$w91_lang
+Du stehst unmittelbar vor einigen Büschen, durch die ein schmaler Weg
+führt. Dahinter kannst Du so etwas wie eine Straße erkennen. Links von 
+Dir bleibt das Buschwerk dicht und versperrt Dir den Weg. Rechts ist
+ein kleines Haus mit der Nummer 35. Der Weg zwischen den Büschen führt
+von hier aus nach Süden und scheint kurz hinter Dir nach rechts abzuknicken.
+$w91_kurz
+Rechts ist Haus Nummer 35.
+$w92_lang
+Ein Pfad von vorne den Hang hinab knickt hier nach rechts ab. In der
+Außenseite des Knicks stehen zwei kleine Häuser. Das Haus links von Dir
+trägt die Nummer 34 und das hinter Dir die Nummer 36.
+$w92_kurz
+Links ist Haus Nummer 34 und hinter Dir Haus Nummer 36.
+$w93_lang
+Der Fußpfad von Westen nach Osten verläuft hier entlang eines Rasens
+hinter Dir, der den gesamten Hang bedeckt und auf dem einige kleine
+Häuser und vereinzelt Bäume zu sehen sind. Unmittelbar vor Dir ist 
+ein ebensolches Haus mit der Nummer 38.
+$w93_kurz
+Vor Dir ist Haus Nummer 38.
+$w94_lang
+Du befindest Dich auf einem Trampelpfad inmitten eines lichten Gebüschs.
+Vor und hinter Dir endet das Gebüsch. Hinter Dir trifft der Pfad
+offenbar schon bald auf ein kleines Haus und vor Dir auf einen breiten
+Weg.
+$w94_kurz
+Du stehst in dem Gebüsch bei dem breiten Weg.
+$w95_lang
+Der Weg von links nach rechts kreuzt hier einen Trampelpfad, der nach
+vorne den Hang hinauf führt, direkt in ein Gebüsch hinein. Kurz hinter
+Dir endet er vor einem kleinen Haus mit der Nummer 37.
+$w95_kurz
+Hinter Dir ist Haus Nummer 37.
+$w96_lang
+Ein Fußpfad von links endet rechts vor einem kleinen Haus mit der Nummer
+27. Vor Dir ist ein dichtes Gebüsch, daß sich in beide Richtungen
+fortsetzt. Der Rasen hinter Dir, der den Hang mit den vielen kleinen
+Häusern ähnlich dem, neben dem Du stehst, bedeckt, scheint des öfteren
+zur Überquerung durch Fußgänger und Fahrradfahrer genutzt zu werden.
+$w96_kurz
+Rechts ist Haus Nummer 27.
+$wa1_lang
+Du stehst auf einem kleinen Fußpfad am oberen Ende eines mit Gras
+bewachsenen Hangs. Auf dem Rasen stehen viele kleine Häuser, zu denen
+einzelne Wege führen. Der Rasen neben dem Pfad sieht gut gepflegt aus
+und wir sollten ihn daher lieber nicht betreten. Der Pfad selbst trifft
+vor Dir auf eine Art Straße und verläuft hinter Dir den Hang hinunter
+genau auf ein Haus zu.
+$wa1_kurz
+Du bist am oberen Ende des Hügels.
+$wa2_lang
+Der Pfad verzweigt sich hier von vorne kommend nach rechts. Links ist
+ein kleines Haus mit der Nummer 21 und hinter Dir ein ähnliches mit
+der Nummer 22.
+$wa2_kurz
+Links ist Haus Nummer 21 und hinter Dir Haus Nummer 22.
+$wa3_lang
+Der Weg strebt links und rechts kleinen Häusern zu. Im Gegensatz zu dem
+gepflegten Rasen unmittelbar vor Dir sieht das Grün hinter Dir doch
+verdächtig nach intensiver Benutzung durch Fußgänger aus.
+$wa3_kurz
+Nach links und rechts geht es zu kleinen Häusern.
+$wa4_lang
+Unmittelbar rechts neben Dir endet der von links kommende Weg vor einem
+kleinen Haus mit der Nummer 17. Der Weg selbst setzt sich vor und
+hinter Dir fort.
+$wa4_kurz
+Rechts ist Haus Nummer 17.
+$wa5_lang
+In diesem Knick des Weges von hinten nach rechts stehen an der Außenseite
+der Kurve zwei kleine Häuser. Das Haus links trägt die Nummer 20 und
+unmittelbar vor Dir ist Haus Nummer 19.
+$wa5_kurz
+Links ist Haus Nummer 20 und vor Dir Haus Nummer 19.
+$wa6_lang
+Der Weg von links endet hier rechts vor dem Haus mit der Nummer 18. Vor
+und hinter Dir versperren dichte Zierbüsche den Weg. Überhaupt ist dieses
+Haus von einem dichten Bewuchs umgeben. Ein El Dorado für Insekten. Du
+solltest Dir vormerken, daß man dieses Haus am besten nur mit Insektenspray
+betritt.
+$wa6_kurz
+Rechts ist Haus Nummer 18.
+$wa7_lang
+Der Fußpfad folgt dem Gefälle des Hangs von Norden nach Süden. Im Gegensatz
+zu Deiner rechten Seite scheint der Rasen links auch für Fußgänger 
+freigegeben zu sein. Zumindest wird er des öfteren als Weg benutzt.
+$wa7_kurz
+Du stehst auf dem Pfad im Hang.
+$wa8_lang
+An dieser Stelle knickt der Weg von vorne den Hang hinab nach links ab
+und verläuft in etwa auf einer Höhe. Rechts ist ein kleines Haus mit der
+Nummer 16. Vor Dir begrenzen einige Büsche den Rasen.
+$wa8_kurz
+Rechts ist Haus Nummer 16.
+$wa9_lang
+Du befindest Dich auf einem ziemlich geraden Stück des Fußpfades, der
+hier von links nach rechts läuft. Hinter Dir verdecken einige Büsche Sicht
+und Durchgang auf den Rasen.
+$wa9_kurz
+Du stehst auf dem Pfad vor den Büschen.
+$wa10_lang
+Hier ist eine Art Kreuzung des Pfades. Er setzt sich außer nach vorne
+in alle Richtungen ein gutes Stück fort. Vor Dir siehst Du ein kleines
+Haus mit der Nummer 23.
+$wa10_kurz
+Vor Dir ist Haus Nummer 23.
+$wa11_lang
+Du bist jetzt auf einem leicht abschüssigen Pfad, der dem Gefälle des
+Hangs von Norden nach Süden folgt. Links ist eine Art englischer Rasen,
+dessen Betreten untersagt ist. 
+Rechts steht ein kleines Haus mit der Nummer 15.
+$wa11_kurz
+Rechts ist Haus Nummer 15.
+$wa12_lang
+Der Weg von vorne den Hang hinab macht hier eine scharfe Kehre nach rechts,
+wo er offenbar auf eines der vielen Häuser zuführt, mit denen der Hang
+übersät ist.
+$wa12_kurz
+Du stehst in einer Kehre des Pfades.
+$wa13_lang
+Der Pfad von links endet hier rechts vor einem kleinen Haus mit der Nummer
+14. Vor und hinter Dir sind einige Zierbüsche angebracht, die den Eingang
+in ein eigentümliches Dämmerlicht werfen.
+$wa13_kurz
+Rechts ist Haus Nummer 14.
+$wa14_lang
+Wenn Du dem Pfad nach links oder rechts folgst, bleibst Du auf etwa einer
+Höhe im Hang. Hinter Dir versperrt dichtes Buschwerk und ein niegdriger 
+Holzzaun den Durchgang. Vor Dir
+blickst Du auf den Rasen, auf dem viele kleine Häuser und einige mehr oder
+weniger eindrucksvolle Bäume zu sehen sind.
+$wa14_kurz
+Du bist bei dem Holzzaun.
+$wa15_lang
+Der Pfad setzt sich nach rechts und links fort. Links scheint er schon bald
+auf ein kleines Haus zu treffen. Hinter Dir befindet sich ein Holzzaun und
+ein dichtes Gebüsch. Vor Dir siehst Du den grasbedeckten Hang mit vielen
+kleinen Häusern und einigen Bäumen.
+$wa15_kurz
+Links kommt bald ein kleines Haus.
+$wa16_lang
+Ein Pfad von rechts knickt hier nach hinten ab und läuft dann weiter den
+Hang hinab auf eine Hecke zu. Vor Dir ist ein kleines Haus mit der Nummer
+26 und links ein sehr ähnliches Haus mit der Nummer 28.
+$wa16_kurz
+Links ist Haus Nummer 28 und vor Dir Haus Nummer 26.
+$wa17_lang
+Der Pfad von vorne nach hinten den Hang hinab hat hier eine Art Kreuzung.
+Nach links läuft er soweit Du ihn übersehen kannst in einer Höhe quer
+zu Hang. Unmittelbar rechts neben Dir endet er vor einem kleinen Haus
+mit der Nummer 25.
+$wa17_kurz
+Rechts ist Haus Nummer 25.
+$wa18_lang
+Du kannst dem Pfad nach links und rechts folgen oder auf der Abzweigung nach
+hinten den Hang hinab gehen. Vor Dir siehst Du den Rasen des Hangs mit
+all seinen Häusern. Rechts läuft der Weg schon bald auf eines dieser
+Häuser zu.
+$wa18_kurz
+Der Weg verzweigt sich hier nach hinten den Hang hinab.
+$wa19_lang
+Links von Dir liegt etwas zurück in den Büschen ein kleines Haus mit der
+Nummer 29. Ein Pfad von vorne den Hang hinab knickt genau hier nach rechts
+ab, wo er auf ein von weitem gesehen gleiches Häuslein zuführt. Hinter
+Dir ist eine Dornenhecke.
+$wa19_kurz
+Links ist Haus Nummer 29.
+$wa20_lang
+Links und rechts siehst Du in nicht zu großer Entfernung zwei gleiche 
+Häuser, genauso vor Dir den Hang hinauf. Hinter Dir befindet sich eine 
+unangenehm aussehende Dornenhecke.
+$wa20_kurz
+Du stehst vor der Dornenhecke.
+$wa21_lang
+Der Weg von links endet hier rechts vor einem kleinen Haus mit der Nummer
+24. Der Weg ist vor und hinter Dir von einer unfreundlichen Dornenhecke
+begrenzt, die sich um das ganze Haus zu ziehen scheint. Vielleicht hast
+Du Dornröschens Schloß gefunden? Obwohl - um ganz ehrlich zu sein - ich mir
+das etwas eindrucksvoller vorgestellt hatte.
+$wa21_kurz
+Rechts ist Haus Nummer 24.
+$wa22_lang
+Ein Pfad zieht sich hier quer zu dem Hang auf etwa einer Höhenlinie
+von Westen nach Osten. Einen krassen Gegensatz bilden die beiden
+Rasenflächen vor und hinter Dir. Im Gegensatz zu dem wohlgepflegten
+Rasen hinter Dir ist das Gras vor Dir den Hang hinauf deutlich platt
+getrampelt. Einige Leute benutzen hier wohl den Rasen als Abkürzung zu
+den kleinen Häusern.
+$wa22_kurz
+Du stehst zwischen den unterschiedlichen Rasenflächen.
+$wa23_lang
+Der Fußpfad zieht sich schnurgerade von rechts nach links, wo Du in einiger
+Entfernung ein kleines Haus am Ende des Pfades erahnen kannst. Vor Dir auf
+einem etwas heruntergekommenen Rasen siehst Du einen Baum, dessen Blätter
+Dir seltsam vertraut vorkommen. Nach kurzem Überlegen erkennst Du einen
+Ahornbaum. Hinter Dir ist ein deutlich gepflegterer Rasen.
+$wa23_kurz
+Vor Dir auf dem Rasen steht ein Ahornbaum.
+$wa24_lang
+Du bemerkst, daß sich der Hang hier von rechts nach links leicht
+absenkt. Der Pfad, der nach rechts geradeaus verläuft, beginnt links
+bereits etwas nach hinten weg zu knicken. In der Kurve, die dort schon von
+Ferne zu sehen ist, scheint ein kleines Haus zu stehen. Vor und hinter Dir
+befindet sich je eine Rasenfläche in einem Hang, auf denen kleine
+Häuser stehen. Der Rasen hinter Dir ist wohl nicht zum Betreten gedacht.
+$wa24_kurz
+Weiter links steht ein kleines Haus.
+$wa25_lang
+Der kleine Fußpfad trifft hinter Dir auf eine Art Straße. Von dort kommend
+knickt er dort, wo Du stehst, nach rechts ab und verläuft dann ohne
+wesentliche Steigung weiter. Hier in der Kurve sind zwei kleine Häuser.
+Das mit der Nummer 33 befindet sich unmittelbar vor Dir und auch die
+Nummer 32 links ist schnell zu erreichen.
+$wa25_kurz
+Links ist Haus Nummer 32 und vor Dir Haus Nummer 33.
+$wb1_lang
+Links von Dir ist eine Straße, von der der schmale Pfad abzweigt, auf dem
+Du Dich gerade befindest. Er setzt sich nach rechts fort und läuft in einiger
+Entfernung auf ein kleines Haus zu. Ein ähnliches Haus mit der Nummer 12
+befindet sich unmittelbar hinter Dir. Auf dem Rasen vor Dir sollten wir
+lieber nicht herumlaufen. 
+$wb1_kurz
+Hinter Dir ist Haus Nummer 12.
+$wb2_lang
+Der Pfad von links knickt hier nach hinten ab. Rechts unmittelbar nach dem
+Ende des Pfades siehst Du ein kleines Haus mit der Nummer 13 - ich hoffe,
+das bringt uns kein Unglück. Die Bewohner haben - offenbar in dem selben
+Aberglauben - ein Hufeisen über dem Eingang angebracht.
+Im weiteren Verlauf des Pfades nach hinten erkennst Du ein weiteres Haus.
+$wb2_kurz
+Rechts ist Haus Nummer 13.
+$wb3_lang
+Der Weg von vorne endet unmittelbar hinter Dir vor einem kleinen Haus mit 
+der Nummer 11.
+$wb3_kurz
+Hinter Dir ist Haus Nummer 11.
+$wc1_lang
+Links von Dir ist ein Gebüsch, durch das der schmale Pfad führt, auf dem
+Du Dich gerade befindest. Er setzt sich hinter Dir fort und knickt dann
+wohl nach rechts ab. Rechts neben Dir siehst Du ein kleines Haus mit
+der Nummer 10. Den Rasen vor Dir sollten wir lieber nicht betreten,
+da das Schild "Betreten des Rasens bei Todesstrafe verboten" vielleicht
+doch ernst ist - oder die gebleichten Knochen rings herum sind ein
+übler Scherz. Ein eigenartiges Rauschen liegt in der Luft.
+$wc1_kurz
+Rechts ist Haus Nummer 10.
+$wc2_lang
+Der Pfad von vorne knickt hier nach rechts ab. Links von Dir ist ein kleines
+Haus mit der Nummer 8. Ein Tosen erfüllt die Luft und läßt Dir eine 
+Gänsehaut über den Rücken krabbeln - nun ja, vielleicht krabbelt da auch
+etwas Lebendiges. Die Ursache des Krachs ist nicht zu entdecken.
+$wc2_kurz
+Links ist Haus Nummer 8.
+$wc3_lang
+Der Fußpfad führt nach links und rechts in einiger Entfernung auf niedliche
+kleine Häuser von gleicher Bauart zu. Es ist wirklich laut hier und Du 
+ärgerst Dich, daß Du Deinen Walkman nicht dabei hast. Der ist zwar auch
+nicht leiser, aber der Krach aus ihm nervt Dich wenigstens nicht so.
+$wc3_kurz
+Du vermißt Deinen Walkman.
+$wc4_lang
+Du bist am Ende eines Fußpfades, der rechts vor einem kleinen Haus mit
+der Nummer 9 beginnt und nach links auf ein anderes Haus zuläuft. Ich
+kann mir kaum denken, daß dieses Haus hier bei dem unerträglichen
+Krach bewohnt ist.
+$wc4_kurz
+Rechts ist Haus Nummer 9.
+$wd1_lang
+Du bist hier inmitten eines Gebüschs auf einem Pfad, der vor Dir als
+Abzweigung einer Straße beginnt und sich nach hinten fortsetzt. Dort
+scheint das Gebüsch zu enden und Du blickst auf eine mittelgroße
+Rasenfläche. Es ist ziemlich laut hier in der Gegend.
+$wd1_kurz
+Du bist auf dem Pfad zwischen den Büschen.
+$wd2_lang
+Der Pfad knickt hier von vorne nach links ab und führt rechts zu einem
+kleinen Haus mit der Nummer 5. Ein schrecklicher Krach in der Luft geht
+Dir ganz schön auf die Nerven.
+$wd2_kurz
+Rechts ist Haus Nummer 5.
+$wd3_lang
+Du kannst hier den Fußpfad nach rechts und links überblicken, wo er zu
+einigen niedlichen Häusern führt. Den wohlgepflegten Rasen wollen wir lieber
+nicht betreten, vor allem da er wohl öfter von Hunden zum Austreten
+betreten wird. Die müssen es wirklich eilig haben, wenn sie bei diesem
+Krach hier nicht direkt abhauen.
+$wd3_kurz
+Hier ist der Rasen in ein Hundeklo verwandelt worden.
+$wd4_lang
+An dem Pfad von links nach rechts liegt unmittelbar vor Dir ein kleines
+Haus mit der Nummer 6. Ich möchte hier bei dem Krach nicht wohnen.
+$wd4_kurz
+Vor Dir ist Haus Nummer 6.
+$wd5_lang
+Der Pfad scheint links in Kürze einen Knick zu machen. Nach rechts verläuft
+er noch ein Stück geradeaus weiter, genau auf ein süßes kleines Haus zu.
+Genau so ein Haus mit der Nummer 7 befindet sich unmittelbar vor Dir.
+Es scheint aber nicht bewohnt zu sein, was wohl auf dem Lärm hier
+zurückzuführen ist.
+$wd5_kurz
+Vor Dir ist Haus Nummer 7.
+$wd6_lang
+Der Weg von rechts endet hier eigentlich. Hinter Dir führt eine Treppe
+hinunter in eine Art Fußgängertunnel. Der Krach ist kaum noch ertragbar.
+$wd6_kurz
+Hinter Dir ist eine Treppe nach unten in einen Tunnel.
+$wd7_lang
+Du bist am unteren Ende einer Treppe vor Dir am Anfang eines Tunnels.
+Der Tunnel setzt sich nach hinten fort. Es ist angenehm ruhig hier.
+$wd7_kurz
+Hinter Dir ist der Tunnel.
+$tunnel_lang
+Du bist in einem finsteren Tunnel. An sich würde Dich die Dunkelheit
+unruhig machen, aber da Du an dem Geruch erahnst, daß dieser Tunnel
+auch des öfteren als Toilette benutzt wird, ist es Dir doch lieber,
+nicht so viel zu sehen. Ein leichtes Brummen, das von der niedrigen
+Decke zu kommen scheint, erfüllt den Tunnel. Der Tunnel ist vor und hinter
+Dir ziemlich bald zu Ende.
+$tunnel_kurz
+Du bist in einem finsteren miefigen Tunnel.
+$we1_lang
+Du stehst auf einem Fußweg auf einer gepflegten Rasenfläche, die wir doch
+lieber nicht betreten möchten. Auf dem Rasen sind einige kleine Häuser
+verteilt. Eine Handvoll Büsche ergänzt das Bild und schafft die angenehme
+Atmosphäre eines Parks. Der Pfad mündet kurz vor Dir in einen Weg und
+setzt sich nach hinten über den Rasen fort. Es ist ziemlich laut hier.
+$we1_kurz
+Du bist auf dem Fußpfad.
+$we2_lang
+Der Pfad knickt hier von vorne nach rechts ab. In der Krümmung steht eine
+recht große Birke, in deren Krone eigentümlicher Weise eine Lederjacke
+hängt, wie gewisse Motorradfahrer sie zu tragen pflegen. Auf der Rückseite
+ist die Aufschrift "Randale" eingestickt. Irgendwie irritiert Dich der
+laute Krach in dieser Gegend.
+$we2_kurz
+Du stehst neben der Birke mit der Motorradjacke.
+$we3_lang
+Der Weg von links endet rechts vor dem Eingang eines kleinen Hauses. Das
+Haus trägt die Nummer 4. Die Klingel ist demontiert und durch einen
+stahlbeschlagenen Springerstiefel ersetzt, der an einer öligen Kette
+irgendwo oberhalb der Türe aufgehängt ist. Irgendwie meine ich, das
+ist nicht unser Platz hier. Der Krach, der diese Umgebung zu erfüllen
+scheint, ist hier kaum zu hören. Das liegt wohl an dem Gegröle, das
+mit der Lautstärke eines startenden Jumbos - wohlgemerkt im gleichen 
+Abstand - aus dem Haus vor Dir kommt.
+$we3_kurz
+Rechts ist Haus Nummer 4.
+$wf1_lang
+Ein schmaler Fußpfad trifft unmittelbar vor Dir auf eine Art Straße.
+Rechts von Dir ist ein kleines Haus mit der Nummer 1. Auf der linken
+Seite ist ein unheimlich dunkeler Wald. Es ist ziemlich laut hier und
+in Deiner Phantasie stellst Du Dir die Geschöpfe vor, die diese
+Geräusche von sich geben könnten und die im finsteren Wald hausen.
+Hinter Dir scheint der Pfad schon bald abzuknicken.
+$wf1_kurz
+Rechts ist Haus Nummer 1.
+$wf2_lang
+Der Fußpfad verläuft hier schon fast im Wald. Vor Dir ist es etwas 
+lichter aber im weiteren Verlauf des Pfades nach links wird es deutlich
+dunkeler. Ein ohrenbetäubender Krach erfüllt die Luft.
+$wf2_kurz
+Du stehst am Rande des dunkelen Waldes.
+$wf3_lang
+Der Fußpfad durch den unheimlichen, lauten Wald führt nach links und
+rechts weiter. Unmittelbar hinter Dir mitten im dichtesten Gestrüpp
+ist ein kleines Haus mit der Nummer 2. Es sieht so aus, als wäre seine
+Vorderseite mit Lebkuchen bedeckt, aber das ist hoffentlich nur
+Einbildung.
+$wf3_kurz
+Hinter Dir ist Haus Nummer 2.
+$wf4_lang
+Du bist mitten im tiefsten Wald und kannst Dein eigenes Wort nicht 
+verstehen. Der Pfad durch den Wald knickt hier von rechts kommend
+ab und verläuft nach vorne weiter. Ein einsamer Sonnenstrahl erhellt
+dieses Fleckchen Welt und offenbart links neben Dir ein kleines
+Haus mit der Nummer 3.
+$wf4_kurz
+Rechts ist Haus Nummer 3.
+$g11_lang
+Du bist hier auf einer Rasenfläche, auf der mehrere kleine Häuser
+verstreut stehen. Links von Dir ist die Hinterfront eines dieser
+Häuser. Ein Weg, der sich vor und hinter Dir über das Grün windet,
+scheint zu den Vorderseiten der Häuser zu führen.
+$g11_kurz
+Du bist auf dem Rasen zwischen den Wegen.
+$g12_lang
+Unmittelbar vor Dir ist die Terasse eines kleines Hauses. Die Schiebetür
+steht einladend weit auf und ein verlockender Duft dringt Dir in die Nase.
+Vielleicht wäre es besser, sich etwas zu stärken, bevor Du weiter an der
+Lösung dieses Adventures arbeitest? Hinter Dir ist der Rasen durch einen
+Weg begrenzt, der sich nach links und rechts fortsetzt.
+$g12_kurz
+Hier duftet es gut und Dir knurrt der Magen.
+$g13_lang
+Du stehst jetzt praktisch in der Mitte der großen Rasenfläche, die einen
+Teil des Parks bildet. Rechts von Dir ist die Terasse eines kleinen Hauses,
+das allerdings verschlossen zu sein scheint. 
+$g13_kurz
+Rechts ist die geschlossene Terassentür eines kleinen Hauses.
+$g14_lang
+Der Rasen verengt sich hier zwischen dem Weg rechts und der Hinterfront
+des kleinen Hauses zu einem engen Schlauch. Vorne siehst Du in einiger
+Entfernung einige Büsche.
+$g14_kurz
+Du bist auf dem Rasen zwischen dem Weg und der Hinterfront eines kleinen
+Hauses.
+$g15_lang
+Du hast eine Art Sackgasse der Grasfläche erreicht. Vor Dir und links ist
+ein Gebüsch, das rechts bündig mit der Hinterseite eines kleinen Hauses
+abschließt. Da das Haus verschlossen zu sein scheint, kannst Du nur
+nach hinten in den Park zurück.
+$g15_kurz
+Du bist in einer Sackgasse gelandet.
+$g16_lang
+Der Rasen verläuft hier entlang des Gebüschs hinter Dir. Links endet die
+Fläche an der Terasse eines kleinen Hauses. Die Glastüre zum Inneren des
+Hauses ist nicht ganz zugezogen und durch das Glas hindurch entdeckst
+Du einen Amiga Personalcomputer mit der Workbenchversion 3.0 - das macht
+Dich doch etwas neugierig.
+$g16_kurz
+Links ist das Haus mit dem Amiga.
+$g17_lang
+Du läufst hier zwischen dem Weg vor Dir und den Büschen hinter Dir auf
+dem Rasen entlang. Ein schmaler Streifen Grün führt in das Dickicht 
+hinein.
+$g17_kurz
+Hinter Dir ist eine Schneise in den Büschen.
+$g18_lang
+Schade, das war wohl nichts. Du stehst inmitten der Büsche und nichts
+geht mehr. Du kannst nur nach vorne auf dem Rasen bleibend aus dem Dickicht
+heraus gehen.
+$g18_kurz
+Du stehst inmitten der Büsche.
+$g19_lang
+Du hast eine Art Bucht innerhalb des Buschwerks erreicht. Mit Deinen
+jetzigen Möglichkeiten kannst Du nur nach links auf dem Rasen die
+Büsche verlassen.
+$g19_kurz
+Du stehst im Wald.
+$g21_lang
+Du stehst auf einer Art Terasse hinter einem kleinen Haus rechts von Dir. 
+Die Glastür zur Terasse ist zur Zeit zugeschoben. Vor Dir befindet sich 
+ein dichtes Gebüsch. In die anderen Richtungen kannst Du einen grasbedeckten
+Hang erblicken, auf dem noch weitere der kleinen Häuser sowie einige
+Bäume stehen.
+$g21_kurz
+Du stehst auf der Terasse des Hauses rechts von Dir.
+$g22_lang
+Hier hört die Rasenfläche des Hangs auf. Sie wird außer nach rechts durch
+einen schmalen Weg begrenzt, der offenbar zu den Vordereingängen der
+kleinen Häusern führt.
+$g22_kurz
+Du stößt hier auf den Weg zu den Vordereingängen der kleinen Häusern.
+$g23_lang
+Vor und hinter Dir siehst Du die Terassen von zwei kleinen Häusern. Bei dem
+Haus hinter Dir ist die Glastür ins Innere weit geöffnet und eine aufreizende
+junge Dame winkt Dir einladend zu. Auf dem Tisch hinter ihr siehst Du 
+einige Kerzen in romantischem Schein erglimmen. Links von Dir beginnt eine
+weite Rasenfläche und rechts scheint eine Art Weg über das Gras zu sein.
+$g23_kurz
+Hinter Dir winkt eine junge Dame einladend.
+$g24_lang
+Der Rasen wird hinter Dir durch einen Fußpfad begrenzt, der quer zum Hang
+läuft und offenbar zu den kleinen Häusern führt. Nach rechts läuft von
+hier aus nur noch ein schmales Stück Grasland zwischen zwei Häusern
+hindurch. Wenn Du nach links siehst, kannst Du einen Großteil des Hangs
+überblicken.
+$g24_kurz
+Rechts stehen zwei kleine Häuser.
+$g25_lang
+Du stehst auf einer Rasenfläche in einem Hang unmittelbar vor einem 
+kleinen Weg. Vor Dir den Hang hinauf steht ein Baum und dahinter begrenzt
+etwas dichtes Grünes den Rasen.
+$g25_kurz
+Hinter Dir ist ein schmaler Weg.
+$g26_lang
+An dieser Stelle des Rasens wächst eine Birke. Du kannst von hier aus
+außer nach vorne in alle Richtungen gehen. Vor Dir begrenzt ein dichtes
+Buschwerk das Gelände.
+$g26_kurz
+Du stehst bei der Birke bei den Büschen.
+$g27_lang
+Du stehst auf einem grasbewachsenen Hang, auf dem viele kleine Häuser stehen. 
+Unmittelbar vor Dir ist ein dichtes Gebüsch an dessen Ästen kleine rote
+Beeren wachsen. Rechts von Dir steht ein Baum.
+$g27_kurz
+Du bist bei dem Gebüsch mit den Beeren.
+$g28_lang
+Unmittelbar hinter Dir ist die Hinterfront eines kleinen Hauses zu sehen.
+Dort geht der Rasen in eine Terasse über. Nach vorne hin steigt das Gelände,
+auf dem Du Dich befindest, deutlich an. Du kannst auf dem Rasen mehrere
+dieser kleinen Häuser sowie einige Bäume und Büsche sehen.
+$g28_kurz
+Hinter Dir ist die Terasse eines kleinen Hauses.
+$g29_lang
+Diese Stelle des Hangs würde sich kaum von dem Rest unterscheiden, wenn
+hier nicht diese beeindruckende Eiche unmittelbar vor Dir stehen würde.
+Dahinter begrenzt ein dichtes Gebüsch das Gelände den Hang hinauf. Rechts
+von Dir liegt die Terasse eines kleinen Hauses.
+$g29_kurz
+Du bist bei der Eiche.
+$g210_lang
+Unmittelbar hinter Dir ist die Seitenfront eines kleinen Hauses zu sehen.
+Wenn Du in die anderen Richtungen schaust, kannst Du den Hang überlicken,
+der nach Norden hin recht deutlich ansteigt. Vor und links neben Dir
+wachsen große Bäume.
+$g210_kurz
+Hinter Dir ist ein kleinen Haus.
+$g211_lang
+Du bist auf der Terasse eines kleinen Haus links neben Dir. Wenn Du auf
+dem Rasen nach rechts oder hinten spazierst, wirst Du wohl auf einige
+beeindruckende Bäume treffen. Ganz im Gegensatz dazu befindet sich vor 
+Dir ein recht erbärmliches Gebüsch, das Dir trotz seiner Häßlichkeit
+den Weg versperrt.
+$g211_kurz
+Du bist auf der Terasse des kleinen Hauses links von Dir.
+$g212_lang
+Du stehst auf der Terasse eines kleinen Hauses, das sich rechts von
+Dir befindet. Durch das Glas der Terassentür erkennst Du auf dem
+Tisch einen riesigen Haufen neuer Hundertmarkscheine. Den Bewohnern
+dieses Hauses scheint es zumindest finanziell nicht schlecht zu gehen.
+Hinter Dir ist ein befestigter Fußpfad, der wohl zu den Eingängen der
+kleinen Häusern führt. In die anderen Richtungen erstreckt sich ein minder
+gepflegter Rasen, der den Hang bedeckt.
+$g212_kurz
+Du stehst auf der Terasse des Hauses mit dem vielen Geld.
+$g213_lang
+Hinter Dir wird der Rasen durch einen schmalen Pfad begrenzt. Wenn Du
+in eine der anderen Richtungen schaust, kannst Du einen Teil des Hangs
+übersehen, der nach Norden hin ansteigt. Über den Hang sind kleine Häuser
+und einige Bäume verteilt. Links kommt zum Beispiel bald ein Baum und rechts
+eines dieser Häuser.
+$g213_kurz
+Hinter Dir ist der Fußpfad.
+$g214_lang
+Hier wächst ein schöner Ahornbaum aus dem Rasen - zumindest denkst Du an
+der Form der Blätter erkennen zu können, daß es sich um Ahorn
+handelt. Nun ja, Deine letzte Biostunde ist auch schon etwas her,
+oder? Gab es da schon Bäume? Wie dem auch sei, Du kannst von hier aus 
+weiter auf dem Rasen langlaufen oder Dich auf den Weg hinter Dir begeben.
+$g214_kurz
+Hier ist der Baum, den Du für Ahorn hälst.
+$g215_lang
+Direkt hinter Dir ist ein schmaler Weg, der die Rasenfläche, auf der Du
+Dich befindest, begrenzt. Der Rasen zieht sich vor Dir einen Hang
+hinauf. Rechts von Dir siehst Du einen großen Baum.
+$g215_kurz
+Du stehst vor dem Fußpfad.
+$g216_lang
+Hier ist das Gras ziemlich feucht und nach links hin wird es äußerst
+matschig. Du siehst dort eine Art Sumpf oder Moor, aus dem tückisch
+schillernde Gaswolken aufsteigen. Unmittelbar hinter Dir ist die
+Terasse eines kleinen Hauses, das wie es mir scheint schon etwas
+eingesunken ist. Den Hang hinauf sieht der Boden etwas 
+trockener aus.
+$g216_kurz
+Links ist der Sumpf.
+$g217_lang
+Du stehst hier bei einer Buche auf dem Rasen. Vor Dir, etwas den Hang
+hinauf, ist die Terasse eines kleinen Hauses zu sehen.
+$g217_kurz
+Du bist bei der Buche.
+$g218_lang
+Die Rasenfläche endet hier unmittelbar vor Dir bei einem kleinen
+Fußpfad, der zu dem Haus führt, das Du schräg vor Dir siehst. 
+Rechts auf den Gras wächst ein großer Baum.
+$g218_kurz
+Vor Dir ist ein Fußpfad.
+$g219_lang
+Du stehst hier auf der Terasse eines kleinen Hauses unmittelbar vor Dir.
+In den anderen Richtungen schließt sich eine Grasfläche an, die hinter
+Dir deutlich abfällt. Auf dieser Fläche stehen weitere kleine Häuser
+und vereinzelt Bäume oder Büsche.
+$g219_kurz
+Du bist auf der Terasse des Hauses vor Dir.
+$g220_lang
+Du kannst vor Dir den Hang hinauf auf einen Weg kommen, der die Grenze
+der Rasenfläche bildet. Links und rechts ist der Rasen durch die
+Terassen kleiner Häuser unterbrochen.
+$g220_kurz
+Vor Dir zwischen den Häusern hindurch siehst Du einen Fußpfad.
+$g221_lang
+Wenn Du Deinen Blick von der Terasse aus in das Haus vor Dir wirfst, 
+siehst Du eigentlich nur einen großen Bottich, der das Dir zugewandte
+Zimmer des Hauses dominiert. Er ist mit Wasser und Eis gefüllt. In dem
+Wasser schwimmen mehrere Flaschen Bier bester Pilsener Brauart und Dir
+läuft das Wasser über Deine ausgetrocknete Zunge. Die Terassentür ist
+einladend geöffnet und kein Mensch zu sehen. Links und hinter Dir beginnt
+am Ende der Terasse eine matschige Rasenfläche, nach rechts hin scheint
+es trockener zu sein.
+$g221_kurz
+Vor Dir ist viel Bier.
+$g222_lang
+Rechts neben Dir liegt die Terasse eines kleinen Haus. Die Terasse
+und der Rasen sind nach vorne hin durch ein dichtes Gebüsch begrenzt.
+Hinter Dir den Hang hinab wird der Rasen etwas feucht.
+$g222_kurz
+Rechts ist die Terasse eines kleinen Hauses.
+$g223_lang
+Bei jedem Schritt den Du auf diesem matschigen Boden machst sind schmatzende
+Laute zu hören. Hinter Dir bordelt es und der Rasen geht in eine Art Moor
+über. Übelriechende Dämpfe erfüllen die Luft.
+$g223_kurz
+Hinter Dir ist das Moor.
+$g225_lang
+Rechts neben Dir ist die Terasse eines kleinen Hauses, die vor Dir unmittelbar
+in einen sumpfiges Boden übergeht. Links scheint es zumindest hinter Dir
+etwas trockener zu sein. Ganz nach Süden kannst Du allerdings nicht, da
+ein Zaun den Durchgang zu einer Art Straße verhindert.
+$g225_kurz
+Rechts ist die Terasse eines kleinen Hauses und vor Dir beginnt der Sumpf.
+$g226_lang
+Hinter Dir hinter einem Zaun ist ein breiter asphaltierter Weg. Du stehst
+zur Zeit auf der Terasse des kleinen Hauses links neben Dir. Vor Dir
+und rechts ist ein Rasen, der leicht feucht zu sein scheint.
+$g226_kurz
+Du stehst auf der Terasse des kleinen Hauses links von Dir.
+$g227_lang
+Du mußt hier etwas aufpassen, da der Boden durch den hohen Feuchtigkeitsgehalt
+doch sehr rutschig ist. Unmittelbar vor Dir geht das Gelände in einen
+brodelnden unheimlichen Sumpf über. Einige der aus dem Sumpf ragenden Gebilde
+scheinen mir gebleichte Knochen zu sein - aber wen interessiert schon
+meine Meinung.
+$g227_kurz
+Vor Dir ist der Sumpf.
+$g228_lang
+Du befindest Dich hier in einer Art Vormoor. Rechts von Dir ist ein Moor,
+über dem ein dünner Nebelschleier liegt. Wenn Du Dir etwas Mühe gibst,
+kannst Du Dich rechts hinten vielleicht an ihm vorbeischlängeln. Vor Dir 
+ist der Rasen zwar immer noch sehr feucht, aber doch schon etwas fester.
+Am vertrauenerregensten für den weiteren Weg ist aber der schmale 
+Fußpfad hinter Dir. Nach links kannst Du nicht, da dort eine dichte Hecke
+wächst.
+$g228_kurz
+Rechts ist ein Moor.
+$g229_lang
+Du bist hier in einer Ecke des Hangs angelengt. Vor Dir und links begrenzt
+dichtes Grün den Rasen. Nach rechts hin scheint alles in Ordnung zu sein,
+aber hinter Dir wird der Rasen eigentümlich feucht.
+$g229_kurz
+Du stehst in der linken oberen Ecke des Hangs.
+$verboten/1
+Wie ich vielleicht schon erwähnt habe, geht es in diese Richtung nicht weiter.
+$verboten/2
+Dein Mut in allen Ehren, aber hier kannst Du nicht durch.
+$verboten/3
+Was denn, mal wieder mit dem Kopf durch die Wand? Such' Dir einen anderen
+Weg.
+$klettern
+Mit geradezu artistischer Leistung kletterst Du auf die Schranke, richtest
+Dich auf und machts einen einwandfreien Abgang durch einen Sprung mit 
+doppeltem Salto und Aufkommen im Stand. Vielleicht solltest Du Dich
+demnächst einmal für die olympischen Disziplinen der Hallenathleten
+bewerben.
+$hauszu/1
+Tut mir leid, aber die Haustüre ist zu.
+$hauszu/2
+Tut mir leid, aber die Haustüre ist zu.
+$hauszu/3
+Tut mir leid, aber die Haustüre ist zu.
+$hauszu/4
+Tut mir leid, aber die Haustüre ist zu.
+$hauszu/5
+Tut mir leid, aber die Haustüre ist zu.
+$hauszu/6
+Tut mir leid, aber die Haustüre ist zu.
+$hauszu/7
+Tut mir leid, aber die Haustüre ist zu.
+$hauszu/8
+Tut mir leid, aber die Haustüre ist zu.
+$hauszu/9
+Tut mir leid, aber die Haustüre ist zu.
+$hauszu/10
+Wie wäre es, wenn Du die Tür erst mal aufmachst oder klingelst?
+$hintenzu/1
+Die Schiebetüre ist leider zu.
+$hintenzu/2
+Autsch. Kennst Du nicht Regel eins der Türen: erst öffnen, dann durchgehen.
+Für die Mathematiker sei gesagt, daß diese Operationen hochgradig
+nichkommutativ sind.
+$hotel
+Nun, so vergammelt wie Du im Moment und überhaupt gekleidet bist wirst
+Du hier wohl nicht reinkommen. Dieses Hotel hält doch auf seinen guten
+Ruf und hat einige Portiers abgestellt, die unerwünschten Gästen den
+Zutritt verwehren sollen. Das ist an sich nichts Ungewöhnliches für Hotels,
+nur daß diese Portiers alle aus der amerikanischen Footballprofiliga
+kommen und entsprechend gekleidet sind. Dein Schmunzeln über ihren
+Aufzug vergeht Dir schnell, als sie Dir einen Football zuwerfen und Dich
+dann als zur gegnerischen Mannschaft gehörig erklären. Nachdem Du Dich
+wieder aufgerappelt hast, erkennst Du: das ist sicher nicht Dein Hotel
+und wenn, sollten wir das ganz schnell vergessen.
+$weltende/1
+Das glaubst Du doch wohl selbst nicht, daß ich Dich hier weiter gehen lasse.
+$weltende/2
+Tut mir leid, aber wir müssen uns an die Spielregeln halten. Hier ist
+Schluß für Dich.
+$weltende/3
+Deine Hartnäckigkeit kann leider nicht belohnt werden. Wie heißt es 
+so schön: "Wir müssen drinnen bleiben".
+$autsch/1
+Autsch, muß das denn sein.
+$autsch/2
+Du willst Dich wohl unbedingt verletzen.
+$autsch/3
+Ich hoffe, Du hast ein paar Pflaster dabei.
+$ausdauer
+Ich finde, Du solltest Dich langsam aufmachen und weitersuchen. Und vergiß 
+am Ende Jochen, Monika und die Wanderer nicht.
+$dornröschen
+In der Tür erscheint Dornröschen und bewundert Deine Klugheit, Handschuhe
+zu tragen, da sich bereits viele Besucher an den Dornen verletzt haben.
+Als Belohnung für Deine Weitsicht teilt sie Dir mit, daß Du Harald und
+die Guses nicht vergessen solltest und besser ab und zu mal auf die
+Uhr siehst. An Deiner Anwesenheit hat die Dame allerdings wenig Interesse,
+da sie gerade Urlaub macht und laut eigenen Angaben die Nase voll hat von
+Prinzen und sonstigen Machos. Sekunden später trennen nur noch Bruchteile
+eines Millimeters Deine Nase von der Tür.

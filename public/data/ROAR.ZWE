@@ -1,0 +1,60 @@
+$$zweiter
+$z1_lang
+Du bist hier am Ende eines langen Gangs. Unfreundliche Menschen - oder
+Monster, wer will das schon wissen - haben hier alles verrammelt, so daß Du
+Dich in einer Sackgasse befindest. Durch die Sichtfenster der Tür vor
+Dir kannst Du auf das für Dich unerreichbare Dach eines niedrigeren
+Nebengebäudes sehen. Es bleibt nur der Weg zurück nach hinten.
+$z1_kurz
+Du bist in der Sackgasse mit Blick auf das Dach.
+$z2_lang
+Unmittelbar rechts von Dir ist der Eingang zu einem Aufzug. Ein scharfer Blick
+zeigt Dir, daß die Kabine auf Deiner Höhe ist. Auch ansonsten scheint
+das Gefährt durchaus einsatzbereit zu sein. Der Gang, in dem Du stehst,
+führt von vorne nach hinten. Alle Türen auf Deiner linken Seite sind
+fest verschlossen.
+$z2_kurz
+Du stehst vor dem Aufzug im zweiten Stock.
+$z3_lang
+Du stehst neben einer breiten Treppe, die nach oben und unten in die anderen
+Etagen dieses Gebäudes weiterführt. Ein Gang in dieser Etage kann nach 
+vorne und hinten begangen werden. Links sind zwar einige Türen, aber
+im Augenblick scheint schon alles Feierabend zu haben.
+$z3_kurz
+Du stehst neben einer breiten Treppe.
+$z4_lang
+Ein Gang scheint sich nach vorne unendlich weit fortzusetzen. Hinter Dir sieht
+es hingegen so aus, als würde er in einiger Entfernung abknicken. Links und
+rechts sind viele Büros, deren Türen alle verschlossen sind. An den Wänden
+daneben hängen viele Bilder von Raketen, Planeten und einige Karten. Aus
+einem der verschlossenen Räume kommt ein leichtes Bollern.
+$z4_kurz
+Du stehst vor den Raketenbildern.
+$z5_lang
+Ein Gang von vorne knickt hier scharf nach rechts ab. Nach hinten
+gibt es ein Stück weg einen kleinen Seitengang. Die Wände sind hier
+mit allerlei Bildern zugehängt. Als Du nach rechts siehst, glaubst Du ein
+Treppenhaus oder etwas Ähnliches zu erkennen.
+$z5_kurz
+Du stehst neben dem Treppenhaus.
+$z6_lang
+Hier geht es nicht weiter. Ein schmaler Gang von vorne endet hinter Dir an einem
+Fenster, das völlig mit blauer Farbe angemalt ist. Zu Deiner Rechten ist zwar
+der Eingang eines Aufzugs, der aber allen Deinen Bemühungen widersteht, die
+Kabine zu rufen. Links an der Wand steht merkwürdigerweise in zittrigen
+Buchstaben "die Marsmonster sind hier".
+$z6_kurz
+Du bist in der Sackgasse mit dem blauen Fenster.
+$z7_lang
+Du stehst in einem Treppenhaus. Eine schmale, wenig vertrauenserweckende
+Wendeltreppe führt steil nach unten. Sie sieht aus, als würde sie jeden
+Augenblick in sich zusammenfallen. Vor Dir ist eine geschlossenen Tür.
+Als Du versuchst, Sie zu öffnen, stellst Du fest, daß sie irgendwie verkeilt
+ist. Ohne Hilfe kommst Du da sicher nicht durch. Auf der linken Seite
+beginnt ein Gang aus dem Treppenhaus hinaus.
+$z7_kurz
+Du stehst im oberen Ende eines Treppenhauses.
+$jochen
+Da hast Du aber nicht mit Jochen gerechnet. Schon der Weg in den zweiten
+Stock hat ihn erschöpft, außerdem plagt ihn die Höhenangst. Wenn Du mich
+fragst, den bekommst Du niemals noch ein Stockwerk höher.

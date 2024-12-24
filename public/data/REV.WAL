@@ -1,0 +1,409 @@
+$$wald
+$s1_lang
+Du stehst auf einer schmalen Straße, die vor Dir auf eine Art Waldweg
+stößt. Rechts setzt sich die Straße hinter einer Schranke fort und
+scheint in eine Art Park zu führen.
+$s1_kurz
+Rechts geht es in den Park.
+$s2_lang
+Der Wald hat sich zu einer dicken grünen Wand verdichtet. Nach 
+Osten scheint er ein wenig lichter zu werden, aber die Wegmarkierung 
+an einer alten Fichte zeigt in die andere Richtung. Ein leichtes 
+Rauschen von Blättern und der traurige Ruf eines Kuckucks 
+ist zu hören. Du beschließt, nicht lange zu bleiben.
+$s2_kurz
+Du stehst im Wald und hörst einen Kuckuck.
+$s3_lang
+Du hast eine Weggabelung erreicht. Mitten auf dem Pfad ist eine 
+hellgrüne Pfütze, aus der kleine Blasen aufsteigen. Du mußt wohl 
+am Rand des Weges bleiben. Nach rechts und links führt ein Kiesweg 
+in den Wald.
+$s3_kurz
+Du bist an einer Gabelung mit einer Pfütze.
+$s4_lang
+Nach den ersten Schritten wölben sich die Kronen der Bäume über 
+Deinem Kopf und es wird dunkler. Der Kiesweg führt weiter nach 
+Osten, aber es scheint so, als ob ein kleiner Pfad nach Norden 
+abzweigt. Aus dieser Richtung hört man ein leises Quietschen wie
+von einer Vakuumpumpe, doch Du bist überzeugt, daß es so etwas 
+hier nicht gibt.
+$s4_kurz
+Du bist auf dem Kiesweg und hörst ein Quietschen.
+$s5_lang
+Der Kiesweg ist hier etwas schmaler und zum rechten Ende hin 
+durch ein kleines Bächlein begrenzt. Es führt ein schmaler Steg 
+darüber. Dahinter ist wohl eine größere Forststraße. Du hörst 
+ein wenig dem Glucksen des Wassers zu aber irgendwie ist es hier 
+ungemütlich.
+$s5_kurz
+Du bist auf dem Kiesweg und hörst einen kleinen Bach glucksen.
+$s6_lang
+Du findest Du Dich auf einer Forststraße wieder, die weiter östlich 
+führt. Nach links ist ein Steg. Neben Dir liegen Baumstämme, 
+die leise vor sich ihn modern. Du überlegst Dir, ob Du einen 
+dickeren Stock mitnehmen solltest, doch alles was Du aufhebst 
+zerbröselt Dir in den Händen.
+$s6_kurz
+Du bist auf der Forststraße.
+$s7_lang
+Die Straße neigt sich nun leicht abwärts und es ist hier etwas heller. 
+Ein Wanderweg zweigt bergauf nach Norden ab. Er ist bestimmt 
+nicht für Jedermann gedacht, da die Steigung recht hoch ist. 
+Eine gelbe Markierung zeigt in diese Richtung und zurück nach Westen. 
+Nach rechts geht es weiter auf der Forststraße.
+$s7_kurz
+Du bist auf der Forststraße. 
+$s8_lang
+Die Straße senkt sich nach rechts in ein Tal. Dort siehst Du den 
+Weg in einem unfreundlichen Nebel verschwinden. Wieder zweigt 
+ein Weg bergan in nördlicher Richtung ab. Er scheint sich mit 
+dem vorigen zu treffen, hat aber keine Markierung. Vor Dir 
+liegt eine leere Bierflasche, die von oben heruntergerollt sein muß.
+$s8_kurz
+Du bist auf der Forststraße.
+$s9_lang
+Wie erwartet ist der Wanderweg gefährlich steil. Nach einigen 
+Metern mußt Du eine Pause machen, um nicht auszurutschen. Du 
+überlegst, welche Tips Dir Reinhold gegeben hat, wenn es steil 
+bergauf oder bergab geht und beschließt, sie nicht zu befolgen. 
+Der Weg wird langsam steiniger und unbequemer. Hier im tiefen 
+Schatten des Waldes gibt es tiefen Schnee, mit dem Du Dir die
+Schuhe versaust.
+$s9_kurz
+Du bist auf dem gelben Wanderweg.
+$s10_lang
+Der steile Abhang raubt Dir nach wenigen Schritten den Atem. 
+Vielleicht wäre es besser gewesen, einen anderen Weg zu gehen, 
+aber irgendwie drängt Dich eine höhere Macht, weiter zu gehen. 
+Und Du willst es hinter Dir haben... 
+Du schaust nach unten und erkennst von Ferne eine Straße. Um 
+zu Überlegen setzt Du Dich auf einen Baumstumpf, der in der Nähe 
+steht. Als Du wieder aufstehst ist Dir schwindelig.
+$s10_kurz
+Du bist auf dem gelben Wanderweg und Dir ist schwindelig.
+$s11_lang
+Du hast das Gefühl, in eine Sackgasse geraten zu sein. Nach 
+rechts wird der Weg zu einer wilden Landschaft aus Dornbüschen 
+und Diesteln. Wer weiß, was einen dort erwartet...
+Nach Süden 
+geht ein kaum sichtbarer Trampelpfad einen Abhang hinunter. Nach 
+links ist es noch am besten. Dort siehst Du in der Ferne etwas 
+gelbes an einem Baum. Seltsam, der Boden ist mit Reifenspuren 
+übersät, die aber viel zu klein für ein Auto sind.
+$s11_kurz
+Du bist auf einem Waldweg. Du siehst viele Reifenspuren.
+$s12_lang
+Eine gelbe Wandermarkierung hinter Dir zeigt auf eine steilen 
+Weg nach unten. Links und rechts von Dir geht der normale Waldweg 
+weiter. Bis auf ein paar traurige Birken, die bald an Alterschwäche 
+sterben, ist hier nichts zu sehen.
+$s12_kurz
+Du bist auf einem Waldweg.
+$s13_lang
+Um Dich herum ist etwas feucht. Nicht umsonst haben am Wegrand 
+viele Pilze Asyl gefunden. Einer sieht aus wie ein poppiger Fliegenpilz, 
+doch als Du näher hinsiehst, bemerkst Du, daß es ein kleines 
+Mützchen ist, was auf dem Boden liegt. Du schaust Dich um,
+doch der Weg, der nach Osten und Westen geht, ist verlassen. Durch 
+eine Lücke im Gebüsch siehst Du nach Süden einen Weg durchschimmern. 
+Da geht es wohl nach unten.
+$s13_kurz
+Du bist auf dem Waldweg.
+$s14_lang
+Der Waldweg zieht sich von Westen nach Osten durch die Landschaft. 
+Die Szene, die Du gerade betrachtest, könnte in einem alten Heimatfilm 
+spielen, wäre da nicht das Geräusch eines Düsenjägers, der über 
+Dir die Wolken durchschneidet. Langsam wird das Donnern leiser. 
+Plötzlich springt ein Eichhörnchen aus dem Gebüsch und klettert 
+eine Fichte empor.
+$s14_kurz
+Du bist auf dem Waldweg.
+$s15_lang
+Der Waldweg gabelt sich hier. Nach links und rechts geht er wohl 
+ganz normal weiter, aber auch ein kleiner Seitenweg führt nach 
+Norden. Ein Wandermarkierung liegt auf dem Boden und ist (wohl 
+von einer Viehherde) vollkommen zertrampelt. Sie zeigt jetzt nach 
+Süden, ist also ziemlich wertlos.
+$s15_kurz
+Der Waldweg gabelt sich.
+$s16_lang
+Der kleine Seitenweg auf dem Du gehst, führt von Nord nach Süd. 
+Offensichtlich wird hier nur selten aufgeräumt, der Weg ist zugedeckt 
+mit altem Laub. Beim Vorwärtsgehen gibt es deswegen dieses leise 
+Geräusch, das Dich an die letzte Aufräumaktion im SAPHIR-Bastelraum 
+erinnert, als Ihr die Mäusenester entdeckt hattet.
+$s16_kurz
+Du folgst einen Seitenweg.
+$s17_lang
+Der Weg führt um eine Kurve von West nach Süd. Es liegt eine 
+kleine Birke mitten über der Straße. Beim Darüberklettern stolperst 
+Du über einen kleinen Ast und liegst erst einmal auf der Nase. Du 
+stehst auf und denkst an die schönen Zeiten zurück, wann immer 
+sie auch waren...
+$s17_kurz
+Du bist auf einem Seitenweg.
+$s18_lang
+Der Weg macht einen seltsamen 90 Grad Knick, der von Osten nach 
+Süden geht. Als Du an der Stelle ankommst, erkennst Du, daß wohl 
+ein Weg weiter nach Norden geführt hat, dieser aber schon seit 
+Ende der Steinzeit nicht mehr benutzt wurde. Jetzt ist es jeden
+falls unmöglich in diese Richtung zu gehen. 
+$s18_kurz
+Du bist auf einem Seitenweg. Er macht einen seltsamen Knick.
+$s19_lang
+Der Seitenweg geht weiter von Nord nach Süd. Auf einem großen 
+Steinbrocken sonnt sich eine Eidechse. Sie nimmt Dich offensichtlich 
+nicht ernst und verharrt regungslos in ihrer Position. Wer weiß, 
+was noch so für seltsame Tiere in diesem Wald herumlaufen.
+$s19_kurz
+Du begehst einen Seitenweg.
+$s20_lang
+Immer noch geht dieser Waldweg von links nach rechts. Dir kommt 
+die Idee, daß dieser Weg wohl um die ganze Welt in diese Richtung 
+weiterführt. Kurz bevor Dir die Nerven durchgehen reißt Dich 
+der grelle Schrei eines Mäusebussards aus der tödlichen Umarmung 
+der Melancholie.
+$s20_kurz
+Die bist auf dem Waldweg.
+$s21_lang
+Du stehst wiedermal auf einer Gabelung. Ein kleiner Weg nach 
+Norden lädt Dich ein, aber der Hauptweg geht wohl von West nach 
+Ost. Das ganze erinnert Dich an ein Labyrinth und Du denkst darüber 
+nach, wer sich das wohl ausgedacht hat. Die Tafel am Wegesrand
+mit der Aufschrift "Vorsicht Tollwutgebiet" interessiert Dich nicht.
+$s21_kurz
+Du gehst auf einem Waldweg. Am Wegesrand steht eine Warntafel.
+$s22_lang
+Welch' Überraschung! Ein Trimm-Dich-Pfad, der wohl überall in 
+Deutschland sein könnte! Ein großes blaues Schild sagt Dir, Du 
+sollst ihm folgen, was Dir etwas paradox erscheint. Vernünftiger 
+ist der Vorschlag, bis zum Schild mit der Nummer 2 in leichtem 
+Trab in nördlicher Richtung zu laufen. Der Waldweg, der nach 
+links und rechts geht, sieht etwas weniger anstrengend aus.
+$s22_kurz
+Du bist auf dem Waldweg. Hier beginnt ein Trimmpfad.
+$s23_lang
+Der Trimmpfad ist etwas ausgetreten, aber sehr angenehm. Nachdem 
+Du am Schild 2 Deine fünf Liegestützen gemacht hast und Du dich 
+aufrappelst, siehst Du, daß es nur weiter nach Norden oder Süden 
+geht. Der Pfeil auf der Tafel zeigt nach Nord.
+$s23_kurz
+Du bist auf dem Trimmpfad bei Schild 2.
+$s24_lang
+Aha, hier wird den ganz jungen oder ganz alten Turnfreunden eine
+Abkürzung nach Westen vorgeschlagen. Der Weg der Durchtrainierten 
+führt weiter von Süd nach Nord. Aber zuerst zeigt das blaue Schild 
+mit der Nummer 3 nach rechts zwischen zwei hohe Bäume mit dichtem
+Unterholz und möchte Dich zu 5 Klimmzügen überreden.
+$s24_kurz
+Du stehst am Trimmpfadschild 3. Eine Abkürzung geht nach Westen.
+$s25_lang
+So also leben die Planer des Trimmpfades ihre Phantasien aus. 
+Acht Hürden stehen im Weg und wollen übersprungen werden. Das 
+kann ja noch heiter werden. Der Weg geht weiter von Süd nach  Nord.
+$s25_kurz
+Im Trimmpfad liegen Hürden im Weg.
+$s26_lang
+Der Pfad macht eine Kurve von West nach Süd. Am Wegesrand steht 
+das Schild Nummer 4. Man soll hier ein paar dicke Baumstämme 
+über eine kleine Strecke tragen, aber wie üblich, sind die Baumstämme 
+viel zu schwer oder schon verschwunden. Ein schwarzer Fleck 
+auf der Erde verrät, was mit ihnen passiert ist.
+$s26_kurz
+Du bist auf dem Trimmpfad. Neben dem Weg ist ein schwarzer Fleck.
+$s27_lang
+Bei Schild Nummer 5 verschlägt es Dir die Sprache. Jemand hat 
+mit einem Filzstift die normale Schrift übermalt. Jetzt steht 
+dort "5..al..t..fl..b...i.e.r.. ". Du meinst, das richtige zu 
+tun und suchst fünf Flaschen Altbier, was Dir aber seltsamerweise 
+nicht gelingt. Enttäuscht wendest Du Dich ab. Der Weg geht weiter 
+von Ost nach West.
+$s27_kurz
+Du bist auf dem Trimmpfad. Das Schild sieht komisch aus.
+$s28_lang
+Der Pfad macht eine Biegung von Ost nach Süd. Ein Schild fordert 
+Dich auf, die Strecke bis zum nächsten Schild im Sprint zurückzulegen. 
+Wäre da nicht das Skelett mit den gebrochenen Beinen, könnte das 
+ja ganz lustig sein...
+$s28_kurz
+Am Wegesrand des Trimmpfades liegt ein Skelett.
+$s29_lang
+Das ist also eine "Abkürzung". Der Weg mag zwar kürzer sein, 
+aber der Schlamm an Deine Füßen sagt Dir, daß es keine gute Idee 
+war, hier entlang zu gehen. Wie erwartet führt der Weg quer von West nach Ost.
+$s29_kurz
+Du bist auf einer Abkürzung. Du steckst bis zu den Knöcheln im Schlamm.
+$s30_lang
+Es geht von Ost nach West, wenn man auf dem Weg bleibt. Doch 
+dafür sorgt ein ziemlich hoher Drahtzaun neben dem Weg. Ein Schild 
+mit der Aufschrift "Militärgelände! Vorsicht Schußwaffengebrauch!" 
+überzeugt Dich endgültig, auf dem normalen Weg zu bleiben.
+$s30_kurz
+Du bist auf einer Abkürzung. Ein Zaun hält Dich in Schach.
+$s31_lang
+Aha, hier ist das nächste Schild vom Trimmpfad. Es hat die Nummer 
+6. Nachdem man eine seltsame Übung mit verdrehten Armen durchgeführt 
+hat, soll man weiter nach Süden wandern. Es gibt aber auch eine 
+Weg nach Norden und Osten. Der Weg nach Osten soll wohl 
+eine Abkürzung sein...
+$s31_kurz
+Du bist auf dem Trimmpfad. Das Schild Nummer 6 weist nach Süden.
+$s32_lang
+Hier ist es nicht sehr aufregend. Der Pfad geht von Nord nach 
+Süd und kein Schild fordert Dich zu etwas auf. Vielleicht ist 
+das ja die Ruhe vor dem Sturm...
+$s32_kurz
+Du bist auf dem Trimmpfad. Nichts passiert.
+$s33_lang
+Ein besonders großes, blaues Schild verabschiedet Dich von dem 
+Trimmpfad. Es sagt, Du hättest 6 km zurückgelegt und einiges 
+für Deine Gesundheit getan. Als Du jedoch etwas von "vielleicht 
+noch einmal" liest kannst Du das Lachen kaum unterdrücken. Bloß weg
+hier... Nach West und Ost ist ein Ausweg.
+$s33_kurz
+Du bist auf dem Trimmpfad. Hier ist ein großes Schild.
+$s34_lang
+Du bist ein einer Wegkreuzung angelangt. Alle Richtung stehen 
+Dir offen. Ein blaues Schild mit der Aufschrift "Nummer 7" leuchtet 
+in der Sonne. Es fordert Dich auf, über einen Graben zu springen 
+und dann dem Weg nach Osten zu folgen. Du bist also auf einem 
+Trimmpfad. Aber wie immer gibt es keine Hinweise, wo der richtige Weg ist.
+$s34_kurz
+Du stehst auf einer Wegkreuzung mitten im Wald.
+$s35_lang
+Hier ist wohl der höchste Punkt in diesem Dschungel. Nach Norden 
+führt ein Weg die Höhe entlang. Im Osten geht es tiefer in den 
+Wald. Eine Wiese in einer kleinen Lichtung im Westen lädt ein, 
+dem kleinen Weg nach unten zu folgen.
+$s35_kurz
+Du stehst am höchsten Punkt des Waldes.
+$s36_lang
+Wie erwartet führt der Weg über die Lichtung und eine kleine Wiese. Es geht
+weiter bergab nach Westen und bergan nach Osten. Nach einem zweiten 
+Blick ist die Wiese nicht mehr so einladend -- Hier hat jemand 
+seinen Hausmüll abgeladen!
+$s36_kurz
+Du bist auf einer Lichtung.
+$s37_lang
+Der Weg geht die Höhe entlang. Er ist von vielen Regenfällen 
+schon ganz ausgewaschen und voller Rinnen und Geröll. Also der 
+übliche Wanderweg für Ungeübte. Ein besonders großer Kieselstein 
+fällt Dir auf, nachdem du fast über ihn gestolpert bist. Wie 
+der hierher gekommen ist?
+$s37_kurz
+Du gehst im Wald eine Höhenlinie entlang.
+$s38_lang
+Es geht weiter auf gleicher Höhe. Die Bergflanke wird so steil, 
+daß schon kleine Sturzbäche über den Weg fließen. Der linke Teil 
+des Weges ist stark absturzgefährdet, deshalb bemühst Du dich 
+rechts zu bleiben. Die kleinen Wasserfälle danken es Dir, indem 
+sie Dich gut naßmachen.
+$s38_kurz
+Du gehst im Wald unter kleinen Wasserfällen.
+$s39_lang
+Der Weg gabelt sich mal wieder. Nach Süden geht es am Berg entlang, 
+der im Osten zwischen den Bäumen zu ahnen ist. Nach Westen kann 
+man in ein beginnendes Tal hinuntergehen. Nach Norden wird es 
+heller. Vielleicht ist dort der Wald zuende?
+$s39_kurz
+Du stehst an einer Gabelung. Nach Norden wird es heller.
+$s40_lang
+Du stehst am Waldrand. Wie üblich ist hier eine Schranke. Nach 
+Süden geht es in den Wald hinein. Nach Westen ist ein Acker, 
+der gerade umgepflügt worden ist. Ein kleiner Trampelpfad geht dort hindurch.
+$s40_kurz
+Du stehst an einer Schranke.
+$s41_lang
+Du gehst durch einen Acker. Nach Westen wird es wohl besser, da kommt eine
+Straße. Nach Osten geht es an einer Schranke vorbei in einen Wald.
+$s41_kurz
+Du bist auf einem Acker. Da ist eine Schranke.
+$s42_lang
+Der kleine Weg geht vom Tal im Süden nach Osten zu einer Anhöhe. 
+Wenn man nach Süden schaut sieht man eine kleine Hohlweg. Du 
+bemerkst ein kleine Quelle, deren Wasser in diese Richtung fließt. 
+Hier ist es wohl recht feucht.
+$s42_kurz
+Du bist an einem Hohlweg. Ein Quelle sprudelt vor sich hin.
+$s43_lang
+Es ist hier etwas dunkel. Das muß an den hohen Bäumen über dem 
+Hohlweg liegen, die sich um das Licht streiten. Du läufst durch 
+kleine Pfützen. Nach Norden geht es leicht bergan, also ist es 
+bequemer nach Süden zu gehen...
+$s43_kurz
+Du bist in einem Hohlweg. Hier sind kleine Pfützen.
+$s44_lang
+Der Hohlweg geht weiter von Nord nach Süd. Jedoch läßt sich die 
+Langweile durchbrechen, indem man nach Osten steil nach oben 
+geht. Du hörst ein Geräusch von dort, als ob jemand mit Geschirr klappert.
+$s44_kurz
+Ein Weg nach Osten geht bergan. Man hört seltsame Geräusche.
+$s45_lang
+Die Wahl ist sehr beschränkt. Entweder dem Hohlweg nach Norden 
+folgen, oder nach Süden gehen und auf dem Hohlweg bleiben. Was 
+für eine Wahl!
+$s45_kurz
+Du bist auf dem Hohlweg aber noch nicht auf dem Holzweg.
+$s46_lang
+Du bist an einer Kurve. Nach Norden geht ein Hohlweg nach Norden 
+ein Tal hinauf. Nach Osten geht ein normaler Weg in Serpentinen, 
+obwohl es gar nicht steil ist. Typischer Kuhpfad...
+$s46_kurz
+Du bist zwischen den Serpentinen und dem Hohlweg.
+$s47_lang
+Links und rechts, hin und her. Dieser Weg ist bestimmt von einem 
+Achterbahnfan geplant worden. Dir wird schon ein wenig schwindelig. 
+$s47_kurz
+Du gehst einen Weg mit vielen Serpentinen
+$s48_lang
+Ein scheinbar normaler Weg geht von Ost nach West. Doch zu Deinem 
+Unglück haben sich viele Krähen über dem Weg ihr Nest gebaut. 
+Dabei produzieren sie nicht nur Lärm, sondern auch "Abfall", 
+der Dich trotz Deines beschleunigten Schrittes trifft. Du fängst 
+an zu laufen, was die armen Tiere aufschreckt und sie ihre "Last" 
+entledigen läßt... Es hört sich an wie Regen, ist aber keiner.
+$s48_kurz
+Du gehst auf einem Waldweg. Über Dir kreisen viele Krähen.
+$s49_lang
+Ein kurzes Stück Weg geht von Nord nach Süd. Deine Neugier zwingt 
+Dich, ein großes Gebüsch am Wegesrand anzusehen. Viele schöne 
+gelbe und weiße Blüten. Der Duft ist umwerfend... Als Du Dich 
+aufrappelst beschließt Du, vorsichtiger zu werden.
+$s49_kurz
+Du gehst einen Waldweg. Da steht ein Gebüsch, das blüht.
+$s50_lang
+Von Norden trifft ein Waldweg auf den, der von Ost nach West 
+geht. Der Wind trägt eine seltsamen Duft von dort her. Links 
+und rechts siehst Du Wegmarkierung in allen Farben, die der Regenbogen 
+so hergibt... "Alles nur Verwirrung" denkst Du und hast damit 
+vollkommen recht!
+$s50_kurz
+Du bist auf einer Gabelung mit vielen bunten Schildchen.
+$s51_lang
+Irgendein Verrückter ist hier mit seinem Wagen liegengeblieben. 
+Es kann nicht so lange her sein, die Motorhaube ist noch warm, 
+wie die flimmernde Luft darüber beweist. "Tja, Kühlwasser alle!" 
+sagt Dein kühler Verstand. Im Wagen selbst ist das große Chaos
+- lauter leere Bierkästen. Wahrscheinlich hat hier die Dorfjugend 
+gehaust. Nach Ost und West geht es weiter.
+$s51_kurz
+Du bist auf dem Waldweg. Da steht ein kaputtes Auto.
+$s52_lang
+Der ganze Weg ist zerwühlt. Ob hier ein großer Traktor gefahren 
+ist? Auf jeden Fall muß man aufpassen, wo man hintritt. Gut daß 
+es ohne jede Kurve von Osten nach Westen geht. Zermatschter Neuschnee
+bedeckt den Boden und kühlt Deine Füße.
+$s52_kurz
+Du bist auf dem Waldweg. Er ist vollkommen zerwühlt.
+$s53_lang
+Eine große geschwungene Kurve geht von West nach Süd. Dort im 
+Süden wird der Weg etwas heller. Der Wind bewegt ein paar engstehende 
+Bäume, so daß sich die Äste quietschend aneinander reiben. Es 
+hört sich ziemlich unheimlich an...
+$s53_kurz
+Du bist bei ein paar quietschenden Bäumen.
+$klettern
+Nicht übel, der Handstand auf der Schranke mit dem dreifachen Salto und
+Landen im Stand. Aber geht es nicht auch eine Nummer kleiner? Zum Beispiel
+könnte man die Schranke öffnen, bevor man sie passiert - idiotisches
+Beispiel, ich weiß.

@@ -1,0 +1,468 @@
+;
+; Nur schwer
+;
+$schwer
+	message	= *
+;
+; Räume: $$draussen$s1
+;	 $$draussen$s2
+;
+$ampel Ampel
+	message  = rot
+	#drücken = message = grün
+;
+; Räume: $$botanik$d1
+;	 $$draussen$s12
+;
+$d1 Gittertüre,Gittertür,Eingang,Türe,Tür,Tuer,Gittertuer
+	message   = auf
+	#schließe = (if_message zu &$$things$istzu,
+		     if_message geschlossen &$$things$istzu,
+		     if_message auf message = zu)
+	#öffne    = (if_message auf &$$things$istauf,
+		     if_message geschlossen &$$things$keinschlüssel,
+		     if_message zu message = auf)
+	actions	  = start:start
+	time	  = 62:(message = geschlossen,stop)
+;
+; Türen
+;
+$$macro haupttür
+	message   = geschlossen
+	#schließe = (if_message zu &$$things$istzu,
+		     if_message geschlossen &$$things$istzu,
+		     if_message auf message = zu)
+	#öffne    = (if_message auf &$$things$istauf,
+		     if_message geschlossen
+		      (if_has hauptschlüssel @message = zu,
+		       if_message geschlossen &$$things$keinschlüssel),
+	   	     if_message zu message = auf)
+;
+$$macro tür
+	message   = geschlossen
+	#schließe = (if_message zu &$$things$istzu,
+		     if_message geschlossen &$$things$istzu,
+		     if_message auf message = zu)
+	#öffne    = (if_message auf &$$things$istauf,
+		     if_message geschlossen
+		      ((if_has schlüssel @message = zu,
+		        if_has hauptschlüssel
+			 if_message geschlossen @message = zu),
+		       if_message geschlossen &$$things$keinschlüssel),
+	   	     if_message zu message = auf)
+;
+; Räume: $$draussen$s20
+;	 $$paterre$haupt
+;
+$$tür haupt Haupteingang,Eingang,Türe,Tür,Tuer
+;
+; Räume: $$draussen$s17
+;	 $$paterre$neben
+;
+$$tür neben Nebeneingang,Eingang,Türe,Tür,Tuer
+;
+; Räume: $$draussen$s18
+;	 $$keller$eingang
+;
+$$tür keller Kellereingang,Eingang,Türe,Tür,Tuer
+;
+; Räume: $$erster$e14
+;	 $$erster$bücherei
+;
+$$tür bücherei Bücherei,Buecherei,Eingang,Türe,Tür,Tuer
+;
+; Räume: $$erster$e6
+;	 $$erster$150
+;
+$$tür 150 Eingang,Türe,Tür,Tuer
+;
+; Räume: $$erster$e7
+;
+$geschlossen Glastüre,Glastür,Türe,Tür,Tuer,Glastuer
+	message   = geschlossen
+	#öffne    = (@message = *,
+		     if_has schlüssel (schlüssel kaputt, @message = gehtnicht),
+		     if_message * if_has hauptschlüssel
+		      (hauptschlüssel kaputt, @message = gehtnicht),
+		     if_message * message = gehtnicht,@message = geschlossen)
+	#schließe = &$$things$istzu
+;
+; Räume: $$paterre$g2
+;	 $$paterre$christian
+;
+$$haupttür christian Türe,Eingang,Tür,Tuer
+;
+; Räume: $$paterre$g5
+;	 $$paterre$kontrollraum
+;
+$$tür E50 Türe,Eingang,Tür,Tuer
+;
+; Räume: $$paterre$g6
+;	 $$keller$mathe
+;
+$mathe Glastüre,Glastür,Glastuer
+	message   = zu
+	#schließe = (if_message zu &$$things$istzu,
+		     if_message auf message = zu)
+	#öffne    = (if_message auf &$$things$istauf,
+		     if_message zu
+		      (if_position $$keller$mathe
+		       (if_has schlüssel message = auf,
+		        if_has hauptschlüssel if_message zu message = auf),
+		       if_message zu &$$things$keinschlüssel))
+        #drücken  = (if_position $$paterre$g6
+		      (if_message auf &$$things$istauf,
+		       if_message zu message = auf),
+		     if_position $$keller$mathe &$$things$keinknopf)
+;
+; Räume: $$erster$g6
+;	 $$halle$h8
+;
+$$tür metall Metalltüre,Metalltür,Metalltuer
+;
+; Räume: $$paterre$g11
+;	 $$paterre$g15
+;
+$$haupttür TOF Türe,Eingang,Tür,Tuer
+;
+; Räume: $$paterre$g12
+;	 $$paterre$g13
+;
+$warenlager Türe,Eingang,Tür,Tuer
+	message   = geschlossen
+	actions	  = start:start
+	#schließe = (if_message zu &$$things$istzu,
+		     if_message fest &$$things$istzu,
+		     if_message geschlossen &$$things$istzu,
+		     if_message auf message = zu)
+	#öffne    = (if_message auf &$$things$istauf,
+		     if_message fest &$$things$keinschlüssel,
+		     if_message geschlossen
+		      (if_has hauptschlüssel @message = zu,
+		       if_message geschlossen &$$things$keinschlüssel),
+	   	     if_message zu message = auf)
+	time      = 242:(message = ende,message = fest,steinbrecher geht)
+;
+; Räume: beliebig
+;
+$schlüssel Schlüssel,Schluessel
+	message = *
+	actions	= kaputt:(message = kaputt,remove)
+	weight	= (0,0,1)
+;
+; Räume: beliebig
+;
+$hauptschlüssel Hauptschlüssel,Gruppenschlüssel,Gruppenschluessel
+	message = liegt
+	actions	= kaputt:(message = kaputt,remove)
+	weight	= (0,0,1)
+;
+; Räume: $$eisdiele$raum
+;
+$geld Geld,Kohle
+	message   = *
+	actions	  = weg:(#>$$eisdiele$raum,message = lang,remove)
+;
+; Räume: beliebig
+;
+$$macro eis
+	#essen	  = (if_nothasthis &$$things$keineis,
+		     if_hasthis (message = essen,remove))
+	#ablegen  = (message = zerlaufen,remove)
+	#nehmen	  = (start,@message = trägt,
+		     if_here eismann (if_state eismann wartet
+		     		       >>eismann,@eismann = wartet))
+	time	  = +13:(message = zerlaufen,remove)
+	weight	  = (3,0,0)
+;
+$$eis vanille Vanilleeis
+$$eis schokolade Schokoladeneis
+$$eis zitrone Zitroneneis
+$$eis banane Bananeneis
+;
+; Räume: beliebig
+;
+$milkaeis Milkaeis,Lilaeis
+	#nehmen	  = (start,@message = trägt,
+		     if_here eismann (if_state eismann wartet
+				       >>eismann,@eismann = wartet))
+	#essen	  = (if_nothasthis &$$things$keineis,
+		     if_hasthis (message = essen,remove))
+	#ablegen  = (if_nothere gerhild message = zerlaufen,
+		     if_here gerhild gerhild milkaeis,
+		     remove)
+	time	  = +20:(message = zerlaufen,remove)
+	weight	  = (1,0,0)
+;
+$$eis nuss Nußeis,Nusseis
+$$eis erdbeer Erdbeereis
+;
+; Räume: beliebig
+;
+$kaffee Kaffeetasse,Tasse,Kaffee
+	message  = warm
+	#nehmen	 = start
+	#ablegen = if_here norbert norbert kaffee
+	#trinken = (if_message warm message = trinkwarm,
+		    if_message kalt message = trinkkalt,
+		    message = leer)
+	time	 = +23:if_message warm message = kalt
+	weight	 = (10,0,0)
+;
+; Räume: beliebig
+;
+$sauce Tunke,Sauce,Behälter,Behaelter
+	actions	 = maus:(if_message trageleer >>maus_sauce,
+			 maus = sauce,@message = trageleer,
+			 if_nothas kammer maus klein2,
+			 if_has kammer
+			  (maus = kammer,
+			   if_nothas schnur maus klein1,
+			   if_has schnur kammer maus))
+	#essen	 = >>sauce
+	#nehmen	 = (if_message lang message = trägt,
+		    if_message leer message = trageleer)
+	#ablegen = (if_message trägt message = lang,
+		    if_message trageleer message = leer)
+	weight   = (5,0,0)
+;
+; Räume: beliebig
+;
+$antrag Antrag,Zettel
+	#ablegen = (@message = lang,
+		    if_here kobe if_state kobe laut (kobe antrag,remove))
+	weight	 = (0,1,0)
+;
+; Räume: $$dritter$KOBE
+;
+$passwort
+	message	= *
+;
+; Räume: $$paterre$elektronik
+;
+$CC Z,Knopf,Schalter,LAM
+	message  = rot
+	#drücken = >>CC
+;
+; Räume: beliebig
+;
+$whiskey Whiskey,Flasche,Whiskeyflasche
+	message  = voll
+	actions	 = charly:(message = trinken,message = leer)
+	#trinken = (if_message voll >>whiskey,&$$things$keinwhiskey)
+	#ablegen = (if_message voll if_here steinbrecher
+		    (steinbrecher = trinkt,@steinbrecher = brav,remove))
+	#nehmen	 = (stop)
+	weight   = (10,0,0)
+;
+; Räume: $$erster$schwille
+;
+$fenster Fenster
+	message	= *
+	#öffne	= (if_state flag_schwille aerger >>schwille,
+		   schwille = redet,schwille = *,flag_schwille = aerger)
+;
+; Räume: $$erster$SAPH1
+;
+$SAPH1 SAPH1,Computer,Rechner
+	message  = steht
+	#drücken = (if_message steht @message = *,
+		    if_message läuft message = steht,
+		    if_message * message = läuft)
+	weight	 = (1000,0,0)
+;
+; Räume: beliebig
+;
+$zettel Papier,Ausweis
+	weight	 = (0,1,0)
+;
+; Räume: beliebig
+;
+$anleitung Anleitung,Dokumentation
+	#nehmen	= (if_here mühl
+		    (if_state mühl scharf if_has zettel
+		      (mühl = lesen,@mühl = brav),
+		     if_state mühl scharf >>mühl),
+		   message = trägt)
+	weight	= (0,5,0)
+;
+; Räume: beliebig
+;
+$schraubenzieher Schraubenzieher,Werkzeug,Schraubendreher
+	#nehmen	= (if_here steinbrecher
+		    if_state steinbrecher scharf >>steinbrecher,
+		   message = trägt)
+	weight	= (10,0,0)
+;
+; Räume: beliebig
+;
+$interlock1 SchlüsselA,SchluesselA
+	weight	 = (10,0,0)
+;
+; Räume: beliebig
+;
+$interlock2 SchlüsselB,SchluesselB
+	weight	 = (10,0,0)
+;
+; Räume: beliebig
+;
+$plakette Plakette,Schild,Schildchen
+	weight	 = (10,0,0)
+;
+; Räume: beliebig
+;
+$brot Brot,Krumen
+	weight	 = (10,0,0)
+	actions	 = maus:(maus = essen,remove,
+		         if_nothas sauce >>maus_sauce,sauce maus)
+	#essen	 = (message = essen,remove)
+;
+; Räume: beliebig
+;
+$taschenrechner Taschenrechner
+	weight	= (20,0,0)
+;
+; Räume: beliebig
+;
+$stift Stift,Kugelschreiber
+	weight	= (5,0,0)
+;
+; Räume: $$paterre$ELSA
+;
+$klocke Reset
+	message	 = *
+	actions	 = start:(reset,klocke = an)
+	#reset	 = if_message an (stop,message = *)
+	#drücken = if_message an (stop,message = *)
+	time	 = +15:>>reset
+;
+; Räume: $$paterre$ELSA
+;
+$licht Schalter,Licht
+	message	  = aus
+	#schalter = (if_message aus @message = *,
+		     if_message an message = aus,
+		     if_message * message = an)
+;
+; Räume: beliebig
+;
+$schnur Schnur,Kordel,Seil,Bastschnur
+	weight	= (5,0,0)
+;
+; Räume: $$halle$h5
+;
+$HV HV,Knopf
+	message  = an
+	#messen	 = (if_nothas meßgerät &$$things$keinHV,
+	 	    if_has meßgerät
+		     (if_message an &$$things$HVan,
+		      if_message aus &$$things$HVaus))
+	#drücken = (if_state burkhard scharf >>burkhard,
+		    if_message an @message = *,
+		    if_message aus (if_nothere kammer >>HV1,message = an),
+		    if_message * message = aus)
+;
+; Räume: $$halle$h5
+$schraube Schraube
+	#drehen	= (if_nothas schraubenzieher &$$things$schraube,
+	 	   if_has schraubenzieher
+		    (if_state burkhard scharf >>burkhard,
+		     if_message lang message = *,
+		     if_message lose
+		      (if_here kammer message = lang,
+		       if_nothere kammer message = fest),
+		     if_message * message = lose,
+		     if_here kammer
+		      (if_message lang kammer schwer,
+		       if_message lose kammer leicht)))
+;
+; Räume: beliebig
+;
+$kammer Kammer,Driftkammer
+	actions	= (maus:(maus gefangen,@!schnur,@!kammer,#<schnur,#<maus,
+			 message = gefangen),
+		   schwer:(flag1 leicht,@#<schwer),
+		   leicht:(@#!schwer,flag1 schwer))
+	#nehmen	= (if_state burkhard scharf >>burkhard,
+		   if_state HV an >>HV2,message = trägt)
+	things	= (schwer)
+	weight	= (20,0,0)
+;
+; Räume: $$botanik$*
+;	 $$draussen$*
+;
+$fahrrad Fahrrad
+	#ablegen = >>fahrrad
+	weight	 = (30,0,0)
+;
+; Räume: $$paterre$christian
+;
+$terminal Terminal
+	#pass1	= if_state passwort pass1 message = befehl
+	#pass2	= if_state passwort pass2 message = befehl
+	#pass3	= if_state passwort pass3 message = befehl
+	#pass4	= if_state passwort pass4 message = befehl
+	#help	= if_message befehl
+		   (message = hilfe,
+		    if_state maus frei message = tip1,
+		    if_state maus klein message = tip2,
+		    message = befehl)
+	#toall	= leute toall
+;
+; Räume: beliebig
+;
+$listing Listing,Stapel,Programm,Papierstapel
+	weight 	= (0,8,0)
+;
+; Räume: beliebig
+;
+$meßgerät Meßgerät,Multimeter,Voltmeter,Unigor,Messgeraet
+	weight	= (10,0,0)
+;
+; Räume: beliebig
+;
+$batterie Batterie,Zelle
+	weight	= (5,0,0)
+;
+; Räume: beliebig
+;
+$gabel Gabel,Besteck
+	weight	= (3,0,0)
+;
+; Räume: beliebig
+;
+$löffel Löffel,Loeffel
+	weight	= (3,0,0)
+;
+; Räume: $$draussen$*
+;	 $$botanik$*
+;
+$leiter Leiter,Holzleiter
+	weight	= (50,0,0)
+;
+; Räume: $$draussen$w3,4,5
+;
+$anzug Anzug,Strampelanzug,Schutzanzug
+	weight	= (30,0,0)
+;
+; Räume: $$erster$e8
+;
+$liege Liege,Bahre,Bett
+	#legen	= &$$things$liege
+;
+; Räume: $$botanik$f4
+;
+$bank Bank
+	#setzen = >>bank
+;
+; Räume: beliebig
+;
+$handbuch Seite,Handbuch,Handbuchseite,Text
+	#lesen	= &$$things$handbuch
+	weight	= (0,3,0)
+;
+; Räume: beliebig
+;
+$rose Rose,Blume,Pflanze
+	#nehmen = (message = sticht,@message = trägt)
+	weight	= (5,0,0)

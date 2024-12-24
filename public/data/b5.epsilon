@@ -1,0 +1,21 @@
+$$epsilon
+$hangar_long
+You are in a small hanger on Epsilon 3. A big plate on the exit door to your right tells you: 'For transfer back to Babylon 5 simply reenter the hanger. The shuttle back will be of no additional costs.'
+$hangar_short
+You are in the Epsilon 3 hangar. The exit is to your right.
+$enter_long
+You are in a kind of hall with stony walls. There are some signposts on the wall leading you to different destinations: 'The Great Machine - an unforgettable experience' to your front, 'Dealers room - take a gift for your friends' right and 'Shuttle back to Babylon 5' left. It looks like an well-organized tourist center.
+$enter_short
+You are in the hall. The Great Machine is in front of you, the dealers' room to your right. You can travel back to Babylon 5 by going to the hangar left of you.
+$dealer_long
+This is the dealers' room. Must of the stuff is behind strong glass walls so you can't reach it. A writing says: 'This is the hall of wonders. Simply drop a green credit and it will be transformed to a carpet and a blanket of unbelievable value.'
+$dealer_short
+You're in the dealers' room. Drop a green credit to buy a blanket and a carpet. Or be intelligent and save your money for some better occasion.
+$machine_long
+You are on a small bridge that starts behind you and continues to the right. Up and down you can look as far as your eyes lead you: there seems to be no end. All around the walls there is some kind of metal forming a large - sorry: Great - machine. It must be of very alien origin and looks a little bit threatening.
+$machine_short
+You're on the bridge in the Great Machine. You can go back or right.
+$minbari_long
+The parts of the Great Machine come from inside the stony walls and form some kind of free space in front of you. You get the impression that here is some central and vital part of the Great Machine. The exit is left of you.
+$minbari_short
+You're in the heart of the Great Machine with the exit left of you.

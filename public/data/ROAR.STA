@@ -1,0 +1,516 @@
+;
+; Hier fängt alles an
+;
+$$dummy
+$start
+	message	= *
+	actions	= stay:(maus start,kobe start,walter start,d1 start,
+		        wedemeyer start,warenlager start,>$$botanik$e4)
+;
+; Der botanische Garten
+;
+$$botanik
+$a1
+	exits = (E:>b1,S:>a2,NW:&wand)
+$b1
+	exits  = (E:>c1,W:>a1,N:&wand)
+	things = handbuch
+$c1
+	exits = (W:>b1,N:&wand,E:&baeume)
+$d1
+	exits  = (E:>e1,S:>d2,
+		  N:(if_state d1 geschlossen >>d1,
+		     if_state d1 auf >$$draussen$s12,
+		     &türzu))
+	things = (fahrrad,d1)
+$e1
+	exits = (W:>d1,E:>f1,N:&wand)
+$f1
+	exits = (W:>e1,E:>g1,N:&wand)
+$g1
+	exits = (W:>f1,E:>h1,N:&wand)
+$h1
+	exits = (W:>g1,NE:&wand,S:>h2)
+$a2
+	exits = (W:&wand,N:>a1,S:>a3,E:>glashaus)
+$d2
+	exits = (W:>glashaus,N:>d1)
+$h2
+	exits = (N:>h1,S:>h3,E:&wand)
+$a3
+	exits = (W:&wand,N:>a2)
+$c3
+	exits = (W:>glashaus,S:>c4)
+$e3
+	exits = (W:>>d3,S:>e4,E:>>g3)
+$h3
+	exits = (E:&wand,W:>>g3,S:>h4,N:>h2)
+$a4
+	exits = (W:&wand,E:>glashaus,S:>a5)
+$c4
+	exits = (N:>c3,S:[>d5,>>c5,>d5),E:>e4)
+$e4
+	exits = (W:>c4,N:>e3,S:>d5)
+$f4
+	exits   = (S:>f6,N:>>g3,E:>h5)
+	persons = (gregory,gerhild)
+	things	= bank
+	actions = (entry/2/1,stay:if_here gerhild gerhild aerger)
+$h4
+	exits = (E:&wand,N:>h3,S:>h5)
+$a5
+	exits = (W:&wand,N:>a4,S:>a6,E:>b5)
+$b5
+	exits = (W:>a5,S:>b6,E:>>c5)
+$d5
+	exits = (N:[>c4,>e4),S:[>d6,>e6))
+$h5
+	exits = (N:>h4,E:&wand,W:>f4,S:>h6)
+$a6
+	exits  = (WS:&wand,N:>a5)
+	things = rose
+$b6
+	exits = (N:>b5,E:>c6,S:&wand)
+$c6
+	exits = (W:>b6,N:>>c5,S:&wand)
+$d6
+	exits = (N:>d5,E:>e6,S:&wand)
+$e6
+	exits = (S:&wand,N:>d5,W:>d6,E:>f6)
+$f6
+	exits = (S:&wand,W:>e6,N:>f4)
+$g6
+	exits = (S:&wand,E:>h6)
+$h6
+	exits = (SE:&wand,W:>g6,N:>h5)
+$glashaus
+	message = *
+	actions = entry:(message = innen,message = *,
+			 [>a2,>a2,>d2,>c3,>c3,>a4,>a4))
+;
+; Alles außerhalb des PIs und dem botanischen Garten
+;
+$$draussen
+$s1
+	exits   = (N:(if_state ampel rot >>strasse,>s2),
+		   S:(if_nothas fahrrad >$$eisdiele$raum,&fahrrad),
+		   W:&ende,E:>s7)
+	actions = exit:@ampel = rot
+	things  = ampel
+$s7
+	exits = (N:>>strasse,W:>s1,S:&wand,E:>s9)
+$s9
+	exits = (N:>>strasse,W:>s7,S:&wand,E:>s12)
+$s12
+	exits  = (N:>>strasse,E:>s15,W:>s9,
+		  S:(if_state d1 auf >$$botanik$d1,&$$botanik$türzu))
+	things = (d1)
+$s15
+	exits = (W:>s12,N:>>strasse,S:&wand,E:&ende)
+$s2
+	exits   = (S:(if_state ampel rot >>strasse,>s1),
+		   N:(if_nothas fahrrad >$$restaurant$paterre,&fahrrad),
+		   W:&ende,E:>s6)
+	actions = exit:@ampel = rot
+	things  = ampel
+$s6
+	exits = (N:>s3,W:>s2,E:>s8,S:>>strasse)
+$s8
+	exits = (S:>>strasse,N:>s5,W:>s6,E:>s11)
+$s11
+	exits = (W:>s8,S:>>strasse,N:>s13,E:>s14)
+$s14
+	exits = (S:>>strasse,N:>>parkplatz,W:>s11,E:&ende)
+$s3
+	exits = (S:>s6,W:>w1,E:>s4)
+$w1
+	exits = (W:&ende,E:>s3,N:>w2)
+$w2
+	exits = (NE:>>wasser,S:>w1,W:>w3)
+$w3
+	exits = (E:(if_has anzug >>mars,>w2),N:>w4,W:>w5)
+$w4
+	exits  = S:>w3
+	things = leiter
+$w5
+	exits  = (E:>w3,W:(if_has anzug >>anzug,>>keinanzug))
+	things = anzug
+$s4
+	exits = (W:>s3,E:>s5)
+$s5
+	exits = (S:>s8,W:>s4,N:>s10)
+$s10
+	exits = (S:>s5,E:>s13)
+$s13
+	exits = (W:>s10,S:>s11,E:>s16,N:>s19)
+$s19
+	exits = (S:>s13,E:>s20,
+		 U:(if_has fahrrad &fahrrad,
+		    if_nothas fahrrad
+		     (if_here leiter >dach,&leiter)))
+$s20
+	exits  = (W:>s19,
+		  E:(if_has fahrrad &fahrrad,
+		     if_nothas fahrrad
+		      (if_has leiter &hatleiter,
+		       if_nothas leiter
+		        (if_state haupt auf
+		          (flag1 = drinnen,>$$paterre$haupt),
+		         &$$botanik$türzu))))
+	things = haupt
+$s16
+	exits = (W:>s13,N:>s17)
+$s17
+	exits  = (S:>s16,N:>s18,
+		  W:(if_has fahrrad &fahrrad,
+		     if_nothas fahrrad
+		      (if_has leiter &hatleiter,
+		       if_nothas leiter
+		        (if_state neben auf (flag1 = drinnen,>$$paterre$neben),
+		         &$$botanik$türzu))))
+	things = neben
+$s18
+	exits  = (S:>s17,
+		  N:(if_has fahrrad &fahrrad,
+		     if_nothas fahrrad
+		      (if_has leiter &hatleiter,
+		       if_nothas leiter
+		        (if_state keller auf (flag1 = drinnen,>$$keller$eingang),
+		         &$$botanik$türzu))))
+	things = keller
+$dach
+	exits = (D:>>leiter,E:(flag1 = drinnen,>$$erster$SAPH1),W:>>dach)
+;
+$$eisdiele
+$raum
+	exits   = N:>$$draussen$s1
+	persons = eismann
+	things	= (vanille,zitrone,milkaeis,schokolade,nuss,banane,erdbeer)
+;
+$$restaurant
+$paterre
+	exits   = (S:>$$draussen$s2,U:>treppe)
+$treppe
+	exits	= (U:>theke,D:>paterre)
+$theke
+	exits	= D:>treppe
+	actions = (stay/2:if_state norbert betrunken norbert tisch,
+		   exit:if_state norbert betrunken @norbert tisch)
+	persons = norbert
+;
+; Paterre des physikalischen Institutes
+;
+$$paterre
+$haupt
+	exits 	= (N:>g8,S:>g9,E:>neben,U:>$$erster$e10,
+		   W:(if_nothas jochen
+		       (if_state haupt auf (flag1 = draussen,>$$draussen$s20),
+		        &$$botanik$türzu),
+		      if_has jochen &jochen1))
+	things	= haupt
+	persons = wedemeyer
+$neben
+	exits	= (W:>haupt,
+		   E:(if_nothas jochen
+		       (if_state neben auf (flag1 = draussen,>$$draussen$s17),
+		        &$$botanik$türzu),
+		      if_has jochen &jochen1))
+	things	= neben
+$g9
+	exits	= (N:>haupt,S:>g10,W:>post)
+$post
+	exits	= (S:>bastian,E:>g9)
+	things	= antrag
+$bastian
+	exits	= N:>post
+	things	= zettel
+$g10
+	exits	= (N:>g9,S:>g11)
+$g11
+	exits	= (N:>g10,E:>g14,W:(if_state TOF auf >g15,&$$botanik$türzu))
+	things	= TOF
+$g14
+	exits	= (W:>g11,N:>g12)
+$g15
+	exits	= E:(if_state TOF auf >g11,&$$botanik$türzu)
+	actions	= entry:if_state reinhold * (reinhold = tip,@reinhold = hängt)
+	things	= (reinhold,TOF)
+$g12
+	exits	= (E:(if_state warenlager auf >g13,&$$botanik$türzu),S:>g14,
+		   U:(if_has jochen >>treppe_jochen,>$$erster$e14))
+	things	= warenlager
+$g13
+	exits	= W:(if_state warenlager auf >g12,&$$botanik$türzu)
+	things	= (schraubenzieher,warenlager)
+	persons	= steinbrecher
+$g8
+	exits	= (S:>haupt,N:>g7,E:>>aufzug1)
+$g7
+	exits	= (S:>g8,N:>g4,W:>>aufzug2)
+$g4
+	exits	= (S:>g7,W:>g3,E:>g5)
+$g5
+	exits	= (W:>g4,E:>g6,
+		   S:(if_state E50 auf >kontrollraum,&$$botanik$türzu))
+	things	= E50
+$kontrollraum
+	exits	= (E:>elektronik,N:(if_state E50 auf >g5,&$$botanik$türzu))
+	things	= (E50,listing)
+	persons	= jochen
+$elektronik
+	exits	= W:>kontrollraum
+	actions	= entry:if_state CC rot if_has jochen (CC = rot,CC = *,&CC)
+	things	= (CC,schnur,batterie,meßgerät)
+$g6
+	exits	= (W:>g5,
+		   E:(if_nothas jochen
+		       (if_state mathe auf >$$keller$mathe,&$$botanik$türzu),
+		      if_has jochen &jochen2),
+		   S:(if_state metall auf (flag1 = halle,>$$halle$h8),
+		      &$$botanik$türzu))
+	actions	= exit:@mathe = zu
+	things	= (mathe,metall)
+$g3
+	exits	= (E:>g4,S:>>aufzug2,W:>g2)
+	things	= leute
+$g2
+	exits	= (E:>g3,W:>g1,N:>galerie,
+		   S:(if_state christian auf >christian,&$$botanik$türzu))
+	actions	= (entry,stay:if_state klocke an &klocke)
+	things	= christian
+$christian
+	exits	= N:(if_state christian auf >g2,&$$botanik$türzu)
+	things	= (christian,terminal)
+$galerie
+	exits	= (S:>g2,E:(if_has interlock1 >$$halle$galerie,
+			    if_has interlock2 >$$halle$galerie,>>interlock))
+	things	= (interlock1,plakette)
+$g1
+	exits	= (N:>ELSA,E:>g2)
+	actions	= (entry,stay:if_state klocke an &klocke)
+$ELSA
+	exits	= S:>g1
+	things 	= (klocke,taschenrechner,stift,licht)
+;
+; Erster Stock des physikalischen Institutes
+;
+$$erster
+$SAPH1
+	exits	= S:>e2
+	things	= SAPH1
+$schwille
+	exits	= N:>e1
+	things	= fenster
+	persons	= schwille
+$e1
+	exits	= (S:>schwille,E:>e2)
+$e2
+	exits	= (N:>SAPH1,W:>e1,E:>e3)
+$e3
+	exits	= (S:>>aufzug3,W:>e2,E:>e4)
+$e4
+	exits	= (W:>e3,S:>e8,N:>e5)
+$e5
+	exits	= (S:>e4,E:>e6)
+$e6
+	exits	= (W:>e5,E:>e7,S:(if_state 150 auf >150,&$$botanik$türzu))
+	things	= 150
+	actions = entry:if_state walter raucht walter = da
+$e7
+	exits	= W:>e6
+	things	= geschlossen
+$150
+	exits	= (E:(if_state walter da @walter = raucht,>151),
+		   N:(if_state 150 auf
+		       (if_here whiskey if_state whiskey voll whiskey charly,
+		        if_state walter raucht >e6,
+		        if_state walter * >e6,
+		        walter = stoppt,@walter = da),
+		      if_state 150 zu &$$botanik$türzu))
+	persons	= charly
+	things	= (brot,150,whiskey,kaffee)
+$151
+	exits	= W:>150
+	actions	= entry:if_state peter * (peter = tip,@peter = fertig)
+	persons	= (peter,hauptschlüssel,gabel)
+$e8
+	exits	= (W:>>aufzug3,N:>e4,S:>e9)
+	things	= liege
+$e9
+	exits	= (N:>e8,S:>e10,E:>>aufzug1)
+$e10
+	exits	= (N:>e9,S:>e11,D:>$$paterre$haupt,U:>$$zweiter$z3)
+$e11
+	exits	= (N:>e10,E:>e12)
+$e12
+	exits	= (S:>e13,E:>e14,W:>e11)
+$e13
+	exits	= N:>e12
+$e14
+	exits	= (W:>e12,
+		   D:(if_has jochen >>treppe_jochen,>$$paterre$g12),
+		   U:(if_has jochen >>treppe_jochen,>$$zweiter$z7),
+		   E:(if_state bücherei auf >bücherei,&$$botanik$türzu))
+	things	= bücherei
+$bücherei
+	exits	= W:(if_state bücherei auf >e14,&$$botanik$türzu)
+	persons	= mühl
+	things	= (anleitung,bücherei)
+;
+; Zweiter Stock des physikalischen Institutes
+;
+$$zweiter
+$z1
+	exits	= S:>z2
+$z2
+	exits	= (N:>z1,S:>z3,E:>>aufzug1)
+$z3
+	exits	= (N:>z2,S:>z4,D:>$$erster$e10,
+		   U:(if_nothas jochen >$$dritter$d3,&jochen))
+$z4
+	exits	= (N:>z3,S:>z5)
+$z5
+	exits	= (N:>z4,S:>z6,E:>z7)
+$z6
+	exits	= N:>z5
+$z7
+	exits	= (W:>z5,D:>>treppe)
+;
+; Dritter Stock des physikalischen Institutes
+;
+$$dritter
+$d1
+	exits	= N:>d2
+$d2
+	exits	= (S:>d1,N:>d3,W:>d6)
+$d3
+	exits	= (S:>d2,N:>d4,W:>ELPHO,D:>$$zweiter$z3)
+$d4
+	exits	= (S:>d3,N:>d5,W:>KOBE,E:&aufzug)
+$d5
+	exits	= (S:>d4,N:>d7)
+$d6
+	exits	= E:>d2
+	things	= löffel
+$d7
+	exits	= S:>d5
+$ELPHO
+	exits	= E:>d3
+$KOBE
+	exits	= E:>d4
+	persons	= kobe
+;
+; Keller des physikalischen Institutes
+;
+$$keller
+$mathe
+	exits	= (E:>k1,D:>eingang,
+		   W:(if_state mathe auf >$$paterre$g6,&$$botanik$türzu))
+	actions	= exit:@mathe = zu
+	things	= mathe
+$k1
+	exits	= W:>mathe
+$eingang
+	exits	= (U:>mathe,E:>k3,
+		   S:(if_state keller auf (flag1 = draussen,>$$draussen$s18),
+		      &$$botanik$türzu))
+	things	= keller
+$k3
+	exits	= (W:>eingang,S:>labor)
+	actions	= (exit,stay:if_here robert >>robert)
+	persons	= robert
+$labor
+	exits	= N:>k3
+	actions	= entry:if_state gerhild * gerhild keller
+;
+; Die Synchrotronhalle und die Experimente
+;
+$$halle
+$galerie
+	message	= *
+	exits	= (S:(if_has interlock1 >$$paterre$galerie,
+		      if_has interlock2 >$$paterre$galerie,>>interlock))
+	actions	= entry:(if_state licht aus >>galerie,
+			 if_message * (message = da,@message = kurz))
+$h8
+	exits	= (U:(if_state metall auf (flag1 = drinnen,>$$paterre$g6),
+		      &$$botanik$türzu),
+		   N:(if_has interlock1 >h7,if_has interlock2 >h7,>>interlock))
+	things	= (interlock2,metall)
+$h7
+	message	= *
+	exits	= (E:>h6,
+		   S:(if_state klocke * klocke start,
+		      if_has interlock1 >h8,if_has interlock2 >h8,>>interlock))
+	actions	= entry:(if_state licht aus >>licht,
+			 if_message * (message = da,@message = kurz))
+$h6
+	exits	= (W:>h7,N:>h4,S:>PHOENICS)
+$PHOENICS
+	exits	= N:>h6
+$h4
+	exits	= (N:>h5,S:>h6,W:>h3)
+$h5
+	exits	= (S:>h4,W:(if_nothas jochen >hütte,
+			    if_has anleitung >hütte,
+			    &jochen))
+	things	= (kammer,schraube,HV)
+$hütte
+	exits	= E:>h5
+	actions	= entry:if_state burkhard scharf
+			 if_has jochen (&burkhard,@burkhard = brav)
+	persons	= burkhard
+$h3
+	exits	= (E:>h4,N:>SAPHIR,W:(if_has jochen jochen weg,>h2))
+$SAPHIR
+	exits	= (S:>h3,N:>>SAPHIR)
+$h2
+	exits	= (N:>ELAN,E:>h3,S:>h1)
+	actions	= (stay/1:>>sebastian)
+$ELAN
+	exits	= (S:>h2)
+	actions	= (stay/1:>>sebastian)
+$h1
+	exits	= (N:>h2,S:>el3)
+	actions	= (stay/1:>>sebastian)
+$el1
+	exits	= (E:>el2,S:>el8)
+	actions	= (entry,stay:if_nothas plakette >>plakette,
+		   exit:if_here maus >>maus2,
+		   entry:if_here maus maus treffen)
+	things	= maus
+$el2
+	exits	= (W:>el1,E:>el3)
+	actions	= (entry,stay:if_nothas plakette >>plakette,
+		   exit:if_here maus >>maus2,
+		   entry:if_here maus maus treffen)
+$el3
+	exits	= (N:>h1,W:>el2,S:>el4)
+	actions	= (entry,stay:if_nothas plakette >>plakette,
+		   exit:if_here maus >>maus2,
+		   entry:if_here maus maus treffen)
+$el4
+	exits	= (N:>el3,S:>el5)
+	actions	= (entry,stay:if_nothas plakette >>plakette,
+		   exit:if_here maus >>maus2,
+		   entry:if_here maus maus treffen)
+$el5
+	exits	= (N:>el4,S:>el6)
+	actions	= (entry,stay:if_nothas plakette >>plakette,
+		   exit:if_here maus >>maus2,
+		   entry:if_here maus maus treffen)
+$el6
+	exits	= (N:>el5,W:>el7)
+	actions	= (entry,stay:if_nothas plakette >>plakette,
+		   exit:if_here maus >>maus2,
+		   entry:if_here maus maus treffen)
+$el7
+	exits	= (N:>el8,E:>el6)
+	actions	= (entry,stay:if_nothas plakette >>plakette,
+		   exit:if_here maus >>maus2,
+		   entry:if_here maus maus treffen)
+$el8
+	exits	= (N:>el1,S:>el7,W:>>ELSA)
+	actions	= (entry,stay:if_nothas plakette >>plakette,
+		   exit:if_here maus >>maus2,
+		   entry:if_here maus maus treffen)

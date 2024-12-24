@@ -1,1 +1,12 @@
+<div>
+  <button
+    mat-raised-button
+    [disabled]="messages.parsing"
+    (click)="messages.parse()"
+  >
+    Parse Messages
+  </button>
+  <span>{{ messages.lastError }}</span>
+</div>
+
 <router-outlet />

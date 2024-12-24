@@ -1,0 +1,19 @@
+message  = lang
+exits    = (*:&$$park$verboten)
+actions  = (entry:if_message lang @message = kurz)
+time     = (d6/0,h13/0,m2/1)
+weight   = (100,10,3)
+state    = $$dummy$start
+S 	 = #süden
+N 	 = #norden
+W 	 = #westen
+E  	 = #osten
+D 	 = #runter
+U 	 = #hoch
+< 	 = #nehmen
+! 	 = #ablegen
+& 	 = #sagen
+?	 = #ansehen
+C	 = #uhrzeit
+Q	 = #beenden
+

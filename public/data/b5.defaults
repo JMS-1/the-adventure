@@ -1,0 +1,26 @@
+message  = long
+exits    = (L:(message = long, @message = short),*:&$$exit$noexit)
+actions  = (entry:if_message long @message = short) 
+#take	 = (message = carry)
+#drop	 = (message = long)
+#kill	 = (&$$things$defkill)
+#eat	 = (&$$things$nothungry)
+#say	 = (&$$things$nosay)
+#ask	 = (&$$things$noask)
+time     = (d2/0,h14/0,m0/1)
+weight   = (100,10,4)
+state    = $$dummy$start
+S 	 = #south
+N 	 = #north
+W 	 = #west
+E  	 = #east
+D 	 = #down
+U 	 = #up
+< 	 = #take
+! 	 = #drop
+& 	 = #say
+?	 = #examine
+C	 = #time
+Q	 = #quit
+L	 = #look
+

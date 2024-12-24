@@ -1,0 +1,57 @@
+$$d1
+$escal1_long
+You are standing inside elevator 4 on the diplomats' level I that begins behind you. Downward the elevator will bring you to level II and the garden. On your way up you will pass the alien sector, market and restaurant and finally reach the entrance level.
+$escal1_short
+You are in elevator 4 on the diplomats' level I behind you.
+$g1_long
+This is one of the typical long corridors connecting the different rooms. Some artificial light sources let you see from one end to the other. Right in front of you is elevator number 4, the corridor continues to your back until it reaches another elevator in some distance. The signs on the doors right and left of you are the insignia of foreign worlds. The room to your right is number DI-1, the left is DI-2. Maybe you are in one of the ambassador levels.
+$g1_short
+Elevator 4 is in front of you, the corridor continues to your back. Left is room DI-1 and right of you lies DI-2.
+$g1W_long
+You entered room DI-1. An exotic smell lies in the air. The wall consists of some wood like material and seems to be like shredded in a strange way. There is absolutely no furniture in this room. Only a kind of king-size basket built into the floor and a big hole in the corner filled with sand. As you are nearing the sand hole a repulsive smell lets you jump back. The only way out is through the door to your right.
+$g1W_short
+You are in the wooden room DI-1 with the built-in basket. The exit is to your right.
+$g1E_long
+The room DI-2 is definitely Centauri stile. You can see all necessary parts as bed, kitchen, chairs and so on in this little chamber. It could not be the room of a very important person like ambassador Londo Mollari. Maybe it's Vir who created this environment.
+$g1E_short
+You are in Vir's chambers. There is only the exit to your left.
+$g2_long
+The corridor continues in front and back of you. Two elevators end it in nearly the same distance on both sides. You can see the rooms DI-3 to your right and DI-4 on the left. Special writings on the door of DI-4 notice you that this is an ambassador's place. The sign is Centauri.
+$g2_short
+You are on a corridor from back to front. To your left is an ambassador's room numbered DI-4, DI-3 is on your right hand side.
+$g2W_long
+The door slides open and you enter a large living room. Lots of more or less beautiful art stuff fills the walls and tables. Beside this it seems to be a more practical inventory somewhere between a workers bureau, a bedroom and a place to relax. As you inspect some of the pictures on the wall you mention that it's all Centauri art. In fact some other hints give you the strong impression that you are in the room of the Centauri ambassador Londo Mollari. The exit is to your right and there may be one more rooms to the left.
+$g2W_short
+You are in Londo's room with exits to the right and left.
+$g2WKitchen_long
+This is a nice little kitchen that gives some strong alien impression to you. The bulks of empty bottles and the intensive smell of alcohol lead you to the conclusion that cooking is not the main intention of the owner of this kitchen - overall, this is Londo! The exit is to your right.
+$g2WKitchen_short
+You are in Londo's Kitchen with a strong taste of alcohol in the air. The exit is to your right.
+$g2E_long
+Surprisingly enough this room is filled with trees and plants. It's like a little wood in itself. If you close your eyes you believe that you can hear birds and some sprinkling water. It is impossible to get a feeling for the size of this room. Maybe you stay near the door to your left because elsewhere you may be getting lost in this jungle.
+$g2E_short
+Room DI-3 is a jungle with its exit to your left.
+$g3_long
+The corridor ends to your back just with the door of elevator 1. In some distance in front of you there may be another elevator. Rooms numbered DI-6 and DI-5 lay to your left and right. Special signs on the doors lead you to the feeling that you are on an ambassadorial level.
+$g3_short
+Behind you is elevator 1, the corridor runs in front of you to another elevator. Left and right are the rooms DI-6 and DI-5.
+$g3W_long
+Room DI-6 looks rather normal concerning your personal subjective judgement. In fact it must be humanoids living here, strongly related to earth culture. A large bed fills one half of the room the other half seems to be the tenants working place: a big table dominates it. The exit is right of you.
+$g3W_short
+You are in room DI-6 with the exit to your right.
+$g3E_long
+Woo, room DI-5 can really produce some fear. It's filled all over with furs and hunting trophies. Some art on the wall are rather... - let's say the need a lot of red color to paint it! There are also some weapons around here but all of them are safely locked to the walls. Beside the exit on your left there is a very small corridor to your right leading to a dark room.
+$g3E_short
+You are in the trophy room DI-5. The exit is left of you and there is another room to your right.
+$g3EDark_long
+This becomes even more mysterious. You are in a dark room and can only see some shades on the wall. Tasting the wall gives you a strong feeling of silk or some similar material. I think it will eat up any kind of light you can bring in here. There is a bright glow from your left and, as your eyes adapt to the darkness, you see a tiny light behind you.
+$g3EDark_short
+It's dark with a big light spot to your left and a tiny behind you.
+$g3ESecret_long
+Well, this seems to be some special working room. You have a table, some furniture on the walls and a chair that looks a bit uncomfortable - must be alien construction. There is a small dark corridor in front of you and a funny door on the left side. It's kind of built into the wall. You could only notice it because of the strong marks of usage on the floor. Long time ago this must be a really secret door, as you know them from ancient movies.
+$g3ESecret_short
+You are in the working room with the dark corridor in front and the funny door left of you.
+$escal2_long
+You are in elevator 1 with a look on the diplomats' level I right in front of you. Downward the elevator can only reach the garden and upwards it leads through the restaurant level to the C&C area, which is restricted. As you take a deeper look on the walls you see a secret exit to your right.
+$escal2_short
+You are in elevator 1. The diplomats' sector I is in front of you. There seems to be a secret exit on your right hand side.

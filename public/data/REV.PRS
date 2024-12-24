@@ -1,0 +1,242 @@
+$$things
+$franzl_tip
+Am Tisch sitzt Franz-Josef und baggert in sich hinein, was er nur 
+bekommen kann - als gäbe es ab morgen nichts mehr. Als er Dich sieht
+entweicht ihm ein gigantischer Rülpser, der das ganze Gebäude 
+erschüttert und Dich wanken läßt. Erleichtert meint er dann: "Da bist
+Du ja endlich, ich dachte schon, ich müßte mich hier totfressen. Hier
+sind die Schlüssel. Ich hau dann mal ab. Ach ja, der Bernhard ist seit
+Stunden im Wald spazieren, hat sich wohl wieder mal verlaufen. Wenn Du
+ihn suchst, vergiß' die Karte nicht." Mit einem schnellen "Tschüß" wankt
+er aus dem Raum.
+$rülpser
+Ein mächtiges Beben erschüttert den Boden so stark, daß Du fast das
+Gleichgewicht verlierst. Der gleichzeitig ertönende Donner ist wirklich
+merkwürdig, da Du keinerlei Anzeichen eines Blitzes siehst und bei der
+Lautstärke müßte das Gewitter doch eigentlich sehr nahe sein. Wenn
+Du es genau überlegst, klang der Donner so ein bißchen wie ein gigantischer
+Rülpser - verrückt!
+$hund_böse
+Direkt links von Dir sitzt ein großer schwarzer Hund mit gefletschten Zähnen. 
+Er knurrt Dich böse an und seine Augen funkeln tückisch.
+$empfang_arrogant
+Hinter dem Tresen der Rezeption steht eine schöne aber offenbar sehr
+arrogante junge Dame und ignoriert Dich.
+$empfang_schlüssel
+Als Du den Zettel so aufmerksam liest kommt doch etwas Leben in die Dame und
+sie meint: "Ach, gehören Sie auch zu der Bande?" Nachdem Du das in Deiner
+ersten Überraschung bestätigst, legt sie einen Schlüssel mit der Bemerkung
+"Der ist dann
+sicher für Sie." auf den Tresen und gibt Dir eine kurze Wegbeschreibung:
+"Vom Hotel am Parkplatz aus gehen Sie nach Süden bis zur ersten Abzweigung der
+Straße gegenüber dem Spielplatz und dann den zweiten Fußweg ebenfalls nach
+Süden. Das Häuschen steht dann irgendwo rechts." Dann verschwindet sie in den
+hinteren Räumen.
+$pflag_true
+$poebel_lang
+Hier im Tunnel lungert eine Gruppe von Halbstarken herum.
+$poebel_poebelt
+Als Du versuchst durch die Gruppe der Halbstarken hindurch zu gehen, wirst
+Du von Ihnen eine ganze Weile hin und her geschubst und landest dann wieder
+an Deinem Ausgangspunkt. So kommst Du hier nicht durch, da mußt Du Dir schon
+was anderes einfallen lassen.
+$poebel_flieht
+Die Halbstarken versuchen Dich aufzuhalten, haben aber nicht mit Robert 
+gerechnet. Er hebt die Hand mit der Kette, von der immer noch das Öl 
+heruntertropft und legt mit einem Leberhaken einen der Burschen
+flach. Der Rest berät sich kurz und flieht dann Hals über Kopf. "So geht
+das!" meint Robert nur.
+$robert_lang
+Da steht Robert.
+$robert_trägt
+Hinter Dir läuft Robert.
+$robert_flieht
+Robert will wohl im Moment in keine Prügelei verwickelt werden und macht sich
+mit den Worten "Du weißt ja, wo Du mich findest. Nur falls Du Hilfe brauchst."
+aus dem Staub.
+$punker_lang
+Rechts steht ein Punker mit einer Jacke und einer Shorts aus Kronkorken.
+$punker_zoff
+"Ey Mann, hier ist Wegezoll fällig." meint der Punker und läßt Dich nicht
+durch. Bei diesen Worten streicht er über seine Jacke aus Kronkorken und Du
+siehst sofort, daß hier einige Biermarken nicht vertreten sind.
+$punker_zuwenig
+"Ey Mann, willst Du mich verarschen oder was? Alles oder nichts ist hier die
+Devise! Also troll Dich, aber fix." sagt der Punker und will Dich immer noch
+nicht durchlassen, obwohl Du ihm Deine gesammelten Kronkorken anbietest. Du
+kontrollierst noch einmal seine Jacke und merkst Dir die fehlenden Marken:
+Bit, Dortmunder, Frühkölsch, Veltins, Domkölsch und Warsteiner.
+$punker_freude
+"Ey toll Mann, die fehlten mir noch in meiner Sammlung! Stark, muß ich sofort
+den Jungs zeigen. Ach übrigens, Domkölsch kotzt mich echt an, ich hoffe Du
+hast nicht danach gesucht!" Mit einem hämischen Lachen verschwindet er in den
+Büschen.
+$verkäufer_lang
+Da sitzt ein Verkäufer hinter der Kasse.
+$verkäufer_scherz
+Der Verkäufer lacht sich halb krumm, als Du in allen Taschen nach dem
+Geld kramst.
+$verkäufer_nanu
+Der Verkäufer fragt sich jetzt, was Du denn gerne bezahlen möchtest, da
+Du nichts aus dem Laden mitgenommen hast.
+$jochen_lang
+Neben dem AMIGA sitzt Jochen und langweilt sich offensichtlich. Ein leises
+Knurren kommt aus seiner Richtung, wenn Du Dich nicht täuschst.
+$jochen_tip
+Aus der minimalen Zeitspanne, die Jochen braucht die Salzstangen - samt 
+Schachtel - in sich hinein zu schlingen, ermittelst Du leicht, 
+daß er wohl wirklich Hunger hatte. Das Knurren,
+das jetzt nicht mehr zu hören ist, war wohl sein Magen. Nach dem feudalen
+Mal seufzt er kurz und schläft dann ein. Aus seiner sich öffnenden Hand
+rutscht ein zusammengefalteter Zettel auf den Boden.
+$jochen_schläft
+Jochen schläft mit einem Lächeln auf den Lippen neben dem AMIGA.
+$bernhard_anna
+Vor Dir steht ein Kinderwagen, um den sich gerade Bernhard, Petra und Peter
+gebeugt haben. Aus dem Wagen ertönt lautes Geschrei.
+$bernhard_lang
+Du siehst Bernhard, Petra und Peter mit einem Kinderwagen spazierengehen.
+$bernhard_danke
+Nachdem Anna den Schnuller erhalten hat, wird sie augenblicklich ruhig und
+die Aufmerksamkeit der Wanderer wendet sich auch wieder dem Rest
+ihrer Umwelt zu.
+$bernhard_geht
+"Ach, so einfach kommen wir hier raus!" ruft Bernhard nach einem kurzen
+Blick in die Wanderkarte. "Na dann, vielen Dank noch und tschüß. Für Peter
+haben wir leider keinen Platz mehr im Auto, aber der wird schon was
+finden." Damit nimmt er Petra und den Kinderwagen und verschwindet
+schnell um die nächste Ecke. Peter bleibt leicht verstört zurück.
+$bernhard
+Tja, leider schaffst Du es nicht, die Aufmerksamkeit der Wanderer zu
+erregen, die im Augenblick mit dem Kind beschäftigt sind. Vielleicht
+später, wenn es etwas ruhiger ist.
+$peter_lang
+Peter steht hier traurig herum.
+$peter_geht
+Robert meint: "Das heißt wohl, Du brauchst mich jetzt nicht mehr. Na vielen
+Dank, dann fahre ich jetzt nach Hause." Nach kurzer Beratung verschwindet er
+mit Peter zusammen.
+$marlise
+Untersteh' Dich, Du Ferkel.
+$marlise_nervös
+Hier steht Marlise in einem Berg von Kippen, aus denen ein dichter Nebel
+aufsteigt. Sie hält eine frische Zigarette in der Hand und sieht sich
+verzweifelt in alle Richtungen um.
+$marlise_freude
+Voller Freude nimmt Marlise die Streichhölzer entgegen und zündet sich
+ihre Zigarette an. Ein langer Zug und schon braucht sie die nächste.
+Ein tiefer Seufzer ertönt und dann verschwindet sie mit der Bemerkung:
+"Ich suche Norbert und dann gehen wir ein bißchen am See spazieren. Ich
+brauche mal etwas frische Luft, verstehst Du?"
+$marlise_raucht
+Durch eine Dunstwolke erahnst Du Marlise.
+$norbert_lang
+Hier steht Norbert und scheint ziemlich gelangweilt.
+$barkeeper_lang
+An der Theke steht ein grimmig aussehender Barkeeper mit einer zerbrochenen
+Flasche in der Hand. Er beobachtet Dich aufmerksam.
+$johannes_tip
+Als Johannes Dich kommen sieht ruft er mit verzweifeltem Kopfschütteln:
+"Gebt mir einfach eine Waffe und ich erledige Euch das Untier." Ich habe
+den Eindruck, er redet mehr mit sich selbst als mit Dir.
+$johannes_normal
+Da steht Johannes.
+$johannes_messer
+Jetzt hellt sich die Miene von Johannes auf. Mit dem Schrei "Jagdzeit"
+stürmt er aus dem Zimmer.
+$johannes_katze
+Vor Dir steht Johannes mit entblößtem Oberkörper und dem Fell einer
+getigerten Katze als Nierenwärmer. Im Hosenbund steckt ein blutiges Messer.
+$johannes_trägt
+Hinter Dir läuft Johannes mit seinem schicken Nierenwärmer.
+$johannes
+Johannes sagt: "Ich gehe hier nicht weg, bevor ich nicht meine Arbeit 
+erledigt habe. Einer muß es ja tun!"
+$angst
+Ich trau' mich nicht.
+$maus_kommt
+Der intensive Käseduft hat eine kleine Maus angelockt, die sofort auf den
+Tisch springt und sich an den Käse machen will. Dann bemerkt sie Euch und
+öffnet ihren Rachen mit langen, blutigen Hauern. Als ihr Blick aber auf
+Johannes mit seinem Nierenwärmer fällt, fängt sie erst an zu zittern
+und erstarrt dann in völliger Regungslosigkeit.
+$maus_lang
+Da steht eine kleine Maus auf dem Tisch und starrt ängstlich auf den
+Nierenwärmer von Johannes.
+$maus_tot
+Man glaubt es nicht, wie dumm Tiere doch manchmal sein können. Diese Maus
+glaubt doch tatsächlich, daß die Katze noch lebt und vor ihr hat sie wohl
+wirklich große Angst. Sie verendet nach einigen Zuckungen an einem Herzschlag
+und dann ist in
+der Küche die Hölle los. Erst bläht die Leiche
+sich auf ihre ehemalige riesenhafte
+Größe auf, dann löst sie sich langsam in bläuliche Schwaden auf, die nach
+oben offenbar durch die Decke ziehen. Unheimliche Geräuche erfüllen
+den Raum - kurzum: so ähnlich wie am Ende vom Highlander. Erster Teil,
+versteht sich -, aber nach kurzer Zeit ist der Spuk vorbei und die Maus
+ohne Spuren zu hinterlassen verschwunden.
+$harald_lang
+Aus dem Eis ragt eine Hand, an deren Handgelenk ein kleines goldenes
+Kettchen mit einer Gravure "H.M." im Winde zappelt.
+$harald_taut
+Als das Eis vor Dir zu tauen beginnt, kommt etwas Bewegung in die Hand.
+Plötzlich ertönt ein lautes Krachen und mit einem Schwung kommt Harald
+aus dem Wasser und landet vor Dir auf dem Eis. Seine triefenden Klamotten
+trocknet der Rest des heißen Windes schnell. 
+$harald_geht
+Harald ist sehr froh, daß Du das Untier erledigt hast. Wie er Dir erzählt,
+wollte er sich nur aus Angst für einige Jährchen einfrieren und so das Monster
+überleben. Er lobt Dich nochmal für all das Gute, das Du bereits hier
+vollbracht hast und macht sich dann auf den Weg nach Hause.
+$harald_angst
+Harald ist zuerst sehr fröhlich. Als Du jedoch auf die Frage 
+"Das Monster ist doch
+tot?" nur schuldbewußt den Kopf senkst, schreit er "Oh nein! Ich lasse
+mich lieber wieder einfrieren, als dem Untier lebend in die Hände zu
+fallen!". Mit diesen Worten durchbricht er das noch dünne Eis und wenige
+Augenblicke später siehst Du nur noch seine Hand mit dem Kettchen mit seinen
+Initialen aus dem Eis ragen.
+$michael_lang
+Plötzlich springt Michael an Dir vorbei. Er trägt nur eine Badehose, so daß
+Du deutlich seine vom Wasser verschrumpelte Haut und die Schwimmhäute
+zwischen den Fingern und Zehen erkennen kannst. Als er Dich sieht, meint
+er nur: "Ah, hi. Ich geh' nur mal eben auf einen Nachmittag ins Schwimmbad."
+Damit huscht er durch die sich auf sein Klopfen und Vorzeigen einer Karte
+öffnende Türe.
+$charly_kugel
+Charly hat eine Bowlingkugel in der Hand.
+$charly_zielen
+Charly steht vor der Kegelbahn und nimmt Maß für seinen Wurf.
+$charly_anlauf
+Charly nimmt einen gehörigen Anlauf zum Wurf auf die Bowlingkegel.
+$charly_wurf
+Charly rollt seine Bowlingkugel mehr oder weniger in Richtung der Kegel.
+$charly_springt
+Aus unbekannten Gründen hüpft Charly wie wild auf der Bowlingbahn herum, so
+daß alles um Dich herum leicht zu zittern beginnt.
+$charly_ärger
+Da steht Charly und flucht wie ein Rohrspatz - was immer das ist.
+$burkhard_sucht
+Hier ist Burkhard mit einem Baseball in der Hand. Er scheint etwas zu suchen.
+$burkhard_geht
+Mit den Worten "Ja, den habe ich gesucht. Vielen Dank. Dann werde ich jetzt
+mal Beate suchen." verschwindet Burkhard aus Deiner Sicht.
+$beate_traurig
+Neben der Kegelbahn steht Beate und sieht so alle siebzehn Sekunden wütend
+auf ihre Uhr.
+$beate_froh
+An der Kegelbahn sind Burkhard und Beate in eine fröhliche Partie vertieft.
+$hansi_traurig
+Da sitzt Hans-Christian genannt Hansi inmitten eines Stapels von vollen
+Bierkästen mit ebenso vollen Bierflaschen.
+$hansi_froh
+Jetzt kann Hans-Christian endlich seinen Junggesellenabschied mal so richtig
+nachfeiern. Er macht sich sofort an die Arbeit.
+$hansi_zecht
+Im Raum torkelt Hans-Christian genannt Hansi umher und kippt eine Flasche Bier
+nach der anderen in sich hinein.
+$halbstarke_spielen
+An den Geräten spielen eine Menge Halbstarker und Kinder.
+$burkhard
+Du siehst gerade, wie ein überglücklicher Burkhard mit einem Baseballschläger
+samt Ball beladen an Dir vorbei wetzt.

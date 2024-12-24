@@ -1,0 +1,65 @@
+$$down
+$escal1_long
+You are in elevator 5 on the Down Below level. You can move up to the staff quarters level II. Down Below lies to your right in a very dim light. Better you have some light before entering this section.
+$escal1_short
+You are in the down below elevator 5. Down Below begins to your right.
+$g1_long
+This is a dark and dirty corridor that ends on the right in some far distance. Left is elevator 5 and you honestly think to use it immediately only to get away from here as fast as possible. The wall of the corridor is made of steely columns and there are some kinds of rooms inside it. One of the rooms is just in front of you.
+$g1_short
+You stand at the beginning of the corridor from elevator 5 left of you extending to the right. In front of you is some kind of a room.
+$g1N_long
+No, this is not a really room. It's only a stinky place where the people from this level collect garbage. You should leave through the exit behind you.
+$g1N_short
+This is the garbage sector of Down Below. The exit is behind you.
+$g2_long
+The dark and dirty corridor continues from left to right. Some blood is on the floor - it may be a surprise but this doesn't make you believe that you should stay in Down Below longer than necessary. Some kinds of rooms or chambers are in front of and behind you.
+$g2_short
+You're on a dirty corridor from left to right. There are rooms behind and in front of you.
+$g2N_long
+This room is a small chamber only including a round table and some cheap chairs. Some playing cards between the rests of some meals - looks as if one piece, that  with the long white hairs, is moving, but perhaps you're only dreaming - make it look rather dirty. The walls are filled with pictures of nearly undressed women - human origin, as an expert like you can see. The exit is behind you.
+$g2N_short
+You are in the dirty chamber with the girls on the wall. The exit is behind you.
+$g2S_long
+The room is totally built into some kind of stone - are we really on the station Babylon 5? The walls look rather strange in this environment. Some water drops out of the stone and forms a real swimming pool - nice recreation area. It's cold and you're getting wet. The exit is in front of you.
+$g2S_short
+You're in the stone room with the swimming pool. The exit is in front of you.
+$g3_long
+As you take a deeper look you can see an elevator in some distance to your left. The dark corridor ends to the right nearby but for now you could continue walking. Behind and in front of you are some rooms.
+$g3_short
+The corridor from left will soon end on the right hand side. There are rooms in front of and behind you.
+$g3N_long
+You are on top of a long staircase with the exit behind you. The stairs lead up where it seems to be colder.
+$g3N_short
+This is the top of the staircase upward. A dark corridor lies behind you.
+$stairs_long
+You are on some stairs leading down and up. The floor is wet, you should be cautious.
+$stairs_short
+You are on some stairs leading down and up.
+$g3S_long
+This room is a very big surprise in this environment: it's all white - really white. With a white table, a white carpet, a white chair and so on. In fact, it's all so white that it's hard to see the contours of all those stuff. The exit is in front of you.
+$g3S_short
+You're in the white room with the exit in front of you.
+$g4_long
+The corridor from the left doesn't end here but bends and continues behind you. As a sign on the wall tells you there must be 'The Bar'.
+$g4_short
+The corridor from the left bends to 'The Bar' behind you.
+$g4S_long
+This is the way to the bar behind you. A sign says 'Watch out for Steps' and then you notice the steps leading you downward through a curtain. A corridor lies in front of you.
+$g4S_short
+'The Bar' is downward and the corridor is in front of you.
+$bar1_long
+You're at the bar section of a dirty little restaurant. Some twilight creatures - most aliens but some humans, too - are sitting around and drinking more or less known drinks. The bar extends to the right and behind you. You can leave - as long as you can - using the steps upward.
+$bar1_short
+The exit of 'The Bar' leads upward. You're at the bar to your left and can walk through the room right and backward.
+$bar2_long
+Another section of the bar with more drinks and more men - let's call them this way even if for some of them you can't find out if they are male or female or whatsoever. The bar is left of you and you can walk right or forward.
+$bar2_short
+You're in a corner of 'The Bar' with a bar to your left. You can go right or forward.
+$room1_long
+Astonishingly enough this sector of 'The Bar' is some kind of restaurant. All of the dirty little tables are occupied by creatures eating strange looking and smelling meals - you lost your appetite that moment you saw some of the meals definitely moving around. 'The Bar' extends to the left and behind you.
+$room1_short
+Here is the alien section of 'The Bar'. You can go left and backward.
+$room2_long
+In this restaurant part of 'The Bar' only humans or nearly human aliens can be seen.  The meals and drinks look rather familiar and you're getting hungry and dirty. But as you see some dirty waiter bringing some meal after it smashed two times on the floor - exactly: the part some millimeters above the floor where all the dirt ends -, this feelings stop immediately. You can walk through 'The Bar' left and forward.
+$room2_short
+You are in the human corner of 'The Bar'. You can go forward and left.

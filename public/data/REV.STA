@@ -1,0 +1,1203 @@
+;
+; Anfangszustand
+;
+$$dummy
+$start
+	message = *
+	actions = stay:(kiosk start,brunch start,halle start,poebel start,
+			bowling start,terasse start,franzl start,geld nehme,
+			korken1 verstecken,korken2 verstecken,
+			korken3 verstecken,korken4 verstecken,
+		        korken5 verstecken,bernhard start,schuhe nehme,
+			katze start,fernseher start,michael start,charly start,
+			burkhard start,
+			message = lang,message = kurz,>$$park$w73)
+$nowhere
+	message = *
+	persons = (punker,handschuhe,maus)
+;
+; Der Park
+;
+$$park
+$s1
+	exits = (E:>s2,W:(if_state schranke geschlossen &klettern,
+			  punker kommt,>$$wald$s1))
+	things = schranke
+$s2
+	exits  = (W:>s1,E:>s3,S:>w11)
+	things = katze
+$s3
+	exits = (W:>s2,E:>s4)
+$s4
+	exits   = (W:>s3,S:>w21,E:(if_here punker punker ärger,
+				   if_nothere punker >s5))
+	actions = stay/3:&ausdauer
+$s5
+	exits  = (W:>s4,E:>s6)
+	things = katze
+$s6
+	exits = (W:>s5,E:>s7,S:>w31)
+$s7
+	exits   = (W:>s6,E:>s8)
+	actions = stay/3:>>maulwurf
+$s8
+	exits   = (W:(if_here hund >>hund,>s7),E:>s9,S:>w41)
+	actions = stay/3:if_here hund >>hund
+	things  = hund
+$s9
+	exits  = (W:>s8,S:>s10,D:>s100)
+	things = katze
+$s100
+	exits   = (U:>s9,D:[>s44,>s44,>s44,>s45,>s45,>s46,>s46,>>hang))
+	actions = stay/3:>>hang
+$s10
+	exits = (N:>s9,W:>s11,S:>w71)
+$s11
+	exits = (E:>s10,W:>s12)
+$s12
+	exits  = (E:>s11,W:>s13,S:>w61)
+	things = katze
+$s13
+	exits = (E:>s12,W:>s14)
+$s14
+	exits = (E:>s13,W:>s15)
+$s15	
+	exits  = (E:>s14,W:>s16,S:>w51)
+	things = katze
+$s16
+	exits = (E:>s15,W:>s17)
+$s17
+	exits = (E:>s16,W:>s18)
+$s18
+	exits  = (E:>s17,W:>s19)
+	things = katze
+$s19
+	exits   = (E:>s18,W:>s20)
+	actions = stay/2:>>mafia
+$s20
+	exits = (E:>s19,S:>s21,W:&hotel)
+$s21
+	exits  = (N:>s20,W:>s22,S:>s30,E:>w518)
+	things = katze
+$s22
+	exits  = (E:>s21,W:>s23,S:>sp5)
+	things = katze
+$s23
+	exits = (E:>s22,W:>s24,S:>sp4)
+$s24
+	exits = (E:>s23,W:>s25,S:>sp3)
+$s25
+	exits = (E:>s24,W:>s26,S:>sp2)
+$s26
+	exits  = (E:>s25,D:>s27,S:>sp1)
+	things = katze
+$s27
+	exits = (U:>s26,S:>s28,E:>sp6)
+$s28
+	exits  = (N:>s27,S:>s29,E:>sp9)
+	things = (katze,flaschenöffner)
+$s29
+	exits = (N:>s28,S:>>straße)
+$sp1
+	exits = (N:>s26,E:>sp2,S:>sp6)
+$sp2
+	exits   = (W:>sp1,E:>sp3,S:>sp7,N:>s25)
+	actions = (entry:sflag kot,stay/3:>>kinder)
+	things  = katze
+$sp3
+	exits = (W:>sp2,E:>sp4,S:>sp7,N:>s24)
+$sp4
+	exits  = (W:>sp3,E:>sp5,S:>sp7,N:>s23)
+	things = (hase,katze)
+$sp5
+	exits = (W:>sp4,E:>s30,S:>sp8,N:>s22)
+$sp6
+	exits = (W:>s27,N:>sp1,S:>sp9,E:>sp7)
+$sp7
+	exits = (W:>sp6,E:>sp8,N:[>sp3,>sp4),S:[>sp9,>sp10))
+	things = (gerüst,katze)
+$sp8
+	exits   = (W:>sp7,E:>s51,N:>sp5,S:>sp10)
+	persons = jochen
+$sp9
+	exits  = (W:>s28,E:>sp10,N:[>sp6,>sp7))
+	things = katze
+$sp10
+	exits   = (W:>sp9,E:>s52,S:>sp11,N:[>sp7,>sp8))
+	things  = katze
+$sp11
+	exits = (N:>sp10,S:>wf4)
+$s30
+	exits = (N:>s21,S:>s51,W:>sp5,E:>s31)
+$s31
+	exits = (W:>s30,E:>s32)
+$s32
+	exits  = (W:>s31,E:>s33,S:>w91,N:>w516)
+	things = katze
+$s33
+	exits = (W:>s32,E:>s34,S:>w94)
+$s34
+	exits  = (W:>s33,E:>s35,N:>w510)
+	things = katze
+$s35
+	exits = (W:>s34,E:>s36,S:>wa1)
+$s36
+	exits = (W:>s35,E:>s37,N:>w69)
+$s37
+	exits  = (W:>s36,E:>s38)
+	things = katze
+$s38
+	exits  = (W:>s37,E:>s39,S:>s63)
+	things = katze
+$s39
+	exits = (W:>s38,E:>s40)
+$s40
+	exits = (W:>s39,E:>s41)
+$s41
+	exits = (W:>s40,N:>s42,S:>s47)
+$s42
+	exits  = (S:>s41,N:>s43)
+	things = katze
+$s43
+	exits = (S:>s42,N:>s44)
+$s44
+	exits  = (S:>s43,N:>s45,U:>s100)
+	things = katze
+$s45
+	exits = (S:>s44,E:>s46,N:&autsch)
+$s46
+	exits  = (W:>s45,E:&weltende,N:&autsch)
+	things = katze
+$s47
+	exits = (N:>s41,S:>s48)
+$s48
+	exits   = (N:>s47,S:>s49)
+	persons = robert
+$s49
+	exits = (N:>s48,S:>s50)
+$s50
+	exits = (N:>s49,S:>>straße)
+$s51
+	exits = (N:>s30,S:>s52,W:>sp8)
+	things = (telefonzelle,katze)
+$s52
+	exits  = (N:>s51,W:>sp10,E:>w81,S:>s53)
+	things = katze
+$s53
+	exits = (N:>s52,E:>s54)
+$s54
+	exits  = (W:>s53,S:>wf1,E:>s55)
+	things = katze
+$s55
+	exits = (W:>s54,N:>wa25,S:>we1,E:>s56)
+$s56
+	exits = (W:>s55,E:>s57)
+$s57
+	exits = (W:>s56,E:>s58)
+$s58
+	exits  = (W:>s57,E:>s59,S:>wd1)
+	things = katze
+$s59
+	exits = (W:>s58,E:>s60)
+$s60
+	exits  = (W:>s59,E:>s61)
+	things = katze
+$s61
+	exits = (W:>s60,E:>wc1,N:>s62)
+$s62
+	exits = (S:>s61,N:>s63)
+$s63
+	exits  = (S:>s62,N:>s38,E:>wb1)
+	things = katze
+$w11
+	exits  = (N:>s2,S:>w12)
+	things = schläger
+$w12
+	exits  = (N:>w11,E:>w13,SW:&hauszu)
+	things = matte
+$w13
+	exits = (W:>w12,E:>w14)
+$w14
+	exits  = (W:>w13,E:&hauszu)
+	things = (matte,katze)
+$w21
+	exits = (N:>s4,S:>w22)
+$w22
+	exits  = (N:>w21,E:>w23,SW:&hauszu)
+	things = matte
+$w23
+	exits  = (W:>w22,E:>w24)
+	things = katze
+$w24	
+	exits  = (W:>w23,E:&hauszu)
+	things = (matte,katze)
+$w31
+	exits = (N:>s6,S:>w32)
+$w32
+	exits  = (N:>w31,E:>w33,SW:&hauszu)
+	things = (matte,katze)
+$w33
+	exits  = (W:>w32,E:>w34)
+	things = katze
+$w34
+	exits  = (W:>w33,E:&hauszu)
+	things = matte
+$w41
+	exits = (N:>s8,S:>w42)
+$w42
+	exits  = (N:>w41,W:>w43,SE:&hauszu)
+	things = matte
+$w43
+	exits   = (E:>w42,W:>w44)
+	actions = entry:sflag dreckig
+	things  = katze
+$w44
+	exits   = (E:>w43,W:&hauszu)
+	actions = entry:sflag dreckig
+	things  = (matte,katze)
+$w51
+	exits = (N:>s15,S:>w52)
+$w52
+	exits  = (N:>w51,W:>w53,SE:&hauszu)
+	things = matte
+$w53
+	exits = (E:>w52,W:>w54,S:>g11)
+	things = katze
+$w54
+	exits  = (E:>w53,S:>w55,N:&hauszu)
+	things = (matte,katze)
+$w55
+	exits  = (N:>w54,S:>w56,W:>w511,E:&hauszu)
+	things = (matte,katze)
+$w56
+	exits  = (N:>w55,E:>w57,SW:&hauszu)
+	things = matte
+$w57
+	exits  = (W:>w56,E:>w58,N:>g11)
+	things = katze
+$w58
+	exits  = (W:>w57,E:>w59,N:>g12)
+	things = katze
+$w59
+	exits  = (W:>w58,S:>w510,E:&hauszu,N:>g13)
+	things = matte
+$w510
+	exits = (N:>w59,S:>s34)
+$w511
+	exits = (E:>w55,W:>w512)
+$w512
+	exits  = (E:>w511,N:>w513,W:>w515,S:&hauszu)
+	things = (matte,katze)
+$w513
+	exits   = (S:>w512,E:>w514,W:&hauszu)
+	things  = matte
+	persons = marlise
+$w514
+	exits  = (W:>w513,E:&hauszu)
+	things = (matte,katze)
+$w515
+	exits  = (E:>w512,W:>w517,S:>w516)
+	things = katze
+$w516
+	exits = (N:>w515,S:>s32)
+$w517
+	exits  = (E:>w515,W:>w518,S:&hauszu)
+	things = matte
+$w518
+	exits = (E:>w517,W:>s21)
+$w61
+	exits   = (N:>s12,S:>w62)
+	actions = entry:sflag kot
+	things  = katze
+$w62
+	exits  = (N:>w61,W:>w63,SE:&hauszu)
+	things = (matte,katze)
+$w63
+	exits  = (E:>w62,W:>w64)
+	things = schnuller
+$w64
+	exits  = (E:>w63,S:>w65,W:&hauszu)
+	things = (matte,katze)
+$w65
+	exits  = (N:>w64,S:>w66,E:&hauszu,W:>g14)
+	things = matte
+$w66
+	exits  = (N:>w65,E:>w67,W:&hauszu,S:>g17)
+	things = matte
+$w67
+	exits = (W:>w66,E:>w68,S:>g17)
+$w68
+	exits  = (W:>w67,E:>w69)
+	things = katze
+$w69
+	exits  = (W:>w68,S:>s36,NE:&hauszu)
+	things = matte
+$w71
+	exits = (N:>s10,S:>w72)
+$w72
+	exits  = (N:>w71,W:>w73,SE:&hauszu)
+	things = (matte,katze)
+$w73
+	exits = (E:>w72,W:>w74)
+$w74
+	exits  = (E:>w73,W:&hauszu)
+	things = matte
+$w81
+	exits  = (W:>s52,E:>w82)
+	things = katze
+$w82
+	exits  = (W:>w81,S:>w83,N:>g228,E:&hauszu)
+	things = matte
+$w83
+	exits  = (N:>w82,S:&hauszu)
+	things = (matte,katze)
+$w91
+	exits  = (N:>s32,S:>w92,E:&hauszu)
+	things = (matte,katze)
+$w92
+	exits  = (N:>w91,E:>w93,SW:&hauszu)
+	things = matte
+$w93
+	exits  = (W:>w92,E:>w95,S:>g220,N:&hauszu)
+	things = matte
+$w94
+	exits  = (N:>s33,S:>w95)
+	things = katze
+$w95
+	exits = (W:>w93,N:>w94,E:>w96,
+ 		 S:(if_state vorne37 * &hauszu,
+		    if_state vorne37 auf (schuhe test,>$$haus37$flur)))
+	things = (matte,vorne37)
+$w96
+	exits = (W:>w95,S:>g218,
+ 		 E:(if_state vorne27 * &hauszu,
+		    if_state vorne27 auf (schuhe test,>$$haus27$flur)))
+	things = (matte,vorne27,katze)
+$wa1
+	exits = (N:>s35,S:>wa2)
+$wa2
+	exits  = (N:>wa1,E:>wa3,SW:&hauszu)
+	things = (matte,katze)
+$wa3
+	exits  = (W:>wa2,E:>wa4,S:>g22)
+	things = katze
+$wa4
+	exits  = (W:>wa3,S:>wa7,N:>wa5,E:&hauszu)
+	things = matte
+$wa5
+	exits  = (S:>wa4,E:>wa6,NW:&hauszu)
+	things = matte
+$wa6
+	exits  = (W:>wa5,E:&hauszu)
+	things = (matte,katze)
+$wa7
+	exits = (N:>wa4,S:>wa8,W:>g22)
+$wa8
+	exits  = (N:>wa7,W:>wa9,E:&hauszu)
+	things = matte
+$wa9
+	exits = (E:>wa8,W:>wa10,N:>g22)
+$wa10
+	exits  = (E:>wa9,S:>wa11,W:>wa14,N:&hauszu)
+	things = matte
+$wa11
+	exits  = (N:>wa10,S:>wa12,E:&hauszu)
+	things = (matte,katze)
+$wa12
+	exits  = (N:>wa11,E:>wa13)
+	things = katze
+$wa13
+	exits  = (W:>wa12,E:&hauszu)
+	things = (matte,katze)
+$wa14
+	exits = (E:>wa10,W:>wa15,N:>g24)
+$wa15
+	exits = (E:>wa14,W:>wa16,N:>g25)
+$wa16
+	exits = (E:>wa15,S:>wa17,W:&hauszu,
+ 		 N:(if_state vorne26 * &hauszu,
+		    if_state vorne26 auf (schuhe test,>$$haus26$flur)))
+	things = (matte,vorne26,katze)
+$wa17
+	exits  = (N:>wa16,W:>wa18,E:&hauszu,S:>wa20)
+	things = matte
+$wa18
+	exits = (E:>wa17,S:>wa19,W:>wa22,N:>g212)
+$wa19
+	exits  = (N:>wa18,E:>wa20,W:&hauszu)
+	things = matte
+$wa20
+	exits  = (W:>wa19,E:>wa21,N:>wa17)
+	things = katze
+$wa21
+	exits  = (W:>wa20,
+		  E:(if_has handschuhe &dornröschen,
+		     if_nothas handschuhe >>schlaf))
+	things = matte
+$wa22
+	exits  = (E:>wa18,W:>wa23,N:>g213)
+	things = katze
+$wa23
+	exits  = (E:>wa22,W:>wa24,N:>g214)
+	things = katze
+$wa24
+	exits = (E:>wa23,W:>wa25,N:>g215)
+$wa25
+	exits  = (E:>wa24,S:>s55,NW:&hauszu)
+	things = matte
+$wb1
+	exits  = (W:>s63,E:>wb2,S:&hauszu)
+	things = (matte,katze)
+$wb2
+	exits  = (W:>wb1,S:>wb3,E:&hauszu)
+	things = matte
+$wb3
+	exits  = (N:>wb2,S:&hauszu)
+	things = (matte,katze)
+$wc1
+	exits  = (W:>s61,S:>wc2,E:&hauszu)
+	things = matte
+$wc2
+	exits  = (N:>wc1,E:>wc3,W:&hauszu)
+	things = matte
+$wc3
+	exits  = (W:>wc2,E:>wc4)
+	things = katze
+$wc4
+	exits  = (W:>wc3,E:&hauszu)
+	things = (matte,katze)
+$wd1
+	exits = (N:>s58,S:>wd2)
+$wd2
+	exits  = (N:>wd1,W:>wd3,E:&hauszu)
+	things = matte
+$wd3
+	exits  = (E:>wd2,W:>wd4,N:&hauszu)
+	things = (matte,kette,katze)
+$wd4
+	exits  = (E:>wd3,W:>wd5,N:&hauszu)
+	things = matte
+$wd5
+	exits  = (E:>wd4,W:>wd6)
+	things = katze
+$wd6
+	exits  = (E:>wd5,SD:>wd7)
+	things = katze
+$wd7
+	exits = (NU:>wd6,S:>tunnel)
+$tunnel
+	exits   = (N:(if_here poebel poebel poebelt,
+		      if_nothere poebel >wd7),
+		   S:(if_here poebel poebel poebelt,
+		      if_nothere poebel >$$center$w1))
+$we1
+	exits  = (N:>s55,S:>we2)
+	things = katze
+$we2
+	exits = (N:>we1,E:>we3)
+$we3
+	exits  = (W:>we2,E:>>rocker)
+	things = (katze,matte)
+$wf1
+	exits  = (N:>s54,S:>wf2,W:&hauszu)
+	things = matte
+$wf2
+	exits  = (N:>wf1,W:>wf3)
+	things = katze
+$wf3
+	exits  = (E:>wf2,W:>wf4,S:&hauszu)
+	things = hexe
+$wf4
+	exits  = (E:>wf3,N:>sp11,W:&hauszu)
+	things = matte
+$g11
+	exits  = (N:>w53,S:>w57,E:>g12,W:&hintenzu)
+	things = (katze,tisch)
+$g12
+	exits  = (N:>>killerhaus,W:>g11,S:>w58,E:>g13)
+	things = katze
+$g13
+	exits  = (W:>g12,S:[>w59,>g16),N:>g14,E:&hintenzu)
+	things = katze
+$g14
+	exits  = (S:>g13,N:>g15,W:&hintenzu,E:>w65)
+	things = katze
+$g15
+	exits  = (S:>g14,E:&hintenzu)
+	things = katze
+$g16
+	exits  = (N:>g13,E:>g17,W:>>killerhaus)
+	things = katze
+$g17
+	exits  = (W:>g16,E:>g18,S:>g19,N:[>w66,>w67))
+	things = katze
+$g18
+	exits  = (W:>g17)
+	things = katze
+$g19
+	exits  = (N:>g17)
+	things = katze
+$g21
+	exits  = (W:>g26,S:>g24,E:&hintenzu)
+	things = katze
+$g22
+	exits  = (W:>g23,E:>wa7,N:>wa3,S:>wa9)
+	things = katze
+$g23
+	exits  = (E:>g22,W:>g24,N:&hintenzu,S:>>killerhaus)
+	things = katze
+$g24
+	exits  = (E:>g23,N:>g21,W:>g25,S:>wa14)
+	things = katze
+$g25
+	exits   = (N:>g26,E:>g24,W:>g28,S:>wa15)
+	things  = katze
+$g26
+	exits  = (W:>g27,E:>g21,S:>g25)
+	things = katze
+$g27
+	exits  = (W:>g29,E:>g26,S:>g28)
+	things = katze
+$g28
+	exits   = (N:>g27,W:>g210,E:>g25,
+ 		   S:(if_state hinten26 * &hintenzu,
+		      if_state hinten26 auf (schuhe test,>$$haus26$kamin)))
+	things  = (hinten26,katze)
+$g29
+	exits  = (E:>g27,W:>g211,S:>g210)
+	things = katze
+$g210
+	exits  = (N:>g29,E:>g28,W:>g217)
+	things = katze
+$g211
+	exits   = (E:>g29,S:>g217,
+ 		   W:(if_state hinten27 * &hintenzu,
+		      if_state hinten27 auf (schuhe test,>$$haus27$kamin)))
+	actions = entry,stay:braten duftet
+	things  = (katze,hinten27)
+$g212
+	exits  = (N:>g217,S:>wa18,W:>g213,E:&hintenzu)
+	things = katze
+$g213
+	exits  = (E:>g212,W:>g214,N:>g218,S:>wa22)
+	things = katze
+$g214
+	exits  = (E:>g213,W:>g215,N:>g219,S:>wa23)
+	things = katze
+$g215
+	exits  = (E:>g214,W:>g216,S:>wa24,N:>g220)
+	things = katze
+$g216
+	exits   = (E:>g215,W:>>sumpf,N:>g221,S:&hintenzu)
+	actions = entry:sflag dreckig
+	things  = katze
+$g217
+	exits  = (N:>g211,E:>g210,S:>g212,W:>g218)
+	things = katze
+$g218
+	exits  = (E:>g217,W:>g219,S:>g213,N:>w96)
+	things = katze
+$g219
+	exits  = (E:>g218,W:>g220,S:>g214,
+ 		  N:(if_state hinten37 * &hintenzu,
+		     if_state hinten37 auf
+		      (schuhe test,>$$haus37$kamin)))
+	things = (katze,hinten37)
+$g220
+	exits  = (E:>g219,W:>g221,S:>g215,N:>w93)
+	things = katze
+$g221
+	exits   = (E:>g220,W:>g223,S:>g216,N:>>killerhaus)
+	actions = entry:sflag dreckig
+	things  = katze
+$g222
+	exits  = (W:>g229,S:>g223,E:&hintenzu)
+	things = katze
+$g223
+	exits   = (W:>g229,N:>g222,S:>>sumpf,E:>g221)
+	things  = (football,schal,katze)
+	actions = entry:sflag dreckig
+$g225
+	exits   = (N:>>sumpf,W:[>g226,>g227),E:&hintenzu)
+	actions = entry:sflag dreckig
+	things  = katze
+$g226
+	exits  = (N:>g227,E:>g225,W:&hintenzu)
+	things = katze
+$g227
+	exits   = (S:>g226,E:>g225,W:>g228,N:>>sumpf)
+	actions = entry:sflag dreckig
+	things  = katze
+$g228
+	exits   = (S:>w82,E:[>g227,>g227,>g227,>>sumpf),N:>g229)
+	actions = entry:sflag dreckig
+	things  = katze
+$g229
+	exits  = (S:>g228,E:[>g222,>g223,>g223))
+	things = katze
+;
+; Das Centrum
+;
+$$center
+$w1
+	exits   = (S:>w38,N:>$$park$tunnel)
+$w2
+	exits = (E:>w38,S:>w3,W:>w6)
+$w3
+	exits = (N:>w2,S:>w4)
+$w4
+	exits = (N:>w3,S:>w5,E:if_state kiosk auf >$$kiosk$k1)
+	things = kiosk
+$w5
+	exits = (N:>w4,S:if_state halle auf >$$halle$vorraum)
+	things = halle
+$w6
+	exits = (E:>w2,W:>w7)
+$w7
+	exits  = (E:>w6,W:>w10,S:>w8)
+	things = basehose
+$w8
+	exits = (N:>w7,S:>w9)
+$w9
+	exits   = (N:>w8)
+	actions = entry,stay:if_here michael michael geht
+$w10
+	exits = (E:>w7,W:>w11)
+$w11
+	exits = (E:>w10,S:>w12)
+$w12
+	exits = (N:>w11,S:>w13)
+$w13
+	exits = (N:>w12,S:>w14)
+$w14
+	exits = (N:>w13,E:>w15)
+$w15
+	exits = (W:>w14,E:>w16)
+$w16
+	exits = (W:>w15,E:>w17,N:>$$see$s7)
+$w17
+	exits = (W:>w16,E:>w18)
+$w18
+	exits = (W:>w17,E:>w19,N:>>eis)
+$w19
+	exits  = (W:>w18,E:>w20,N:>$$see$s4)
+	things = fotoapperat
+$w20
+	exits = (W:>w19,E:>w21)
+$w21
+	exits = (W:>w20,E:>w22)
+$w22
+	exits = (W:>w21,E:>w23,N:>$$see$s1)
+$w23
+	exits = (W:>w22,E:>w24)
+$w24
+	exits = (W:>w23,E:>w25)
+$w25
+	exits = (W:>w24,N:>w26)
+$w26
+	exits = (S:>w25,N:>w27)
+$w27
+	exits = (S:>w26,N:>w28,W:>w29)
+$w28
+	exits = (S:>w27,N:>$$autos$a1)
+$w29
+	exits = (E:>w27,W:>w31,N:>w30)
+$w30
+	exits = (S:>w29,N:>$$autos$a2)
+$w31
+	exits = (E:>w29,N:>w32)
+$w32
+	exits = (S:>w31,N:>w33)
+$w33
+	exits = (S:>w32,N:>w34,E:>$$autos$a3,
+		 W:if_state bowling auf >$$bowling$theke)
+	things = bowling
+$w34
+	exits = (S:>w33,N:>w35,E:>$$autos$a5)
+$w35
+	exits  = (S:>w34,N:>w36,E:>$$autos$a8)
+	things = fahrrad
+$w36
+	exits = (S:>w35,E:[>$$autos$a10,>$$autos$a13),W:>w37)
+$w37
+	exits = (E:>w36,UW:>w38)
+$w38
+	exits = (ED:>w37,W:>w2,N:>w1)
+;
+; Der See
+;
+$$see
+$s1
+	exits  = (S:>$$center$w22,N:>s8,W:>s2)
+	things = fhelp
+$s2
+	exits  = (E:>s1,W:>s3,N:>>eis)
+	things = fhelp
+$s3
+ 	exits  = (E:>s2,W:>s4,N:>>eis)
+	things = fhelp
+$s4
+ 	exits  = (E:>s3,W:>>eis,N:>s9,S:>$$center$w19)
+	things = fhelp
+$s6
+ 	exits  = (NE:>>eis,W:>s7)
+	things = fhelp
+$s7
+ 	exits  = (E:>s6,N:>s11,S:>$$center$w16)
+	things = fhelp
+$s8
+ 	exits  = (S:>s1,W:>>eis,N:>s12)
+	things = fhelp
+$s9
+ 	exits  = (S:>s4,NE:>>eis,W:>s10)
+	things = fhelp
+$s10
+ 	exits  = (E:>s9,SW:>>eis,N:>s15)
+	things = fhelp
+$s11
+ 	exits  = (S:>s7,N:>s17,E:>>eis)
+	things = fhelp
+$s12
+ 	exits  = (S:>s8,N:>s18,W:>s13)
+	things = fhelp
+$s13
+	exits   = (S:>>eis,E:>s12,W:>s14,N:>s19)
+	persons = harald
+$s14
+ 	exits  = (SW:>>eis,E:>s13,N:>s20)
+	things = fhelp
+$s15
+ 	exits   = (E:>>eis,S:>s10,N:>s22,W:>s16)
+	actions = stay/3:>>sonne
+	things  = fhelp
+$s16
+ 	exits  = (S:>>eis,E:>s15,W:>s17,N:>s23)
+	things = fhelp
+$s17
+ 	exits  = (S:>s11,E:>s16,N:>s24)
+	things = fhelp
+$s18
+ 	exits  = (S:>s12,W:>s19)
+	things = fhelp
+$s19
+ 	exits  = (E:>s18,W:>s20,S:>s13)
+	things = fhelp
+$s20
+ 	exits  = (E:>s19,W:>s21,S:>s14)
+	things = fhelp
+$s21
+ 	exits  = (E:>s20,W:>s22,S:>>eis,N:>$$halle$t1)
+	things = fhelp
+$s22
+ 	exits  = (E:>s21,W:>s23,S:>s15,N:>$$halle$t2)
+	things = fhelp
+$s23
+ 	exits  = (E:>s22,W:>s24,S:>s16,N:>$$halle$t3)
+	things = fhelp
+$s24
+ 	exits  = (E:>s23,S:>s17)
+	things = fhelp
+;
+; Parkplatz
+;
+$$autos
+$a1
+	exits = (S:>$$center$w28,N:>a4,W:>a2)
+$a2
+	exits = (S:>$$center$w30,E:>a1,W:>a3)
+$a3
+	exits = (W:>$$center$w33,E:>a2,N:>a5)
+$a4
+	exits  = (S:>a1,N:>a6)
+	things = reifen
+$a5
+	exits = (W:>$$center$w34,S:>a3,N:>a8)
+$a6
+	exits = (S:>a4,N:>a9,W:>a7)
+$a7
+	exits = (E:>a6,W:>a8)
+$a8
+	exits = (W:>$$center$w35,S:>a5,N:>a10,E:>a7)
+$a9
+	exits = (S:>a6,N:>a11)
+$a10
+	exits = (S:>a8,N:>a13,W:[>$$center$w35,>$$center$w36))
+$a11
+	exits = (S:>a9,W:>a12,N:>>straße)
+$a12
+	exits = (E:>a11,W:>a13)
+	things = fiesta
+$a13
+	exits = (E:>a12,S:>a10,W:>$$center$w36)
+;
+; Kiosk
+;
+$$kiosk
+$k1
+	exits = (E:>k2,W:&eingang)
+$k2
+	exits  = (W:>k1,N:>k4)
+	things = rattengift
+$k3
+	exits   = (E:>k4,
+		   W:(if_state kiosk geschlossen >>kiosk,
+		      wanderkarte test,rattengift test,milch test,
+		      >$$center$w4))
+	things  = (kiosk,wanderkarte)
+	persons = verkäufer
+$k4
+	exits  = (S:>k2,W:>k3)
+	things = milch
+;
+; Bowlingbar
+;
+$$bowling
+$theke
+	exits   =  (W:>garderobe,
+		    E:(halle verlassen,
+		      if_has bowlingschuhe >>schuhe,>$$center$w33),
+		    S:(if_nothas bowlingschuhe >>keineschuhe,>bahnen))
+	things  = (bowling,bowlingschuhe)
+	persons = barkeeper
+$bahnen
+	exits   = (N:>theke)
+	persons = (charly,beate)
+$garderobe
+	exits = (E:>theke,N:>g1)
+$g1
+	exits = (S:>garderobe,W:>WC,N:>g2)
+$g2
+	exits = (S:>g1,W:(if_has bowlingschuhe >>schuhe,>$$halle$halle))
+$WC
+	exits  = (E:>g1)
+	things = taschentücher
+;
+; Freizeitzentrum
+;
+$$halle
+$vorraum
+	exits   = (S:>halle,N:(halle verlassen,>$$center$w5))
+	actions = entry/3:tip1 do
+	things  = (halle,tip1)
+$halle
+	exits   = (E:>$$bowling$g2,S:>treppe,N:>vorraum,W:>g1)
+	things  = (zettel,brief)
+	persons = empfang
+$treppe
+	exits = (N:>halle,U:>treppe2)
+$treppe2
+	exits = (D:>treppe,U:>$$brunch$treppe)
+$g1
+	exits = (E:>halle,W:>g2)
+$g2
+	exits  = (E:>g1,S:>restaurant,W:>g3)
+	things = fernglas
+$g3
+	exits = (E:>g2,N:>g4)
+$g4
+	exits = (S:>g3,E:>billard)
+$billard
+	exits   = (W:>g4)
+	persons = halbstarke
+$restaurant
+	exits  = (N:>g2,S:(halle verlassen,>t2))
+	things = (terasse,möhre)
+$t1
+	exits = (S:>$$see$s21,W:>t2)
+$t2
+	exits  = (E:>t1,W:>t3,S:>$$see$s22,N:if_state terasse auf >restaurant)
+	things = terasse
+$t3
+	exits = (E:>t2,S:>$$see$s23)
+;
+; Brunch
+;
+$$brunch
+$treppe
+	exits  = (D:>$$halle$treppe2,E:if_state brunch auf >b1)
+	things = brunch
+$b1
+	exits  = (E:>b2,W:(if_state brunch geschlossen >>brunch,>treppe))
+	things = brunch
+$b2
+	exits = (E:>b3,W:>b1,S:>b4,N:>b8)
+$b3
+	exits  = (W:>b2,N:>b9)
+	things = gabel
+$b4
+	exits = (S:>b6,N:>b2)
+$b5
+	exits = (E:>b6,W:>>koch)
+$b6
+	exits = (S:>balkon,N:>b4,W:>b5,E:>b7)
+$b7
+	exits  = (W:>b6)
+	things = löffel
+$b8
+	exits   = (S:>b2,E:>b9)
+	actions = entry:if_here franzl franzl tip
+	persons = franzl
+$b9
+	exits = (S:>b3,W:>b8)
+$balkon
+	exits   = (N:>b6)
+	actions = entry:harald tip
+;
+; Wald und Umgebung
+;
+$$wald
+$s1
+	exits = (N:>s3,E:(if_state schranke geschlossen &klettern,>$$park$s1))
+	things = schranke
+$s2
+	exits = (W:&$$park$weltende,E:>s3)
+$s3
+	exits = (W:>s2,E:>s4,S:>s1)
+$s4
+	exits = (W:>s3,E:>s5,N:>s53)
+$s5
+	exits  = (W:>s4,E:[>s6,>s6,>>auto2))
+	things = wasser
+$s6
+	exits  = (W:>s5,E:>s7)
+	things = baumstämme
+$s7
+	exits  = (W:>s6,E:>s8,NU:>s9)
+	things = markierung
+$s8
+	exits  = (W:>s7,E:&$$park$weltende,NU:>s9)
+	things = flasche2
+$s9
+	exits   = (SD:[>s7,>s8,>s7,>s8,>>auto,>>purzeln),NU:>s10)
+	things  = steine
+	actions = entry:sflag schnee
+$s10
+	exits  = (SD:[>s9,>s9,>>purzeln),NU:[>s13,>s12,>s11))
+$s11
+	exits = (E:&$$park$weltende,W:>s12,SD:>s10)
+$s12
+	exits  = (E:>s11,W:>s13,SD:[>s10,>s10,>>purzeln))
+	things = markierung2
+$s13
+	exits  = (E:>s12,W:>s14,SD:>s10)
+	things = pilze
+$s14
+	exits  = (E:>s13,W:>s15)
+	things = eichhörnchen
+$s15
+	exits  = (E:>s14,W:>s20,N:>s16)
+	things = (foto,markierung3)
+$s16
+	exits  = (S:>s15,N:>s17)
+	things = laub
+$s17
+	exits  = (S:>s16,W:>s18)
+	things = birke
+$s18
+	exits = (E:>s17,S:>s19)
+$s19
+	exits  = (N:>s18,S:>s21)
+	things = eidechse
+$s20
+	exits  = (E:>s15,W:>s21)
+	things = bussard
+$s21
+	exits = (E:>s20,W:>s22,N:>s19)
+$s22
+	exits = (E:>s21,W:>s33,N:>s23)
+$s23
+	exits  = (S:>s22,N:>s24)
+	things = flasche1
+$s24
+	exits  = (S:>s23,N:>s25,W:>s29,E:>>wildschwein)
+$s25
+	exits = (S:>s24,N:>s26)
+$s26
+	exits = (S:>s25,W:>s27)
+$s27
+	exits = (E:>s26,W:>s28)
+$s28
+	exits  = (E:>s27,S:>s31)
+	things = skelett
+$s29
+	exits = (E:>s24,W:>s30)
+$s30
+	exits = (E:>s29,W:>s31)
+$s31
+	exits  = (E:>s30,N:>s28,S:>s32)
+	things = flasche9
+$s32
+	exits  = (N:>s31,S:>s34)
+	things = flasche3
+$s33
+	exits = (E:>s22,W:>s34)
+$s34
+	exits = (E:>s33,N:>s32,S:>s49,W:>s35)
+$s35
+	exits  = (E:>s34,N:>s37,WD:>s36)
+	things = flasche4
+$s36
+	exits  = (EU:>s35,WD:>s44)
+	things = müll
+$s37
+	exits  = (S:>s35,N:>s38)
+	things = kieselstein
+$s38
+	exits  = (S:>s37,N:>s39)
+	things = wasser
+$s39
+	exits = (S:>s38,W:>s42,N:>s40)
+$s40
+	exits = (S:>s39,
+		 W:(if_state schranke2 geschlossen &klettern,>s41))
+	things = schranke2
+$s41
+	exits = (W:>>waldstraße,
+		 E:(if_state schranke2 geschlossen &klettern,>s40))
+	things = schranke2
+$s42
+	exits  = (E:>s39,S:>s43)
+	things = (flasche8,wasser)
+$s43
+	exits  = (N:>s42,S:>s44)
+	things = wasser2
+$s44
+	exits = (N:>s43,S:>s45,EU:>s36)
+$s45
+	exits = (N:>s44,S:>s46)
+$s46
+	exits  = (N:>s45,E:>s47)
+	things = flasche7
+$s47
+	exits = (W:>s46,E:>s48)
+$s48
+	exits = (W:>s47,E:>s50)
+$s49
+	exits = (N:>s34,S:>s50)
+$s50
+	exits = (N:>s49,W:>s48,E:>s51)
+$s51
+	exits  = (W:>s50,E:>s52)
+	things = flasche6
+$s52
+	exits   = (W:>s51,E:>s53)
+	actions = entry:sflag schnee
+$s53
+	exits  = (W:>s52,S:>s4)
+	things = flasche5
+;
+; Haus Nummer 37
+;
+$$haus37
+$flur
+	exits = (W:>WC,E:>zimmer1,U:>treppe1,DS:>treppe2,
+		 N:if_state vorne37 auf >$$park$w95)
+	things = (vorne37,schlüssel26)
+$oben1
+	exits = (D:>treppe1,W:>zimmer3,E:>WC2,N:>oben2)
+$oben2
+	exits = (S:>oben1,E:>zimmer2)
+$treppe1
+	exits = (D:>flur,U:>oben1)
+$treppe2
+	exits = (U:>flur,D:>küche)
+$zimmer1
+	exits = (W:>flur)
+$zimmer2
+	exits   = (W:>oben2)
+	persons = hansi
+$zimmer3
+	exits = (E:>oben1)
+$WC
+	exits = (E:>flur)
+$WC2
+	exits  = (W:>oben1)
+	things = föhn
+$küche
+	exits = (U:>treppe2,N:>kammer,W:>kamin)
+$kammer
+	exits  = (S:>küche)
+	things = teller
+$kamin
+	exits = (E:>küche,S:(if_state hinten37 auf >$$park$g219,
+			     if_state hinten37 * &$$haus26$istzu))
+	things = (hinten37,tasse)
+;
+; Haus Nummer 26
+;
+$$haus26
+$flur
+	exits = (N:>WC,E:>zimmer1,U:>treppe1,D:>treppe2,
+		 S:if_state vorne26 auf >$$park$wa16)
+	things = vorne26
+$oben1
+	exits = (D:>treppe1,W:>zimmer3,E:>WC2,N:>oben2)
+$oben2
+	exits = (S:>oben1,E:>zimmer2)
+$treppe1
+	exits   = (D:>flur,U:>oben1)
+	actions = entry:if_here johannes johannes tip
+	persons = johannes
+$treppe2
+	exits   = (U:>flur,D:>küche)
+$zimmer1
+	exits = (W:>flur)
+$zimmer2
+	exits  = (W:>oben2)
+	things = wecker
+$zimmer3
+	exits = (E:>oben1)
+$WC
+	exits = (S:>flur)
+$WC2
+	exits = (W:>oben1)
+$küche
+	exits   = (U:>treppe2,N:>kammer,W:>kamin)
+	things  = glas
+$kammer
+	exits   = (S:>küche)
+	things  = stuhl
+$kamin
+	exits   = (E:>küche,N:(if_state hinten26 auf >$$park$g28,
+			       if_state hinten26 * &istzu))
+	things  = (hinten26,fernseher)
+;
+; Haus Nummer 27 
+;
+$$haus27
+$flur
+	exits = (N:>WC,E:>zimmer1,U:>treppe1,DS:>treppe2,
+		 W:if_state vorne27 auf >$$park$w96)
+	things = vorne27
+$oben1
+	exits = (D:>treppe1,W:>zimmer3,E:>WC2,N:>oben2)
+$oben2
+	exits = (S:>oben1,E:>zimmer2)
+$treppe1
+	exits = (D:>flur,U:>oben1)
+$treppe2
+	exits   = (U:>flur,D:>küche)
+	actions = entry,stay:braten duftet
+$zimmer1
+	exits = (W:>flur)
+$zimmer2
+	exits  = (W:>oben2)
+	things = autoschlüssel
+$zimmer3
+	exits = (E:>oben1)
+$WC
+	exits = (S:>flur)
+$WC2
+	exits = (W:>oben1)
+$küche
+	exits   = (U:>treppe2,N:>kammer,E:>kamin)
+	actions = (entry,stay:braten duftet,exit:if_here maus >>maus2)
+	things  = käse
+$kammer
+	exits   = (S:>küche)
+	actions = entry,stay:braten duftet
+	things  = vorhang
+$kamin
+	exits = (W:>küche,E:(if_state hinten27 auf >$$park$g211,
+			     if_state hinten27 * &$$haus26$istzu))
+	things = hinten27

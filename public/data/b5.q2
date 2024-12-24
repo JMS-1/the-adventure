@@ -1,0 +1,59 @@
+$$q2
+$escal1_long
+With elevator 5 you can only move down to Down Below. Currently you are on the employee quarters level II that lies to your right.
+$escal1_short
+You are in elevator 5 with the employee quarters level II on your right hand side.
+$g1_long
+The corridor from elevator 5 to your left continues a little bit to the right. There is nothing special in it but rooms QII-1 in front and QII-2 behind you. There is a sign on QII-2 that looks like a snake and a knife.
+$g1_short
+You're on a corridor from elevator 5 on your left to the right. There are rooms in front and behind you.
+$g2_long
+The corridor from behind bends sharply to your left. Just in front of you is room QII-3. The sign on it shows the insignia of the commanding officer of Babylon 5. To your right is a small door in the form of an arc. So small, that you have to crawl to go through.
+$g2_short
+You're on the corridor from behind you to the left. In front of you is the Captain's room and there is a very tiny door right of you, too.
+$g3_long
+A long corridor starts right here and continues in front of you. There is elevator 2 just to your right and rooms QII-5 and QII-6 to your left and behind you. A smell like alcohol comes from the left.
+$g3_short
+You are at the end of the corridor from the front. Right is elevator 2, left and behind you are the rooms QII-5 and QII-6.
+$r1N_long
+A typical living room with some furniture, communications devices, a table and some very comfortable chairs. The communication device is on and shows some very boring lies from ISN. There is an additional room just in front of you and the exit is behind you.
+$r1N_short
+Some boring ISN lies can be watched on the communicator. In front of you is some other room and the exit is behind you.
+$r1NBed_long
+This room's center is a large double bed with traces of heavy usage. It is rather dark and there is a special light source keeping the room only slightly light. The exit is behind you.
+$r1NBed_short
+You're in a bedroom with the exit behind you.
+$r1S_long
+This room is filled with enough mud to cover your feet. Interestingly enough it seems to be a special kind of sleeping room - you can identify the traces of its usage. You are very interested in trying how to sleep in the mud but you don't dare. The exit is in front of you.
+$r1S_short
+You're in the mud room. The exit is in front of you.
+$r2N_long
+This is the Captain's room. Special communicator devices all around the wall show pictures from inside and outside the station. They together create a buzzing sound that fills the room. A large table and a chair are the only inventory. The table is filled over and over with papers. The exit is behind you and there is another room just in front of you.
+$r2N_short
+You're in the Captain's room with the exit behind you. There's another room just in front of you.
+$r23_long
+This room is made for relaxing. A small but comfortable bed stays in one corner. A dim light and soft music make you believe that you'll fall asleep if you close your eyes just for a moment - don't do it. The exit is behind you and to your left there is... - it's hard to describe: it looks like a swinging door that can be opened only from this side - funny.
+$r23_short
+You're in the Captain's relaxing room. The exit is behind you and to the left there is a kind of one-way swinging door.
+$r2E_long
+You could enter this room through the small door to your left only by crawling.  It's very small and the walls are yellow with big holes - to small for you. A known taste lies in the air but you can't describe it.
+$r2E_short
+You're in the yellow room. The exit is a small door left of you. You have to crawl to leave.
+$r3W_long
+This room QII-5 contains only it big barrel with a fire in it. The room is cold but the fire warms a small surrounding to a quiet normal temperature. An intensive taste of alcohol comes from the left and the exit is to your right.
+$r3W_short
+You're in the barrel room with the exit right of you. A strong smell of alcohol comes from the left.
+$r3WBar_long
+Well, this is a good old-fashioned brewery. You can see the big machine producing a fluid like water - but the smell proves: it's definitely not water. The smell of alcohol is overwhelming. I think you'll fall in trance if you take some deep breaths - so don't do it. You can still see the exit to your right.
+$r3WBar_short
+You're in the brewery with the exit to your right.
+$r3S_long
+The only thing in this room is a big hammock locked on two walls. The exit is in front of you. 
+$r3S_short
+You found the hammock room QII-6. You can leave through the exit in front of you.
+$escal2_long
+You are in elevator 2 on the staff quarters level II. You can go to this level by using the elevators exit left of you. The elevator can go up to the employee quarters I and the restricted C&C level. Downward there is only the diplomats' level II.
+$escal2_short
+You are in elevator 2. To your left is the staff quarters level II.
+$narrow
+Sorry, but you can't move through this tiny hole with all the trash you're carrying with you. You should at least drop the motorbike before you try again.

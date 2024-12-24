@@ -1,0 +1,86 @@
+$$haus37
+$flur_lang
+Du befindest Dich im Flur eines Hauses mit der Eingangstüre unmittelbar
+vor Dir. Eine hölzerne Treppe führt von hier aus nach oben und unten.
+Rechts und links sind die wohl einzigen Zimmer in diesem Stockwerk.
+$flur_kurz
+Du bist im Flur.
+$oben1_lang
+Hier am oberen Ende der Treppe befindet sich ein schmaler Gang, der
+nach vorne von der Treppe weg führt. Links und rechts sind die Eingänge
+zu zwei Zimmern dieser Etage.
+$oben1_kurz
+Du bist am oberen Ende der Treppe.
+$oben2_lang
+Der Gang von hinten endet hier vor einer Wand. Rechts ist der Eingang zu
+einem der Zimmer.
+$oben2_kurz
+Du bist am Ende des Gangs im ersten Stock.
+$treppe1_lang
+Du befindest Dich auf der Treppe ins erste Stockwerk des kleinen Hauses.
+An der Form der Decke über Dir erkennst Du, daß sich dort nur noch der 
+Giebel des Dachs befindet.
+$treppe1_kurz
+Du stehst auf der Treppe nach oben.
+$treppe2_lang
+Diese Treppe führt nach oben zum Eingang des Hauses und nach unten in
+einen großen Raum. Es gibt kein Licht hier und Du solltest aufpassen,
+daß Du nicht stolperst.
+$treppe2_kurz
+Du bist auf der Treppe nach unten.
+$zimmer1_lang
+Man, das Zimmer ist aber klein. Du bist gerade mal so in der Lage, hier zu 
+stehen und Dich um Deine Achse zu drehen. Dabei siehst Du auf einem
+niedrigen Schrank ein Feldbett aufgebaut und demgegenüber ein zweites
+Bett, allerdings auf dem Boden. Gegenüber dem Ausgang links ist ein Fenster,
+durch das Du aber nur dichtes Buschwerk erkennst.
+$zimmer1_kurz
+Du bist in dem Zimmer mit den beiden Feldbetten.
+$zimmer2_lang
+Diese Zimmer ist sehr geräumig und enthält im wesentlichen ein großes
+Doppelbett und einen ordentlichen Kleiderschrank. Das Bett ist ziemlich
+verwühlt, so daß Du annimmst, das es kürzlich erst benutzt wurde. Links
+von Dir ist der Ausgang aus dem Zimmer.
+$zimmer2_kurz
+Du bist in dem großen Schlafzimmer.
+$zimmer3_lang
+Dem Ausgang gegenüber auf der linken Seite steht ein zweistöckiges schmales
+Etagenbett, dessen obere Liegefläche durch die Schräge der Decke doch recht
+niedrig ist. Vor Dir gegenüber dem Fenster ist ein Wandschrank angebracht.
+$zimmer3_kurz
+Das ist das Zimmer mit dem Etagenbett.
+$WC_lang
+Wie Du unschwer bemerkst ist das hier die Toilette. Durch seine geringe Größe
+ist dieser Raum wohl auch nicht zu vielem anderen zu gebrauchen. Der Ausgang
+ist rechts.
+$WC_kurz
+Du hast die Toilette gefunden.
+$WC2_lang
+Du befindest Dich in einem sagen wir mal stinknormalen Badezimmer mit
+Dusche, Toilette und Waschbecken samt Spiegel. In der Ecke steht noch
+ein Wäschekorb, aber sonst siehst Du nichts Interessantes. 
+$WC2_kurz
+Du bist im Badezimmer.
+$küche_lang
+In diesem Teil des Raums ist eine Kochecke eingerichtet, die aber wohl
+noch nicht benutzt worden ist. Auch die vielen Tische scheinen eher
+zum Spielen als zum Essen gedacht zu sein, da sie über und über mit
+Brettspielen, Würfeln und Spielfiguren bedeckt sind. Links von Dir 
+setzt sich der Raum fort und Du erkennst dort weitere Tische. Vor Dir
+unter der Treppe nach oben ist eine Art Kammer.
+$küche_kurz
+Du stehst in der Spielküche.
+$kammer_lang
+Der tote Raum unter der Treppe wird hier als Abstellraum für Gartenstühle
+verwendet. Hinter Dir befindet sich ein Durchgang in einen großen Raum.
+$kammer_kurz
+Du bist bei den Gartenstühlen in der Abstellkammer.
+$kamin_lang
+Dieser Raum hätte eine angenehme Atmosphäre, wenn er nicht mit Tischen
+und Stühlen vollgerammelt wäre. Auf den Tischen stehen alle möglichen
+Utensilien für diverse Brettspiele. Der Kamin in diesem Teil des Raums,
+der sich nach rechts fortsetzt, ist kaum zu erreichen. Du könntest
+allerdings auch nach hinten gehen, wo Du durch eine Glastüre den großen Park
+und einige kleine Häuser siehst.
+$kamin_kurz
+Du bist in dem Spielraum mit dem Kamin.

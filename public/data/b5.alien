@@ -1,0 +1,53 @@
+$$alien
+$escal1_long
+You are in elevator 4 in the alien sector that can be seen to your left. This elevator can bring you upward to the restaurant, market and entrance levels. Down are the diplomats' levels I and II and the garden.
+$escal1_short
+The alien sector lies to your left. This is elevator 4.
+$enter_long
+You are at the entrance of the alien sector of Babylon 5. A deadly atmosphere begins just left of you behind a firmly shut door. A sign notices you that you should only enter with a gas mask. If you have none - well the elevator is just right of you.
+$enter_short
+The border of the alien sector is to your left and the elevator on your right hand side. The alien sector should only be entered with a gas mask.
+$g1_long
+The corridor is filled with some strange atmosphere. You can follow the way forward. To the right is a door that seems to lead to a normal atmosphere and left of you is a room filled with green clouds.
+$g1_short
+The corridor from your front ends here. There is a special kind of exit to your right with a normal atmosphere behind it and a green clouded room to your left.
+$g1W_long
+Green clouds fill the air. The wall is covered all over with crystalline structures and one especially large structure fills the center of the room. As you kick the structure it moves and makes some sound - you shouldn't play football with aliens! The exit is right of you.
+$g1W_short
+You met the crystalline alien. The exit is right of you.
+$g2_long
+You're in a wide corridor from front to back. There are rooms to your left and right.
+$g2_short
+The corridor from back to front has rooms to your right and left.
+$g2W_long
+Some kind of giant insect stays silently like frozen in the center of this room. It seems to be deeply sleeping - better you be quiet, as you learned some time before. The wall is covered over and over with some kind of golden fluid. The exit is to your right.
+$g2W_short
+You're at the insect with the exit right of you.
+$g2E_long
+You reached some kind of gateway from left to right. Some stairs lead downward to the right.
+$g2E_short
+This is the top of the gateway from left to right and down.
+$g3_long
+The toxic air corridor from behind ends in front of you. There is some room carrying the Vorlon empire insignia. Must be the room of ambassador Kosh.
+$g3_short
+The room of the Vorlon ambassador is in front of you, the corridor continues to your back.
+$kosh_long
+The Vorlon room contains almost nothing. Only dark clouds of some strange atmosphere lay in the air. It's hard to see the walls but it seems as if there is another room just in front of you. The exit is behind you.
+$kosh_short
+You are in the Vorlon room. The exit is behind you and you think that there may be an additional room in front of you.
+$lyta_long
+You can't imagine what this room is good for because it's completely empty. The walls and floor are even and there is no sign of the room ever being used. The exit is behind you.
+$lyta_short
+This is the Vorlon's special empty room - this room is intentionally left blank, you know.
+$steps1_long
+The stairs from left to right can be followed downward to the right. There is nothing special in this place.
+$steps1_short
+You're on the stairs from upward left to downward right.
+$exit_long
+The stairs from upward left continue downward. On the right side there is some mechanism separating the current toxic atmosphere from some other hopefully normal one. 
+$exit_short
+You're on the stairs from upward left downward with some other atmosphere on your right.
+$steps2_long
+If your eyes follow the stairs upward you see some little dark clouds coming through a door. Maybe there's another kind of atmosphere. Better you leave it alone and go forward.
+$steps2_short
+Following the stairs upward there may be some strange atmosphere.  The exit is in front of you.

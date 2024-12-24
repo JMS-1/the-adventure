@@ -3,17 +3,26 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "ng serve",
-      "type": "chrome",
-      "request": "launch",
+      "name": "Debug",
       "preLaunchTask": "npm: start",
-      "url": "http://localhost:4200/"
+      "request": "launch",
+      "timeout": 60000,
+      "type": "chrome",
+      "url": "http://localhost:4200/",
+      "userDataDir": "${workspaceFolder}/.vscode/chrome"
     },
     {
-      "name": "ng test",
-      "type": "chrome",
+      "name": "Attach",
       "request": "launch",
+      "type": "chrome",
+      "url": "http://localhost:4200/",
+      "userDataDir": "${workspaceFolder}/.vscode/chrome"
+    },
+    {
+      "name": "Test",
       "preLaunchTask": "npm: test",
+      "request": "launch",
+      "type": "chrome",
       "url": "http://localhost:9876/debug.html"
     }
   ]

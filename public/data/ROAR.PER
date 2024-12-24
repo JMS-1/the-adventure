@@ -1,0 +1,220 @@
+;
+; Einige Dummys als Flags
+;
+$flag1
+	actions	= (maus:@#<maus,schwer:@#<schwer,leicht:@#!schwer)
+	message = draussen
+$flag2
+	message	= *
+$flag_schwille
+	message	= *
+;
+; Räume: $$botanik$f4
+;	 $$keller$labor
+;	
+$gerhild Gerhild
+	message = ruhe
+	things  = schlüssel
+	actions = (aerger  :(if_message guertel >>gerhild,
+		  	     if_message aerger message = guertel,
+		  	     if_message ruhe message = aerger),
+	  	   milkaeis:(message = eis,gregory = traurig,
+			     #>$$keller$labor,message = *),
+	  	   keller  :(message = keller,#!schlüssel,
+			     schlüssel = lang,@message = arbeit))
+;
+; Räume = $$botanik$f4
+;
+$gregory Gregory
+	message = froh
+;
+; Räume: $$eisdiele$raum
+;
+$eismann Eismann,Mann,Südländer,Suedlaender
+	message   = wartet
+	#bezahlen = (if_state geld lang &$$things$keingeld,
+		     if_state geld * (geld weg,message = bezahlt))
+;
+; Räume: $$restaurant$theke
+;
+$norbert Norbert
+	message	= betrunken
+	actions = (kaffee:if_message betrunken if_state kaffee warm
+			   (#<kaffee,message = redet,
+			    #!sauce,@message = schläft),
+		   tisch:(message = tisch,#!sauce))
+	things	= sauce
+;
+; Räume: $$halle$hütte
+;
+$burkhard Burkhard
+	message = scharf
+;
+; Räume: $$keller$k3
+;
+$robert	Robert
+	message    = scharf
+	#sageVater = (if_has löffel >>robert2,message = brav,remove)
+;
+; Räume: $$dritter$KOBE
+;
+$kobe Kobe
+	message	   = laut
+	things	   = passwort
+	time	   = (+13:if_message laut 
+			   (if_state flag1 drinnen &$$things$krach_kobe,
+			    if_here leute &$$things$krach_leute,
+			    if_here kobe &$$things$krach_raum),
+		      212:(message = geht,remove))
+	actions	   = (start:start,
+		      antrag:(if_state CC * if_state SAPH1 läuft
+			       (message = antrag,@#!passwort,
+			        [passwort = pass1,passwort = pass2,
+			         passwort = pass3,passwort = pass4),
+			        @#<passwort,@message = ruhig,
+				terminal = passwort),
+			      if_state CC rot &$$things$CC,
+			      if_state CC * if_state SAPH1 steht &$$things$CC))
+;
+; Räume: nicht draußen, nicht Kobe, nicht Maus
+;
+$jochen Jochen
+	message  = kontrollraum
+	#nehmen	 = message = trägt
+	#ablegen = (if_position $$paterre$kontrollraum message = kontrollraum,
+		    if_notposition $$paterre$kontrollraum message = lang)
+	actions	 = weg:(message = flieht,remove)
+	weight	 = (60,0,0)
+;
+; Räume: $$erster$150
+;
+$charly Charly
+	message  = *
+	persons	 = walter
+	actions	 = walter:@#!walter
+;
+; Räume: $$erster$150
+;
+$walter Walter
+	message	 = *
+	actions	 = start:start
+	time	 = 137:(charly walter,@#>$$erster$150,
+			message = kommt,@message = da)
+;
+; Räume: $$erster$schwille
+;
+$schwille Schwille,Raucher
+	message	 = *
+;
+; Räume: $$erster$bücherei
+;
+$mühl Mühl,Bibliothekarin
+	message	= scharf
+;
+; Räume: $$paterre$warenlager
+;
+$steinbrecher Steinbrecher
+	message = scharf
+	actions = geht:remove
+;
+; Räume: $$paterre$g3
+;
+$leute Leute,Wissenschaftler,Meute,Personen
+	message = normal
+	actions	= toall:(if_state maus gefangen
+			  (if_state norbert schläft >>gewonnen,>>norbert),
+			 if_message normal (message = warten,start))
+	time	= +30:>>leute
+;
+; Räume: $$erster$151
+;
+$peter Peter
+	message = *
+;
+; Räume: $$paterre$g15
+;
+$reinhold Reinhold
+	message	= *
+;
+; Räume: $$halle$el*
+;
+$maus Maus,Monster,Ratte,Tier
+	message = frei
+	actions	= (gefangen : (message = gefangen,stop,
+			       if_state leute warten leute toall),
+		   treffen : (message = frei,
+			      if_nothas brot >>maus,message = brot),
+		   klein1 : (message = raus,message = klein,flag1 maus),
+		   klein2 : (message = klein,flag1 maus),
+		   start : start,
+		   move1 : [#>$$halle$el2,#>$$halle$el3,#>$$halle$el4,
+			    #>$$halle$el5,#>$$halle$el6,#>$$halle$el7,
+			    #>$$halle$el8),
+		   move2 : [#>$$halle$el1,#>$$halle$el3,#>$$halle$el4,
+			    #>$$halle$el5,#>$$halle$el6,#>$$halle$el7,
+			    #>$$halle$el8),
+		   move3 : [#>$$halle$el2,#>$$halle$el1,#>$$halle$el4,
+			    #>$$halle$el5,#>$$halle$el6,#>$$halle$el7,
+			    #>$$halle$el8),
+		   move4 : [#>$$halle$el2,#>$$halle$el3,#>$$halle$el1,
+			    #>$$halle$el5,#>$$halle$el6,#>$$halle$el7,
+			    #>$$halle$el8),
+		   move5 : [#>$$halle$el2,#>$$halle$el3,#>$$halle$el4,
+			    #>$$halle$el1,#>$$halle$el6,#>$$halle$el7,
+			    #>$$halle$el8),
+		   move6 : [#>$$halle$el2,#>$$halle$el3,#>$$halle$el4,
+			    #>$$halle$el5,#>$$halle$el1,#>$$halle$el7,
+			    #>$$halle$el8),
+		   move7 : [#>$$halle$el2,#>$$halle$el3,#>$$halle$el4,
+			    #>$$halle$el5,#>$$halle$el6,#>$$halle$el1,
+			    #>$$halle$el8),
+		   move8 : [#>$$halle$el2,#>$$halle$el3,#>$$halle$el4,
+			    #>$$halle$el5,#>$$halle$el6,#>$$halle$el7,
+			    #>$$halle$el1),
+		   move	 : (flag2 = *,#if_position $$halle$el1
+			     (flag2 = an,maus move1),
+		   	    if_state flag2 * #if_position $$halle$el2
+			     (flag2 = an,maus move2),
+		   	    if_state flag2 * #if_position $$halle$el3
+			     (flag2 = an,maus move3),
+		   	    if_state flag2 * #if_position $$halle$el4
+			     (flag2 = an,maus move4),
+		   	    if_state flag2 * #if_position $$halle$el5
+			     (flag2 = an,maus move5),
+		   	    if_state flag2 * #if_position $$halle$el6
+			     (flag2 = an,maus move6),
+		   	    if_state flag2 * #if_position $$halle$el7
+			     (flag2 = an,maus move7),
+		   	    if_state flag2 * #if_position $$halle$el8
+			     (flag2 = an,maus move8),
+			    if_here maus
+			     (if_nothas brot >>maus,message = brot)))
+	time	= (+11:if_message frei
+			(if_state flag1 drinnen &$$things$krach_kobe,
+			 if_state flag1 halle &$$things$krach_maus,
+			 if_here leute &$$things$krach_leute),
+		   +1:if_nothere maus maus move)
+	#füttern = (if_nothas brot &$$things$brot,
+		    if_has brot brot maus)
+	weight   = (1000,0,0)
+;
+; Räume: $$paterre$*
+;	 $$erster$*
+;
+$wedemeyer Wedemeyer
+	actions = start:start
+	time	= +1:(message = *,
+		      #if_position $$paterre$g9 @message = trägt,
+		      #if_position $$paterre$g11 #>$$paterre$g9,
+		      #if_position $$paterre$g12 #>$$paterre$g11,
+		      #if_position $$erster$e12 #>$$paterre$g12,
+		      #if_position $$erster$e10 #>$$erster$e12,
+		      #if_position $$erster$e8 #>$$erster$e10,
+		      #if_position $$paterre$haupt #>$$erster$e8,
+		      #if_position $$paterre$g10 #>$$paterre$haupt,
+	 	      #if_position $$paterre$g14 #>$$paterre$g10,
+		      #if_position $$erster$e14 #>$$paterre$g14,
+		      #if_position $$erster$e11 #>$$erster$e14,
+		      #if_position $$erster$e9 #>$$erster$e11,
+		      if_message trägt @#>$$erster$e9,
+		      message = lang)

@@ -1,0 +1,816 @@
+;
+; Elevator buttons
+;
+$el1btn1
+	message		= *
+	actions		= (up:(&$$things$elevatorno),down:(&$$things$elevatordown,>$$restaurant$escal2))
+	#press_up	= el1btn1 up
+	#press_down	= el1btn1 down
+$el1btn2
+	message		= *
+	actions		= (up:(&$$things$elevatorup,>$$cc$escal1),down:(&$$things$elevatordown,>$$d1$escal2))
+	#press_up	= el1btn2 up
+	#press_down	= el1btn2 down
+$el1btn3
+	message = *
+	actions		= (up:(&$$things$elevatorup,>$$restaurant$escal2),down:(&$$things$elevatordown,>$$garden$escal2))
+	#press_up	= el1btn3 up
+	#press_down	= el1btn3 down
+$el1btn4
+	message = *
+	actions		= (up:(&$$things$elevatorup,>$$d1$escal2),down:(&$$things$elevatorno))
+	#press_up	= el1btn4 up
+	#press_down	= el1btn4 down
+$el2btn1
+	message = *
+	actions		= (up:(&$$things$elevatorno),down:(&$$things$elevatordown,>$$q1$escal2))
+	#press_up	= el2btn1 up
+	#press_down	= el2btn1 down
+$el2btn2
+	message = *
+	actions		= (up:(&$$things$elevatorup,>$$cc$escal2),down:(&$$things$elevatordown,>$$q2$escal2))
+	#press_up	= el2btn2 up
+	#press_down	= el2btn2 down
+$el2btn3
+	message = *
+	actions		= (up:(&$$things$elevatorup,>$$q1$escal2),down:(&$$things$elevatordown,>$$d2$escal1))
+	#press_up	= el2btn3 up
+	#press_down	= el2btn3 down
+$el2btn4
+	message = *
+	actions		= (up:(&$$things$elevatorup,>$$q2$escal2),down:(&$$things$elevatorno))
+	#press_up	= el2btn4 up
+	#press_down	= el2btn4 down
+$el3btn1
+	message = *
+	actions		= (up:(&$$things$elevatorno),down:(&$$things$elevatordown,>$$q1$escal1))
+	#press_up	= el3btn1 up
+	#press_down	= el3btn1 down
+$el3btn2
+	message = *
+	actions		= (up:(&$$things$elevatorup,>$$entrance$escal2),down:(&$$things$elevatorno))
+	#press_up	= el3btn2 up
+	#press_down	= el3btn2 down
+$el4btn1
+	message = *
+	actions		= (up:(&$$things$elevatorno),down:(&$$things$elevatordown,>$$market$escal1))
+	#press_up	= el4btn1 up
+	#press_down	= el4btn1 down
+$el4btn2
+	message = *
+	actions		= (up:(&$$things$elevatorup,>$$entrance$escal1),down:(&$$things$elevatordown,>$$restaurant$escal1))
+	#press_up	= el4btn2 up
+	#press_down	= el4btn2 down
+$el4btn3
+	message = *
+	actions		= (up:(&$$things$elevatorup,>$$market$escal1),down:(&$$things$elevatordown,>$$alien$escal1))
+	#press_up	= el4btn3 up
+	#press_down	= el4btn3 down
+$el4btn4
+	message = *
+	actions		= (up:(&$$things$elevatorup,>$$restaurant$escal1),down:(&$$things$elevatordown,>$$d1$escal1))
+	#press_up	= el4btn4 up
+	#press_down	= el4btn4 down
+$el4btn5
+	message = *
+	actions		= (up:(&$$things$elevatorup,>$$alien$escal1),down:(&$$things$elevatordown,>$$d2$escal2))
+	#press_up	= el4btn5 up
+	#press_down	= el4btn5 down
+$el4btn6
+	message = *
+	actions		= (up:(&$$things$elevatorup,>$$d1$escal1),down:(&$$things$elevatordown,>$$garden$escal1))
+	#press_up	= el4btn6 up
+	#press_down	= el4btn6 down
+$el4btn7
+	message = *
+	actions		= (up:(&$$things$elevatorup,>$$d2$escal2),down:(&$$things$elevatorno))
+	#press_up	= el4btn7 up
+	#press_down	= el4btn7 down
+$el5btn1
+	message = *
+	actions		= (up:(&$$things$elevatorno),down:(&$$things$elevatordown,>$$down$escal1))
+	#press_up	= el5btn1 up
+	#press_down	= el5btn1 down
+$el5btn2
+	message = *
+	actions		= (up:(&$$things$elevatorup,>$$q2$escal1),down:(&$$things$elevatorno))
+	#press_up	= el5btn2 up
+	#press_down	= el5btn2 down
+;
+; Some of the weapons. In fact it's better not to have them
+; and especially not to use them.
+;
+$ppg PPG
+	message = long
+	weight	= (0,3,0)
+$knife Knife
+	message = long
+	weight	= (0,3,0)
+$sword Sword
+	message = long
+	weight	= (0,8,0)
+;
+; Check if we have some weapons with us
+;
+$weapon
+	message = false
+	actions = test:
+				(
+					@message = false,
+					if_has ppg @message = true,
+					if_has knife @message = true,
+					if_has sword @message = true
+				)
+;
+; You killed Zack and will be killed some time later.
+; 
+$killed
+	message = *
+	time	= +70:>>killed
+	actions = start:start
+;
+; If you have some credits the ticket machine will sell
+; you some tickets.
+;
+$ticket Ticketmachine,Machine
+	message		= long
+	things		= ticket2
+	actions		= 
+				(
+					insert_red:
+					(
+						if_nothas credits1 &$$things$noticket_red,
+						if_has credits1
+						(
+							credits1 gone,
+							&$$things$ticket_red,
+							#!ticket2
+						)
+					),
+					insert_green:
+					(
+						if_nothas credits2 &$$things$noticket_green,
+						if_has credits2
+						(
+							credits2 gone,
+							&$$things$ticket_green
+						)
+					)
+				)
+	#insred		= ticket insert_red
+	#insgreen	= ticket insert_green
+	#insblue	= &$$things$noticket_blue
+	#insert		= (
+					if_nothas credits2 
+					(
+						if_nothas credits1 &$$things$noticket,
+						if_has credits1 ticket insert_red
+					),
+					if_has credits2 ticket insert_green
+				  )
+$minbartimer
+	message = *
+	actions	= start:start
+	time	= 60:(@message = long, remove)
+$ticket1 Ticket
+	message = long
+	weight	= (1,1,0)
+	actions = (
+				drop:
+				(
+					if_nothere vir message = long,
+					if_here vir (vir ticket, remove)
+				),
+				take:
+				(
+					if_nothas vir message = carry,
+					if_has vir (vir ticket, remove)
+				)
+			  )
+	#drop	= ticket1 drop
+	#take	= ticket1 take
+	#dropt1	= if_has ticket1 !ticket1
+	#taket1	= if_nothas ticket1 <ticket1
+	#minbar	= if_position $$entrance$hangar 
+			  (
+				if_state minbartimer * mordon minbar,
+				if_state minbartimer long &$$things$nominbar
+			  )
+$ticket2 Ticket
+	message		= long
+	weight		= (1,1,0)
+	actions		= gone:remove
+	#dropt2		= if_has ticket2 !ticket2
+	#taket2		= if_nothas ticket2 <ticket2
+	#epsilon	= if_position $$entrance$hangar
+					(
+						message = gone,
+						>$$epsilon$hangar
+					)
+$credits1 Money,Credit
+	message		= long
+	weight		= (1,0,1)
+	#dropred	= if_has credits1 !credits1
+	#takered	= if_nothas credits1 <credits1
+	actions		= gone:remove
+$credits2 Money,Credit
+	message		= long
+	weight		= (1,0,1)
+	#dropgreen	= if_has credits2 !credits2
+	#takegreen	= if_nothas credits2 <credits2
+	#drop		= (
+					if_position $$epsilon$dealer
+					(
+						message = paid,
+						carpet start,
+						blanket start,
+						remove			
+					),
+					if_nothere blanket message = long
+				  )
+	actions		= gone:remove
+;
+; See if we have stolen something
+;
+$stolen
+	message = false
+	actions = test:
+				(
+					@message = false,
+					if_has credits1 @message = true,
+					if_has credits2 @message = true
+				)
+;
+; A primary interval timer which only ticks.
+;
+$interval3
+	message = long
+	time	= +3:
+				(
+					if_message long @message = *,
+					if_message carry @message = long,
+					if_message * @message = carry
+				)
+	actions	= start:start
+;
+; The "G'Kar is nasty" timer.
+;
+$gkartimer
+	message = *
+	time	= +7:
+				(
+					if_state interval3 long
+						if_nothere londogkar
+							if_state gkar *
+							(
+								@message = carry,
+								&$$things$gkarsilent
+							)
+				)
+	actions = (start:start, stop:stop)
+;
+; The dangerous centauri drink and the corresponding medcine.
+;
+$drink Drink,Glass,Fluid,Alcohol
+	message = long
+	weight	= (0,0,0)
+	actions	= drink:
+				(
+					if_state movie5 long movie5 done, 
+					if_state movie5 carry
+					(
+						message = drinking, 
+						drinkdie start, 
+						remove
+					),
+					if_state movie5 * 
+					(
+						movie5 play,
+						if_has drink !drink
+					)
+				)
+	#take	= drink drink
+	#drink	= drink drink
+$drinkdie
+	message = *
+	actions	= (start:start, stop:stop)
+	time	= +6:
+				(
+					if_message step3 >>drink,
+					if_message step2 (@message = step3,&$$things$drinkdie_step3),
+					if_message step1 (@message = step2,&$$things$drinkdie_step2),
+					if_message * (@message = step1,&$$things$drinkdie_step1)
+				)
+$medcine Medicine,Fluid,Bottle
+	message = long
+	weight	= (2,5,0)
+	actions = drink:
+				(
+					drinkdie stop,
+					&$$things$medcine_drink,
+					if_message long message = elong,
+					if_message carry message = ecarry
+				)
+	#drink	= (
+				if_message elong &$$things$medcineempty,
+				if_message ecarry &$$things$medcineempty,
+				if_message long medcine drink,
+				if_message carry medcine drink
+			  )
+	#drop	= (if_message carry message = long, if_message ecarry message = elong)
+	#take	= (if_message long message = carry, if_message elong message = ecarry)
+
+;
+; The eye of the Centauri. Londo assumes G'Kar has stolen it.
+;
+$eye Eye,Statue
+	message = long
+	weight  = (20,0,0)
+	#drop	= (
+				if_nothere londo message = long,
+				if_here londo
+				(
+					if_state drink drinking (londo eye, remove),
+					if_here drink (@message = long, &$$things$londodrink)
+				)
+			  )
+;
+; The parts for changing your outlook.
+;
+$$macro triangle 
+	message = long
+	weight	= (1,0,1)
+	#drop	= (
+				if_nothere base message = long,
+				if_here base (base add, remove)
+			  )
+$$triangle triangle1 Stick,Glass
+$$triangle triangle2 Stick,Glass
+$$triangle triangle3 Stick,Glass
+;
+; The earth/mars problem.
+;
+$tape Tape,Device,Recorder
+	message = long
+	weight	= (10,0,0)
+	actions	= play:(&$$things$clark, if_here earth earth tape)
+	#view	= tape play
+	#play	= tape play
+$tshirt
+	message = *
+	weight	= (0,0,0)
+	things	= vtshirt
+	actions	= change:(@#!vtshirt, @<vtshirt, remove)
+	#take	= @message = *
+$vtshirt Shirt,TShirt,T-Shirt
+	message = *
+	weight	= (0,0,0)
+$mirror Mirror
+	message = long
+	weight	= (90,0,0)
+	#view	= (
+				if_state movie4 long movie4 done,
+				if_state movie4 carry
+				(
+					if_has blanket &$$things$mblanket,
+					if_nothas blanket
+					(
+						if_has mask &$$things$mmask,
+						if_nothas mask if_state base transform &$$things$mbase,
+						if_has vtshirt &$$things$mtshirt,
+						if_has tshirt (&$$things$mtshirt, tshirt change),
+						if_nothas vtshirt &$$things$mnormal
+					)
+				),
+				if_state movie4 * movie4 play
+			  )
+$blanket Blanket
+	message = long
+	weight	= (20,0,0)
+	actions	= (start:#>$$epsilon$dealer,gone:remove)
+$carpet Carpet
+	message	= long
+	weight	= (40,0,0)
+	actions	= (start:#>$$epsilon$dealer,gone:remove)
+;
+; A gas mask for the alien sector
+;
+$mask Mask,GasMask
+	message = long
+	weight	= (10,0,0)
+	actions	= test:if_nothas mask >>gas
+;
+; Some keys
+; 
+$$macro code
+	message = long
+	weight	= (0,0,1)
+$$code code1 Codecard,Card,Key,Keycard,KeyI,Key1,CardI,Card1
+$$code code2 Codecard,Card,Key,Keycard,KeyII,Key2,CardII,Card2
+$$code code3 Codecard,Card,Key,Keycard,KeyIII,Key3,CardIII,Card3
+$$code code4 Codecard,Card,Key,Keycard,KeyIV,Key4,CardIV,Card4
+;
+; This is what Garibaldi wants to have.
+;
+$bottle Bottle
+	message = long
+	weight	= (2,0,0)
+	#drop	= (
+				if_nothere garibaldi message = long,
+				if_here garibaldi
+				(
+					garibaldi bottle,
+					remove
+				)
+			  )
+;
+; A link with some news
+;
+$link Link,Communicator,Phone,Handy
+	message = long
+	weight	= (1,0,0)
+	actions	= start:start
+	time	= +10:(if_has link ivanova party, stop)
+	#use	= &$$things$uselink
+	#play	= &$$things$uselink
+;
+; This makes Lenier happy.
+;
+$byce Motorbicycle,Bike,Motorbike 
+	message = long
+	weight	= (70,0,0)
+	#take	= (
+				if_state garibaldi long >>bike,
+				message = carry
+			  )
+	#drop	= (
+				if_nothere lenier message = long,
+				if_here lenier (lenier byce, remove)
+			  )
+;
+; Cole and Ivanova
+;
+$stick Weapon,Cylinder,Metal
+	message = long
+	weight	= (45,0,0)
+	#drop	= (
+				if_nothere marcus message = long,
+				if_here marcus
+				(
+					marcus weapon,
+					remove
+				)
+			  )
+$letter Letter,Paper,Poem,Loveletter
+	message = long
+	weight	= (0,2,0)
+	#drop	= (
+				if_nothere marcus message = long,
+				if_here marcus
+				(
+					marcus letter,
+					remove
+				)
+			  )
+	#read	= &$$things$poem
+	#view	= &$$things$poem
+;
+; Becoming Sheridan
+;
+$base Pyramid,Triangle,Base,Pile
+	message = long
+	weight	= (999,0,0)
+	actions	= (
+				act:
+					if_message long3
+					(
+						if_state lenier long >>triangle,
+						if_state delenn * >>triangle,
+						if_state delenn long >>triangle,
+						message = transform,
+						if_has base @!base,
+						#>$$dummy$start,
+						start
+					),
+				add:
+					(
+						&$$things$merge,
+						if_message long2 message = long3,
+						if_message long1 message = long2,
+						if_message long message = long1
+					),
+				start:start
+			  )
+	time	= +20:(stop, &$$things$back, @message = *, remove)
+	#touch	= base act
+	#use	= base act
+;
+; For Down Below
+; 
+$ltest
+	message	= false
+	actions	= test:
+				(
+					@message = true,
+					if_nothas light if_nothere light @message = false,
+					if_state light long @message = false,
+					if_state light carry @message = false
+				)
+$light Light,Lamp
+	message = long
+	weight	= (5,0,0)
+	actions	= (
+				test:
+				(
+					ltest test,
+					if_state ltest false >>light,
+					button test
+				),
+				special1:
+				(
+					ltest test,
+					if_state ltest true >$$down$g1,
+					if_state ltest false
+					(
+						if_state mordon * >$$down$g1,
+						if_state mordon helpful &$$things$mordon_light
+					)
+				),
+				special2:
+				(
+					ltest test,
+					if_state ltest true >$$down$g3N,
+					if_state ltest false
+					(
+						if_state mordon * >$$down$g3N,
+						if_state mordon helpful &$$things$mordon_light
+					)
+				)
+			  )
+	#take	= (
+				if_message long message = carry,
+				if_message longon message = carryon
+			  )
+	#drop	= (
+				if_message carry message = long,
+				if_message carryon message = longon
+			  )
+	#on		= (
+				if_message longon &$$things$ison,
+				if_message carryon &$$things$ison,
+				if_message long message = longon, 
+				if_message carry message = carryon
+			  )
+	#off	= (
+				if_message long &$$things$isoff,
+				if_message carry &$$things$isoff,
+				if_message longon message = long, 
+				if_message carryon message = carry
+			  )
+$button Button
+	message = long
+	weight	= (1,0,1)
+	actions	= test:if_nothas button if_state mordon * >>button
+;
+; A book from Delenn to Sheridan.
+;
+$book Book
+	message = long
+	weight	= (4,0,0)
+	#drop	= (
+				if_nothere sheridan message = long,
+				if_here sheridan
+				(
+					if_state earth long 
+					(
+						message = earth,
+						@message = long
+					),
+					if_state earth going
+					(
+						commander book,
+						sheridan book,
+						remove
+					)
+				)
+			  )
+;
+; The overall timer
+;
+$explode
+	message	= *
+	actions	= start:start
+	time	= 500:>>explode
+;
+; The buttons for the end.
+;
+$buttons
+	message	= long
+	actions	=
+			(
+				yes:(message = save, buttons loose),
+				no:(message = destroy, buttons win),
+				win:
+					(
+						if_state vir ticket >>win,
+						>>virforgotton
+					),
+				loose:>>loose
+			)
+	#pred	= (
+				if_state movie false &$$things$movie,
+				if_state movie true
+				(
+					if_state drozi solve3 buttons yes,
+					if_state drozi solve1 buttons no,
+					if_state drozi solve2 buttons no,
+					&$$things$nobuttons
+				)
+			  )
+	#pgreen	= (
+				if_state movie false &$$things$movie,
+				if_state movie true
+				(
+					if_state drozi solve1 buttons yes,
+					&$$things$nobuttons
+				)
+			  )
+	#ppurple= (
+				if_state movie false &$$things$movie,
+				if_state movie true
+				(
+					if_state drozi solve2 buttons yes,
+					if_state drozi solve3 buttons no,
+					&$$things$nobuttons
+				)
+			  )
+;
+; Carrying command stuff
+;
+$commander
+	message	= *
+	weight	= (0,0,0)
+	things	= triangle3
+	#take	= @message = *
+	actions	= (
+				start:start, 
+				stop:stop, 
+				triangle:#!triangle3,
+				book:
+					(
+						#if_has triangle3 &$$things$book_lyta,
+						#if_nothas triangle3 &$$things$book_give
+					)
+			  )
+	time	= +19:
+				[
+				 (
+					if_state movie false &$$things$tip1,
+					if_state movie true &$$things$tip1B
+				 ),
+				 if_state drozi long &$$things$tip2,
+				 if_state zatras * &$$things$tip3,
+				 if_state kosh long &$$things$tip4,
+				 (
+					if_state delenn long @message = long,
+					if_state delenn * @message = long,
+					if_state ivanova long @message = long,
+					if_state ivanova * @message = long,
+					if_message long &$$things$tip5,
+					@message = *
+				 ),
+				 if_state lurker * &$$things$tip6,
+				 if_nothas link if_state ivanova long &$$things$tip7,
+				 @message = *,
+				 @message = *,
+				 @message = *
+				)
+;
+; The movie tester
+;
+$movie
+	message	= false
+	actions	= (
+				start:start,
+				test:
+					if_state movie1 carry
+						if_state movie2 carry
+							if_state movie3 carry
+								if_state movie4 carry
+									if_state movie5 carry
+										if_state movie6 carry
+										(
+											@message = true,
+											commander stop,
+											start
+										)
+			  )
+	time	= +3:(stop, &$$things$tip1A, commander start)
+;
+; The different scenes of the game.
+;
+$$macro scene
+	message	= *
+	actions	= (play:(message = long, remove),done:(@message = carry, movie test))
+$$scene movie1
+$$scene movie2
+$$scene movie3
+$$scene movie4
+$$scene movie5
+$$scene movie6
+;
+; The things only necessary to upset the player
+;
+$starmap Map,Starmap
+	message	= long
+	weight	= (2,0,0)
+	#view	= &$$things$starmap_read
+	#read	= &$$things$starmap_read
+$coin Coin
+	message = long
+	weight	= (1,0,0)
+$bear Bear,Puppet
+	message = long
+	weight	= (5,0,0)
+$memo Paper,Memo,Memorandum,Letter
+	message	= long
+	weight	= (3,0,0)
+	#view	= &$$things$memo_read
+	#read	= &$$things$memo_read
+$battery Battery,Energycell,Cell
+	message	= long
+	weight	= (7,0,0)
+$belt Belt
+	message	= long
+	weight	= (20,0,0)
+$passport Passport,ID,IDCard
+	message = long
+	weight	= (3,0,0)
+	#view	= &$$things$passport_read
+	#read	= &$$things$passport_read
+$prospect Prospect,Paper,Offer
+	message = long
+	weight	= (3,0,0)
+	#view	= &$$things$prospect_read
+	#read	= &$$things$prospect_read
+$shoe Shoe
+	message = long
+	weight	= (10,0,0)
+$ring Ring,Gold
+	message = long
+	weight	= (5,0,0)
+$cat Cat,Animal
+	message	= long
+	weight	= (0,0,0)
+	actions	= hunt:(message = hunt, remove)
+$cheese Cheese
+	message	= long
+	weight	= (10,0,0)
+	#eat	= (message = eat, remove)
+$tape2 Crystal
+	message = long
+	weight	= (15,0,0)
+	#play	= &$$things$tape2_read
+	#view	= &$$things$tape2_read
+$stone Stone,Glass
+	message	= long
+	weight	= (45,0,1)
+$apple Apple,Fruit
+	message	= long
+	weight	= (12,0,0)
+	#eat	= (message = eat, remove)
+$blueprint Blueprint,Painting,Print,Paper
+	message	= long
+	weight	= (6,0,0)
+	#view	= &$$things$blueprint_read
+	#read	= &$$things$blueprint_read
+$list List,Paper,Names
+	message	= long
+	weight	= (4,0,0)
+	#view	= &$$things$list_read
+	#read	= &$$things$list_read
+$glass Glass
+	message	= long
+	weight	= (8,0,0)
+$bottle2 Bottle
+	message	= long
+	weight	= (17,0,0)
+$book2 Book
+	message	= long
+	weight	= (18,0,0)
+	#view	= &$$things$book2_read
+	#read	= &$$things$book2_read
+$rose Rose,Flower
+	message	= long
+	weight	= (4,0,0)
+$plant Plant
+	message = long
+	weight	= (13,0,0)
+$tomato Tomato,Vegetable
+	message = long
+	weight	= (7,0,0)
+	#eat	= (message = eat, remove)
+$screw Screw,Metal
+	message	= long
+	weight	= (6,0,0)
+$bug

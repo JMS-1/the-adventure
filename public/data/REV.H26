@@ -1,0 +1,90 @@
+$$haus26
+$flur_lang
+Du stehst in einem engen Flur eines Hauses. Hinter Dir ist offenbar
+die Eingangstüre. Vor Dir und zu Deiner rechten sind zwei Räume zu
+sehen. Eine wagemutige Holztreppe führt nach oben und unten. Bis auf
+ein Regal ist der Flur leer.
+$flur_kurz
+Du stehst im Flur.
+$oben1_lang
+Du stehst hier am oberen Ende einer Holztreppe, knapp unter dem Giebel
+des Hauses. Links und rechts sind die Eingänge zu zwei Zimmern. Ein
+schmaler Flur führt nach vorne auf ein weiteres Zimmer zu.
+$oben1_kurz
+Du stehst am oberen Ende der Treppe.
+$oben2_lang
+Der Flur von hinten endet hier. Über ein Geländer kannst Du in das untere
+Stockwerk schauen. Rechts ist der Eingang zu einem Zimmer.
+$oben2_kurz
+Du stehst am Ende des Flurs im ersten Stockwerk des Hauses.
+$treppe1_lang
+Du bist auf einer Holztreppe.
+$treppe1_kurz
+Du bist auf einer Holztreppe.
+$treppe2_lang
+Du stehst mitten auf einer Holztreppe, die nach unten hin zu einem
+großen Raum führt. Unter der Treppe scheint eine Art Abstellkammer zu sein.
+$treppe2_kurz
+Du bist auf der Treppe über dem großen Raum.
+$zimmer1_lang
+Hier handelt es sich offensichtlich um ein Schlafzimmer. Zwei schmale
+Betten bilden die einzige sichtbare Einrichtung dieses Zimmers. Durch die
+Enge des Raumes ist es aber wohl nur ausgebildeten Akrobaten möglich,
+das Bett an der dem Eingang gegenüberliegenden Wand zu erreichen. Links
+von Dir ist der Ausgang und direkt hinter Dir ein Wandschrank mit etwas
+Wäsche und Toilettenartikeln.
+$zimmer1_kurz
+Du bist in dem engen Schlafzimmer.
+$zimmer2_lang
+Dieses geräumige Zimmer enthält neben einem Doppelbett mit dazugehörigen
+Nachttischchen einen großen Schrank. Aus dem Fenster gegenüber dem Ausgang
+links von Dir kannst Du den Park mit den kleinen Häusern überblicken.
+$zimmer2_kurz
+Du stehst in dem großen Schlafzimmer.
+$zimmer3_lang
+Das hier ist wohl das Kinderzimmer. In seiner Winzigkeit ist es zur Nutzung
+des minimalen Raumangebotes mit einem
+Etagenbett ausgestattet. Ein kaum bemerkbares Schränkchen ergänzt die
+Einrichtung. Falls es Dir gelingt, Dich in dieser Enge umzudrehen: der
+Ausgang ist rechts.
+$zimmer3_kurz
+Du bist im Kinderzimmer.
+$WC_lang
+Nun, das ist offensichtlich eine Toilette und wenig mehr. Genauer gesagt
+sollte man zur Benutzung je nach Anforderung besser rückwärts eintreten,
+da eine Wende wohl nicht möglich ist.
+$WC_kurz
+Du bist in der Toilette.
+$WC2_lang
+Du erreichst ein 
+geräumiges Badezimmer mit einer Dusche und allen sonst notwendigen
+Einrichtungen. Der Spiegel ist etwas beschlagen und es scheint, als
+hätte sich hier vor kurzem noch jemand geduscht. Der Ausgang aus dem
+Bad ist links von Dir.
+$WC2_kurz
+Du bist im Badezimmer.
+$küche_lang
+Du stehst hier in der rechten Hälfte eines großen Raumes, in der eine
+Kochecke mit Herd, Kühlschrank und so weiter eingerichtet ist. Eigentümlicher
+Weise ist der Raum total leer und auch die Schränke der Küche scheinen
+geplündert zu sein. Sei lieber vorsichtig, vielleicht treiben sich hier
+ein paar Einbrecher herum. Unter der Treppe nach oben ist vor Dir eine Art
+Gerümpelecke zu erahnen.
+$küche_kurz
+Du bist in der Küche.
+$kammer_lang
+Einige Reste deuten darauf hin, daß diese tote Ecke unter der Treppe als
+Abstellraum genutzt wird. Im großen und ganzen ist es hier aber genauso
+leer wie in dem Raum hinter Dir.
+$kammer_kurz
+Du bist im Abstellraum.
+$kamin_lang
+Die linken Ecke dieses großen Raumes wird von einem Kamin dominiert,
+der aber zur Zeit nicht in Betrieb ist. Daneben steht eine Couchecke und
+ein Tischchen mit Telefon und Fernseher darauf. Ansonsten ist der Raum wie
+leer geräumt. Vor Dir siehst Du eine Glastür, hinter der eine Art
+Terasse liegt.
+$kamin_kurz
+Du bist im Zimmer mit dem Kamin.
+$istzu
+Du solltest vielleicht erst einmal die Terassentüre öffnen.

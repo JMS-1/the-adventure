@@ -1,0 +1,276 @@
+$$things
+$gerhild_lang
+$gerhild_trägt
+$gerhild_ruhe
+Gerhild sitzt neben Gregory auf einer Bank. Sie sieht Dich etwas stirnrunzelnd
+an. Du hast sie wohl gestört.
+$gerhild_aerger
+Gerhild wird langsam böse. Sie sitzt immer noch neben Gregory, bewegt sich
+aber unruhig hin und her und faucht Dich von Zeit zu Zeit böse an.
+$gerhild_guertel
+Gerhild ist aufgestanden. Sie nimmt langsam einen Gürtel aus Ihrer Tasche,
+schwingt ihn zweimal um ihre Taille und sieht Dich auffordernd mit eiskaltem
+Blick an. Aber keine Panik, Blicke töten in diesem Spiel nicht.
+$gerhild_eis
+Gerhild nimmt Dir dankbar das Eis ab und wirkt auf einmal wirklich glücklich.
+Sie ißt es innerhalb von nur 1.2354 Sekunden auf. Plötzlich springt sie auf
+und murmelt irgendwas von "mein Rohr" und "der arme Oszi" und stürmt davon.
+$gerhild_keller
+Gerhild sitzt im Bastelraum. Als Du herein kommst sagt sie "Du brauchst sicher
+den Schlüssel" und legt einen auf den Tisch. Dann wendet sie sich schweigend
+einem Oszilloskop zu. Aus der wirst Du wohl nichts mehr herausbekommen.
+$gerhild_arbeit
+Gerhild arbeitet an einem Oszilloskop.
+$gregory_lang
+$gregory_trägt
+$gregory_froh
+Gregory sitzt auf einer Bank und ist fröhlich.
+$gregory_traurig
+Gregory sitzt auf einer Bank und weint.
+$eismann_lang
+$eismann_trägt
+$eismann_wartet
+Vor Dir steht ein Eismann. Er schaut Dich auffordernd an.
+$eismann_bezahlt
+Der Eismann lächelt zufrieden. Es scheint, als hättest Du die freie Wahl.
+$norbert_lang
+$norbert_trägt
+$norbert_betrunken
+Vor Dir steht Norbert, er ist restlos betrunken. Er lallt irgendetwas vor sich
+hin und schreckt manchmal kurz auf. Dann zittert er etwas, wird aber schnell
+wieder fröhlich und hüpft von Tisch zu Tisch. Seine rechte Hand ist zur Faust
+geballt. 
+$norbert_tisch
+Norbert liegt unter einem Tisch und schnarcht. Manchmal dreht er sich unruhig
+hin und her oder stößt wilde Schreie aus. Ich glaube nicht, daß es ihm
+besonders gut geht.
+$norbert_redet
+Norbert trinkt sofort den heißen Kaffee, und ich glaube, der hat seinen Geist
+etwas geklärt. Er sieht Dich an und
+scheint Dich sogar zu erkennen. Plötzlich sagt er eine paar klar verständliche
+Sätze: "Mach' sie hiermit fertig und sperr' sie ein. Sag' denen vor den
+Terminals 'alles paletti'." Dann öffnet er seine linke Faust und legt ein
+kleines Döschen mit roter Tunke auf einen Tisch. Schließlich rollt er
+sich zusammen und schläft mit einem Lächeln auf den Augen ein.
+$norbert_schläft
+Norbert schläft friedlich unter einem Tisch.
+$flag1_lang
+$flag1_trägt
+$flag1_draussen
+$flag1_drinnen
+$flag1_halle
+$flag2_lang
+$flag2_trägt
+$flag2_an
+$burkhard_lang
+$burkhard_trägt
+$burkhard_scharf
+Burkhard sieht Dich äußerst mißtrauisch an.
+$burkhard_brav
+Burkhard wurschtelt in der Ecke vor sich hin.
+$robert_lang
+$robert_trägt
+$robert_scharf
+Da steht Robert vor der Tür zum Labor. Er wird wohl im nächsten Moment
+explodieren. Du erinnerst Dich schwach, daß Du ihm irgendetwas versprochen hast.
+Leider hattest Du bisher keine Zeit, Dein Versprechen einzulösen.
+$robert_brav
+So eine Umwandlung hast Du noch nicht gesehen: vom Tier zum Engel in weniger
+als einer Sekunde. Robert schwebt etwa 13 Zentimeter über dem Boden (ich
+hoffe, das bedeutet keinen Regen) und läßt sich mehrmals von Dir bestätigen,
+daß er wirklich Vater geworden ist. Plötzlich erinnert er sich wohl seiner
+Pflichten und verschwindet schnell um die Ecke.
+$krach_kobe
+Ein fürchterliches, urzeitliches Gebrüll erfüllt das Haus. Leises Klirren
+diverser Gegenstände aus Glas, wie Fenster, deutet an, daß hier die
+Belastungsgrenze erreicht ist. Deine Ohren klingen noch lange nach und
+beweisen Dir, daß es sich nicht um Einbildung gehandelt hat. Du wagst nicht,
+aus der Art des Gebrülls auf den Urheber zurückzuschließen, weil Du befürchtest,
+daß die Erkenntnis Dich umbringen könnte.
+$krach_leute
+Die herumstehenden Leute stehen für einige Zeit wie eingefroren herum. Ganz,
+ganz langsam kommt wieder Bewegung und Leben in sie, einige nicht so abgehärtete
+fangen leise an zu weinen. Schließlich wenden sie sich wieder den Terminals
+zu.
+$krach_raum
+Entsetzt stellst Du fest, daß Herr Kobe diese Laute ausgestoßen hat. Du
+hoffst, daß er satt ist und Dich jetzt nicht anfällt. Ich glaube, er hat
+sich einfach über etwas geärgert.
+$krach_maus
+Einige der Betonsteine wackeln leicht bei dem grauenerregenden Gebrüll,
+das eine geqüalte Kreatur in diesem Augenblick ausstößt. Du bleibst wie
+erstarrt stehen. Da Dein Gehirn sich eigentlich entschlossen hat, zu
+fliehen und sich auch schon in Bewegung gesetzt hat, entsteht eine
+etwas eigenartige Situation in Deinem Körper, die sich aber nach dem Abklingen
+des Geschreis schnell wieder normalisiert.
+$kobe_lang
+$kobe_trägt
+$kobe_laut
+Herr Kobe brummelt etwas herum und sieht Dich von Zeit zu Zeit auffordernd
+an. Ich meine, er hätte irgendetwas von einem Antrag gesagt. Ich hoffe nicht,
+daß er Dich heiraten möchte.
+$kobe_antrag
+Herr Kobe nimmt den inzwischen schon recht ramponierten Zettel an sich
+und entfaltet ihn. Dann sagt er, merkwürdigerweise leise, aber klar
+verständlich: "Na also, da ist er ja". Du glaubst sogar, daß er Dich
+"mein Freund" genannt hat, aber das muß wohl Einbildung gewesen sein.
+$kobe_ruhig
+Herr Kobe arbeitet ruhig und konzentriert an einem Terminal. Du solltest
+ihn nicht stören.
+$kobe_geht
+Plötzlich springt Herr Kobe auf und ruft ganz entsetzt: "Verdammter Mist,
+schon halb. Ich muß weg!" und stürmt aus dem Zimmer. Du wärst zwar auch
+gerne woanders, hast aber hier noch was zu erledigen.
+$walter_lang
+$walter_trägt
+$walter_kommt
+Unheilvoll knarrt die Tür hinter Dir und Walter kommt herein. Er hat einen
+dicken Ordner unter dem Arm und sieht äußerst diskussionsfreudig aus.
+$walter_da
+Walter sitzt am Tisch und rechnet irgendetwas ungeheuer Kompliziertes auf
+einem gigantischen Blatt Papier.
+$walter_stoppt
+Du willst gerade gehen, da greift Walter Dich. Eine schier endlose
+Diskussion hält Dich von der Flucht ab. Nach einer Weile wendet er sich wieder
+seinem Papier zu.
+$walter_raucht
+Walter raucht sich eine Zigarette.
+$schwille_lang
+$schwille_trägt
+$schwille_redet
+Nachdem Du das Fenster geöffnet hast, verzieht sich der Rauch schon bald.
+Du erkennst Professor Schwille an seinem Schreibtisch. Er zieht genüßlich
+an seiner Pfeife. Als er Dich bemerkt, sagt er: "Ach, da sind Sie ja
+endlich. Alles unter Kontrolle? Wenn Sie zufällig den Magnetschrat sehen, sagen
+Sie ihm, daß er wieder mal Vater geworden ist! Und lassen Sie doch bitte das
+Fenster zu, es zieht." Daraufhin schließt er das Fenster und Sekunden
+später bist Du wieder in dichten Nebel gehüllt.
+$flag_schwille_lang
+$flag_schwille_trägt
+$flag_schwille_aerger
+$mühl_lang
+$mühl_trägt
+$mühl_scharf
+Da steht eine Bibliothekarin, ich glaube es ist Frau Mühl. Sie sieht Dich
+böse an. Scheint, als würde sie Besuch nicht mögen.
+$mühl_brav
+Frau Mühl sitzt in ihrem Kämmerlein und scheint zu arbeiten.
+$mühl_lesen
+Frau Mühl sieht, daß Du einen Ausweis dabei hast. Nun hellt sich ihre Miene
+deutlich auf. Eine weite, großzügige Geste sagt Dir, daß Du vollen Zugriff
+auf alle ihre Schätze - ich meine die Bücher - hast. Sie zieht sich in ein
+kleines Büro zurück, stößt aber vorher noch einen ulkigen Pfiff aus, dessen
+Bedeutung Dir hoffentlich fremd ist.
+$steinbrecher_lang
+$steinbrecher_trägt
+$steinbrecher_scharf
+Vor Dir steht Herr Steinbrecher. Seit den letzten Einbrüchen ist er, sagen
+wir mal etwas vorsichtiger, geworden und trägt einen Colt.
+$steinbrecher_trinkt
+Jetzt erkennt Herr Steinbrecher Dich sofort als Freund. Er nimmt die
+Flasche, bedankt sich
+höflich und zieht sich dann in einen Nebenraum zurück. Du hörst von Zeit zu
+Zeit das leise Klirren von Eis in einem Glas und weißt, daß Du damit Deine
+gute Tat des Tages hinter Dir hast. Jetzt kannst Du mit den schmutzigen
+Jobs anfangen.
+$steinbrecher_brav
+Herr Steinbrecher ist im Nebenzimmer und genießt eine Flasche Wiskey.
+$leute_lang
+$leute_trägt
+$leute_normal
+Hier stehen jede Menge Leute herum.
+$leute_warten
+Hier stehen jede Menge Leute herum und halten den Atem an. Einige sind schon
+leicht bläulich verfärbt.
+$peter_lang
+$peter_trägt
+$peter_tip
+Peter sieht kurz auf und in seinen leeren Augen kannst Du nichts ablesen.
+Er scheint Dich aber an Deiner typischen Art, die Tür zu schließen, erkannt
+zu haben - ach ja, ich habe den Kram, der dabei aus den Regalen gefallen ist,
+wieder an die alten Plätze gestellt. Er sagt in einem düsteren, geheimnisvollen
+Tonfall wie zu einem Verschwörer: "Es ist alles meine Schuld. Das Brot war ein
+Fehler, aber vielleicht kann es uns jetzt noch retten." Dann schüttelt er
+verzweifelt den Kopf und Du läßt Dich von seiner Resignation ein wenig
+anstecken.
+$peter_fertig
+Peter sitzt am Terminal und drückt lustlos einige Tasten.
+$reinhold_lang
+$reinhold_trägt
+$reinhold_tip
+Reinhold sieht sich nur kurz nach Dir um. Dann kratzt er sich bedächtig mit
+seiner freien Hand unter einer Achsel und meint dann: "Der Guru hat gesagt,
+das TO geht wieder.". Aus seinem Rucksack - ja ehrlich, er trägt tatsächlich
+einen Rucksack und ein paar lächerlich gestreifte Hosen - fingert er eine
+Packung Tabak und dreht sich eine Zigarette. Eine fast artistische Einlage.
+$reinhold_hängt
+Reinhold baumelt am Rohr und kichert manchmal.
+$maus_lang
+$maus_trägt
+$maus_frei
+Vor Dir steht ein grauenerregendes Monster. Scharfe Zähne und ein bösartiger
+Blick erinnern Dich zwar im ersten Augenblick an eine Maus, aber nicht die
+Größe. Drei Meter hoch, zwei breit und fünf lang, das ist doch schon was.
+Meine einzige Erklärung ist, daß es sich hierbei um eine Mutation handelt.
+Aber bei dem bißchen Strahlung...
+$maus_brot
+Das Ungeheur sieht ungeheur hungrig aus. Erst sieht es das Brot an, und in
+seinen Augen spiegelt sich so etwas wie Erkennen ab. Dann aber schwenkt sein
+Blick zur Seite, direkt auf Dich und der Ausdruck wandelt sich in nackte
+Gier. Wenn es nicht zufälligerweise auf Diät ist, wird es wohl Dich verspeisen.
+$maus_essen
+Wie ein zahmes Kätzchen - na, das ist wohl hier der falsche Vergleich -
+frißt die Riesenmaus Dir brav das Brot aus der Hand. Dann schaut sie Dich
+auffordernd an. Sie hat das wohl als Vorspeise verstanden.
+$maus_sauce
+Um die Maus von Dir abzulenken, hälst Du ihr in Deiner Verzweiflung das
+Döschen mit der roten Tunke hin. Sie schnuppert zwar etwas mißtrauisch,
+leckt dann aber den Behälter bis auf den letzten Rest aus. Dann passiert
+etwas, das sogar nachdem, was Du bisher erlebt hast, in die Kategorie
+"äußerst ungewöhnlich" einzustufen ist: die Maus schrumpft, bis sie die
+Größe einer normalen Maus erreicht hat. Unsicher blickt sie zu Dir auf.
+$maus_raus
+Nach einer kleinen Weile schlüpft die Maus aus der Kammer und sieht Dich
+ängstlich an. Sie stuft Dich wohl als Gegner ein.
+$maus_klein
+Dann hat sie entgültig die Hosen voll und läuft weg. Man hat sie zwar nie
+mehr gesehen, hört aber des öfteren von Toten im Tunnel, die merkwürdige
+Bißspuren aufweisen. Durch ihre Kleinheit war aber niemand mehr in der Lage,
+die Maus zu fangen. Ob Du da das Richtige getan hast?
+$maus_kammer
+Du stellst die kleine Kammer auf den Boden und öffnest eine Klappe an der
+Vorderseite. Vorsichtig schleicht sich das Mäuslein schnuppernd heran.
+Schließlich betritt sie zögernd die Kammer und sieht sich um.
+$maus_gefangen
+Du triumpfierst mit Deiner Intelligenz über den Instinkt einer armen, kleinen
+Maus. Schnell nimmst Du die Schnur und wickelst sie um die Kammer und
+versiegelst das Ganze mit Deinem besten Seemansknoten, den niemand -
+eingeschlossen Du selbst - je wieder aufbekommen hat. Dabei stellst Du
+fest, daß die Kammer nicht zu bewegen ist, da die Maus offenbar ihr
+Gewicht beibehalten hat. Du stellst Dir ihre momentane Dichte vor und
+Dir wird leicht übel.
+$brot
+Womit willst Du dieses Monster denn satt bekommen?
+$jochen_kontrollraum
+Jochen steht verwirrt vor einem Terminal. Sein Blick ist ziemlich
+geistesabwesend.
+$jochen_trägt
+Jochen läuft hinter Dir her.
+$jochen_lang
+Jochen hat sich hingehockt und träumt wohl von besseren Zeiten.
+$jochen_flieht
+Du hast schon die ganze Zeit bemerkt, daß Jochen ängstlich auf die Blutspur
+am Boden starrt. Als Du ihr jetzt zu ihrem, vermutlich unerfreulichen, Ende
+folgen willst, macht er nicht mehr mit. Einen heiseren Schrei ausstoßend
+rennt er nach rechts weg. Ich glaube nicht, daß er nochmal anhält, bevor
+er zu Hause ist.
+$charly_lang
+$charly_trägt
+$keingeld
+Womit denn bitte, Du hast doch eben schon Dein letztes Geld verpraßt!
+$wedemeyer_lang
+Herr Wedemeyer läuft hier herum und richtet dabei eine Art Maschinengewehr
+auf Dich. Er fragt, ob Du ihm nicht eine Feile oder eine Schieblehre leihen
+könntest, denn er müsse "das Werkzeug nochmal modifizieren". Er macht einen
+ziemlich fertigen Eindruck.
+$wedemeyer_trägt

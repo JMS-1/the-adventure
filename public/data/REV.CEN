@@ -1,0 +1,252 @@
+$$center
+$w1_lang
+Du siehst direkt vor Dir den Anfang eines Tunnels, der offenbar unter
+einer vielbefahrenen Straße durch führt. Von der Straße, die von Dir aus
+gesehen auf einer Art Damm läuft, erfüllt ein stetiges Dröhnen die
+Luft. Da Du hier praktisch noch innerhalb des Damms zwischen zwei
+Mauern links und rechts stehst, kannst Du nur in den Tunnel oder nach
+hinten auf eine Gebäudegruppe zu.
+$w1_kurz
+Direkt vor Dir beginnt der Tunnel.
+$w2_lang
+Ein breiter Fußweg von rechts nach links entlang des Damms vor Dir
+verzweigt hier nach hinten. Dort verläuft er zwischen zwei Häusern
+genau auf das Eingangsportal eines mehrstöckigen Gebäudes zu.
+$w2_kurz
+Hinter Dir beginnt der Weg zum Eingangsportal des Hauptgebäudes.
+$w3_lang
+Links und rechts siehst Du die Wände einiger Gebäude. Rechts erkennst
+Du an den Schaufenstern einen kleinen Laden. Der Weg von vorne nach hinten
+führt direkt auf den Haupteingang des größten Gebäudes zu.
+$w3_kurz
+Du bist am Schaufenster des Ladens.
+$w4_lang
+Rechts von Dir ist der Eingang zu einem kleinen Kiosk oder Laden, der nach
+Angabe des kleinen Schildes Sonntags schon um halb vier schließt. 
+Ein Weg von Norden
+führt hinter Dir offensichtlich auf den Haupteingang diese Gebäudekomplexes
+zu. Links ist nur die Mauer eines Hauses.
+$w4_kurz
+Rechts ist der Laden.
+$w5_lang
+Du befindest Dich zwischen zwei Häusern links und rechts unmittelbar an dem
+Haupteingang eines Freizeitzentrums, wie die Vielzahl der Prospekte
+an der Eingangstüre hinter Dir verkünden. 
+Neben den Prospekten befindet sich ein Schild mit der Aufschrift "Sonntag nur
+bis 16.00 Uhr geöffnet". Der Zugang führt vor Dir auf eine Art
+Damm zu, vor dem ein breiter Weg verläuft.
+$w5_kurz
+Du stehst an dem Haupteingang des Freizeitzentrums.
+$w6_lang
+Du läufst entlang des Weges von Westen nach Osten parallel zu dem Damm vor
+Dir. Durch die Fenster des Hauses hinter Dir kannst Du in eine Art
+Spielhalle sehen, in der Flipper und ähnliches aufgebaut sind.
+$w6_kurz
+Hinter Dir ist das Fenster zu der Spielhalle.
+$w7_lang
+Der Weg entlang des Damms vor Dir hat hier eine Abzweigung nach hinten. 
+Ein kurzes Stück Weg verläuft zwischen zwei Gebäuden und endet dann
+weiter hinten vor einer Wand, die die beiden Häuser verbindet.
+$w7_kurz
+Der Weg zweigt hier nach hinten ab.
+$w8_lang
+Durch das große Fenster in dem Gebäude links siehst Du ein schönes 
+Hallenbad mit einer beeindruckenden Rutsche. Einige Leute schwimmen 
+im Wasser oder lümmeln faul am Beckenrand auf Liegestühlen herum.
+Der Weg zwischen den Häusern läuft noch ein kleines Stück nach hinten.
+$w8_kurz
+Links kannst Du in das Hallenbad sehen.
+$w9_lang
+Du hast hier eine Art Sackgasse erreicht, die durch die Gebäude links und
+rechts und durch die Verbindungsmauer hinter Dir gebildet wird. An der
+linken Seite ist eine Tür, die aber fest verschlossen ist. Ein Schild 
+sagt Dir "Verboten für Hacker" - das bist Du doch jetzt, oder?
+$w9_kurz
+Links ist der Eingang zum Hallenbad.
+$w10_lang
+Der Weg von links nach rechts verläuft zwischen dem Damm vor und einem
+großen Gebäude hinter Dir. Durch die Fenster im oberen Teil des Gebäudes
+sehen Dir Palmen entgegen - aber das ist sicher Einbildung.
+$w10_kurz
+Hinter Dir ist das Gebäude mit den Palmen.
+$w11_lang
+Du bist hier offenbar auf einem Wanderweg, der im wesentlichen nach rechts
+und hinten verläuft. Vor Dir ist eine Art Damm und zu Deiner linken endet
+der Weg vor einem Zaun, dessen einziger Durchgang verrammelt ist. Dahinter
+erblickst Du ein weites Feld mit einem großen Parkplatz am Rande eines
+Laubwaldes.
+$w11_kurz
+Der Weg knickt hier von rechts nach hinten ab.
+$w12_lang
+Hier geht es langsam aufwärts und Du siehst rechts von Dir einen großen
+zugefrorenen See hinter einer eindrucksvollen Gebäudegruppe. Der Weg
+läuft nach Norden und Süden.
+$w12_kurz
+Du bewegst Dich auf den Damm des Sees zu.
+$w13_lang
+Du hast hier so eine Art Ministaudamm erreicht. Links liegt einige Meter
+tiefer ein großer See, der im Augenblick trotz der relativ hohen Temperaturen
+völlig zugefroren ist. Links weit unter Dir ist eine große Wiese, die
+dann in einen Wald übergeht. Ein schmaler Wasserlauf führt direkt aus
+dem Damm über die Wiese und verschwindet dann im Wald.
+$w13_kurz
+Du bist auf der Dammkrone des Sees.
+$w14_lang
+Der Weg von Norden über den Damm des Sees endet hinter Dir vor einem dunkelen
+Wald. Ein zweiter Weg von links nach rechts parallel zum Rand des Waldes
+ist links durch einen Zaun versperrt. Ein Schild deuten den Grund der
+Absperrung mit "Nur im Sommer begehbar" an. 
+$w14_kurz
+Der Weg über den Damm knickt hier nach rechts ab.
+$w15_lang
+Du hast jetzt fast schon das Ufer des zugefrorenen Sees erreicht. Der Weg
+liegt nur noch wenig oberhalb der Böschung, von der aus es möglich sein
+sollte, den See zu erreichen - wenn man sich wirklich der Gefahr aussetzen
+möchte. Du kannst von hier aus nur nach links oder rechts, da es keinen
+Zugang in den Wald hinter Dir gibt.
+$w15_kurz
+Rechts hast Du bald das Seeufer erreicht.
+$w16_lang
+Du bist auf einem Wanderweg von Westen nach Osten, der parallel zu dem
+Wald hinter Dir verläuft. Ein schmaler Trampelpfad vor Dir führt zu einem
+zugefrorenen See.
+$w16_kurz
+Vor Dir ist der Trampelpfad zum See runter.
+$w17_lang
+An dieser Stelle versperrt ein mächtiger Baum vor Dir den Zugang zum See.
+Der Wanderweg verläuft weiter von links nach rechts am Rande des Waldes
+hinter Dir.
+$w17_kurz
+Zwischen Dir und dem See wächst ein großer Baum.
+$w18_lang
+Du kannst hier die niedrige Böschung hinab zu dem See vor Dir gelangen oder
+auf dem Weg von rechts nach links bleiben. Von hier aus kannst Du den
+Gebäudekomplex am gegenüberliegenden Ufer des Sees sehen.
+$w18_kurz
+Du bist auf dem Wanderweg an der niedrigen Böschung zum See.
+$w19_lang
+Die Böschung vor Dir wird nach rechts hin deutlich steiler, aber es sollte
+Dir hier noch gelingen, gefahrlos zum See hinunter zu kommen. Hinter Dir
+ist der Wald immer noch so dicht, daß Du nur dem Wanderweg nach Osten und
+Westen folgen kannst.
+$w19_kurz
+Die Böschung zum See wird nach rechts deutlich steiler.
+$w20_lang
+Du befindest Dich auf dem Wanderweg von rechts nach links zwischen dem
+Wald hinter und einer steilen Böschung zum See vor Dir.
+$w20_kurz
+Die Böschung zum See vor Dir ist hier zu steil für Dich.
+$w21_lang
+Vor Dir zum See hin ist das Unterholz der Böschung fast so verfilzt wie
+im Wald hinter Dir. Nach rechts hin wird es allerdings dünner und es
+scheint, als könnte man dort zum See hinab gelangen. Der Wanderweg, auf dem
+Du Dich befindest, setzt sich nach links und rechts fort.
+$w21_kurz
+Zum See kannst Du nicht, da das Unterholz der Böschung zu dicht ist.
+$w22_lang
+Unmittelbar vor Dir endet der See rechts an einer steilen Betonmauer. Der Weg
+verläuft entlang des Waldes hinter Dir. Auch neben der Betonmauer ist ein
+Wald angelegt.
+$w22_kurz
+Du bist auf dem Weg am Ende des Sees.
+$w23_lang
+Du bist hier auf einem Waldweg von links nach rechts. Du kannst nur
+wenige Meter weit in den dichten Wald sehen.
+$w23_kurz
+Du bist hier im Wald.
+$w24_lang
+Wenn Du nach rechts dem Verlauf des Weges folgst wirst Du wohl bald aus
+diesem Wald heraus kommen. Links führt der Weg noch ein Stückchen durch
+den Wald und scheint dann in lichteres Gelände zu kommen.
+$w24_kurz
+Der Wald hört rechts schon bald auf.
+$w25_lang
+Du stehst am Rande eines Waldes links und hinter Dir. Ein als solcher
+gekennzeichneter Wanderweg führt links in den Wald hinein und verläuft dann
+vor Dir parallel zum Waldrand. Rechts ist ein Zaun und dahinter geht es
+steil bergab - nichts für Dich.
+$w25_kurz
+Links ist ein Weg in den Wald hinein.
+$w26_lang
+Du befindest dich auf einem Weg zwischen dem Wald zu Deiner linken und einen
+Zaun rechts. Hinter dem Zaun geht es steil bergab und weit unter Dir erkennst
+Du einige Grillstellen. Vor Dir scheint ein Parkplatz zu sein.
+$w26_kurz
+Du bist auf dem Weg zwischen Wald und Zaun.
+$w27_lang
+Du bist hier auf einem Bürgersteig, der von dem Zaun rechts auf die Gebäude 
+links zu läuft. Eine Art Wanderweg führt nach hinten am Rande eines Waldes
+entlang.
+Vor Dir liegt der Zugang zu einem großen Parkplatz.
+$w27_kurz
+Hier trifft der Bürgersteig auf einen Wanderweg.
+$w28_lang
+Das hier ist ein schmaler Fußweg, der den Bürgersteig hinter Dir mit dem
+Parkplatz vor Dir verbindet. Links sind einige Hecken und rechts trennt
+ein kräftiger Zaun den Weg von einem sehr viel tiefer gelegenen Gelände.
+$w28_kurz
+Du bist auf dem Weg zum Parkplatz neben dem Zaun.
+$w29_lang
+Der Bürgersteig von links nach rechts verläuft hier parallel zu dem
+Wald hinter Dir. Ein schmaler Weg führt in Richtung des Parkplatzes.
+$w29_kurz
+Du bist auf dem Bürgersteig am Waldrand.
+$w30_lang
+Dieser Fußweg vom Parkplatz zu einem Weg vor dem Wald hinter Dir liegt
+genau zwischen hohen Hecken links und rechts.
+$w30_kurz
+Du bist auf dem Weg zum Parkplatz zwischen den hohen Hecken.
+$w31_lang
+Der Bürgersteig von rechts längs des Waldrandes hinter Dir knickt links vor
+der Mauer eines Hauses nach vorne ab und folgt dann dem Verlauf der Gebäude.
+Rechts vor Dir liegt ein großer Parkplatz.
+$w31_kurz
+Der Bürgersteig knickt hier von rechts nach vorne ab.
+$w32_lang
+Du bist hier auf einem Teil des Bürgersteigs von Süden nach Norden, der
+links und rechts von dem Gebäudekomplex beziehungsweise hohen Hecken
+eingerahmt wird.
+$w32_kurz
+Du befindest Dich auf dem Bürgersteig zwischen Hecke und Hauswand.
+$w33_lang
+Der Bürgersteig verläuft längs des Parkplatzes rechts von Dir und den
+Häusern links. An dieser Stelle ist links eine Bar. Große Kegel und eine
+Kugel über dem Eingang zeigen Dir, daß es hier wohl auch Kegel- oder 
+Bowlingbahnen gibt. 
+$w33_kurz
+Links ist der Eingang zur Bar.
+$w34_lang
+Das Haus zu Deiner linken ist etwas zurückversetzt, so daß der Bürgersteig,
+der am Rande des Parkplatzes rechts verläuft, hier deutlich breiter wird.
+Weiter vorne siehst Du einen grasbewachsenen Damm, der den Parkplatz begrenzt.
+$w34_kurz
+Der Bürgersteig wird hier breiter.
+$w35_lang
+Wenn Du dem Bürgersteig von hinten nach vorne folgst, wirst Du offenbar
+schon bald auf eine Treppe nach links treffen. Der Parkplatz rechts ist
+ziemlich vollgestellt, es scheint hier also etwas interessantes zu sehen
+zu geben.
+$w35_kurz
+Du erreichst bald vor Dir die Treppe.
+$w36_lang
+Ein Bürgersteig von hinten endet hier vor einem Damm. Rechts von Dir liegt
+ein großer Parkplatz, der praktisch völlig ausgelastet ist. Links
+geht der Bürgersteig in einen breiten Weg längs des Damms vor Dir über.
+Auf dem Damm ist wohl eine vielbefahrene Straße, von der ein stetiges Rauschen
+die Luft erfüllt.
+$w36_kurz
+Links ist eine Treppe.
+$w37_lang
+Du stehst hier am unteren Ende der Treppe links von Dir, die offenbar
+zu den Eingängen der einzelnen Häuser des Gebäudekomplexes hinter Dir
+führt. Rechts liegt am Ende des Weges ein großer Parkplatz, der nach 
+Norden hin durch einen Damm begrenzt wird, der auch den Weg begrenzt.
+$w37_kurz
+Du befindest Dich am unteren Ende der Treppe.
+$w38_lang
+Du befindest Dich am oberen Ende einer Treppe, die nach rechts hinunter 
+zu einem Autoparkplatz führt. Nach links läuft ein Weg entlang einer
+Art Damm vor Dir, der an dieser Stelle durch einen Tunnel unterbrochen
+ist. Hinter Dir stehen einige große Häuser.
+$w38_kurz
+Rechts geht es runter zum Parkplatz.

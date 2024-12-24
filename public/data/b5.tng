@@ -1,0 +1,477 @@
+$$things
+$bottle_long
+There is an empty 3-liter bottle.
+$bottle_carry
+You are carrying an empty 3-liter bottle with you. It's rather light, must be some kind of plastic. 
+$eye_long
+There is a beautiful artwork around. It's like a small statue showing an eye looking at you. The eye consists of a myriad of small valuable stones and glows in all colors.
+$eye_carry
+You have the little eye statue with you.
+$londodrink
+Londo stares at the little statue and his eyes fill with anger: 'This is your way to make business? Take the drink first or forget it!' The eye does no longer exist for him - what's wrong with this world? Well, after some seconds Londo's eyes become friendly again.
+$drink_long
+There is some kind of drink on the table. It smells like heavy alcohol.
+$drink_carry
+$drink_drinking
+It's like purring lava right into your throat. You can feel any millimeter the drink wanders through your body. In your stomach it comes to a rest but you have a vague feeling of a time bomb counting slowly to zero. You throw the empty glass away and it smashes somewhere far from you. Londo smiles his ambassadorial smile.
+$drinkdie_long
+$drinkdie_carry
+$drinkdie_step1
+You stomach makes a little jump forward and backward. It seems as if it's getting hotter.
+$drinkdie_step2
+Water is on your whole body coming from somewhere inside you. Your stomach feels as if some boy scouts are making a really large campfire inside. Maybe you should let those guys drinking who trained it?
+$drinkdie_step3
+You can hardly move for a moment. Your sight becomes black and you feel somewhat like flying. I think that if you know some doctor you should visit him within the next minutes or you will get really big problems.
+$interval3_long
+$interval3_carry
+$gkartimer_long
+$gkartimer_carry
+$ticket_long
+A ticket machine is standing in a room. A writing on it says:  'Insert a red credit for a trip to Epsilon 3 and a blue one for a two-week pleasant holiday on Minbar. This special offer only lasts to the end of December, Earth time.'
+$ticket_carry
+$weapon_long
+$weapon_carry
+$weapon_true
+$weapon_false
+$ppg_long
+A PPG lies on the ground. It seems to be fully functional.
+$ppg_carry
+You are carrying a PPG with you and look rather hostile.
+$knife_long
+Here is a steely knife with a blinking blade.
+$knife_carry
+You have a steely knife put below your belt.
+$sword_long
+An ancient and valuable looking sword lies in front of you.
+$sword_carry
+You are swinging a sword in your hand. It makes you look like a martial arts specialist. Most people may be afraid of you.
+$killed_long
+$killed_carry
+$el1btn1_long
+$el1btn1_carry
+$el1btn2_long
+$el1btn2_carry
+$el1btn3_long
+$el1btn3_carry
+$el1btn4_long
+$el1btn4_carry
+$el2btn1_long
+$el2btn1_carry
+$el2btn2_long
+$el2btn2_carry
+$el2btn3_long
+$el2btn3_carry
+$el2btn4_long
+$el2btn4_carry
+$el3btn1_long
+$el3btn1_carry
+$el3btn2_long
+$el3btn2_carry
+$el4btn1_long
+$el4btn1_carry
+$el4btn2_long
+$el4btn2_carry
+$el4btn3_long
+$el4btn3_carry
+$el4btn4_long
+$el4btn4_carry
+$el4btn5_long
+$el4btn5_carry
+$el4btn6_long
+$el4btn6_carry
+$el4btn7_long
+$el4btn7_carry
+$el5btn1_long
+$el5btn1_carry
+$el5btn2_long
+$el5btn2_carry
+$elevatorup
+The elevators door closes and it moves up. After some time your journey stops and the doors open again.
+$elevatordown
+The elevators door closes and it moves down. After some time it abruptly stops and the doors open.
+$elevatorno
+Sorry, this elevator will not go in this direction. Try another elevator or another direction.
+$gkarsilent
+As you are standing around G'Kar hushes to your back. He whispers in your ear: 'Oh, my very good friend. Good to see you on the station. I'm in big trouble as you saw. Come again to Londo's room and help me - and I will help you! Oh', he adds, ' it would be good to have Vir with you. Just to calm the old Centauri down.' Then he quickly disappears before you can talk to him.
+$medcine_long
+There is a little bottle with medicine. Its writing says 'Drink with care!' and 'Ask the Doctor for advice.'
+$medcine_carry
+You have a little bottle of some medicine with you.
+$medcine_elong
+There is an empty bottle of some kind of medicine.
+$medcine_ecarry
+You are needlessly carrying an empty bottle of medicine with you.
+$medcine_drink
+The fluid really tastes horrible but you empty the whole bottle with one swallow. You really feel somewhat better right now - hope this will last for the rest of this game.
+$medcineempty
+The bottle of medicine is already empty. Go for another one.
+$ticket1_long
+There is a ticket for a two-week holiday on Minbar. It is rather expensive.
+$ticket1_carry
+You are carrying a ticket to Minbar with you.
+$minbartimer_long
+$minbartimer_carry
+$nominbar
+'Sorry, but the last cruiser to Minbar already left.' you are told, 'Try the next one in seven months.'
+$ticket2_long
+There is a ticket for a 'See&Buy' trip to Epsilon 3. It's very cheap.
+$ticket2_carry
+You have a ticket to Epsilon 3 with you.
+$ticket2_gone
+The officials take your ticket and put you into a small shuttle. After a short journey you reach the big planet.
+$credits1_long
+There is a red credit lying around.
+$credits1_carry
+You are carrying a red credit with you.
+$credits2_long
+A valuable green credit lies just in front of you.
+$credits2_carry
+The green credit you're carrying with you makes you a rich man.
+$credits2_paid
+As you drop your green credit it immediately vanishes into a green cloud. Some moments after the cloud disappears and you see your most valuable new properties. It's a rather neat trick, isn't it?
+$ticket_red
+The machine takes your red credit and produces a 'See&Buy' ticket to Epsilon 3.
+$ticket_green
+The machine takes your green credit and a writing 'Thank you' appears on its display. From the background comes a loud laughter.
+$noticket_red
+What red credit?
+$noticket_green
+I see no green credit!
+$noticket
+Well let me say it this way: no credits, no tickets! Easy enough for you?
+$leave
+As you enter the hanger a nice young lady leads you to the shuttle. It starts immediately afterwards and brings you back in the orbit to Babylon 5.
+$noticket_blue
+You should have a blue credit to do that.
+$stolen_long
+$stolen_carry
+$stolen_true
+$stolen_false
+$triangle1_long
+There is a little stick on the ground, looks like glass.
+$triangle1_carry
+You're carrying a little stick of glass or so.
+$triangle2_long
+There is a funny stick on the ground, looks like glass.
+$triangle2_carry
+You're carrying a funny stick of glass or so.
+$triangle3_long
+There is some glassy stick lying just in front of you.
+$triangle3_carry
+You carry some glassy stick with you.
+$tape_long
+There lies something looking like a tape. It seems to be a complete recording device.
+$tape_carry
+You are carrying a tape shaped recording device with you.
+$clark
+The recording device starts to report in picture and sound: '... and this information will prove without any doubt that Earth President Santiago has been murdered by...' and so on. After some time of listening you heard enough and switch it off.
+$tshirt_long
+$tshirt_carry
+$vtshirt_long
+There lies a T-shirt with the writing 'Free Mars' right in front of you.
+$vtshirt_carry
+You are carrying a T-shirt with the writing 'Free Mars' and look like a marsian rebel.
+$blanket_long
+A large blanket lies on the ground. It looks rather heavy.
+$blanket_carry
+You are wrapped in a large blanket. In fact you look like a blanket with feet.
+$mblanket
+You see a blanket with some feet in the mirror.
+$mtshirt
+You can see yourself wearing a T-shirt with the writing 'Free Mars'. It makes you look like a marsian rebel.
+$mnormal
+There is nothing special on your appearance.
+$mmask
+Your face can not be identified because you're wearing a mask.
+$mbase
+Don't laugh at me but you look like Captain Sheridan.
+$mask_long
+There is a gas mask on the ground.
+$mask_carry
+You are carrying a gas mask and look rather funny.
+$carpet_long
+The ugliest carpet I ever saw lies on the ground.
+$carpet_carry
+You carry an ugly and very heavy carpet with you.
+$code1_long
+There is a keycard with the number I on the floor.
+$code1_carry
+You are carrying keycard I.
+$code2_long
+There is a keycard with the number II on the floor.
+$code2_carry
+You have keycard II with you.
+$code3_long
+There is a keycard with the number III on the floor.
+$code3_carry
+Keycard III is in your hands.
+$code4_long
+There is a keycard with the number IV on the floor.
+$code4_carry
+You carry keycard IV with you.
+$restricted
+Sorry, but access to this level is restricted, you will need a special keycard to enter. Go and play somewhere else.
+$locked
+The door to the heart of Babylon 5 control can only be opened by a small group of authorized personnel. In addition a special keycard is required.
+$link_long
+There is a small communicator link on the floor. It seems functional.
+$link_carry
+You have a small communicator link glued to your left hand.
+$uselink
+Nothing happens.
+$party
+Ivanova is on the communicator: 'Hey guys, there's G'Kar's big party going on. It starts right now. I've been voluntary selected to be the one watching for C&C. Have fun all you others.'
+$byce_long
+There stands a very old motorbike. It looks rather nice.
+$byce_carry
+You manage to transport a nice motorbike with you.
+$stick_long
+Here lies a little metallic cylinder on the floor. It looks rather heavy.
+$stick_carry
+You carry a little but enormous heavy metallic cylinder with you. 
+$button_long
+There is a button saying 'I love lurkers'.
+$button_carry
+You're carrying a button 'I love lurkers' - stupid.
+$letter_long
+There is a little peace of paper on the ground, looks like a love poem.
+$poem
+The poem says: 'Being your slave, what should I do but tend Upon the hours and times of your desire? I have no precious time at all to spend, Nor services to do, till you require.' and so on and so on.
+$letter_carry
+You have a love poem with you - for a reason the Great Maker knows.
+$mirror_long
+There is a mirror in the room. Maybe you should take a look at yourself.
+$mirror_carry
+You must be mad to carry that heavy mirror with you.
+$light_long
+There is a little lamp on the floor. It's turned off.
+$light_longon
+A bright lamp lies on the floor.
+$light_carry
+You carry a little lamp with you.
+$light_carryon
+You have some light with you.
+$ison
+The lamp is already turned on.
+$isoff
+The lamp is already turned off.
+$base_long
+There is a little slightly glowing pile of card like transparent pieces. It looks like some strange alien artifact. Three little holes are on top of it.
+$base_long1
+There is one little stick stuck in the glowing pile.
+$base_long2
+There are two little glass sticks stuck in the strongly glowing pile.
+$base_long3
+There is an intensive glow from the pile. The three sticks from a triangle on top of it. A magical force tries to make you touch the mysterious artifact.
+$base_transform
+As you touch the little triangle it spans you into a silky web. After some time - you have absolutely no feeling of how much time this has taken - the web opens and you exit. In the glass of a picture on the wall you can see yourself: you look exactly like Captain Sheridan! In the first moment you are afraid but then you see the advantages of the transformation. Anyhow you can't use the triangle to transform back to your original outlook because it's gone together with the little pile.
+$back
+A fire runs through your body. Without confirming it you now know: you do not look any longer like Captain Sheridan but you are yourself again.
+$base_carry
+$merge
+Without your interaction the triangle slides to the pile and joins one of the holes. The intensity of the glowing grows.
+$book_long
+There lies the book 'The Scarecrow of Walnut Grove or How the West was won'.
+$book_carry
+You have a book with some stupid title with you.
+$book_earth
+Sheridan takes a look at the book and then with widely opened eyes right into your face. With a deep sigh he said: 'I understand. But I can't leave this place as long as this damned earth force general is on my station. I hope she'll understand!'
+$book_give
+Sheridan looks up when you smash the book on this table. He first looks at you with anger but then he reads the title of the book. His eyes fill with love: 'It's from here, isn't it?' he asks more for himself. As he takes a deeper look he finds some small piece of paper in the book. He suddenly stands up and leaves. You hear a 'Thanks a lot.' from the distance.
+$book_lyta
+Sheridan looks up when you smash the book on this table. He first looks at you with anger but then he reads the title of the book. His eyes fill with love: 'It's from here, isn't it?' he asks more for himself. As he takes a deeper look he finds some small piece of paper in the book. He suddenly stands up and leaves. You hear a 'Thanks a lot. And don't forget to move the telepath away from the Vorlon.' from the distance.
+$explode_long
+$explode_carry
+$buttons_long
+There is a board labeled 'Self-Destruction Engine'. The engine seems to be active. On the board there are three buttons - red, green and purple - which you can press, if you dare.
+$buttons_carry
+$buttons_save
+You press the button and stop the self-destruction engine that would have destroyed Babylon 5.
+$buttons_destroy
+Babylon 5 explodes. In this moment you killed yourself and a quarter millon of humans and aliens.
+$nobuttons
+Nothing happens.
+$commander_long
+$commander_carry
+$tip1
+A dark voice in your head says: 'Save Babylon 5!'
+$tip1A
+A friendly voice in your head says: 'Destroy Babylon 5!'
+$tip1B
+A dark voice in your head says: 'Destroy Babylon 5!'
+$tip2
+A dark voice in your head says: 'Take both bands!'
+$tip3
+A dark voice in your head says: 'Meet Zathras once!'
+$tip4
+A dark voice in your head says: 'Ask Kosh once!'
+$tip5
+A dark voice in your head says: 'Bring all lovers together!'
+$tip6
+A dark voice in your head says: 'Take a gift to Down Below!'
+$tip7
+A dark voice in your head says: 'Carry a communicator link!'
+$ltest_long
+$ltest_carry
+$ltest_false
+$ltest_true
+$starmap_long
+There lays a starmap on the ground.
+$starmap_carry
+You carry a starmap with you.
+$starmap_read
+This is a starmap of the earth sector. It includes not only the places where earth troops are present but also their strength, armament and so on.
+$coin_long
+There is a Centauri coin on the floor. It's not very valuable.
+$coin_carry
+You carry a Centauri coin with you.
+$bear_long
+Here is a little teddy bear with a big 5 on its chest.
+$bear_carry
+The little bear with the 5 doesn't make you look much like a macho man.
+$memo_long
+A little paper lies on the floor, seems to be a kind of memo.
+$memo_carry
+You are carrying a memo with you.
+$memo_read
+The memo is from Delenn to Sheridan: '5 eggs, 1 pound of butter, 2 bottles of fresh milk, ...' and so on.
+$battery_long
+There is an empty battery cell.
+$battery_carry
+Without any reason you carry an empty battery cell with you.
+$belt_long
+Here is a Narn belt on the ground.
+$belt_carry
+You're carrying a Narn belt - better go for some bodybuilding as soon as you can. Because you really look silly at this very moment.
+$passport_long
+There is a passport on the ground.
+$passport_carry
+You're carrying an ancient passport with you.
+$passport_read
+This is the passport of J. Michael Straczynski, some earth guy from the late 20th century. Must be dead these days.
+$prospect_long
+A travelling prospect is on the floor.
+$prospect_carry
+You're carrying a traveling prospect with you. Wonna make a trip?
+$prospect_read
+The prospect describes a pleasant visit to Z'ha'dum. You'll visit the center of the Shadow civilization and be confronted with the mysteries of ancient times and today. A special option is to destroy one of the Shadows major cities and die and be born again - at least for some time. It sounds rather interesting. Oh, the small writing on the last side says, you've to pay in advance.
+$shoe_long
+There is an old shoe on the floor. It doesn't fit your feet, not even the big left one.
+$shoe_carry
+You carry one additional shoe with you - definitely not yours.
+$ring_long
+A nice golden ladies ring lies on the floor. It's far too small for your bulky fingers.
+$ring_carry
+You forced a small golden ring on the little finger of your left hand. It hurts a little bit.
+$cat_long
+A black cat is sitting here.
+$cat_carry
+A black cat follows you.
+$cat_hunt
+The cat jumps through the little door right of you. You never saw it again.
+$cheese_long
+There is a large piece of cheese with some long white hairs on its top.
+$cheese_carry
+You carry an old piece of cheese with you.
+$cheese_eat
+Ok, your hunger is gone for this very moment. Hope you know what you're doing. To me the cheese didn't look very fresh. But you're the boss.
+$tape2_long
+There is a memory crystal like many alien nations use to memorize information.
+$tape2_carry
+You have an alien memory crystal with you.
+$tape2_read
+Sorry, but to examine the contents of the memory crystal you need a special playing device. Maybe there is one in the C&C sector of Babylon 5.
+$stone_long
+On the floor lies a little transparent stone. It's definitely not a jewel and not glass.
+$stone_carry
+You carry a transparent stone with you.
+$apple_long
+There is a green apple on the floor.
+$apple_carry
+You have a green apple with you.
+$apple_eat
+It's horrible. You shouldn't do that again.
+$blueprint_long
+On the floor lies a blueprint of Babylon 5.
+$blueprint_carry
+You're carrying a blueprint of Babylon 5 with you.
+$blueprint_read
+Well, the blueprint could help you if it weren't written in Narn. So to you it's only some pictures.
+$list_long
+A list with names lies on the floor.
+$list_carry
+You carry a list of names with you.
+$list_read
+The list is some casting list. It includes: 'Londo Mollari, G'Kar, Captain Sheridan, Commander Ivanova,...' and so on. The order and the contents of the list are unknown to you.
+$glass_long
+There is an empty glass.
+$glass_carry
+You carry an empty glass with you.
+$bottle2_long
+On the floor lies a dirty and empty bottle.
+$bottle2_carry
+You have a dirty and empty bottle put on one of your fingers. You look like a real fool - one of the professional ones.
+$book2_long
+Here is the little book 'All about Earth population'.
+$book2_carry
+You carry the little book 'All about Earth population' with you.
+$book2_read
+You take some short readings on some randomly selected pages. The author is a Narn and in fact knows nothing about Earth.
+$rose_long
+Here lies a beautiful red rose.
+$rose_carry
+You carry a beautiful red rose.
+$plant_long
+Some kind of plant lies on the ground. 
+$plant_carry
+You have a small plant over your shoulders.
+$tomato_long
+There is a red tomato.
+$tomato_carry
+You carry a red tomato with you.
+$tomato_eat
+Really delicious - have any more?
+$screw_long
+A shiny screw is on the floor. It looks as if it is a most important part of some big machinery.
+$screw_carry
+You carry an important looking screw with you.
+$movie_long
+$movie_carry
+$movie_true
+$movie_false
+$movie1_long
+As you touch him he suddenly opens his eyes and then he tries to leave the web. He tries for some ten seconds but at last his left foot keeps connected to the web. Then he looks directly into your face and starts a loud laughter. Suddenly it's dark around you.
+$movie1_carry
+$movie2_long
+Michael Garibaldi is sitting here holding a small letter in his left and a 5-liter bottle of water in his right hand. Just above his head you can see a microphone. From time to time he shakes his head and mumbles something like: 'It can't work. But I would be lucky if I only could try.' Then suddenly darkness lies around you.
+$movie2_carry
+$movie3_long
+Londo and G'Kar are in the room. The are playing cards and laughing. As you come in they stop and G'Kar mumbles something like: 'Sorry, let's do it again.' Your sight fades for a moment.
+$movie3_carry
+$movie4_long
+You try to see your image in the mirror but a strong light from the behind dazzles you. You think you saw some camera but you must be in error. Try again!
+$movie4_carry
+$movie5_long
+As you start to drink a guy with a brush wanders by and paints one black dot on Londo's forehead. You're so upset that you really forget what you want to do. You should repeat your last action.
+$movie5_carry
+$movie6_long
+Marcus Cole looks up and says: 'Hi Marcus.' He hesitates and after some time he added angry with himself: 'I'm fucking Marcus!' The world around you gets dark.
+$movie6_carry
+$movie
+You shouldn't press these buttons as long as the other scenes of the movie are not finished. You have to do some additional work.
+$nothungry/1
+Thank you but I'm not hungry.
+$nothungry/2
+I don't like it. You should find some other food.
+$defkill
+You shouldn't run around and kill anything you see.
+$nosay/1
+No one is interested in the things you're talking about.
+$nosay/2
+Stop talking and do something useful.
+$noask/1
+Don't ask, just help yourself.
+$noask/2
+You should try to solve the problems on your own.
+$bug_long
+$bug_carry

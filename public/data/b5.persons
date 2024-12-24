@@ -1,0 +1,543 @@
+;
+; Zack is rather nasty. He's the first person you met.
+; Your task is to bypass him. There are different methods:
+;	- do what he say's (be quiet) and anything is fine
+;	- kill him whatever weapon you find, you then loose
+; After he's gone you can find him sitting around in the
+; Down Below bar doing nothing.
+;
+$zack Zack,Man,Guy,Security,Human
+	message = long
+	weight	= (999,0,0)
+	actions = (
+				pass:
+					(
+						if_nothere zack >$$entrance$hall1,
+						if_here zack 
+						(
+							if_message danger >>zack,
+							if_message long (message = tell, @message = danger),
+							if_message dead (&$$things$overzack, >$$entrance$hall1)
+						)
+					),
+				kill:
+					(
+						if_has ppg
+						(
+							message = ppg, zack dokill
+						),
+						if_nothas ppg if_has knife
+						(
+							message = knife, zack dokill
+						),
+						if_nothas ppg if_nothas knife if_has sword
+						(
+							message = sword, zack dokill
+						),
+						if_nothas ppg if_nothas knife if_nothas sword &$$things$nokill
+					),
+				dokill:
+					(
+						@message = dead,
+						killed start
+					)
+			  )
+	#say	= if_message danger >>zack_say
+	#ask	= if_message danger >>zack_say
+	#quiet	= if_message danger (message = good, @message = bar, #>$$down$bar2)
+	#kill	= (
+				if_message bar 
+				(
+					weapon test,
+					if_state weapon false &$$things$nokill,
+					if_state weapon true mordon zack
+				),
+				if_message dead &$$things$zackisdead,
+				if_message long zack kill,
+				if_message danger zack kill
+			  )
+;
+; Londo, G'Kar, Vir, a group of Narn and Franklin act as a group.
+;
+$londogkar Londo,Centauri,G'Kar,GKar,Narn,Alien,Aliens,Man,Guy
+	message = long
+	actions = (
+				meet:
+					if_here londogkar
+					(
+						if_has eye >>londoeye,
+						if_state gkartimer carry
+							if_has vir
+							(
+								gkartimer stop,
+								message = going,
+								londo start,
+								remove
+							),
+						if_state gkartimer * gkartimer start
+					),
+				movie:
+				(
+					if_state movie3 long movie3 done, 
+					if_state movie3 carry >$$d1$g2W,
+					if_state movie3 *
+					(
+						&$$d1$g2W_long,
+						movie3 play
+					)
+				)
+			  )
+$vir Vir,Centauri,Alien,Man,Guy
+	message = long
+	weight	= (0,0,0)
+	actions	= ticket:
+				(
+					if_state minbartimer long mordon vir,
+					if_state minbartimer *
+					(
+						message = ticket,
+						remove
+					)
+				)
+	#take	= (
+				weapon test,
+				if_state weapon true >>virweapon,
+				if_message long
+				(
+					message = tip,
+					@message = carry
+				),
+				if_message long2 message = carry
+			  )
+	#drop	= message = long2
+$londo Londo,Centauri,Alien,Man,Guy
+	message	= long
+	things	= drink
+	actions = (
+				start:#>$$down$bar1,
+				meet:
+					if_here londo #if_has drink if_has eye
+					(
+						message = drink,
+						#!drink,
+						@message = long2
+					),
+				eye:(message = going, gkar start, narn stop, remove)
+			  )
+$franklin Franklin,Doctor,Human,Man,Guy
+	message = *
+	things	= medcine
+	actions	= meet:
+				if_here franklin #if_has medcine
+				(
+					message = long,
+					message = medcine,
+					@message = long,
+					#!medcine
+				)
+	#ask	= &$$things$franklin_ask
+	#say	= &$$things$franklin_ask
+$narn Narn,Crowd,Patrol,Men,Soldiers
+	message = long
+	actions = (stop:(stop, remove),
+			   start:
+				(
+					[
+						#>$$down$g1,
+						#>$$down$g2,
+						#>$$entrance$hall3,
+						#>$$market$m2,
+						#>$$restaurant$enter2,
+						#>$$restaurant$dark2,
+						#>$$alien$enter,
+						#>$$d1$g1,
+						#>$$d2$g1,
+						#>$$garden$g1
+					),
+					start
+				)
+			  )
+	actions = (
+				meet  : mordon narn,
+				move1 : [#>$$entrance$hall3,#>$$market$m2,#>$$restaurant$enter2,#>$$restaurant$dark2),
+				move2 : [#>$$alien$enter,#>$$d1$g1,#>$$d2$g1,#>$$garden$g1)
+			  )
+	time	= +1:	
+				(
+					#if_position $$down$g1 @message = *,
+					#if_position $$down$g2 @message = *,
+					#if_position $$alien$enter #>$$down$g1,
+					#if_position $$d1$g1 #>$$down$g1,
+					#if_position $$d2$g1 #>$$down$g1,
+					#if_position $$garden$g1 #>$$down$g1,
+					#if_position $$entrance$hall3 #>$$down$g2,
+					#if_position $$market$m2 #>$$down$g2,
+					#if_position $$restaurant$enter2 #>$$down$g2,
+					#if_position $$restaurant$dark2 #>$$down$g2,
+					if_message *
+					(
+						@message = long,
+						#if_position $$down$g1 narn move1,
+						#if_position $$down$g2 narn move2
+					),
+					narn meet
+				)
+$gkar G'Kar,GKar,Narn,Man,Guy
+	message = *
+	actions = (
+				start:#>$$market$m8,
+				meet:if_here gkar (message = long, link start, remove)
+			  )
+;
+; From time to time the patrol checks if you are wearing weapons
+; or stolen credits.
+;
+$patrol
+	message = *
+	actions = start:start
+	time	= +40:
+				(
+					weapon test,
+					if_state weapon true mordon patrol,
+					if_state weapon false
+					(
+						stolen test,
+						if_state stolen true mordon theef
+					)
+				)
+;
+; The coming of the shadows is only fun.
+;
+$shadow
+	message = *
+	actions = (start:start, stop:stop)
+	time	= +10:if_state mordon helpful if_state interval3 long &$$things$shadow_long
+	time	= +32:if_state mordon * if_state interval3 long &$$things$shadow_long
+
+;
+; The people on Epsilon 3.
+;
+$minbari Minbari,Man,Guy,Alien,Bonehead
+	message = *
+	actions = (
+				meet:
+					if_message *
+					(
+						message = caught,
+						message = leave,
+						@message = long	
+					),
+				movie:
+				(
+					if_state movie1 long movie1 done, 
+					if_state movie1 carry >$$epsilon$minbari,
+					if_state movie1 *
+					(
+						&$$epsilon$minbari_long,
+						&$$things$minbari_caught,
+						movie1 play
+					)
+				)
+			  )
+$zatras Zathras,Man,Guy,Alien
+	message = *
+	things	= (triangle1, tape)
+	actions	= meet:
+				if_state minbari long
+					if_message *
+					(
+						#>$$epsilon$dealer,
+						message = long,
+						#!triangle1,
+						#!tape,
+						remove
+					)
+;
+; Earth and Mars.
+;
+$earth General,Soldier,Guy,Man,Human
+	message = long
+	actions = (
+				meet:
+					if_here earth if_nothas blanket
+					(
+						if_has tshirt mordon earth,
+						if_has vtshirt mordon earth
+					),
+				tape:
+				(
+					message = going,
+					remove
+				)
+			  )	
+$mars Marsian,Rebel,Guy,Man,Human
+	message = long
+	actions = (
+				meet:
+				if_here mars
+				(
+					if_has blanket >>mars,
+					if_nothas tshirt if_nothas vtshirt >>mars
+				),
+				gone: remove
+			  )
+;
+; The creatures in the alien sector.
+;
+$kosh Kosh,Vorlon,Guy,Man,Alien
+	message = long
+	weight	= (0,0,0)
+	things	= triangle2
+	#take	= >>kosh
+	#ask	= (
+				#if_nothas triangle2 &$$things$askkosh,
+				#if_has triangle2 
+				(
+					message = tip, 
+					@message = long2, 
+					#!triangle2
+				)
+			  )
+	actions = test:(if_message long if_has lyta >>lyta)
+$lyta Lyta,Alexander,Woman,Human,Telpath,Psi,Girl
+	message = long
+	weight	= (0,0,0)
+	actions	= (start:start, stop:stop)
+	time	= +7:(stop, &$$things$lyta_bester, commander triangle, remove)
+;
+; The drazi problem.
+;
+$drozi Drazi,Crowd,Aliens,Men,People
+	message		= long
+	#band		= drozi solve
+	actions		= (
+					meet:
+						if_here drozi 
+						(
+							message = long, 
+							message = sinclair,
+							@message = long
+						),
+					solve:
+					(
+						message = calm,
+						[
+							message = solve1, 
+							message = solve2, 
+							message = solve3
+						),
+						remove
+					)
+				  )
+;
+; Playing tricks with Garibaldi.
+;
+$garibaldi Garibaldi,Chief
+	message = long
+	actions	= (
+				bottle:
+				(
+					message = bottle,
+					message = happy
+				),
+				movie:
+				(
+					if_state movie2 long movie2 done, 
+					if_state movie2 carry >$$market$m11,
+					if_state movie2 *
+					(
+						&$$market$m11_long,
+						movie2 play
+					)
+				)
+			  )
+;
+; The Minbari complex.
+;
+$lenier Lennier
+	message = long
+	actions	= (
+				meet:if_here lenier if_nothas byce mordon lenier,
+				byce:(message = byce, remove)
+			  )
+;
+; The invisible helper
+;
+$mordon
+	message = *
+	weight	= (0,0,0)
+	#take	= @message = *
+	actions	= (
+				start:start,
+				drozi:if_here drozi (if_message * >>drozi, &$$things$mordon_drozi),
+				zack:(if_message * >>zackbar, &$$things$mordon_zack),
+				vir:(if_message * >>virminbar, &$$things$mordon_vir),
+				narn:if_here narn if_has eye (if_message * >>narneye, &$$things$mordon_narn),
+				patrol:(if_message * >>patrol, &$$things$mordon_patrol),
+				theef:(if_message * >>theef, &$$things$mordon_theef),
+				earth:(if_message * >>earth, &$$things$mordon_earth),
+				lenier:(if_message * >>lenier, &$$things$mordon_lenier),
+				marcus:(if_message * >>marcus, &$$things$mordon_marcus),
+				ranger:(if_message * >>ranger, &$$things$mordon_ranger),
+				lurker:(if_message * >>lurker, &$$things$mordon_lurker),
+				minbar:(if_message * >>minbar, &$$things$mordon_minbar),
+				insect:(if_message * >>insect, &$$things$mordon_insect)
+		 	  )
+	time	= +14:if_state interval3 long mactive start
+	#mordon	= if_state mactive true (message = helpful, mars gone, remove)
+$mactive
+	message	= false
+	actions	= start:(start, @message = true, &$$things$mordon_long)
+	time	= +1:(stop, @message = false)
+;
+; Sheridan and Delenn
+;
+$delenn Delenn,Woman,Alien,Minbari
+	message = *
+	things	= book
+	actions	= (
+				meet:
+					if_message *
+					(
+						&$$things$book,
+						message = long,
+						#!book
+					),
+				book:@message = hearing
+			  )
+$sheridan Sheridan,Captain,Man,John,Human,Guy
+	message = long
+	actions	= (
+				meet:if_state base transform if_here sheridan >>sheridan,
+				book:
+					(
+						#>$$garden$g1, 
+						@message = reading,
+						delenn book
+					)
+			  )
+;
+; Cole and Ivanova
+;
+$marcus Marcus,Cole,Ranger,Man,Guy,Human
+	message = long
+	actions	= (
+				start:start,
+				meet:
+					if_here marcus if_has stick
+					(
+						message = long,
+						message = stick,
+						marcus start,
+						@message = angry
+					),
+				weapon:
+					(
+						stop,
+						message	= friend,
+						@message = long
+					),
+				letter:
+					(
+						message = letter,
+						@message = love,
+						if_state ivanova long remove,
+						if_state ivanova *
+						(	
+							ivanova gone,
+							#>$$garden$g9
+						)
+					),
+				movie:
+				(
+					if_state movie6 long movie6 done, 
+					if_state movie6 carry >$$cc$room1C,
+					if_state movie6 *
+					(
+						&$$cc$room1C_long,
+						&$$things$marcus_long,
+						movie6 play
+					)
+				)
+			  )
+	time	= +2:mordon marcus
+$ivanova Ivanova,Woman,Girl,Commander,Human
+	message = long
+	weight	= (0,0,0)
+	#take	= (message = take, @!ivanova)
+	actions	= (
+				gone:
+					(
+						@message = carry,
+						remove
+					),
+				party:
+					(
+						@message = *,
+						&$$things$party
+					),
+				meet:
+					(
+						if_state mordon helpful >>mordon,
+						if_state sheridan long >>sheridan,
+						if_message * >>ivanova,
+						if_message long >>ivanova
+					)
+			  )
+;
+; The rangers
+;
+$ranger Ranger,Rangers,Crowd,Guys,Men,People,Humans
+	message = long
+	actions	= (
+				start:start,
+				test:if_here ranger if_has stick mordon ranger,
+				move:[
+						#>$$entrance$hall2,
+						#>$$q1$g2,
+						#>$$q2$g3,
+						#>$$market$m3,
+						#>$$restaurant$enter2,
+						#>$$garden$g14
+					 )
+			  )
+	time	= +5:if_state interval3 long ranger move
+	time	= +1:ranger test
+;
+; A group of lurkers
+;
+$lurker Lurker,Crowd,Guys,Men,People,Humans
+	message = *
+	actions	= meet:
+				if_here lurker
+				(
+					message = long,
+					if_nothas carpet if_nothas blanket mordon lurker,
+					if_nothas carpet if_has blanket
+					(
+						message = blanket,
+						blanket gone,
+						remove
+					),
+					if_has carpet
+					(
+						message = carpet,
+						carpet gone,
+						remove
+					)
+				)
+;
+; Only to upset the player.
+;
+$dancer Dancer,Girl,Human,Woman
+	message	= long
+	weight	= (0,0,0)
+	#take	= >>dancer
+	#touch	= >>dancer
+$insect Insect,Alien,Guy,Man,Woman
+	message	= long
+	weight	= (0,0,0)
+	#take	= (mordon insect, @!insect)
+	#ask	= mordon insect
+	#say	= mordon insect
+$buggy

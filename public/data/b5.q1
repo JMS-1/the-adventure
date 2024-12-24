@@ -1,0 +1,57 @@
+$$q1
+$escal1_long
+You are in elevator 3 on the employee quarters level I to your right. The elevator can bring you back to the entrance level if you press UP.
+$escal1_short
+You are in elevator 3 and the employee quarters level I are to your right.
+$g1_long
+You are on a long corridor from left to right. Immediately left of you is an elevator with number 3. In front of and behind you are rooms labeled QI-1 and QI-2. The corridor itself is painted green and an artificial smell is in the air, should be simulate a wood or something alike. The floor is like grass and as you look above you see that it's all blue.
+$g1_short
+You are in the simulated wood corridor with elevator 3 to your left and the corridor stretching to your right. In front of you is room QI-1 and behind you QI-2.
+$g2_long
+The corridor with the funny floor and the green walls runs from left to right. In both directions you see elevators in some distance. In front of you is room QI-3 and to your back QI-4. The door in front of you is labeled 'Billiard inside' - rather strange in this environment.
+$g2_short
+You are on the funny corridor from left to right. It ends in some distance at an elevator on each side. Ahead of you is the billiard center QI-3 and QI-4 is behind you.
+$g3_long
+This part of the corridor is rather dark. All sides are painted in a dark green. The floor is like deep muddy grass and an intensive artificial smell of wood is in the air. You freeze a bit. There are rooms QI-5 and QI-6 in front of and behind you. The door of QI-6 is painted in pink and fits nearly exact to the rest in green - sorry, some kind of sarcasm. Just to your right is elevator 2.
+$g3_short
+You are in a dark green corridor with a horrible artificial smell in the air. The corridor from the left ends to your right at elevator 2. Ahead of you is room QI-5 and behind the pink QI-6.
+$r1N_long
+You are in a modern style room of medium size. Most interesting is the picture over the comfortable bed. It shows some kind of comic creature - I really think it is a duck. The floor is very oily and dirty. The exit is behind you and there seems to be a small chamber in front of you.
+$r1N_short
+This is the oily room with the duck picture. The exit is behind you and you can go forward to another room.
+$r1NBed_long
+This room seems to be some mechanics working area. You can see many pieces of machines most of them looking very new and unused. One wall is completely reserved for the necessary technical equipment like hammers and screwdrivers. Some cans of oil and other fluids round up the picture. To find such a complete set of ancient tools is a really unexpected experience these days. You can leave this interesting place through the exit behind you.
+$r1NBed_short
+You're in the mechanics room. The exit is behind you.
+$r1S_long
+You enter a large room totally surrounded with - don't believe it either - something looking like egg boxes. There is only a chair in the center of the room and a very - and I mean very - impressive kind of hyper modern hi-fi center. Now you recognize the ear caps at the side of the chair: must be the room of a real fan of music. The exit is in front of you, hardly noticeable.
+$r1S_short
+You're in the hi-fi room with the exit right in front of your nose.
+$r2N_long
+Room QI-3 is like a small corridor with the exit behind you. The wall is full of pictures and trophies all more or less connected to billiard. The floor is green like in the corridor outside but it's a different and finer kind of material. You can't even hear your steps. Smoke from cigarettes comes from a room at the end of the corridor on the right side.
+$r2N_short
+You are in the QI-3 corridor room. The exit is behind you and smoke comes from the entrance to your right.
+$r2NKitchen_long
+This is a little kitchen with exits to the left and in front of you. The main use of the kitchen doesn't be so much cooking: must of the things around are all kind of snack, chips and so on. Bottles of water, coke and soda are standing around. Dark clouds of smoke are coming from the front.
+$r2NKitchen_short
+You are in the little snack kitchen. One exit is to your left and lot of smoke comes from the room in front of you.
+$r2NBillard_long
+You can hardly see through all the smoke. You can identify a large billiard table in the center of the room and all necessary inventory like billiard queues on the wall. There must be a game going on but it's nobody in the room. The smoke comes from a couple of cigarettes lying all around. The exit must be behind you.
+$r2NBillard_short
+You are in the billiard room filled with smoke from a couple of cigarettes. The exit must be behind you.
+$r2S_long
+This room QI-4 is really a pleasure: white sand covers the floor, palms cover the ground and you can take a long look over the open sea. It's warm and the sun burns down. You hear insects flying - ok, to be honest: it's all fake. But a really good show! The exit is in front of you.
+$r2S_short
+You're at the beach room QI-4 with the exit in front of you.
+$r3N_long
+A small bed at one side and a table and chair on the other make the major part of room QI-5. It's a little bit clinical or military. Some special trophies and signs all around show you that military would fit best. The exit is behind you.
+$r3N_short
+You are in room QI-5 with the exit behind you.
+$r3S_long
+You entered room QI-6 that is totally colored in pink - your stomach makes a little jump up and down. Some flowers painted of the wall and a sweet smell give you a little uncomfortable feeling. The floor is very soft and you feel as if you're not standing firmly on the ground. Maybe you should leave through the exit in front of you.
+$r3S_short
+You're in the sweet room QI-6. The exit is in front of you.
+$escal2_long
+This is elevator 2 on the staff quarters level I to your left. Upward the elevator will go to the restricted C&C level, downwards you can reach the staff quarters level II and the diplomats' level II.
+$escal2_short
+You are in elevator 2. The staff quarters level I is to your left.

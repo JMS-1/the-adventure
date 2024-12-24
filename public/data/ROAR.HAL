@@ -1,0 +1,176 @@
+$$halle
+$galerie_lang
+$galerie_da
+Als Du durch einen engen, gewundenen Gang gelaufen bist, erreichst Du
+eine Art Galerie über einer großen Halle. Die Halle ist voll mit
+Gerätschaften mit mehr oder minder erkennbarem Verwendungszweck. Die
+Galerie ist genau hier, wo Du stehst, in einem miserabelen Zustand.
+Mit äußerster Mühe kannst Du verhindern, in die Tiefe zu stürzen.
+Als Du Deinen Blick schweifen läßt, erkennst Du auf der gegenüberliegenden
+Seite der Galerie Sebastian, der mit einem großen Kran spielt und Betonsteine
+durch die Gegend fährt.
+$galerie_kurz
+Du stehst auf der Galerie und siehst Sebastian auf der anderen Seite.
+$h8_lang
+Eine steile Treppe aus Metall führt aufwärts zu einer massiven Metalltür.
+Der Raum, in dem Du Dich gerade befindest, ist relativ klein und praktisch
+leer. Nach vorne führt ein Gang durch eine gitterne Schwingtür. Über der
+Tür leuchtet eine rote Warnlampe.
+$h8_kurz
+Du stehst vor der Metalltreppe.
+$h7_lang
+$h7_da
+Du stehst auf einem Metallrost in einem extrem engen Gang. Nach hinten
+schließt eine Schwingtür den Gang ab. Nach rechts scheint es weiter zu
+gehen, obwohl es dort etwas dunkler wird. Unter dem Rost siehst Du schwere
+Betonsteine.
+$h7_kurz
+Du stehst auf dem Metallrost.
+$h6_lang
+Du bist in einem schmalen Gang, der rechts und links von Betonsteinen
+begrenzt wird. Auf der linken Seite führt allerdings auch ein Gang von
+hier weg. Der Gang in dem Du stehst ist nach vorne und hinten
+begehbar. Hinten scheint er sich deutlich zu einer Art Platz zu erweitern.
+$h6_kurz
+Du bist in dem Gang zwischen den Betonsteinen.
+$PHOENICS_lang
+Hier ist ein größeres physikalisches Experiment aufgebaut. Eine ganze Zahl
+langer Latten, in schwarzes Platikband gehüllt, fallen Dir sofort ins Auge.
+Darauf ist in roten Lettern der Text PHOENICS zu lesen. Vielleicht wollen
+sie demnächst hier alles niederbrennen und hoffen, daß es dann von selbst viel
+besser wird. Der einzige Weg, den Du erkennen kannst, liegt direkt vor Dir.
+$PHOENICS_kurz
+Du stehst bei dem PHOENICS Experiment.
+$h4_lang
+Ein Gang von hinten verbreitert sich hier nach vorne, wo Du von weitem
+einige Racks mit Elektronik siehst. Nach links zweigt ein weiterer Gang
+zwischen hoch aufgebauten Betonsteinen hindurch ab.
+$h4_kurz
+Du stehst vor dem Gang zwischen den Betonsteinen.
+$h5_lang
+Unmittelbar links neben Dir ist eine kleine Baracke aufgebaut, deren
+Tür offenbar kein Schloß hat. Es scheint hier keine hohe Kriminalitätsrate
+zu geben. Neben der Hütte sind einige Racks aufgebaut, in denen verschiedene
+elektronische Instrumente eingebaut sind. Da der Weg vorne blockiert ist,
+kannst Du von hier aus dem Weg nur nach hinten folgen.
+$h5_kurz
+Du stehst vor der Baracke.
+$hütte_lang
+Du bist in einer Hütte, die über und über mit Elektronik und Kabeln gefüllt
+ist. Daraus resultiert sicher auch die relative hohe Temperatur, die Dich leicht
+zum Schwitzen bringt. Dir fällt auch ein uraltes Terminal ins Auge, das man
+wohl einem Museum entliehen hat. Neben dem Terminal steht Burkhard der Jüngere.
+$hütte_kurz
+Du bist in der Elektronikhütte.
+$h3_lang
+Hier ist wieder einmal so ein schmaler Durchgang von links nach rechts.
+Vor Dir, fast am Ende dieses Gangstücks, erkennst Du einen Weg zu einer
+Art Platz. Dir fröstelt leicht, als Du die dicke rote Spur siehst, die aus
+diesem Weg kommt und nach links führt. Dein kriminalistischer Verstand und
+die Situation sagen Dir, daß es sich nur um Blut handeln kann.
+$h3_kurz
+Du bist vor dem Weg mit der Blutspur.
+$SAPHIR_lang
+Vor Dir versperrt ein riesiges blaues Monster - nein, ich korrigiere mich,
+es ist ein harmloser Magnet - den Weg, der hinter Dir weitergeht. Viel
+erschreckender ist allerdings die große Blutlache unmittelbar vor dem
+Magneten. Wenn Du jetzt noch daran zweifelst, daß es wirklich Blut ist,
+solltest Du Dir das Gerippe einmal näher ansehen, das sauber abgenagt in
+Mitten der Lache plaziert ist.
+$SAPHIR_kurz
+Du stehst vor der Blutlache mit dem Gerippe.
+$h2_lang
+Ein Weg von rechts endet links vor einer Wand, kreuzt aber einen zweiten
+Weg, der von vorne nach hinten verläuft. Dein besonderes Augenmerk möchte ich
+auf die Blutspur richten, die rechts ziemlich breit beginnt, langsam schmaler
+wird und dabei nach hinten abknickt.
+$h2_kurz
+Du stehst an der Wegkreuzung mit der Blutspur.
+$ELAN_lang
+Du siehst vor Dir ein pysikalisches Experiment aufgebaut. Ich will Dir keine
+Angst einjagen und sage lieber nicht, woran es mich erinnert. Der einzige
+Weg weg von hier geht nach hinten. Kein Mensch ist zu sehen und Moos
+auf den Gerätschaften weist darauf hin, daß dieser Teil der Halle lange
+kein Interesse mehr gefunden hat.
+$ELAN_kurz
+Du stehst vor dem moosbewachsenen Experiment.
+$h1_lang
+Von vorne nach hinten kannst Du einer schmaler werdenden Blutspur folgen.
+Die Wände zu beiden Seiten sind ziemlich massiv. Hinter Dir siehst Du, daß
+der Gang anfängt sich stark zu krümmen. Du meinst, einige rote und gelbe
+Schemen zu erkennen.
+$h1_kurz
+Du stehst bei der schmaler werdenden Blutspur.
+$el1_lang
+An der linken Seite dieses deutlich gekrümmten Weges verläuft ein Rohr,
+das von Zeit zu Zeit von bunten Gerätschaften umhüllt wird. Einige
+roten Lampen leuchten drohend und verwirren Dich leicht. Du kannst nur dem
+Gang nach rechts oder hinten folgen.
+$el1_kurz
+Du bist in dem gekrümmten Gang.
+$el2_lang
+Auch hier geht das Rohr mit seinen beulenartigen Unterbrechungen weiter.
+Auf dem Boden liegen einige Knochen und Du bist fast sicher, daß diese
+einst von einem Menschen getragen wurden. Von der Decke tropft etwas
+Wasser und auf dem Boden sieht man schon eine Pfütze. Du kannst hier lediglich
+nach links oder rechts.
+$el2_kurz
+Du stehst bei der Pfütze.
+$el3_lang
+Direkt vor Dir beginnt ein langer, gerader Gang, in den auch eine Blutspur
+weist, die hier leicht nach links abknickt, aber dann schon bald endet. Ein
+ulkiges Rohr in rot und gelb verläuft an einer Wand eines gekrümmten Gangs,
+ich würde ihn fast schon als Tunnel bezeichnen, dem Du links oder nach
+hinten folgen kannst. Merkwürdige Geräte sind an dem Rohr angebracht und
+sehen fast wie Beulen aus.
+$el3_kurz
+Du stehst vor dem langen, geraden Gang.
+$el4_lang
+Der gekrümmte Tunnel setzt sich nach vorne und hinten fort. Außer dem
+Rohr und einer leise vor sich hin arbeitenden Vakuumpumpe gibt es hier
+wenig Bemerkenswertes zu sehen. An die Wand hat einer "ELSE ist doof"
+geschrieben, was Dich so richtig nachdenklich stimmt.
+$el4_kurz
+Du bist bei der Vakuumpumpe.
+$el5_lang
+Der Gang ist hier ziemlich gerade und geht vorne und hinten mit etwas
+stärkerer Krümmung weiter. Im Gegensatz zu den bunten Beulen
+des Rohres an anderen Stellen umgibt es hier ein braunes, fast rotes Gebilde
+mit eigentümlichen Rillen.
+$el5_kurz
+Du bist im geraden Teil des Tunnels.
+$el6_lang
+Der Tunnel ist hier leicht nach links gekrümmt, beginnt links und setzt
+sich nach vorne fort. Das rotgelbe Rohr verläuft an der Wand hinter Dir.
+Hier scheinen besonders viele Beulen angebracht zu sein. Du mußt etwas 
+vorsichtiger gehen, da einige Kabel wie Fußangeln über den Boden gespannt sind.
+$el6_kurz
+Du stehst bei den Kabeln.
+$el7_lang
+Das Rohr, das weiterhin beulenbehaftet an der Wand entlangläuft, folgt
+dem Tunnel von rechts und geht nach vorne weiter. Einige komische Löcher
+in der Wand gegenüber dem Rohr sind mit kleinen Bleisteinen vollgesteckt.
+Das Ganze sieht sehr bedrohlich aus und beunruhigt Dich langsam.
+$el7_kurz
+Du bist bei den Löchern in der Wand.
+$el8_lang
+Ah, ein Loch in der Wand links von Dir unterbricht die Eintönigkeit des
+Gangs - oder Tunnels - der sich von vorne nach hinten fortsetzt. Beunruhigend
+ist lediglich eine Spur von Knochen, die genau in Richtung dieses Loches
+führt. Neben einem Knochen liegt der blutverschmierte Rest eines Kittels mit der
+Aufschrift "GUSE". Das und die Größe der Knochen
+sagen Deinem Innersten, welcher Art diese Knochen sind. Ich hätte jetzt
+Angst, aber mir kann ja eigentlich nichts passieren.
+$el8_kurz
+Du stehst vor dem Loch in der Wand.
+$burkhard
+Als Du etwas Platz gemacht hast, erkennt Burkhard auch Jochen, der Dir
+immer noch folgt. Freudig begrüßen die beiden sich und palavern ein
+wenig herum. Jochen scheint Burkhard von irgendetwas zu überzeugen und
+nach kurzer Zeit tippt er mit flinken Fingern etwas in das Uraltterminal.
+Danach wendet er sich intensiv einer Arbeit zu und nimmt Dich gar nicht
+mehr wahr. Jochen sagt: "Alles ok, Du kannst jetzt alleine weitermachen."
+$jochen
+Plötzlich schüttelt Jochen sich vor Angst. "Nein," stammelt er, "das kannst
+Du nicht machen. Ohne Anleitung gehe ich da nicht rein.". So sehr Du auch
+an ihm zerrst, er will Dir einfach nicht in die Baracke folgen.

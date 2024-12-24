@@ -1,0 +1,40 @@
+$$keller
+$mathe_lang
+Du bist in einem langen Gang nach rechts, dessen Wände vorne und hinten
+völlig mit Holz ausgestattet sind. Du erkennst eine Menge Türen zu Zimmern
+und Schränken. Hinter Dir, etwas zur Rechten, führt eine Treppe nach unten.
+Direkt links neben Dir endet der Gang vor einer stabilen Glastür, die den
+Blick auf die Fortsetzung dieses Gangs nach links bietet.
+$mathe_kurz
+Du stehst an der Treppe bei der Glastür.
+$k1_lang
+Der holzvertäfelte Gang endet hier vor einer breiten Tür. So sehr Du
+Dich auch bemühst, das ist eine Sackgasse für Dich. Der Gang scheint
+aber nach links begehbar zu sein.
+$k1_kurz
+Du stehst im holzvertäfelten Gang.
+$eingang_lang
+Eine kleine Tür hinter Dir weist auf einen Ein- oder Ausgang hin. Durch
+ein paar dicke Glasscheiben kannst Du ins Freie sehen. Hier ist auch eine
+Treppe, die nach oben führt und ein nach rechts leitender Gang, der düster
+und drohend beleuchtet ist. Es sieht hier alles wie ein Kellerbereich aus.
+$eingang_kurz
+Du bist am Kellerausgang.
+$k3_lang
+Verwundert siehst Du rechts von Dir eine Barrikade aus schweren Metallquadern.
+Du vermutest zuerst, daß es sich um Schauerzählermodule auf Gasverstärkungsbasis
+mit senkrecht durch die Konverterplatten gespannten Signaldrähten handelt,
+verwirfst diesen Gedanken jedoch sofort wieder, da die Module alle in rosa
+mit hellblauen Punkten gehalten sind. Links könntest Du hier wegkommen oder
+durch die offene Türe hinter Dir den zugehörigen Raum betreten.
+$k3_kurz
+Du stehst vor den rosa Metallquadern.
+$labor_lang
+Das ist offensichtlich ein Arbeits- oder Bastelraum. Du hast lange nicht
+mehr eine solche Unordnung gesehen. Ein übelaussehendes Metallgestell erinnert
+Dich unwillkürlich an ein Folterinstrument wie eine Streckbank oder Schlimmeres,
+und Du behältst vorsichtshalber den Ausgang vor Dir fest im Auge. Nach dem
+Gerät erscheinen Dir plötzlich auch die herumliegenden Werkzeuge wie Kneifzange
+und Bohrmaschine bedrohlich.
+$labor_kurz
+Du bist im Bastelraum.

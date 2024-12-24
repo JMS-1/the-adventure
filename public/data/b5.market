@@ -1,0 +1,77 @@
+$$market
+$escal1_long
+This is the elevator 4. You are currently on the market level with the exit to your left. This elevator can bring you upward to the entrance level and you can reach restaurant, alien sector, diplomats' levels I and II and the garden by pushing the DOWN button.
+$escal1_short
+You're in elevator 4 on the market level. The exit is to your left.
+$m1_long
+This is the north east edge of the market. It's definitely part of the tourist section: you can buy cards, tapes, pictures and similar stuff regarding Babylon 5 and Epsilon 3. Some humans with short trousers and very colorful shirts are visiting the sale.
+$m1_short
+The north east corner of the market is reserved for cards, tapes, pictures and so on from Babylon 5 and Epsilon 3.
+$m2_long
+You entered the market level with elevator 4 just right of you. A simple map shows you which section you can visit: there are areas dedicated for tourists, food, clothing and a special alien sector.
+$m2_short
+You entered the market. Elevator 4 is right of you.
+$m3_long
+The southeast corner of the market contains all clothing for humanoid women. A crowd of women of all ages completely fills up this place. Although most of them carry lots of packages with them they try to buy even more. They cry and shout at each other and you can identify at least four real fights. Better you withhold.
+$m3_short
+The southeast corner of the market is dedicated to women clothing.
+$m4_long
+The wall of the market is in front of you. This part belongs to the tourist section. You see different artwork - at least, that's how they call it - showing Babylon 5, parts of it, a collection of alien statues, buttons and so on. The most disgusting thing is that there are people really interested in this trash.
+$m4_short
+The tourist artwork section with the wall of the market in front of you.
+$m5_long
+This is just another part of the tourist section somewhere in the middle of the market. You see clothing, shoes, caps and similar stuff with the official Babylon 5 logo on it. Compared with the usual prices for let's say shoes of equal quality the value of the logo must be comparable to a one class trip from earth to mars - including a special treatment by one to five young girls.
+$m5_short
+The Babylon 5 logo section in the middle of the market.
+$m6_long
+You're at the south side of the market in the area of humanoid men clothing.  Strange enough many men carrying lots of bags stand silently in this area. All of them look right with deep fear in their eyes.
+$m6_short
+You're at the south end of the market in the men clothing area.
+$m7_long
+This is the north end of the market and part of the food section. This part is dedicated to those eatable non-intelligent - hope so, but for some of them you're not quite sure - creatures living - as long as the live - in the water - let's for simplicity call them fish. A special and well-known smell proves you that some of them must have had a long journey to Babylon 5.
+$m7_short
+The fish market is at the north end of the market.
+$m8_long
+You're in the middle of the market in the meat section. Very different species of meat are presented - I think you never heard of the names of the corresponding animals for more of tree quarters of it. Most of it look quite good but some of it - well, maybe green is a normal color of alien animal meat. Don't think about it.
+$m8_short
+The meat area is in the middle of the market.
+$m9_long
+The alien food sector at the south end of the market looks somewhat strange to human eyes. For some things it's hard to decide whether it's offer or customer. In fact in the meat section some offers seem to be rather fresh - to be honest: alive. This sector of the market is - surprise, surprise - mostly occupied by aliens of all kind. There are some stairs downward but there is a writing 'Danger: No Trespassing for anybody!'
+$m9_short
+The alien food sector is at the south end of the market.
+$m10_long
+The north west corner of the market is dedicated to fruit selling. In contrast to other parts of the food section anything looks fresh - even the worms looking out of some of the fruits are extraordinary vital. The prices seem to vary from customer to customer - must be some rules you don't know.
+$m10_short
+The fruit area of the food section is in the north west corner of the market.
+$m11_long
+You can see many vegetables here at the west end of the market. Most impressive are the giant tomatoes, each of them somewhat bigger than you are. You can see some customers rolling their bought goods away. Well, genetic engineering is one of the most important technologies these days.
+$m11_short
+The vegetable area is at the left end of the market.
+$m12_long
+The southwest corner of the market is dedicated to alien tools. Some very strange looking gadgets let you start thinking what they may be good for. Interesting enough not only aliens but also humans are buying that stuff. You can see a human with a nose cleaner - made for noses that reach from the head to the knees. You don't dare to ask how he uses it. Some stairs lead downward but there is a writing 'Danger: No Trespassing for anybody!'
+$m12_short
+The alien gadget section is in the southwest corner of the market.
+$stairs_long
+Some stairs lead upward to parts of the market. Behind you there seems to be some kind of small room. Writings all around the walls warn you: 'Don't enter this area or you'll be killed immediately.'
+$stairs_short
+Upward is the market. When you enter the room behind you, you may be killed immediately.
+$sm1_long
+Congratulations, you dared to enter the black market. This will not kill you, the warning is only fake - and there are enough other things trying to stop you in this game. Now to your environment: this is the information section. You can buy any kind of information in the form of writings, tapes, videos and so on. Most of them are secret or top secret with a corresponding price. You can go right and backward to visit the market or leave through the exit in front of you.
+$sm1_short
+The black market continues right and backward with its exit in front of you.
+$sm1_look
+This is the information section. You can buy any kind of information in the form of writings, tapes, videos and so on. Most of them are secret or top secret with a corresponding price. You can go right and backward to visit the market or leave through the exit in front of you.
+$sm2_long
+You can see all kinds of human and alien drugs around you. They are sold with some let's say at least strange slogans. There is for example some Narn stuff with a special offer for humans: 'The ultimate dream - without any danger to human health. Special offer. Immediate cash payment required. No warranty.' The market continues left and behind you.
+$sm2_short
+The drug area of the black market. The market continues left of and behind you.
+$sm3_long
+Funny to see all those creatures - human and alien - covered in black with large hats thrown in their faces. Although their species is very different they share this special outfit that makes them look very similar - must be some kind of corporate identity program. This may be because they are all spies, private investigators or other kinds of people who find out anything for you if you only have enough money to pay them. You can see other parts of the market in front of you and to your right.
+$sm3_short
+Here in the southwest corner of the black market you can hire spies and so. You can go forward and right.
+$sm4_long
+You try to breathe as seldom as possible not to be overwhelmed by the intensive smell of alcohol in this section of the market. First you think the selection of earth fluids is enormous large but then you see the first part of Centauri offers and then the rest of this market area: it's great. If you ever want to relax after a hard day's work for let's say two or three months with some drinks: this is the first place to go. The market continues left and in front of you.
+$sm4_short
+Any kind of alcohol is offered here. The black market continues in front of you and to your left.
+$bug_long
+$bug_short

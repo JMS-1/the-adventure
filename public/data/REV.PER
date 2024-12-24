@@ -1,0 +1,271 @@
+;
+; Franz-Josef
+;
+$franzl Franz-Josef,Typ
+	message = *
+	actions = (  tip:(message = tip,#!schlüssel37,stop,remove,ende test),
+		   start:start)
+	time    = (+14:&$$things$rülpser,
+		   200:>>franzl)
+	things  = schlüssel37
+;
+; Der böse Hund
+;
+$hund Hund,Köter,Kläffer,Bluthund,Bestie,Monster,Tier,Koeter,Klaeffer
+	message  = böse
+	weight   = (0,0,0)
+	actions  = hase:(hase weg,remove)
+	#nehmen  = >>hund
+	#füttern = >>hund
+	#töte    = &$$things$angst
+;
+; Die Empfangsdame
+;
+$empfang Dame,Frau,Empfang,Rezeption
+	message = arrogant
+	actions = schlüssel:(message = schlüssel,#!schlüssel27,remove)
+	things  = schlüssel27
+;
+; Robert
+;
+$robert Robert,Merkel,Mann,Typ
+	message   = lang
+	#nehmen   = message = trägt
+	#ablegen  = (if_nothere peter message = lang,
+		     if_here peter (remove,peter freude))
+	#gibkette = (if_nothas kette
+		      (if_here kette &$$things$ketteaufheben,
+		       if_nothere kette &$$system$noaction),
+		     if_has kette (@!kette,@#<kette,&$$things$kette))
+	actions   = (poebel:(#if_nothas kette robert flieht,
+			     #if_has kette poebel flieht),
+		     flieht:(if_has kette &$$things$ketterobert,
+			     message = flieht,@message = lang,
+			     @!robert,#>$$park$s48,pflag = *))
+	weight   = (20,0,0)
+;
+; Der Pöbel und ein Flag, das auch für andere Zwecke mißbraucht wird
+;
+$pflag
+	message = *
+$poebel Pöbel,Poebel,Leute,Halbstarke,Gruppe
+	message = lang
+	actions = (poebelt:(pflag = *,
+			    if_here robert pflag = true,
+			    if_has robert pflag = true,
+			    if_state pflag true robert poebel,
+			    if_state pflag *
+			     (message = poebelt,@message = lang)),
+		    flieht:(message = flieht,remove),
+		     start:start)
+	   time = 100:#>$$park$tunnel
+;
+; Der Punker
+;
+$punker Punker,Typ,Lümmel,Luemmel,Korkensammler
+	message = lang
+	actions = (kommt:#if_position $$dummy$nowhere #>$$park$s4,
+		   ärger:(pflag = *,
+			  if_has korken1 if_has korken2 if_has korken3
+			   if_has korken4 if_has korken5
+			    pflag = true,
+			  if_state pflag true
+			   (message = freude,korken1 entfernen,korken2 entfernen,
+			    korken3 entfernen,korken4 entfernen,korken5 entfernen,
+			    remove),
+			  if_state pflag *
+			   (if_has korken1 pflag = true,
+			    if_has korken2 pflag = true,
+			    if_has korken3 pflag = true,
+			    if_has korken4 pflag = true,
+			    if_has korken5 pflag = true,
+			    if_state pflag * message = zoff,
+			    if_state pflag true message = zuwenig,
+			    @message = lang)))
+;
+; Der Verkäufer im Laden
+;
+$verkäufer Verkäufer,Mann,Kerl
+	message   = lang
+	#bezahlen = (if_nothas geld (message = scherz,@message = lang),
+		     if_has geld
+		      (wanderkarte bezahlen,milch bezahlen,rattengift bezahlen,
+		       if_has geld (message = nanu,@message = lang)))
+;
+; Jochen
+;
+$jochen Jochen,Kerl,Mann,Junge
+	message    = lang
+	#gibjochen = (if_nothas salzstangen &$$system$noaction,
+		      if_has salzstangen
+		       (message = tip,salzstangen weg,@#!jzettel,
+			@message = schläft,ende test))
+	things     = jzettel
+;
+; Bernhard und die Meute
+;
+$bernhard Bernhard,Anna,Petra,Familie,Peter,Leute
+	message    = anna
+	persons    = peter
+	actions    = (schnuller:if_message anna
+				 (@!schnuller,@#<schnuller,message = danke,
+				  @message = lang),
+			  start:(start,[#>$$wald$s37,#>$$wald$s38,#>$$wald$s39,
+					#>$$wald$s42,#>$$wald$s43,#>$$wald$s44,
+					#>$$wald$s36,#>$$wald$s35,#>$$wald$s34,
+					#>$$wald$s33,#>$$wald$s32,#>$$wald$s31,
+					#>$$wald$s30,#>$$wald$s29,#>$$wald$s24,
+					#>$$wald$s23,#>$$wald$s22)))
+	#gibkarte  = (if_nothas wanderkarte &$$system$noaction,
+		      if_has wanderkarte
+		       (if_message anna &$$things$bernhard,
+			if_message lang
+			 (@!wanderkarte,@#<wanderkarte,@#!peter,
+			  message = geht,stop,remove)))
+	time       = (400:>>bernhard,
+		       +2:(pflag = *,
+			   #if_position $$wald$s39 (pflag = true,#>$$wald$s42),
+			   #if_position $$wald$s38 (pflag = true,#>$$wald$s39),
+			   #if_position $$wald$s37 (pflag = true,#>$$wald$s38),
+			   #if_position $$wald$s34 (pflag = true,#>$$wald$s37),
+			   #if_position $$wald$s32 (pflag = true,#>$$wald$s34),
+			   #if_position $$wald$s31 (pflag = true,#>$$wald$s32),
+			   #if_position $$wald$s30 (pflag = true,#>$$wald$s31),
+			   #if_position $$wald$s29 (pflag = true,#>$$wald$s30),
+			   #if_position $$wald$s24 (pflag = true,#>$$wald$s29),
+			   #if_position $$wald$s23 (pflag = true,#>$$wald$s24),
+			   #if_position $$wald$s22 (pflag = true,#>$$wald$s23),
+			   #if_position $$wald$s33 (pflag = true,#>$$wald$s22),
+			   #if_position $$wald$s35 (pflag = true,#>$$wald$s33),
+			   #if_position $$wald$s36 (pflag = true,#>$$wald$s35),
+			   #if_position $$wald$s44 (pflag = true,#>$$wald$s36),
+			   #if_position $$wald$s43 (pflag = true,#>$$wald$s44),
+			   if_state pflag * #>$$wald$s43))
+$peter Peter,Kerl,Bursche
+	message = lang
+	actions = freude:(message = geht,remove,ende test)
+;
+; Norbert, Marlise und das Messer
+;
+$norbert Norbert,Kerl,Mann
+	message = lang
+	actions = los:(#>$$center$w13,messer los)       
+$marlise Marlise,Lise,Lisel,Frau
+	message   = nervös
+	weight    = (0,0,0)
+	#nehmen   = (&$$things$marlise,@!marlise)
+	#gibfeuer = (if_nothas streichhölzer &$$system$noaction,
+		     if_has streichhölzer
+		      (@!streichhölzer,@#<streichhölzer,message = freude,
+		       @message = raucht,#>$$center$w13,norbert los))
+;
+; Nur so zum Leute ärgern
+;
+$barkeeper Mann,Barkeeper,Wirt
+	message = lang
+;
+; Der Hauptdarsteller dieses Adventures
+;
+$johannes Johannes,Giovanni,Giovianni,Kerl,Bursche,Killer,Mörder,Moerder
+	message     = *
+	weight      = (70,0,0)
+	#nehmen     = (#if_nothas messer
+			(@!johannes,@message = normal,&$$things$johannes),
+		       #if_has messer message = trägt)
+	#ablegen    = message = katze
+	#gibmesser  = (if_nothas messer &$$system$noaction,
+		       if_has messer
+			(message = messer,@!messer,@#<messer,#>$$haus37$kamin,
+			 katze stop,@message = katze))
+	actions     = (test:(if_message * >>maus,if_message normal >>maus),
+			tip:if_message * (message = tip,@message = normal))
+;
+; Der zweite Hauptdarsteller, der Rest sind Komparsen
+;
+$maus Maus,Ratte,Tier,Untier,Monster
+	message     = *
+	weight      = (0,0,0)
+	actions     = (kommt:(#if_position $$dummy$nowhere
+			      (#>$$haus27$küche,pflag = *,
+			       if_here johannes pflag = true,
+			       if_has johannes pflag = true,
+			       if_state pflag * >>maus,johannes test,
+			       message = kommt,@message = lang)),
+			test:if_here maus >>topf)
+	#miao       = (message = tot,remove,ende test)
+	#töte       = >>maustot
+	#essen      = >>maustot
+	#nehmen     = >>maustot
+;
+; Armer Harald ...
+;
+$harald Harald,Hand,Arm,Person,Mensch
+	message = lang
+	weight  = (9999,0,0)
+	actions = (föhn:(message = taut,
+			 if_state maus tot (message = geht,remove,ende test),
+			 if_message taut (message = angst,@message = lang)),
+		    tip:(#if_position $$see$s13 &$$brunch$harald))
+;
+; Einer der Freaks
+;
+$michael Michael,Wassermensch,Wassermann,Fisch
+	message = *
+	actions = (start:start,geht:(message = lang,remove))
+	time    = 300:(#>$$center$w9,if_here michael michael geht)
+;
+; Und noch einer
+;
+$charly Charly,Karl,Michael,Haas,Mann,Kerl,Bursche,Karl-Michael
+	message = kugel
+	actions = start:start
+	time    = +1:(pflag = *,
+		      if_message ärger (pflag = true,message = kugel),
+		      if_message springt (pflag = true,message = ärger),
+		      if_message wurf (pflag = true,message = springt),
+		      if_message anlauf (pflag = true,message = wurf),
+		      if_message zielen (pflag = true,message = anlauf),
+		      if_state pflag * message = zielen)
+;
+; Der Sucher und seine Frau
+;
+$burkhard Burkhard,Mann,Kerl,Bursche,Sucher,Baseballspieler
+	message = sucht
+	actions = (   start:start,
+		   schläger:(schläger weg,message = geht,stop,
+			     if_nothere burkhard &$$things$burkhard,remove,
+			     beate = froh,ende test))
+	time    = +3:[(#>$$park$s54, schläger tests54),
+		      (#>$$park$s63, schläger tests63),
+		      (#>$$park$s43, schläger tests43),
+		      (#>$$park$s34, schläger tests34),
+		      (#>$$park$s28, schläger tests28),
+		      (#>$$park$s23, schläger tests23),
+		      (#>$$park$s20, schläger tests20),
+		      (#>$$park$s14, schläger tests14),
+		      (#>$$park$s13, schläger tests13),
+		      (#>$$park$s8,  schläger tests8),
+		      (#>$$park$s2,  schläger tests2),
+		      (#>$$park$s1,  schläger tests1),
+		      (#>$$park$g13, schläger testg13),
+		      (#>$$park$g18, schläger testg18),
+		      (#>$$park$g221,schläger testg221),
+		      (#>$$park$g210,schläger testg210),
+		      (#>$$park$g24, schläger testg24),
+		      (#>$$park$g220,schläger testg220),
+		      (#>$$park$w92, schläger testw92),
+		      (#>$$park$wa19,schläger testwa19),
+		      (#>$$park$w42, schläger testw42),
+		      (#>$$park$w61, schläger testw61),
+		      (#>$$park$wd1, schläger testwd1),
+		      (#>$$park$wa3, schläger testwa3))
+$beate Beate,Frau
+	message = traurig
+;
+; Ein bißchen Leben ins Spiel bringen
+;
+$hansi Hans,HCL,Hans-Christian,Hansi
+	message = traurig
+	actions = öffner:(@#<flaschenöffner,message = froh,@message = zecht)
+$halbstarke Leute,Pöbel,Poebel,Halbstarke,Teens,Kids,Burschen
+	message = spielen

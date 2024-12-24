@@ -1,0 +1,55 @@
+$$entrance
+$enter_long
+You should be happy: finally you reached your first destination. You are standing right in front of an impressive arc entitled 'Welcome to Babylon 5'. It seems to be the main entrance to the solution of all your dreams. Countless creatures, most of then non-human, stream on both of your sides through the arc into the station. On your right there seems to be a waiting room and on your left there is something comparable to a travel agency. From your position you can not read anything on the front glass but it looks as if they have some special offers concerning trips to Epsilon 3 and Minbar.
+$enter_look
+You are standing right in front of an impressive arc entitled 'Welcome to Babylon 5'. It seems to be the main entrance to the solution of all your dreams. Countless creatures, most of then non-human, stream on both of your sides through the arc into the station. On your right there seems to be a waiting room and on your left there is something comparable to a travel agency. From your position you can not read anything on the front glass but it looks as if they have some special offers concerning trips to Epsilon 3 and Minbar.
+$enter_short
+You're in front of the arc between the travel agency left and the waiting room right.
+$right_wait_long
+You enter a kind of waiting room. Lots of chairs or similar looking furniture - may be built for some kind of strange formed aliens - are standing around, most of them occupied by some more or less friendly looking creature. The display on the wall shows some films upon the life on Babylon 5. The only way out is to your left.
+$right_wait_short
+You are in the waiting room with the exit to your left.
+$left_wait_long
+You entered a travel agency. You can see only a bulk of customers but no employees - must be fully computerized. Many displays on the wall show the highlights of current travel offers. Most interesting is a trip to Epsilon 3 with the option of buying some extraordinary cheap - and useless - stuff. Together with a trip to the 'Man in the Machine' like they call it. Tickets of any kind can be bought in some room left of you. The exit is on the right.
+$left_wait_short
+You are in the travel agency. The ticket selling room is left and the exit right of you.
+$ticket_long
+This is a fully automated ticket selling room. The exit is on your right side. Only few creatures seem to be interested in buying some tickets. Must be not the good offers as it looks at first sight.
+$ticket_short
+You are in the ticket root with the exit to your right.
+$hall1_long
+You stepped through the welcome arc that is now behind you and you join a long queue of people trying to enter Babylon 5. Some meters in front of you can catch a view on a very large lightful hall.
+$hall1_short
+You are in the queue for the hall. You can go forward and backward.
+$hall2_long
+Wow, you got it! Hundreds or thousands of humans and aliens are walking and running in all direction. You are somewhere in the middle of them in a really large hall. Lots of light sources brighten the hall so much that it's nearly like real daylight. The sound of all the creatures and a handful of speakers from the walls make a noticeable background noise. In fact you are not able to identify any words from it at all. With a look around you see an elevator somewhere in front of you. To your back you can reach the welcome arc where you came from. A special sign on the left notices you of the customs. Maybe it's a good idea to go there to introduce yourself to the officials.
+$hall2_short
+You are in the lightful hall. You can walk forward, backward or left.
+$hall3_long
+You are between the lightful hall behind you and an elevator with the number 4 in front of you. It seems to be one of the most important transportation aids in Babylon 5 and can reach lots of other levels. A writing at the passage to your right informs you that there is a hangar from which the all travels to outer worlds begin. As far as I can see you need some special tickets for the journeys. Tickets can be bought somewhere in the near environment.
+$hall3_short
+You're between elevator number 4 and the lightful hall and can go forward and backward. The hangar for trips to other world is to the right.
+$hall4_long
+You are on a small path between some customs ahead of and behind you. The one to your front seems to be reserved for aliens the other one for humanoids. Left is an elevator with the number 3 and to your right is a lightful hall.
+$hall4_short
+You are between the customs ahead of and behind you. Left of you is elevator 3 and some lightful hall lies to your right.
+$custom1_long
+The alien custom section has some special rooms with special atmospheric conditions. You are very interested in seeing the inspection of an undressed Vorlon but the milky classes don't let you see through - maybe that's better for all of us. In fact the only thing you can do is leave this place backward.
+$custom1_short
+Here is the alien customs with the exit behind you.
+$custom2_long
+Nice to see a bulk of Centauri forced to unpack all their baggage for the customs clearance. But it doesn't seem to be special handling of aliens: some earthies have to suffer similar treatments. Some officials try to bring a bit of order in the large bulk of people here but they fail completely. Good for you since nobody notices you or seems to have any interest in interfering with you and your business.
+$custom2_short
+This is the humanoid customs with the exit in front of you.
+$escal1_long
+You are in elevator number 4. A writing on the wall notices you that you are on the entrance level of Babylon 5. There is no way up. By pressing DOWN you can reach the following destinations in the given order: market, restaurant, alien sector, diplomats' levels I and II and last not least the garden. The exit for this level is behind you.
+$escal1_short
+You are in elevator 4 on the entrance level. The exit is behind you.
+$escal2_long
+This is elevator 3 and you are on the entrance level. By pressing DOWN this elevator will bring you to the employee quarters I, there is no way up. The exit is to your right.
+$escal2_short
+You are in elevator 3 with the entrance level to your right.
+$hangar_long
+You are in a small hangar with the exit to your left. Some people are waiting for the next flight to somewhere. A bulk of officials manages all the stuff. So if you have your ticket for a journey you should now simply tell the officials your target and they will help you.
+$hangar_short
+You are in the hangar. Tell the friendly officials where you want to go or leave through the passage left of you.

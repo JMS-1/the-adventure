@@ -1,0 +1,578 @@
+;
+; The invisible point where everything starts
+;
+$$dummy
+$start
+	message	= *
+	actions	= stay:
+				(
+					interval3 start,
+					narn start,
+					minbartimer start,
+					shadow start,
+					patrol start,
+					mordon start,
+					ranger start,
+					explode start,
+					commander start,
+					@<commander, 
+					@<tshirt,
+					@<mordon,
+					>$$entrance$enter
+				)
+	things	= (tshirt,commander)
+	persons	= mordon
+;
+; The entrance area
+;
+$$entrance
+$enter
+	exits = (N:zack pass,W:>left_wait,E:>right_wait,S:&$$exit$nowayout,L:(message = look, @message = short))
+	persons = zack
+$right_wait
+	exits = (W:>enter)
+	things = ppg
+$left_wait
+	exits	= (W:>ticket,E:>enter)
+	things	= (knife,prospect)
+$ticket
+	exits = (E:>left_wait)
+	things = (sword,ticket)
+$hall1
+	exits = (S:>enter,N:>hall2)
+$hall2
+	exits = (S:>hall1,N:>hall3,W:>hall4)
+$hall3
+	exits	= (S:>hall2,N:>escal1,E:>hangar)
+	actions = (entry:narn meet)
+$hall4
+	exits = (N:>custom1,S:>custom2,W:>escal2,E:>hall2)
+$custom1
+	exits	= (S:>hall4)
+	things	= belt
+$custom2
+	exits	= (N:>hall4)
+	things	= passport
+$escal1
+	exits = (S:>hall3,U:el4btn1 up,D:el4btn1 down)
+	things = el4btn1
+$escal2
+	exits = (E:>hall4,U:el3btn1 up,D:el3btn1 down)
+	things = el3btn1
+$hangar
+	exits = (W:>hall3)
+;
+; Normal staff quarters
+; 
+$$q1
+$escal1
+	exits = (E:>g1,U:el3btn2 up,D:el3btn2 down)
+	things = el3btn2
+$g1
+	exits = (E:>g2,W:>escal1,N:>r1N,S:>r1S)
+$g2
+	exits	= (E:>g3,W:>g1,N:>r2N,S:>r2S)
+$g3
+	exits	= (E:>escal2,W:>g2,N:>r3N,S:>r3S)
+	things	= ring
+$r1N
+	exits	= (S:>g1,N:>r1NBed)
+	things	= byce
+$r1NBed
+	exits = (S:>r1N)
+$r1S
+	exits = (N:>g1)
+$r2N
+	exits = (S:>g2,E:>r2NKitchen)
+$r2NKitchen
+	exits = (W:>r2N,N:>r2NBillard)
+$r2NBillard
+	exits	= (S:>r2NKitchen)
+	things	= credits1
+$r2S
+	exits	= (N:>g2)
+	things	= shoe
+$r3N
+	exits = (S:>g3)
+$r3S
+	exits	= (N:>g3)
+	things	= (mirror, movie4)
+$escal2
+	exits = (W:>g3,U:el2btn2 up,D:el2btn2 down)
+	things = el2btn2
+;
+; Officers quarters
+; 
+$$q2
+$escal1
+	exits = (E:>g1,U:el5btn1 up,D:el5btn1 down)
+	things = el5btn1
+$g1
+	exits = (E:>g2,W:>escal1,N:>r1N,S:>r1S)
+$g2
+	exits	= (S:>g3,W:>g1,N:>r2N,E:(if_has byce &$$q2$narrow, if_nothas byce >r2E))
+	actions	= entry:if_has cat cat hunt
+$g3
+	exits = (E:>escal2,N:>g2,W:>r3W,S:>r3S)
+$r1N
+	exits = (S:>g1,N:>r1NBed)
+$r1NBed
+	exits	= (S:>r1N)
+	things	= cat
+$r1S
+	exits	= (N:>g1)
+	things	= ticket1
+$r2N
+	exits	= (S:>g2,N:>r23)
+	persons	= sheridan
+	actions	= entry:sheridan meet
+$r23
+	exits = (S:>r2N,W:>r1NBed)
+$r2E
+	exits	= (W:>g2)
+	things	= cheese
+$r3W
+	exits = (E:>g3,W:>r3WBar)
+$r3WBar
+	exits = (E:>r3W)
+$r3S
+	exits = (N:>g3)
+$escal2
+	exits = (W:>g3,U:el2btn3 up,D:el2btn3 down)
+	things = el2btn3
+;
+; First range diplomats quarters
+;
+$$d1
+$escal1
+	exits = (S:>g1,U:el4btn5 up,D:el4btn5 down)
+	things = el4btn5
+$g1
+	exits	= (S:>g2,N:>escal1,E:>g1E,W:>g1W)
+	actions = (entry:narn meet)
+$g1W
+	exits = (E:>g1)
+$g1E
+	exits = (W:>g1)
+	persons = vir
+$g2
+	exits	= (S:>g3,N:>g1,E:>g2E,W:londogkar movie)
+	things	= movie3
+$g2W
+	exits	= (E:>g2,W:>g2WKitchen)
+	actions = entry:londogkar meet
+	persons = londogkar
+$g2WKitchen
+	exits	= (E:>g2W)
+$g2E
+	exits = (W:>g2)
+$g3
+	exits = (S:>escal2,N:>g2,E:>g3E,W:>g3W)
+$g3W
+	exits	= (E:>g3)
+	things	= book2
+$g3E
+	exits	= (W:>g3,E:>g3EDark)
+	things	= button
+$g3EDark
+	exits = (W:>g3E,S:>g3ESecret)
+$g3ESecret
+	exits = (N:>g3EDark,W:>escal2,S:>$$alien$steps2)
+$escal2
+	exits = (N:>g3,E:>g3ESecret,U:el1btn3 up,D:el1btn3 down)
+	things = el1btn3
+;
+; Second range diplomats quarters
+;
+$$d2
+$escal1
+	exits = (N:>g1,U:el2btn4 up,D:el2btn4 down)
+	things = el2btn4
+$g1
+	exits	= (N:>g2,S:>escal1)
+	actions = (entry:narn meet)
+$g2
+	exits = (E:>g3,S:>g1,N:>large)
+$large
+	exits  = (S:>g2,E:>bath,W:>kitchen,N:>bed,U:>butler)
+	things = base
+$bath
+	exits = (W:>large,N:>bed)
+$bed
+	exits = (S:[>bath,>large))
+$kitchen
+	exits	= (E:>large,U:>butler)
+	persons	= lenier
+	actions	= (entry,exit,stay:lenier meet)
+$butler
+	exits = (D:>large,N:>wc)
+$wc
+	exits	= (S:>butler)
+	things	= eye
+$g3
+	exits	= (E:>escal2,W:>g2,S:>g3S)
+	actions	= (entry:drozi meet, exit:mordon drozi)
+	things	= drozi
+$g3S
+	exits = (N:>g3,S:>g3SBath)
+$g3SBath
+	exits  = (N:>g3S)
+	things = letter
+$escal2
+	exits = (W:>g3,U:el4btn6 up,D:el4btn6 down)
+	things = el4btn6
+;
+; The alien sector
+;
+$$alien
+$escal1
+	exits = (W:>enter,U:el4btn4 up,D:el4btn4 down)
+	things = el4btn4
+$enter
+	exits	= (E:>escal1,W:(if_has lyta lyta stop, >g1))
+	actions = (entry:narn meet)
+$g1
+	exits	= (E:(if_has lyta lyta start, >enter),N:>g2,W:>g1W)
+	actions	= (stay/3:mask test)
+$g1W
+	exits	= (E:>g1)
+	actions	= (entry,stay:mask test)
+$g2
+	exits	= (S:>g1,N:>g3,E:>g2E,W:>g2W)
+	actions	= (entry,stay:mask test)
+$g2W
+	exits	= (E:>g2)
+	actions	= (entry,stay:mask test)
+	things	= stick
+	persons	= insect
+$g2E
+	exits	= (W:>g2,ED:>steps1)
+	actions	= (entry,stay:mask test)
+$g3
+	exits	= (S:>g2,N:>kosh)
+	actions	= (entry,stay:mask test)
+$kosh
+	exits	= (S:(kosh test,>g3),N:>lyta)
+	persons	= kosh
+	actions	= (entry,stay:mask test)
+$lyta
+	exits	= (S:>kosh)
+	persons = lyta
+	actions	= (entry,stay:mask test)
+$steps1
+	exits	= (WU:>g2E,ED:>exit)
+	things	= credits2
+	actions	= (entry,stay:mask test)
+$exit
+	exits	= (WU:>steps1,D:(if_has lyta lyta start, >steps2))
+	actions	= (entry,stay:mask test)
+$steps2
+	exits	= (U:(if_has lyta lyta stop, >exit),N:>$$d1$g3ESecret)
+	actions	= (entry,stay:mask test)
+;
+; The restaurant
+;
+$$restaurant
+$escal1
+	exits = (S:>enter1,U:el4btn3 up,D:el4btn3 down)
+	things = el4btn3
+$enter1
+	exits = (N:>escal1,S:[>stage1,>bar1,>bar1,>bar1))
+$stage1
+	exits	= (N:>enter1,S:>stage2,U:>onstage,E:>bar1)
+	persons	= earth
+	actions	= (entry,stay:earth meet)
+$stage2
+	exits	= (N:>stage1,S:>enter2,E:>bar2,U:>onstage)
+	persons = franklin
+	actions	= (entry:franklin meet)
+$bar1
+	exits = (N:>enter1,W:>stage1,S:>bar2,E:>behind)
+$bar2
+	exits	= (N:>bar1,W:>stage2)
+	persons	= ivanova
+$behind1
+	exits = (S:>onstage)
+$onstage
+	exits	= (N:>behind1,S:>behind2,D:>stage2)
+	persons	= dancer
+$behind2
+	exits	= (N:>onstage)
+	things	= list
+$enter2
+	exits	= (N:>stage2,E:>dark1,S:>escal2)
+	actions = (entry:narn meet)
+$escal2
+	exits = (N:>enter2,U:el1btn2 up,D:el1btn2 down)
+	things = el1btn2
+$dark1
+	exits = (W:>enter2,E:>dark2)
+$dark2
+	exits	= (W:>dark1)
+	actions = (entry:narn meet)
+$extra1
+	exits	= (N:>behind)
+	things	= glass
+$behind
+	exits = (S:>extra1,N:>extra2)
+$extra2
+	exits = (S:>behind,D:>$$down$stairs)
+;
+; The garden
+; 
+$$garden
+$escal1
+	exits = (N:>g1,U:el4btn7 up,D:el4btn7 down)
+	things = el4btn7
+$g1
+	exits	= (S:>escal1,N:>g2,E:[>g3,>g3,>g3,>g4),W:>g15)
+	persons	= delenn
+	actions = (
+				entry:(narn meet, sheridan meet, delenn meet),
+				exit:if_nothas book if_state delenn long >>nobook
+			  )
+$g2
+	exits = (S:>g1,E:>g3,W:[>g15,>g14),N:[>g14,>g6))
+$g3
+	exits	= (W:>g2,N:>g6,ES:>g4)
+	things	= mask
+$g4
+	exits = (W:[>g3,>g3,>g3,>g1),N:>g6,E:>g5)
+$g5
+	exits	= (W:[>g4,>g6),N:>g7)
+	things	= light
+$g6
+	exits = (W:>g14,S:[>g4,>g4,>g3,>g3,>g2),E:>g5,N:(if_state mordon * >>sea1, &$$things$mordon_sea))
+$g7
+	exits	= (S:[>g5,>g5,>g6),N:[>g9,>g8),W:(if_state mordon * >>sea2, &$$things$mordon_sea))
+	things	= rose
+$g8
+	exits = (S:>g7,W:[>g9,>g10))
+$g9
+	exits = (S:>g7,E:>g8,N:>g10,W:(if_state mordon * >>sea3, &$$things$mordon_sea))
+$g10
+	exits	= (E:>g8,S:>g9,W:>g11,N:>escal2)
+	things	= tomato
+$g11
+	exits	= (E:>g10,W:>g12,S:(if_state mordon * >>sea4, &$$things$mordon_sea))
+	things	= code4
+$g12
+	exits = (E:>g11,S:>g13)
+$g13
+	exits = (N:>g12,S:>g14,E:(if_state mordon * >>sea5, &$$things$mordon_sea))
+$g14
+	exits	= (N:>g13,S:[>g15,>g2),E:[>g2,>g6,>g6))
+	things	= plant
+$g15
+	exits	= (N:>g14,E:[>g1,>g1,>g1,>g1,>g2))
+	things	= bottle
+$escal2
+	exits = (S:>g10,U:el1btn4 up,D:el1btn4 down)
+	things = el1btn4
+;
+; Epsilon 3
+;
+$$epsilon
+$hangar
+	exits	= (E:>enter)
+	actions	= entry:ticket2 gone
+$enter
+	exits = (W:(&$$things$leave, >$$entrance$hangar),E:>dealer,N:>machine)
+$dealer
+	exits	= (W:>enter)
+	actions	= entry:zatras meet
+$machine
+	exits	= (S:>enter,E:minbari movie)
+	things	= (screw, movie1)
+$minbari
+	exits	= (W:>machine)
+	persons	= minbari
+	actions	= entry:minbari meet
+;			
+; Down Below
+;
+$$down
+$escal1
+	exits = (E:light special1,U:el5btn2 up,D:el5btn2 down)
+	things = el5btn2
+$g1
+	message	= *
+	exits	= (E:>g2,N:>g1N,W:>escal1)
+	actions = (entry:(narn meet, light test, if_message * (message = long, @message = short)),stay:light test)
+$g1N
+	message	= *
+	exits	= (S:>g1)
+	actions	= (entry:(light test, if_message * (message = long, @message = short)),stay:light test)
+	things	= bottle2
+$g2
+	message	= *
+	exits	= (N:>g2N,S:>g2S,W:>g1,E:>g3)
+	actions = (entry:(narn meet, light test, if_message * (message = long, @message = short)),stay:light test)
+$g2N
+	message	= *
+	exits	= (S:>g2)
+	actions	= (entry:(light test, if_message * (message = long, @message = short)),stay:light test)
+$g2S
+	message	= *
+	exits	= (N:>g2)
+	actions	= (entry:(light test, if_message * (message = long, @message = short)),stay:light test)
+$g3
+	message	= *
+	exits	= (N:>g3N,S:>g3S,E:>g4,W:>g2)
+	actions	= (entry:(light test, if_message * (message = long, @message = short)),stay:light test)
+$g3N
+	message	= *
+	exits	= (S:>g3,NU:>stairs)
+	actions	= (entry:(light test, if_message * (message = long, @message = short)),stay:light test)
+$stairs
+	exits	= (U:>$$restaurant$extra2,SD:light special2)
+$g3S
+	message	= *
+	exits	= (N:>g3)
+	things	= code3
+	actions	= (entry:(light test, if_message * (message = long, @message = short)),stay:light test)
+$g4
+	message	= *
+	exits	= (W:>g3,S:>g4S)
+	persons	= lurker
+	actions	= (entry:(lurker meet, light test, if_message * (message = long, @message = short)),stay:light test)
+$g4S
+	message	= *
+	exits	= (N:>g4,D:>bar1)
+	actions	= (entry:(light test, if_message * (message = long, @message = short)),stay:light test)
+$bar1
+	exits	= (U:>g4S,S:>bar2,E:>room1)
+	things	= movie5
+	actions	= entry,stay:londo meet
+$bar2
+	exits = (N:>bar1,E:>room2)
+$room1
+	exits	= (W:>bar1,S:>room2)
+	persons	= mars
+	actions	= (entry,stay:mars meet)
+$room2
+	exits = (W:>bar2,N:>room1)
+;
+; C&C and conference rooms
+;
+$$cc
+$escal1
+	exits = (E:(if_has code3 >g1,&$$things$restricted),U:el1btn1 up,D:el1btn1 down)
+	things = el1btn1
+$g1
+	exits = (E:>g2,W:>escal1,N:>room1L)
+$g2
+	exits = (W:>g1,E:>g3,S:(if_has code1 if_state base transform if_nothas mask >enter,&$$things$locked))
+$g3
+	exits	= (W:>g2,E:>escal2,N:>right)
+	things	= battery
+$escal2
+	exits	= (W:(if_has code3 >g3,&$$things$restricted),U:el2btn1 up,D:el2btn1 down)
+	things	= el2btn1
+$enter
+	exits	= (N:>g2,W:>gal5,E:>gal1,SD:>down1)
+	actions	= entry:ivanova meet
+$gal1
+	exits = (W:>enter,S:>gal2)
+$gal2
+	exits = (N:>gal1,S:>gal3)
+$gal3
+	exits	= (N:>gal2,W:>gal4)
+	things	= buttons
+$gal4
+	exits = (E:>gal3,N:>gal5)
+$gal5
+	exits	= (S:>gal4,E:>enter)
+	things	= bear
+$down1
+	exits = (NU:>enter,E:>down2,S:>down3)
+$down2
+	exits = (W:>down1,S:>down4)
+$down3
+	exits = (E:>down4,N:>down1)
+$down4
+	exits = (N:>down2,W:>down3)
+$room1L
+	exits	= (S:>g1,E:marcus movie)
+	things	= (starmap, movie6)
+$room1C
+	exits	= (W:>room1L,E:>room1R)
+	persons	= marcus
+	actions	= (entry:marcus meet)
+$room1R
+	exits  = (W:marcus movie,E:>left)
+	things	= (code2, movie6)
+$bankL
+	exits = (E:>middle)
+$middle
+	exits = (E:>bankR,W:>bankL,SD:>front)
+$bankR
+	exits	= (W:>middle)
+	things	= coin
+$front
+	exits = (NU:>middle,W:>left,E:>right)
+$left
+	exits = (E:[>front,>behind,>behind),W:>room1R)
+$behind
+	exits	= (E:>right,W:>left)
+	things	= memo
+$right
+	exits = (S:>g3,W:>front)
+;
+; The market
+;
+$$market
+$escal1
+	exits = (W:>m2,U:el4btn2 up,D:el4btn2 down)
+	things = el4btn2
+$m1
+	exits = (W:>m4,S:>m2)
+$m2
+	exits	= (E:>escal1,W:>m5,N:>m1,S:>m3)
+	actions = (entry:narn meet)
+$m3
+	exits = (N:>m2,W:>m6)
+$m4
+	exits	= (W:>m7,E:>m1,S:>m5)
+	things	= blueprint
+$m5
+	exits = (E:>m2,W:>m8,N:>m4,S:>m6)
+$m6
+	exits	= (N:>m5,W:>m9,E:>m3)
+	things	= code1
+$m7
+	exits	= (W:>m10,E:>m4,S:>m8)
+	things	= apple
+$m8
+	exits	= (E:>m5,W:garibaldi movie,N:>m7,S:>m9)
+	actions	= (entry:gkar meet)
+	things	= movie2
+$m9
+	exits = (N:>m8,W:>m12,E:>m6,D:>stairs)
+$m10
+	exits	= (E:>m7,S:garibaldi movie)
+	things	= movie2
+$m11
+	exits	= (E:>m8,N:>m10,S:>m12)
+	persons	= garibaldi
+$m12
+	exits	= (N:garibaldi movie,E:>m9,D:>stairs)
+	things	= (stone, movie2)
+$stairs
+	exits = (U:[>m12,>m9),DS:>sm1)
+$sm1
+	exits	= (UN:>stairs,E:>sm2,S:>sm3,L:(message = look, @message = short))
+	things	= tape2
+$sm2
+	exits = (W:>sm1,S:>sm4)
+$sm3
+	exits = (N:>sm1,E:>sm4)
+$sm4
+	exits	= (N:>sm2,W:>sm3)
+	things	= link
+;
+; There is a little bug in the compiler which does not
+; correcty set up the last state in this file.
+;
+$bug
+

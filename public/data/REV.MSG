@@ -1,0 +1,113 @@
+$$$rev.prs
+$$$rev.dng
+$$$rev.park
+$$$rev.wald
+$$$rev.center
+$$$rev.halle
+$$$rev.brunch
+$$$rev.kiosk
+$$$rev.bowling
+$$$rev.see
+$$$rev.autos
+$$$rev.h26
+$$$rev.h27
+$$$rev.h37
+$$$rev.ende
+$$dummy
+$start_lang
+Einige Jahre ist es nun schon her, daß eine durch hohe Strahlenbelastung
+ins riesenhafte mutierte Maus das Physikalische Institut der Universität 
+Bonn unsicher gemacht hat und zahlreiche Opfer unter den dort ansäßigen
+Physikern forderte. Durch das mutige Eingreifen eines promovierten
+Auswanderers konnte das Untier normalisiert und eingefangen werden. Bei
+den nachfolgenden Experimenten im Biologischen Institut der Universität
+Bonn konnte es jedoch entfliehen und kennt nur noch einen Gedanken: RACHE.
+Seinem untrüglichen Instinkt folgend findet es die Verantwortlichen und
+beginnt mit einer blutigen Säuberungsaktion. Hier ist es nun an Dir, dem
+Treiben des Untiers endlich ein Ende zu setzten und es diesmal endgültig
+zur Strecke zu bringen. 
+$start_kurz
+Solltest Du übrigens alte Bekannte treffen, die dem Untier beim ersten
+Zusammentreffen mit den mutigen Bonner Physikern zum Opfer gefallen sind,
+so ist das ganz normal. Zumindest in amerikanischen Seifenopern und
+deutschen Textadventures. Also los:
+$nowhere_lang
+$nowhere_kurz
+$$system
+$heavy/1
+Das geht nicht, soviel kannst Du nicht tragen.
+$heavy/2
+Nana, da übernimmst Du Dich aber ein wenig. Das ist zu schwer.
+$heavy/3
+Du willst Dir wohl einen Bruch heben. Such' Dir gefälligst was leichteres.
+$nomove
+Das kann nicht bewegt oder getragen werden.
+$nocomm/1
+Den Befehl kann ich nicht verstehen, vielleicht probierst Du mal HELP.
+$nocomm/2
+Das kann ich nicht verstehen. Könnte sein, daß HELP hier weiterhilft.
+$nocomm/3
+Die Eingabe ist unverständlich, mit HELP kann man etwas über legale
+Befehle erfahren.
+$noway/1
+Wo soll denn hier ein Ausgang sein? Ich sehe jedenfalls nichts.
+$noway/2
+Hey, benutze gefälligst die normalen Wege.
+$noaction/1
+Der eingegebene Befehl paßt hier nicht. Vielleicht solltest Du ihn mal
+woanders probieren.
+$noaction/2
+Ich weiß nicht, wie ich das hier machen soll. Denk' doch noch mal genau
+über alles nach.
+$noaction/3
+Das verstehe ich nicht. Nochmal langsam zum Mitdenken.
+$clock1
+Es ist jetzt ziemlich genau
+$clock2
+Uhr.
+$day0
+Montag
+$day1
+Dienstag
+$day2
+Mittwoch
+$day3
+Donnerstag
+$day4
+Freitag
+$day5
+Samstag
+$day6
+Sonntag
+$file
+Gib nun bitte den Namen der Datei ein, am besten einfach Deinen eigenen
+Namen. Es wäre besser, wenn Du keinerlei Sonderzeichen sondern nur Buchstaben
+und Ziffern benutzen würdest. Wenn Du lieber weiter spielen willst, tippe
+einfach eine 0 anstelle des Namens.
+$nofile
+Mit dem angegebenen Namen stimmt etwas nicht.
+$write
+Beim Schreiben der Datei ist ein Fehler aufgetreten.
+$read
+Beim Lesen der Datei ist ein Fehler aufgetreten.
+$confirm
+Wenn Du an dieser Stelle wirklich aufhören willst, dann gebe bitte
+irgendetwas anderes als 0 oder 1 ein. Eine 0 setzt das Spiel normal fort,
+mit 1 kannst Du noch mal von vorne beginnen.
+$again
+Nun, wie wäre es? Willst Du noch ein Spielchen wagen oder reicht es für
+heute erst einmal? Tippe einfach 0, wenn Du nicht mehr spielen möchtest.
+Bei jeder anderen Eingabe mußt Du da nochmal durch!
+$password
+Soso, Du willst also der Systemmanager sein, mein Herr und Meister. Dann
+aber mal her mit dem Schutzwort, oder ich werde böse.
+$serial_old
+Die aktuelle Seriennummer ist :
+$serial_new
+Gib nun die neue Seriennummer ein. Nummern mit nicht genau vier Stellen
+bedeuten dabei, daß keine Änderung vorgenommen werden soll.
+$owner_old
+Der aktuelle Besitzer ist :
+$owner_new
+Gib jetzt den Namen des neuen Besitzers ein. Dabei steht ein einzelnes
+X für keine Änderung. Der Name wird eventuell auf die maximale Länge gekürzt.
