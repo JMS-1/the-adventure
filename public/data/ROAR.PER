@@ -9,54 +9,54 @@ $flag2
 $flag_schwille
 	message	= *
 ;
-; Räume: $$botanik$f4
+; RÃ¤ume: $$botanik$f4
 ;	 $$keller$labor
 ;	
 $gerhild Gerhild
 	message = ruhe
-	things  = schlüssel
+	things  = schlÃ¼ssel
 	actions = (aerger  :(if_message guertel >>gerhild,
 		  	     if_message aerger message = guertel,
 		  	     if_message ruhe message = aerger),
 	  	   milkaeis:(message = eis,gregory = traurig,
 			     #>$$keller$labor,message = *),
-	  	   keller  :(message = keller,#!schlüssel,
-			     schlüssel = lang,@message = arbeit))
+	  	   keller  :(message = keller,#!schlÃ¼ssel,
+			     schlÃ¼ssel = lang,@message = arbeit))
 ;
-; Räume = $$botanik$f4
+; RÃ¤ume = $$botanik$f4
 ;
 $gregory Gregory
 	message = froh
 ;
-; Räume: $$eisdiele$raum
+; RÃ¤ume: $$eisdiele$raum
 ;
-$eismann Eismann,Mann,Südländer,Suedlaender
+$eismann Eismann,Mann,SÃ¼dlÃ¤nder,Suedlaender
 	message   = wartet
 	#bezahlen = (if_state geld lang &$$things$keingeld,
 		     if_state geld * (geld weg,message = bezahlt))
 ;
-; Räume: $$restaurant$theke
+; RÃ¤ume: $$restaurant$theke
 ;
 $norbert Norbert
 	message	= betrunken
 	actions = (kaffee:if_message betrunken if_state kaffee warm
 			   (#<kaffee,message = redet,
-			    #!sauce,@message = schläft),
+			    #!sauce,@message = schlÃ¤ft),
 		   tisch:(message = tisch,#!sauce))
 	things	= sauce
 ;
-; Räume: $$halle$hütte
+; RÃ¤ume: $$halle$hÃ¼tte
 ;
 $burkhard Burkhard
 	message = scharf
 ;
-; Räume: $$keller$k3
+; RÃ¤ume: $$keller$k3
 ;
 $robert	Robert
 	message    = scharf
-	#sageVater = (if_has löffel >>robert2,message = brav,remove)
+	#sageVater = (if_has lÃ¶ffel >>robert2,message = brav,remove)
 ;
-; Räume: $$dritter$KOBE
+; RÃ¤ume: $$dritter$KOBE
 ;
 $kobe Kobe
 	message	   = laut
@@ -67,7 +67,7 @@ $kobe Kobe
 			    if_here kobe &$$things$krach_raum),
 		      212:(message = geht,remove))
 	actions	   = (start:start,
-		      antrag:(if_state CC * if_state SAPH1 läuft
+		      antrag:(if_state CC * if_state SAPH1 lÃ¤uft
 			       (message = antrag,@#!passwort,
 			        [passwort = pass1,passwort = pass2,
 			         passwort = pass3,passwort = pass4),
@@ -76,24 +76,24 @@ $kobe Kobe
 			      if_state CC rot &$$things$CC,
 			      if_state CC * if_state SAPH1 steht &$$things$CC))
 ;
-; Räume: nicht draußen, nicht Kobe, nicht Maus
+; RÃ¤ume: nicht drauÃŸen, nicht Kobe, nicht Maus
 ;
 $jochen Jochen
 	message  = kontrollraum
-	#nehmen	 = message = trägt
+	#nehmen	 = message = trÃ¤gt
 	#ablegen = (if_position $$paterre$kontrollraum message = kontrollraum,
 		    if_notposition $$paterre$kontrollraum message = lang)
 	actions	 = weg:(message = flieht,remove)
 	weight	 = (60,0,0)
 ;
-; Räume: $$erster$150
+; RÃ¤ume: $$erster$150
 ;
 $charly Charly
 	message  = *
 	persons	 = walter
 	actions	 = walter:@#!walter
 ;
-; Räume: $$erster$150
+; RÃ¤ume: $$erster$150
 ;
 $walter Walter
 	message	 = *
@@ -101,42 +101,42 @@ $walter Walter
 	time	 = 137:(charly walter,@#>$$erster$150,
 			message = kommt,@message = da)
 ;
-; Räume: $$erster$schwille
+; RÃ¤ume: $$erster$schwille
 ;
 $schwille Schwille,Raucher
 	message	 = *
 ;
-; Räume: $$erster$bücherei
+; RÃ¤ume: $$erster$bÃ¼cherei
 ;
-$mühl Mühl,Bibliothekarin
+$mÃ¼hl MÃ¼hl,Bibliothekarin
 	message	= scharf
 ;
-; Räume: $$paterre$warenlager
+; RÃ¤ume: $$paterre$warenlager
 ;
 $steinbrecher Steinbrecher
 	message = scharf
 	actions = geht:remove
 ;
-; Räume: $$paterre$g3
+; RÃ¤ume: $$paterre$g3
 ;
 $leute Leute,Wissenschaftler,Meute,Personen
 	message = normal
 	actions	= toall:(if_state maus gefangen
-			  (if_state norbert schläft >>gewonnen,>>norbert),
+			  (if_state norbert schlÃ¤ft >>gewonnen,>>norbert),
 			 if_message normal (message = warten,start))
 	time	= +30:>>leute
 ;
-; Räume: $$erster$151
+; RÃ¤ume: $$erster$151
 ;
 $peter Peter
 	message = *
 ;
-; Räume: $$paterre$g15
+; RÃ¤ume: $$paterre$g15
 ;
 $reinhold Reinhold
 	message	= *
 ;
-; Räume: $$halle$el*
+; RÃ¤ume: $$halle$el*
 ;
 $maus Maus,Monster,Ratte,Tier
 	message = frei
@@ -194,17 +194,17 @@ $maus Maus,Monster,Ratte,Tier
 			 if_state flag1 halle &$$things$krach_maus,
 			 if_here leute &$$things$krach_leute),
 		   +1:if_nothere maus maus move)
-	#füttern = (if_nothas brot &$$things$brot,
+	#fÃ¼ttern = (if_nothas brot &$$things$brot,
 		    if_has brot brot maus)
 	weight   = (1000,0,0)
 ;
-; Räume: $$paterre$*
+; RÃ¤ume: $$paterre$*
 ;	 $$erster$*
 ;
 $wedemeyer Wedemeyer
 	actions = start:start
 	time	= +1:(message = *,
-		      #if_position $$paterre$g9 @message = trägt,
+		      #if_position $$paterre$g9 @message = trÃ¤gt,
 		      #if_position $$paterre$g11 #>$$paterre$g9,
 		      #if_position $$paterre$g12 #>$$paterre$g11,
 		      #if_position $$erster$e12 #>$$paterre$g12,
@@ -216,5 +216,5 @@ $wedemeyer Wedemeyer
 		      #if_position $$erster$e14 #>$$paterre$g14,
 		      #if_position $$erster$e11 #>$$erster$e14,
 		      #if_position $$erster$e9 #>$$erster$e11,
-		      if_message trägt @#>$$erster$e9,
+		      if_message trÃ¤gt @#>$$erster$e9,
 		      message = lang)

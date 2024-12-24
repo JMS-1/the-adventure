@@ -1,73 +1,73 @@
 $$dritter
 $d1_lang
-Hier ist Endstation. Der Gang vor Dir endet hier. Viele kleine Türen weisen
-auf schmale, unbehagliche Zimmerchen hin. Es ist ganz schön warm und
-Du erinnerst Dich, daß Du Dich, nach dem was Du von draußen gesehen hast,
-unmittelbar unter dem Dach befinden mußt.
+Hier ist Endstation. Der Gang vor Dir endet hier. Viele kleine TÃ¼ren weisen
+auf schmale, unbehagliche Zimmerchen hin. Es ist ganz schÃ¶n warm und
+Du erinnerst Dich, daÃŸ Du Dich, nach dem was Du von drauÃŸen gesehen hast,
+unmittelbar unter dem Dach befinden muÃŸt.
 $d1_kurz
 Du bist am Ende des warmen Gangs.
 $d2_lang
-Ein Gang von vorne nach hinten mit vielen Türen rechts und links. Einzig
-eine Tür auf Deiner linken Seite ist weit geöffnet. Nach vorne hin scheint
-sich der Gang noch ein ganzes Stück fortzusetzen. Hinter Dir erahnst Du
+Ein Gang von vorne nach hinten mit vielen TÃ¼ren rechts und links. Einzig
+eine TÃ¼r auf Deiner linken Seite ist weit geÃ¶ffnet. Nach vorne hin scheint
+sich der Gang noch ein ganzes StÃ¼ck fortzusetzen. Hinter Dir erahnst Du
 schon das Ende.
 $d2_kurz
 Du stehst im Gang.
 $d6_lang
-Das sieht mir aus wie eine Art Aufenthaltsraum. Neben einigen Geräten hinter
-Dir gibt es in diesem Raum im wesentlichen einen großen Tisch mit einer
-ganzen Zahl Stühle um ihn herum. Vor Dir steht ein Waschbecken, eine
+Das sieht mir aus wie eine Art Aufenthaltsraum. Neben einigen GerÃ¤ten hinter
+Dir gibt es in diesem Raum im wesentlichen einen groÃŸen Tisch mit einer
+ganzen Zahl StÃ¼hle um ihn herum. Vor Dir steht ein Waschbecken, eine
 Kaffeemaschine und mehrere Tassen auf einem niedrigen Schrank. Ein rundes
-Fenster links läßt etwas Licht herein. Der einzige Ausgang befindet sich
+Fenster links lÃ¤ÃŸt etwas Licht herein. Der einzige Ausgang befindet sich
 offenbar rechts.
 $d6_kurz
 Du bist im Aufenthaltsraum.
 $d3_lang
-Hinter einer offenen Glastür führt eine breite Treppe hinunter in andere
-Stockwerke dieses Gebäudes. Ein Gang von vorne nach hinten setzt sich in
-beide Richtungen noch ein gutes Stück fort. Direkt links ist ein kleiner
-Raum ohne Tür.
+Hinter einer offenen GlastÃ¼r fÃ¼hrt eine breite Treppe hinunter in andere
+Stockwerke dieses GebÃ¤udes. Ein Gang von vorne nach hinten setzt sich in
+beide Richtungen noch ein gutes StÃ¼ck fort. Direkt links ist ein kleiner
+Raum ohne TÃ¼r.
 $d3_kurz
-Du stehst vor der Tür zum Treppenhaus.
+Du stehst vor der TÃ¼r zum Treppenhaus.
 $ELPHO_lang
-Dein fachmännischer Blick sagt Dir sofort, daß hier ein VAX-Computer und
-ein Drucker stehen. Neben einigen Schränken mit Papier gibt es hier sonst
-nichts zu sehen. Die Geräte sind ausgeschaltet und wie tot. Der Ausgang dieses
+Dein fachmÃ¤nnischer Blick sagt Dir sofort, daÃŸ hier ein VAX-Computer und
+ein Drucker stehen. Neben einigen SchrÃ¤nken mit Papier gibt es hier sonst
+nichts zu sehen. Die GerÃ¤te sind ausgeschaltet und wie tot. Der Ausgang dieses
 winzigen Zimmers ist rechts von Dir.
 $ELPHO_kurz
 Du stehst im Zimmer mit dem Drucker.
 $d4_lang
 Der Gang von vorne nach hinten geht hier immmer noch weiter. Links ist
-die Tür zu einem kleinen Zimmer weit geöffnet. Leises Murmeln dringt
-aus ihm. Rechts ist die Tür eines Aufzugs zu sehen. Ein Schild warnt
+die TÃ¼r zu einem kleinen Zimmer weit geÃ¶ffnet. Leises Murmeln dringt
+aus ihm. Rechts ist die TÃ¼r eines Aufzugs zu sehen. Ein Schild warnt
 alle Benutzer mit der Aufschrift "Vorsicht! Aufzug macht was er will!".
-Du findest das etwas verwunderlich, hälst Dich aber trotzdem von ihm fern.
+Du findest das etwas verwunderlich, hÃ¤lst Dich aber trotzdem von ihm fern.
 $d4_kurz
 Du stehst vor dem Zimmer mit dem Murmeln.
 $aufzug
-Als Du die Aufzugtür trotz des Schildes öffnen willst, erhälst Du einen
+Als Du die AufzugtÃ¼r trotz des Schildes Ã¶ffnen willst, erhÃ¤lst Du einen
 leichten Schlag. Das macht Dich zwar immer noch nicht schlau, aber Du kannst so
-die Tür nicht öffnen. Da die Kabine sowieso nicht da ist, solltest Du
+die TÃ¼r nicht Ã¶ffnen. Da die Kabine sowieso nicht da ist, solltest Du
 vielleicht einen anderen Weg versuchen.
 $d5_lang
-Du bist immer noch in dem Gang. Vor Dir lädt Dich eine weit geöffnete Tür
-in ein geräumiges Zimmer ein. Der Gang selbst setzt sich nach hinten bis
-an den Horizont - naja, vielleicht bis kurz davor - fort. Alle Türen links
-und rechts sind geschlossen oder führen in völlig uninteressante Räume.
+Du bist immer noch in dem Gang. Vor Dir lÃ¤dt Dich eine weit geÃ¶ffnete TÃ¼r
+in ein gerÃ¤umiges Zimmer ein. Der Gang selbst setzt sich nach hinten bis
+an den Horizont - naja, vielleicht bis kurz davor - fort. Alle TÃ¼ren links
+und rechts sind geschlossen oder fÃ¼hren in vÃ¶llig uninteressante RÃ¤ume.
 $d5_kurz
-Du bist am Ende des Gangs vor dem geräumigen Raum.
+Du bist am Ende des Gangs vor dem gerÃ¤umigen Raum.
 $d7_lang
-Hier arbeitet wohl ein Elektroniker. Allerlei Kleinkram wie Widerstände,
+Hier arbeitet wohl ein Elektroniker. Allerlei Kleinkram wie WiderstÃ¤nde,
 Kondensatoren und ICs sowie entsprechendes Werkzeug liegt hier herum.
-Die schiefe Decke zeigt Dir, daß Du Dich unmittelbar unter dem Dach dieses
-Gebäudes befindest. Auch der Nebenraum sieht nicht viel anders aus. Wenn
-Du den Raum verlassen möchtest, schlage ich Dir die breite Tür hinter Dir
+Die schiefe Decke zeigt Dir, daÃŸ Du Dich unmittelbar unter dem Dach dieses
+GebÃ¤udes befindest. Auch der Nebenraum sieht nicht viel anders aus. Wenn
+Du den Raum verlassen mÃ¶chtest, schlage ich Dir die breite TÃ¼r hinter Dir
 vor.
 $d7_kurz
 Du stehst in dem Raum des Elektronikers.
 $KOBE_lang
-Der Wandschrank links von Dir, direkt gegenüber dem Ausgang rechts, ist
-mit Handbüchern vollgepfropft. An einem der zwei Schreibtische davor steht
+Der Wandschrank links von Dir, direkt gegenÃ¼ber dem Ausgang rechts, ist
+mit HandbÃ¼chern vollgepfropft. An einem der zwei Schreibtische davor steht
 ein Terminal und ein kleines Namensschild mit der Aufschrift "Dr.P. Kobe".
 Aus dem Fenster siehst Du den blauen Himmel.
 $KOBE_kurz

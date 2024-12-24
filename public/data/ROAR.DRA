@@ -1,153 +1,153 @@
 $$draussen
 $ende/1
-Hier kannst Du leider nicht weitergehen. Es ist zwar keineswegs so, daß
+Hier kannst Du leider nicht weitergehen. Es ist zwar keineswegs so, daÃŸ
 der Weg zu Ende ist. Um ganz ehrlich zu sein - ich habe Angst. Man
-erzählt sich, daß es außerhalb gewisser Grenzen grauenerregende Monster
-gibt. Was aber nicht heißen soll, daß Du nicht auch innerhalb des Geländes
-auf nie Gesehenes stoßen kannst.
+erzÃ¤hlt sich, daÃŸ es auÃŸerhalb gewisser Grenzen grauenerregende Monster
+gibt. Was aber nicht heiÃŸen soll, daÃŸ Du nicht auch innerhalb des GelÃ¤ndes
+auf nie Gesehenes stoÃŸen kannst.
 $ende/2
 Na so was, hier ist meine Welt zu Ende. Ich kann Dir leider nicht weiter
-folgen, und ohne mich bist Du blind. Da ich für Dich verantwortlich bin,
+folgen, und ohne mich bist Du blind. Da ich fÃ¼r Dich verantwortlich bin,
 solltest Du Dir einen anderen Weg suchen.
 $ende/3
-Du gehst ein Stück die Straße hinunter und plötzlich überkommt Dich ein
-Gefühl von absoluter Einsamkeit. Du versuchst es zu unterdrücken, aber es
-ist so stark, daß Du auf die Knie sinkst und Dich nur noch kriechend
-fortbewegen kannst. Schließlich gibst Du Deine sinnlosen Bemühungen auf
-und schleppst Dich wieder zurück.
+Du gehst ein StÃ¼ck die StraÃŸe hinunter und plÃ¶tzlich Ã¼berkommt Dich ein
+GefÃ¼hl von absoluter Einsamkeit. Du versuchst es zu unterdrÃ¼cken, aber es
+ist so stark, daÃŸ Du auf die Knie sinkst und Dich nur noch kriechend
+fortbewegen kannst. SchlieÃŸlich gibst Du Deine sinnlosen BemÃ¼hungen auf
+und schleppst Dich wieder zurÃ¼ck.
 $fahrrad
 Mit dem Fahrrad kommst Du da sicher nicht weiter.
 $wand
-Du kannst das Gitter nicht überwinden. Probiere es doch mal in einer
+Du kannst das Gitter nicht Ã¼berwinden. Probiere es doch mal in einer
 anderen Richtung.
 $s1_lang
-Du stehst an einer langen Straße. Vor Dir befindet sich eine Ampel und
-ein Zebrastreifen. Die Straße setzt sich nach links und rechts fort,
-allerdings würde ich nur äußerst ungerne nach links weitergehen. Hinter
-Dir ist eine Eisdiele. Sie ist geöffnet. Auf der anderen Straßenseite
-ist ein Gebäude, in dem sich ein Restaurant zu befinden scheint.
+Du stehst an einer langen StraÃŸe. Vor Dir befindet sich eine Ampel und
+ein Zebrastreifen. Die StraÃŸe setzt sich nach links und rechts fort,
+allerdings wÃ¼rde ich nur Ã¤uÃŸerst ungerne nach links weitergehen. Hinter
+Dir ist eine Eisdiele. Sie ist geÃ¶ffnet. Auf der anderen StraÃŸenseite
+ist ein GebÃ¤ude, in dem sich ein Restaurant zu befinden scheint.
 $s1_kurz
 Du stehst vor der Eisdiele.
 $s2_lang
-Vor Dir befindet sich ein Chinesisches Restaurant, dessen Eingangstür
-einladend geöffnet ist. Rechts und links setzt sich eine lange Straße
-fort. Bedrohliche, düstere Rauchschwaden verhüllen die Sicht auf die
-linke Seite. Hinter Dir ist eine Ampel. Ein Blick über die Straße zeigt
+Vor Dir befindet sich ein Chinesisches Restaurant, dessen EingangstÃ¼r
+einladend geÃ¶ffnet ist. Rechts und links setzt sich eine lange StraÃŸe
+fort. Bedrohliche, dÃ¼stere Rauchschwaden verhÃ¼llen die Sicht auf die
+linke Seite. Hinter Dir ist eine Ampel. Ein Blick Ã¼ber die StraÃŸe zeigt
 eine Eisdiele.
 $s2_kurz
 Du bist am Chinarestaurant.
 $s7_lang
-Vor Dir, aber auf der anderen Seite der Straße, befindet sich ein kleiner
-Seitenweg, fast wie ein Feldweg oder eine Baustraße. Die Hauptstraße verläuft
+Vor Dir, aber auf der anderen Seite der StraÃŸe, befindet sich ein kleiner
+Seitenweg, fast wie ein Feldweg oder eine BaustraÃŸe. Die HauptstraÃŸe verlÃ¤uft
 direkt vor Dir von rechts nach links. Das Gitter hinter Dir bedeutet erst einmal
-Endstation für Erkundungen.
+Endstation fÃ¼r Erkundungen.
 $s7_kurz
-Auf der anderen Straßenseite beginnt eine Baustraße.
+Auf der anderen StraÃŸenseite beginnt eine BaustraÃŸe.
 $s9_lang
-Du stehst an einem Straßenrand. Die Straße setzt sich nach links und rechts
-unüberschaubar weit fort. Hinter Dir befindet sich eine Art Gitter oder Zaun,
-hinter dem allerlei Grün zu sehen ist.
+Du stehst an einem StraÃŸenrand. Die StraÃŸe setzt sich nach links und rechts
+unÃ¼berschaubar weit fort. Hinter Dir befindet sich eine Art Gitter oder Zaun,
+hinter dem allerlei GrÃ¼n zu sehen ist.
 $s9_kurz
 Du stehst vor dem Gitter.
 $s12_lang
 Kurz hinter Dir ist ein Tor in einem langen, hohen Gitterzaun. Links und
-rechts siehst Du eine Straße. Auf der gegenüberliegenden Seite setzt sich
-die Straße in einen breiten Seitenweg fort.
+rechts siehst Du eine StraÃŸe. Auf der gegenÃ¼berliegenden Seite setzt sich
+die StraÃŸe in einen breiten Seitenweg fort.
 $s12_kurz
 Du bist vor dem Gittertor.
 $s15_lang
 Obwohl zu Deiner Rechten feuchte Nebel wallen, siehst Du auf der anderen
-Straßenseite die Einfahrt eines Parkplatzes. Die Straße ist nach links hin
-weit zu übersehen. Als Du Dich etwas zurücklehnst spürst Du einen kräftigen
+StraÃŸenseite die Einfahrt eines Parkplatzes. Die StraÃŸe ist nach links hin
+weit zu Ã¼bersehen. Als Du Dich etwas zurÃ¼cklehnst spÃ¼rst Du einen krÃ¤ftigen
 Zaun.
 $s15_kurz
-Du stehst dem Parkplatz gegenüber.
+Du stehst dem Parkplatz gegenÃ¼ber.
 $s6_lang
-Die Straße verzweigt hier in einen kleinen Weg vor Dir, der mir eine Baustraße
-zu sein scheint und verläuft ansonsten von links nach rechts. Weit hinter Dir,
+Die StraÃŸe verzweigt hier in einen kleinen Weg vor Dir, der mir eine BaustraÃŸe
+zu sein scheint und verlÃ¤uft ansonsten von links nach rechts. Weit hinter Dir,
 auf der anderen Seite, beginnt ein hoher Gitterzaun.
 $s6_kurz
-Du stehst am Anfang der Baustraße.
+Du stehst am Anfang der BaustraÃŸe.
 $s8_lang
-Direkt vor Dir ist ein kleines Café, das allerdings ausgestorben scheint und
-wahrscheinlich geschlossen ist. Daneben führt ein kleiner, holpriger Weg 
-zwischen einigen eingezäunten, zurückliegenden Gebäuden vorbei. Die Hauptstraße
-verläuft von links nach rechts. Auf der anderen Straßenseite hinter Dir
+Direkt vor Dir ist ein kleines CafÃ©, das allerdings ausgestorben scheint und
+wahrscheinlich geschlossen ist. Daneben fÃ¼hrt ein kleiner, holpriger Weg 
+zwischen einigen eingezÃ¤unten, zurÃ¼ckliegenden GebÃ¤uden vorbei. Die HauptstraÃŸe
+verlÃ¤uft von links nach rechts. Auf der anderen StraÃŸenseite hinter Dir
 ist ein hoher Gitterzaun.
 $s8_kurz
-Du stehst vor dem Café.
+Du stehst vor dem CafÃ©.
 $s11_lang
-Du sieht vor Dir ein etwas ältliches Gemäuer. Daneben beginnt eine breite
-Seitenstraße. Eine Unzahl von geparkten Autos versperrt Dir die Sicht auf
-den weiteren Verlauf. Die Hauptstraße selbst setzt sich links und rechts
+Du sieht vor Dir ein etwas Ã¤ltliches GemÃ¤uer. Daneben beginnt eine breite
+SeitenstraÃŸe. Eine Unzahl von geparkten Autos versperrt Dir die Sicht auf
+den weiteren Verlauf. Die HauptstraÃŸe selbst setzt sich links und rechts
 fort.
 $s11_kurz
-Vor Dir beginnt die Seitenstraße.
+Vor Dir beginnt die SeitenstraÃŸe.
 $s14_lang
 Wenn Du vor Dich siehst, erblickst Du einen gepflegten Rasen, hinter dem ein
-eindrucksvolles Haus steht. Wenn Du nicht der Straße links und rechts folgen
+eindrucksvolles Haus steht. Wenn Du nicht der StraÃŸe links und rechts folgen
 willst, kannst Du an dem Haus vorbei gehen. Dort sehe ich eine Art Parkplatz,
-auf dem allerdings auch eine Vielzahl von Bäumen gepflanzt sind. Das volle
-Grün der Blätter läßt Dich fragen, ob die parkenden Autos alle einen
-Katalysator haben oder die Bäume etwa schon resistent sind. Rechts scheint
-die Straße in einer Nebelwand zu enden.
+auf dem allerdings auch eine Vielzahl von BÃ¤umen gepflanzt sind. Das volle
+GrÃ¼n der BlÃ¤tter lÃ¤ÃŸt Dich fragen, ob die parkenden Autos alle einen
+Katalysator haben oder die BÃ¤ume etwa schon resistent sind. Rechts scheint
+die StraÃŸe in einer Nebelwand zu enden.
 $s14_kurz
 Du stehst vor dem Parkplatz.
 $s3_lang
-Du befindet Dich in einer Baustraße. Hier liegt eine ganze Menge Dreck herum
-und links und rechts ist der Weg eingezäunt. Ein Stück vor Dir führt allerdings
-eine kleine Straße von links nach rechts. Die linke Seite wirkt aber nicht
-sehr einladend. Hinter Dir ist eine breite Straße.
+Du befindet Dich in einer BaustraÃŸe. Hier liegt eine ganze Menge Dreck herum
+und links und rechts ist der Weg eingezÃ¤unt. Ein StÃ¼ck vor Dir fÃ¼hrt allerdings
+eine kleine StraÃŸe von links nach rechts. Die linke Seite wirkt aber nicht
+sehr einladend. Hinter Dir ist eine breite StraÃŸe.
 $s3_kurz
-Du bist in der Baustraße.
+Du bist in der BaustraÃŸe.
 $s4_lang
 Wenn Du nach links gehst, scheinst Du in eine Art Feldweg zu kommen. Vor und
-hinter Dir versperren düstere Gebäude den Weg. Zur Rechten siehst Du einen
+hinter Dir versperren dÃ¼stere GebÃ¤ude den Weg. Zur Rechten siehst Du einen
 holprigen Weg.
 $s4_kurz
 Du steht zwischen zwei kleinen Wegen.
 $s5_lang
-Man, hier kann man sich ja die Haxen brechen. Die Straße könnte auch gut
-in einem Science-Fiction-Film eingesetzt werden und würde zum Beispiel die
-Mondoberfläche praktisch exakt wiedergeben. Zurückliegende Häuser der
-häßlichen Sorte links und rechts von Dir erhöhen den Reiz der Umgebung
+Man, hier kann man sich ja die Haxen brechen. Die StraÃŸe kÃ¶nnte auch gut
+in einem Science-Fiction-Film eingesetzt werden und wÃ¼rde zum Beispiel die
+MondoberflÃ¤che praktisch exakt wiedergeben. ZurÃ¼ckliegende HÃ¤user der
+hÃ¤ÃŸlichen Sorte links und rechts von Dir erhÃ¶hen den Reiz der Umgebung
 nicht gerade. Nach vorne und hinten setzt sich der Weg fort. Aber hallo - auch
-links von Dir, ungefähr in der Mitte des Weges, gibt es eine Abzweigung.
+links von Dir, ungefÃ¤hr in der Mitte des Weges, gibt es eine Abzweigung.
 $s5_kurz
 Du bist auf dem holprigen Weg.
 $s10_lang
-Hinter Dir beginnt ein ziemlich holpriger Weg und Zäune versperren den
+Hinter Dir beginnt ein ziemlich holpriger Weg und ZÃ¤une versperren den
 Durchgang nach vorne oder links. Nach rechts hin gibt es eine - na ja,
-Gasse trifft es wohl am besten, wenn man nicht ausfallend werden möchte.
-Dahinter scheint eine größere Straße zu liegen.
+Gasse trifft es wohl am besten, wenn man nicht ausfallend werden mÃ¶chte.
+Dahinter scheint eine grÃ¶ÃŸere StraÃŸe zu liegen.
 $s10_kurz
 Du bist in der Gasse.
 $s13_lang
-Du stehst in einer langen Straße. Auf beiden Seiten parken reichlich
-Autos und versperren den Durchgang praktisch vollständig. Die Straße
-setzt sich nach hinten und vorne fort. Eine Gasse kreutzt die Straße von
+Du stehst in einer langen StraÃŸe. Auf beiden Seiten parken reichlich
+Autos und versperren den Durchgang praktisch vollstÃ¤ndig. Die StraÃŸe
+setzt sich nach hinten und vorne fort. Eine Gasse kreutzt die StraÃŸe von
 rechts nach links.
 $s13_kurz
-Du bist in der Straße mit den parkenden Autos.
+Du bist in der StraÃŸe mit den parkenden Autos.
 $s19_lang
-Rechts von Dir führt ein kleiner Weg zu einem schon leicht verfallenen
-Haus. Die Straße scheint sich nach vorne nicht weiter fortzusetzen.
-Kurz bevor der überblickbare Teil, stark eingeschränkt durch Nebel, endet,
-siehst Du ein Gerüst. Ein Anbau des alten Hauses, offenbar neuerer Bauart,
-wird wohl verschönert. Das Gerüst reicht bis zum Flachdach des Anbaus, beginnt
-aber leider erst in etwas 2,5 Metern Höhe.
+Rechts von Dir fÃ¼hrt ein kleiner Weg zu einem schon leicht verfallenen
+Haus. Die StraÃŸe scheint sich nach vorne nicht weiter fortzusetzen.
+Kurz bevor der Ã¼berblickbare Teil, stark eingeschrÃ¤nkt durch Nebel, endet,
+siehst Du ein GerÃ¼st. Ein Anbau des alten Hauses, offenbar neuerer Bauart,
+wird wohl verschÃ¶nert. Das GerÃ¼st reicht bis zum Flachdach des Anbaus, beginnt
+aber leider erst in etwas 2,5 Metern HÃ¶he.
 $s19_kurz
 Du stehst vor dem alten Haus mit dem Anbau.
 $s20_lang
 Du stehst auf einem kleinen Weg. Vor und hinter Dir verhindert ein Zaun und
-Dein gutes Benehmen das Betreten eines gepflegten Rasens. Der Weg führt nach
-links zu einer Straße. Auf Deiner rechten Seite steht eine altes Haus, und
-Du siehst eine Tür, offensichtlich der Haupteingang.
+Dein gutes Benehmen das Betreten eines gepflegten Rasens. Der Weg fÃ¼hrt nach
+links zu einer StraÃŸe. Auf Deiner rechten Seite steht eine altes Haus, und
+Du siehst eine TÃ¼r, offensichtlich der Haupteingang.
 $s20_kurz
 Du stehst vor dem Haupteingang des alten Hauses.
 $s16_lang
-Du hast eine kleine Gasse erreicht. Sie führt von links, wo eine große
-Straße zu sein scheint, nach rechts, wo sie an einer Hauswand endet.
+Du hast eine kleine Gasse erreicht. Sie fÃ¼hrt von links, wo eine groÃŸe
+StraÃŸe zu sein scheint, nach rechts, wo sie an einer Hauswand endet.
 Vor und hinter Dir versperren hohe Steinmauern die Sicht. Am rechten Ende
 der Mauer vor Dir setzt sich die Gasse nach vorne fort. Ein alter Baum
 ziert einen kleinen Platz.
@@ -155,72 +155,72 @@ $s16_kurz
 Du stehst zwischen den Mauern.
 $s17_lang
 Du bist in einer Art Hof gelandet. Hinter Dir siehst Du eine kleine
-Gasse und eine hohe Mauer. Links ist eine Tür an einem alten Haus angebracht,
-offensichtlich ein Nebeneingang. Nach vorne führt ein leicht abfallender
-Weg weiter. Rechts versperren Gebäude den Weg.
+Gasse und eine hohe Mauer. Links ist eine TÃ¼r an einem alten Haus angebracht,
+offensichtlich ein Nebeneingang. Nach vorne fÃ¼hrt ein leicht abfallender
+Weg weiter. Rechts versperren GebÃ¤ude den Weg.
 $s17_kurz
 Du stehst am Nebeneingang des alten Hauses.
 $s18_lang
-Na sowas, eine Sackgasse. Du scheinst hier nur noch zurückzukommen. Die
-Häuserwände rings herum haben keine offensichtlichen Eingänge bis auf
-eine kleine Tür vor Dir. Hohe Wände verdunkeln die Umgebung und Dir
-fröstelt es leicht.
+Na sowas, eine Sackgasse. Du scheinst hier nur noch zurÃ¼ckzukommen. Die
+HÃ¤userwÃ¤nde rings herum haben keine offensichtlichen EingÃ¤nge bis auf
+eine kleine TÃ¼r vor Dir. Hohe WÃ¤nde verdunkeln die Umgebung und Dir
+frÃ¶stelt es leicht.
 $s18_kurz
-Du stehst an der Tür in der Sackgasse.
+Du stehst an der TÃ¼r in der Sackgasse.
 $dach_lang
-Mühevoll hast Du das Gerüst erklettert - die Leiter ist eine echte Hilfe -
+MÃ¼hevoll hast Du das GerÃ¼st erklettert - die Leiter ist eine echte Hilfe -
 und bist auf das Dach gelangt. Ich
-würde sagen, die Aussicht ist eher bescheiden. Ein paar Wände, ein bißchen
-Nebel - vielleicht gefällt Dir ja so was. Einige Luken sind auf dem Dach
+wÃ¼rde sagen, die Aussicht ist eher bescheiden. Ein paar WÃ¤nde, ein biÃŸchen
+Nebel - vielleicht gefÃ¤llt Dir ja so was. Einige Luken sind auf dem Dach
 angebracht. Eine Luke rechts von Dir steht weit offen. Ein
-Blick in ein Zimmer zeigt Dir, daß Dich ein Abstieg vor keine Probleme
-stellen wird. Ein Gerüst erlaubt Dir aber auch den Weg auf die Straße.
+Blick in ein Zimmer zeigt Dir, daÃŸ Dich ein Abstieg vor keine Probleme
+stellen wird. Ein GerÃ¼st erlaubt Dir aber auch den Weg auf die StraÃŸe.
 $dach_kurz
 Du stehst auf dem Dach des Anbaus.
 $w1_lang
-Du bist auf einer gammligen Straße, die von links nach rechts führt. Ich
-glaube nicht, daß wir links noch weiter kommen. Vorne und hinten sind Zäune,
+Du bist auf einer gammligen StraÃŸe, die von links nach rechts fÃ¼hrt. Ich
+glaube nicht, daÃŸ wir links noch weiter kommen. Vorne und hinten sind ZÃ¤une,
 hinter denen einige Pflanzungen angelegt sind. Inmitten des Zauns vor Dir ist
-eine kleine Lücke, durch die ein Weg zu einem Parkplatz vor einer
-großen Halle führt.
+eine kleine LÃ¼cke, durch die ein Weg zu einem Parkplatz vor einer
+groÃŸen Halle fÃ¼hrt.
 $w1_kurz
 Du stehst vor dem Weg zum Parkplatz.
 $w2_lang
-Du bist von Wasser umgeben, hier muß wohl eine größere Überschwemmung
-stattgefunden haben. Hinter Dir führt ein kleiner, trockener Weg offenbar
-zu einer Straße. Die einzige andere Art, hier einigermaßen glimpflich
-wegzukommen, ist der Eingang zu der großen Halle links von Dir. Durch die
-offene Tür hörst Du leise Musik.
+Du bist von Wasser umgeben, hier muÃŸ wohl eine grÃ¶ÃŸere Ãœberschwemmung
+stattgefunden haben. Hinter Dir fÃ¼hrt ein kleiner, trockener Weg offenbar
+zu einer StraÃŸe. Die einzige andere Art, hier einigermaÃŸen glimpflich
+wegzukommen, ist der Eingang zu der groÃŸen Halle links von Dir. Durch die
+offene TÃ¼r hÃ¶rst Du leise Musik.
 $w2_kurz
 Du stehst von Wasser umgeben vor der Halle.
 $w3_lang
-Du hörst unregelmäßiges Tropfen von Wasser, wie Dich hier überhaupt alles
-auf den ersten Blick an eine Tropfsteinhöhle erinnert. Aus der Größe der
+Du hÃ¶rst unregelmÃ¤ÃŸiges Tropfen von Wasser, wie Dich hier Ã¼berhaupt alles
+auf den ersten Blick an eine TropfsteinhÃ¶hle erinnert. Aus der GrÃ¶ÃŸe der
 Stalaktiten und der Wachstumsgeschwindigkeit von einem Millimeter in zehn
 Jahren kannst Du leicht errechnen, wie lange das Dach schon undicht ist.
 Vor Dir siehst Du alte, verrostete Magnete mit furchterregend weit aufgerissenen
-Magnetgaps in einem Raum mit allerlei Gerümpel. Rechts ist der Ausgang dieser
-Höhle und von links ertönt flotte Musik. Der Weg ist hinter Dir
-durch einen Müllcontainer versperrt.
+Magnetgaps in einem Raum mit allerlei GerÃ¼mpel. Rechts ist der Ausgang dieser
+HÃ¶hle und von links ertÃ¶nt flotte Musik. Der Weg ist hinter Dir
+durch einen MÃ¼llcontainer versperrt.
 $w3_kurz
-Du bist in der Tropfsteinhöhle.
+Du bist in der TropfsteinhÃ¶hle.
 $w4_lang
-Du hast eine Gerümpelecke erreicht. Es gibt nur einen Ausgang hinter Dir.
+Du hast eine GerÃ¼mpelecke erreicht. Es gibt nur einen Ausgang hinter Dir.
 Als Du Dich umsiehst, entdeckst Du Kisten mit Aluminiumrahmen und mehrere
-Berge von durchlöcherten und von Grünspan enstellten Messingplatten.
+Berge von durchlÃ¶cherten und von GrÃ¼nspan enstellten Messingplatten.
 $w4_kurz
-Du stehst in der Gerümpelecke.
+Du stehst in der GerÃ¼mpelecke.
 $w5_lang
 Hier ist ein Haufen klebriger Folie auf dem Boden, durch die Du Dich nur
 langsam bewegen kannst. Der Weg nach rechts sieht recht vielversprechend
-aus, ganz im Gegensatz zu dem nach links, der größenteils von durchsichtiger
+aus, ganz im Gegensatz zu dem nach links, der grÃ¶ÃŸenteils von durchsichtiger
 Plastikfolie verhangen ist. Als Du genauer hinsiehst, erahnst Du ein Radio,
-aus dem laute Musik dröhnt. Vor und hinter Dir sind massive Wände.
+aus dem laute Musik drÃ¶hnt. Vor und hinter Dir sind massive WÃ¤nde.
 $w5_kurz
 Du stehst in einem Haufen klebriger Folie.
 $leiter
-So sehr Du auch herumhüpfst, was übrigens recht graziös wirkt, Du kannst
-das untere Ende des Gerüsts einfach nicht erreichen.
+So sehr Du auch herumhÃ¼pfst, was Ã¼brigens recht graziÃ¶s wirkt, Du kannst
+das untere Ende des GerÃ¼sts einfach nicht erreichen.
 $hatleiter
-Die Leiter ist ziemlich groß und paßt nicht durch den Eingang. Entweder
+Die Leiter ist ziemlich groÃŸ und paÃŸt nicht durch den Eingang. Entweder
 Du legst sie ab oder suchst Dir einen anderen Weg.

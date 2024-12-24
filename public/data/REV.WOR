@@ -6,51 +6,51 @@
                 gebe+gib+schenke+wirf+werfe.kette+fahrradkette+motorradkette)
 #gibkarte    = (gebe+gib+schenke+wirf+werfe.%.karte+wanderkarte+wegbeschreibung!,
 	        gebe+gib+schenke+wirf+werfe.karte+wanderkarte+wegbeschreibung)
-#gibjochen   = (gebe+gib+schenke+wirf+werfe.%.salzstangen+kräcker+kraecker!,
-	        gebe+gib+schenke+wirf+werfe.salzstangen+kräcker+kraecker)
+#gibjochen   = (gebe+gib+schenke+wirf+werfe.%.salzstangen+krÃ¤cker+kraecker!,
+	        gebe+gib+schenke+wirf+werfe.salzstangen+krÃ¤cker+kraecker)
 #gibburkhard = (gebe+gib+schenke+wirf+werfe.burkhard,
 	        gebe+gib+schenke+wirf+werfe.%.burkhard!)
 #gibhansi    = (gebe+gib+schenke+wirf+werfe.hans+hansi+hans-christian,
 	        gebe+gib+schenke+wirf+werfe.%.hans+hansi+hans-christian!)
 #gibanna     = (gebe+gib+schenke+wirf+werfe.anna+baby+kind,
 	        gebe+gib+schenke+wirf+werfe.%.anna+baby+kind!)
-#bezahlen    = (bezahle,gebe+gib+wirf+werfe.geld+moneten+kohle+münzen,
-	        gebe+gib+wirf+werfe.%.geld+moneten+kohle+münzen!)
-#gibfeuer    = (gebe+gib+wirf+werfe.streichhölzer+streichhoelzer,
-	        gebe+gib+wirf+werfe.%.streichhölzer+streichhoelzer!)
+#bezahlen    = (bezahle,gebe+gib+wirf+werfe.geld+moneten+kohle+mÃ¼nzen,
+	        gebe+gib+wirf+werfe.%.geld+moneten+kohle+mÃ¼nzen!)
+#gibfeuer    = (gebe+gib+wirf+werfe.streichhÃ¶lzer+streichhoelzer,
+	        gebe+gib+wirf+werfe.%.streichhÃ¶lzer+streichhoelzer!)
 #gibmesser   = (gebe+gib+wirf+werfe.messer+klinge+rambomesser,
 	        gebe+gib+wirf+werfe.%.messer+klinge+rambomesser!)
-#füttern     = (füttere+fuettere+stopfe)
+#fÃ¼ttern     = (fÃ¼ttere+fuettere+stopfe)
 #nehmen      = (nimm+nehme+hole+hebe+greife+grabsche,%.aufheben!)
-#ablegen     = (lege+werfe+schmeiße+schmeisse+entferne+stelle,
+#ablegen     = (lege+werfe+schmeiÃŸe+schmeisse+entferne+stelle,
 	        %.hinlegen+ablegen+wegwerfen+abstellen+hinstellen!)
-#öffne       = (öffne+oeffne+reiße+reisse+trete+schlage)
-#schließe    = (verschließe+verschliesse+schließe+schliesse+knalle)
-#essen	     = (esse+verspeise+friß+friss+verschlinge)
+#Ã¶ffne       = (Ã¶ffne+oeffne+reiÃŸe+reisse+trete+schlage)
+#schlieÃŸe    = (verschlieÃŸe+verschliesse+schlieÃŸe+schliesse+knalle)
+#essen	     = (esse+verspeise+friÃŸ+friss+verschlinge)
 #trinken     = (trinke+saufe+vernichte)
 #wasser      = (trinke.wasser!)
-#töte	     = (töte+vernichte+kille+eleminiere+lösche+murkse+toete+loesche)
-#drehen	     = (drehe+löse+loese+befestige)
-#süden	     = (|gehe+laufe+renne.|nach.hinten+süden+sueden+süd+sued+s!,
-	        |gehe+laufe+renne.zurück+zurueck!)
+#tÃ¶te	     = (tÃ¶te+vernichte+kille+eleminiere+lÃ¶sche+murkse+toete+loesche)
+#drehen	     = (drehe+lÃ¶se+loese+befestige)
+#sÃ¼den	     = (|gehe+laufe+renne.|nach.hinten+sÃ¼den+sueden+sÃ¼d+sued+s!,
+	        |gehe+laufe+renne.zurÃ¼ck+zurueck!)
 #norden	     = (|gehe+laufe+renne.|nach.vorne+vorn+norden+nord+n!,
 	        |gehe+laufe+renne.weiter!)
 #westen	     = (|gehe+laufe+renne.|nach.links+westen+west+w!)
 #osten	     = (|gehe+laufe+renne.|nach.rechts+osten+ost+o!)
 #hoch 	     = (|gehe+klettere+laufe+renne.|nach.oben!,
-	        |klettere.aufwärts+aufwaerts!,|gehe+laufe+renne.hoch+h!)
+	        |klettere.aufwÃ¤rts+aufwaerts!,|gehe+laufe+renne.hoch+h!)
 #runter	     = (|gehe+klettere+laufe+renne.|nach.unten!,
-	        |klettere.abwärts+abwaerts!,|gehe+laufe+renne.runter+r!)
-#ansehen     = (trage!,gegenstände+gegenstaende+dinge+krams!)
-#uhrzeit     = (spät+spaet!,|sage.uhrzeit!)
+	        |klettere.abwÃ¤rts+abwaerts!,|gehe+laufe+renne.runter+r!)
+#ansehen     = (trage!,gegenstÃ¤nde+gegenstaende+dinge+krams!)
+#uhrzeit     = (spÃ¤t+spaet!,|sage.uhrzeit!)
 #sagen	     = (sage+frage+rufe+schreie.*!)
 #miao	     = (|sage+rufe+schreie.miao+miau!)
-#beenden     = (schluß+schluss+ende+vorbei!,|will.raus.|hier!,
+#beenden     = (schluÃŸ+schluss+ende+vorbei!,|will.raus.|hier!,
 		|will.|hier.raus!)
-#messen	     = (miß+miss+untersuche+messe+begutachte)
+#messen	     = (miÃŸ+miss+untersuche+messe+begutachte)
 #lesen	     = (lies+lese+betrachte,%.lesen+vorlesen+betrachten!)
-#zünde	     = (zünde+entzünde+zuende+entzuende+entflamme)
-#reinigen    = (reinige+säubere+saeubere+putze.schuhe+treter+latschen!)
-#starten     = (starte+betätige+betaetige+benutze+aktiviere,mache+schalte.%.an!)
+#zÃ¼nde	     = (zÃ¼nde+entzÃ¼nde+zuende+entzuende+entflamme)
+#reinigen    = (reinige+sÃ¤ubere+saeubere+putze.schuhe+treter+latschen!)
+#starten     = (starte+betÃ¤tige+betaetige+benutze+aktiviere,mache+schalte.%.an!)
 #besteige    = (klettere+besteige)
-#klingeln    = (klingele+klingle!,drücke+betätige.klingel+klingenknopf+knopf!)
+#klingeln    = (klingele+klingle!,drÃ¼cke+betÃ¤tige.klingel+klingenknopf+knopf!)

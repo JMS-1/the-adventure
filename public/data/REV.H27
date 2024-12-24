@@ -1,14 +1,14 @@
 $$haus27
 $flur_lang
-Das ist der enge Flur eines der kleinen Häuser. Vor Dir und rechts siehst
-Du Durchgänge zu zwei Zimmern. Eine Treppe führt nach oben und unten, wo
-sich anscheinend noch weitere Zimmer befinden. Die Haustüre ist links
+Das ist der enge Flur eines der kleinen HÃ¤user. Vor Dir und rechts siehst
+Du DurchgÃ¤nge zu zwei Zimmern. Eine Treppe fÃ¼hrt nach oben und unten, wo
+sich anscheinend noch weitere Zimmer befinden. Die HaustÃ¼re ist links
 von Dir.
 $flur_kurz
-Du stehst im Flur neben der Haustüre.
+Du stehst im Flur neben der HaustÃ¼re.
 $oben1_lang
 Du hast das obere Ende der gewagten Treppenkonstruktion erreicht. Eine
-Art Gang läuft parallel zu einem hohen Geländet nach vorne. Rechts und
+Art Gang lÃ¤uft parallel zu einem hohen GelÃ¤ndet nach vorne. Rechts und
 links liegen zwei Zimmer.
 $oben1_kurz
 Du stehst am oberen Ende der Treppe.
@@ -19,7 +19,7 @@ $oben2_kurz
 Du bist am Ende des Gangs im ersten Stock.
 $treppe1_lang
 Du stehst auf der Treppe zwischen Paterre und dem ersten Stock. Die
-Holzkonstruktion besteht aus breiten Stufen, durch deren Zwischenräume
+Holzkonstruktion besteht aus breiten Stufen, durch deren ZwischenrÃ¤ume
 Du bis weit nach unten sehen kannst. Ein Blick nach oben zeigt Dir 
 bereits das Dach des Hauses.
 $treppe1_kurz
@@ -31,66 +31,66 @@ $treppe2_kurz
 Du stehst auf der Treppe nach unten.
 $zimmer1_lang
 Wow, das ist aber ein kleines Zimmer. Neben einem schmalen Gang bis zum
-Fenster steht hier nur ein zweistöckiges Etagenbett mit einem winzigen
-Kleiderschrank am Ende. Durch das Fenster siehst Du nur etwas Grünes. Der
+Fenster steht hier nur ein zweistÃ¶ckiges Etagenbett mit einem winzigen
+Kleiderschrank am Ende. Durch das Fenster siehst Du nur etwas GrÃ¼nes. Der
 Ausgang des Zimmers ist links von Dir.
 $zimmer1_kurz
 Das ist das Zimmer mit dem Etagenbett.
 $zimmer2_lang
 Zwei Feldbetten stehen in diesem niedrigen Zimmer, dessen Decke wohl durch
-das Dach des Hauses gebildet wird und deswegen stark abgeschrägt ist. Gegenüber
+das Dach des Hauses gebildet wird und deswegen stark abgeschrÃ¤gt ist. GegenÃ¼ber
 dem Ausgang links ist in der Wand ein Schrank eingelassen, des Inhalt davon
-zeugt, daß dieses Haus bewohnt ist. Die begehbare Fläche des Zimmers ist
+zeugt, daÃŸ dieses Haus bewohnt ist. Die begehbare FlÃ¤che des Zimmers ist
 nicht der Rede wert.
 $zimmer2_kurz
 Du bist in dem Zimmer mit den zwei Feldbetten.
 $zimmer3_lang
-Nun, verglichen mit den anderen Räumlichkeiten zum Schlafen ist dieses Zimmer
-geradezu luxeriös ausgestattet. Ein großes Doppelbett beherrscht das Zimmer
-auf der linken Seite. Ein geräumiger Kleiderschrank hinter Dir ergänzt trotz
+Nun, verglichen mit den anderen RÃ¤umlichkeiten zum Schlafen ist dieses Zimmer
+geradezu luxeriÃ¶s ausgestattet. Ein groÃŸes Doppelbett beherrscht das Zimmer
+auf der linken Seite. Ein gerÃ¤umiger Kleiderschrank hinter Dir ergÃ¤nzt trotz
 eines gravierenden Stilbruchs das Inventar. Der Ausgang ist rechts von Dir.
 $zimmer3_kurz
-Du bist in dem großen Schlafzimmer.
+Du bist in dem groÃŸen Schlafzimmer.
 $WC_lang
 Du hast hier eine winzige Toilette erreicht und kannst sie nur verlassen,
 wenn Du Dich ohne Drehung durch den Ausgang hinter Dir quetschst.
 $WC_kurz
-Du bist auf der Toilette - viel Glück.
+Du bist auf der Toilette - viel GlÃ¼ck.
 $WC2_lang
 Du siehst hier ein modern eingerichtetes Badezimmer mit einer in Marmor
-gehaltenen Badewanne. Im Gegensatz zu den üblichen Ausrüstungen gibt es
-hier drei Hähne, die mit "warm", "kalt" und "champ." beschriftet sind.
-Die Klobrille ist aus massivem Gold - für längere Sitzungen vielleicht
+gehaltenen Badewanne. Im Gegensatz zu den Ã¼blichen AusrÃ¼stungen gibt es
+hier drei HÃ¤hne, die mit "warm", "kalt" und "champ." beschriftet sind.
+Die Klobrille ist aus massivem Gold - fÃ¼r lÃ¤ngere Sitzungen vielleicht
 etwas kalt, oder? Der Rest der Einrichtung mit diversen Gold-, Chrom-
-und Edelsteinelementen ergänzt das ganze zu einem recht ordentlichen
-Bad. Der Ausgang aus diesem Luxus ist übrigens links - falls Du nochmal
+und Edelsteinelementen ergÃ¤nzt das ganze zu einem recht ordentlichen
+Bad. Der Ausgang aus diesem Luxus ist Ã¼brigens links - falls Du nochmal
 hier weg willst.
 $WC2_kurz
 Du hast das Luxusbadezimmer erreicht.
-$küche_lang
-Das ist hier der linke Teil eines großen Raumes, der offenbar als
-Kochecke mit Herd, Kühlschrank und so weiter eingerichtet ist. Die
-Kochanlage sieht recht benutzt aus. Das heißt, die Dreckschicht ist so
-etwa drei Zentimeter hoch. Gleiches gilt für die Tische, die im Raum
-verteilt sind. Nach schnellem Durchzählen meinst Du, daß ungefähr
-achtzehn Personen an der Freßorgie, die hier offenbar stattgefunden
+$kÃ¼che_lang
+Das ist hier der linke Teil eines groÃŸen Raumes, der offenbar als
+Kochecke mit Herd, KÃ¼hlschrank und so weiter eingerichtet ist. Die
+Kochanlage sieht recht benutzt aus. Das heiÃŸt, die Dreckschicht ist so
+etwa drei Zentimeter hoch. Gleiches gilt fÃ¼r die Tische, die im Raum
+verteilt sind. Nach schnellem DurchzÃ¤hlen meinst Du, daÃŸ ungefÃ¤hr
+achtzehn Personen an der FreÃŸorgie, die hier offenbar stattgefunden
 hat, teilgenommen haben. Neben der Kochplatte siehst Du vor Dir unter
 der Treppe einen kleinen Raum hinter einem Vorhang.
-$küche_kurz
-Hier war die Freßorgie.
+$kÃ¼che_kurz
+Hier war die FreÃŸorgie.
 $kammer_lang
-Du stehst unter der Treppe in einer Art Abstellraum. Einige Gartenmöbel,
-vor allem Stühle, sind hier gestapelt. 
+Du stehst unter der Treppe in einer Art Abstellraum. Einige GartenmÃ¶bel,
+vor allem StÃ¼hle, sind hier gestapelt. 
 $kammer_kurz
 Du stehst in dem Raum unter der Treppe.
 $kamin_lang
-Du bist in der rechten Hälfte eines großen Raumes, in dem vor nicht
-allzu langer Zeit offenbar das große Fressen stattgefunden hat. Selbst
+Du bist in der rechten HÃ¤lfte eines groÃŸen Raumes, in dem vor nicht
+allzu langer Zeit offenbar das groÃŸe Fressen stattgefunden hat. Selbst
 der Kamin zeugt davon, da er sichtlich zum Grillen verwendet wurde. Der
-Boden ist übersät mit leeren Bierflaschen und die Aschenbecher sind 
-bis zum Rande und noch ein gutes Stück mehr gefüllt. Ein unangenehmer
-Geruch liegt in der Luft. Rechts durch das große Fenster mit der
-Schiebetür kannst Du auf den Park blicken, auf dem noch weitere 
-Häuser stehen.
+Boden ist Ã¼bersÃ¤t mit leeren Bierflaschen und die Aschenbecher sind 
+bis zum Rande und noch ein gutes StÃ¼ck mehr gefÃ¼llt. Ein unangenehmer
+Geruch liegt in der Luft. Rechts durch das groÃŸe Fenster mit der
+SchiebetÃ¼r kannst Du auf den Park blicken, auf dem noch weitere 
+HÃ¤user stehen.
 $kamin_kurz
 Du bist in dem Zimmer mit dem Grill.

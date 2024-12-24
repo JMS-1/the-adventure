@@ -1,56 +1,56 @@
------------------------Erklärungen--------------------------
+-----------------------ErklÃ¤rungen--------------------------
 
 Die Rache des Monsters ist ein sehr einfaches Textadventure
 und kennt nur wenige elementare Befehle mit denen, wie bei
-jedem Adventure, die Person durch die Räume gesteuert wird
-und Aktionen durchführen kann. Befehle sind in deutsch mit
+jedem Adventure, die Person durch die RÃ¤ume gesteuert wird
+und Aktionen durchfÃ¼hren kann. Befehle sind in deutsch mit
 den Umlauten etc. einzugeben. Es gibt folgende Gruppen von
 Befehlen:
   1. Bewegungsbefehle
      Mit diesen Befehlen kann man sich in dem Spiel bewegen.
      Es gibt die vier Himmelsrichtungen sowie oben und un-
-     ten. Wichtig ist, daß man immer in die selbe Richtung
+     ten. Wichtig ist, daÃŸ man immer in die selbe Richtung
      sieht. Betritt man einen Raum durch eine Bewegung nach
      links, so kann man ihn im allgemeinen nach rechts ver-
      lassen.
-     GEHE NACH VORNE,HINTEN,LINKS,OBEN,NORDEN,SÜDEN,...
+     GEHE NACH VORNE,HINTEN,LINKS,OBEN,NORDEN,SÃœDEN,...
      NACH UNTEN,OBEN,...
-     GEHE WEITER,SÜD,...
-     LINKS,VORNE,NORDEN,SÜD,...
+     GEHE WEITER,SÃœD,...
+     LINKS,VORNE,NORDEN,SÃœD,...
   2. Aktionen
      Mit Aktionen sind Befehle bezeichnet, die Dinge oder
      Personen direkt beeinflussen. Hervorzuheben ist hier
-     vor allem die Möglichkeit, Dinge aufzuheben oder ab-
-     zulegen. Natürlich kann nicht alles getragen werden
+     vor allem die MÃ¶glichkeit, Dinge aufzuheben oder ab-
+     zulegen. NatÃ¼rlich kann nicht alles getragen werden
      und vor allem nicht vieles auf einmal.
      NEHME DING
      HEBE DING AUF
      LEGE DING HIN
      DING ABLEGEN
-     ÖFFNE EINGANG
-     SCHLIEßE TÜRE
+     Ã–FFNE EINGANG
+     SCHLIEÃŸE TÃœRE
   3. Sonstiges
-     Wichtig ist dabei vor allem der Befehl GEGENSTÄNDE,
+     Wichtig ist dabei vor allem der Befehl GEGENSTÃ„NDE,
      der angibt, was man denn gerade alles mit sich herum
-     schleppt. Diese Dinge werden aus Platzgründen norma-
+     schleppt. Diese Dinge werden aus PlatzgrÃ¼nden norma-
      lerweise nicht bei jedem Schritt ausgegeben.
      SAGE HALLO
      SAGE ZU HANS "WIE GEHT ES DIR"
-     WIE SPÄT IST ES
+     WIE SPÃ„T IST ES
   4. Steuerungen
-     Um das Spiel zu beenden kann man einfach SCHLUß oder
+     Um das Spiel zu beenden kann man einfach SCHLUÃŸ oder
      so etwas eingeben. In der CLI-Version des Spiels gibt
      es auch noch folgende Befehle, die einzeln ohne Para-
      meter einzugeben sind:
      SAVE
      LOAD
      QUIT
-     Was dann zu tun ist, erfährt man im Dialog.
+     Was dann zu tun ist, erfÃ¤hrt man im Dialog.
 Ich habe hier nicht alle Befehle verraten, da einige schon
-deutlich auf ihren Verwendungszweck und damit die Lösung
+deutlich auf ihren Verwendungszweck und damit die LÃ¶sung
 eines Problems hinweisen. Da hilft nur Probieren und etwas
 Intuition.
 
------------------------Erklärungen--------------------------
+-----------------------ErklÃ¤rungen--------------------------
 
 

@@ -1,47 +1,47 @@
 $$erster
 $e1_lang
 Du steht am linken Ende eines Gangs, der sich nach rechts weit fortsetzt.
-Obwohl Du viele Türen siehst, ist nur eine einzige hinter Dir offenbar offen.
-Als Du sie Dir genauer ansiehst, stellst Du fest, daß dichter grauer Qualm
+Obwohl Du viele TÃ¼ren siehst, ist nur eine einzige hinter Dir offenbar offen.
+Als Du sie Dir genauer ansiehst, stellst Du fest, daÃŸ dichter grauer Qualm
 aus dem dahinterliegenden Raum hervorquillt. Vielleicht brennt es da?
 $e1_kurz
 Du stehst vor dem rauchenden Zimmer.
 $schwille_lang
-Du bist in dichte Nebelschwaden gehüllt. Schemenhaft erahnst Du einen Ausgang
-direkt vor Dir. Eine plötzliche Bewegung im Rauch hinter Dir jagt Dir kalte
-Schauer über den Rücken. Ein dünner Lichtstrahl, der aus dieser Richtung
-kommt, scheint auf ein Fenster hinzuweisen. Es könnte sich aber auch um
+Du bist in dichte Nebelschwaden gehÃ¼llt. Schemenhaft erahnst Du einen Ausgang
+direkt vor Dir. Eine plÃ¶tzliche Bewegung im Rauch hinter Dir jagt Dir kalte
+Schauer Ã¼ber den RÃ¼cken. Ein dÃ¼nner Lichtstrahl, der aus dieser Richtung
+kommt, scheint auf ein Fenster hinzuweisen. Es kÃ¶nnte sich aber auch um
 ein Loch ins Unbekannte handeln (Du hast doch sicher Poltergeist gesehen).
-Auch der Geruch in dem Raum trägt nicht gerade dazu bei, Dein Gemüt zu
+Auch der Geruch in dem Raum trÃ¤gt nicht gerade dazu bei, Dein GemÃ¼t zu
 erhellen.
 $schwille_kurz
-Du bist von Nebelschwaden eingehüllt.
+Du bist von Nebelschwaden eingehÃ¼llt.
 $e2_lang
 Hier geht es direkt vor Dir in einen kleinen Raum. Ein Gang setzt sich von
-rechts nach links fort. Die Türen hinter Dir sind alle fest verschlossen.
+rechts nach links fort. Die TÃ¼ren hinter Dir sind alle fest verschlossen.
 Rechts siehst Du in der Ferne einen anderen Gang, der den, in dem Du Dich
 gerade befindest, kreuzt.
 $e2_kurz
 Du stehst vor dem kleinen Raum.
 $SAPH1_lang
-Ein gemütlich eingerichteter Raum, der an den Schreibtischen gezählt
-für vier Personen gedacht ist. Ein kleiner Computer, ich glaube es ist
+Ein gemÃ¼tlich eingerichteter Raum, der an den Schreibtischen gezÃ¤hlt
+fÃ¼r vier Personen gedacht ist. Ein kleiner Computer, ich glaube es ist
 eine DEC Workstation der 2000er Serie, steht in der Ecke. Daneben sehe
-ich einen großen Bildschirm, der offensichtlich dazu gehört. In der Decke
-ist eine große, offene Luke, aber Du bist zu klein, um sie zu erreichen.
+ich einen groÃŸen Bildschirm, der offensichtlich dazu gehÃ¶rt. In der Decke
+ist eine groÃŸe, offene Luke, aber Du bist zu klein, um sie zu erreichen.
 Der einzige Ausgang befindet sich hinter Dir.
 $SAPH1_kurz
 Du bist im Raum mit der 2000er Workstation.
 $e3_lang
-Ein kleiner Gang von links mündet hier rechts in einen breiteren Quergang.
+Ein kleiner Gang von links mÃ¼ndet hier rechts in einen breiteren Quergang.
 Direkt hinter Dir ist der Eingang eines Aufzuges, dessen Kabine doch
-tatsächlich schon bereit steht. An der Wand neben dem Aufzug ist ein
-Gerät angebracht, an dem einige Lämpchen munter flackern.
+tatsÃ¤chlich schon bereit steht. An der Wand neben dem Aufzug ist ein
+GerÃ¤t angebracht, an dem einige LÃ¤mpchen munter flackern.
 $e3_kurz
 Du bist am Ende des kleinen Gangs beim Aufzug.
 $e4_lang
-Ein breiter Gang führt Dich hier von vorne nach hinten. Nach links zweigt
-ein etwas kleinerer Gang ab, dessen Länge Du nicht übersehen kannst. Der
+Ein breiter Gang fÃ¼hrt Dich hier von vorne nach hinten. Nach links zweigt
+ein etwas kleinerer Gang ab, dessen LÃ¤nge Du nicht Ã¼bersehen kannst. Der
 breite Gang scheint allerdings schon bald vor Dir zu Ende zu sein. Bei
 genauerem Hinsehen meine ich aber eine Abzweigung zu erkennen.
 $e4_kurz
@@ -54,99 +54,99 @@ sind ulkige Schildchen angebracht, auf denen Zahlen stehen.
 $e5_kurz
 Hier knickt der breite Gang nach rechts ab.
 $e6_lang
-Ein Gang verläuft von links nach rechts. Hinter Dir sind einige Türen
-zu erkennen. Eine enthält so etwas wie einen Lageplan, auf dem einige
+Ein Gang verlÃ¤uft von links nach rechts. Hinter Dir sind einige TÃ¼ren
+zu erkennen. Eine enthÃ¤lt so etwas wie einen Lageplan, auf dem einige
 Worte - nein halt, ich glaube es sind Namen - eingetragen sind. Ein
-Schild weist dieses Zimmer als Raum 150 aus. Als Du die anderen Türen
-betrachtest, siehst Du, daß sich die Numerierung normal fortsetzt.
+Schild weist dieses Zimmer als Raum 150 aus. Als Du die anderen TÃ¼ren
+betrachtest, siehst Du, daÃŸ sich die Numerierung normal fortsetzt.
 $e6_kurz
 Du bist vor Zimmer 150.
 $e7_lang
-Ups, das sieht mir aber ganz nach einer Sackgasse aus. Alle Türen hinter
-Dir sind sorgfältig verschlossen, man hat wohl ziemlich Angst vor Dieben.
-Rechts ist zwar eine Glastür, aber auch sie scheint gut gesichert. Der
-Gang führt sonst nur noch nach links.
+Ups, das sieht mir aber ganz nach einer Sackgasse aus. Alle TÃ¼ren hinter
+Dir sind sorgfÃ¤ltig verschlossen, man hat wohl ziemlich Angst vor Dieben.
+Rechts ist zwar eine GlastÃ¼r, aber auch sie scheint gut gesichert. Der
+Gang fÃ¼hrt sonst nur noch nach links.
 $e7_kurz
-Du stehst neben der verschlossenen Glastür.
+Du stehst neben der verschlossenen GlastÃ¼r.
 $150_lang
-So sieht also Zimmer 150 aus. An der linken Wand stehen einige Schränke
-und davor ein Tisch mit ein paar Terminals. Auf einem der Stühle davor
-sitzt Charly und schnarcht. Er hat die Füße gemütlich auf das Terminal,
-das einem ATARI verblüffend ähnlich sieht, gelegt. Rechts stehen einige
+So sieht also Zimmer 150 aus. An der linken Wand stehen einige SchrÃ¤nke
+und davor ein Tisch mit ein paar Terminals. Auf einem der StÃ¼hle davor
+sitzt Charly und schnarcht. Er hat die FÃ¼ÃŸe gemÃ¼tlich auf das Terminal,
+das einem ATARI verblÃ¼ffend Ã¤hnlich sieht, gelegt. Rechts stehen einige
 Schreibtische. Eine Wand mit einer Tafel verbirgt den Blick auf den
 Nachbarraum, der leicht durch einen freien Weg zwischen Wand und Schreibtischen
-erreicht werden kann. Auf der Tafel steht in großen Buchstaben "Gruppe
+erreicht werden kann. Auf der Tafel steht in groÃŸen Buchstaben "Gruppe
 ist 19". Vor Dir ist der Ausgang.
 $150_kurz
 Du bist im Zimmer 150.
 $151_lang
-Der andere Teil von Zimmer 150 enthält jede Menge Schreibtische. Der Planer
-dieses Raums hat sicher auch bei der Konstruktion geräumiger 8 Mann und
-12 Quadratmeter Stuben bei der Armee mitgeholfen. Links geht es zurück zum
+Der andere Teil von Zimmer 150 enthÃ¤lt jede Menge Schreibtische. Der Planer
+dieses Raums hat sicher auch bei der Konstruktion gerÃ¤umiger 8 Mann und
+12 Quadratmeter Stuben bei der Armee mitgeholfen. Links geht es zurÃ¼ck zum
 Ausgang. Vor Dir steht ein AMIGA, vor dem Peter sitzt. Als Du Dich umsiehst,
-erkennst Du auf einem der Schreibtische einen auffälligen Zettel, auf dem
+erkennst Du auf einem der Schreibtische einen auffÃ¤lligen Zettel, auf dem
 "Bin zum Essen. N." gekrickelt ist. Der Besizter dieses Schreibtisches
-ist wohl ein großer Pflanzenfan. Dichtes Grün wallt bis zur Decke. Einige
-abgeleckte Knochen, ich schätze einer Katze oder so, deuten auf den
-fleischfressenden Charakter unseres grünen Freundes hin. Du verzichtest
+ist wohl ein groÃŸer Pflanzenfan. Dichtes GrÃ¼n wallt bis zur Decke. Einige
+abgeleckte Knochen, ich schÃ¤tze einer Katze oder so, deuten auf den
+fleischfressenden Charakter unseres grÃ¼nen Freundes hin. Du verzichtest
 daher darauf, den Zettel an Dich zu nehmen.
 $151_kurz
 Du bist im Raum mit der fleischfressenden Pflanze.
 $e8_lang
 Du kannst einem breiten Gang nach vorne oder hinten folgen. Etwas verwundert
-stellst Du fest, daß die Kabine des Aufzugs links von Dir schon bereit steht -
-etwa für Dich? Neben dem Aufzug steht eine Liege, die Dich unwillkürlich
-an das Arbeitsgerät eines Psychiaters erinnert. Nach dem, was Du bist jetzt
+stellst Du fest, daÃŸ die Kabine des Aufzugs links von Dir schon bereit steht -
+etwa fÃ¼r Dich? Neben dem Aufzug steht eine Liege, die Dich unwillkÃ¼rlich
+an das ArbeitsgerÃ¤t eines Psychiaters erinnert. Nach dem, was Du bist jetzt
 gesehen hast, scheint Dir die Liege hier gut plaziert.
 $e8_kurz
 Du stehst bei der Psychiaterliege neben dem Aufzug.
 $e9_lang
-Etwas zurückliegend befindet sich rechts der Eingang zu einem Aufzug.
-Irgendein mehr oder weniger freundlicher Mensch hat die Kabine schon für
+Etwas zurÃ¼ckliegend befindet sich rechts der Eingang zu einem Aufzug.
+Irgendein mehr oder weniger freundlicher Mensch hat die Kabine schon fÃ¼r
 Dich an der richtigen Stelle geparkt. Der Gang, in dem Du Dich befindest,
 geht nach vorne und hinten weiter.
 $e9_kurz
-Du stehst bei dem zurückliegenden Aufzug.
+Du stehst bei dem zurÃ¼ckliegenden Aufzug.
 $e10_lang
-Hier ist die Verbindung zwischen mehreren Etagen. Über die breite Treppe
+Hier ist die Verbindung zwischen mehreren Etagen. Ãœber die breite Treppe
 kannst Du nach oben oder unten gelangen. Ein Gang setzt sich nach vorne und
-hinten fort. Einige Bilder an der Wand stellen sicher berühmte Persönlichkeiten
-dar, aber Du bist nicht dabei. Enttäuscht wendest Du Dich ab.
+hinten fort. Einige Bilder an der Wand stellen sicher berÃ¼hmte PersÃ¶nlichkeiten
+dar, aber Du bist nicht dabei. EnttÃ¤uscht wendest Du Dich ab.
 $e10_kurz
 Du stehst an der Treppe bei den Bildern.
 $e11_lang
 Der Gang vor Dir knickt hier nach rechts ab. Auf der rechten Wand ist eine
-Unzahl von bunten Blättern in den verschiedensten Sprachen angeheftet. Eine
-richtige Blätterwand halt. Links sind eine Menge Türen, die aber alle
+Unzahl von bunten BlÃ¤ttern in den verschiedensten Sprachen angeheftet. Eine
+richtige BlÃ¤tterwand halt. Links sind eine Menge TÃ¼ren, die aber alle
 fest verschlossen sind. Einige haben zwar Sichtfenster, aber das Milchglas
-verhindert jeden Blick auf die Geheimnisse hinter diesen Türen.
+verhindert jeden Blick auf die Geheimnisse hinter diesen TÃ¼ren.
 $e11_kurz
-Du bist an der Blätterwand.
+Du bist an der BlÃ¤tterwand.
 $e12_lang
 Ein schmaler Weg von links endet hier vor einem Treppenhaus rechts. Eine
-Tür steht weit offen. Nach hinten ist ein ebenfalls reichlich enger Gang,
-an dessen Seiten sich viele Türen befinden. Es sieht so aus, als würde
+TÃ¼r steht weit offen. Nach hinten ist ein ebenfalls reichlich enger Gang,
+an dessen Seiten sich viele TÃ¼ren befinden. Es sieht so aus, als wÃ¼rde
 der Gang links deutlich breiter.
 $e12_kurz
 Du stehst vor dem Treppenhaus.
 $e13_lang
-Ein langer Gang mit Türen an beiden Seiten. Alle Türen sind verschlossen
-und widerstehen allen Versuchen, sie zu öffnen. Du siehst auch einen
+Ein langer Gang mit TÃ¼ren an beiden Seiten. Alle TÃ¼ren sind verschlossen
+und widerstehen allen Versuchen, sie zu Ã¶ffnen. Du siehst auch einen
 Aufzugseingang, aber die Kabine will einfach nicht kommen. Vor Dir kreuzt
 ein anderer Gang diesen hier.
 $e13_kurz
-Du bist im Gang mit den verschlossenen Türen.
+Du bist im Gang mit den verschlossenen TÃ¼ren.
 $e14_lang
-Du stehst in einem Treppenhaus. Eine extrem schmale Wendeltreppe führt
-nach oben und unten. Altes Holz läßt sie morsch erscheinen. Links von
-Dir beginnt ein Gang, der rechts an einer Tür endet. Ein Schild zeigt,
-daß sich hinter der Tür eine Bücherei befindet.
+Du stehst in einem Treppenhaus. Eine extrem schmale Wendeltreppe fÃ¼hrt
+nach oben und unten. Altes Holz lÃ¤ÃŸt sie morsch erscheinen. Links von
+Dir beginnt ein Gang, der rechts an einer TÃ¼r endet. Ein Schild zeigt,
+daÃŸ sich hinter der TÃ¼r eine BÃ¼cherei befindet.
 $e14_kurz
-Du stehst vor der Bücherei.
-$bücherei_lang
-Du bist in einer Bücherei. Unüberschaubare Wände, voll mit verstaubten
-Büchern, verbieten einen weiträumigen Blick. Vor Dir stehen einige Tische,
-auch sie sind über und über mit Büchern beladen. Der Ausgang aus dieser
+Du stehst vor der BÃ¼cherei.
+$bÃ¼cherei_lang
+Du bist in einer BÃ¼cherei. UnÃ¼berschaubare WÃ¤nde, voll mit verstaubten
+BÃ¼chern, verbieten einen weitrÃ¤umigen Blick. Vor Dir stehen einige Tische,
+auch sie sind Ã¼ber und Ã¼ber mit BÃ¼chern beladen. Der Ausgang aus dieser
 Staublaube ist links.
-$bücherei_kurz
-Du bist in der Bücherei.
+$bÃ¼cherei_kurz
+Du bist in der BÃ¼cherei.

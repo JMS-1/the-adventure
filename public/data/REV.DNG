@@ -1,50 +1,50 @@
 $$things
 $vorne37_auf
-Die Eingangstüre steht weit auf.
-$schlüssel37_lang
-Da liegt ein Schlüssel mit der Nummer 37.
-$schlüssel37_trägt
-Du hast einen Schlüssel mit der Nummer 37 bei Dir.
+Die EingangstÃ¼re steht weit auf.
+$schlÃ¼ssel37_lang
+Da liegt ein SchlÃ¼ssel mit der Nummer 37.
+$schlÃ¼ssel37_trÃ¤gt
+Du hast einen SchlÃ¼ssel mit der Nummer 37 bei Dir.
 $vorne27_auf
-Die Eingangstür ist geöffnet.
-$schlüssel27_lang
-Da liegt ein Schlüssel mit der Nummer 27.
-$schlüssel27_trägt
-Du hast einen Schlüssel mit der Nummer 27 bei Dir.
+Die EingangstÃ¼r ist geÃ¶ffnet.
+$schlÃ¼ssel27_lang
+Da liegt ein SchlÃ¼ssel mit der Nummer 27.
+$schlÃ¼ssel27_trÃ¤gt
+Du hast einen SchlÃ¼ssel mit der Nummer 27 bei Dir.
 $vorne26_auf
-Die Eingangstüre ist offen.
-$schlüssel26_lang
-Da liegt ein Schlüssel mit der Nummer 26.
-$schlüssel26_trägt
-Du hast einen Schlüssel mit der Nummer 26 bei Dir.
+Die EingangstÃ¼re ist offen.
+$schlÃ¼ssel26_lang
+Da liegt ein SchlÃ¼ssel mit der Nummer 26.
+$schlÃ¼ssel26_trÃ¤gt
+Du hast einen SchlÃ¼ssel mit der Nummer 26 bei Dir.
 $hinten26_auf
-Die Terassentüre ist auf.
+Die TerassentÃ¼re ist auf.
 $hinten27_auf
-Jemand hat die Terassentür aufgeschoben.
+Jemand hat die TerassentÃ¼r aufgeschoben.
 $hinten37_auf
-Die Glastüre ist auf.
+Die GlastÃ¼re ist auf.
 $kiosk_geschlossen
 Der kleine Laden hat schon geschlossen.
 $kiosk_auf
-Die Ladentür ist unverschlossen.
+Die LadentÃ¼r ist unverschlossen.
 $halle_geschlossen
 Das Eingangsportal ist geschlossen.
 $halle_auf
-Die Schwingtür des Eingangs ist unverschlossen.
+Die SchwingtÃ¼r des Eingangs ist unverschlossen.
 $bowling_geschlossen
 Die Kegelbahn hat bereits zu.
 $bowling_auf
-Die Tür zu den Kegelbahnen ist auf.
+Die TÃ¼r zu den Kegelbahnen ist auf.
 $terasse_geschlossen
-Die Terassentür des Restaurants ist verschlossen.
+Die TerassentÃ¼r des Restaurants ist verschlossen.
 $terasse_auf
-Die Terassentür des Restaurants ist weit geöffnet.
+Die TerassentÃ¼r des Restaurants ist weit geÃ¶ffnet.
 $brunch_geschlossen
 Das Restaurant hat bereits geschlossen.
 $brunch_auf
-Die Tür zum Schlaraffenland steht offen.
+Die TÃ¼r zum Schlaraffenland steht offen.
 $schranke_auf
-Die Schranke ist geöffnet.
+Die Schranke ist geÃ¶ffnet.
 $schranke_geschlossen
 Die Schranke ist geschlossen.
 $schranke2_geschlossen
@@ -53,230 +53,230 @@ $schranke2_auf
 Die Schranke ist hochgestellt.
 $hflag_true
 $hase_brav
-Da sitzt ein Häschen vor Dir und schaut Dich ängstlich an.
-$hase_trägt
+Da sitzt ein HÃ¤schen vor Dir und schaut Dich Ã¤ngstlich an.
+$hase_trÃ¤gt
 Du schleppst ein Kaninchen mit Dir herum.
 $hase_flieht
 Entsetzt sieht der Hase Dich eine volle Zehntelsekunde lang an und springt
-Dir dann aus den Armen. Wenige Sekunden später ist er aus Deinem 
+Dir dann aus den Armen. Wenige Sekunden spÃ¤ter ist er aus Deinem 
 Blickfeld entschwunden.
-$hase_läuft
-Kaum daß der Hase den Boden berührt hat und sich in Bewegung setzt, hetzt
-der große schwarze Hund ihm in weiten Sprüngen hinterher. Ich denke, die beiden
+$hase_lÃ¤uft
+Kaum daÃŸ der Hase den Boden berÃ¼hrt hat und sich in Bewegung setzt, hetzt
+der groÃŸe schwarze Hund ihm in weiten SprÃ¼ngen hinterher. Ich denke, die beiden
 werden wir so schnell nicht wiedersehen.
-$möhre_buffet
-Auf einem geplünderten Salatbüffet liegt eine einsame Mohrrübe.
-$möhre_lang
-Da liegt eine Möhre.
-$möhre_essen
-Bis auf die Made war die Möhre ganz gut.
-$möhre_trägt
-Du hast eine Mohrrübe im linken Ohr stecken.
+$mÃ¶hre_buffet
+Auf einem geplÃ¼nderten SalatbÃ¼ffet liegt eine einsame MohrrÃ¼be.
+$mÃ¶hre_lang
+Da liegt eine MÃ¶hre.
+$mÃ¶hre_essen
+Bis auf die Made war die MÃ¶hre ganz gut.
+$mÃ¶hre_trÃ¤gt
+Du hast eine MohrrÃ¼be im linken Ohr stecken.
 $zettel_pinboard
-Am schwarzen Brett hängt ein Zettel mit dem Emblem des Physikalischen Instituts
-der Universität Bonn.
+Am schwarzen Brett hÃ¤ngt ein Zettel mit dem Emblem des Physikalischen Instituts
+der UniversitÃ¤t Bonn.
 $zettel_lang
 Da liegt ein Zettel mit dem Emblem vom PI.
-$zettel_trägt
+$zettel_trÃ¤gt
 Du hast einen Zettel mit dem Emblem vom PI darauf bei Dir.
 $brief_lang
 Da liegt ein Luftpostbrief.
-$brief_trägt
+$brief_trÃ¤gt
 Du hast einen Luftpostbrief bei Dir.
 $kette_lang
-Da liegt eine ölige Motorradkette.
-$kette_trägt
+Da liegt eine Ã¶lige Motorradkette.
+$kette_trÃ¤gt
 Du versaust Dir die Klamotten mit einer Motorradkette.
 $istauf
-Du solltest mal die Augen öffnen, denn die Tür ist schon auf.
+Du solltest mal die Augen Ã¶ffnen, denn die TÃ¼r ist schon auf.
 $istzu
-Ich bitte Dich, noch zuer geht die Tür nicht.
-$keinschlüssel
-Du hast leider keinen passenden Schlüssel bei Dir.
+Ich bitte Dich, noch zuer geht die TÃ¼r nicht.
+$keinschlÃ¼ssel
+Du hast leider keinen passenden SchlÃ¼ssel bei Dir.
 $nurinnen
-Es sieht so aus, als könnte diese Schiebetüre nur von innen geöffnet werden.
+Es sieht so aus, als kÃ¶nnte diese SchiebetÃ¼re nur von innen geÃ¶ffnet werden.
 $zettel
-Auf dem Zettel steht: "Hallo Ihr zu spät gekommenen, hoffentlich bestraft Euch
-nicht das Leben. Wir haben die Häuser 26, 27 und 37. Wenn Ihr aus dem Tunnel 
+Auf dem Zettel steht: "Hallo Ihr zu spÃ¤t gekommenen, hoffentlich bestraft Euch
+nicht das Leben. Wir haben die HÃ¤user 26, 27 und 37. Wenn Ihr aus dem Tunnel 
 dem
-Weg bis zur Straße folgt, geht Ihr einfach nach links und dann den ersten
-Fußweg nach vorne. Schräg nach vorne rechts über das Gras steht dann
-der Bungalow 37, wir haben die Terassentüre aufgelassen. Bis denn mal."
+Weg bis zur StraÃŸe folgt, geht Ihr einfach nach links und dann den ersten
+FuÃŸweg nach vorne. SchrÃ¤g nach vorne rechts Ã¼ber das Gras steht dann
+der Bungalow 37, wir haben die TerassentÃ¼re aufgelassen. Bis denn mal."
 $brief
-Der Brief kommt von einem gewissen Dr. Klaus Honscheid aus den USA und enthält
-unter anderem folgenden Absatz, der dick unterstrichen ist: "...Ihr wißt ja
-sicher noch, daß ich es war, der das Monster in seine Schranken verwiesen
-hat. Aber offenbar konnte es fliehen und es ist trotz seiner geringeren Größe
-immer noch tödlich gefährlich. Ich habe das ganze psychologisch analysieren
-lassen und die Fachleute meinen, daß auch die Einbildung töten kann - Ihr
-wißt schon: das richtige Wort im richtigen Moment. Macht
-daraus, was Ihr könnt und seid vorsichtig..."
+Der Brief kommt von einem gewissen Dr. Klaus Honscheid aus den USA und enthÃ¤lt
+unter anderem folgenden Absatz, der dick unterstrichen ist: "...Ihr wiÃŸt ja
+sicher noch, daÃŸ ich es war, der das Monster in seine Schranken verwiesen
+hat. Aber offenbar konnte es fliehen und es ist trotz seiner geringeren GrÃ¶ÃŸe
+immer noch tÃ¶dlich gefÃ¤hrlich. Ich habe das ganze psychologisch analysieren
+lassen und die Fachleute meinen, daÃŸ auch die Einbildung tÃ¶ten kann - Ihr
+wiÃŸt schon: das richtige Wort im richtigen Moment. Macht
+daraus, was Ihr kÃ¶nnt und seid vorsichtig..."
 Da der Brief nicht an Dich ist, sollten wir den Rest lieber nicht lesen.
 $keinbrief
-Dazu mußt Du den Brief erst einmal in der Hand haben.
+Dazu muÃŸt Du den Brief erst einmal in der Hand haben.
 $kette
 Erfreut nimmt Robert die Kette auf und wickelt sie sich gekonnt um seine
-Faust. "So," meint er dann leicht spöttisch, "jetzt kann uns 
+Faust. "So," meint er dann leicht spÃ¶ttisch, "jetzt kann uns 
 niemand mehr aufhalten."
 $ketterobert
-Robert sieht Dich ärgerlich an: "Wenn Du nicht mein Arbeitszeug mit Dir
-herumschleppen würdest, was meinst Du, was dann hier jetzt los wäre?"
+Robert sieht Dich Ã¤rgerlich an: "Wenn Du nicht mein Arbeitszeug mit Dir
+herumschleppen wÃ¼rdest, was meinst Du, was dann hier jetzt los wÃ¤re?"
 $korken1_lang
 Da liegt der Kronkorken einer Flasche Bit.
-$korken1_trägt
+$korken1_trÃ¤gt
 Du hast einen Kronkorken einer Flasche Bit bei Dir.
 $korken2_lang
 Da liegt der Kronkorken einer Flasche Warsteiner.
-$korken2_trägt
+$korken2_trÃ¤gt
 Du hast einen Kronkorken einer Flasche Warsteiner bei Dir.
 $korken3_lang
-Da liegt der Kronkorken einer Flasche Frühkölsch.
-$korken3_trägt
-Du hast einen Kronkorken einer Flasche Frühkölsch bei Dir.
+Da liegt der Kronkorken einer Flasche FrÃ¼hkÃ¶lsch.
+$korken3_trÃ¤gt
+Du hast einen Kronkorken einer Flasche FrÃ¼hkÃ¶lsch bei Dir.
 $korken4_lang
 Da liegt der Kronkorken einer Flasche Dortmunder.
-$korken4_trägt
+$korken4_trÃ¤gt
 Du hast einen Kronkorken einer Flasche Dortmunder bei Dir.
 $korken5_lang
 Da liegt der Kronkorken einer Flasche Veltins.
-$korken5_trägt
+$korken5_trÃ¤gt
 Du hast einen Kronkorken einer Flasche Veltins bei Dir.
 $geld_lang
 Da liegt etwas Geld.
-$geld_trägt
+$geld_trÃ¤gt
 Du hast etwas Geld bei Dir.
 $wflag_bezahlt
 $wanderkarte_lang
-Da liegt eine Wanderkarte der näheren Umgebung.
-$wanderkarte_trägt
-Du hast eine Wanderkarte der näheren Umgebung dabei.
+Da liegt eine Wanderkarte der nÃ¤heren Umgebung.
+$wanderkarte_trÃ¤gt
+Du hast eine Wanderkarte der nÃ¤heren Umgebung dabei.
 $rflag_bezahlt
 $rattengift_lang
-Da ist eine Dose Rattengift, auch für Mäuse geeignet.
-$rattengift_trägt
+Da ist eine Dose Rattengift, auch fÃ¼r MÃ¤use geeignet.
+$rattengift_trÃ¤gt
 Du hast eine Dose Rattengift dabei.
 $mflag_bezahlt
 $milch_lang
-Da steht eine Tüte Milch.
-$milch_trägt
-Du hast eine Tüte Milch dabei.
+Da steht eine TÃ¼te Milch.
+$milch_trÃ¤gt
+Du hast eine TÃ¼te Milch dabei.
 $milch_trinken
 Hmm, das tat gut. Und was machen wir jetzt?
 $nichtgenug
-Der Verkäufer sagt: "Sie haben nicht genug Geld, um auch noch das Rattengift
-zu bezahlen. Bitte stellen Sie es in das Regal zurück oder lassen Sie es
+Der VerkÃ¤ufer sagt: "Sie haben nicht genug Geld, um auch noch das Rattengift
+zu bezahlen. Bitte stellen Sie es in das Regal zurÃ¼ck oder lassen Sie es
 hier liegen."
 $ketteaufheben
 Dazu solltest Du die Kette vielleicht erst einmal aufheben.
 $karte
-Wanderkarten waren für Dich schon immer Briefe mit sieben Siegeln, also
-laß es lieber. Du solltest die Karte jemandem geben, der etwas davon
+Wanderkarten waren fÃ¼r Dich schon immer Briefe mit sieben Siegeln, also
+laÃŸ es lieber. Du solltest die Karte jemandem geben, der etwas davon
 versteht und der sie wirklich braucht.
 $arni
 Du solltest weniger Filme mit Schwarzenegger sehen, glaube ich.
 $fiesta_lang
-Da steht ein weißer Fiesta Diesel mit Dürener Kennzeichen.
+Da steht ein weiÃŸer Fiesta Diesel mit DÃ¼rener Kennzeichen.
 $fiesta_offen
-Die Beifahrertür des weißen Fiestas ist offen.
+Die BeifahrertÃ¼r des weiÃŸen Fiestas ist offen.
 $salzstangen
-Aus dem vollgestopften Wagen fällt eine Packung mit Salzstangen und eine
-Schachtel Streichhölzer.
+Aus dem vollgestopften Wagen fÃ¤llt eine Packung mit Salzstangen und eine
+Schachtel StreichhÃ¶lzer.
 $salzstangen_lang
 Da liegt eine Packung mit Salzstangen.
-$salzstangen_trägt
+$salzstangen_trÃ¤gt
 Du hast eine Packung mit Salzstangen bei Dir.
 $salzstangen_essen
-Gut, jetzt hast Du Dich also gestärkt. Aber mal ganz ehrlich: macht Dich das
-glücklicher?
+Gut, jetzt hast Du Dich also gestÃ¤rkt. Aber mal ganz ehrlich: macht Dich das
+glÃ¼cklicher?
 $fiesta
-Es gibt zwar Leute, die das ohne Schlüssel können, aber ersten gehörst Du nicht
+Es gibt zwar Leute, die das ohne SchlÃ¼ssel kÃ¶nnen, aber ersten gehÃ¶rst Du nicht
 zu diesen Leuten und zweitens ist das etwas strafbar.
-$streichhölzer_lang
-Da liegt eine Schachtel Streichhölzer.
-$streichhölzer_trägt
-Du schleppst eine Schachtel Streichhölzer mit Dir herum.
+$streichhÃ¶lzer_lang
+Da liegt eine Schachtel StreichhÃ¶lzer.
+$streichhÃ¶lzer_trÃ¤gt
+Du schleppst eine Schachtel StreichhÃ¶lzer mit Dir herum.
 $jzettel_lang
 Da liegt ein gefalteter Notizzettel.
-$jzettel_trägt
-Du hast ein gefaltetes Stück Papier bei Dir.
+$jzettel_trÃ¤gt
+Du hast ein gefaltetes StÃ¼ck Papier bei Dir.
 $jzettelboden
-Dazu mußt Du den Zettel aufheben, da er gefaltet ist.
+Dazu muÃŸt Du den Zettel aufheben, da er gefaltet ist.
 $jzettel
 Du entfaltest den Zettel vorsichtig und liest: "Hallo Leute. Ich bin mit
 Petra, Anna und Peter im Wald spazieren. Falls wir bis 13.00 Uhr nicht
 wieder da sind, haben wir uns sicher mal wieder verlaufen. Schickt uns
 dann bitte jemanden, der sich auskennt oder der eine Karte hat, sonst werden
-wir wohl bei der Kälte spätestens heute abend erfrieren. B.R."
+wir wohl bei der KÃ¤lte spÃ¤testens heute abend erfrieren. B.R."
 $schnuller_lang
 Hier liegt ein Babyschnuller auf der Erde.
-$schnuller_trägt
+$schnuller_trÃ¤gt
 Du siehst scharf aus mit dem Schnuller im Mund.
-$autoschlüssel_lang
-Hier liegt ein Autoschlüssel mit einem Ford Anhänger.
-$autoschlüssel_trägt
-Du hast einen Autoschlüssel für irgendeinen Ford dabei.
+$autoschlÃ¼ssel_lang
+Hier liegt ein AutoschlÃ¼ssel mit einem Ford AnhÃ¤nger.
+$autoschlÃ¼ssel_trÃ¤gt
+Du hast einen AutoschlÃ¼ssel fÃ¼r irgendeinen Ford dabei.
 $sflag_dreckig
-Als Du an Dir herunter siehst stellst Du fest, daß Deine Schuhe vor Matsch
+Als Du an Dir herunter siehst stellst Du fest, daÃŸ Deine Schuhe vor Matsch
 nur so triefen. Eine schmale Dreckspur zieht sich den Boden entlang bis
 zu der Stelle, an der Du gerade stehst.
 $sflag_schnee
 Da Dir Deine Zehen etwas kalt erscheinen, kontrollierst Du kurz Deinen
-unteren Körperbereich und siehst, daß Deine Füße bis zu den Knöcheln einem
-Schneeball gleichen. Eine weiße Spur verunziert den Boden.
+unteren KÃ¶rperbereich und siehst, daÃŸ Deine FÃ¼ÃŸe bis zu den KnÃ¶cheln einem
+Schneeball gleichen. Eine weiÃŸe Spur verunziert den Boden.
 $sflag_kot
-Ein unangenehmer Geruch erfüllt diesen Raum. Als Du an Dir herabsiehst
-bemerkst Du eine mehr oder weniger braune Masse, die Deinen linken Fuß
-komplett umschließt. Es ist aber genug von dem Zeug da, um den Boden
+Ein unangenehmer Geruch erfÃ¼llt diesen Raum. Als Du an Dir herabsiehst
+bemerkst Du eine mehr oder weniger braune Masse, die Deinen linken FuÃŸ
+komplett umschlieÃŸt. Es ist aber genug von dem Zeug da, um den Boden
 rings um Dich herum zu versauen.
 $matte
-Ich sehe hier leider keine Fußmatte, wie sie bei den kleinen Häusern jeweils
+Ich sehe hier leider keine FuÃŸmatte, wie sie bei den kleinen HÃ¤usern jeweils
 am Haupteingang liegt.
 $anna
 Wem bitte ?
 $katze_schleicht
 Ich glaube, hier ist gerade eine fette getigerte Katze vorbeigehuscht.
 $messer_lang
-Da liegt ein großes und scharfes Messer.
-$messer_trägt
+Da liegt ein groÃŸes und scharfes Messer.
+$messer_trÃ¤gt
 Du hast so ein Rambomesser bei Dir.
 $bowlingschuhe_lang
 Da steht ein Paar Bowlingschuhe.
-$bowlingschuhe_trägt
-Du trägst ein Paar schöne Bowlingschuhe, Deine eigenen Schuhe hast Du Dir
-um den Hals gehängt.
+$bowlingschuhe_trÃ¤gt
+Du trÃ¤gst ein Paar schÃ¶ne Bowlingschuhe, Deine eigenen Schuhe hast Du Dir
+um den Hals gehÃ¤ngt.
 $braten
-Hier duftet es nach einem leckeren Braten. Dir läuft das Wasser im Munde
-zusammen und das Knurren im Magen wird schier unerträglich.
+Hier duftet es nach einem leckeren Braten. Dir lÃ¤uft das Wasser im Munde
+zusammen und das Knurren im Magen wird schier unertrÃ¤glich.
 $braten_lang
 Da liegt ein leckerer Braten, ich glaube es ist Kaninchen oder so was.
 $braten_essen
 Hmm, das hat geschmeckt. Dein Magen knurrt nicht mehr und Dir ist auch nicht
-mehr übel vor Hunger. Übrigens war der Braten auf dem Buch "Das fröhliche
-Katzenhasserbuch" serviert. Plötzlich hörst Du von nebenan in der Küche
-einen spitzen Schrei und danach ein dumpfes Poltern. Wenig später würgt
-jemand sehr intensiv, aber auch das läßt nach kurzer Zeit nach. Es ist
+mehr Ã¼bel vor Hunger. Ãœbrigens war der Braten auf dem Buch "Das frÃ¶hliche
+Katzenhasserbuch" serviert. PlÃ¶tzlich hÃ¶rst Du von nebenan in der KÃ¼che
+einen spitzen Schrei und danach ein dumpfes Poltern. Wenig spÃ¤ter wÃ¼rgt
+jemand sehr intensiv, aber auch das lÃ¤ÃŸt nach kurzer Zeit nach. Es ist
 wieder unheimlich still hier.
-$käse_topf
+$kÃ¤se_topf
 Da steht ein Topf auf dem Herd, daneben steht Monika und starrt diesen Topf
-ängstlich an. Sie zittert leicht, ich glaube es ist nicht vom Rauchen.
-$käse_monika
-Wow, das nenne ich ein umwerfendes Aroma. Der Topf ist voll einer weißen
-Masse mit grünen Zusätzen, dem Geruch nach ein Gemisch der verschiedensten
-Käsesorten. Beim Öffnen wird Monika aschfahl und fängt an zu würgen. Als
-Jürgen kurz hereinschaut und "Ahh, Ihr wollt mal kosten. Gute Entscheidung."
-sagt, fällt sie hinterrücks in Ohnmacht. Jürgen verschwindet dann schuldbewußt
+Ã¤ngstlich an. Sie zittert leicht, ich glaube es ist nicht vom Rauchen.
+$kÃ¤se_monika
+Wow, das nenne ich ein umwerfendes Aroma. Der Topf ist voll einer weiÃŸen
+Masse mit grÃ¼nen ZusÃ¤tzen, dem Geruch nach ein Gemisch der verschiedensten
+KÃ¤sesorten. Beim Ã–ffnen wird Monika aschfahl und fÃ¤ngt an zu wÃ¼rgen. Als
+JÃ¼rgen kurz hereinschaut und "Ahh, Ihr wollt mal kosten. Gute Entscheidung."
+sagt, fÃ¤llt sie hinterrÃ¼cks in Ohnmacht. JÃ¼rgen verschwindet dann schuldbewuÃŸt
 wieder.
-$käse_offen
-Da steht ein Topf mit einem intensiv riechenden Käsegemisch.
-$käse_zu
+$kÃ¤se_offen
+Da steht ein Topf mit einem intensiv riechenden KÃ¤segemisch.
+$kÃ¤se_zu
 Monika kommt langsam wieder zu sich und nimmt ihre alte Stellung mit dem
-ängstlichen Blick auf den Topf wieder ein.
-$käse_essen
-Das schmeckt ja wirklich besser als es riecht. Monika wacht übrigens wieder
-auf und sieht recht erleichtert aus. Sie sieht Dich allerdings an, als müßtest
+Ã¤ngstlichen Blick auf den Topf wieder ein.
+$kÃ¤se_essen
+Das schmeckt ja wirklich besser als es riecht. Monika wacht Ã¼brigens wieder
+auf und sieht recht erleichtert aus. Sie sieht Dich allerdings an, als mÃ¼ÃŸtest
 Du jeden Augenblick tot umfallen.
-$käse_gegessen
-Da steht ein leerer Topf und daneben Monika, die Dich ansieht, als würdest
+$kÃ¤se_gegessen
+Da steht ein leerer Topf und daneben Monika, die Dich ansieht, als wÃ¼rdest
 Du jede Sekunde tot umfallen.
 $topf
 Den ganzen Topf? Du scherzt wohl.
@@ -284,57 +284,57 @@ $deckel
 Wozu denn, der Topf ist doch jetzt leer.
 $football_lang
 Oben auf dem Sumpf schwimmt ein Football.
-$föhn_lang
-Da liegt ein Fön mit einem vollen Akku.
-$föhn_leer
-Du siehst einen Fön mit ausgebranntem Akku.
-$föhn
-Tut mir leid, aber der Akku des Föns ist leer.
-$föhn_trägt
+$fÃ¶hn_lang
+Da liegt ein FÃ¶n mit einem vollen Akku.
+$fÃ¶hn_leer
+Du siehst einen FÃ¶n mit ausgebranntem Akku.
+$fÃ¶hn
+Tut mir leid, aber der Akku des FÃ¶ns ist leer.
+$fÃ¶hn_trÃ¤gt
 Du hast einen Haartrockner bei Dir.
-$föhn_trägtleer
+$fÃ¶hn_trÃ¤gtleer
 Du hast einen Haartrockner mit leeren Akkus bei Dir.
-$föhnan
-Ah, das ist schön warm hier. Der Fön ist ganz schön stark und trocknet nicht
-nur den Angstschweiß auf Deiner Stirn sondern erwärmt auch die ganze 
-Umgebung. Dafür
-sind allerdings nach kurzer Zeit die Akkus leer und der Fön verstummt wieder,
-diesmal für immer.
+$fÃ¶hnan
+Ah, das ist schÃ¶n warm hier. Der FÃ¶n ist ganz schÃ¶n stark und trocknet nicht
+nur den AngstschweiÃŸ auf Deiner Stirn sondern erwÃ¤rmt auch die ganze 
+Umgebung. DafÃ¼r
+sind allerdings nach kurzer Zeit die Akkus leer und der FÃ¶n verstummt wieder,
+diesmal fÃ¼r immer.
 $schal_lang
 Da liegt ein Schal mit irgendeiner Stickerei darauf.
-$schal_trägt
+$schal_trÃ¤gt
 Du hast einen Schal bei Dir.
 $schal
-Auf dem Schal befindet sich die eigentümliche Stickerei "Ich gehe 
+Auf dem Schal befindet sich die eigentÃ¼mliche Stickerei "Ich gehe 
 lieber in den Tod, als
 diesem Monster nochmal zu begegnen. Andreas." Am Rande ist ein dicker roter
 Fleck, ich glaube es ist Blut.
 $fernseher_lang
 Da steht ein tragbarer Fernseher.
-$fernseher_trägt
+$fernseher_trÃ¤gt
 Du hast einen batteriebetriebenen Fernseher bei Dir.
 $nachrichten
-Als Du so durch die Kanäle wanderst, erwischst Du plötzlich eine ständig
+Als Du so durch die KanÃ¤le wanderst, erwischst Du plÃ¶tzlich eine stÃ¤ndig
 laufende lokale Nachrichtensendung. Dabei wird in der Reihe "Hambach Freaks
 Today" von eigenartigen Gestalten wie dem Wassermenschen, dem bowlingspielenden
-Känguruh, einem offenbar Geistesgestörten, der des öfteren mit
-Computern redet, oder einer nach vorläufigen Untersuchungen intelligenten
+KÃ¤nguruh, einem offenbar GeistesgestÃ¶rten, der des Ã¶fteren mit
+Computern redet, oder einer nach vorlÃ¤ufigen Untersuchungen intelligenten
 Nebelwolke berichtet. Danach kommt ein Nachrichtenteil, in dem
-Du hörst, daß es ab sofort keinen Brunch mehr geben wird, da er sich 
-trotz drastischer Preiserhöhungen von einem Tag auf den anderen plötzlich
-nicht mehr rentierte, daß das Freizeitzentrum wegen Renovierungsarbeiten
-ab morgen für einige Monate geschlossen wird oder daß Besucher aus 
-Nordrhein-Westfalen nicht mehr erwünscht sind. Zuletzt erfolgt die Warnung,
-die Häuser nicht mehr zu verlassen, da eine große Zahl von Vermißten sowie
-verstümmelten Leichen wohl darauf hinweisen, daß ein brutaler Mörder sein
-Unwesen treibt. Die Parkleitung hat natürlich alles voll im Griff und
-berät zur Zeit die Situation in Miami.
-$schläger_lang
-Da liegt ein Baseballschläger.
-$schläger_trägt
-Du schleppst einen Baseballschläger mit Dir herum.
-$gerüst_lang
-Da steht ein ziemlich hohes Klettergerüst für Kinder. Von der Spitze hat man
+Du hÃ¶rst, daÃŸ es ab sofort keinen Brunch mehr geben wird, da er sich 
+trotz drastischer PreiserhÃ¶hungen von einem Tag auf den anderen plÃ¶tzlich
+nicht mehr rentierte, daÃŸ das Freizeitzentrum wegen Renovierungsarbeiten
+ab morgen fÃ¼r einige Monate geschlossen wird oder daÃŸ Besucher aus 
+Nordrhein-Westfalen nicht mehr erwÃ¼nscht sind. Zuletzt erfolgt die Warnung,
+die HÃ¤user nicht mehr zu verlassen, da eine groÃŸe Zahl von VermiÃŸten sowie
+verstÃ¼mmelten Leichen wohl darauf hinweisen, daÃŸ ein brutaler MÃ¶rder sein
+Unwesen treibt. Die Parkleitung hat natÃ¼rlich alles voll im Griff und
+berÃ¤t zur Zeit die Situation in Miami.
+$schlÃ¤ger_lang
+Da liegt ein BaseballschlÃ¤ger.
+$schlÃ¤ger_trÃ¤gt
+Du schleppst einen BaseballschlÃ¤ger mit Dir herum.
+$gerÃ¼st_lang
+Da steht ein ziemlich hohes KlettergerÃ¼st fÃ¼r Kinder. Von der Spitze hat man
 sicher eine tolle Aussicht.
 $telefonzelle_lang
 Hier ist eine Telefonzelle.
@@ -342,214 +342,214 @@ $keinschal
 Vielleicht sollte so ein kurzsichtiger Maulwurf wie Du den Schal erst einmal
 aufheben.
 $klingel
-Es klingelt, aber keiner öffnet.
-$flaschenöffner_lang
-Du siehst einen Flaschenöffner herumliegen.
-$flaschenöffner_trägt
-Du hast Dir einen Flaschenöffner eingesteckt.
+Es klingelt, aber keiner Ã¶ffnet.
+$flaschenÃ¶ffner_lang
+Du siehst einen FlaschenÃ¶ffner herumliegen.
+$flaschenÃ¶ffner_trÃ¤gt
+Du hast Dir einen FlaschenÃ¶ffner eingesteckt.
 $flasche1_lang
 Da liegt eine leere Flasche Bit.
-$flasche1_trägt
+$flasche1_trÃ¤gt
 Du hast eine leere Flasche Bit bei Dir.
 $flasche2_lang
 Da liegt eine leere Flasche Dortmunder.
-$flasche2_trägt
+$flasche2_trÃ¤gt
 Du hast eine leere Flasche Dortmunder bei Dir.
 $flasche3_lang
 Da liegt eine leere Flasche Veltins.
-$flasche3_trägt
+$flasche3_trÃ¤gt
 Du hast eine leere Flasche Veltins bei Dir.
 $flasche4_lang
-Da liegt eine leere Flasche Frühkölsch.
-$flasche4_trägt
-Du hast eine leere Flasche Frühkölsch bei Dir.
+Da liegt eine leere Flasche FrÃ¼hkÃ¶lsch.
+$flasche4_trÃ¤gt
+Du hast eine leere Flasche FrÃ¼hkÃ¶lsch bei Dir.
 $flasche5_lang
 Da liegt eine leere Flasche Warsteiner.
-$flasche5_trägt
+$flasche5_trÃ¤gt
 Du hast eine leere Flasche Warsteiner bei Dir.
 $flasche6_lang
-Da liegt eine leere Flasche Domkölsch.
-$flasche6_trägt
-Du hast eine leere Flasche Domkölsch bei Dir.
+Da liegt eine leere Flasche DomkÃ¶lsch.
+$flasche6_trÃ¤gt
+Du hast eine leere Flasche DomkÃ¶lsch bei Dir.
 $flasche7_lang
 Da liegt eine leere Flasche Hefeweizen.
-$flasche7_trägt
+$flasche7_trÃ¤gt
 Du hast eine leere Flasche Hefeweizen bei Dir.
 $flasche8_lang
-Da liegt eine leere Flasche Bönnsch.
-$flasche8_trägt
-Du hast eine leere Flasche Bönnsch bei Dir.
+Da liegt eine leere Flasche BÃ¶nnsch.
+$flasche8_trÃ¤gt
+Du hast eine leere Flasche BÃ¶nnsch bei Dir.
 $flasche9_lang
 Da liegt eine leere Flasche Doppelbock.
-$flasche9_trägt
+$flasche9_trÃ¤gt
 Du hast eine leere Flasche Doppelbock bei Dir.
 $handschuhe_lang
 Hier liegt ein Paar Handschuhe.
-$handschuhe_trägt
-Du trägst ein Paar Handschuhe, was hast Du vor?
+$handschuhe_trÃ¤gt
+Du trÃ¤gst ein Paar Handschuhe, was hast Du vor?
 $vorhang_zu
 Da der Vorhang zu ist, ist es ziemlich finster hier.
 $vorhang_auf
-Durch den geöffneten Vorhang fällt Licht in die Kammer.
+Durch den geÃ¶ffneten Vorhang fÃ¤llt Licht in die Kammer.
 $hexe
-Als es klingelt öffnet sich die Türe langsam mit einem Quietschen, das
-Dir durch Mark und Bein fährt. In der Tür erscheint ein alte, verschrumpelt
-aussehende Frau, die sich auf ihren hölzernen Stock stützt. "Tut mir leid,
-ich habe meinen Vorratskammer schon voll, aber danke für das Angebot."
-hörst Du ihre krächzende Stimme sagen. "Aber ich glaube, ich kann Euch
-als Belohnung für Eueren guten Willen einen Tip geben: meine Krähe", dabei
-stößt sie ein irres Gelächter aus und schwenkt wie wild ihre Arme, "also
-meine Krähe hat gehört, daß Peter mit Robert nach Hause fahren muß." Dann
-verschwindet sie in ihrem Häuschen und die Türe schließt sich mit dem
-selben grauenvollen Geräusch, mit dem sie sich auch geöffnet hat.
+Als es klingelt Ã¶ffnet sich die TÃ¼re langsam mit einem Quietschen, das
+Dir durch Mark und Bein fÃ¤hrt. In der TÃ¼r erscheint ein alte, verschrumpelt
+aussehende Frau, die sich auf ihren hÃ¶lzernen Stock stÃ¼tzt. "Tut mir leid,
+ich habe meinen Vorratskammer schon voll, aber danke fÃ¼r das Angebot."
+hÃ¶rst Du ihre krÃ¤chzende Stimme sagen. "Aber ich glaube, ich kann Euch
+als Belohnung fÃ¼r Eueren guten Willen einen Tip geben: meine KrÃ¤he", dabei
+stÃ¶ÃŸt sie ein irres GelÃ¤chter aus und schwenkt wie wild ihre Arme, "also
+meine KrÃ¤he hat gehÃ¶rt, daÃŸ Peter mit Robert nach Hause fahren muÃŸ." Dann
+verschwindet sie in ihrem HÃ¤uschen und die TÃ¼re schlieÃŸt sich mit dem
+selben grauenvollen GerÃ¤usch, mit dem sie sich auch geÃ¶ffnet hat.
 $fernglas_lang
 Du siehst ein alterschwaches Fernglas.
-$fernglas_trägt
-Um Deinen Hals hängt an einem Band ein Fernglas.
-$taschentücher_lang
-Hier liegt eine Packung Taschentücher.
-$taschentücher_trägt
-Du hast für alle Fälle eine Packung Taschentücher eingesteckt.
+$fernglas_trÃ¤gt
+Um Deinen Hals hÃ¤ngt an einem Band ein Fernglas.
+$taschentÃ¼cher_lang
+Hier liegt eine Packung TaschentÃ¼cher.
+$taschentÃ¼cher_trÃ¤gt
+Du hast fÃ¼r alle FÃ¤lle eine Packung TaschentÃ¼cher eingesteckt.
 $basehose_lang
 Da liegt eine nur leicht beschmutzte Badehose.
-$basehose_trägt
-Du trägst über Deinen Jeans eine Badehose - Madonna Fan oder was?
+$basehose_trÃ¤gt
+Du trÃ¤gst Ã¼ber Deinen Jeans eine Badehose - Madonna Fan oder was?
 $gabel_lang
 Da liegt eine Gabel.
-$gabel_trägt
+$gabel_trÃ¤gt
 Du hast eine Gabel mit einigen Essenresten im Haar - ekelhaft!
-$löffel_lang
-Hier liegt ein Suppenlöffel.
-$löffel_trägt
-Du hast Dir einen großen Löffel in den Mund gesteckt und bekommst sicher
+$lÃ¶ffel_lang
+Hier liegt ein SuppenlÃ¶ffel.
+$lÃ¶ffel_trÃ¤gt
+Du hast Dir einen groÃŸen LÃ¶ffel in den Mund gesteckt und bekommst sicher
 bald Maulsperre.
 $glas_lang
 Da steht ein leeres Wasserglas.
-$glas_trägt
+$glas_trÃ¤gt
 Du hast ein leeres Wasserglas bei Dir.
 $tasse_lang
 Du siehst hier eine Kaffeetasse aus dem vierzehnten Jahrhundert, wenn ich die
 Jahresringe richtig deute.
-$tasse_trägt
+$tasse_trÃ¤gt
 Du hast die alte Kaffeetasse von Klaus bei Dir.
 $wecker_lang
 Da steht ein Reisewecker.
-$wecker_trägt
+$wecker_trÃ¤gt
 Du hast einen Reisewecker bei Dir.
 $wecker
-Der Wecker zeigt 14:57 Uhr an. Immer? Nicht immer - aber immer öfter.
+Der Wecker zeigt 14:57 Uhr an. Immer? Nicht immer - aber immer Ã¶fter.
 $teller_lang
 Hier steht ein vor Wochen oder so benutzter Teller.
-$teller_trägt
+$teller_trÃ¤gt
 Du balanzierst einen Teller auf Deinem Kopf.
 $reifen_lang
 Auf dem Boden liegt ein alter Autoreifen.
-$reifen_trägt
-Du trägst einen alten Autoreifen um den Hals und stöhnst ab und zu.
+$reifen_trÃ¤gt
+Du trÃ¤gst einen alten Autoreifen um den Hals und stÃ¶hnst ab und zu.
 $fahrrad_lang
-Da steht ein Fahrrad, genau wie im ersten Adventure. Wem das wohl gehört?
-$fahrrad_trägt
+Da steht ein Fahrrad, genau wie im ersten Adventure. Wem das wohl gehÃ¶rt?
+$fahrrad_trÃ¤gt
 Du benutzt ein Fahrrad, wo es nur geht.
 $fotoapperat_lang
 Hier ist ein moderner Fotoapperat.
-$fotoapperat_trägt
-Du hast einen Fotoapperat umhängen und siehst jetzt aus wie ein japanischer
+$fotoapperat_trÃ¤gt
+Du hast einen Fotoapperat umhÃ¤ngen und siehst jetzt aus wie ein japanischer
 Tourist.
 $foto_lang
 Da liegt ein Farbfoto.
-$foto_trägt
+$foto_trÃ¤gt
 Du hast ein Farbfoto bei Dir.
 $foto
-Auf dem Foto ist eine kleine Maus in einem eigenartigen Käfig abgebildet. Auf
-der Rückseite des Fotos steht: "Sie ist uns leider entwischt. Ihr solltet
-sie ein für alle mal erledigen, bevor neues Unheil geschieht."
+Auf dem Foto ist eine kleine Maus in einem eigenartigen KÃ¤fig abgebildet. Auf
+der RÃ¼ckseite des Fotos steht: "Sie ist uns leider entwischt. Ihr solltet
+sie ein fÃ¼r alle mal erledigen, bevor neues Unheil geschieht."
 $tisch_lang
-Hier steht so ein weißer Gartentisch.
+Hier steht so ein weiÃŸer Gartentisch.
 $tisch
-Etwas unbequem, so auf dem Tisch zu liegen, aber bei Deiner Erschöpfung gibt
+Etwas unbequem, so auf dem Tisch zu liegen, aber bei Deiner ErschÃ¶pfung gibt
 es Dir sicher Kraft.
 $stuhl_lang
-Hier ist ein bequemer weißer Gartenstuhl.
+Hier ist ein bequemer weiÃŸer Gartenstuhl.
 $stuhl
-Wow, der Stuhl ist wirklich bequem. Ich denke, das hat uns jetzt aber für
-eine ganze Weile gestärkt. Also, frisch ans Werk.
+Wow, der Stuhl ist wirklich bequem. Ich denke, das hat uns jetzt aber fÃ¼r
+eine ganze Weile gestÃ¤rkt. Also, frisch ans Werk.
 $flasche
-Regel eins der hohen Kunst der Genußmittelvernichtung: aus leeren Flaschen
+Regel eins der hohen Kunst der GenuÃŸmittelvernichtung: aus leeren Flaschen
 kann man nicht trinken.
 $wasser
 Hmm, wie erfrischend ein Schluck klares Gebirgswasser doch sein kann.
-$baumstämme_lang
-Hier liegen viele Baumstämme.
-$brösel
-Wie gesagt, alles zerbröselt zu Staub, wenn Du es anfasst.
+$baumstÃ¤mme_lang
+Hier liegen viele BaumstÃ¤mme.
+$brÃ¶sel
+Wie gesagt, alles zerbrÃ¶selt zu Staub, wenn Du es anfasst.
 $markierung_lang
 Eine gelbe Markierung zeigt nach Norden.
-$markierung_trägt
+$markierung_trÃ¤gt
 Du hast die Markierung eines Wanderweges geklaut, pfui.
 $steine_lang
 Es ist ziemlich steinig hier.
-$steine_trägt
+$steine_trÃ¤gt
 Du hast eine Menge Steine in den Schuhen, die Dich ziemlich piesacken.
 $markierung2_lang
 Hier ist eine gelbe Markierung.
-$markierung2_trägt
-Du trägst eine gelbe Markierung am rechten Knie.
+$markierung2_trÃ¤gt
+Du trÃ¤gst eine gelbe Markierung am rechten Knie.
 $pilze_lang
 Hier stehen einige Pilze.
-$pilze_trägt
+$pilze_trÃ¤gt
 Du hast einige schmackhafte Pilze bei Dir.
 $pilze_essen
-Ha, hast Du wohl gedacht, daß die Pilze giftig sind. Sind sie aber nicht!
+Ha, hast Du wohl gedacht, daÃŸ die Pilze giftig sind. Sind sie aber nicht!
 Und es hat die offenbar geschmeckt, wie man an Deinem damenhaften
-Rülpser erkennen kann.
-$eichhörnchen_lang
-Ein Eichhörnchen auf einer Fichte schaut Dich an.
-$eichhörnchen
+RÃ¼lpser erkennen kann.
+$eichhÃ¶rnchen_lang
+Ein EichhÃ¶rnchen auf einer Fichte schaut Dich an.
+$eichhÃ¶rnchen
 Bei allem Respekt, aber dazu bist Du einige hunderstel zu langsam.
 $markierung3_lang
-Eine Markierung auf dem Boden zeigt nach Süden.
-$markierung3_trägt
-Du trägst eine gelbe Markierung am linken Knie.
+Eine Markierung auf dem Boden zeigt nach SÃ¼den.
+$markierung3_trÃ¤gt
+Du trÃ¤gst eine gelbe Markierung am linken Knie.
 $laub_lang
 Alles ist voller altem Laub.
-$laub_trägt
+$laub_trÃ¤gt
 Du hast die Taschen voller Laub, wie die Leute aus Golgafrincham (siehe dazu
 auch "Das Restaurant am Ende des Universums", Seite 201, Mitte).
 $birke_lang
 Hier liegt ein Birke.
-$birke_trägt
-Da schleppt doch tatsächlich ein Irrer mit einem Baum durch die Gegend - ist 
+$birke_trÃ¤gt
+Da schleppt doch tatsÃ¤chlich ein Irrer mit einem Baum durch die Gegend - ist 
 es denn schon wieder Mai?
 $eidechse_lang
-Auf einem großen Stein sitzt eine Eidechse.
+Auf einem groÃŸen Stein sitzt eine Eidechse.
 $eidechse_kurz
 Hinter einem Stein sitzt eine schwanzlose Eidechse und scheint ziemlich
-sauer auf Dich zu sein - wenn Blicke töten könnten.
+sauer auf Dich zu sein - wenn Blicke tÃ¶ten kÃ¶nnten.
 $eidechse_schwanz
 Du erwischst das flinke Tier gerade noch am Schwanzende und stehst dann
-plötzlich mit dem selbigen alleine da. Angeeckelt wirfst Du das sich noch
-windende Stückchen Tier von Dir. Die Eidechse huscht hinter den Stein.
+plÃ¶tzlich mit dem selbigen alleine da. Angeeckelt wirfst Du das sich noch
+windende StÃ¼ckchen Tier von Dir. Die Eidechse huscht hinter den Stein.
 $eidechse
-Ohne Schwanz ist die Fangfläche eindeutig zu klein für Dich.
+Ohne Schwanz ist die FangflÃ¤che eindeutig zu klein fÃ¼r Dich.
 $bussard_lang
-Über Dir kreist ein Bussard.
+Ãœber Dir kreist ein Bussard.
 $bussard
-Ich denke, hier übersteigt Dein Ego Deine Fähigkeiten bei weitem, exakt so
-an die fünfzig Meter.
+Ich denke, hier Ã¼bersteigt Dein Ego Deine FÃ¤higkeiten bei weitem, exakt so
+an die fÃ¼nfzig Meter.
 $skelett_lang
 Igitt, lieber nicht.
-$müll_lang
-Die Wiese ist voller Müll.
-$müll
-Das lassen wir lieber mal schön. Du hast ja vielleicht Ideen...
+$mÃ¼ll_lang
+Die Wiese ist voller MÃ¼ll.
+$mÃ¼ll
+Das lassen wir lieber mal schÃ¶n. Du hast ja vielleicht Ideen...
 $kieselstein_lang
 Hier liegt ein Kieselstein.
-$kieselstein_trägt
+$kieselstein_trÃ¤gt
 Du lutschst auf einem Kieselstein herum.
 $tip1_tip
-An der Wand fällt Dir ein kleiner rosa Zettel auf, auf dem von 
-Märchengestalten wie einer Hexe und dem berüchtigten Dornröschen 
-die Rede ist, die einem Sucher wertvolle Tips geben können. Als
-Du versuchst, den Zettel an Dich zu nehmen, löst er sich in rosa
-Wölkchen auf und zurück bleibt nur ein süßlicher Duft, der sich 
+An der Wand fÃ¤llt Dir ein kleiner rosa Zettel auf, auf dem von 
+MÃ¤rchengestalten wie einer Hexe und dem berÃ¼chtigten DornrÃ¶schen 
+die Rede ist, die einem Sucher wertvolle Tips geben kÃ¶nnen. Als
+Du versuchst, den Zettel an Dich zu nehmen, lÃ¶st er sich in rosa
+WÃ¶lkchen auf und zurÃ¼ck bleibt nur ein sÃ¼ÃŸlicher Duft, der sich 
 schnell im Raum verteilt.

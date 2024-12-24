@@ -1,77 +1,77 @@
 $$halle
 $vorraum_lang
-Du stehst in einer Art Vorraum zu einer großen Hallen hinter Dir. Dort
-wie auch vor Dir sind jeweils breite Türen. Links und rechts an den 
-Wänden hängen Informationen über die Sehenswürdigkeiten der Gegend 
-und Wanderkarten der näheren Umgebung.
+Du stehst in einer Art Vorraum zu einer groÃŸen Hallen hinter Dir. Dort
+wie auch vor Dir sind jeweils breite TÃ¼ren. Links und rechts an den 
+WÃ¤nden hÃ¤ngen Informationen Ã¼ber die SehenswÃ¼rdigkeiten der Gegend 
+und Wanderkarten der nÃ¤heren Umgebung.
 $vorraum_kurz
 Vor Dir ist der Ausgang.
 $halle_lang
-Du hast eine große Eingangshalle erreicht, die offenbar hauptsächlich
-zur Anmeldung neuer Gäste dient. Ein schwarzes Brett neben dem Aufgang
-in höhere Stockwerke hinter Dir ist mit vielen kleinen Zetteln bestückt.
-Neben der Rezeption rechts führt ein schmaler Gang nach der Beschriftung
-zu urteilen zu einer Toilette. Ein breiterer Gang läuft nach links. Das
+Du hast eine groÃŸe Eingangshalle erreicht, die offenbar hauptsÃ¤chlich
+zur Anmeldung neuer GÃ¤ste dient. Ein schwarzes Brett neben dem Aufgang
+in hÃ¶here Stockwerke hinter Dir ist mit vielen kleinen Zetteln bestÃ¼ckt.
+Neben der Rezeption rechts fÃ¼hrt ein schmaler Gang nach der Beschriftung
+zu urteilen zu einer Toilette. Ein breiterer Gang lÃ¤uft nach links. Das
 breite Portal vor Dir ist offensichtlich der Ausgang.
 $halle_kurz
 Du stehst bei der Rezeption.
 $treppe_lang
 Du stehst am unteren Ende einer Treppe. An der Wand ist ein Schild mit
 der Aufschrift "Brunch" und einem Pfeil, der nach oben zeigt. Vor Dir
-liegt eine große Halle.
+liegt eine groÃŸe Halle.
 $treppe_kurz
-Hier fängt die Treppe an.
+Hier fÃ¤ngt die Treppe an.
 $treppe2_lang
 Du bist auf einer gewundenen Treppe, die die Eingangshalle mit den
-oberen Stockwerken dieses Gebäudes verbindet.
+oberen Stockwerken dieses GebÃ¤udes verbindet.
 $treppe2_kurz
 Du bist auf der Treppe.
 $g1_lang
 Vor und hinter Dir sind Vitrinen angebracht, in denen der touristische Tand
 dieser Gegend zum Verkauf dargeboten wird. Es handelt sich meist um mehr
-oder weniger kitschige Gegenstände, die zumindest einen Edelstein enthalten.
-Der Gang läuft von links nach rechts und endet dort in einer großen Halle.
+oder weniger kitschige GegenstÃ¤nde, die zumindest einen Edelstein enthalten.
+Der Gang lÃ¤uft von links nach rechts und endet dort in einer groÃŸen Halle.
 $g1_kurz
 Du bist bei den Vitrinen.
 $g2_lang
-Der Gang von rechts mündet links in einen Quergang. Hinter Dir ist der Eingang
-zu einem Restaurant, wie Du leicht durch die verglasten Wände erkennen kannst.
-Ähnliche Sichtfenster lassen Dich nach vorne auf einen Billardtisch schauen,
+Der Gang von rechts mÃ¼ndet links in einen Quergang. Hinter Dir ist der Eingang
+zu einem Restaurant, wie Du leicht durch die verglasten WÃ¤nde erkennen kannst.
+Ã„hnliche Sichtfenster lassen Dich nach vorne auf einen Billardtisch schauen,
 zu dem allerdings von hier aus kein Zugang existiert.
 $g2_kurz
 Hinter Dir ist der Eingang zum Restaurant.
 $g3_lang
-Der Gang von vorne endet hinter Dir vor einer Wand. Ein Seitengang führt rechts
-an dem Restaurant vorbei in Richtung einer großen Halle. Links und hinter
-Dir ist eine kahle weiße Wand.
+Der Gang von vorne endet hinter Dir vor einer Wand. Ein Seitengang fÃ¼hrt rechts
+an dem Restaurant vorbei in Richtung einer groÃŸen Halle. Links und hinter
+Dir ist eine kahle weiÃŸe Wand.
 $g3_kurz
 Der Gang endet hinter Dir.
 $g4_lang
-Links und vor Dir siehst Du nur langweilige weiße Wände. Der Gang, in dem
+Links und vor Dir siehst Du nur langweilige weiÃŸe WÃ¤nde. Der Gang, in dem
 Du Dich gerade befindest, hat hier einen Zugang zu einer Art Spielhalle
-rechts von Dir. Hinter Dir führt er nach kurzem zu einer ähnlichen Wand,
+rechts von Dir. Hinter Dir fÃ¼hrt er nach kurzem zu einer Ã¤hnlichen Wand,
 wie Du sie vor Dir siehst.
 $g4_kurz
 Rechts ist die Spielhalle.
 $billard_lang
-Das hier ist wohl der Hauptaufenthaltsraum für die Teens. Beherrscht wird
+Das hier ist wohl der Hauptaufenthaltsraum fÃ¼r die Teens. Beherrscht wird
 der Raum durch einige schon leicht ramponierte Billardtische in der Mitte.
-Die Wände sind vollgestellt mit Spielautomaten, nur unterbrochen durch eine
+Die WÃ¤nde sind vollgestellt mit Spielautomaten, nur unterbrochen durch eine
 Art Fenster hinter Dir und den Ausgang links.
 $billard_kurz
 Du bist in der Spielhalle.
 $restaurant_lang
 Du bist in einem modern ausgestatteten Restaurant. Durch die Fenster in den
-Wänden links und vor Dir kannst Du in einen Gang sehen - rechts die Wand ist
+WÃ¤nden links und vor Dir kannst Du in einen Gang sehen - rechts die Wand ist
 leider massiv und erlaubt Dir keinen Durchblick. Nach vorne ist ein Durchgang
 zu dem Gang und hinter Dir geht es offenbar auf eine Terasse, auf die Du durch 
-die großflächigen Fenster sehen kannst.
+die groÃŸflÃ¤chigen Fenster sehen kannst.
 $restaurant_kurz
 Du bist im Restaurant mit der Terasse.
 $t1_lang
-Du stehst hier in der rechten Ecke einer Terasse, die mit einigen weißen
-Tischen bestellt ist. Rechts hinter Dir endet ein Geländer, so daß Du von
-hier aus auf den zugefrorenen See gelangen könntest. Durch das Fenster vor
+Du stehst hier in der rechten Ecke einer Terasse, die mit einigen weiÃŸen
+Tischen bestellt ist. Rechts hinter Dir endet ein GelÃ¤nder, so daÃŸ Du von
+hier aus auf den zugefrorenen See gelangen kÃ¶nntest. Durch das Fenster vor
 Dir kannst Du in ein Restaurant sehen.
 $t1_kurz
 Du bist in der rechten Ecke der Terasse.
@@ -79,15 +79,15 @@ $t2_lang
 Vor Dir befindet sich der Zugang zu einem Restaurant, auf dessen Terasse
 Du Dich zur Zeit befindest. Die Terasse setzt sich nach links und rechts
 fort und ist am Ufer eines Sees angelegt, der zur Zeit zugefroren ist.
-Ein Treppe hinter Dir führt zu diesem See, sicher um den Sommergästen
-eine Möglichkeit der Erfrischung zu bieten.
+Ein Treppe hinter Dir fÃ¼hrt zu diesem See, sicher um den SommergÃ¤sten
+eine MÃ¶glichkeit der Erfrischung zu bieten.
 $t2_kurz
 Hinter Dir ist die Treppe zum See.
 $t3_lang
 Du stehst in der linken Ecke der Terasse des Restaurants, in das Du durch
 das Fenster vor Dir sehen kannst. Im Augenblick stehen auf der Terasse nur
-wenige Tische, was sicher auf die Temperaturen zurückzuführen ist.
-Da das Geländer links hinter Dir endet, kannst Du von hier aus auf den
+wenige Tische, was sicher auf die Temperaturen zurÃ¼ckzufÃ¼hren ist.
+Da das GelÃ¤nder links hinter Dir endet, kannst Du von hier aus auf den
 zugefrorenen See hinter Dir laufen.
 $t3_kurz
 Du bist in der linken Ecke der Terasse.

@@ -1,47 +1,47 @@
 $$bowling
 $theke_lang
 Du bist hier im Eingangsbereich einer kleinen Bar. Unmittelbar links neben
-Dir steht eine mächtige Theke, an der vorbei nur ein schmaler Gang zu
-einer Garderobe führt. Anders als in den Bars, 
-in denen Du üblicherweise verkehrst,
+Dir steht eine mÃ¤chtige Theke, an der vorbei nur ein schmaler Gang zu
+einer Garderobe fÃ¼hrt. Anders als in den Bars, 
+in denen Du Ã¼blicherweise verkehrst,
 ist vor Dir an der Wand ein Schuhregal angebracht, das offensichtlich
-Bowlingschuhe enthält. Hinter Dir kannst Du auch auf einige Bahnen sehen.
+Bowlingschuhe enthÃ¤lt. Hinter Dir kannst Du auch auf einige Bahnen sehen.
 $theke_kurz
 Du stehst an der Theke der Bowlingbar.
 $bahnen_lang
-Ein hölzernes Gelände versperrt bis auf einige schmale Durchlässe den Weg 
+Ein hÃ¶lzernes GelÃ¤nde versperrt bis auf einige schmale DurchlÃ¤sse den Weg 
 zur Theke vor Dir. Ansonsten wird der Raum, in dem Du Dich befindest, durch
 mehrere Bowling- und Kegelbahnen dominiert, die hinter Dir aufgebaut sind.
-Einige Leute spielen mehr oder weniger fröhlich - und mehr oder weniger
-betrunken - das eine oder andere Spiel. Ab und zu ertönt sogar ein Fluch,
+Einige Leute spielen mehr oder weniger frÃ¶hlich - und mehr oder weniger
+betrunken - das eine oder andere Spiel. Ab und zu ertÃ¶nt sogar ein Fluch,
 den selbst Du noch nicht kennst.
 $bahnen_kurz
 Du bist bei den Bowling- und Kegelbahnen.
 $garderobe_lang
 Du hast hier eine Garderobe erreicht, wo viele mehr oder weniger annehmbare
-Mäntel und Jacken hängen. Ein scheuer Blick nach hinten über das Geländer
-zeigt Dir, daß die Eigentümer trotz ihrer Vertiefung in ihr Spiel
+MÃ¤ntel und Jacken hÃ¤ngen. Ein scheuer Blick nach hinten Ã¼ber das GelÃ¤nder
+zeigt Dir, daÃŸ die EigentÃ¼mer trotz ihrer Vertiefung in ihr Spiel
 immer bereit sind, einen
-Dieb zu lynchen oder sonstwie langsam zu Tode zu befördern - also vergiß
-es. Der Gang von der Theke rechts führt vor Dir durch eine schmale Tür, über
+Dieb zu lynchen oder sonstwie langsam zu Tode zu befÃ¶rdern - also vergiÃŸ
+es. Der Gang von der Theke rechts fÃ¼hrt vor Dir durch eine schmale TÃ¼r, Ã¼ber
 der "Notausgang" steht.
 $garderobe_kurz
 Du bist in der Garderobe.
 $g1_lang
 Links in diesem schmalen und kahlen Gang von hinten nach vorne ist eine
-Tür, die nach allem was Du von der Deutung von Zeichen weißt wohl zu einer
-Toilette führt.
+TÃ¼r, die nach allem was Du von der Deutung von Zeichen weiÃŸt wohl zu einer
+Toilette fÃ¼hrt.
 $g1_kurz
 Du bist in dem schmalen Gang neben dem Eingang zur Toilette.
 $g2_lang
 Der Gang von hinten macht hier einen scharfen Knick nach links und scheint
-in eine große Halle zu münden. Ansonsten gibt es über den Gang nicht viel
+in eine groÃŸe Halle zu mÃ¼nden. Ansonsten gibt es Ã¼ber den Gang nicht viel
 zu sagen, da er ratzekahl leer ist.
 $g2_kurz
-Links geht es wohl in eine größere Halle.
+Links geht es wohl in eine grÃ¶ÃŸere Halle.
 $WC_lang
 Unglaublich, wie schmuddelig diese Toilette ist. Mir scheint, man sollte
-das ganze mit einer Spülung versehen und einfach abziehen. Übrigens, wenn
+das ganze mit einer SpÃ¼lung versehen und einfach abziehen. Ãœbrigens, wenn
 Du Dich von Deinem Brechanfall 
 wieder erholt haben solltest: der Ausgang ist rechts von Dir.
 $WC_kurz

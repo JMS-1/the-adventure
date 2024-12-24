@@ -1,12 +1,12 @@
 message  = lang
 exits    = (*:&$$botanik$verboten)
 actions  = (entry:if_message lang @message = kurz) 
-#nehmen	 = (message = trägt)
+#nehmen	 = (message = trÃ¤gt)
 #ablegen = (message = lang)
 time     = (d2/0,h14/0,m0/1)
 weight   = (100,10,2)
 state    = $$dummy$start
-S 	 = #süden
+S 	 = #sÃ¼den
 N 	 = #norden
 W 	 = #westen
 E  	 = #osten

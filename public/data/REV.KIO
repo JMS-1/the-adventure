@@ -1,32 +1,32 @@
 $$kiosk
 $k1_lang
 Du hast von links kommend eine dieser komischen Schranken passiert, wie
-sie in Supermärkten üblich sind. In diesem Teil des Ladens sind die
-Getränke gestapelt. Was Dich etwas nachdenklich stimmt ist die Tatsache,
-daß sämtliche Sorten Bier ausverkauft sind. Irgendwie erinnert Dich
+sie in SupermÃ¤rkten Ã¼blich sind. In diesem Teil des Ladens sind die
+GetrÃ¤nke gestapelt. Was Dich etwas nachdenklich stimmt ist die Tatsache,
+daÃŸ sÃ¤mtliche Sorten Bier ausverkauft sind. Irgendwie erinnert Dich
 das an etwas, aber Du kommst nicht so richtig auf den Kern. Rechts von
-Dir führt ein schmaler Gang zwischen Regalen hindurch in andere Teile
+Dir fÃ¼hrt ein schmaler Gang zwischen Regalen hindurch in andere Teile
 des Ladens.
 $k1_kurz
-Du stehst in der Getränkeecke.
+Du stehst in der GetrÃ¤nkeecke.
 $k2_lang
-In dieser Ecke des Kiosks findest Du sämtliche Toilettenartikel von Seife
-- okay, aber es gibt auch Leute, die sie benutzen. Ehrlich! - über die
-Dinge für die Frau bis zu denen für den Mann - ich denke hier mehr an
+In dieser Ecke des Kiosks findest Du sÃ¤mtliche Toilettenartikel von Seife
+- okay, aber es gibt auch Leute, die sie benutzen. Ehrlich! - Ã¼ber die
+Dinge fÃ¼r die Frau bis zu denen fÃ¼r den Mann - ich denke hier mehr an
 Rasierklingen und so, Du altes Ferkel. Der Gang durch die Regale von
 links geht vorne weiter, wo es offensichtlich Lebensmittel gibt.
 $k2_kurz
 Hier gibt es Seife und so Sachen.
 $k3_lang
-Hier ist die Kasse des kleinen Ladens. In der Nähe der Kasse sind die
-üblichen Artikel wie Zigaretten, Kaugummi, Ansichts- und Wanderkarten
+Hier ist die Kasse des kleinen Ladens. In der NÃ¤he der Kasse sind die
+Ã¼blichen Artikel wie Zigaretten, Kaugummi, Ansichts- und Wanderkarten
 zu finden. Ein grimmig aussehender Mann bedient die Kasse. Er starrt
-Dich mißtrauisch von oben nach unten an. Links hinter der Kasse ist
+Dich miÃŸtrauisch von oben nach unten an. Links hinter der Kasse ist
 der Ausgang und rechts geht es in den Laden.
 $k3_kurz
 Du bist an der Kasse.
 $k4_lang
-Du hast die Lebensmittelabteilung erreicht. Eigentümlicher Weise ist
+Du hast die Lebensmittelabteilung erreicht. EigentÃ¼mlicher Weise ist
 hier kaum noch etwas zu bekommen, was Dir im Zusammenhang mit dem
 Ausgehen des Bieres etwas zu sagen scheint - aber was? Links geht der
 Gang von hinten weiter in Richtung Kasse.
@@ -35,6 +35,6 @@ Hier gibt es kaum noch Lebensmittel.
 $eingang
 Du kannst leider in diese Richtung den Kiosk nicht wieder verlassen,
 da hier eine dieser Schranken angebracht ist, die nur in eine Richtung
-durchlässig sind. Vielleicht ist es auch besser, wenn Du mal durch den
-Laden läufst. Vielleicht findest Du das eine oder andere, was Du noch
+durchlÃ¤ssig sind. Vielleicht ist es auch besser, wenn Du mal durch den
+Laden lÃ¤ufst. Vielleicht findest Du das eine oder andere, was Du noch
 brauchen kannst.

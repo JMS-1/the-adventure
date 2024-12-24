@@ -1,6 +1,6 @@
 $$botanik
 $verboten/1
-Wie ich schon erwähnt habe, geht es in diese Richtung nicht weiter.
+Wie ich schon erwÃ¤hnt habe, geht es in diese Richtung nicht weiter.
 $verboten/2
 Dein Mut in allen Ehren, aber hier kannst Du nicht durch.
 $verboten/3
@@ -8,28 +8,28 @@ Was denn, mal wieder mit dem Kopf durch die Wand? Such' Dir einen anderen
 Weg.
 $wand/1
 Wie schon gesagt befindet sich hier ein Gitter. Obwohl es nur etwa 2 Meter
-hoch ist, ist es nicht möglich, hinüber zu klettern. Vielleicht gibt es
+hoch ist, ist es nicht mÃ¶glich, hinÃ¼ber zu klettern. Vielleicht gibt es
 ja auch noch einen anderen Weg, von hier wegzukommen.
 $wand/2
 Autsch, voll mit der Nase gegen den Zaun. Wenn das so weitergeht, solltest
 Du besser eine Gefahrenzulage verlangen. Aber Deine Nase scheint ja einiges
 auszuhalten.
 $wand/3
-Das darf doch nicht wahr sein! Würdest Du bitte mal lesen, was ich Dir hier
-versuche mitzuteilen! Da steht nämlich schon, daß sich hier ein reichlich
-unüberwindbarer Zaun befindet.
-$türzu/1
-Das geht nicht, die Tür ist zu.
-$türzu/2
-Hey, wirst Du vielleicht erst einmal die Tür aufmachen oder willst Du Dir
+Das darf doch nicht wahr sein! WÃ¼rdest Du bitte mal lesen, was ich Dir hier
+versuche mitzuteilen! Da steht nÃ¤mlich schon, daÃŸ sich hier ein reichlich
+unÃ¼berwindbarer Zaun befindet.
+$tÃ¼rzu/1
+Das geht nicht, die TÃ¼r ist zu.
+$tÃ¼rzu/2
+Hey, wirst Du vielleicht erst einmal die TÃ¼r aufmachen oder willst Du Dir
 blaue Flecken holen.
-$türzu/3
-Du kannst diese Tür nicht einrennen. Versuch's doch mal mit Öffnen.
+$tÃ¼rzu/3
+Du kannst diese TÃ¼r nicht einrennen. Versuch's doch mal mit Ã–ffnen.
 $a1_lang
 Du befindest Dich in einer ziemlich finsteren Ecke. Links und vor Dir befindet
-sich ein Gitter, und ich glaube nicht, daß Du darüber hinweg kommst. 
-Unmittelbar vor Dir siehst Du eine dicke Eiche, die mit ihrem Blätterdach den 
-schummrigen Eindruck noch verstärkt. Der Boden ist von feuchtem, dunkelgrünen 
+sich ein Gitter, und ich glaube nicht, daÃŸ Du darÃ¼ber hinweg kommst. 
+Unmittelbar vor Dir siehst Du eine dicke Eiche, die mit ihrem BlÃ¤tterdach den 
+schummrigen Eindruck noch verstÃ¤rkt. Der Boden ist von feuchtem, dunkelgrÃ¼nen 
 Moos bedeckt. Nach rechts und hinten ist der Weg frei.
 $a1_kurz
 Du bist in der Schummerecke. Der Weg wird nach vorne und links durch ein
@@ -37,246 +37,246 @@ Gitter beendet.
 $b1_lang
 Vor Dir befindet sich ein Gitter, etwa 2 Meter hoch. Eine niedrige Hecke
 beginnt in der Mitte des Gitters und setzt sich nach rechts fort. Nach links
-hin wird es etwas dunkler. Durch das Gitter hindurch siehst Du eine Straße.
+hin wird es etwas dunkler. Durch das Gitter hindurch siehst Du eine StraÃŸe.
 Direkt hinter Dir befindet sich eine Glaswand, hinter der eine bedrohliche
-grüne Masse lauert. Der Boden ist mit Moos bedeckt und kleine Steine zieren
+grÃ¼ne Masse lauert. Der Boden ist mit Moos bedeckt und kleine Steine zieren
 den Bereich rechts von Dir.
 $b1_kurz
-Du steht zwischen Gitter und Glaswand. Eine Straße ist durch das Gitter
+Du steht zwischen Gitter und Glaswand. Eine StraÃŸe ist durch das Gitter
 sichtbar.
 $c1_lang
-Der Weg ist hier etwas steinig, und man sieht nur noch wenig Grün. Gitter und
+Der Weg ist hier etwas steinig, und man sieht nur noch wenig GrÃ¼n. Gitter und
 Glaswand sind immer noch an ihrer alten Stelle. Die Hecke ist allerdings so
-hoch, daß die Straße nicht mehr sichtbar ist. Nach allen Gesetzen der Logik
+hoch, daÃŸ die StraÃŸe nicht mehr sichtbar ist. Nach allen Gesetzen der Logik
 sollte sie allerdings noch da sein (na ja, siehe dazu auch "Per Anhalter durch
 die Galaxis" Seite 30 unten). Nach rechts ist Dir der Weg durch ein paar
-kräftige Bäume versperrt.
+krÃ¤ftige BÃ¤ume versperrt.
 $c1_kurz
-Du bist in einer Sackgasse. Außer viel Grün gibt es hier nichts Interessantes
+Du bist in einer Sackgasse. AuÃŸer viel GrÃ¼n gibt es hier nichts Interessantes
 zu sehen.
 $baeume
-Du kannst nicht zwischen den Bäumen hindurchgehen. Such' Dir gefälligst einen
+Du kannst nicht zwischen den BÃ¤umen hindurchgehen. Such' Dir gefÃ¤lligst einen
 anderen Weg.
 $d1_lang
 Das gibt es doch nicht, direkt vor Dir ist ein Tor in einem Gitterzaun.
-Ein Weg ist mit kleinen Kieseln recht hübsch belegt. Zu Deiner
-Linken befinden sich ein paar Fahrradständer vor einigen dicht stehenden
-Bäumen. Auch rechts von und hinter Dir sind Bäume, durch die Du Dich aber
-sicher hindurchzwängen kannst. Ach ja, da steht noch ein Schild mit der
-Aufschrift "Geöffnet bis 15.00 Uhr".
+Ein Weg ist mit kleinen Kieseln recht hÃ¼bsch belegt. Zu Deiner
+Linken befinden sich ein paar FahrradstÃ¤nder vor einigen dicht stehenden
+BÃ¤umen. Auch rechts von und hinter Dir sind BÃ¤ume, durch die Du Dich aber
+sicher hindurchzwÃ¤ngen kannst. Ach ja, da steht noch ein Schild mit der
+Aufschrift "GeÃ¶ffnet bis 15.00 Uhr".
 $d1_kurz
-Du stehst am Ausgang neben den Fahrradständern.
+Du stehst am Ausgang neben den FahrradstÃ¤ndern.
 $e1_lang
 Vor Dir befindet sich ein hoher Zaun. Eine dichte, dornige Hecke rankt sich um
-ihn. Links siehst Du ein paar Bäume, aber da kommt man wohl ohne Probleme
-durch. Nach hinten ist kein Weiterkommen, ein großes Gebäude grenzt das
-kleine Rasenstück, auf dem Du stehst, ab. Auf dem Rasen wachsen einige bunte
+ihn. Links siehst Du ein paar BÃ¤ume, aber da kommt man wohl ohne Probleme
+durch. Nach hinten ist kein Weiterkommen, ein groÃŸes GebÃ¤ude grenzt das
+kleine RasenstÃ¼ck, auf dem Du stehst, ab. Auf dem Rasen wachsen einige bunte
 Blumen.
 $e1_kurz
-Du bist auf der Blumenwiese mit ein paar Bäumen links von Dir.
+Du bist auf der Blumenwiese mit ein paar BÃ¤umen links von Dir.
 $f1_lang
 Nach rechts und links erstreckt sich ein kleiner Rasen mit bunten Blumen.
 Vor und hinter Dir erlauben Zaun und Haus keinen Durchgang. An einem Fenster
-hängt eine Fahne, aber Du kannst nicht erkennen, was für ein Land sie
+hÃ¤ngt eine Fahne, aber Du kannst nicht erkennen, was fÃ¼r ein Land sie
 darstellt.
 $f1_kurz
 Du bist auf der Blumenwiese.
 $g1_lang
 Du siehst einen Trampelpfad, der von rechts nach links (oder umgekehrt, je
-nach Perspektive) führt. Irgendein Banause hat viele bunte Blumen plattgewalzt.
-Vor Dir ist ein Zaun, der von einer dünnen Hecke bedeckt ist. Die Hecke wird
-nach links hin dichter. Rechts erkennst Du eine Straße durch das Gitter
-hindurch. Hinter Dir befindet sich ein großes Gebäude.
+nach Perspektive) fÃ¼hrt. Irgendein Banause hat viele bunte Blumen plattgewalzt.
+Vor Dir ist ein Zaun, der von einer dÃ¼nnen Hecke bedeckt ist. Die Hecke wird
+nach links hin dichter. Rechts erkennst Du eine StraÃŸe durch das Gitter
+hindurch. Hinter Dir befindet sich ein groÃŸes GebÃ¤ude.
 $g1_kurz
 Du stehst auf den zertrampelten Blumen. Durch das Gitter siehst Du eine
-Straße.
+StraÃŸe.
 $h1_lang
 Du stehst in einer Ecke des Zauns. Vor und rechts von Dir ist der
-unüberwindbare Zaun. Nach vorne hin erkennst Du eine menschenleere Straße.
-Auf der anderen Straßenseite scheint ein Parkplatz oder so etwas zu sein.
-Zu Deiner Rechten ist ein Fluß. Bei genauerem Hinsehen stellst Du allerdings
-fest, daß das Wasser nicht fließt, es scheint sich also eher um einen Teich
+unÃ¼berwindbare Zaun. Nach vorne hin erkennst Du eine menschenleere StraÃŸe.
+Auf der anderen StraÃŸenseite scheint ein Parkplatz oder so etwas zu sein.
+Zu Deiner Rechten ist ein FluÃŸ. Bei genauerem Hinsehen stellst Du allerdings
+fest, daÃŸ das Wasser nicht flieÃŸt, es scheint sich also eher um einen Teich
 zu handeln. Der Boden ist mit Gras bedeckt. Hinter Dir beginnt
 ein befestigter Weg, an dessen Seiten viele verschiedene Planzen stehen. Einige
 sind mit kleinen Schildchen versehen.
 $h1_kurz
-Du bist in einer Ecke. Vor Dir siehst Du eine Straße und rechts einen
+Du bist in einer Ecke. Vor Dir siehst Du eine StraÃŸe und rechts einen
 Teich.
 $a2_lang
 Hier ist es ziemlich dunkel. Links ahnst Du einen Zaun hinter einer dichten
-Hecke, und rechts siehst Du eine Glaswand, hinter der es tiefgrün schimmert.
-Durch das viele Grün kaum zu bemerken ist in der Wand eine Tür angebracht.
-Die Tür ist weit nach außen geöffnet.
+Hecke, und rechts siehst Du eine Glaswand, hinter der es tiefgrÃ¼n schimmert.
+Durch das viele GrÃ¼n kaum zu bemerken ist in der Wand eine TÃ¼r angebracht.
+Die TÃ¼r ist weit nach auÃŸen geÃ¶ffnet.
 Ein kleiner Weg beginnt kurz vor Dir und setzt sich nach hinten fort. Einige
-hübsche kleine Teiche verzieren das Ganze. Bunte Fischchen, ich glaube es
-sind Guppys oder so was, bevölkern fröhlich das Wasser. 
+hÃ¼bsche kleine Teiche verzieren das Ganze. Bunte Fischchen, ich glaube es
+sind Guppys oder so was, bevÃ¶lkern frÃ¶hlich das Wasser. 
 $a2_kurz
 Du bist bei den kleinen Teichen mit den Guppys oder so.
 $glashaus_innen
-Du betrittst das Glashaus. Drinnen bemerkst Du, daß es sich wohl um eine
-Art Gewächshaus handelt. Die Fülle von Grün verwirrt Dich allerdings, und
-Du torkelst durch die engen Gänge, ständig in Furcht vor den Fleischfressern
-unter unseren grünen Freunden. Plötzlich siehst Du einen hellen Schimmer
-und stürmst sofort durch eine weit geöffnete Tür ins Freie.
+Du betrittst das Glashaus. Drinnen bemerkst Du, daÃŸ es sich wohl um eine
+Art GewÃ¤chshaus handelt. Die FÃ¼lle von GrÃ¼n verwirrt Dich allerdings, und
+Du torkelst durch die engen GÃ¤nge, stÃ¤ndig in Furcht vor den Fleischfressern
+unter unseren grÃ¼nen Freunden. PlÃ¶tzlich siehst Du einen hellen Schimmer
+und stÃ¼rmst sofort durch eine weit geÃ¶ffnete TÃ¼r ins Freie.
 $glashaus_lang
 $glashaus_kurz
 $d2_lang
-Du stehst auf einem großen Platz. Hinter Dir befindet sich ein großer,
-schön angelegter Teich mit vielen Wasserrosen, der allerdings den Weg in
-diese Richtung versperrt. Genauso unbezwingbar erscheint die Häuserwand
-zur Rechten. Links hingegen steht ein Glashaus mit einer weit geöffneten
-Tür. Wildes Grün wogt hinter der durchsichtigen Wand. Auch die Bäume vor
-Dir können Dich wohl kaum von Deinem weiteren Weg abhalten.
+Du stehst auf einem groÃŸen Platz. Hinter Dir befindet sich ein groÃŸer,
+schÃ¶n angelegter Teich mit vielen Wasserrosen, der allerdings den Weg in
+diese Richtung versperrt. Genauso unbezwingbar erscheint die HÃ¤userwand
+zur Rechten. Links hingegen steht ein Glashaus mit einer weit geÃ¶ffneten
+TÃ¼r. Wildes GrÃ¼n wogt hinter der durchsichtigen Wand. Auch die BÃ¤ume vor
+Dir kÃ¶nnen Dich wohl kaum von Deinem weiteren Weg abhalten.
 $d2_kurz
-Du stehst auf dem Platz mit dem großen Teich.
+Du stehst auf dem Platz mit dem groÃŸen Teich.
 $h2_lang
 Du bist auf einem angelegten Weg, der vor und hinter Dir weitergeht. Viele
-verschiedene Pflanzen sind längs des Weges angepflanzt worden und zum Teil
-mit kleinen Schildchen versehen. Die Häuserwand links von Dir sagt Dir
-nicht viel. Rechts ist ein Zaun, hinter dem ein kleines Gewässer müde vor
-sich hin tümpelt.
+verschiedene Pflanzen sind lÃ¤ngs des Weges angepflanzt worden und zum Teil
+mit kleinen Schildchen versehen. Die HÃ¤userwand links von Dir sagt Dir
+nicht viel. Rechts ist ein Zaun, hinter dem ein kleines GewÃ¤sser mÃ¼de vor
+sich hin tÃ¼mpelt.
 $h2_kurz
 Du bist auf dem Weg mit den beschilderten Planzen.
 $a3_lang
 Oh, das scheint mir eine Sackgasse zu sein. Rechts die Glaswand, links der
 dicht bewachsene Zaun und hinter Dir eine unfreundliche Mauer mit einem
-häßlichen Stacheldraht oben drauf. Die Aufschrift "Kein Durchgang" ist
-da wohl überflüssig. Übrigens, auch der Rasen scheint mir hier viel
+hÃ¤ÃŸlichen Stacheldraht oben drauf. Die Aufschrift "Kein Durchgang" ist
+da wohl Ã¼berflÃ¼ssig. Ãœbrigens, auch der Rasen scheint mir hier viel
 grimmiger zu wachsen als an anderen Stellen.
 $a3_kurz
 Das ist die Sackgasse mit der unfreundlichen Mauer.
 $c3_lang
 Der Boden ist hier gepflastert. Vor und links von Dir siehst Du eine Glaswand,
-hinter der sich wogendes Grün befindet. Nur auf der linken Seite ist eine im
-Augenblick weit geöffnete Tür angebracht. Rechts versperrt ein großer Teich
+hinter der sich wogendes GrÃ¼n befindet. Nur auf der linken Seite ist eine im
+Augenblick weit geÃ¶ffnete TÃ¼r angebracht. Rechts versperrt ein groÃŸer Teich
 den Weg. Hinter Dir siehst Du einen kleinen Wald. Du findest es recht
-merkwürdig, daß kein Baum darin zweimal vorzukommen scheint.
+merkwÃ¼rdig, daÃŸ kein Baum darin zweimal vorzukommen scheint.
 $c3_kurz
-Du stehst zwischen dem großen Teich und dem merkwürdigen Wald.
+Du stehst zwischen dem groÃŸen Teich und dem merkwÃ¼rdigen Wald.
 $e3_lang
-Du erreichst einen Platz vor einem großen Gebäude. Es erscheint Dir fast wie ein
-kleines Schloß. Der Eingang und die große Treppe verstärken den Eindruck noch.
-Die Tür ist mit einem mächtigen Schloß fest verriegelt - man mag wohl keine
+Du erreichst einen Platz vor einem groÃŸen GebÃ¤ude. Es erscheint Dir fast wie ein
+kleines SchloÃŸ. Der Eingang und die groÃŸe Treppe verstÃ¤rken den Eindruck noch.
+Die TÃ¼r ist mit einem mÃ¤chtigen SchloÃŸ fest verriegelt - man mag wohl keine
 Besucher. Der Platz selbst ist mit einer Art Sand bedeckt. Alle Richtungen,
-außer zum Schloß hin, scheinen frei begehbar zu sein.
+auÃŸer zum SchloÃŸ hin, scheinen frei begehbar zu sein.
 $e3_kurz
-Du stehst vor dem Schloß.
+Du stehst vor dem SchloÃŸ.
 $h3_lang
 Du befindest Dich auf einem Weg von vorne nach hinten, der hier
-eine Abzweigung nach links enthält.
-Nach rechts hin ist der Durchgang durch einen Zaun versperrt. Niedrige Büsche
+eine Abzweigung nach links enthÃ¤lt.
+Nach rechts hin ist der Durchgang durch einen Zaun versperrt. Niedrige BÃ¼sche
 rund um den Weg versperren Dir die Sicht auf das, was hinter dem Zaun liegt.
 $h3_kurz
 Du bist an der Weggabelung.
 $a4_lang
 Vor Dir siehst Du eine graue Mauer. Die Aufschrift "Amis go home" mit rosa
-Spraydose an die Mauer geworfen entlockt Dir nur ein müdes Lächeln. Der
+Spraydose an die Mauer geworfen entlockt Dir nur ein mÃ¼des LÃ¤cheln. Der
 rostige Zaun zu Deiner Linken steigt in Deiner Achtung, da ein dichtes
-Dornengestrüpp ihn zu einem echten Gegner macht. Um es vorwegzunehmen: Du
+DornengestrÃ¼pp ihn zu einem echten Gegner macht. Um es vorwegzunehmen: Du
 wirst gegen ihn nicht besonders gut aussehen. Die Glaswand rechts sieht
-zwar auch nicht sehr beruhigend aus, jedoch vermittelt die weit geöffnete
-Tür zumindest den Eindruck von Gastfreundschaft. Ein schmaler Weg führt
-außerdem nach hinten.
+zwar auch nicht sehr beruhigend aus, jedoch vermittelt die weit geÃ¶ffnete
+TÃ¼r zumindest den Eindruck von Gastfreundschaft. Ein schmaler Weg fÃ¼hrt
+auÃŸerdem nach hinten.
 $a4_kurz
-Du stehst am Dornengestrüpp.
+Du stehst am DornengestrÃ¼pp.
 $c4_lang
 Du befindest Dich in einem kleinen Wald. Nicht eine Baumsorte scheint
-hier zweimal vorzukommen. Die Bäume sehen schon alle sehr alt aus und
-sind mit verrosteten Markierungen versehen. Einige Blätter kündigen
-den nahen Herbst an. Nach links hin stehen die Bäume nicht ganz so dicht
-wie anderswo und geben den Blick auf eine grüne Wand frei.
+hier zweimal vorzukommen. Die BÃ¤ume sehen schon alle sehr alt aus und
+sind mit verrosteten Markierungen versehen. Einige BlÃ¤tter kÃ¼ndigen
+den nahen Herbst an. Nach links hin stehen die BÃ¤ume nicht ganz so dicht
+wie anderswo und geben den Blick auf eine grÃ¼ne Wand frei.
 $c4_kurz
 Du bist im Wald.
 $e4_lang
-Du befindest Dich auf einer kleinen Lichtung in einer Art Wald. Niedergedrücktes
-Gras weist auf einen schweren Gegenstand hin, der hier wohl längere Zeit
-gelegen hat. Nach rechts ist durch dichter stehende Bäume keine Chance
+Du befindest Dich auf einer kleinen Lichtung in einer Art Wald. NiedergedrÃ¼cktes
+Gras weist auf einen schweren Gegenstand hin, der hier wohl lÃ¤ngere Zeit
+gelegen hat. Nach rechts ist durch dichter stehende BÃ¤ume keine Chance
 weiter zu kommen.
 $e4_kurz
 Du bist auf der Lichtung.
 $f4_lang
-Wow, das ist es. Strahlender Sonnenschein erfüllt die Szene. Du bist auf
-einem größeren Gelände, das über und über mit bunten Blumen bedeckt ist.
-Die Wärme der Spätsommersonne macht Dich müde. Langsam drehst Du Dich um
+Wow, das ist es. Strahlender Sonnenschein erfÃ¼llt die Szene. Du bist auf
+einem grÃ¶ÃŸeren GelÃ¤nde, das Ã¼ber und Ã¼ber mit bunten Blumen bedeckt ist.
+Die WÃ¤rme der SpÃ¤tsommersonne macht Dich mÃ¼de. Langsam drehst Du Dich um
 Deine Achse. Links befindet sich ein dichter Wald. In der Ecke hinter Dir
-wird er zwar dünner, aber durch das Unterholz kommst Du wohl kaum. Einer
-der vielen Wege führt nach hinten, ein anderer nach vorne. In der Mitte des
-Platzes steht leicht erhöht ein kleiner Pavillon, der dem müden Wanderer
-Schatten und Kühle verspricht. Auch im Bereich rechts hinter Dir gibt es
+wird er zwar dÃ¼nner, aber durch das Unterholz kommst Du wohl kaum. Einer
+der vielen Wege fÃ¼hrt nach hinten, ein anderer nach vorne. In der Mitte des
+Platzes steht leicht erhÃ¶ht ein kleiner Pavillon, der dem mÃ¼den Wanderer
+Schatten und KÃ¼hle verspricht. Auch im Bereich rechts hinter Dir gibt es
 eine Menge Schatten durch ein paar rechteckig angepflanzte Baumriesen. In der
-Mitte der Bäume steht eine Bank.
+Mitte der BÃ¤ume steht eine Bank.
 $f4_kurz
 Du bist auf dem Platz mit dem Pavillon.
 $h4_lang
-Rechts von Dir beendet ein Gitter das Gelände. Dichter Bewuchs verhindert
+Rechts von Dir beendet ein Gitter das GelÃ¤nde. Dichter Bewuchs verhindert
 jeden Kontakt mit dem Leben jenseits des Zauns. Ein Weg beginnt hinter Dir
-und führt nach vorne weiter. Verschiedene Gräser wachsen an den Seiten des
+und fÃ¼hrt nach vorne weiter. Verschiedene GrÃ¤ser wachsen an den Seiten des
 Weges. Ein Schild "Betreten verboten" und Deine strenge Moral verbieten Dir,
 nach links zu gehen.
 $h4_kurz
-Du bist auf dem Weg mit den Gräsern.
+Du bist auf dem Weg mit den GrÃ¤sern.
 $a5_lang
 Links von Dir steht ein dicht bewachsenes Gitter, sicher an die 2 Meter hoch.
 Du stehst auf einer Art Rasen und kannst rechts die Grenzen einer Baumgruppe
-sehen. Aus dieser Richtung hörst Du auch ein leises Plätschern.
+sehen. Aus dieser Richtung hÃ¶rst Du auch ein leises PlÃ¤tschern.
 $a5_kurz
 Du stehst am Waldrand.
 $b5_lang
-Du bist in einer kleinen Baumgruppe. Dichtes Gestrüpp macht ein Durchkommen
-nach vorne unmöglich. Von rechts ertönt ein lautes Plätschern.
+Du bist in einer kleinen Baumgruppe. Dichtes GestrÃ¼pp macht ein Durchkommen
+nach vorne unmÃ¶glich. Von rechts ertÃ¶nt ein lautes PlÃ¤tschern.
 $b5_kurz
 Du stehst in der Baumgruppe.
 $d5_lang
-Vor und hinter Dir siehst Du Bäume, in die jeweils ein kleiner Weg führt.
-Der kleine Teich links macht auf mich komischerweise einen gefährlichen
-Eindruck, obwohl er laut und lustig vor sich hin plätschert. Nach rechts
-schließt sich ein Blumenbeet an, durch das Du mit Deiner hervorragenden
+Vor und hinter Dir siehst Du BÃ¤ume, in die jeweils ein kleiner Weg fÃ¼hrt.
+Der kleine Teich links macht auf mich komischerweise einen gefÃ¤hrlichen
+Eindruck, obwohl er laut und lustig vor sich hin plÃ¤tschert. Nach rechts
+schlieÃŸt sich ein Blumenbeet an, durch das Du mit Deiner hervorragenden
 Erziehung sicher nicht laufen wirst.
 $d5_kurz
 Du bist am Blumenbeet.
 $h5_lang
-Du hast eine Stelle mit einem kleinen Tümpel erreicht. Vor Dir siehst Du
+Du hast eine Stelle mit einem kleinen TÃ¼mpel erreicht. Vor Dir siehst Du
 den Rand des kleinen Waldes, in dem Du Dich befindest. Auch rechts stehen
-einige Bäume, und das durchscheinende Gitter verspricht nichts Gutes.
+einige BÃ¤ume, und das durchscheinende Gitter verspricht nichts Gutes.
 $h5_kurz
-Du bist im Wald am Tümpel.
+Du bist im Wald am TÃ¼mpel.
 $a6_lang
-Hier ist Endstation. Ein kräftiges Gitter links von und hinter Dir erlaubt
-keine Ausbreitung in diese Richtungen. Auch die kräftigen Bäume zur Rechten
-sind ohne Motorsäge wohl nicht zu bezwingen. Der Rasen auf dem Du stehst
-ist über und über mit Gänseblümchen bedeckt.
+Hier ist Endstation. Ein krÃ¤ftiges Gitter links von und hinter Dir erlaubt
+keine Ausbreitung in diese Richtungen. Auch die krÃ¤ftigen BÃ¤ume zur Rechten
+sind ohne MotorsÃ¤ge wohl nicht zu bezwingen. Der Rasen auf dem Du stehst
+ist Ã¼ber und Ã¼ber mit GÃ¤nseblÃ¼mchen bedeckt.
 $a6_kurz
-Du bist auf der Gänseblümchenwiese.
+Du bist auf der GÃ¤nseblÃ¼mchenwiese.
 $b6_lang
-Das scheint mir doch die äußerste Ecke eines Waldes zu sein. Nach hinten und
+Das scheint mir doch die Ã¤uÃŸerste Ecke eines Waldes zu sein. Nach hinten und
 links ist kein Durchkommen. Ein kleiner Pfad knickt hier ab und erlaubt so
 ein bequemes Wandern nach vorne oder rechts.
 $b6_kurz
 Du stehst in der Ecke eines Waldes.
 $c6_lang
-Hinter Dir stehen große, alte Bäume dicht an dicht. Ein Weg von links
-knickt nach vorne ab, von wo aus man das Murmeln von Wasser hört. Einige
-Vögel nisten in einer alten Eiche direkt vor Dir. Auf der rechten Seite
-fließt ein kleiner Bach. Eine Brücke ist nicht zu sehen.
+Hinter Dir stehen groÃŸe, alte BÃ¤ume dicht an dicht. Ein Weg von links
+knickt nach vorne ab, von wo aus man das Murmeln von Wasser hÃ¶rt. Einige
+VÃ¶gel nisten in einer alten Eiche direkt vor Dir. Auf der rechten Seite
+flieÃŸt ein kleiner Bach. Eine BrÃ¼cke ist nicht zu sehen.
 $c6_kurz
 Du stehst am Bach.
 $d6_lang
-Hier ist wohl der Wald zu Ende. Durch den dünnen Bewuchs rechts von Dir
-könnte man sicher problemlos weiterkommen. Hinter Dir ist allerdings alles
-dicht - im Sinne des Wortes. Der Bach links verspricht nasse Füsse, und
+Hier ist wohl der Wald zu Ende. Durch den dÃ¼nnen Bewuchs rechts von Dir
+kÃ¶nnte man sicher problemlos weiterkommen. Hinter Dir ist allerdings alles
+dicht - im Sinne des Wortes. Der Bach links verspricht nasse FÃ¼sse, und
 die willst Du doch sicher nicht.
 $d6_kurz
 Du bist am Ende des Waldes.
 $e6_lang
 Links von Dir beginnt der Baumbewuchs. Ansonsten befindest Du Dich auf einer
-weitgehend freien Rasenfläche, die nur vereinzelt von gelben Sträuchern
+weitgehend freien RasenflÃ¤che, die nur vereinzelt von gelben StrÃ¤uchern
 unterbrochen wird. Das Gitter hinter Dir ist die einzige Abgrenzung.
 $e6_kurz
-Du stehst bei den Sträuchern.
+Du stehst bei den StrÃ¤uchern.
 $f6_lang
 Ein Weg aus bunten Kieseln kommt von vorne und knickt dann nach links ab,
-wo er fließend in ein Rasenstück übergeht. Außer diesem Weg gibt es noch
-ein Gitter hinter Dir sowie einige Bäume rechts. Beide Richtungen sehen
+wo er flieÃŸend in ein RasenstÃ¼ck Ã¼bergeht. AuÃŸer diesem Weg gibt es noch
+ein Gitter hinter Dir sowie einige BÃ¤ume rechts. Beide Richtungen sehen
 nicht sehr vielversprechend aus.
 $f6_kurz
 Du bist auf dem Weg mit den bunten Kieseln.
@@ -286,7 +286,7 @@ Der einzige Weg hier raus ist wohl der, den Du gekommen bist, also rechts.
 $g6_kurz
 Du stehst im finsteren Wald.
 $h6_lang
-Ein Weg führt von vorne nach links. Ansonsten kann ich hier keinen gehbaren
-Weg identifizieren, da die Bäume ziemlich dicht stehen.
+Ein Weg fÃ¼hrt von vorne nach links. Ansonsten kann ich hier keinen gehbaren
+Weg identifizieren, da die BÃ¤ume ziemlich dicht stehen.
 $h6_kurz
 Du bist auf dem Waldweg.

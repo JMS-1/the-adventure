@@ -1,5 +1,5 @@
 ;
-; Hier fängt alles an
+; Hier fÃ¤ngt alles an
 ;
 $$dummy
 $start
@@ -21,7 +21,7 @@ $d1
 	exits  = (E:>e1,S:>d2,
 		  N:(if_state d1 geschlossen >>d1,
 		     if_state d1 auf >$$draussen$s12,
-		     &türzu))
+		     &tÃ¼rzu))
 	things = (fahrrad,d1)
 $e1
 	exits = (W:>d1,E:>f1,N:&wand)
@@ -88,7 +88,7 @@ $glashaus
 	actions = entry:(message = innen,message = *,
 			 [>a2,>a2,>d2,>c3,>c3,>a4,>a4))
 ;
-; Alles außerhalb des PIs und dem botanischen Garten
+; Alles auÃŸerhalb des PIs und dem botanischen Garten
 ;
 $$draussen
 $s1
@@ -103,7 +103,7 @@ $s9
 	exits = (N:>>strasse,W:>s7,S:&wand,E:>s12)
 $s12
 	exits  = (N:>>strasse,E:>s15,W:>s9,
-		  S:(if_state d1 auf >$$botanik$d1,&$$botanik$türzu))
+		  S:(if_state d1 auf >$$botanik$d1,&$$botanik$tÃ¼rzu))
 	things = (d1)
 $s15
 	exits = (W:>s12,N:>>strasse,S:&wand,E:&ende)
@@ -156,7 +156,7 @@ $s20
 		       if_nothas leiter
 		        (if_state haupt auf
 		          (flag1 = drinnen,>$$paterre$haupt),
-		         &$$botanik$türzu))))
+		         &$$botanik$tÃ¼rzu))))
 	things = haupt
 $s16
 	exits = (W:>s13,N:>s17)
@@ -167,7 +167,7 @@ $s17
 		      (if_has leiter &hatleiter,
 		       if_nothas leiter
 		        (if_state neben auf (flag1 = drinnen,>$$paterre$neben),
-		         &$$botanik$türzu))))
+		         &$$botanik$tÃ¼rzu))))
 	things = neben
 $s18
 	exits  = (S:>s17,
@@ -176,7 +176,7 @@ $s18
 		      (if_has leiter &hatleiter,
 		       if_nothas leiter
 		        (if_state keller auf (flag1 = drinnen,>$$keller$eingang),
-		         &$$botanik$türzu))))
+		         &$$botanik$tÃ¼rzu))))
 	things = keller
 $dach
 	exits = (D:>>leiter,E:(flag1 = drinnen,>$$erster$SAPH1),W:>>dach)
@@ -205,7 +205,7 @@ $haupt
 	exits 	= (N:>g8,S:>g9,E:>neben,U:>$$erster$e10,
 		   W:(if_nothas jochen
 		       (if_state haupt auf (flag1 = draussen,>$$draussen$s20),
-		        &$$botanik$türzu),
+		        &$$botanik$tÃ¼rzu),
 		      if_has jochen &jochen1))
 	things	= haupt
 	persons = wedemeyer
@@ -213,7 +213,7 @@ $neben
 	exits	= (W:>haupt,
 		   E:(if_nothas jochen
 		       (if_state neben auf (flag1 = draussen,>$$draussen$s17),
-		        &$$botanik$türzu),
+		        &$$botanik$tÃ¼rzu),
 		      if_has jochen &jochen1))
 	things	= neben
 $g9
@@ -227,20 +227,20 @@ $bastian
 $g10
 	exits	= (N:>g9,S:>g11)
 $g11
-	exits	= (N:>g10,E:>g14,W:(if_state TOF auf >g15,&$$botanik$türzu))
+	exits	= (N:>g10,E:>g14,W:(if_state TOF auf >g15,&$$botanik$tÃ¼rzu))
 	things	= TOF
 $g14
 	exits	= (W:>g11,N:>g12)
 $g15
-	exits	= E:(if_state TOF auf >g11,&$$botanik$türzu)
-	actions	= entry:if_state reinhold * (reinhold = tip,@reinhold = hängt)
+	exits	= E:(if_state TOF auf >g11,&$$botanik$tÃ¼rzu)
+	actions	= entry:if_state reinhold * (reinhold = tip,@reinhold = hÃ¤ngt)
 	things	= (reinhold,TOF)
 $g12
-	exits	= (E:(if_state warenlager auf >g13,&$$botanik$türzu),S:>g14,
+	exits	= (E:(if_state warenlager auf >g13,&$$botanik$tÃ¼rzu),S:>g14,
 		   U:(if_has jochen >>treppe_jochen,>$$erster$e14))
 	things	= warenlager
 $g13
-	exits	= W:(if_state warenlager auf >g12,&$$botanik$türzu)
+	exits	= W:(if_state warenlager auf >g12,&$$botanik$tÃ¼rzu)
 	things	= (schraubenzieher,warenlager)
 	persons	= steinbrecher
 $g8
@@ -251,23 +251,23 @@ $g4
 	exits	= (S:>g7,W:>g3,E:>g5)
 $g5
 	exits	= (W:>g4,E:>g6,
-		   S:(if_state E50 auf >kontrollraum,&$$botanik$türzu))
+		   S:(if_state E50 auf >kontrollraum,&$$botanik$tÃ¼rzu))
 	things	= E50
 $kontrollraum
-	exits	= (E:>elektronik,N:(if_state E50 auf >g5,&$$botanik$türzu))
+	exits	= (E:>elektronik,N:(if_state E50 auf >g5,&$$botanik$tÃ¼rzu))
 	things	= (E50,listing)
 	persons	= jochen
 $elektronik
 	exits	= W:>kontrollraum
 	actions	= entry:if_state CC rot if_has jochen (CC = rot,CC = *,&CC)
-	things	= (CC,schnur,batterie,meßgerät)
+	things	= (CC,schnur,batterie,meÃŸgerÃ¤t)
 $g6
 	exits	= (W:>g5,
 		   E:(if_nothas jochen
-		       (if_state mathe auf >$$keller$mathe,&$$botanik$türzu),
+		       (if_state mathe auf >$$keller$mathe,&$$botanik$tÃ¼rzu),
 		      if_has jochen &jochen2),
 		   S:(if_state metall auf (flag1 = halle,>$$halle$h8),
-		      &$$botanik$türzu))
+		      &$$botanik$tÃ¼rzu))
 	actions	= exit:@mathe = zu
 	things	= (mathe,metall)
 $g3
@@ -275,11 +275,11 @@ $g3
 	things	= leute
 $g2
 	exits	= (E:>g3,W:>g1,N:>galerie,
-		   S:(if_state christian auf >christian,&$$botanik$türzu))
+		   S:(if_state christian auf >christian,&$$botanik$tÃ¼rzu))
 	actions	= (entry,stay:if_state klocke an &klocke)
 	things	= christian
 $christian
-	exits	= N:(if_state christian auf >g2,&$$botanik$türzu)
+	exits	= N:(if_state christian auf >g2,&$$botanik$tÃ¼rzu)
 	things	= (christian,terminal)
 $galerie
 	exits	= (S:>g2,E:(if_has interlock1 >$$halle$galerie,
@@ -313,7 +313,7 @@ $e4
 $e5
 	exits	= (S:>e4,E:>e6)
 $e6
-	exits	= (W:>e5,E:>e7,S:(if_state 150 auf >150,&$$botanik$türzu))
+	exits	= (W:>e5,E:>e7,S:(if_state 150 auf >150,&$$botanik$tÃ¼rzu))
 	things	= 150
 	actions = entry:if_state walter raucht walter = da
 $e7
@@ -326,13 +326,13 @@ $150
 		        if_state walter raucht >e6,
 		        if_state walter * >e6,
 		        walter = stoppt,@walter = da),
-		      if_state 150 zu &$$botanik$türzu))
+		      if_state 150 zu &$$botanik$tÃ¼rzu))
 	persons	= charly
 	things	= (brot,150,whiskey,kaffee)
 $151
 	exits	= W:>150
 	actions	= entry:if_state peter * (peter = tip,@peter = fertig)
-	persons	= (peter,hauptschlüssel,gabel)
+	persons	= (peter,hauptschlÃ¼ssel,gabel)
 $e8
 	exits	= (W:>>aufzug3,N:>e4,S:>e9)
 	things	= liege
@@ -350,12 +350,12 @@ $e14
 	exits	= (W:>e12,
 		   D:(if_has jochen >>treppe_jochen,>$$paterre$g12),
 		   U:(if_has jochen >>treppe_jochen,>$$zweiter$z7),
-		   E:(if_state bücherei auf >bücherei,&$$botanik$türzu))
-	things	= bücherei
-$bücherei
-	exits	= W:(if_state bücherei auf >e14,&$$botanik$türzu)
-	persons	= mühl
-	things	= (anleitung,bücherei)
+		   E:(if_state bÃ¼cherei auf >bÃ¼cherei,&$$botanik$tÃ¼rzu))
+	things	= bÃ¼cherei
+$bÃ¼cherei
+	exits	= W:(if_state bÃ¼cherei auf >e14,&$$botanik$tÃ¼rzu)
+	persons	= mÃ¼hl
+	things	= (anleitung,bÃ¼cherei)
 ;
 ; Zweiter Stock des physikalischen Institutes
 ;
@@ -391,7 +391,7 @@ $d5
 	exits	= (S:>d4,N:>d7)
 $d6
 	exits	= E:>d2
-	things	= löffel
+	things	= lÃ¶ffel
 $d7
 	exits	= S:>d5
 $ELPHO
@@ -405,7 +405,7 @@ $KOBE
 $$keller
 $mathe
 	exits	= (E:>k1,D:>eingang,
-		   W:(if_state mathe auf >$$paterre$g6,&$$botanik$türzu))
+		   W:(if_state mathe auf >$$paterre$g6,&$$botanik$tÃ¼rzu))
 	actions	= exit:@mathe = zu
 	things	= mathe
 $k1
@@ -413,7 +413,7 @@ $k1
 $eingang
 	exits	= (U:>mathe,E:>k3,
 		   S:(if_state keller auf (flag1 = draussen,>$$draussen$s18),
-		      &$$botanik$türzu))
+		      &$$botanik$tÃ¼rzu))
 	things	= keller
 $k3
 	exits	= (W:>eingang,S:>labor)
@@ -434,7 +434,7 @@ $galerie
 			 if_message * (message = da,@message = kurz))
 $h8
 	exits	= (U:(if_state metall auf (flag1 = drinnen,>$$paterre$g6),
-		      &$$botanik$türzu),
+		      &$$botanik$tÃ¼rzu),
 		   N:(if_has interlock1 >h7,if_has interlock2 >h7,>>interlock))
 	things	= (interlock2,metall)
 $h7
@@ -451,11 +451,11 @@ $PHOENICS
 $h4
 	exits	= (N:>h5,S:>h6,W:>h3)
 $h5
-	exits	= (S:>h4,W:(if_nothas jochen >hütte,
-			    if_has anleitung >hütte,
+	exits	= (S:>h4,W:(if_nothas jochen >hÃ¼tte,
+			    if_has anleitung >hÃ¼tte,
 			    &jochen))
 	things	= (kammer,schraube,HV)
-$hütte
+$hÃ¼tte
 	exits	= E:>h5
 	actions	= entry:if_state burkhard scharf
 			 if_has jochen (&burkhard,@burkhard = brav)

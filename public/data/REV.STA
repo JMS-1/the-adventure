@@ -29,7 +29,7 @@ $s2
 $s3
 	exits = (W:>s2,E:>s4)
 $s4
-	exits   = (W:>s3,S:>w21,E:(if_here punker punker ärger,
+	exits   = (W:>s3,S:>w21,E:(if_here punker punker Ã¤rger,
 				   if_nothere punker >s5))
 	actions = stay/3:&ausdauer
 $s5
@@ -95,9 +95,9 @@ $s27
 	exits = (U:>s26,S:>s28,E:>sp6)
 $s28
 	exits  = (N:>s27,S:>s29,E:>sp9)
-	things = (katze,flaschenöffner)
+	things = (katze,flaschenÃ¶ffner)
 $s29
-	exits = (N:>s28,S:>>straße)
+	exits = (N:>s28,S:>>straÃŸe)
 $sp1
 	exits = (N:>s26,E:>sp2,S:>sp6)
 $sp2
@@ -115,7 +115,7 @@ $sp6
 	exits = (W:>s27,N:>sp1,S:>sp9,E:>sp7)
 $sp7
 	exits = (W:>sp6,E:>sp8,N:[>sp3,>sp4),S:[>sp9,>sp10))
-	things = (gerüst,katze)
+	things = (gerÃ¼st,katze)
 $sp8
 	exits   = (W:>sp7,E:>s51,N:>sp5,S:>sp10)
 	persons = jochen
@@ -176,7 +176,7 @@ $s48
 $s49
 	exits = (N:>s48,S:>s50)
 $s50
-	exits = (N:>s49,S:>>straße)
+	exits = (N:>s49,S:>>straÃŸe)
 $s51
 	exits = (N:>s30,S:>s52,W:>sp8)
 	things = (telefonzelle,katze)
@@ -211,7 +211,7 @@ $s63
 	things = katze
 $w11
 	exits  = (N:>s2,S:>w12)
-	things = schläger
+	things = schlÃ¤ger
 $w12
 	exits  = (N:>w11,E:>w13,SW:&hauszu)
 	things = matte
@@ -431,7 +431,7 @@ $wa20
 	things = katze
 $wa21
 	exits  = (W:>wa20,
-		  E:(if_has handschuhe &dornröschen,
+		  E:(if_has handschuhe &dornrÃ¶schen,
 		     if_nothas handschuhe >>schlaf))
 	things = matte
 $wa22
@@ -823,7 +823,7 @@ $a9
 $a10
 	exits = (S:>a8,N:>a13,W:[>$$center$w35,>$$center$w36))
 $a11
-	exits = (S:>a9,W:>a12,N:>>straße)
+	exits = (S:>a9,W:>a12,N:>>straÃŸe)
 $a12
 	exits = (E:>a11,W:>a13)
 	things = fiesta
@@ -844,7 +844,7 @@ $k3
 		      wanderkarte test,rattengift test,milch test,
 		      >$$center$w4))
 	things  = (kiosk,wanderkarte)
-	persons = verkäufer
+	persons = verkÃ¤ufer
 $k4
 	exits  = (S:>k2,W:>k3)
 	things = milch
@@ -870,7 +870,7 @@ $g2
 	exits = (S:>g1,W:(if_has bowlingschuhe >>schuhe,>$$halle$halle))
 $WC
 	exits  = (E:>g1)
-	things = taschentücher
+	things = taschentÃ¼cher
 ;
 ; Freizeitzentrum
 ;
@@ -901,7 +901,7 @@ $billard
 	persons = halbstarke
 $restaurant
 	exits  = (N:>g2,S:(halle verlassen,>t2))
-	things = (terasse,möhre)
+	things = (terasse,mÃ¶hre)
 $t1
 	exits = (S:>$$see$s21,W:>t2)
 $t2
@@ -932,7 +932,7 @@ $b6
 	exits = (S:>balkon,N:>b4,W:>b5,E:>b7)
 $b7
 	exits  = (W:>b6)
-	things = löffel
+	things = lÃ¶ffel
 $b8
 	exits   = (S:>b2,E:>b9)
 	actions = entry:if_here franzl franzl tip
@@ -960,7 +960,7 @@ $s5
 	things = wasser
 $s6
 	exits  = (W:>s5,E:>s7)
-	things = baumstämme
+	things = baumstÃ¤mme
 $s7
 	exits  = (W:>s6,E:>s8,NU:>s9)
 	things = markierung
@@ -983,7 +983,7 @@ $s13
 	things = pilze
 $s14
 	exits  = (E:>s13,W:>s15)
-	things = eichhörnchen
+	things = eichhÃ¶rnchen
 $s15
 	exits  = (E:>s14,W:>s20,N:>s16)
 	things = (foto,markierung3)
@@ -1038,7 +1038,7 @@ $s35
 	things = flasche4
 $s36
 	exits  = (EU:>s35,WD:>s44)
-	things = müll
+	things = mÃ¼ll
 $s37
 	exits  = (S:>s35,N:>s38)
 	things = kieselstein
@@ -1052,7 +1052,7 @@ $s40
 		 W:(if_state schranke2 geschlossen &klettern,>s41))
 	things = schranke2
 $s41
-	exits = (W:>>waldstraße,
+	exits = (W:>>waldstraÃŸe,
 		 E:(if_state schranke2 geschlossen &klettern,>s40))
 	things = schranke2
 $s42
@@ -1092,7 +1092,7 @@ $$haus37
 $flur
 	exits = (W:>WC,E:>zimmer1,U:>treppe1,DS:>treppe2,
 		 N:if_state vorne37 auf >$$park$w95)
-	things = (vorne37,schlüssel26)
+	things = (vorne37,schlÃ¼ssel26)
 $oben1
 	exits = (D:>treppe1,W:>zimmer3,E:>WC2,N:>oben2)
 $oben2
@@ -1100,7 +1100,7 @@ $oben2
 $treppe1
 	exits = (D:>flur,U:>oben1)
 $treppe2
-	exits = (U:>flur,D:>küche)
+	exits = (U:>flur,D:>kÃ¼che)
 $zimmer1
 	exits = (W:>flur)
 $zimmer2
@@ -1112,14 +1112,14 @@ $WC
 	exits = (E:>flur)
 $WC2
 	exits  = (W:>oben1)
-	things = föhn
-$küche
+	things = fÃ¶hn
+$kÃ¼che
 	exits = (U:>treppe2,N:>kammer,W:>kamin)
 $kammer
-	exits  = (S:>küche)
+	exits  = (S:>kÃ¼che)
 	things = teller
 $kamin
-	exits = (E:>küche,S:(if_state hinten37 auf >$$park$g219,
+	exits = (E:>kÃ¼che,S:(if_state hinten37 auf >$$park$g219,
 			     if_state hinten37 * &$$haus26$istzu))
 	things = (hinten37,tasse)
 ;
@@ -1139,7 +1139,7 @@ $treppe1
 	actions = entry:if_here johannes johannes tip
 	persons = johannes
 $treppe2
-	exits   = (U:>flur,D:>küche)
+	exits   = (U:>flur,D:>kÃ¼che)
 $zimmer1
 	exits = (W:>flur)
 $zimmer2
@@ -1151,14 +1151,14 @@ $WC
 	exits = (S:>flur)
 $WC2
 	exits = (W:>oben1)
-$küche
+$kÃ¼che
 	exits   = (U:>treppe2,N:>kammer,W:>kamin)
 	things  = glas
 $kammer
-	exits   = (S:>küche)
+	exits   = (S:>kÃ¼che)
 	things  = stuhl
 $kamin
-	exits   = (E:>küche,N:(if_state hinten26 auf >$$park$g28,
+	exits   = (E:>kÃ¼che,N:(if_state hinten26 auf >$$park$g28,
 			       if_state hinten26 * &istzu))
 	things  = (hinten26,fernseher)
 ;
@@ -1176,28 +1176,28 @@ $oben2
 $treppe1
 	exits = (D:>flur,U:>oben1)
 $treppe2
-	exits   = (U:>flur,D:>küche)
+	exits   = (U:>flur,D:>kÃ¼che)
 	actions = entry,stay:braten duftet
 $zimmer1
 	exits = (W:>flur)
 $zimmer2
 	exits  = (W:>oben2)
-	things = autoschlüssel
+	things = autoschlÃ¼ssel
 $zimmer3
 	exits = (E:>oben1)
 $WC
 	exits = (S:>flur)
 $WC2
 	exits = (W:>oben1)
-$küche
+$kÃ¼che
 	exits   = (U:>treppe2,N:>kammer,E:>kamin)
 	actions = (entry,stay:braten duftet,exit:if_here maus >>maus2)
-	things  = käse
+	things  = kÃ¤se
 $kammer
-	exits   = (S:>küche)
+	exits   = (S:>kÃ¼che)
 	actions = entry,stay:braten duftet
 	things  = vorhang
 $kamin
-	exits = (W:>küche,E:(if_state hinten27 auf >$$park$g211,
+	exits = (W:>kÃ¼che,E:(if_state hinten27 auf >$$park$g211,
 			     if_state hinten27 * &$$haus26$istzu))
 	things = hinten27

@@ -1,476 +1,476 @@
 $$things
 $ampel_rot
 Die Ampel ist rot. Weit und breit ist kein Auto zu sehen.
-$ampel_grün
-Die Ampel zeigt grünes Licht. Du kannst über die Straße gehen.
+$ampel_grÃ¼n
+Die Ampel zeigt grÃ¼nes Licht. Du kannst Ã¼ber die StraÃŸe gehen.
 $ampel_lang
-$ampel_trägt
+$ampel_trÃ¤gt
 $d1_auf
-Die Gittertür steht weit offen.
+Die GittertÃ¼r steht weit offen.
 $d1_zu
-Die Gittertür ist zu, scheint aber nicht abgeschlossen zu sein.
+Die GittertÃ¼r ist zu, scheint aber nicht abgeschlossen zu sein.
 $d1_geschlossen
-Die Gittertür ist fest verschlossen.
+Die GittertÃ¼r ist fest verschlossen.
 $d1_lang
-$d1_trägt
-$schlüssel_lang
-Hier liegt ein Schlüssel mit der Aufschrift 1/10.
-$schlüssel_trägt
-Du hast einen Schlüssel mit der Bezeichnung 1/10 bei Dir.
-$schlüssel_kaputt
-Man glaubt es nicht, Du hast wirklich drei linke Hände. Ein kurzer Knack
-und Du hast den Schlüssel mit der Aufschrift 1/10 in zwei Teile zerbrochen.
-Der wichtige Teil steckt noch im Schloß der Glastüre, den nutzlosen Rest
-wirfst Du enttäuscht weg.
-$hauptschlüssel_liegt
-Auf einem der Schreibtische liegt ein Schlüssel mit der Aufschrift
-"Gruppenschlüssel".
-$hauptschlüssel_lang
-Dort liegt auch ein Schlüssel mit der Aufschrift 1/2.
-$hauptschlüssel_trägt
-Du hast den Gruppenschlüssel bei Dir.
-$hauptschlüssel_kaputt
-Welche Kraft, welche Anmut. Du schaffst es doch tatsächlich, den Schlüssel
-zu drehen, obwohl das Schloß dermaßen verklemmt ist, daß es sich nicht
-mitdreht. Was von dem Gruppenschlüssel übrigbleibt, ist nicht der Rede
-wert. Wollen wir hoffen, daß all die anderen Türen offen stehen.
+$d1_trÃ¤gt
+$schlÃ¼ssel_lang
+Hier liegt ein SchlÃ¼ssel mit der Aufschrift 1/10.
+$schlÃ¼ssel_trÃ¤gt
+Du hast einen SchlÃ¼ssel mit der Bezeichnung 1/10 bei Dir.
+$schlÃ¼ssel_kaputt
+Man glaubt es nicht, Du hast wirklich drei linke HÃ¤nde. Ein kurzer Knack
+und Du hast den SchlÃ¼ssel mit der Aufschrift 1/10 in zwei Teile zerbrochen.
+Der wichtige Teil steckt noch im SchloÃŸ der GlastÃ¼re, den nutzlosen Rest
+wirfst Du enttÃ¤uscht weg.
+$hauptschlÃ¼ssel_liegt
+Auf einem der Schreibtische liegt ein SchlÃ¼ssel mit der Aufschrift
+"GruppenschlÃ¼ssel".
+$hauptschlÃ¼ssel_lang
+Dort liegt auch ein SchlÃ¼ssel mit der Aufschrift 1/2.
+$hauptschlÃ¼ssel_trÃ¤gt
+Du hast den GruppenschlÃ¼ssel bei Dir.
+$hauptschlÃ¼ssel_kaputt
+Welche Kraft, welche Anmut. Du schaffst es doch tatsÃ¤chlich, den SchlÃ¼ssel
+zu drehen, obwohl das SchloÃŸ dermaÃŸen verklemmt ist, daÃŸ es sich nicht
+mitdreht. Was von dem GruppenschlÃ¼ssel Ã¼brigbleibt, ist nicht der Rede
+wert. Wollen wir hoffen, daÃŸ all die anderen TÃ¼ren offen stehen.
 $geld_lang
-Du gibst dem Eismann einige Münzen, es sind Deine letzten. Du solltest
+Du gibst dem Eismann einige MÃ¼nzen, es sind Deine letzten. Du solltest
 Dir daher auch ein Eis aussuchen, was Dir wirklich schmeckt.
-$geld_trägt
+$geld_trÃ¤gt
 $vanille_lang
-Auf der Theke steht ein Hörnchen mit 2 Kugeln Vanilleeis.
-$vanille_trägt
+Auf der Theke steht ein HÃ¶rnchen mit 2 Kugeln Vanilleeis.
+$vanille_trÃ¤gt
 Das Vanilleeis schmiltzt vor sich hin.
 $vanille_zerlaufen
-Das Vanilleeis hat sich inzwischen in Wohlgefallen aufgelöst. Wütend tramplest
-Du das zurückgebliebene, im Grunde völlig schuldlose, Hörnchen in Grund und
+Das Vanilleeis hat sich inzwischen in Wohlgefallen aufgelÃ¶st. WÃ¼tend tramplest
+Du das zurÃ¼ckgebliebene, im Grunde vÃ¶llig schuldlose, HÃ¶rnchen in Grund und
 Boden.
 $vanille_essen
-Hmm, Dir scheint es geschmeckt zu haben. Na ja, mein Fall wäre es nicht gewesen.
+Hmm, Dir scheint es geschmeckt zu haben. Na ja, mein Fall wÃ¤re es nicht gewesen.
 $schokolade_lang
-Da ist ein Hörnchen mit 4 Kugeln Schokoladeneis.
-$schokolade_trägt
-Das Schokoladeneis zerläuft langsam und hinterläßt häßliche Flecken.
+Da ist ein HÃ¶rnchen mit 4 Kugeln Schokoladeneis.
+$schokolade_trÃ¤gt
+Das Schokoladeneis zerlÃ¤uft langsam und hinterlÃ¤ÃŸt hÃ¤ÃŸliche Flecken.
 $schokolade_zerlaufen
-Das war's dann zum Thema Schokoladeneis. Die kümmerlichen Reste schiebst Du
+Das war's dann zum Thema Schokoladeneis. Die kÃ¼mmerlichen Reste schiebst Du
 diskret zur Seite.
 $schokolade_essen
-Mit lautem Schmatzen vertilgst Du das Schokoladeneis. Selbst das Hörnchen wird
-bis auf den letzten Krümel verspeist. Das machen zwar viele, aber nicht nachdem
+Mit lautem Schmatzen vertilgst Du das Schokoladeneis. Selbst das HÃ¶rnchen wird
+bis auf den letzten KrÃ¼mel verspeist. Das machen zwar viele, aber nicht nachdem
 es zweimal auf den Boden gefallen war. Alle Achtung.
 $zitrone_lang
-In einem kleinen Becher sind 3 Kugeln Zitroneneis. Die mittlere Kugel lächelt
+In einem kleinen Becher sind 3 Kugeln Zitroneneis. Die mittlere Kugel lÃ¤chelt
 Dich freundlich an.
-$zitrone_trägt
+$zitrone_trÃ¤gt
 Das Zitroneneis verwandelt sich langsam in Wasser und klebrigen Zuckersaft.
 $zitrone_zerlaufen
 Was hast Du wieder angerichtet. Das Zitroneneis ist hinweg geschmolzen. Und Du
-schmeißt den Becher einfach so weg, ohne einen Papierkorb zu suchen. Barbar!
+schmeiÃŸt den Becher einfach so weg, ohne einen Papierkorb zu suchen. Barbar!
 $zitrone_essen
 Oh, warum verziehst Du denn Dein Gesicht. Ich mag Zitroneneis, also sollten
-es die anderen eigentlich auch mögen. Ich muß allerdings sagen, daß ich es
+es die anderen eigentlich auch mÃ¶gen. Ich muÃŸ allerdings sagen, daÃŸ ich es
 meistens ohne den Pappbecher zu mir nehme.
 $nuss_lang
-Eine Kugel Schokoladeneis mit einer Walnuß obendrauf soll wohl ein Nußeis
+Eine Kugel Schokoladeneis mit einer WalnuÃŸ obendrauf soll wohl ein NuÃŸeis
 darstellen.
-$nuss_trägt
-Das Schokoladeneis hat sicher nicht mehr für lange. Die Nuß hält sich gut.
+$nuss_trÃ¤gt
+Das Schokoladeneis hat sicher nicht mehr fÃ¼r lange. Die NuÃŸ hÃ¤lt sich gut.
 $nuss_zerlaufen
-Außer der Nuß ist von Deinem teuer bezahlten Eis nichts übriggeblieben. Um
-den Verlust zu mindern, ißt Du die Walnuß.
+AuÃŸer der NuÃŸ ist von Deinem teuer bezahlten Eis nichts Ã¼briggeblieben. Um
+den Verlust zu mindern, iÃŸt Du die WalnuÃŸ.
 $nuss_essen
-Ja, das war recht gut. Aber 3 Mark für ein Bällchen Schokoladeneis und eine
-Walnuß scheint mir doch etwas viel zu sein, oder?
+Ja, das war recht gut. Aber 3 Mark fÃ¼r ein BÃ¤llchen Schokoladeneis und eine
+WalnuÃŸ scheint mir doch etwas viel zu sein, oder?
 $erdbeer_lang
-Der Becher mit den zwei Eisbällchen mit rotem Farbstoff ist sicher ein
+Der Becher mit den zwei EisbÃ¤llchen mit rotem Farbstoff ist sicher ein
 Erdbeereis.
-$erdbeer_trägt
+$erdbeer_trÃ¤gt
 Das Erdbeereis zergeht langsam, allerdings nicht auf Deiner Zunge.
 $erdbeer_zerlaufen
-Als das Eis schmilzt, siehst Du, daß sich in einem Bällchen doch tatsächlich
+Als das Eis schmilzt, siehst Du, daÃŸ sich in einem BÃ¤llchen doch tatsÃ¤chlich
 eine Erdbeere kleineren Kalibers befunden hat. Voll Glauben in das Gute in
-Eismännern führst Du einen Freudentanz auf und machst aus der Erdbeere einen
-kleinen roten Fleck. Ernüchtert hälst Du inne.
+EismÃ¤nnern fÃ¼hrst Du einen Freudentanz auf und machst aus der Erdbeere einen
+kleinen roten Fleck. ErnÃ¼chtert hÃ¤lst Du inne.
 $erdbeer_essen
-Mir scheint, als wäre Erdbeer nicht so ganz Dein Stil. Deine Miene hellt
-sich erst auf, als Du in einem Bällchen eine Minierbeere findest. Ein kräftiger
-Biß beweist, daß sie aus Wachs ist.
+Mir scheint, als wÃ¤re Erdbeer nicht so ganz Dein Stil. Deine Miene hellt
+sich erst auf, als Du in einem BÃ¤llchen eine Minierbeere findest. Ein krÃ¤ftiger
+BiÃŸ beweist, daÃŸ sie aus Wachs ist.
 $banane_lang
-Statt Bällchen ist ein gelbes Eisstück in Bananenform in ein buntes Hörnchen
+Statt BÃ¤llchen ist ein gelbes EisstÃ¼ck in Bananenform in ein buntes HÃ¶rnchen
 gepackt.
-$banane_trägt
+$banane_trÃ¤gt
 Man sagt zwar, Bananeneis schmiltzt langsam, aber ich glaube, Du beweist gerade
 das Gegenteil.
 $banane_zerlaufen
-Das Bananeneis ist futsch. Zu Deiner Überrachung bleiben aber ein paar Kerne
-zurück. Der Zungentest beweist, daß es sich um Schokolade handelt. Hier hat
+Das Bananeneis ist futsch. Zu Deiner Ãœberrachung bleiben aber ein paar Kerne
+zurÃ¼ck. Der Zungentest beweist, daÃŸ es sich um Schokolade handelt. Hier hat
 wirklich ein Pedant sein Arbeit perfekt vollrichtet.
 $banane_essen
-Das Eis selbst schmeckt eigentümlich, aber die eingelassenen Kerne aus
-Schokolade ergänzen es hervorragend und machen es zu einem fast künstlerischen
-Genuß. Bon appétite.
+Das Eis selbst schmeckt eigentÃ¼mlich, aber die eingelassenen Kerne aus
+Schokolade ergÃ¤nzen es hervorragend und machen es zu einem fast kÃ¼nstlerischen
+GenuÃŸ. Bon appÃ©tite.
 $milkaeis_lang
-Da ist ein winziges Bällchen Schokoladeneis in einem lila Hörnchen, ein
+Da ist ein winziges BÃ¤llchen Schokoladeneis in einem lila HÃ¶rnchen, ein
 sogenanntes Lilaeis.
-$milkaeis_trägt
-Das Schokoladeneis schmiltz langsam und das Hörnchen bekommt schwarze Flecken.
+$milkaeis_trÃ¤gt
+Das Schokoladeneis schmiltz langsam und das HÃ¶rnchen bekommt schwarze Flecken.
 $milkaeis_zerlaufen
-Das Eis ist zu einer unansehnlichen Brühe geworden, die das total verschmierte
-Hörnchen füllt. Angeekelt wirft Du beides weit von Dir.
+Das Eis ist zu einer unansehnlichen BrÃ¼he geworden, die das total verschmierte
+HÃ¶rnchen fÃ¼llt. Angeekelt wirft Du beides weit von Dir.
 $milkaeis_essen
 Das schmeckt doch wie - warte gleich hab' ich's. Ach ja, ich sage nur
-lila Kühe auf gesunden Alpenalmen. Das Hörnchen war meiner Meinung nach nicht
-zum Essen, aber für diesen Hinweis ist es wohl zu spät.
+lila KÃ¼he auf gesunden Alpenalmen. Das HÃ¶rnchen war meiner Meinung nach nicht
+zum Essen, aber fÃ¼r diesen Hinweis ist es wohl zu spÃ¤t.
 $kaffee_warm
 Eine Tasse ist voll mit Kaffee. Der Kaffee dampft noch.
 $kaffee_kalt
-Es scheint, als wäre in einer Tasse kalter Kaffee.
+Es scheint, als wÃ¤re in einer Tasse kalter Kaffee.
 $kaffee_trinkwarm
-Das tut gut, eine Tasse heißer Kaffee. Jetzt können wir voller Energie die
+Das tut gut, eine Tasse heiÃŸer Kaffee. Jetzt kÃ¶nnen wir voller Energie die
 Probleme angehen.
 $kaffee_trinkkalt
-Mich würgt es zwar ein wenig, aber Du scheinst da wenig zimperlich zu sein.
-Ich schaue in der Zeit weg, in der Du den eiskalten Kaffee trinkst. Ein Rülpser
-erschüttert Dich, aber sonst scheint es keine Probleme zu geben.
+Mich wÃ¼rgt es zwar ein wenig, aber Du scheinst da wenig zimperlich zu sein.
+Ich schaue in der Zeit weg, in der Du den eiskalten Kaffee trinkst. Ein RÃ¼lpser
+erschÃ¼ttert Dich, aber sonst scheint es keine Probleme zu geben.
 $kaffee_leer
-Die leere Kaffeetasse weist innen Jahresringe auf. Ich schätze das Alter auf
+Die leere Kaffeetasse weist innen Jahresringe auf. Ich schÃ¤tze das Alter auf
 nicht weniger als 5 Jahre.
 $kaffee_lang
-$kaffee_trägt
+$kaffee_trÃ¤gt
 $sauce_lang
-Dort steht ein kleiner Behälter mit einer roten Tunke.
-$sauce_trägt
-Du trägst einen Behälter mit einem merkwürdigen roten Inhalt.
+Dort steht ein kleiner BehÃ¤lter mit einer roten Tunke.
+$sauce_trÃ¤gt
+Du trÃ¤gst einen BehÃ¤lter mit einem merkwÃ¼rdigen roten Inhalt.
 $sauce_leer
-Da liegt ein leerer Behälter. Rote Reste an der Innenseite geben einen
-Hinweis auf den ursprünglichen Inhalt.
+Da liegt ein leerer BehÃ¤lter. Rote Reste an der Innenseite geben einen
+Hinweis auf den ursprÃ¼nglichen Inhalt.
 $sauce_trageleer
-Du trägst einen leeren Behälter mit Dir herum.
+Du trÃ¤gst einen leeren BehÃ¤lter mit Dir herum.
 $haupt_geschlossen
 Der Haupteingang ist abgeschlossen.
 $haupt_zu
-Die Tür ist zu.
+Die TÃ¼r ist zu.
 $haupt_auf
-Die Tür ist auf.
+Die TÃ¼r ist auf.
 $haupt_lang
-$haupt_trägt
+$haupt_trÃ¤gt
 $neben_geschlossen
-Die kleine Tür ist verrammelt.
+Die kleine TÃ¼r ist verrammelt.
 $neben_zu
-Die kleine Tür ist nur angelehnt.
+Die kleine TÃ¼r ist nur angelehnt.
 $neben_auf
-Die Tür ist weit geöffnet.
+Die TÃ¼r ist weit geÃ¶ffnet.
 $neben_lang
-$neben_trägt
+$neben_trÃ¤gt
 $keller_geschlossen
 Dieser Seiteneingang ist verschlossen.
 $keller_zu
-Die Tür ist zu.
+Die TÃ¼r ist zu.
 $keller_auf
-Die Tür ist auf.
+Die TÃ¼r ist auf.
 $keller_lang
-$keller_trägt
-$bücherei_geschlossen
-Der Eingang zur Bücherei ist verschlossen.
-$bücherei_zu
-Der Eingang zur Bücherei ist zu.
-$bücherei_auf
-Die Tür zur Bücherei steht offen.
-$bücherei_lang
-$bücherei_trägt
+$keller_trÃ¤gt
+$bÃ¼cherei_geschlossen
+Der Eingang zur BÃ¼cherei ist verschlossen.
+$bÃ¼cherei_zu
+Der Eingang zur BÃ¼cherei ist zu.
+$bÃ¼cherei_auf
+Die TÃ¼r zur BÃ¼cherei steht offen.
+$bÃ¼cherei_lang
+$bÃ¼cherei_trÃ¤gt
 $150_geschlossen
-Die Tür mit der Aufschrift 150 ist verschlossen.
+Die TÃ¼r mit der Aufschrift 150 ist verschlossen.
 $150_zu
-Die Tür zum Zimmer 150 ist zu.
+Die TÃ¼r zum Zimmer 150 ist zu.
 $150_auf
-Die Tür zu Nummer 150 ist auf.
+Die TÃ¼r zu Nummer 150 ist auf.
 $150_lang
-$150_trägt
+$150_trÃ¤gt
 $geschlossen_geschlossen
-Die Glastür ist verschlossen.
+Die GlastÃ¼r ist verschlossen.
 $geschlossen_gehtnicht
-So sehr Du Dich auch bemühst, diese Tür bekommst Du mit den Dir zur
-Verfügung stehenden Mittel nicht auf. Probiere es doch woanders.
+So sehr Du Dich auch bemÃ¼hst, diese TÃ¼r bekommst Du mit den Dir zur
+VerfÃ¼gung stehenden Mittel nicht auf. Probiere es doch woanders.
 $geschlossen_lang
-$geschlossen_trägt
+$geschlossen_trÃ¤gt
 $christian_geschlossen
-Die Tür ist geschlossen.
+Die TÃ¼r ist geschlossen.
 $christian_zu
-Die Tür zu Christians Zimmer ist zu.
+Die TÃ¼r zu Christians Zimmer ist zu.
 $christian_auf
-Die Tür ist auf.
+Die TÃ¼r ist auf.
 $christian_lang
-$christian_trägt
+$christian_trÃ¤gt
 $E50_geschlossen
-Die Tür mit der Aufschrift ist verschlossen.
+Die TÃ¼r mit der Aufschrift ist verschlossen.
 $E50_zu
-Die Tür ist zu.
+Die TÃ¼r ist zu.
 $E50_auf
-Die Tür ist auf.
+Die TÃ¼r ist auf.
 $E50_lang
-$E50_trägt
+$E50_trÃ¤gt
 $mathe_zu
-Die Glastür ist ziemlich zu.
+Die GlastÃ¼r ist ziemlich zu.
 $mathe_auf
-Die Glastür ist offen.
+Die GlastÃ¼r ist offen.
 $mathe_lang
-$mathe_trägt
+$mathe_trÃ¤gt
 $metall_geschlossen
-Die Metalltür ist massiv und verschlossen.
+Die MetalltÃ¼r ist massiv und verschlossen.
 $metall_zu
-Die Metalltür ist zu.
+Die MetalltÃ¼r ist zu.
 $metall_auf
-Die Metalltür ist offen.
+Die MetalltÃ¼r ist offen.
 $metall_lang
-$metall_trägt
+$metall_trÃ¤gt
 $TOF_geschlossen
-Die Tür ist geschlossen.
+Die TÃ¼r ist geschlossen.
 $TOF_zu
-Die Tür ist nur zu.
+Die TÃ¼r ist nur zu.
 $TOF_auf
-Die Tür ist auf.
+Die TÃ¼r ist auf.
 $TOF_lang
-$TOF_trägt
+$TOF_trÃ¤gt
 $warenlager_geschlossen
-Die Tür zum Warenlager ist verschlossen.
+Die TÃ¼r zum Warenlager ist verschlossen.
 $warenlager_zu
-Die Tür zum Warenlager ist zu.
+Die TÃ¼r zum Warenlager ist zu.
 $warenlager_auf
-Die Warenlagertür ist weit geöffnet.
+Die WarenlagertÃ¼r ist weit geÃ¶ffnet.
 $warenlager_ende
-Du siehst, wie Herr Steinbrecher Punkt 18.00 Uhr aus dem Warenlager stürmt und
-die Tür mit zwei Riegeln fest versiegelt. Da bräuchte man schon ein
-Sturmkommando vom Range der Wikinger Hägars, um hier überhaupt den Hauch
+Du siehst, wie Herr Steinbrecher Punkt 18.00 Uhr aus dem Warenlager stÃ¼rmt und
+die TÃ¼r mit zwei Riegeln fest versiegelt. Da brÃ¤uchte man schon ein
+Sturmkommando vom Range der Wikinger HÃ¤gars, um hier Ã¼berhaupt den Hauch
 einer Chance zu haben, hineinzukommen.
 $warenlager_fest
-Die Tür zum Warenlager ist fest verriegelt.
+Die TÃ¼r zum Warenlager ist fest verriegelt.
 $warenlager_lang
-$warenlager_trägt
+$warenlager_trÃ¤gt
 $antrag_lang
-Auf einem Zettel steht etwas von "Antrag für einen Account".
-$antrag_trägt
+Auf einem Zettel steht etwas von "Antrag fÃ¼r einen Account".
+$antrag_trÃ¤gt
 Du hast einen Zettel mit einem Antrag bei Dir.
 $passwort_pass1
 Er sagt dann noch "Das Passwort ist GRUFTY".
 $passwort_pass2
 Er haucht fast "Dein Passwort ist DIEIN".
 $passwort_pass3
-Schließlich stößt er noch "Mit MONSTER kommst Du in die Kiste" zwischen den
-zusammengebissenen Zähnen hervor.
+SchlieÃŸlich stÃ¶ÃŸt er noch "Mit MONSTER kommst Du in die Kiste" zwischen den
+zusammengebissenen ZÃ¤hnen hervor.
 $passwort_pass4
-Er meint, das Passwort wäre gleich der Gruppennummer.
+Er meint, das Passwort wÃ¤re gleich der Gruppennummer.
 $passwort_lang
-$passwort_trägt
+$passwort_trÃ¤gt
 $CC
 Herr Kobe liest den Zettel und meint "Was denn, Du willst einen Account?
-Bringt erst mal Eueren eigenen Kram in Ordnung!". Dann zereißt er den Zettel
+Bringt erst mal Eueren eigenen Kram in Ordnung!". Dann zereiÃŸt er den Zettel
 in tausend winzige Fetzen. Du selbst wirst automatisch um 17,5 Zentimeter
-kleiner und läufst leicht rot an.
+kleiner und lÃ¤ufst leicht rot an.
 $CC_rot
-Eine Leuchtdiode mit der Aufschrift LAM daneben erfüllt eine Ecke des Raumes
-mit düsterem Rot. Daneben ist ein Knopf mit der Betitelung Z.
+Eine Leuchtdiode mit der Aufschrift LAM daneben erfÃ¼llt eine Ecke des Raumes
+mit dÃ¼sterem Rot. Daneben ist ein Knopf mit der Betitelung Z.
 $CC_lang
-$CC_trägt
+$CC_trÃ¤gt
 $whiskey_voll
 Da ist eine Flasche voll mit besten Whiskey.
 $whiskey_trinken
-Ein Geräusch schreckt Dich kurz auf und Du siehst nochmal in das Zimmer mit
+Ein GerÃ¤usch schreckt Dich kurz auf und Du siehst nochmal in das Zimmer mit
 der Nummer 150. Charly ist wohl durch den von Dir verursachten Krach aufgewacht
 und hat die Whiskeyflasche angefallen. In einem fairen Kampf unterliegt der
-Whiskey und ein lauter Rülpser sagt Dir, daß das wohl genau nach Charlies
-Geschmack war. Er schleppt sich zurück zum Terminal und ist offenbar schon
+Whiskey und ein lauter RÃ¼lpser sagt Dir, daÃŸ das wohl genau nach Charlies
+Geschmack war. Er schleppt sich zurÃ¼ck zum Terminal und ist offenbar schon
 wieder eingeschlafen.
 $whiskey_leer
 Eine Flasche Whiskey ist bis auf den letzten Trofen geleert.
 $whiskey_lang
-$whiskey_trägt
+$whiskey_trÃ¤gt
 $SAPH1_steht
-Auf der Konsole des Rechners steht "Drücke Knopf zum Neustart" (frei aus dem
-Englischen übersetzt).
-$SAPH1_läuft
+Auf der Konsole des Rechners steht "DrÃ¼cke Knopf zum Neustart" (frei aus dem
+Englischen Ã¼bersetzt).
+$SAPH1_lÃ¤uft
 Auf der Konsole des Rechners stehst "Ich bin die SAPH1" (in Deutsch,
 wohlgemerkt) und das kleine Kerlchen scheint zu arbeiten.
 $SAPH1_lang
-$SAPH1_trägt
+$SAPH1_trÃ¤gt
 $zettel_lang
-Auf einem Zettel steht "Allgemeiner Büchereiausweis".
-$zettel_trägt
-Du hast einen Büchereiausweis bei Dir.
+Auf einem Zettel steht "Allgemeiner BÃ¼chereiausweis".
+$zettel_trÃ¤gt
+Du hast einen BÃ¼chereiausweis bei Dir.
 $anleitung_lang
-Auf einem gehefteten Packen Zettel steht "Anleitung zur CDC-Gasüberwachung".
-$anleitung_trägt
+Auf einem gehefteten Packen Zettel steht "Anleitung zur CDC-GasÃ¼berwachung".
+$anleitung_trÃ¤gt
 Du schleppst einen Packen Zettel mit Dir herum.
 $schraubenzieher_lang
 Hier ist ein karierter Schraubenzieher.
-$schraubenzieher_trägt
-Du trägst einen lustigen Schraubenzieher.
+$schraubenzieher_trÃ¤gt
+Du trÃ¤gst einen lustigen Schraubenzieher.
 $interlock1_lang
-Hier ist ein Interlockschüssel mit der Aufschrift "SchlüsselA".
-$interlock1_trägt
-Du hast den Interlockschlüssel A bei Dir.
+Hier ist ein InterlockschÃ¼ssel mit der Aufschrift "SchlÃ¼sselA".
+$interlock1_trÃ¤gt
+Du hast den InterlockschlÃ¼ssel A bei Dir.
 $interlock2_lang
-Hier ist ein Interlockschlüssel mit der Aufschrift "SchlüsselB".
-$interlock2_trägt
-Du hast den Interlockschlüssel B bei Dir.
+Hier ist ein InterlockschlÃ¼ssel mit der Aufschrift "SchlÃ¼sselB".
+$interlock2_trÃ¤gt
+Du hast den InterlockschlÃ¼ssel B bei Dir.
 $plakette_lang
 Hier ist ein schwarzes Schildchen mit Deinem Namen drauf.
-$plakette_trägt
+$plakette_trÃ¤gt
 Du hast Dir ein Schildchen mit Deinem Namen angesteckt.
 $brot_lang
 Da ist etwas Brot.
-$brot_trägt
+$brot_trÃ¤gt
 Du hast etwas Brot als Marschverpflegung dabei.
 $brot_essen
-Das Brot schmeckt ziemlich alt, aber ich glaube es hat Dich gestärkt. Du
-siehst Dich unwillkürlich nach einem Baum um, den Du jetzt meinst ausreißen
-zu können.
+Das Brot schmeckt ziemlich alt, aber ich glaube es hat Dich gestÃ¤rkt. Du
+siehst Dich unwillkÃ¼rlich nach einem Baum um, den Du jetzt meinst ausreiÃŸen
+zu kÃ¶nnen.
 $taschenrechner_lang
 Da ist ein Taschenrechner.
-$taschenrechner_trägt
-Du trägst einen CASIO-Taschenrechner bei Dir.
+$taschenrechner_trÃ¤gt
+Du trÃ¤gst einen CASIO-Taschenrechner bei Dir.
 $stift_lang
 Hier ist ein Stift. Sieht aus wie ein Kugelschreiber.
-$stift_trägt
-Du hast einen Kugelschreiber in der Hemdtasche, der langsam ausläuft.
+$stift_trÃ¤gt
+Du hast einen Kugelschreiber in der Hemdtasche, der langsam auslÃ¤uft.
 $klocke_an
 Eine Lampe mit der Aufschrift RESET blinkt und erzeugt einen leises Piepsen.
 $klocke_lang
-$klocke_trägt
+$klocke_trÃ¤gt
 $licht_an
 Auf einem Schalter steht "Licht ausschalten".
 $licht_aus
 Auf einem Schalter steht "Licht anschalten".
 $licht_lang
-$licht_trägt
+$licht_trÃ¤gt
 $schnur_lang
 Hier liegt eine Bastschnur.
-$schnur_trägt
+$schnur_trÃ¤gt
 Du hast Dir eine Kordel um den Bauch gewickelt.
 $fenster_lang
-$fenster_trägt
+$fenster_trÃ¤gt
 $HV_lang
-$HV_trägt
+$HV_trÃ¤gt
 $HV_an
 Die Hochspannung ist offenbar eingeschaltet, da ein Knopf mit der Aufschrift
 HV gelblich leuchtet.
 $HV_aus
 Ein Knopf mit der Aufschrift HV zeigt kein Licht.
 $schwer_lang
-$schwer_trägt
+$schwer_trÃ¤gt
 $schraube_lang
 Eine Schraube verbindet eine kleine Kammer fest mit einem massiven Rack.
 $schraube_fest
 Irgendein Depp hat eine Schraube fest in ein Rack geschraubt.
 $schraube_lose
-Eine Schraube hängt lose in einem Rack.
-$schraube_trägt
+Eine Schraube hÃ¤ngt lose in einem Rack.
+$schraube_trÃ¤gt
 $kammer_lang
-Da steht eine kleiner Driftkammer mit einigen Anschlüssen an den Seiten.
-$kammer_trägt
-Du trägst eine ulkige kleine Driftkammer.
+Da steht eine kleiner Driftkammer mit einigen AnschlÃ¼ssen an den Seiten.
+$kammer_trÃ¤gt
+Du trÃ¤gst eine ulkige kleine Driftkammer.
 $kammer_gefangen
 Da ist eine kleine Driftkammer mit einer traurig aussehenden Maus darin.
 Alles ist mit einer Schnur und einem Seemannsknoten fest verschlossen.
 $fahrrad_lang
 Da steht ein Fahrrad. Es ist nicht abgeschlossen.
-$fahrrad_trägt
-Du fährst mit einem Fahrrad und kommst so mühelos voran.
+$fahrrad_trÃ¤gt
+Du fÃ¤hrst mit einem Fahrrad und kommst so mÃ¼helos voran.
 $terminal_lang
 Auf einem kleinen Tisch steht ein Terminal. Auf ihm steht "Kein Zugriff".
-$terminal_trägt
+$terminal_trÃ¤gt
 $terminal_passwort
 Auf dem Terminal in der Ecke steht "Passwort?".
 $terminal_befehl
 Auf dem Terminal in der Ecke steht "Befehl?".
 $terminal_hilfe
-Merkwürdiger Weise lacht das Terminal laut auf. Dann sagt es mit weicher,
-fast liebevoller Stimme: "Hast Du denn nicht gehört, was der Klettermaxe
+MerkwÃ¼rdiger Weise lacht das Terminal laut auf. Dann sagt es mit weicher,
+fast liebevoller Stimme: "Hast Du denn nicht gehÃ¶rt, was der Klettermaxe
 Dir gesagt hat? Denk aber besser an alle.".
 $terminal_tip1
-Dann ergänzt es: "Aber soweit sind wir noch nicht!".
+Dann ergÃ¤nzt es: "Aber soweit sind wir noch nicht!".
 $terminal_tip2
 Nun wird die Stimme etwas trauriger: "Du kannst es ja versuchen. Aber Du
 hast ja schon in der Halle alles vermasselt, darum ist auch das sinnlos.".
 $listing_lang
 Da liegt ein umfangreiches Listing eines Computerprogramms.
-$listing_trägt
+$listing_trÃ¤gt
 Du bist mit dem Riesenlisting eines Programms beladen.
-$meßgerät_lang
-Da ist ein kleines gelbes Meßgerät, ich glaube eine Art Multimeter.
-$meßgerät_trägt
-In einer Tasche hast Du ein kleines gelbes Meßgerät.
+$meÃŸgerÃ¤t_lang
+Da ist ein kleines gelbes MeÃŸgerÃ¤t, ich glaube eine Art Multimeter.
+$meÃŸgerÃ¤t_trÃ¤gt
+In einer Tasche hast Du ein kleines gelbes MeÃŸgerÃ¤t.
 $batterie_lang
 Da liegt eine alte Batterie, sie ist schon halb ausgelaufen.
-$batterie_trägt
+$batterie_trÃ¤gt
 Du hat eine auslaufende Batterie bei Dir, die Dir so nach und nach Deine
 Klamotten zersetzt.
 $gabel_lang
 Da ist eine verrostete Gabel.
-$gabel_trägt
+$gabel_trÃ¤gt
 Du hast eine verrostete Gabel dabei.
-$löffel_lang
-Hier liegt ein Löffel der wohl vor kurzem noch Kontakt mit Kaffee hatte.
-$löffel_trägt
-Du hast Dir einen Löffel in den Mund gesteckt und siehst ziemlich albern
+$lÃ¶ffel_lang
+Hier liegt ein LÃ¶ffel der wohl vor kurzem noch Kontakt mit Kaffee hatte.
+$lÃ¶ffel_trÃ¤gt
+Du hast Dir einen LÃ¶ffel in den Mund gesteckt und siehst ziemlich albern
 aus.
 $istauf
-Die Tür ist doch schon auf.
+Die TÃ¼r ist doch schon auf.
 $istzu
-Noch zuer kann man die Tür aber nicht machen.
+Noch zuer kann man die TÃ¼r aber nicht machen.
 $keinknopf
-Was für einen Knopf soll ich denn drücken?
+Was fÃ¼r einen Knopf soll ich denn drÃ¼cken?
 $keineis
-Wie wäre es, wenn Du das Eis erst einmal an Dich nimmst?
+Wie wÃ¤re es, wenn Du das Eis erst einmal an Dich nimmst?
 $keinwhiskey
-Da war wohl schon einer vor Dir an der Whiskeyflasche, die ist nämlich völlig
+Da war wohl schon einer vor Dir an der Whiskeyflasche, die ist nÃ¤mlich vÃ¶llig
 leer.
 $HVan
-Das Meßgerät zeigt eine Spannung von 2546 Volt an. Der Fehler der Messung
-ist laut Herstellerangabe nur wenig über 97 Prozent.
+Das MeÃŸgerÃ¤t zeigt eine Spannung von 2546 Volt an. Der Fehler der Messung
+ist laut Herstellerangabe nur wenig Ã¼ber 97 Prozent.
 $HVaus
-Hm, nach der Anzeige Deines Meßgerätes müßte die Hochspannung aus sein.
+Hm, nach der Anzeige Deines MeÃŸgerÃ¤tes mÃ¼ÃŸte die Hochspannung aus sein.
 $keinHV
-Ich würde Dir den Zungentest hier nicht empfehlen.
-$keinschlüssel
+Ich wÃ¼rde Dir den Zungentest hier nicht empfehlen.
+$keinschlÃ¼ssel
 Das kannst Du nicht machen.
 $schraube
 Tut mir leid, aber mit den Fingern bekomme ich die Schraube nicht lose.
 $leiter_lang
 Hier steht eine rotlackierte Holzleiter.
-$leiter_trägt
-Du schleppst eine Holzleiter mit Dir herum und stöhnst manchmal.
+$leiter_trÃ¤gt
+Du schleppst eine Holzleiter mit Dir herum und stÃ¶hnst manchmal.
 $anzug_lang
-Da hängt ein grünes Etwas, sieht aus wie ein Strampelanzug.
-$anzug_trägt
-Du hast Dir einen Strampelanzug übergestreift und siehst wie ein Marsmonster
+Da hÃ¤ngt ein grÃ¼nes Etwas, sieht aus wie ein Strampelanzug.
+$anzug_trÃ¤gt
+Du hast Dir einen Strampelanzug Ã¼bergestreift und siehst wie ein Marsmonster
 aus.
 $liege_lang
 Die Liege sieht sehr bequem aus.
-$liege_trägt
+$liege_trÃ¤gt
 $liege
-Du legst Dich gemütlich auf die Liege und erwartest nun den Psychiater. Statt
-dessen kommt Herr Nöldeke und sieht Dich dort in Deiner Ruhestellung. Er
-erzählt Dir was von Berufsauffassung und meint, daß Du wohl Dein Studienziel
-völlig verfehlt hättest, wenn Du hier so faul herumliegst. Betroffen stehst
+Du legst Dich gemÃ¼tlich auf die Liege und erwartest nun den Psychiater. Statt
+dessen kommt Herr NÃ¶ldeke und sieht Dich dort in Deiner Ruhestellung. Er
+erzÃ¤hlt Dir was von Berufsauffassung und meint, daÃŸ Du wohl Dein Studienziel
+vÃ¶llig verfehlt hÃ¤ttest, wenn Du hier so faul herumliegst. Betroffen stehst
 Du wieder auf.
 $bank_lang
 Die Bank ist ziemlich schmuddelig.
-$bank_trägt
+$bank_trÃ¤gt
 $handbuch_lang
 Hier liegt eine ziemlich alt aussehende Seite aus einem VAX-Handbuch.
-$handbuch_trägt
+$handbuch_trÃ¤gt
 Du hast eine Seite eines VAX-Handbuchs bei Dir.
 $handbuch
-Die Seite fängt wohl ziemlich mitten in der Beschreibung eines Befehls an.
+Die Seite fÃ¤ngt wohl ziemlich mitten in der Beschreibung eines Befehls an.
 Da steht: "auch sonst. Die Option /ALL gestattet es, alle Leute zu erreichen,
 die gerade auf ihr Terminal starren. Selten". Der Rest verschwindet in einem
-ekelhaften Fleck. Es ist ziemlich verwunderlich, daß der Text in Deutsch
+ekelhaften Fleck. Es ist ziemlich verwunderlich, daÃŸ der Text in Deutsch
 gehalten ist. Es kann sich also wohl nicht um ein Originalhandbuch handeln.
 $rose_lang
-Hier liegt eine wunderschöne rote Rose, die irgendein Wilderer ausgezupft hat.
-$rose_trägt
+Hier liegt eine wunderschÃ¶ne rote Rose, die irgendein Wilderer ausgezupft hat.
+$rose_trÃ¤gt
 Du hast Dir eine Rose ins Haar gesteckt und siehst wirklich toll aus.
 $rose_sticht
 Autsch, die Rose hat Dich in den Daumen gebissen. Aber es ist nicht so schlimm,
-Du hast ja sicher ein dickes Fell. Wenn nicht, solltest Du besser aufhören.
+Du hast ja sicher ein dickes Fell. Wenn nicht, solltest Du besser aufhÃ¶ren.
