@@ -1,0 +1,8 @@
+<mat-form-field>
+  <mat-label>Spiel</mat-label>
+  <mat-select [(value)]="settings.game">
+    <mat-option *ngFor="let game of games" [value]="game">{{
+      getGameName(game)
+    }}</mat-option>
+  </mat-select>
+</mat-form-field>

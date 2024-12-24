@@ -1,10 +1,20 @@
 import { Injectable } from '@angular/core';
 
-export type TGames = 'b5' | 'REV' | 'ROAR';
+export const games = {
+  ROAR: 'Der Schrei des Monsters',
+  REV: 'Die Rache des Monsters',
+  b5: 'The Babylon project',
+};
+
+export type TGame = keyof typeof games;
+
+const modernNames = new Set<TGame>(['b5']);
 
 @Injectable()
 export class SettingsService {
-  readonly modernNames = true;
+  game: TGame = 'b5';
 
-  readonly game: TGames = 'b5';
+  get modernNames() {
+    return modernNames.has(this.game);
+  }
 }
