@@ -1,5 +1,5 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { BehaviorSubject, map } from 'rxjs';
+import { BehaviorSubject, map, tap } from 'rxjs';
 import { AssetService } from './asset.service';
 import { SettingsService } from './settings.service';
 
@@ -38,6 +38,7 @@ export class MessagesService implements OnDestroy {
 
   parse() {
     this.lastError = '';
+    this._objectName = '';
 
     this._parsing$.next(0);
     this._messageMap$.next({});
@@ -48,11 +49,16 @@ export class MessagesService implements OnDestroy {
   private processFile(name: string) {
     this._parsing$.next(this._parsing$.value + 1);
 
-    this._assets.download(name).subscribe({
-      next: (s) => this.parseFile(s.replace(/\r/g, '').split('\n')),
-      error: (e) => (this.lastError = e.message),
-      complete: () => this._parsing$.next(this._parsing$.value - 1),
-    });
+    this._assets
+      .download(name)
+      .pipe(tap((s) => this.parseFile(s.replace(/\r/g, '').split('\n'))))
+      .subscribe({
+        error: (e) => {
+          this.lastError = e.message;
+          this._parsing$.next(this._parsing$.value - 1);
+        },
+        complete: () => this._parsing$.next(this._parsing$.value - 1),
+      });
   }
 
   private parseFile(lines: string[]) {
@@ -74,11 +80,7 @@ export class MessagesService implements OnDestroy {
         continue;
       }
 
-      if (!this._objectName) {
-        this.lastError = `no object for ${line}`;
-
-        return;
-      }
+      if (!this._objectName) throw new Error(`no object for ${line}`);
 
       const match = messageReg.exec(line);
 
@@ -98,11 +100,7 @@ export class MessagesService implements OnDestroy {
         continue;
       }
 
-      if (!this._messageName) {
-        this.lastError = `no message for ${line}`;
-
-        return;
-      }
+      if (!this._messageName) throw new Error(`no message for ${line}`);
 
       this._messages[this._messageIndex - 1] = [
         this._messages[this._messageIndex - 1],

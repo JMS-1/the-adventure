@@ -1,5 +1,5 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, tap } from 'rxjs';
 import { AssetService } from './asset.service';
 import { SettingsService } from './settings.service';
 
@@ -40,11 +40,16 @@ export class WordsService implements OnDestroy {
 
     this._commands$.next({});
 
-    this._assets.download(`${this._settings.game}.words`).subscribe({
-      next: (s) => this.parseFile(s.replace(/\r/g, '').split('\n')),
-      error: (e) => (this.lastError = e.message),
-      complete: () => (this.parsing = false),
-    });
+    this._assets
+      .download(`${this._settings.game}.words`)
+      .pipe(tap((s) => this.parseFile(s.replace(/\r/g, '').split('\n'))))
+      .subscribe({
+        error: (e) => {
+          this.lastError = e.message;
+          this.parsing = false;
+        },
+        complete: () => (this.parsing = false),
+      });
   }
 
   private parseFile(lines: string[]) {

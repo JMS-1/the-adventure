@@ -21,9 +21,19 @@
       </button>
       <span>{{ words.lastError }}</span>
     </div>
+    <div>
+      <button
+        mat-raised-button
+        [disabled]="objects.parsing"
+        (click)="objects.parse()"
+      >
+        Parse Objects
+      </button>
+      <span>{{ objects.lastError }}</span>
+    </div>
   </div>
   <div class="preview">
-    <pre>{{ words.commands$ | async | json }}</pre>
+    <pre>{{ null | json }}</pre>
   </div>
   <router-outlet />
 </div>

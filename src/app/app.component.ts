@@ -5,6 +5,7 @@ import { RouterOutlet } from '@angular/router';
 import { GameSelectorComponent } from './game-selector/game-selector.component';
 import { AssetService } from './services/asset.service';
 import { MessagesService } from './services/messages.service';
+import { ObjectsService } from './services/objects.service';
 import { SettingsService } from './services/settings.service';
 import { WordsService } from './services/words.service';
 
@@ -21,6 +22,7 @@ import { WordsService } from './services/words.service';
     AssetService,
     GameSelectorComponent,
     MessagesService,
+    ObjectsService,
     SettingsService,
     WordsService,
   ],
@@ -30,6 +32,7 @@ import { WordsService } from './services/words.service';
 export class AppComponent {
   constructor(
     public readonly messages: MessagesService,
-    public readonly words: WordsService
+    public readonly words: WordsService,
+    public readonly objects: ObjectsService
   ) {}
 }
