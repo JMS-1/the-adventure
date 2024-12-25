@@ -1,12 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { tap } from 'rxjs';
+import { SettingsService } from './settings.service';
 
-@Injectable({ providedIn: 'root' })
+@Injectable()
 export class AssetService {
-  constructor(private readonly _http: HttpClient) {}
+  constructor(
+    private readonly _http: HttpClient,
+    private readonly _settings: SettingsService
+  ) {}
 
   download(name: string) {
+    if (this._settings.dosNames) {
+      const split = name.split('.');
+
+      name = `${split[0]}.${split[1].substring(0, 3)}`.toUpperCase();
+    }
+
     return this._http
       .get(`data/${name}`, { responseType: 'text', withCredentials: true })
       .pipe(

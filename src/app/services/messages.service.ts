@@ -42,9 +42,7 @@ export class MessagesService implements OnDestroy {
     this._parsing$.next(0);
     this._messageMap$.next({});
 
-    this.processFile(
-      `${this._settings.game}.${this._settings.modernNames ? 'msg' : 'MSG'}`
-    );
+    this.processFile(`${this._settings.game}.msg`);
   }
 
   private processFile(name: string) {
@@ -64,15 +62,7 @@ export class MessagesService implements OnDestroy {
       if (!line) continue;
 
       if (line.startsWith('$$$')) {
-        let name = line.substring(3);
-
-        if (!this._settings.modernNames) {
-          const split = name.split('.');
-
-          name = `${split[0]}.${split[1].substring(0, 3)}`.toUpperCase();
-        }
-
-        this.processFile(name);
+        this.processFile(line.substring(3));
 
         continue;
       }

@@ -8,13 +8,13 @@ export const games = {
 
 export type TGame = keyof typeof games;
 
-const modernNames = new Set<TGame>(['b5']);
+const dosNames = new Set<TGame>(['ROAR', 'REV']);
 
 @Injectable()
 export class SettingsService {
   game: TGame = 'b5';
 
-  get modernNames() {
-    return modernNames.has(this.game);
+  get dosNames() {
+    return dosNames.has(this.game);
   }
 }

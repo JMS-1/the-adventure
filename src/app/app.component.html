@@ -1,17 +1,29 @@
 <div class="root">
   <app-game-selector></app-game-selector>
-  <div>
-    <button
-      mat-raised-button
-      [disabled]="messages.parsing$ | async"
-      (click)="parseMessages()"
-    >
-      Parse Messages
-    </button>
-    <span>{{ messages.lastError }}</span>
+  <div class="actions">
+    <div>
+      <button
+        mat-raised-button
+        [disabled]="messages.parsing$ | async"
+        (click)="messages.parse()"
+      >
+        Parse Messages
+      </button>
+      <span>{{ messages.lastError }}</span>
+    </div>
+    <div>
+      <button
+        mat-raised-button
+        [disabled]="words.parsing"
+        (click)="words.parse()"
+      >
+        Parse Words
+      </button>
+      <span>{{ words.lastError }}</span>
+    </div>
   </div>
   <div class="preview">
-    <pre>{{ messages.messages$ | async | json }}</pre>
+    <pre>{{ words.commands$ | async | json }}</pre>
   </div>
   <router-outlet />
 </div>
