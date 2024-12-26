@@ -1,7 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 import { DeadAction } from '../actions/dead';
+import { HasAction } from '../actions/has';
+import { HasThisAction } from '../actions/hasThis';
+import { HereAction } from '../actions/here';
 import { MessageAction } from '../actions/message';
 import { MoveAction } from '../actions/move';
+import { NotHasAction } from '../actions/notHas';
+import { NotHasThisAction } from '../actions/notHasThis';
+import { NotHereAction } from '../actions/notHere';
 import { PickAction } from '../actions/pick';
 import { PrintAction } from '../actions/print';
 import { TestMessageAction } from '../actions/testMessage';
@@ -504,6 +510,150 @@ describe('ActionService test position', () => {
     );
 
     expect(() => service.parse('if_position xxx', 'none', [], 0)).toThrowError(
+      /unterminated/
+    );
+  });
+});
+
+describe('ActionService test thing', () => {
+  let service: ActionService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(ActionService);
+  });
+
+  it('has', () => {
+    const [actions, index] = service.parse(
+      'if_has what message = junk',
+      'none',
+      [],
+      0
+    );
+
+    expect(index).toBe(0);
+    expect(actions.length).toBe(1);
+
+    const action = actions[0] as HasAction;
+
+    expect(action).toBeInstanceOf(HasAction);
+    expect(action.obj).toBe('what');
+    expect(action.actions.length).toBe(1);
+  });
+
+  it('not has', () => {
+    const [actions, index] = service.parse(
+      'if_nothas what message = junk',
+      'none',
+      [],
+      0
+    );
+
+    expect(index).toBe(0);
+    expect(actions.length).toBe(1);
+
+    const action = actions[0] as NotHasAction;
+
+    expect(action).toBeInstanceOf(NotHasAction);
+    expect(action.obj).toBe('what');
+    expect(action.actions.length).toBe(1);
+  });
+
+  it('has this', () => {
+    const [actions, index] = service.parse(
+      'if_hasthis message = junk',
+      'none',
+      [],
+      0
+    );
+
+    expect(index).toBe(0);
+    expect(actions.length).toBe(1);
+
+    const action = actions[0] as HasThisAction;
+
+    expect(action).toBeInstanceOf(HasThisAction);
+    expect(action.actions.length).toBe(1);
+  });
+
+  it('not has this', () => {
+    const [actions, index] = service.parse(
+      'if_nothasthis message = junk',
+      'none',
+      [],
+      0
+    );
+
+    expect(index).toBe(0);
+    expect(actions.length).toBe(1);
+
+    const action = actions[0] as NotHasThisAction;
+
+    expect(action).toBeInstanceOf(NotHasThisAction);
+    expect(action.actions.length).toBe(1);
+  });
+
+  it('invalid', () => {
+    expect(() => service.parse('if_has', 'none', [], 0)).toThrowError(
+      /unterminated/
+    );
+
+    expect(() => service.parse('if_nothas', 'none', [], 0)).toThrowError(
+      /unterminated/
+    );
+  });
+});
+
+describe('ActionService test here', () => {
+  let service: ActionService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(ActionService);
+  });
+
+  it('here', () => {
+    const [actions, index] = service.parse(
+      'if_here what message = junk',
+      'none',
+      [],
+      0
+    );
+
+    expect(index).toBe(0);
+    expect(actions.length).toBe(1);
+
+    const action = actions[0] as HereAction;
+
+    expect(action).toBeInstanceOf(HereAction);
+    expect(action.obj).toBe('what');
+    expect(action.actions.length).toBe(1);
+  });
+
+  it('not here', () => {
+    const [actions, index] = service.parse(
+      'if_nothere what message = junk',
+      'none',
+      [],
+      0
+    );
+
+    expect(index).toBe(0);
+    expect(actions.length).toBe(1);
+
+    const action = actions[0] as NotHereAction;
+
+    expect(action).toBeInstanceOf(NotHereAction);
+    expect(action.obj).toBe('what');
+    expect(action.actions.length).toBe(1);
+  });
+
+  it('invalid', () => {
+    expect(() => service.parse('if_here', 'none', [], 0)).toThrowError(
+      /unterminated/
+    );
+
+    expect(() => service.parse('if_nothere', 'none', [], 0)).toThrowError(
       /unterminated/
     );
   });

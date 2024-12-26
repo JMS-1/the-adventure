@@ -15,15 +15,13 @@ export class TestPositionAction extends Action {
   }
 
   static parse(match: RegExpMatchArray, context: ParseContext) {
-    context.skip(match[0].length);
-
-    for (;;) {
-      const code = context.parse();
-
-      if (code?.length)
-        return [new TestPositionAction(match[2], match[3], !!match[1], code)];
-
-      context.joinNext();
-    }
+    return [
+      new TestPositionAction(
+        match[2],
+        match[3],
+        !!match[1],
+        Action.parseBody(context, match[0])
+      ),
+    ];
   }
 }

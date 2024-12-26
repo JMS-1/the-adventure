@@ -1,8 +1,14 @@
 import { Action } from '../actions';
 import { DeadAction } from '../actions/dead';
+import { HasAction } from '../actions/has';
+import { HasThisAction } from '../actions/hasThis';
+import { HereAction } from '../actions/here';
 import { ListAction } from '../actions/list';
 import { MessageAction } from '../actions/message';
 import { MoveAction } from '../actions/move';
+import { NotHasAction } from '../actions/notHas';
+import { NotHasThisAction } from '../actions/notHasThis';
+import { NotHereAction } from '../actions/notHere';
 import { PickAction } from '../actions/pick';
 import { PrintAction } from '../actions/print';
 import { TestMessageAction } from '../actions/testMessage';
@@ -22,6 +28,12 @@ const parsers: IActionParser[] = [
   TestMessageAction,
   TestStateAction,
   TestPositionAction,
+  HasAction,
+  NotHasAction,
+  HereAction,
+  NotHereAction,
+  HasThisAction,
+  NotHasThisAction,
   MoveAction,
   MessageAction,
   PickAction,
