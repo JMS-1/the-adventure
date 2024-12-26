@@ -56,7 +56,22 @@ export class ActionService {
   private readonly parsePrint = (match: RegExpMatchArray, context: Context) => {
     context.skip(match[0].length);
 
-    return [new actions.PrintAction(match[1] ?? null, match[2])];
+    return [new actions.PrintAction(match[1], match[2])];
+  };
+
+  private readonly parseTestMessage = (
+    match: RegExpMatchArray,
+    context: Context
+  ) => {
+    context.skip(match[0].length);
+
+    for (;;) {
+      const code = this.parseAction(context);
+
+      if (code?.length) return [new actions.TestMessageAction(match[1], code)];
+
+      context.joinNext();
+    }
   };
 
   private readonly parseList = (match: RegExpMatchArray, context: Context) => {
@@ -98,6 +113,7 @@ export class ActionService {
     [/^(#)?>(\$\$([^$]+)\$)?([^,)\s>]+)/, this.parseGoto],
     [/^(@)?message\s*=\s*([^,)\s]+)/, this.parseMessage],
     [/^(@)?(#)?<([^,)\s]+)/, this.parsePick],
+    [/^if_message\s+([^\s]+)\s?/, this.parseTestMessage],
   ];
 
   parse(

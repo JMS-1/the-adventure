@@ -7,6 +7,7 @@ import {
   MoveAction,
   PickAction,
   PrintAction,
+  TestMessageAction,
 } from './actions';
 
 describe('ActionService', () => {
@@ -320,6 +321,91 @@ describe('ActionService print', () => {
     );
 
     expect(() => service.parse('&$$$xxx', 'none', [], 0)).toThrowError(
+      /unterminated/
+    );
+  });
+});
+
+describe('ActionService test message', () => {
+  let service: ActionService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(ActionService);
+  });
+
+  it('valid', () => {
+    let [actions, index] = service.parse(
+      'if_message test message = junk',
+      'none',
+      [],
+      0
+    );
+
+    expect(index).toBe(0);
+    expect(actions.length).toBe(1);
+
+    let action = actions[0] as TestMessageAction;
+
+    expect(action).toBeInstanceOf(TestMessageAction);
+    expect(action.message).toBe('test');
+    expect(action.actions.length).toBe(1);
+
+    [actions, index] = service.parse(
+      'if_message test',
+      'none',
+      ['', 'message = junk'],
+      0
+    );
+
+    expect(index).toBe(1);
+    expect(actions.length).toBe(1);
+
+    action = actions[0] as TestMessageAction;
+
+    expect(action).toBeInstanceOf(TestMessageAction);
+    expect(action.message).toBe('test');
+    expect(action.actions.length).toBe(1);
+
+    [actions, index] = service.parse(
+      'if_message test (message = junk)',
+      'none',
+      [],
+      0
+    );
+
+    expect(index).toBe(0);
+    expect(actions.length).toBe(1);
+
+    action = actions[0] as TestMessageAction;
+
+    expect(action).toBeInstanceOf(TestMessageAction);
+    expect(action.message).toBe('test');
+    expect(action.actions.length).toBe(1);
+
+    [actions, index] = service.parse(
+      'if_message test',
+      'none',
+      ['', '(', 'message = junk', ')'],
+      0
+    );
+
+    expect(index).toBe(3);
+    expect(actions.length).toBe(1);
+
+    action = actions[0] as TestMessageAction;
+
+    expect(action).toBeInstanceOf(TestMessageAction);
+    expect(action.message).toBe('test');
+    expect(action.actions.length).toBe(1);
+  });
+
+  it('invalid', () => {
+    expect(() => service.parse('if_message', 'none', [], 0)).toThrowError(
+      /unterminated/
+    );
+
+    expect(() => service.parse('if_message xxx', 'none', [], 0)).toThrowError(
       /unterminated/
     );
   });

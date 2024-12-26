@@ -40,3 +40,12 @@ export class PrintAction extends Action {
     super();
   }
 }
+
+export class TestMessageAction extends Action {
+  constructor(
+    public readonly message: string,
+    public readonly actions: Action[]
+  ) {
+    super();
+  }
+}
