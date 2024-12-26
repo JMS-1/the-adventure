@@ -1,0 +1,29 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/Frontend/"
+    schedule:
+      interval: "daily"
+      time: "02:00"
+      timezone: "Europe/Berlin"
+    groups:
+      angular:
+        patterns:
+        - "@angular*"
+        - "angular*"
+        update-types:
+        - "minor"
+        - "patch"
+      eslint:
+        patterns:
+        - "@typescript-eslint*"
+      types:
+        patterns:
+        - "@types*"
+      storybook:
+        patterns:
+        - "@storybook*"
+        - "storybook"
+    ignore:
+      - dependency-name: "@angular*"
+        update-types: ["version-update:semver-major"]

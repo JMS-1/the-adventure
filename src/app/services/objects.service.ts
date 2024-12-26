@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { tap } from 'rxjs';
+import { ActionService } from './action.service';
 import { AssetService } from './asset.service';
 import { SettingsService } from './settings.service';
 
@@ -25,7 +26,8 @@ export class ObjectsService {
 
   constructor(
     private readonly _settings: SettingsService,
-    private readonly _assets: AssetService
+    private readonly _assets: AssetService,
+    private readonly _parser: ActionService
   ) {}
 
   parse() {
@@ -79,11 +81,11 @@ export class ObjectsService {
       } else if ((match = regs.persons.exec(line))) {
         this.processPersons(match[1]);
       } else if ((match = regs.actions.exec(line))) {
-        i = this.processActions(match[1], lines, i);
+        i = this._parser.parse(match[1], 'multiple', lines, i)[1];
       } else if ((match = regs.time.exec(line))) {
-        i = this.processActions(match[1], lines, i, 'time');
+        i = this._parser.parse(match[1], 'single', lines, i)[1];
       } else if ((match = regs.command.exec(line))) {
-        i = this.processActions(match[2], lines, i, '#' + match[1]);
+        i = this._parser.parse(match[1], 'none', lines, i)[1];
       } else {
         throw new Error(line);
       }
@@ -104,35 +106,5 @@ export class ObjectsService {
 
   private processPersons(persons: string) {
     console.log('persons=' + persons);
-  }
-
-  private processActions(
-    start: string,
-    lines: string[],
-    i: number,
-    command?: string
-  ) {
-    let full = '';
-
-    for (let gotNest = !!command, nesting = 0; ; ) {
-      full += start;
-
-      for (const c of start)
-        if (c == '(' || c == '[') {
-          nesting++;
-
-          gotNest = true;
-        } else if (c == ')' && --nesting < 0) throw new Error('bad nesting');
-
-      if (gotNest && !nesting) break;
-
-      if (i++ >= lines.length) throw new Error('unclosed nesting');
-
-      start = lines[i];
-    }
-
-    console.log(`${command ?? 'actions'}=` + full);
-
-    return i;
   }
 }
