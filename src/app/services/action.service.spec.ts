@@ -83,7 +83,40 @@ describe('ActionService assign message', () => {
 
   it('invalid', () => {
     expect(() => service.parse('message = ', 'none', [], 0)).toThrowError(
-      /unknown/
+      /unterminated/
     );
+  });
+});
+
+describe('ActionService sequence', () => {
+  let service: ActionService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(ActionService);
+  });
+
+  it('valid', () => {
+    const [actions, index] = service.parse(
+      '(message = 1, @message = 2)',
+      'none',
+      [],
+      0
+    );
+
+    expect(index).toBe(0);
+    expect(actions.length).toBe(2);
+
+    let action = actions[0] as MessageAction;
+
+    expect(action).toBeInstanceOf(MessageAction);
+    expect(action.message).toBe('1');
+    expect(action.optional).toBeFalse();
+
+    action = actions[1] as MessageAction;
+
+    expect(action).toBeInstanceOf(MessageAction);
+    expect(action.message).toBe('2');
+    expect(action.optional).toBeTrue();
   });
 });
