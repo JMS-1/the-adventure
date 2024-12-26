@@ -1,5 +1,5 @@
 import { Action } from '.';
-import { Context } from '../services/context';
+import { ParseContext } from '../services/parseContext';
 
 export class MessageAction extends Action {
   public static readonly Pattern = /^(@)?message\s*=\s*([^,)\s]+)/;
@@ -11,7 +11,7 @@ export class MessageAction extends Action {
     super();
   }
 
-  static parse(match: RegExpMatchArray, context: Context) {
+  static parse(match: RegExpMatchArray, context: ParseContext) {
     context.skip(match[0].length);
 
     return [new MessageAction(match[2], !!match[1])];

@@ -1,5 +1,5 @@
 import { Action } from '.';
-import { Context } from '../services/context';
+import { ParseContext } from '../services/parseContext';
 
 export class TestStateAction extends Action {
   public static readonly Pattern = /^if_state\s+([^\s]+)\s+([^\s]+)\s?/;
@@ -12,7 +12,7 @@ export class TestStateAction extends Action {
     super();
   }
 
-  static parse(match: RegExpMatchArray, context: Context) {
+  static parse(match: RegExpMatchArray, context: ParseContext) {
     context.skip(match[0].length);
 
     for (;;) {

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Action } from '../actions';
-import { Context } from './context';
+import { ParseContext } from './parseContext';
 
 @Injectable({ providedIn: 'root' })
 export class ActionService {
@@ -10,7 +10,7 @@ export class ActionService {
     lines: string[],
     index: number
   ): [actions: Action[], index: number] {
-    const context = new Context(start, lines, index);
+    const context = new ParseContext(start, lines, index);
 
     for (;;) {
       const generated = context.parse();

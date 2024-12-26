@@ -6,12 +6,13 @@ import { MoveAction } from '../actions/move';
 import { PickAction } from '../actions/pick';
 import { PrintAction } from '../actions/print';
 import { TestMessageAction } from '../actions/testMessage';
+import { TestPositionAction } from '../actions/testPosition';
 import { TestStateAction } from '../actions/testState';
 
 interface IActionParser {
   readonly Pattern: RegExp;
 
-  parse(match: RegExpMatchArray, context: Context): Action[];
+  parse(match: RegExpMatchArray, context: ParseContext): Action[];
 }
 
 const parsers: IActionParser[] = [
@@ -20,12 +21,13 @@ const parsers: IActionParser[] = [
   PrintAction,
   TestMessageAction,
   TestStateAction,
+  TestPositionAction,
   MoveAction,
   MessageAction,
   PickAction,
 ];
 
-export class Context {
+export class ParseContext {
   constructor(
     public start: string,
     public lines: string[],

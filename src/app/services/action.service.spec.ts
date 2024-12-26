@@ -5,6 +5,7 @@ import { MoveAction } from '../actions/move';
 import { PickAction } from '../actions/pick';
 import { PrintAction } from '../actions/print';
 import { TestMessageAction } from '../actions/testMessage';
+import { TestPositionAction } from '../actions/testPosition';
 import { TestStateAction } from '../actions/testState';
 import { ActionService } from './action.service';
 
@@ -446,6 +447,63 @@ describe('ActionService test state', () => {
     );
 
     expect(() => service.parse('if_state xxx yyy', 'none', [], 0)).toThrowError(
+      /unterminated/
+    );
+  });
+});
+
+describe('ActionService test position', () => {
+  let service: ActionService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(ActionService);
+  });
+
+  it('valid', () => {
+    let [actions, index] = service.parse(
+      'if_position $$area$room message = junk',
+      'none',
+      [],
+      0
+    );
+
+    expect(index).toBe(0);
+    expect(actions.length).toBe(1);
+
+    let action = actions[0] as TestPositionAction;
+
+    expect(action).toBeInstanceOf(TestPositionAction);
+    expect(action.area).toBe('area');
+    expect(action.room).toBe('room');
+    expect(action.always).toBeFalse();
+    expect(action.actions.length).toBe(1);
+
+    [actions, index] = service.parse(
+      '#if_position $$area$room (message = junk, message = *)',
+      'none',
+      [],
+      0
+    );
+
+    expect(index).toBe(0);
+    expect(actions.length).toBe(1);
+
+    action = actions[0] as TestPositionAction;
+
+    expect(action).toBeInstanceOf(TestPositionAction);
+    expect(action.area).toBe('area');
+    expect(action.room).toBe('room');
+    expect(action.always).toBeTrue();
+    expect(action.actions.length).toBe(2);
+  });
+
+  it('invalid', () => {
+    expect(() => service.parse('if_position', 'none', [], 0)).toThrowError(
+      /unterminated/
+    );
+
+    expect(() => service.parse('if_position xxx', 'none', [], 0)).toThrowError(
       /unterminated/
     );
   });

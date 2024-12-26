@@ -1,10 +1,10 @@
 import { Action } from '.';
-import { Context } from '../services/context';
+import { ParseContext } from '../services/parseContext';
 
 export class ListAction {
   public static readonly Pattern = /^\(/;
 
-  static parse(match: RegExpMatchArray, context: Context) {
+  static parse(match: RegExpMatchArray, context: ParseContext) {
     context.skip(1);
 
     const list: Action[] = [];
