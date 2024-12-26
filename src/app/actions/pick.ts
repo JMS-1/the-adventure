@@ -7,7 +7,7 @@ export class PickAction extends Action {
   private constructor(
     public readonly what: string,
     public readonly silent: boolean,
-    public readonly always: boolean
+    public readonly self: boolean
   ) {
     super();
   }

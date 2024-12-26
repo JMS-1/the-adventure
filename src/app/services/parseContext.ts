@@ -12,7 +12,12 @@ import { NotHasThisAction } from '../actions/notHasThis';
 import { NotHereAction } from '../actions/notHere';
 import { PickAction } from '../actions/pick';
 import { PrintAction } from '../actions/print';
+import { RemoveAction } from '../actions/remove';
+import { ResetAction } from '../actions/reset';
+import { StartAction } from '../actions/start';
+import { StopAction } from '../actions/stop';
 import { TestMessageAction } from '../actions/testMessage';
+import { TestNotPositionAction } from '../actions/testNotPosition';
 import { TestPositionAction } from '../actions/testPosition';
 import { TestStateAction } from '../actions/testState';
 
@@ -29,6 +34,7 @@ const parsers: IActionParser[] = [
   TestMessageAction,
   TestStateAction,
   TestPositionAction,
+  TestNotPositionAction,
   HasAction,
   NotHasAction,
   HereAction,
@@ -39,6 +45,10 @@ const parsers: IActionParser[] = [
   MessageAction,
   PickAction,
   DropAction,
+  RemoveAction,
+  ResetAction,
+  StopAction,
+  StartAction,
 ];
 
 export class ParseContext {

@@ -8,7 +8,7 @@ export class TestPositionAction extends Action {
   private constructor(
     public readonly area: string,
     public readonly room: string,
-    public readonly always: boolean,
+    public readonly self: boolean,
     public readonly actions: Action[]
   ) {
     super();

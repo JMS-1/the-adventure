@@ -1,8 +1,9 @@
 import { Action } from '.';
 import { ParseContext } from '../services/parseContext';
+import { RandomAction } from './random';
 
 export class ListAction {
-  public static readonly Pattern = /^\(/;
+  public static readonly Pattern = /^([([])/;
 
   static parse(match: RegExpMatchArray, context: ParseContext) {
     context.skip(1);
@@ -24,7 +25,7 @@ export class ListAction {
         if (context.start.startsWith(')')) {
           context.skip(1);
 
-          return list;
+          return match[1] === '(' ? list : new RandomAction(list);
         }
 
         if (!context.start.startsWith(',')) throw new Error('comma expected');

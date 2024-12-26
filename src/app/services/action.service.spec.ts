@@ -11,6 +11,7 @@ import { NotHasThisAction } from '../actions/notHasThis';
 import { NotHereAction } from '../actions/notHere';
 import { PickAction } from '../actions/pick';
 import { PrintAction } from '../actions/print';
+import { RandomAction } from '../actions/random';
 import { TestMessageAction } from '../actions/testMessage';
 import { TestPositionAction } from '../actions/testPosition';
 import { TestStateAction } from '../actions/testState';
@@ -167,6 +168,42 @@ describe('ActionService sequence', () => {
   });
 });
 
+describe('ActionService random choice', () => {
+  let service: ActionService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(ActionService);
+  });
+
+  it('valid', () => {
+    const [actions, index] = service.parse(
+      '[message = 1, @message = 2)',
+      'none',
+      [],
+      0
+    );
+
+    expect(index).toBe(0);
+    expect(actions.length).toBe(1);
+
+    const action = actions[0] as RandomAction;
+
+    expect(action).toBeInstanceOf(RandomAction);
+    expect(action.choices.length).toBe(2);
+  });
+
+  it('invalid', () => {
+    expect(() =>
+      service.parse('[message = 1, @message = 2', 'none', [], 0)
+    ).toThrowError(/unterminated/);
+
+    expect(() =>
+      service.parse('[message = 1 @message = 2', 'none', [], 0)
+    ).toThrowError(/comma/);
+  });
+});
+
 describe('ActionService pick something', () => {
   let service: ActionService;
 
@@ -186,7 +223,7 @@ describe('ActionService pick something', () => {
     expect(action).toBeInstanceOf(PickAction);
     expect(action.what).toBe('test');
     expect(action.silent).toBeFalse();
-    expect(action.always).toBeFalse();
+    expect(action.self).toBeFalse();
 
     [actions, index] = service.parse('@<test', 'none', [], 0);
 
@@ -198,7 +235,7 @@ describe('ActionService pick something', () => {
     expect(action).toBeInstanceOf(PickAction);
     expect(action.what).toBe('test');
     expect(action.silent).toBeTrue();
-    expect(action.always).toBeFalse();
+    expect(action.self).toBeFalse();
 
     [actions, index] = service.parse('#<test', 'none', [], 0);
 
@@ -210,7 +247,7 @@ describe('ActionService pick something', () => {
     expect(action).toBeInstanceOf(PickAction);
     expect(action.what).toBe('test');
     expect(action.silent).toBeFalse();
-    expect(action.always).toBeTrue();
+    expect(action.self).toBeTrue();
 
     [actions, index] = service.parse('@#<test', 'none', [], 0);
 
@@ -222,7 +259,7 @@ describe('ActionService pick something', () => {
     expect(action).toBeInstanceOf(PickAction);
     expect(action.what).toBe('test');
     expect(action.silent).toBeTrue();
-    expect(action.always).toBeTrue();
+    expect(action.self).toBeTrue();
   });
 
   it('invalid', () => {
@@ -278,7 +315,7 @@ describe('ActionService move', () => {
     expect(action).toBeInstanceOf(MoveAction);
     expect(action.area).toBeNull();
     expect(action.room).toBe('room');
-    expect(action.always).toBeFalse();
+    expect(action.self).toBeFalse();
 
     [actions, index] = service.parse('#>$$area$room', 'none', [], 0);
 
@@ -290,7 +327,7 @@ describe('ActionService move', () => {
     expect(action).toBeInstanceOf(MoveAction);
     expect(action.area).toBe('area');
     expect(action.room).toBe('room');
-    expect(action.always).toBeTrue();
+    expect(action.self).toBeTrue();
   });
 
   it('invalid', () => {
@@ -483,7 +520,7 @@ describe('ActionService test position', () => {
     expect(action).toBeInstanceOf(TestPositionAction);
     expect(action.area).toBe('area');
     expect(action.room).toBe('room');
-    expect(action.always).toBeFalse();
+    expect(action.self).toBeFalse();
     expect(action.actions.length).toBe(1);
 
     [actions, index] = service.parse(
@@ -501,7 +538,7 @@ describe('ActionService test position', () => {
     expect(action).toBeInstanceOf(TestPositionAction);
     expect(action.area).toBe('area');
     expect(action.room).toBe('room');
-    expect(action.always).toBeTrue();
+    expect(action.self).toBeTrue();
     expect(action.actions.length).toBe(2);
   });
 
@@ -679,7 +716,7 @@ describe('ActionService drop something', () => {
     expect(action).toBeInstanceOf(DropAction);
     expect(action.what).toBe('test');
     expect(action.silent).toBeFalse();
-    expect(action.always).toBeFalse();
+    expect(action.self).toBeFalse();
 
     [actions, index] = service.parse('@!test', 'none', [], 0);
 
@@ -691,7 +728,7 @@ describe('ActionService drop something', () => {
     expect(action).toBeInstanceOf(DropAction);
     expect(action.what).toBe('test');
     expect(action.silent).toBeTrue();
-    expect(action.always).toBeFalse();
+    expect(action.self).toBeFalse();
 
     [actions, index] = service.parse('#!test', 'none', [], 0);
 
@@ -703,7 +740,7 @@ describe('ActionService drop something', () => {
     expect(action).toBeInstanceOf(DropAction);
     expect(action.what).toBe('test');
     expect(action.silent).toBeFalse();
-    expect(action.always).toBeTrue();
+    expect(action.self).toBeTrue();
 
     [actions, index] = service.parse('@#!test', 'none', [], 0);
 
@@ -715,7 +752,7 @@ describe('ActionService drop something', () => {
     expect(action).toBeInstanceOf(DropAction);
     expect(action.what).toBe('test');
     expect(action.silent).toBeTrue();
-    expect(action.always).toBeTrue();
+    expect(action.self).toBeTrue();
   });
 
   it('invalid', () => {

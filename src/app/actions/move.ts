@@ -7,7 +7,7 @@ export class MoveAction extends Action {
   private constructor(
     public readonly area: string | null,
     public readonly room: string,
-    public readonly always: boolean
+    public readonly self: boolean
   ) {
     super();
   }

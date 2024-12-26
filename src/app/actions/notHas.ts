@@ -6,7 +6,7 @@ export class NotHasAction extends Action {
 
   private constructor(
     public readonly obj: string,
-    public readonly silent: boolean,
+    public readonly self: boolean,
     public readonly actions: Action[]
   ) {
     super();
