@@ -1,14 +1,12 @@
 import { TestBed } from '@angular/core/testing';
-
+import { DeadAction } from '../actions/dead';
+import { MessageAction } from '../actions/message';
+import { MoveAction } from '../actions/move';
+import { PickAction } from '../actions/pick';
+import { PrintAction } from '../actions/print';
+import { TestMessageAction } from '../actions/testMessage';
+import { TestStateAction } from '../actions/testState';
 import { ActionService } from './action.service';
-import {
-  DeadAction,
-  MessageAction,
-  MoveAction,
-  PickAction,
-  PrintAction,
-  TestMessageAction,
-} from './actions';
 
 describe('ActionService', () => {
   let service: ActionService;
@@ -406,6 +404,48 @@ describe('ActionService test message', () => {
     );
 
     expect(() => service.parse('if_message xxx', 'none', [], 0)).toThrowError(
+      /unterminated/
+    );
+  });
+});
+
+describe('ActionService test state', () => {
+  let service: ActionService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(ActionService);
+  });
+
+  it('valid', () => {
+    const [actions, index] = service.parse(
+      'if_state thing message message = junk',
+      'none',
+      [],
+      0
+    );
+
+    expect(index).toBe(0);
+    expect(actions.length).toBe(1);
+
+    const action = actions[0] as TestStateAction;
+
+    expect(action).toBeInstanceOf(TestStateAction);
+    expect(action.obj).toBe('thing');
+    expect(action.message).toBe('message');
+    expect(action.actions.length).toBe(1);
+  });
+
+  it('invalid', () => {
+    expect(() => service.parse('if_state', 'none', [], 0)).toThrowError(
+      /unterminated/
+    );
+
+    expect(() => service.parse('if_state xxx', 'none', [], 0)).toThrowError(
+      /unterminated/
+    );
+
+    expect(() => service.parse('if_state xxx yyy', 'none', [], 0)).toThrowError(
       /unterminated/
     );
   });
