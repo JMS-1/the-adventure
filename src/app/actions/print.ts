@@ -2,7 +2,7 @@ import { Action } from '.';
 import { ParseContext } from '../services/parseContext';
 
 export class PrintAction extends Action {
-  public static readonly Pattern = /^&\$\$([^$]+)\$([^,)\s>]+)/;
+  public static readonly Pattern = /^&\$\$([^$]+)\$([^,)\s]+)/;
 
   private constructor(
     public readonly obj: string,

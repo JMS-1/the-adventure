@@ -1,18 +1,20 @@
 import { Action } from '.';
 import { ParseContext } from '../services/parseContext';
 
-export class TestStateAction extends Action {
-  public static readonly Pattern = /^if_state\s+([^\s]+)\s+([^\s]+)/;
+export class SetMessageAction extends Action {
+  public static readonly Pattern = /^(@)?([^\s,)]+)\s*=\s*([^,)\s]+)/;
 
   private constructor(
     public readonly obj: string,
     public readonly message: string,
-    public readonly actions: Action[]
+    public readonly silent: boolean
   ) {
     super();
   }
 
   static parse(match: RegExpMatchArray, context: ParseContext) {
-    return new TestStateAction(match[1], match[2], context.parseBody(match[0]));
+    context.skip(match[0].length);
+
+    return new SetMessageAction(match[2], match[3], !!match[1]);
   }
 }

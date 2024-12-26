@@ -2,7 +2,7 @@ import { Action } from '.';
 import { ParseContext } from '../services/parseContext';
 
 export class HasAction extends Action {
-  public static readonly Pattern = /^(#)?if_has\s+([^\s]+)\s?/;
+  public static readonly Pattern = /^(#)?if_has\s+([^\s]+)/;
 
   private constructor(
     public readonly obj: string,
@@ -13,10 +13,6 @@ export class HasAction extends Action {
   }
 
   static parse(match: RegExpMatchArray, context: ParseContext) {
-    return new HasAction(
-      match[2],
-      !!match[1],
-      Action.parseBody(context, match[0])
-    );
+    return new HasAction(match[2], !!match[1], context.parseBody(match[0]));
   }
 }

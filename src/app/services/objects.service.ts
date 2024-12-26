@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { tap } from 'rxjs';
+import { concat, tap } from 'rxjs';
 import { ActionService } from './action.service';
 import { AssetService } from './asset.service';
 import { SettingsService } from './settings.service';
@@ -34,8 +34,10 @@ export class ObjectsService {
     this.lastError = '';
     this.parsing = true;
 
-    this._assets
-      .download(`${this._settings.game}.persons`)
+    concat(
+      this._assets.download(`${this._settings.game}.persons`),
+      this._assets.download(`${this._settings.game}.things`)
+    )
       .pipe(tap((s) => this.parseFile(s.replace(/\r/g, '').split('\n'))))
       .subscribe({
         error: (e) => {
@@ -62,7 +64,7 @@ export class ObjectsService {
       }
 
       if (line.startsWith('$')) {
-        this._objectName = line.substring(2);
+        this._objectName = line.substring(1);
         this._macro = false;
 
         continue;
@@ -81,11 +83,11 @@ export class ObjectsService {
       } else if ((match = regs.persons.exec(line))) {
         this.processPersons(match[1]);
       } else if ((match = regs.actions.exec(line))) {
-        i = this._parser.parse(match[1], 'multiple', lines, i)[1];
+        i = this._parser.parseMultiple(match[1], lines, i)[1];
       } else if ((match = regs.time.exec(line))) {
-        i = this._parser.parse(match[1], 'single', lines, i)[1];
+        i = this._parser.parseMultiple(match[1], lines, i)[1];
       } else if ((match = regs.command.exec(line))) {
-        i = this._parser.parse(match[1], 'none', lines, i)[1];
+        i = this._parser.parse(match[2], lines, i)[1];
       } else {
         throw new Error(line);
       }

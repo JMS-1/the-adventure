@@ -30,15 +30,11 @@ describe('ActionService', () => {
   });
 
   it('must not be empty', () => {
-    expect(() => service.parse('', 'none', [], 0)).toThrowError(/unterminated/);
+    expect(() => service.parse('', [], 0)).toThrowError(/unterminated/);
 
-    expect(() => service.parse('', 'single', [''], 0)).toThrowError(
-      /unterminated/
-    );
+    expect(() => service.parse('', [''], 0)).toThrowError(/unterminated/);
 
-    expect(() => service.parse('', 'multiple', ['', ''], 0)).toThrowError(
-      /unterminated/
-    );
+    expect(() => service.parse('', ['', ''], 0)).toThrowError(/unterminated/);
   });
 });
 
@@ -51,7 +47,9 @@ describe('ActionService assign message', () => {
   });
 
   it('valid', () => {
-    let [actions, index] = service.parse('message = test', 'none', [], 0);
+    let [map, index] = service.parse('message = test', [], 0);
+
+    let actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
@@ -62,7 +60,9 @@ describe('ActionService assign message', () => {
     expect(action.message).toBe('test');
     expect(action.silent).toBeFalse();
 
-    [actions, index] = service.parse('@message = test', 'single', [], 0);
+    [map, index] = service.parse('@message = test', [], 0);
+
+    actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
@@ -73,7 +73,9 @@ describe('ActionService assign message', () => {
     expect(action.message).toBe('test');
     expect(action.silent).toBeTrue();
 
-    [actions, index] = service.parse('', 'single', ['', 'message = test'], 0);
+    [map, index] = service.parse('', ['', 'message = test'], 0);
+
+    actions = map[''];
 
     expect(index).toBe(1);
     expect(actions.length).toBe(1);
@@ -84,7 +86,9 @@ describe('ActionService assign message', () => {
     expect(action.message).toBe('test');
     expect(action.silent).toBeFalse();
 
-    [actions, index] = service.parse('@message = *', 'multiple', [], 0);
+    [map, index] = service.parse('@message = *', [], 0);
+
+    actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
@@ -94,12 +98,6 @@ describe('ActionService assign message', () => {
     expect(action).toBeInstanceOf(MessageAction);
     expect(action.message).toBe('*');
     expect(action.silent).toBeTrue();
-  });
-
-  it('invalid', () => {
-    expect(() => service.parse('message = ', 'none', [], 0)).toThrowError(
-      /unterminated/
-    );
   });
 });
 
@@ -112,12 +110,14 @@ describe('ActionService sequence', () => {
   });
 
   it('valid', () => {
-    let [actions, index] = service.parse(
+    let [map, index] = service.parse(
       '(message = 1, @message = 2)',
-      'none',
+
       [],
       0
     );
+
+    let actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(2);
@@ -134,12 +134,14 @@ describe('ActionService sequence', () => {
     expect(action.message).toBe('2');
     expect(action.silent).toBeTrue();
 
-    [actions, index] = service.parse(
+    [map, index] = service.parse(
       '',
-      'none',
+
       ['', '(', 'message = 1,', '@message = 2', ')'],
       0
     );
+
+    actions = map[''];
 
     expect(index).toBe(4);
     expect(actions.length).toBe(2);
@@ -156,16 +158,6 @@ describe('ActionService sequence', () => {
     expect(action.message).toBe('2');
     expect(action.silent).toBeTrue();
   });
-
-  it('invalid', () => {
-    expect(() =>
-      service.parse('(message = 1, @message = 2', 'none', [], 0)
-    ).toThrowError(/unterminated/);
-
-    expect(() =>
-      service.parse('(message = 1 @message = 2', 'none', [], 0)
-    ).toThrowError(/comma/);
-  });
 });
 
 describe('ActionService random choice', () => {
@@ -177,12 +169,14 @@ describe('ActionService random choice', () => {
   });
 
   it('valid', () => {
-    const [actions, index] = service.parse(
+    const [map, index] = service.parse(
       '[message = 1, @message = 2)',
-      'none',
+
       [],
       0
     );
+
+    const actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
@@ -191,16 +185,6 @@ describe('ActionService random choice', () => {
 
     expect(action).toBeInstanceOf(RandomAction);
     expect(action.choices.length).toBe(2);
-  });
-
-  it('invalid', () => {
-    expect(() =>
-      service.parse('[message = 1, @message = 2', 'none', [], 0)
-    ).toThrowError(/unterminated/);
-
-    expect(() =>
-      service.parse('[message = 1 @message = 2', 'none', [], 0)
-    ).toThrowError(/comma/);
   });
 });
 
@@ -213,7 +197,9 @@ describe('ActionService pick something', () => {
   });
 
   it('valid', () => {
-    let [actions, index] = service.parse('<test', 'none', [], 0);
+    let [map, index] = service.parse('<test', [], 0);
+
+    let actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
@@ -225,7 +211,9 @@ describe('ActionService pick something', () => {
     expect(action.silent).toBeFalse();
     expect(action.self).toBeFalse();
 
-    [actions, index] = service.parse('@<test', 'none', [], 0);
+    [map, index] = service.parse('@<test', [], 0);
+
+    actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
@@ -237,7 +225,9 @@ describe('ActionService pick something', () => {
     expect(action.silent).toBeTrue();
     expect(action.self).toBeFalse();
 
-    [actions, index] = service.parse('#<test', 'none', [], 0);
+    [map, index] = service.parse('#<test', [], 0);
+
+    actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
@@ -249,7 +239,9 @@ describe('ActionService pick something', () => {
     expect(action.silent).toBeFalse();
     expect(action.self).toBeTrue();
 
-    [actions, index] = service.parse('@#<test', 'none', [], 0);
+    [map, index] = service.parse('@#<test', [], 0);
+
+    actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
@@ -260,12 +252,6 @@ describe('ActionService pick something', () => {
     expect(action.what).toBe('test');
     expect(action.silent).toBeTrue();
     expect(action.self).toBeTrue();
-  });
-
-  it('invalid', () => {
-    expect(() => service.parse('<', 'none', [], 0)).toThrowError(
-      /unterminated/
-    );
   });
 });
 
@@ -278,7 +264,9 @@ describe('ActionService die', () => {
   });
 
   it('valid', () => {
-    const [actions, index] = service.parse('>>test', 'none', [], 0);
+    const [map, index] = service.parse('>>test', [], 0);
+
+    const actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
@@ -287,12 +275,6 @@ describe('ActionService die', () => {
 
     expect(action).toBeInstanceOf(DeadAction);
     expect(action.reason).toBe('test');
-  });
-
-  it('invalid', () => {
-    expect(() => service.parse('>>', 'none', [], 0)).toThrowError(
-      /unterminated/
-    );
   });
 });
 
@@ -305,7 +287,9 @@ describe('ActionService move', () => {
   });
 
   it('valid', () => {
-    let [actions, index] = service.parse('>room', 'none', [], 0);
+    let [map, index] = service.parse('>room', [], 0);
+
+    let actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
@@ -317,7 +301,9 @@ describe('ActionService move', () => {
     expect(action.room).toBe('room');
     expect(action.self).toBeFalse();
 
-    [actions, index] = service.parse('#>$$area$room', 'none', [], 0);
+    [map, index] = service.parse('#>$$area$room', [], 0);
+
+    actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
@@ -328,12 +314,6 @@ describe('ActionService move', () => {
     expect(action.area).toBe('area');
     expect(action.room).toBe('room');
     expect(action.self).toBeTrue();
-  });
-
-  it('invalid', () => {
-    expect(() => service.parse('>', 'none', [], 0)).toThrowError(
-      /unterminated/
-    );
   });
 });
 
@@ -346,7 +326,8 @@ describe('ActionService print', () => {
   });
 
   it('valid', () => {
-    const [actions, index] = service.parse('&$$who$test', 'none', [], 0);
+    const [map, index] = service.parse('&$$who$test', [], 0);
+    const actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
@@ -356,16 +337,6 @@ describe('ActionService print', () => {
     expect(action).toBeInstanceOf(PrintAction);
     expect(action.obj).toBe('who');
     expect(action.message).toBe('test');
-  });
-
-  it('invalid', () => {
-    expect(() => service.parse('&', 'none', [], 0)).toThrowError(
-      /unterminated/
-    );
-
-    expect(() => service.parse('&$$$xxx', 'none', [], 0)).toThrowError(
-      /unterminated/
-    );
   });
 });
 
@@ -378,12 +349,14 @@ describe('ActionService test message', () => {
   });
 
   it('valid', () => {
-    let [actions, index] = service.parse(
+    let [map, index] = service.parse(
       'if_message test message = junk',
-      'none',
+
       [],
       0
     );
+
+    let actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
@@ -394,12 +367,14 @@ describe('ActionService test message', () => {
     expect(action.message).toBe('test');
     expect(action.actions.length).toBe(1);
 
-    [actions, index] = service.parse(
+    [map, index] = service.parse(
       'if_message test',
-      'none',
+
       ['', 'message = junk'],
       0
     );
+
+    actions = map[''];
 
     expect(index).toBe(1);
     expect(actions.length).toBe(1);
@@ -410,12 +385,14 @@ describe('ActionService test message', () => {
     expect(action.message).toBe('test');
     expect(action.actions.length).toBe(1);
 
-    [actions, index] = service.parse(
+    [map, index] = service.parse(
       'if_message test (message = junk)',
-      'none',
+
       [],
       0
     );
+
+    actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
@@ -426,12 +403,14 @@ describe('ActionService test message', () => {
     expect(action.message).toBe('test');
     expect(action.actions.length).toBe(1);
 
-    [actions, index] = service.parse(
+    [map, index] = service.parse(
       'if_message test',
-      'none',
+
       ['', '(', 'message = junk', ')'],
       0
     );
+
+    actions = map[''];
 
     expect(index).toBe(3);
     expect(actions.length).toBe(1);
@@ -441,16 +420,6 @@ describe('ActionService test message', () => {
     expect(action).toBeInstanceOf(TestMessageAction);
     expect(action.message).toBe('test');
     expect(action.actions.length).toBe(1);
-  });
-
-  it('invalid', () => {
-    expect(() => service.parse('if_message', 'none', [], 0)).toThrowError(
-      /unterminated/
-    );
-
-    expect(() => service.parse('if_message xxx', 'none', [], 0)).toThrowError(
-      /unterminated/
-    );
   });
 });
 
@@ -463,12 +432,14 @@ describe('ActionService test state', () => {
   });
 
   it('valid', () => {
-    const [actions, index] = service.parse(
+    const [map, index] = service.parse(
       'if_state thing message message = junk',
-      'none',
+
       [],
       0
     );
+
+    const actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
@@ -479,20 +450,6 @@ describe('ActionService test state', () => {
     expect(action.obj).toBe('thing');
     expect(action.message).toBe('message');
     expect(action.actions.length).toBe(1);
-  });
-
-  it('invalid', () => {
-    expect(() => service.parse('if_state', 'none', [], 0)).toThrowError(
-      /unterminated/
-    );
-
-    expect(() => service.parse('if_state xxx', 'none', [], 0)).toThrowError(
-      /unterminated/
-    );
-
-    expect(() => service.parse('if_state xxx yyy', 'none', [], 0)).toThrowError(
-      /unterminated/
-    );
   });
 });
 
@@ -505,12 +462,14 @@ describe('ActionService test position', () => {
   });
 
   it('valid', () => {
-    let [actions, index] = service.parse(
+    let [map, index] = service.parse(
       'if_position $$area$room message = junk',
-      'none',
+
       [],
       0
     );
+
+    let actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
@@ -523,12 +482,14 @@ describe('ActionService test position', () => {
     expect(action.self).toBeFalse();
     expect(action.actions.length).toBe(1);
 
-    [actions, index] = service.parse(
+    [map, index] = service.parse(
       '#if_position $$area$room (message = junk, message = *)',
-      'none',
+
       [],
       0
     );
+
+    actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
@@ -541,16 +502,6 @@ describe('ActionService test position', () => {
     expect(action.self).toBeTrue();
     expect(action.actions.length).toBe(2);
   });
-
-  it('invalid', () => {
-    expect(() => service.parse('if_position', 'none', [], 0)).toThrowError(
-      /unterminated/
-    );
-
-    expect(() => service.parse('if_position xxx', 'none', [], 0)).toThrowError(
-      /unterminated/
-    );
-  });
 });
 
 describe('ActionService test thing', () => {
@@ -562,12 +513,14 @@ describe('ActionService test thing', () => {
   });
 
   it('has', () => {
-    const [actions, index] = service.parse(
+    const [map, index] = service.parse(
       'if_has what message = junk',
-      'none',
+
       [],
       0
     );
+
+    const actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
@@ -580,12 +533,14 @@ describe('ActionService test thing', () => {
   });
 
   it('not has', () => {
-    const [actions, index] = service.parse(
+    const [map, index] = service.parse(
       'if_nothas what message = junk',
-      'none',
+
       [],
       0
     );
+
+    const actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
@@ -598,12 +553,14 @@ describe('ActionService test thing', () => {
   });
 
   it('has this', () => {
-    const [actions, index] = service.parse(
+    const [map, index] = service.parse(
       'if_hasthis message = junk',
-      'none',
+
       [],
       0
     );
+
+    const actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
@@ -615,12 +572,14 @@ describe('ActionService test thing', () => {
   });
 
   it('not has this', () => {
-    const [actions, index] = service.parse(
+    const [map, index] = service.parse(
       'if_nothasthis message = junk',
-      'none',
+
       [],
       0
     );
+
+    const actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
@@ -629,16 +588,6 @@ describe('ActionService test thing', () => {
 
     expect(action).toBeInstanceOf(NotHasThisAction);
     expect(action.actions.length).toBe(1);
-  });
-
-  it('invalid', () => {
-    expect(() => service.parse('if_has', 'none', [], 0)).toThrowError(
-      /unterminated/
-    );
-
-    expect(() => service.parse('if_nothas', 'none', [], 0)).toThrowError(
-      /unterminated/
-    );
   });
 });
 
@@ -651,12 +600,14 @@ describe('ActionService test here', () => {
   });
 
   it('here', () => {
-    const [actions, index] = service.parse(
+    const [map, index] = service.parse(
       'if_here what message = junk',
-      'none',
+
       [],
       0
     );
+
+    const actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
@@ -669,12 +620,14 @@ describe('ActionService test here', () => {
   });
 
   it('not here', () => {
-    const [actions, index] = service.parse(
+    const [map, index] = service.parse(
       'if_nothere what message = junk',
-      'none',
+
       [],
       0
     );
+
+    const actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
@@ -684,16 +637,6 @@ describe('ActionService test here', () => {
     expect(action).toBeInstanceOf(NotHereAction);
     expect(action.obj).toBe('what');
     expect(action.actions.length).toBe(1);
-  });
-
-  it('invalid', () => {
-    expect(() => service.parse('if_here', 'none', [], 0)).toThrowError(
-      /unterminated/
-    );
-
-    expect(() => service.parse('if_nothere', 'none', [], 0)).toThrowError(
-      /unterminated/
-    );
   });
 });
 
@@ -706,7 +649,9 @@ describe('ActionService drop something', () => {
   });
 
   it('valid', () => {
-    let [actions, index] = service.parse('!test', 'none', [], 0);
+    let [map, index] = service.parse('!test', [], 0);
+
+    let actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
@@ -718,7 +663,9 @@ describe('ActionService drop something', () => {
     expect(action.silent).toBeFalse();
     expect(action.self).toBeFalse();
 
-    [actions, index] = service.parse('@!test', 'none', [], 0);
+    [map, index] = service.parse('@!test', [], 0);
+
+    actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
@@ -730,7 +677,9 @@ describe('ActionService drop something', () => {
     expect(action.silent).toBeTrue();
     expect(action.self).toBeFalse();
 
-    [actions, index] = service.parse('#!test', 'none', [], 0);
+    [map, index] = service.parse('#!test', [], 0);
+
+    actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
@@ -742,7 +691,9 @@ describe('ActionService drop something', () => {
     expect(action.silent).toBeFalse();
     expect(action.self).toBeTrue();
 
-    [actions, index] = service.parse('@#!test', 'none', [], 0);
+    [map, index] = service.parse('@#!test', [], 0);
+
+    actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
@@ -754,10 +705,93 @@ describe('ActionService drop something', () => {
     expect(action.silent).toBeTrue();
     expect(action.self).toBeTrue();
   });
+});
 
-  it('invalid', () => {
-    expect(() => service.parse('!', 'none', [], 0)).toThrowError(
-      /unterminated/
+describe('ActionService single key', () => {
+  let service: ActionService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(ActionService);
+  });
+
+  it('valid', () => {
+    const [map, index] = service.parseNamed('+13: message=test', [], 0);
+
+    const actions = map['+13'];
+
+    expect(index).toBe(0);
+    expect(actions.length).toBe(1);
+
+    const action = actions[0] as MessageAction;
+
+    expect(action).toBeInstanceOf(MessageAction);
+    expect(action.message).toBe('test');
+    expect(action.silent).toBeFalse();
+  });
+});
+
+describe('ActionService multi key', () => {
+  let service: ActionService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(ActionService);
+  });
+
+  it('valid', () => {
+    let [map, index] = service.parseMultiple('+13: message=test', [], 0);
+
+    let actions = map['+13'];
+
+    expect(index).toBe(0);
+    expect(actions.length).toBe(1);
+
+    let action = actions[0] as MessageAction;
+
+    expect(action).toBeInstanceOf(MessageAction);
+    expect(action.message).toBe('test');
+    expect(action.silent).toBeFalse();
+
+    [map, index] = service.parseMultiple('(+13: message=test)', [], 0);
+
+    actions = map['+13'];
+
+    expect(index).toBe(0);
+    expect(actions.length).toBe(1);
+
+    action = actions[0] as MessageAction;
+
+    expect(action).toBeInstanceOf(MessageAction);
+    expect(action.message).toBe('test');
+    expect(action.silent).toBeFalse();
+
+    [map, index] = service.parseMultiple(
+      '(+13: message=test, +14: message=more)',
+      [],
+      0
     );
+
+    actions = map['+13'];
+
+    expect(index).toBe(0);
+    expect(actions.length).toBe(1);
+
+    action = actions[0] as MessageAction;
+
+    expect(action).toBeInstanceOf(MessageAction);
+    expect(action.message).toBe('test');
+    expect(action.silent).toBeFalse();
+
+    actions = map['+14'];
+
+    expect(index).toBe(0);
+    expect(actions.length).toBe(1);
+
+    action = actions[0] as MessageAction;
+
+    expect(action).toBeInstanceOf(MessageAction);
+    expect(action.message).toBe('more');
+    expect(action.silent).toBeFalse();
   });
 });

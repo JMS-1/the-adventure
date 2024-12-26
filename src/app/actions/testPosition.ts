@@ -2,8 +2,7 @@ import { Action } from '.';
 import { ParseContext } from '../services/parseContext';
 
 export class TestPositionAction extends Action {
-  public static readonly Pattern =
-    /^(#)?if_position\s+\$\$([^$]+)\$([^\s]+)\s?/;
+  public static readonly Pattern = /^(#)?if_position\s+\$\$([^$]+)\$([^\s]+)/;
 
   private constructor(
     public readonly area: string,
@@ -19,7 +18,7 @@ export class TestPositionAction extends Action {
       match[2],
       match[3],
       !!match[1],
-      Action.parseBody(context, match[0])
+      context.parseBody(match[0])
     );
   }
 }

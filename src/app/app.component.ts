@@ -3,8 +3,10 @@ import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterOutlet } from '@angular/router';
 import { GameSelectorComponent } from './game-selector/game-selector.component';
+import { AssetService } from './services/asset.service';
 import { MessagesService } from './services/messages.service';
 import { ObjectsService } from './services/objects.service';
+import { SettingsService } from './services/settings.service';
 import { WordsService } from './services/words.service';
 
 @Component({
@@ -16,7 +18,13 @@ import { WordsService } from './services/words.service';
     MatButtonModule,
     RouterOutlet,
   ],
-  providers: [MessagesService, ObjectsService, WordsService],
+  providers: [
+    AssetService,
+    MessagesService,
+    ObjectsService,
+    SettingsService,
+    WordsService,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

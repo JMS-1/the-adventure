@@ -3,7 +3,7 @@ import { ParseContext } from '../services/parseContext';
 
 export class TestNotPositionAction extends Action {
   public static readonly Pattern =
-    /^(#)?if_notposition\s+\$\$([^$]+)\$([^\s]+)\s?/;
+    /^(#)?if_notposition\s+\$\$([^$]+)\$([^\s]+)/;
 
   private constructor(
     public readonly area: string,
@@ -19,7 +19,7 @@ export class TestNotPositionAction extends Action {
       match[2],
       match[3],
       !!match[1],
-      Action.parseBody(context, match[0])
+      context.parseBody(match[0])
     );
   }
 }

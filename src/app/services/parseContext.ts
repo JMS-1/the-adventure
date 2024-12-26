@@ -1,4 +1,5 @@
 import { Action } from '../actions';
+import { CallAction } from '../actions/call';
 import { DeadAction } from '../actions/dead';
 import { DropAction } from '../actions/drop';
 import { HasAction } from '../actions/has';
@@ -14,6 +15,7 @@ import { PickAction } from '../actions/pick';
 import { PrintAction } from '../actions/print';
 import { RemoveAction } from '../actions/remove';
 import { ResetAction } from '../actions/reset';
+import { SetMessageAction } from '../actions/setMessage';
 import { StartAction } from '../actions/start';
 import { StopAction } from '../actions/stop';
 import { TestMessageAction } from '../actions/testMessage';
@@ -49,6 +51,9 @@ const parsers: IActionParser[] = [
   ResetAction,
   StopAction,
   StartAction,
+  /* Must be last in the indicated order. */
+  SetMessageAction,
+  CallAction,
 ];
 
 export class ParseContext {
@@ -88,5 +93,19 @@ export class ParseContext {
     }
 
     return;
+  }
+
+  parseBody(skip: string): Action[] {
+    this.skip(skip.length);
+
+    for (;;) {
+      const code = this.parse();
+
+      if (code)
+        if (!Array.isArray(code)) return [code];
+        else if (code.length) return code;
+
+      this.joinNext();
+    }
   }
 }
