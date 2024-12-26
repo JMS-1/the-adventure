@@ -1,12 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
+import { ActionService } from './action.service';
 import {
-  ActionService,
   DeadAction,
   MessageAction,
   MoveAction,
   PickAction,
-} from './action.service';
+  PrintAction,
+} from './actions';
 
 describe('ActionService', () => {
   let service: ActionService;
@@ -287,6 +288,38 @@ describe('ActionService move', () => {
 
   it('invalid', () => {
     expect(() => service.parse('>', 'none', [], 0)).toThrowError(
+      /unterminated/
+    );
+  });
+});
+
+describe('ActionService print', () => {
+  let service: ActionService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(ActionService);
+  });
+
+  it('valid', () => {
+    const [actions, index] = service.parse('&$$who$test', 'none', [], 0);
+
+    expect(index).toBe(0);
+    expect(actions.length).toBe(1);
+
+    const action = actions[0] as PrintAction;
+
+    expect(action).toBeInstanceOf(PrintAction);
+    expect(action.obj).toBe('who');
+    expect(action.message).toBe('test');
+  });
+
+  it('invalid', () => {
+    expect(() => service.parse('&', 'none', [], 0)).toThrowError(
+      /unterminated/
+    );
+
+    expect(() => service.parse('&$$$xxx', 'none', [], 0)).toThrowError(
       /unterminated/
     );
   });
