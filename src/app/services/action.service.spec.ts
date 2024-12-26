@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { DeadAction } from '../actions/dead';
+import { DropAction } from '../actions/drop';
 import { HasAction } from '../actions/has';
 import { HasThisAction } from '../actions/hasThis';
 import { HereAction } from '../actions/here';
@@ -654,6 +655,71 @@ describe('ActionService test here', () => {
     );
 
     expect(() => service.parse('if_nothere', 'none', [], 0)).toThrowError(
+      /unterminated/
+    );
+  });
+});
+
+describe('ActionService drop something', () => {
+  let service: ActionService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(ActionService);
+  });
+
+  it('valid', () => {
+    let [actions, index] = service.parse('!test', 'none', [], 0);
+
+    expect(index).toBe(0);
+    expect(actions.length).toBe(1);
+
+    let action = actions[0] as DropAction;
+
+    expect(action).toBeInstanceOf(DropAction);
+    expect(action.what).toBe('test');
+    expect(action.silent).toBeFalse();
+    expect(action.always).toBeFalse();
+
+    [actions, index] = service.parse('@!test', 'none', [], 0);
+
+    expect(index).toBe(0);
+    expect(actions.length).toBe(1);
+
+    action = actions[0] as DropAction;
+
+    expect(action).toBeInstanceOf(DropAction);
+    expect(action.what).toBe('test');
+    expect(action.silent).toBeTrue();
+    expect(action.always).toBeFalse();
+
+    [actions, index] = service.parse('#!test', 'none', [], 0);
+
+    expect(index).toBe(0);
+    expect(actions.length).toBe(1);
+
+    action = actions[0] as DropAction;
+
+    expect(action).toBeInstanceOf(DropAction);
+    expect(action.what).toBe('test');
+    expect(action.silent).toBeFalse();
+    expect(action.always).toBeTrue();
+
+    [actions, index] = service.parse('@#!test', 'none', [], 0);
+
+    expect(index).toBe(0);
+    expect(actions.length).toBe(1);
+
+    action = actions[0] as DropAction;
+
+    expect(action).toBeInstanceOf(DropAction);
+    expect(action.what).toBe('test');
+    expect(action.silent).toBeTrue();
+    expect(action.always).toBeTrue();
+  });
+
+  it('invalid', () => {
+    expect(() => service.parse('!', 'none', [], 0)).toThrowError(
       /unterminated/
     );
   });

@@ -12,6 +12,6 @@ export class NotHereAction extends Action {
   }
 
   static parse(match: RegExpMatchArray, context: ParseContext) {
-    return [new NotHereAction(match[1], Action.parseBody(context, match[0]))];
+    return new NotHereAction(match[1], Action.parseBody(context, match[0]));
   }
 }

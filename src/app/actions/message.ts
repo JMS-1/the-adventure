@@ -14,6 +14,6 @@ export class MessageAction extends Action {
   static parse(match: RegExpMatchArray, context: ParseContext) {
     context.skip(match[0].length);
 
-    return [new MessageAction(match[2], !!match[1])];
+    return new MessageAction(match[2], !!match[1]);
   }
 }

@@ -1,5 +1,6 @@
 import { Action } from '../actions';
 import { DeadAction } from '../actions/dead';
+import { DropAction } from '../actions/drop';
 import { HasAction } from '../actions/has';
 import { HasThisAction } from '../actions/hasThis';
 import { HereAction } from '../actions/here';
@@ -18,7 +19,7 @@ import { TestStateAction } from '../actions/testState';
 interface IActionParser {
   readonly Pattern: RegExp;
 
-  parse(match: RegExpMatchArray, context: ParseContext): Action[];
+  parse(match: RegExpMatchArray, context: ParseContext): Action | Action[];
 }
 
 const parsers: IActionParser[] = [
@@ -37,6 +38,7 @@ const parsers: IActionParser[] = [
   MoveAction,
   MessageAction,
   PickAction,
+  DropAction,
 ];
 
 export class ParseContext {
@@ -67,7 +69,8 @@ export class ParseContext {
 
       if (!match) continue;
 
-      const code = parser.parse(match, this);
+      const parsed = parser.parse(match, this);
+      const code = parsed && (Array.isArray(parsed) ? parsed : [parsed]);
 
       if (!code.length) throw new Error(`bad action '${this.start}'`);
 

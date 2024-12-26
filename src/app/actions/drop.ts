@@ -1,8 +1,8 @@
 import { Action } from '.';
 import { ParseContext } from '../services/parseContext';
 
-export class PickAction extends Action {
-  public static readonly Pattern = /^(@)?(#)?<([^,)\s]+)/;
+export class DropAction extends Action {
+  public static readonly Pattern = /^(@)?(#)?!([^,)\s]+)/;
 
   private constructor(
     public readonly what: string,
@@ -15,6 +15,6 @@ export class PickAction extends Action {
   static parse(match: RegExpMatchArray, context: ParseContext) {
     context.skip(match[0].length);
 
-    return new PickAction(match[3], !!match[1], !!match[2]);
+    return new DropAction(match[3], !!match[1], !!match[2]);
   }
 }

@@ -12,8 +12,6 @@ export class TestMessageAction extends Action {
   }
 
   static parse(match: RegExpMatchArray, context: ParseContext) {
-    return [
-      new TestMessageAction(match[1], Action.parseBody(context, match[0])),
-    ];
+    return new TestMessageAction(match[1], Action.parseBody(context, match[0]));
   }
 }

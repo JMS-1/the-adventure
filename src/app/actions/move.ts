@@ -15,6 +15,6 @@ export class MoveAction extends Action {
   static parse(match: RegExpMatchArray, context: ParseContext) {
     context.skip(match[0].length);
 
-    return [new MoveAction(match[3] ?? null, match[4], !!match[1])];
+    return new MoveAction(match[3] ?? null, match[4], !!match[1]);
   }
 }

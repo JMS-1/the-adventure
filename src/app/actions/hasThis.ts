@@ -9,6 +9,6 @@ export class HasThisAction extends Action {
   }
 
   static parse(match: RegExpMatchArray, context: ParseContext) {
-    return [new HasThisAction(Action.parseBody(context, match[0]))];
+    return new HasThisAction(Action.parseBody(context, match[0]));
   }
 }

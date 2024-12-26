@@ -11,6 +11,6 @@ export class DeadAction extends Action {
   static parse(match: RegExpMatchArray, context: ParseContext) {
     context.skip(match[0].length);
 
-    return [new DeadAction(match[1])];
+    return new DeadAction(match[1]);
   }
 }

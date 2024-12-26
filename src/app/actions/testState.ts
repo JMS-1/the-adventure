@@ -13,12 +13,10 @@ export class TestStateAction extends Action {
   }
 
   static parse(match: RegExpMatchArray, context: ParseContext) {
-    return [
-      new TestStateAction(
-        match[1],
-        match[2],
-        Action.parseBody(context, match[0])
-      ),
-    ];
+    return new TestStateAction(
+      match[1],
+      match[2],
+      Action.parseBody(context, match[0])
+    );
   }
 }

@@ -12,11 +12,12 @@ export class ListAction {
     for (;;) {
       context.enforceStart();
 
-      const generated = context.parse();
+      const parsed = context.parse();
+      const code = parsed && (Array.isArray(parsed) ? parsed : [parsed]);
 
-      if (!generated?.length) context.joinNext();
+      if (!code?.length) context.joinNext();
       else {
-        list.push(...generated);
+        list.push(...code);
 
         context.enforceStart();
 

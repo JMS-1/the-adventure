@@ -14,6 +14,6 @@ export class PrintAction extends Action {
   static parse(match: RegExpMatchArray, context: ParseContext) {
     context.skip(match[0].length);
 
-    return [new PrintAction(match[1], match[2])];
+    return new PrintAction(match[1], match[2]);
   }
 }

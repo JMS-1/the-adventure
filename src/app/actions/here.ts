@@ -12,6 +12,6 @@ export class HereAction extends Action {
   }
 
   static parse(match: RegExpMatchArray, context: ParseContext) {
-    return [new HereAction(match[1], Action.parseBody(context, match[0]))];
+    return new HereAction(match[1], Action.parseBody(context, match[0]));
   }
 }

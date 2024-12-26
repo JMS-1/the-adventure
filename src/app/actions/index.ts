@@ -7,7 +7,9 @@ export abstract class Action {
     for (;;) {
       const code = context.parse();
 
-      if (code?.length) return code;
+      if (code)
+        if (!Array.isArray(code)) return [code];
+        else if (code.length) return code;
 
       context.joinNext();
     }
