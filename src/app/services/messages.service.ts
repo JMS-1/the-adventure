@@ -1,5 +1,5 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { BehaviorSubject, map, tap } from 'rxjs';
+import { ReplaySubject, tap } from 'rxjs';
 import { AssetService } from './asset.service';
 import { SettingsService } from './settings.service';
 
@@ -7,17 +7,13 @@ const messageReg = /^\$([^/]+)(\/(\d{1,2}))?$/;
 
 @Injectable()
 export class MessagesService implements OnDestroy {
-  private readonly _parsing$ = new BehaviorSubject(0);
+  private readonly _parseDone$ = new ReplaySubject<string>(1);
 
-  readonly parsing$ = this._parsing$.pipe(map((n) => n > 0));
+  readonly parseDone$ = this._parseDone$.asObservable();
 
-  private readonly _messageMap$ = new BehaviorSubject<Record<string, string[]>>(
-    {}
-  );
+  messageMap: Record<string, string[]> = {};
 
-  public readonly messages$ = this._messageMap$.asObservable();
-
-  lastError = '';
+  private _parseDepth = 0;
 
   private _objectName = '';
 
@@ -32,32 +28,23 @@ export class MessagesService implements OnDestroy {
     private readonly _assets: AssetService
   ) {}
 
-  ngOnDestroy(): void {
-    this._parsing$.complete();
-  }
-
   parse() {
-    this.lastError = '';
-    this._objectName = '';
-
-    this._parsing$.next(0);
-    this._messageMap$.next({});
-
     this.processFile(`${this._settings.game}.msg`);
   }
 
+  ngOnDestroy(): void {
+    this._parseDone$.complete();
+  }
+
   private processFile(name: string) {
-    this._parsing$.next(this._parsing$.value + 1);
+    this._parseDepth++;
 
     this._assets
       .download(name)
       .pipe(tap((s) => this.parseFile(s.replace(/\r/g, '').split('\n'))))
       .subscribe({
-        error: (e) => {
-          this.lastError = e.message;
-          this._parsing$.next(this._parsing$.value - 1);
-        },
-        complete: () => this._parsing$.next(this._parsing$.value - 1),
+        error: (e) => !--this._parseDepth && this._parseDone$.next(e.message),
+        complete: () => !--this._parseDepth && this._parseDone$.next(''),
       });
   }
 
@@ -89,10 +76,8 @@ export class MessagesService implements OnDestroy {
           this._messageName = match[1];
           this._messages = [];
 
-          this._messageMap$.next({
-            ...this._messageMap$.value,
-            [`${this._objectName}.${this._messageName}`]: this._messages,
-          });
+          this.messageMap[`${this._objectName}.${this._messageName}`] =
+            this._messages;
         }
 
         this._messageIndex = match[3] ? parseInt(match[3]) : 1;
@@ -109,7 +94,5 @@ export class MessagesService implements OnDestroy {
         .filter((m) => m)
         .join(' ');
     }
-
-    this._messageMap$.next(this._messageMap$.value);
   }
 }

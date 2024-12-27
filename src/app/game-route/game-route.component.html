@@ -1,0 +1,4 @@
+<div class="game">
+  <div *ngIf="game.ready$ | async">{{ game.lastError }}</div>
+  <button (click)="settings.game = undefined">leave {{ settings.game }}</button>
+</div>

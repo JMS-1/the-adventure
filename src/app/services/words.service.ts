@@ -1,5 +1,5 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { BehaviorSubject, tap } from 'rxjs';
+import { ReplaySubject, tap } from 'rxjs';
 import { AssetService } from './asset.service';
 import { SettingsService } from './settings.service';
 
@@ -17,39 +17,29 @@ class Command {
 
 @Injectable()
 export class WordsService implements OnDestroy {
-  lastError = '';
+  private readonly _parseDone$ = new ReplaySubject<string>(1);
 
-  parsing = false;
+  readonly parseDone$ = this._parseDone$.asObservable();
 
-  private readonly _commands$ = new BehaviorSubject<CommandMap>({});
-
-  readonly commands$ = this._commands$.asObservable();
+  commands: CommandMap = {};
 
   constructor(
     private readonly _settings: SettingsService,
     private readonly _assets: AssetService
   ) {}
 
-  ngOnDestroy(): void {
-    this._commands$.complete();
-  }
-
   parse() {
-    this.lastError = '';
-    this.parsing = true;
-
-    this._commands$.next({});
-
     this._assets
       .download(`${this._settings.game}.words`)
       .pipe(tap((s) => this.parseFile(s.replace(/\r/g, '').split('\n'))))
       .subscribe({
-        error: (e) => {
-          this.lastError = e.message;
-          this.parsing = false;
-        },
-        complete: () => (this.parsing = false),
+        error: (e) => this._parseDone$.next(e.message),
+        complete: () => this._parseDone$.next(''),
       });
+  }
+
+  ngOnDestroy(): void {
+    this._parseDone$.complete();
   }
 
   private parseFile(lines: string[]) {
@@ -69,16 +59,9 @@ export class WordsService implements OnDestroy {
 
       const key = match[1];
 
-      for (const alternative of match[2].split(',')) {
-        const commands = this._commands$.value;
-
-        this.addCommand(alternative, key, commands);
-
-        this._commands$.next(commands);
-      }
+      for (const alternative of match[2].split(','))
+        this.addCommand(alternative, key, this.commands);
     }
-
-    this._commands$.next(this._commands$.value);
   }
 
   private addCommand(alternative: string, key: string, commands: CommandMap) {

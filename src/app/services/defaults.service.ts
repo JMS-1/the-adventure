@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { tap } from 'rxjs';
+import { Injectable, OnDestroy } from '@angular/core';
+import { ReplaySubject, tap } from 'rxjs';
 import { ActionService } from './action.service';
 import { AssetService } from './asset.service';
 import { SettingsService } from './settings.service';
@@ -18,10 +18,10 @@ const regs = {
 };
 
 @Injectable()
-export class DefaultsService {
-  lastError = '';
+export class DefaultsService implements OnDestroy {
+  private readonly _parseDone$ = new ReplaySubject<string>(1);
 
-  parsing = false;
+  readonly parseDone$ = this._parseDone$.asObservable();
 
   constructor(
     private readonly _settings: SettingsService,
@@ -30,19 +30,17 @@ export class DefaultsService {
   ) {}
 
   parse() {
-    this.lastError = '';
-    this.parsing = true;
-
     this._assets
       .download(`${this._settings.game}.defaults`)
       .pipe(tap((s) => this.parseFile(s.replace(/\r/g, '').split('\n'))))
       .subscribe({
-        error: (e) => {
-          this.lastError = e.message;
-          this.parsing = false;
-        },
-        complete: () => (this.parsing = false),
+        error: (e) => this._parseDone$.next(e.message),
+        complete: () => this._parseDone$.next(''),
       });
+  }
+
+  ngOnDestroy(): void {
+    this._parseDone$.complete();
   }
 
   private parseFile(lines: string[]) {
