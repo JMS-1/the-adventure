@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { RouterOutlet } from '@angular/router';
 import { GameSelectorComponent } from './game-selector/game-selector.component';
 import { AssetService } from './services/asset.service';
+import { DefaultsService } from './services/defaults.service';
 import { MessagesService } from './services/messages.service';
 import { ObjectsService } from './services/objects.service';
 import { SettingsService } from './services/settings.service';
@@ -21,6 +22,7 @@ import { WordsService } from './services/words.service';
   ],
   providers: [
     AssetService,
+    DefaultsService,
     MessagesService,
     ObjectsService,
     SettingsService,
@@ -35,6 +37,7 @@ export class AppComponent {
     public readonly messages: MessagesService,
     public readonly words: WordsService,
     public readonly objects: ObjectsService,
-    public readonly states: StatesService
+    public readonly states: StatesService,
+    public readonly defaults: DefaultsService
   ) {}
 }

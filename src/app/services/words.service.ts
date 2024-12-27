@@ -8,9 +8,9 @@ const wordReg = /^#([^\s]+)\s*=\s*\((.+)\)$/;
 type CommandMap = Record<string, Command>;
 
 class Command {
-  objectKey?: string;
+  objectKeys = new Set<string>();
 
-  key?: string;
+  keys = new Set<string>();
 
   readonly next: CommandMap = {};
 }
@@ -120,13 +120,9 @@ export class WordsService implements OnDestroy {
           final && word !== '%'
         );
       else {
-        const prop = final ? 'key' : 'objectKey';
+        const prop = final ? 'keys' : 'objectKeys';
 
-        if (command[prop] && command[prop] !== key)
-          throw new Error(
-            `command '${part}' '${word}' not unique, duplicate key '${key}', already '${command[prop]}'`
-          );
-        else command[prop] = key;
+        command[prop].add(key);
       }
     }
   }
