@@ -31,6 +31,16 @@
       </button>
       <span>{{ objects.lastError }}</span>
     </div>
+    <div>
+      <button
+        mat-raised-button
+        [disabled]="states.parsing"
+        (click)="states.parse()"
+      >
+        Parse States
+      </button>
+      <span>{{ states.lastError }}</span>
+    </div>
   </div>
   <div class="preview">
     <pre>{{ null | json }}</pre>

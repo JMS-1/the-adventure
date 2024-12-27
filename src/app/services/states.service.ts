@@ -1,28 +1,26 @@
 import { Injectable } from '@angular/core';
-import { concat, tap } from 'rxjs';
+import { tap } from 'rxjs';
 import { ActionService } from './action.service';
 import { AssetService } from './asset.service';
 import { SettingsService } from './settings.service';
 
 const regs = {
   actions: /^\s*actions\s*=\s*(.*)$/,
-  command: /^\s*#([^\s=]+)\s*=\s*(.*)$/,
+  exits: /^\s*exits\s*=\s*(.*)$/,
   message: /^\s*message\s*=(.*)$/,
   persons: /^\s*persons\s*=\s*(.*)$/,
   things: /^\s*things\s*=\s*(.*)$/,
-  time: /^\s*time\s*=\s*(.*)$/,
-  weight: /^\s*weight\s*=\s*(.*)$/,
 };
 
 @Injectable()
-export class ObjectsService {
+export class StatesService {
   lastError = '';
 
   parsing = false;
 
   private _objectName?: string;
 
-  private _macro = false;
+  private _areaName?: string;
 
   constructor(
     private readonly _settings: SettingsService,
@@ -34,10 +32,8 @@ export class ObjectsService {
     this.lastError = '';
     this.parsing = true;
 
-    concat(
-      this._assets.download(`${this._settings.game}.persons`),
-      this._assets.download(`${this._settings.game}.things`)
-    )
+    this._assets
+      .download(`${this._settings.game}.states`)
       .pipe(tap((s) => this.parseFile(s.replace(/\r/g, '').split('\n'))))
       .subscribe({
         error: (e) => {
@@ -59,15 +55,18 @@ export class ObjectsService {
       const line = lines[i];
 
       if (line.startsWith('$$')) {
-        this._objectName = line.substring(2);
-        this._macro = true;
+        this._areaName = line.substring(2);
+        this._objectName = undefined;
 
         continue;
       }
 
+      if (!this._areaName) throw new Error('area missing');
+
       if (line.startsWith('$')) {
         this._objectName = line.substring(1);
-        this._macro = false;
+
+        console.log(this._areaName + ':' + this._objectName);
 
         continue;
       }
@@ -78,18 +77,14 @@ export class ObjectsService {
 
       if (match) {
         this.processMessage(match[1]);
-      } else if ((match = regs.weight.exec(line))) {
-        this.processWeight(match[1]);
       } else if ((match = regs.things.exec(line))) {
         this.processThings(match[1]);
       } else if ((match = regs.persons.exec(line))) {
         this.processPersons(match[1]);
       } else if ((match = regs.actions.exec(line))) {
         i = this._parser.parseMultiple(match[1], lines, i)[1];
-      } else if ((match = regs.time.exec(line))) {
+      } else if ((match = regs.exits.exec(line))) {
         i = this._parser.parseMultiple(match[1], lines, i)[1];
-      } else if ((match = regs.command.exec(line))) {
-        i = this._parser.parse(match[2], lines, i)[1];
       } else {
         throw new Error(line);
       }
@@ -98,10 +93,6 @@ export class ObjectsService {
 
   private processMessage(msg: string) {
     console.log('message=' + msg);
-  }
-
-  private processWeight(weight: string) {
-    console.log('weight=' + weight);
   }
 
   private processThings(things: string) {

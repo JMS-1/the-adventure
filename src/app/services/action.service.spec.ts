@@ -326,16 +326,28 @@ describe('ActionService print', () => {
   });
 
   it('valid', () => {
-    const [map, index] = service.parse('&$$who$test', [], 0);
-    const actions = map[''];
+    let [map, index] = service.parse('&$$who$test', [], 0);
+    let actions = map[''];
 
     expect(index).toBe(0);
     expect(actions.length).toBe(1);
 
-    const action = actions[0] as PrintAction;
+    let action = actions[0] as PrintAction;
 
     expect(action).toBeInstanceOf(PrintAction);
-    expect(action.obj).toBe('who');
+    expect(action.area).toBe('who');
+    expect(action.message).toBe('test');
+
+    [map, index] = service.parse('&test', [], 0);
+    actions = map[''];
+
+    expect(index).toBe(0);
+    expect(actions.length).toBe(1);
+
+    action = actions[0] as PrintAction;
+
+    expect(action).toBeInstanceOf(PrintAction);
+    expect(action.area).toBeNull();
     expect(action.message).toBe('test');
   });
 });

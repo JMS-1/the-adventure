@@ -4,6 +4,7 @@ import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { MessagesService } from './services/messages.service';
 import { ObjectsService } from './services/objects.service';
+import { StatesService } from './services/states.service';
 import { WordsService } from './services/words.service';
 
 describe('AppComponent', () => {
@@ -22,6 +23,7 @@ describe('AppComponent', () => {
         { provide: WordsService, useValue: {} },
         { provide: MessagesService, useValue: {} },
         { provide: ObjectsService, useValue: {} },
+        { provide: StatesService, useValue: {} },
       ],
     }).compileComponents();
   });
