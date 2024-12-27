@@ -18,6 +18,7 @@ describe('GameRouteComponent', () => {
       imports: [GameRouteComponent],
       providers: [
         { provide: SettingsService, useValue: {} },
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
         { provide: GameService, useValue: { parse: () => {} } },
       ],
     }).compileComponents();
