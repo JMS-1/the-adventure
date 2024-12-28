@@ -1,5 +1,6 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { combineLatest, ReplaySubject } from 'rxjs';
+import { combineLatest, ReplaySubject, tap } from 'rxjs';
+import { State } from '../gameObject/state';
 import { DefaultsService } from './defaults.service';
 import { MessagesService } from './messages.service';
 import { ObjectsService } from './objects.service';
@@ -14,6 +15,8 @@ export class GameService implements OnDestroy {
 
   lastError = '';
 
+  state?: State;
+
   constructor(
     public readonly defaults: DefaultsService,
     public readonly messages: MessagesService,
@@ -21,19 +24,35 @@ export class GameService implements OnDestroy {
     public readonly states: StatesService,
     public readonly words: WordsService
   ) {
-    combineLatest([
+    const subscription = combineLatest([
       defaults.parseDone$,
       messages.parseDone$,
       objects.parseDone$,
       states.parseDone$,
       words.parseDone$,
-    ]).subscribe(([defError, msgError, objError, stateError, wordError]) => {
-      this.lastError = [defError, msgError, objError, stateError, wordError]
-        .filter((e) => e)
-        .join('; ');
+    ])
+      .pipe(
+        tap(([defError, msgError, objError, stateError, wordError]) => {
+          const error = [defError, msgError, objError, stateError, wordError]
+            .filter((e) => e)
+            .join('; ');
 
-      this._parseDone$.next(true);
-    });
+          if (error) throw new Error(`parsing error: ${error}`);
+        }),
+        tap(this.setup)
+      )
+      .subscribe({
+        error: (e) => {
+          this.lastError = e.message;
+
+          this._parseDone$.next(true);
+        },
+        next: () => {
+          subscription.unsubscribe();
+
+          this._parseDone$.next(true);
+        },
+      });
   }
 
   parse() {
@@ -47,4 +66,19 @@ export class GameService implements OnDestroy {
   ngOnDestroy(): void {
     this._parseDone$.complete();
   }
+
+  private readonly setup = (): void => {
+    for (const person of Object.values(this.objects.persons))
+      person.validate(this);
+
+    for (const thing of Object.values(this.objects.things))
+      thing.validate(this);
+
+    for (const state of Object.values(this.states.states)) state.validate(this);
+
+    this.state = this.states.states[this.defaults.state];
+
+    if (!this.state)
+      throw new Error(`initial state '${this.defaults.state}' not found`);
+  };
 }

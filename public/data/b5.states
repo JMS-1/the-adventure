@@ -15,7 +15,7 @@ $start
 					ranger start,
 					explode start,
 					commander start,
-					@<commander, 
+					@<commander,
 					@<tshirt,
 					@<mordon,
 					>$$entrance$enter
@@ -63,7 +63,7 @@ $hangar
 	exits = (W:>hall3)
 ;
 ; Normal staff quarters
-; 
+;
 $$q1
 $escal1
 	exits = (E:>g1,U:el3btn2 up,D:el3btn2 down)
@@ -102,7 +102,7 @@ $escal2
 	things = el2btn2
 ;
 ; Officers quarters
-; 
+;
 $$q2
 $escal1
 	exits = (E:>g1,U:el5btn1 up,D:el5btn1 down)
@@ -212,7 +212,7 @@ $wc
 $g3
 	exits	= (E:>escal2,W:>g2,S:>g3S)
 	actions	= (entry:drozi meet, exit:mordon drozi)
-	things	= drozi
+	persons	= drozi
 $g3S
 	exits = (N:>g3,S:>g3SBath)
 $g3SBath
@@ -319,7 +319,7 @@ $extra2
 	exits = (S:>behind,D:>$$down$stairs)
 ;
 ; The garden
-; 
+;
 $$garden
 $escal1
 	exits = (N:>g1,U:el4btn7 up,D:el4btn7 down)
@@ -388,7 +388,7 @@ $minbari
 	exits	= (W:>machine)
 	persons	= minbari
 	actions	= entry:minbari meet
-;			
+;
 ; Down Below
 ;
 $$down

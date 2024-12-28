@@ -234,7 +234,8 @@ $g14
 $g15
 	exits	= E:(if_state TOF auf >g11,&$$botanik$türzu)
 	actions	= entry:if_state reinhold * (reinhold = tip,@reinhold = hängt)
-	things	= (reinhold,TOF)
+	things	= TOF
+  persons = reinhold
 $g12
 	exits	= (E:(if_state warenlager auf >g13,&$$botanik$türzu),S:>g14,
 		   U:(if_has jochen >>treppe_jochen,>$$erster$e14))
@@ -272,7 +273,7 @@ $g6
 	things	= (mathe,metall)
 $g3
 	exits	= (E:>g4,S:>>aufzug2,W:>g2)
-	things	= leute
+	persons	= leute
 $g2
 	exits	= (E:>g3,W:>g1,N:>galerie,
 		   S:(if_state christian auf >christian,&$$botanik$türzu))
@@ -332,7 +333,8 @@ $150
 $151
 	exits	= W:>150
 	actions	= entry:if_state peter * (peter = tip,@peter = fertig)
-	persons	= (peter,hauptschlüssel,gabel)
+	persons	= peter
+  things = (hauptschlüssel,gabel)
 $e8
 	exits	= (W:>>aufzug3,N:>e4,S:>e9)
 	things	= liege
@@ -478,7 +480,7 @@ $el1
 	actions	= (entry,stay:if_nothas plakette >>plakette,
 		   exit:if_here maus >>maus2,
 		   entry:if_here maus maus treffen)
-	things	= maus
+	persons	= maus
 $el2
 	exits	= (W:>el1,E:>el3)
 	actions	= (entry,stay:if_nothas plakette >>plakette,

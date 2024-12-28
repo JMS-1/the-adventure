@@ -12,8 +12,8 @@ const regs = {
   command: /^\s*#([^\s=]+)\s*=\s*(.*)$/,
   exits: /^\s*exits\s*=\s*(.*)$/,
   key: /^\s*([^=])\s*=\s*#(.+)$/,
-  message: /^\s*message\s*=(.*)$/,
-  state: /^\s*state\s*=(.*)$/,
+  message: /^\s*message\s*=\s*(.*)$/,
+  state: /^\s*state\s*=\s*(.*)$/,
   time: /^\s*time\s*=\s*(.*)$/,
   weight: /^\s*weight\s*=\s*(.*)$/,
 };
@@ -34,7 +34,7 @@ export class DefaultsService implements OnDestroy {
 
   weight = new Weight('(0,0,0)');
 
-  time = new Time('(d0/0,h0/0,m0/0)');
+  time = new Time('(d0/0,h0/0,m0/1)');
 
   readonly keyMap: Record<string, string> = {};
 

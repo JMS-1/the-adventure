@@ -1,5 +1,6 @@
 import { GameObject } from '.';
 import { Action, TActionMap } from '../actions';
+import { GameService } from '../services/game.service';
 import { Macro } from './macro';
 import { Weight } from './weight';
 
@@ -39,6 +40,16 @@ export abstract class ThingOrPerson extends GameObject {
     if (this.commands[command])
       throw new Error(`duplicate command ${this.name}.${command}`);
     else this.commands[command] = actions;
+  }
+
+  override validate(game: GameService): void {
+    super.validate(game);
+
+    for (const commands of Object.values(this.commands))
+      commands.forEach((a) => a.validate(game, this));
+
+    for (const times of Object.values(this.times))
+      times.forEach((a) => a.validate(game, this));
   }
 }
 

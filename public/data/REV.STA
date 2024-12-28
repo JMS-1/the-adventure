@@ -14,7 +14,8 @@ $start
 			message = lang,message = kurz,>$$park$w73)
 $nowhere
 	message = *
-	persons = (punker,handschuhe,maus)
+	persons = (punker,maus)
+  things = handschuhe
 ;
 ; Der Park
 ;
@@ -43,7 +44,7 @@ $s7
 $s8
 	exits   = (W:(if_here hund >>hund,>s7),E:>s9,S:>w41)
 	actions = stay/3:if_here hund >>hund
-	things  = hund
+	persons  = hund
 $s9
 	exits  = (W:>s8,S:>s10,D:>s100)
 	things = katze
@@ -61,7 +62,7 @@ $s13
 	exits = (E:>s12,W:>s14)
 $s14
 	exits = (E:>s13,W:>s15)
-$s15	
+$s15
 	exits  = (E:>s14,W:>s16,S:>w51)
 	things = katze
 $s16
@@ -228,7 +229,7 @@ $w22
 $w23
 	exits  = (W:>w22,E:>w24)
 	things = katze
-$w24	
+$w24
 	exits  = (W:>w23,E:&hauszu)
 	things = (matte,katze)
 $w31
@@ -1162,7 +1163,7 @@ $kamin
 			       if_state hinten26 * &istzu))
 	things  = (hinten26,fernseher)
 ;
-; Haus Nummer 27 
+; Haus Nummer 27
 ;
 $$haus27
 $flur

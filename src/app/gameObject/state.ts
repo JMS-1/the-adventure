@@ -1,5 +1,6 @@
 import { GameObject } from '.';
 import { TActionMap } from '../actions';
+import { GameService } from '../services/game.service';
 
 export class State extends GameObject {
   exits: TActionMap = {};
@@ -11,7 +12,7 @@ export class State extends GameObject {
   }
 
   get key() {
-    return `${this.area}${this.name}`;
+    return `$$${this.area}$${this.name}`;
   }
 
   setExits(exits: TActionMap) {
@@ -19,5 +20,12 @@ export class State extends GameObject {
       if (this.exits[exit])
         throw new Error(`duplicate exit ${this.name}.${exit}`);
       else this.exits[exit] = exits[exit];
+  }
+
+  override validate(game: GameService): void {
+    super.validate(game);
+
+    for (const exits of Object.values(this.exits))
+      exits.forEach((a) => a.validate(game, this));
   }
 }

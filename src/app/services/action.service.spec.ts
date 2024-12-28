@@ -459,7 +459,7 @@ describe('ActionService test state', () => {
     const action = actions[0] as TestStateAction;
 
     expect(action).toBeInstanceOf(TestStateAction);
-    expect(action.obj).toBe('thing');
+    expect(action.what).toBe('thing');
     expect(action.message).toBe('message');
     expect(action.actions.length).toBe(1);
   });
@@ -540,7 +540,7 @@ describe('ActionService test thing', () => {
     const action = actions[0] as HasAction;
 
     expect(action).toBeInstanceOf(HasAction);
-    expect(action.obj).toBe('what');
+    expect(action.what).toBe('what');
     expect(action.actions.length).toBe(1);
   });
 
@@ -560,7 +560,7 @@ describe('ActionService test thing', () => {
     const action = actions[0] as NotHasAction;
 
     expect(action).toBeInstanceOf(NotHasAction);
-    expect(action.obj).toBe('what');
+    expect(action.what).toBe('what');
     expect(action.actions.length).toBe(1);
   });
 
@@ -627,7 +627,7 @@ describe('ActionService test here', () => {
     const action = actions[0] as HereAction;
 
     expect(action).toBeInstanceOf(HereAction);
-    expect(action.obj).toBe('what');
+    expect(action.what).toBe('what');
     expect(action.actions.length).toBe(1);
   });
 
@@ -647,7 +647,7 @@ describe('ActionService test here', () => {
     const action = actions[0] as NotHereAction;
 
     expect(action).toBeInstanceOf(NotHereAction);
-    expect(action.obj).toBe('what');
+    expect(action.what).toBe('what');
     expect(action.actions.length).toBe(1);
   });
 });

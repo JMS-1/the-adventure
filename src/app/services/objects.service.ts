@@ -155,4 +155,14 @@ export class ObjectsService implements OnDestroy {
     this._factory = Thing;
     this._map = this.things;
   }
+
+  getThingOrPerson(name: string) {
+    const thing = this.things[name];
+    const person = this.persons[name];
+
+    if (!thing === !person)
+      throw new Error(`can not find thing or person ${name}`);
+
+    return thing ?? person;
+  }
 }

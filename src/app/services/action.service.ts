@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { TActionMap } from '../actions';
 import { ParseContext } from './parseContext';
 
-const nameReg = /^([^:]+):/;
+const nameReg = /^([^:\s]+)\s*:/;
 
 @Injectable({ providedIn: 'root' })
 export class ActionService {

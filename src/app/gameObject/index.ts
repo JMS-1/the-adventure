@@ -1,4 +1,5 @@
 import { TActionMap } from '../actions';
+import { GameService } from '../services/game.service';
 import { Macro } from './macro';
 
 export abstract class GameObject {
@@ -24,7 +25,7 @@ export abstract class GameObject {
   }
 
   setMessage(msg: string) {
-    this.message = msg.trim();
+    this.message = msg;
   }
 
   setActions(actions: TActionMap) {
@@ -34,19 +35,34 @@ export abstract class GameObject {
       else this.actions[action] = actions[action];
   }
 
-  setThings(things: string) {
-    if (!things.startsWith('(')) things = `(${things})`;
-    else if (!things.endsWith(')')) throw new Error('bad list of things');
+  private addToObjectList(list: string, set: Set<string>) {
+    if (!list.startsWith('(')) list = `(${list})`;
+    else if (!list.endsWith(')')) throw new Error('bad list of objects');
 
-    for (const thing of things.substring(1, things.length - 2).split(','))
-      this.things.add(thing.trim());
+    for (const thingOrPerson of list.substring(1, list.length - 1).split(','))
+      set.add(thingOrPerson.trim());
+  }
+
+  setThings(things: string) {
+    this.addToObjectList(things, this.things);
   }
 
   setPersons(persons: string) {
-    if (!persons.startsWith('(')) persons = `(${persons})`;
-    else if (!persons.endsWith(')')) throw new Error('bad list of persons');
+    this.addToObjectList(persons, this.persons);
+  }
 
-    for (const person of persons.substring(1, persons.length - 2).split(','))
-      this.things.add(person.trim());
+  validate(game: GameService) {
+    if (!this.message) this.message = game.defaults.message || '*';
+
+    for (const thing of this.things)
+      if (!game.objects.things[thing])
+        throw new Error(`${this.name}: unknown thing ${thing}`);
+
+    for (const person of this.persons)
+      if (!game.objects.persons[person])
+        throw new Error(`${this.name}: unknown person ${person}`);
+
+    for (const actions of Object.values(this.actions))
+      actions.forEach((a) => a.validate(game, this));
   }
 }

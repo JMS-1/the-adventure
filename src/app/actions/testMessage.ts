@@ -1,4 +1,6 @@
 import { Action } from '.';
+import { GameObject } from '../gameObject';
+import { GameService } from '../services/game.service';
 import { ParseContext } from '../services/parseContext';
 
 export class TestMessageAction extends Action {
@@ -13,5 +15,11 @@ export class TestMessageAction extends Action {
 
   static parse(match: RegExpMatchArray, context: ParseContext) {
     return new TestMessageAction(match[1], context.parseBody(match[0]));
+  }
+
+  override validate(game: GameService, scope: GameObject): void {
+    super.validate(game, scope);
+
+    this.actions.forEach((a) => a.validate(game, scope));
   }
 }

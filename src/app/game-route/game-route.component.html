@@ -6,8 +6,11 @@
     <div>Number of things: {{ countMap(game.objects.things) }}</div>
     <p></p>
     <div>State: {{ game.defaults.state }}</div>
-    <div>Time: {{ game.defaults.time.times | json }}</div>
-    <div>Delta: {{ game.defaults.time.deltas | json }}</div>
+    <div>
+      Time: {{ game.defaults.time.times | json }}/{{
+        game.defaults.time.deltas | json
+      }}
+    </div>
     <div>Message: {{ game.defaults.message }}</div>
     <div>Weight: {{ game.defaults.weight.weights | json }}</div>
     <div>Actions: {{ mapKeys(game.defaults.actions) | json }}</div>
