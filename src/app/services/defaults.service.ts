@@ -1,5 +1,8 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { ReplaySubject, tap } from 'rxjs';
+import { TActionMap } from '../actions';
+import { Time } from '../gameObject/time';
+import { Weight } from '../gameObject/weight';
 import { ActionService } from './action.service';
 import { AssetService } from './asset.service';
 import { SettingsService } from './settings.service';
@@ -8,11 +11,9 @@ const regs = {
   actions: /^\s*actions\s*=\s*(.*)$/,
   command: /^\s*#([^\s=]+)\s*=\s*(.*)$/,
   exits: /^\s*exits\s*=\s*(.*)$/,
-  keys: /^\s*([^=])\s*=\s*#(.+)$/,
+  key: /^\s*([^=])\s*=\s*#(.+)$/,
   message: /^\s*message\s*=(.*)$/,
-  persons: /^\s*persons\s*=\s*(.*)$/,
   state: /^\s*state\s*=(.*)$/,
-  things: /^\s*things\s*=\s*(.*)$/,
   time: /^\s*time\s*=\s*(.*)$/,
   weight: /^\s*weight\s*=\s*(.*)$/,
 };
@@ -22,6 +23,22 @@ export class DefaultsService implements OnDestroy {
   private readonly _parseDone$ = new ReplaySubject<string>(1);
 
   readonly parseDone$ = this._parseDone$.asObservable();
+
+  actions: TActionMap = {};
+
+  exits: TActionMap = {};
+
+  readonly commands: TActionMap = {};
+
+  message = '*';
+
+  weight = new Weight('(0,0,0)');
+
+  time = new Time('(d0/0,h0/0,m0/0)');
+
+  readonly keyMap: Record<string, string> = {};
+
+  state = '';
 
   constructor(
     private readonly _settings: SettingsService,
@@ -54,56 +71,36 @@ export class DefaultsService implements OnDestroy {
       let match = regs.message.exec(line);
 
       if (match) {
-        this.processMessage(match[1]);
-      } else if ((match = regs.things.exec(line))) {
-        this.processThings(match[1]);
-      } else if ((match = regs.persons.exec(line))) {
-        this.processPersons(match[1]);
+        this.message = match[1];
       } else if ((match = regs.weight.exec(line))) {
-        this.processWeight(match[1]);
+        this.weight = new Weight(match[1]);
       } else if ((match = regs.time.exec(line))) {
-        this.processTime(match[1]);
+        this.time = new Time(match[1]);
       } else if ((match = regs.state.exec(line))) {
-        this.processState(match[1]);
-      } else if ((match = regs.keys.exec(line))) {
-        this.processKey(match[1], match[2]);
+        this.state = match[1];
+      } else if ((match = regs.key.exec(line))) {
+        this.keyMap[match[1]] = match[2];
       } else if ((match = regs.command.exec(line))) {
-        i = this._parser.parse(match[2], lines, i)[1];
+        const parsed = this._parser.parse(match[2], lines, i);
+
+        i = parsed[1];
+
+        this.commands[match[1]] = parsed[0][''];
       } else if ((match = regs.actions.exec(line))) {
-        i = this._parser.parseMultiple(match[1], lines, i)[1];
+        const actions = this._parser.parseMultiple(match[1], lines, i);
+
+        i = actions[1];
+
+        this.actions = { ...this.actions, ...actions[0] };
       } else if ((match = regs.exits.exec(line))) {
-        i = this._parser.parseMultiple(match[1], lines, i)[1];
+        const exits = this._parser.parseMultiple(match[1], lines, i);
+
+        i = exits[1];
+
+        this.exits = { ...this.exits, ...exits[0] };
       } else {
         throw new Error(line);
       }
     }
-  }
-
-  private processState(state: string) {
-    console.log('state=' + state);
-  }
-
-  private processKey(key: string, command: string) {
-    console.log(key + '=' + command);
-  }
-
-  private processMessage(msg: string) {
-    console.log('message=' + msg);
-  }
-
-  private processTime(time: string) {
-    console.log('time=' + time);
-  }
-
-  private processWeight(weight: string) {
-    console.log('weight=' + weight);
-  }
-
-  private processThings(things: string) {
-    console.log('things=' + things);
-  }
-
-  private processPersons(persons: string) {
-    console.log('persons=' + persons);
   }
 }

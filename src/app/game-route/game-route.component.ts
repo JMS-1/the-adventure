@@ -31,7 +31,15 @@ export class GameRouteComponent implements OnInit {
   ) {}
 
   countMap<T>(map: Record<string, T>) {
-    return Object.keys(map).length;
+    return this.mapKeys(map).length;
+  }
+
+  mapKeys<T>(map: Record<string, T>) {
+    return Object.keys(map);
+  }
+
+  setValues<T>(set: Set<T>) {
+    return Array.from(set);
   }
 
   ngOnInit(): void {

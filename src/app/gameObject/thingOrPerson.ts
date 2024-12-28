@@ -14,7 +14,7 @@ export abstract class ThingOrPerson extends GameObject {
   constructor(name: string, words: string) {
     super(name);
 
-    this.words = new Set(words?.split(',').filter((w) => w));
+    this.words = new Set(GameObject.parseWords(words));
   }
 
   setWeight(weight: string) {

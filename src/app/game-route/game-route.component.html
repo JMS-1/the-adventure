@@ -4,6 +4,16 @@
     <div>Number of states: {{ countMap(game.states.states) }}</div>
     <div>Number of persons: {{ countMap(game.objects.persons) }}</div>
     <div>Number of things: {{ countMap(game.objects.things) }}</div>
+    <p></p>
+    <div>State: {{ game.defaults.state }}</div>
+    <div>Time: {{ game.defaults.time.times | json }}</div>
+    <div>Delta: {{ game.defaults.time.deltas | json }}</div>
+    <div>Message: {{ game.defaults.message }}</div>
+    <div>Weight: {{ game.defaults.weight.weights | json }}</div>
+    <div>Actions: {{ mapKeys(game.defaults.actions) | json }}</div>
+    <div>Exits: {{ mapKeys(game.defaults.exits) | json }}</div>
+    <div>Keys: {{ mapKeys(game.defaults.keyMap) | json }}</div>
+    <div>Commands: {{ mapKeys(game.defaults.commands) | json }}</div>
   </div>
   <button (click)="settings.game = undefined">leave {{ settings.game }}</button>
 </div>

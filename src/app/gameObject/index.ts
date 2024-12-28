@@ -11,6 +11,10 @@ export abstract class GameObject {
 
   constructor(public readonly name: string) {}
 
+  static parseWords(words: string) {
+    return words?.split(',').filter((w) => w);
+  }
+
   setMessage(msg: string) {
     if (this.message) throw new Error(`duplicate message for ${this.name}`);
 
