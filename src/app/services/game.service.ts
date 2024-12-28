@@ -8,40 +8,40 @@ import { WordsService } from './words.service';
 
 @Injectable()
 export class GameService implements OnDestroy {
-  private readonly _parseDone$ = new ReplaySubject<void>(1);
+  private readonly _parseDone$ = new ReplaySubject<boolean>(1);
 
   readonly ready$ = this._parseDone$.asObservable();
 
   lastError = '';
 
   constructor(
-    private readonly _defaults: DefaultsService,
-    private readonly _messages: MessagesService,
-    private readonly _objects: ObjectsService,
-    private readonly _states: StatesService,
-    private readonly _words: WordsService
+    public readonly defaults: DefaultsService,
+    public readonly messages: MessagesService,
+    public readonly objects: ObjectsService,
+    public readonly states: StatesService,
+    public readonly words: WordsService
   ) {
     combineLatest([
-      _defaults.parseDone$,
-      _messages.parseDone$,
-      _objects.parseDone$,
-      _states.parseDone$,
-      _words.parseDone$,
+      defaults.parseDone$,
+      messages.parseDone$,
+      objects.parseDone$,
+      states.parseDone$,
+      words.parseDone$,
     ]).subscribe(([defError, msgError, objError, stateError, wordError]) => {
       this.lastError = [defError, msgError, objError, stateError, wordError]
         .filter((e) => e)
         .join('; ');
 
-      this._parseDone$.complete();
+      this._parseDone$.next(true);
     });
   }
 
   parse() {
-    this._defaults.parse();
-    this._messages.parse();
-    this._objects.parse();
-    this._states.parse();
-    this._words.parse();
+    this.defaults.parse();
+    this.messages.parse();
+    this.objects.parse();
+    this.states.parse();
+    this.words.parse();
   }
 
   ngOnDestroy(): void {

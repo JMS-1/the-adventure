@@ -1,16 +1,10 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { ReplaySubject, tap } from 'rxjs';
+import { TActionMap } from '../actions';
+import { State } from '../gameObject/state';
 import { ActionService } from './action.service';
 import { AssetService } from './asset.service';
 import { SettingsService } from './settings.service';
-
-const regs = {
-  actions: /^\s*actions\s*=\s*(.*)$/,
-  exits: /^\s*exits\s*=\s*(.*)$/,
-  message: /^\s*message\s*=(.*)$/,
-  persons: /^\s*persons\s*=\s*(.*)$/,
-  things: /^\s*things\s*=\s*(.*)$/,
-};
 
 @Injectable()
 export class StatesService implements OnDestroy {
@@ -18,9 +12,64 @@ export class StatesService implements OnDestroy {
 
   readonly parseDone$ = this._parseDone$.asObservable();
 
-  private _objectName?: string;
+  private _current?: State;
 
   private _areaName?: string;
+
+  states: Record<string, State> = {};
+
+  private addToMap(state: State) {
+    if (this.states[state.key])
+      throw new Error(`duplicate state '${state.key}`);
+
+    this.states[state.key] = this._current = state;
+  }
+
+  private parseActions(
+    match: string,
+    lines: string[],
+    i: number,
+    set: (actions: TActionMap) => void
+  ) {
+    const actions = this._parser.parseMultiple(match, lines, i);
+
+    set(actions[0]);
+
+    return actions[1];
+  }
+
+  private readonly _parsers: [
+    RegExp,
+    (match: RegExpMatchArray, lines: string[], i: number) => void | number
+  ][] = [
+    /* Order required. */
+    [
+      /^\$\$([^\s]+)\s*$/,
+      (m) => {
+        this._areaName = m[1];
+        this._current = undefined;
+      },
+    ],
+    [/^\$([^\s]+)\s*$/, (m) => this.addToMap(new State(this._areaName!, m[1]))],
+    /* Can have any order. */
+    [
+      /^\s*actions\s*=\s*(.*)$/,
+      (m, lines, i) =>
+        this.parseActions(m[1], lines, i, (actions) =>
+          this._current!.setActions(actions)
+        ),
+    ],
+    [
+      /^\s*exits\s*=\s*(.*)$/,
+      (m, lines, i) =>
+        this.parseActions(m[1], lines, i, (actions) =>
+          this._current!.setExits(actions)
+        ),
+    ],
+    [/^\s*message\s*=(.*)$/, (m) => this._current!.setMessage(m[1])],
+    [/^\s*persons\s*=\s*(.*)$/, (m) => this._current!.setPersons(m[1])],
+    [/^\s*things\s*=\s*(.*)$/, (m) => this._current!.setThings(m[1])],
+  ];
 
   constructor(
     private readonly _settings: SettingsService,
@@ -43,7 +92,7 @@ export class StatesService implements OnDestroy {
   }
 
   private parseFile(lines: string[]) {
-    this._objectName = undefined;
+    this._current = undefined;
 
     lines = lines
       .map((l) => (l.startsWith(';') ? '' : l.trim()))
@@ -52,52 +101,19 @@ export class StatesService implements OnDestroy {
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i];
 
-      if (line.startsWith('$$')) {
-        this._areaName = line.substring(2);
-        this._objectName = undefined;
+      let match: RegExpExecArray | null = null;
 
-        continue;
+      for (const [parse, compile] of this._parsers) {
+        match = parse.exec(line);
+
+        if (match) {
+          i = compile(match, lines, i) ?? i;
+
+          break;
+        }
       }
 
-      if (!this._areaName) throw new Error('area missing');
-
-      if (line.startsWith('$')) {
-        this._objectName = line.substring(1);
-
-        console.log(this._areaName + ':' + this._objectName);
-
-        continue;
-      }
-
-      if (!this._objectName) throw new Error('object scope missing');
-
-      let match = regs.message.exec(line);
-
-      if (match) {
-        this.processMessage(match[1]);
-      } else if ((match = regs.things.exec(line))) {
-        this.processThings(match[1]);
-      } else if ((match = regs.persons.exec(line))) {
-        this.processPersons(match[1]);
-      } else if ((match = regs.actions.exec(line))) {
-        i = this._parser.parseMultiple(match[1], lines, i)[1];
-      } else if ((match = regs.exits.exec(line))) {
-        i = this._parser.parseMultiple(match[1], lines, i)[1];
-      } else {
-        throw new Error(line);
-      }
+      if (!match) throw new Error(line);
     }
-  }
-
-  private processMessage(msg: string) {
-    console.log('message=' + msg);
-  }
-
-  private processThings(things: string) {
-    console.log('things=' + things);
-  }
-
-  private processPersons(persons: string) {
-    console.log('persons=' + persons);
   }
 }

@@ -1,4 +1,9 @@
 <div class="game">
-  <div *ngIf="game.ready$ | async">{{ game.lastError }}</div>
+  <div *ngIf="game.ready$ | async">
+    <div>{{ game.lastError }}</div>
+    <div>Number of states: {{ countMap(game.states.states) }}</div>
+    <div>Number of persons: {{ countMap(game.objects.persons) }}</div>
+    <div>Number of things: {{ countMap(game.objects.things) }}</div>
+  </div>
   <button (click)="settings.game = undefined">leave {{ settings.game }}</button>
 </div>

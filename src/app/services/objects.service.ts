@@ -1,18 +1,13 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { concat, ReplaySubject, tap } from 'rxjs';
+import { TActionMap } from '../actions';
+import { Macro } from '../gameObject/macro';
+import { Person } from '../gameObject/person';
+import { Thing } from '../gameObject/thing';
+import { ThingOrPerson, TThingOrPersonMap } from '../gameObject/thingOrPerson';
 import { ActionService } from './action.service';
 import { AssetService } from './asset.service';
 import { SettingsService } from './settings.service';
-
-const regs = {
-  actions: /^\s*actions\s*=\s*(.*)$/,
-  command: /^\s*#([^\s=]+)\s*=\s*(.*)$/,
-  message: /^\s*message\s*=(.*)$/,
-  persons: /^\s*persons\s*=\s*(.*)$/,
-  things: /^\s*things\s*=\s*(.*)$/,
-  time: /^\s*time\s*=\s*(.*)$/,
-  weight: /^\s*weight\s*=\s*(.*)$/,
-};
 
 @Injectable()
 export class ObjectsService implements OnDestroy {
@@ -20,9 +15,82 @@ export class ObjectsService implements OnDestroy {
 
   readonly parseDone$ = this._parseDone$.asObservable();
 
-  private _objectName?: string;
+  private _current?: ThingOrPerson;
 
-  private _macro = false;
+  readonly things: TThingOrPersonMap<Thing> = {};
+
+  readonly persons: TThingOrPersonMap<Thing> = {};
+
+  private _macros: TThingOrPersonMap<Macro> = {};
+
+  private _factory: new (name: string, words: string) => ThingOrPerson = Person;
+
+  private _map: TThingOrPersonMap<ThingOrPerson> = this.persons;
+
+  private addToMap(what: ThingOrPerson, map: TThingOrPersonMap<ThingOrPerson>) {
+    if (map[what.name]) throw new Error(`duplicate object '${what.name}`);
+
+    map[what.name] = this._current = what;
+  }
+
+  private parseActions(
+    match: string,
+    lines: string[],
+    i: number,
+    parse: 'parseMultiple' | 'parse',
+    set: (actions: TActionMap) => void
+  ) {
+    const actions = this._parser[parse](match, lines, i);
+
+    set(actions[0]);
+
+    return actions[1];
+  }
+
+  private readonly _parsers: [
+    RegExp,
+    (match: RegExpMatchArray, lines: string[], i: number) => void | number
+  ][] = [
+    /* Order required. */
+    [
+      /^\$\$macro\s+(.*)$/,
+      (m) => this.addToMap(new Macro(m[1], m[2]), this._macros),
+    ],
+    [
+      /^\$\$([^\s]+)\s+([^\s]+)(\s+(.*))?$/,
+      (m) => this.addToMap(new this._factory(m[2], m[3]), this._map),
+    ],
+    [
+      /^\$([^\s]+)(\s+(.*))?$/,
+      (m) => this.addToMap(new this._factory(m[1], m[2]), this._map),
+    ],
+    /* Can have any order. */
+    [
+      /^\s*actions\s*=\s*(.*)$/,
+      (m, lines, i) =>
+        this.parseActions(m[1], lines, i, 'parseMultiple', (actions) =>
+          this._current!.setActions(actions)
+        ),
+    ],
+    [
+      /^\s*#([^\s=]+)\s*=\s*(.*)$/,
+      (m, lines, i) =>
+        this.parseActions(m[2], lines, i, 'parse', (actions) =>
+          this._current!.addCommand(m[1], actions[''])
+        ),
+    ],
+    [/^\s*message\s*=(.*)$/, (m) => this._current!.setMessage(m[1])],
+    [/^\s*persons\s*=\s*(.*)$/, (m) => this._current!.setPersons(m[1])],
+    [/^\s*things\s*=\s*(.*)$/, (m) => this._current!.setThings(m[1])],
+    [
+      /^\s*time\s*=\s*(.*)$/,
+      (m, lines, i) =>
+        this.parseActions(m[1], lines, i, 'parseMultiple', (actions) =>
+          this._current!.setTimes(actions)
+        ),
+    ],
+    [/^\s*weight\s*=\s*(.*)$/, (m) => this._current!.setWeight(m[1])],
+  ];
 
   constructor(
     private readonly _settings: SettingsService,
@@ -47,7 +115,8 @@ export class ObjectsService implements OnDestroy {
   }
 
   private parseFile(lines: string[]) {
-    this._objectName = undefined;
+    this._current = undefined;
+    this._macros = {};
 
     lines = lines
       .map((l) => (l.startsWith(';') ? '' : l.trim()))
@@ -56,57 +125,22 @@ export class ObjectsService implements OnDestroy {
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i];
 
-      if (line.startsWith('$$')) {
-        this._objectName = line.substring(2);
-        this._macro = true;
+      let match: RegExpExecArray | null = null;
 
-        continue;
+      for (const [parse, compile] of this._parsers) {
+        match = parse.exec(line);
+
+        if (match) {
+          i = compile(match, lines, i) ?? i;
+
+          break;
+        }
       }
 
-      if (line.startsWith('$')) {
-        this._objectName = line.substring(1);
-        this._macro = false;
-
-        continue;
-      }
-
-      if (!this._objectName) throw new Error('object scope missing');
-
-      let match = regs.message.exec(line);
-
-      if (match) {
-        this.processMessage(match[1]);
-      } else if ((match = regs.weight.exec(line))) {
-        this.processWeight(match[1]);
-      } else if ((match = regs.things.exec(line))) {
-        this.processThings(match[1]);
-      } else if ((match = regs.persons.exec(line))) {
-        this.processPersons(match[1]);
-      } else if ((match = regs.actions.exec(line))) {
-        i = this._parser.parseMultiple(match[1], lines, i)[1];
-      } else if ((match = regs.time.exec(line))) {
-        i = this._parser.parseMultiple(match[1], lines, i)[1];
-      } else if ((match = regs.command.exec(line))) {
-        i = this._parser.parse(match[2], lines, i)[1];
-      } else {
-        throw new Error(line);
-      }
+      if (!match) throw new Error(line);
     }
-  }
 
-  private processMessage(msg: string) {
-    console.log('message=' + msg);
-  }
-
-  private processWeight(weight: string) {
-    console.log('weight=' + weight);
-  }
-
-  private processThings(things: string) {
-    console.log('things=' + things);
-  }
-
-  private processPersons(persons: string) {
-    console.log('persons=' + persons);
+    this._factory = Thing;
+    this._map = this.things;
   }
 }

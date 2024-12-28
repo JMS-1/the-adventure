@@ -30,6 +30,10 @@ export class GameRouteComponent implements OnInit {
     public readonly game: GameService
   ) {}
 
+  countMap<T>(map: Record<string, T>) {
+    return Object.keys(map).length;
+  }
+
   ngOnInit(): void {
     this.game.parse();
   }

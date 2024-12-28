@@ -1,19 +1,10 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { ReplaySubject, tap } from 'rxjs';
 import { AssetService } from './asset.service';
+import { Command, CommandMap } from './command';
 import { SettingsService } from './settings.service';
 
 const wordReg = /^#([^\s]+)\s*=\s*\((.+)\)$/;
-
-type CommandMap = Record<string, Command>;
-
-class Command {
-  objectKeys = new Set<string>();
-
-  keys = new Set<string>();
-
-  readonly next: CommandMap = {};
-}
 
 @Injectable()
 export class WordsService implements OnDestroy {
