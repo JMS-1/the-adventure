@@ -23,7 +23,11 @@ export class ObjectsService implements OnDestroy {
 
   private _macros: TThingOrPersonMap<Macro> = {};
 
-  private _factory: new (name: string, words: string) => ThingOrPerson = Person;
+  private _factory: new (
+    name: string,
+    words: string,
+    macro: Macro | null
+  ) => ThingOrPerson = Person;
 
   private _map: TThingOrPersonMap<ThingOrPerson> = this.persons;
 
@@ -58,11 +62,19 @@ export class ObjectsService implements OnDestroy {
     ],
     [
       /^\$\$([^\s]+)\s+([^\s]+)(\s+(.*))?$/,
-      (m) => this.addToMap(new this._factory(m[2], m[3]), this._map),
+      (m) => {
+        const macro = this._macros[m[1]];
+
+        if (!macro) throw new Error(`macro ${m[1]} not found`);
+
+        this.addToMap(new this._factory(m[2], m[3], macro), this._map);
+
+        this._current = undefined;
+      },
     ],
     [
       /^\$([^\s]+)(\s+(.*))?$/,
-      (m) => this.addToMap(new this._factory(m[1], m[2]), this._map),
+      (m) => this.addToMap(new this._factory(m[1], m[2], null), this._map),
     ],
     /* Can have any order. */
     [

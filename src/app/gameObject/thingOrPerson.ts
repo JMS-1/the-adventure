@@ -1,5 +1,6 @@
 import { GameObject } from '.';
 import { Action, TActionMap } from '../actions';
+import { Macro } from './macro';
 import { Weight } from './weight';
 
 export abstract class ThingOrPerson extends GameObject {
@@ -11,10 +12,16 @@ export abstract class ThingOrPerson extends GameObject {
 
   weight = new Weight('(0,0,0)');
 
-  constructor(name: string, words: string) {
-    super(name);
+  constructor(name: string, words: string, macro: Macro | null) {
+    super(name, macro);
 
     this.words = new Set(GameObject.parseWords(words));
+
+    if (macro) {
+      this.commands = { ...macro.commands };
+      this.times = { ...macro.times };
+      this.weight = macro.weight;
+    }
   }
 
   setWeight(weight: string) {

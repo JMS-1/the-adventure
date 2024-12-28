@@ -5,7 +5,7 @@ export class State extends GameObject {
   exits: TActionMap = {};
 
   constructor(public readonly area: string, name: string) {
-    super(name);
+    super(name, null);
 
     if (!area) throw new Error(`state ${name} has no area`);
   }

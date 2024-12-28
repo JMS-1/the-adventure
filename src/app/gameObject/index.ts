@@ -1,4 +1,5 @@
 import { TActionMap } from '../actions';
+import { Macro } from './macro';
 
 export abstract class GameObject {
   message = '';
@@ -9,16 +10,21 @@ export abstract class GameObject {
 
   persons = new Set<string>();
 
-  constructor(public readonly name: string) {}
+  constructor(public readonly name: string, macro: Macro | null) {
+    if (macro) {
+      this.actions = { ...macro.actions };
+      this.message = macro.message;
+      this.persons = new Set(macro.persons);
+      this.things = new Set(macro.things);
+    }
+  }
 
   static parseWords(words: string) {
     return words?.split(',').filter((w) => w);
   }
 
   setMessage(msg: string) {
-    if (this.message) throw new Error(`duplicate message for ${this.name}`);
-
-    this.message = msg;
+    this.message = msg.trim();
   }
 
   setActions(actions: TActionMap) {
