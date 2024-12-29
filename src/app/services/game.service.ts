@@ -79,13 +79,15 @@ export class GameService implements OnDestroy {
   }
 
   private readonly setup = (): void => {
-    for (const person of Object.values(this.objects.persons))
-      person.validate(this);
+    const objects = [
+      ...Object.values(this.objects.persons),
+      ...Object.values(this.objects.things),
+      ...Object.values(this.states.states),
+    ];
 
-    for (const thing of Object.values(this.objects.things))
-      thing.validate(this);
+    for (const gameObject of objects) gameObject.loadDefaults(this);
 
-    for (const state of Object.values(this.states.states)) state.validate(this);
+    for (const gameObject of objects) gameObject.validate(this);
 
     this.state = this.states.states[this.defaults.state];
 

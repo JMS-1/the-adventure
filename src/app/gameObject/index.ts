@@ -52,11 +52,13 @@ export abstract class GameObject {
     this.addToObjectList(persons, this.persons);
   }
 
-  validate(game: GameService) {
+  loadDefaults(game: GameService) {
     if (!this.message) this.message = game.defaults.message || '*';
 
     this.getMessage(game.messages);
+  }
 
+  validate(game: GameService) {
     for (const thing of this.things)
       if (!game.objects.things[thing])
         throw new Error(`${this.name}: unknown thing ${thing}`);
