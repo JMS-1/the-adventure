@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AssetService } from '../services/asset.service';
 import { DefaultsService } from '../services/defaults.service';
 import { GameService } from '../services/game.service';
+import { InfoService } from '../services/info.service';
 import { MessagesService } from '../services/messages.service';
 import { ObjectsService } from '../services/objects.service';
 import { SettingsService } from '../services/settings.service';
@@ -16,6 +17,7 @@ import { WordsService } from '../services/words.service';
     AssetService,
     DefaultsService,
     GameService,
+    InfoService,
     MessagesService,
     ObjectsService,
     StatesService,

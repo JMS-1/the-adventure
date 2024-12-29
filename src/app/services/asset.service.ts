@@ -10,8 +10,8 @@ export class AssetService {
     private readonly _settings: SettingsService
   ) {}
 
-  download(name: string) {
-    if (this._settings.dosNames) {
+  download(name: string, explicit = false) {
+    if (this._settings.dosNames && !explicit) {
       const split = name.split('.');
 
       name = `${split[0]}.${split[1].substring(0, 3)}`.toUpperCase();

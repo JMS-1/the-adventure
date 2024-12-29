@@ -2,6 +2,7 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { combineLatest, ReplaySubject, tap } from 'rxjs';
 import { State } from '../gameObject/state';
 import { DefaultsService } from './defaults.service';
+import { InfoService } from './info.service';
 import { MessagesService } from './messages.service';
 import { ObjectsService } from './objects.service';
 import { StatesService } from './states.service';
@@ -18,6 +19,7 @@ export class GameService implements OnDestroy {
   state?: State;
 
   constructor(
+    public readonly info: InfoService,
     public readonly defaults: DefaultsService,
     public readonly messages: MessagesService,
     public readonly objects: ObjectsService,
@@ -30,10 +32,18 @@ export class GameService implements OnDestroy {
       objects.parseDone$,
       states.parseDone$,
       words.parseDone$,
+      info.parseDone$,
     ])
       .pipe(
-        tap(([defError, msgError, objError, stateError, wordError]) => {
-          const error = [defError, msgError, objError, stateError, wordError]
+        tap(([defError, msgError, objError, stateError, wordError, info]) => {
+          const error = [
+            defError,
+            msgError,
+            objError,
+            stateError,
+            wordError,
+            info,
+          ]
             .filter((e) => e)
             .join('; ');
 
@@ -57,6 +67,7 @@ export class GameService implements OnDestroy {
 
   parse() {
     this.defaults.parse();
+    this.info.parse();
     this.messages.parse();
     this.objects.parse();
     this.states.parse();
