@@ -9,7 +9,7 @@ jobs:
   build-frontend:
     strategy:
       matrix:
-        node-version: [24]
+        node-version: [22]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
