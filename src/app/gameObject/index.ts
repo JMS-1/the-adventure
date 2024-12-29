@@ -26,7 +26,7 @@ export abstract class GameObject {
   }
 
   setMessage(msg: string) {
-    this.message = msg;
+    this.message = msg.trim();
   }
 
   setActions(actions: TActionMap) {
@@ -54,6 +54,8 @@ export abstract class GameObject {
 
   validate(game: GameService) {
     if (!this.message) this.message = game.defaults.message || '*';
+
+    this.getMessage(game.messages);
 
     for (const thing of this.things)
       if (!game.objects.things[thing])
