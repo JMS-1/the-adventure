@@ -1,4 +1,6 @@
 import { Action } from '.';
+import { GameObject } from '../gameObject';
+import { GameService } from '../services/game.service';
 import { ParseContext } from '../services/parseContext';
 
 export class MessageAction extends Action {
@@ -15,5 +17,11 @@ export class MessageAction extends Action {
     context.skip(match[0].length);
 
     return new MessageAction(match[2], !!match[1]);
+  }
+
+  override validate(game: GameService, scope: GameObject): void {
+    super.validate(game, scope);
+
+    scope.getMessage(game.messages, this.message);
   }
 }

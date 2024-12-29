@@ -26,6 +26,8 @@ export class TestStateAction extends Action {
 
     this.thingOrPerson = game.objects.getThingOrPerson(this.what);
 
+    this.thingOrPerson.getMessage(game.messages, this.message);
+
     this.actions.forEach((a) => a.validate(game, scope));
   }
 }

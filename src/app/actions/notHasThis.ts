@@ -1,5 +1,6 @@
 import { Action } from '.';
 import { GameObject } from '../gameObject';
+import { Thing } from '../gameObject/thing';
 import { GameService } from '../services/game.service';
 import { ParseContext } from '../services/parseContext';
 
@@ -16,6 +17,9 @@ export class NotHasThisAction extends Action {
 
   override validate(game: GameService, scope: GameObject): void {
     super.validate(game, scope);
+
+    if (!(scope instanceof Thing))
+      throw new Error(`${scope.name} is not a thing`);
 
     this.actions.forEach((a) => a.validate(game, scope));
   }

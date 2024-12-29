@@ -1,5 +1,6 @@
 import { TActionMap } from '../actions';
 import { GameService } from '../services/game.service';
+import { MessagesService } from '../services/messages.service';
 import { Macro } from './macro';
 
 export abstract class GameObject {
@@ -64,5 +65,17 @@ export abstract class GameObject {
 
     for (const actions of Object.values(this.actions))
       actions.forEach((a) => a.validate(game, this));
+  }
+
+  abstract getMessageKey(message: string): string;
+
+  getMessage(messages: MessagesService, message = this.message) {
+    if (message === '*') return;
+
+    const choices = messages.messageMap[this.getMessageKey(message)];
+
+    if (!choices) throw new Error(`${this.name}: no message ${message}`);
+
+    return choices;
   }
 }

@@ -20,6 +20,8 @@ export class TestMessageAction extends Action {
   override validate(game: GameService, scope: GameObject): void {
     super.validate(game, scope);
 
+    scope.getMessage(game.messages, this.message);
+
     this.actions.forEach((a) => a.validate(game, scope));
   }
 }

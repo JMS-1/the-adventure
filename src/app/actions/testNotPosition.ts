@@ -1,11 +1,14 @@
 import { Action } from '.';
 import { GameObject } from '../gameObject';
+import { State } from '../gameObject/state';
 import { GameService } from '../services/game.service';
 import { ParseContext } from '../services/parseContext';
 
 export class TestNotPositionAction extends Action {
   public static readonly Pattern =
     /^(#)?if_notposition\s+\$\$([^$]+)\$([^\s]+)/;
+
+  target?: State;
 
   private constructor(
     public readonly area: string,
@@ -27,6 +30,10 @@ export class TestNotPositionAction extends Action {
 
   override validate(game: GameService, scope: GameObject): void {
     super.validate(game, scope);
+
+    this.target = game.states.states[`$$${this.area}$${this.room}`];
+
+    if (!this.target) throw new Error(`${this.area}: no room ${this.room}`);
 
     this.actions.forEach((a) => a.validate(game, scope));
   }

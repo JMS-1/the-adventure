@@ -51,6 +51,10 @@ export abstract class ThingOrPerson extends GameObject {
     for (const times of Object.values(this.times))
       times.forEach((a) => a.validate(game, this));
   }
+
+  override getMessageKey(message: string) {
+    return `things.${this.name}_${message}`;
+  }
 }
 
 export type TThingOrPersonMap<T extends ThingOrPerson> = Record<string, T>;

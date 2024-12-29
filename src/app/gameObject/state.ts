@@ -28,4 +28,8 @@ export class State extends GameObject {
     for (const exits of Object.values(this.exits))
       exits.forEach((a) => a.validate(game, this));
   }
+
+  getMessageKey(message: string) {
+    return `${this.area}.${this.name}_${message}`;
+  }
 }
