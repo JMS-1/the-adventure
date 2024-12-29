@@ -1,0 +1,16 @@
+export enum systemMessages {
+  Clock1 = 'CLOCK1',
+  Clock2 = 'CLOCK2',
+  Day0 = 'DAY0',
+  Day1 = 'DAY1',
+  Day2 = 'DAY2',
+  Day3 = 'DAY3',
+  Day4 = 'DAY4',
+  Day5 = 'DAY5',
+  Day6 = 'DAY6',
+  Heavy = 'HEAVY',
+  NoAction = 'NOACTION',
+  NoComm = 'NOCOMM',
+  NoMove = 'NOMOVE',
+  NoWay = 'NOWAY',
+}

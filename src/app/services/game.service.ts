@@ -1,6 +1,9 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { combineLatest, ReplaySubject, tap } from 'rxjs';
-import { State } from '../gameObject/state';
+import { combineLatest, ReplaySubject, Subject, tap } from 'rxjs';
+import { Player } from '../gameObject/player';
+import { stateOperations } from '../gameObject/stateOperations';
+import { Time } from '../gameObject/time';
+import { Weight } from '../gameObject/weight';
 import { DefaultsService } from './defaults.service';
 import { InfoService } from './info.service';
 import { MessagesService } from './messages.service';
@@ -14,9 +17,13 @@ export class GameService implements OnDestroy {
 
   readonly ready$ = this._parseDone$.asObservable();
 
+  private readonly _output$ = new Subject<string>();
+
+  readonly output$ = this._output$.asObservable();
+
   lastError = '';
 
-  state?: State;
+  player?: Player;
 
   constructor(
     public readonly info: InfoService,
@@ -76,6 +83,7 @@ export class GameService implements OnDestroy {
 
   ngOnDestroy(): void {
     this._parseDone$.complete();
+    this._output$.complete();
   }
 
   private readonly setup = (): void => {
@@ -89,9 +97,19 @@ export class GameService implements OnDestroy {
 
     for (const gameObject of objects) gameObject.validate(this);
 
-    this.state = this.states.states[this.defaults.state];
+    const state = this.states.states[this.defaults.state];
 
-    if (!this.state)
+    if (!state)
       throw new Error(`initial state '${this.defaults.state}' not found`);
+
+    this.player = new Player(
+      state,
+      new Weight(this.defaults.weight),
+      new Time(this.defaults.time)
+    );
+
+    this._output$.next(this.info.intro);
+
+    this.player.state.run(stateOperations.stay, this);
   };
 }

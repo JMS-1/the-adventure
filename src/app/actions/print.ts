@@ -23,8 +23,6 @@ export class PrintAction extends Action {
   }
 
   override validate(game: GameService, scope: GameObject): void {
-    super.validate(game, scope);
-
     const key = `${this.area || (scope instanceof State ? scope.area : '')}.${
       this.message
     }`;
@@ -32,5 +30,10 @@ export class PrintAction extends Action {
     this.choices = game.messages.messageMap[key];
 
     if (!this.choices) throw new Error(`no message ${key}`);
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  protected override onRun(scope: GameObject, game: GameService): void {
+    throw new Error(`${typeof this} not yet implemented`);
   }
 }

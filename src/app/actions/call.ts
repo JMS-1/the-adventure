@@ -25,13 +25,15 @@ export class CallAction extends Action {
     return new CallAction(match[2], match[3], !!match[1]);
   }
 
-  override validate(game: GameService, scope: GameObject): void {
-    super.validate(game, scope);
-
+  override validate(game: GameService): void {
     this.thingOrPerson = game.objects.getThingOrPerson(this.what);
     this.actions = this.thingOrPerson.actions[this.action];
 
     if (!this.actions)
       throw new Error(`${this.what}: no action ${this.action}`);
+  }
+
+  protected override onRun(scope: GameObject, game: GameService): void {
+    Action.run(this.actions!, this.thingOrPerson!, game);
   }
 }

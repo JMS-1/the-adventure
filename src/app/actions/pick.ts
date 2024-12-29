@@ -23,9 +23,12 @@ export class PickAction extends Action {
     return new PickAction(match[3], !!match[1], !!match[2]);
   }
 
-  override validate(game: GameService, scope: GameObject): void {
-    super.validate(game, scope);
-
+  override validate(game: GameService): void {
     this.thingOrPerson = game.objects.getThingOrPerson(this.what);
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  protected override onRun(scope: GameObject, game: GameService): void {
+    throw new Error(`${typeof this} not yet implemented`);
   }
 }

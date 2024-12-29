@@ -18,10 +18,13 @@ export class TestMessageAction extends Action {
   }
 
   override validate(game: GameService, scope: GameObject): void {
-    super.validate(game, scope);
-
     scope.getMessage(game.messages, this.message);
 
     this.actions.forEach((a) => a.validate(game, scope));
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  protected override onRun(scope: GameObject, game: GameService): void {
+    throw new Error(`${typeof this} not yet implemented`);
   }
 }

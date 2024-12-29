@@ -28,12 +28,15 @@ export class TestPositionAction extends Action {
   }
 
   override validate(game: GameService, scope: GameObject): void {
-    super.validate(game, scope);
-
     this.target = game.states.states[`$$${this.area}$${this.room}`];
 
     if (!this.target) throw new Error(`${this.area}: no room ${this.room}`);
 
     this.actions.forEach((a) => a.validate(game, scope));
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  protected override onRun(scope: GameObject, game: GameService): void {
+    throw new Error(`${typeof this} not yet implemented`);
   }
 }

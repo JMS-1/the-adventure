@@ -5,12 +5,6 @@
     <div>Number of persons: {{ countMap(game.objects.persons) }}</div>
     <div>Number of things: {{ countMap(game.objects.things) }}</div>
     <p></p>
-    <div>State: {{ game.defaults.state }}</div>
-    <div>
-      Time: {{ game.defaults.time.times | json }}/{{
-        game.defaults.time.deltas | json
-      }}
-    </div>
     <div>Message: {{ game.defaults.message }}</div>
     <div>Weight: {{ game.defaults.weight.weights | json }}</div>
     <div>Actions: {{ mapKeys(game.defaults.actions) | json }}</div>
@@ -18,5 +12,11 @@
     <div>Keys: {{ mapKeys(game.defaults.keyMap) | json }}</div>
     <div>Commands: {{ mapKeys(game.defaults.actions) | json }}</div>
   </div>
+  <div>
+    <div>Time = {{ game.player?.time }}</div>
+    <div>State = {{ game.player?.state?.key }}</div>
+    <div>Weight = {{ game.player?.weight }}</div>
+  </div>
   <button (click)="settings.game = undefined">leave {{ settings.game }}</button>
+  <pre *ngIf="game.player" class="output">{{ output }}</pre>
 </div>

@@ -1,6 +1,7 @@
 import { GameObject } from '.';
-import { TActionMap } from '../actions';
+import { Action, TActionMap } from '../actions';
 import { GameService } from '../services/game.service';
+import { stateOperations } from './stateOperations';
 
 export class State extends GameObject {
   exits: TActionMap = {};
@@ -42,5 +43,9 @@ export class State extends GameObject {
 
   getMessageKey(message: string) {
     return `${this.area}.${this.name}_${message}`;
+  }
+
+  run(operation: stateOperations, game: GameService) {
+    return Action.runAction(operation.toString(), this.actions, this, game);
   }
 }

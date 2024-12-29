@@ -24,8 +24,6 @@ export class MoveAction extends Action {
   }
 
   override validate(game: GameService, scope: GameObject): void {
-    super.validate(game, scope);
-
     this.target =
       game.states.states[
         `$$${this.area || (scope instanceof State ? scope.area : '')}$${
@@ -34,5 +32,10 @@ export class MoveAction extends Action {
       ];
 
     if (!this.target) throw new Error(`${this.area}: no room ${this.room}`);
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  protected override onRun(scope: GameObject, game: GameService): void {
+    throw new Error(`${typeof this} not yet implemented`);
   }
 }

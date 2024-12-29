@@ -4,6 +4,20 @@ import { GameService } from '../services/game.service';
 export type TActionMap = Record<string, Action[]>;
 
 export abstract class Action {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
-  validate(game: GameService, scope: GameObject): void {}
+  abstract validate(game: GameService, scope: GameObject): void;
+
+  protected abstract onRun(scope: GameObject, game: GameService): void;
+
+  static run(actions: Action[], scope: GameObject, game: GameService) {
+    actions.forEach((a) => a.onRun(scope, game));
+  }
+
+  static runAction(
+    action: string,
+    actions: TActionMap,
+    scope: GameObject,
+    game: GameService
+  ) {
+    return Action.run(actions[action] ?? [], scope, game);
+  }
 }

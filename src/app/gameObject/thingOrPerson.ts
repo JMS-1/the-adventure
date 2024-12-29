@@ -4,6 +4,8 @@ import { GameService } from '../services/game.service';
 import { Macro } from './macro';
 import { Weight } from './weight';
 
+const timeKeyReg = /^(\+)?(\d{1,3})$/;
+
 export abstract class ThingOrPerson extends GameObject {
   words: Set<string>;
 
@@ -30,10 +32,16 @@ export abstract class ThingOrPerson extends GameObject {
   }
 
   setTimes(times: TActionMap) {
-    for (const time of Object.keys(times))
+    for (const time of Object.keys(times)) {
+      const match = timeKeyReg.exec(time);
+
+      if (!match) throw new Error(`${this.name}: inbvalid time ${time}`);
+
       if (this.times[time])
-        throw new Error(`duplicate time ${this.name}.${time}`);
-      else this.times[time] = times[time];
+        throw new Error(`${this.name}: duplicate time ${time}`);
+
+      this.times[time] = times[time];
+    }
   }
 
   addCommand(command: string, actions: Action[]) {

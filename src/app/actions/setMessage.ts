@@ -23,11 +23,14 @@ export class SetMessageAction extends Action {
     return new SetMessageAction(match[2], match[3], !!match[1]);
   }
 
-  override validate(game: GameService, scope: GameObject): void {
-    super.validate(game, scope);
-
+  override validate(game: GameService): void {
     this.thingOrPerson = game.objects.getThingOrPerson(this.what);
 
     this.thingOrPerson.getMessage(game.messages, this.message);
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  protected override onRun(scope: GameObject, game: GameService): void {
+    throw new Error(`${typeof this} not yet implemented`);
   }
 }

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { AssetService } from '../services/asset.service';
 import { DefaultsService } from '../services/defaults.service';
 import { GameService } from '../services/game.service';
@@ -26,11 +27,23 @@ import { WordsService } from '../services/words.service';
   templateUrl: './game-route.component.html',
   styleUrl: './game-route.component.scss',
 })
-export class GameRouteComponent implements OnInit {
+export class GameRouteComponent implements OnInit, OnDestroy {
+  output = '';
+
+  private readonly _outputSubscription: Subscription;
+
   constructor(
     public readonly settings: SettingsService,
     public readonly game: GameService
-  ) {}
+  ) {
+    this._outputSubscription = game.output$.subscribe(
+      (o) => (this.output += `${o}\n`)
+    );
+  }
+
+  ngOnDestroy(): void {
+    this._outputSubscription?.unsubscribe();
+  }
 
   countMap<T>(map: Record<string, T>) {
     return this.mapKeys(map).length;
