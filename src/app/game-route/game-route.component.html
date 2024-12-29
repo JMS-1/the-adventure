@@ -16,7 +16,7 @@
     <div>Actions: {{ mapKeys(game.defaults.actions) | json }}</div>
     <div>Exits: {{ mapKeys(game.defaults.exits) | json }}</div>
     <div>Keys: {{ mapKeys(game.defaults.keyMap) | json }}</div>
-    <div>Commands: {{ mapKeys(game.defaults.commands) | json }}</div>
+    <div>Commands: {{ mapKeys(game.defaults.actions) | json }}</div>
   </div>
   <button (click)="settings.game = undefined">leave {{ settings.game }}</button>
 </div>

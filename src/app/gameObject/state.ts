@@ -23,6 +23,13 @@ export class State extends GameObject {
   }
 
   override validate(game: GameService): void {
+    for (const exit of Object.keys(game.defaults.exits))
+      if (!this.exits[exit]) this.exits[exit] = game.defaults.exits[exit];
+
+    for (const action of Object.keys(game.defaults.actions))
+      if (!this.actions[action])
+        this.actions[action] = game.defaults.actions[action];
+
     super.validate(game);
 
     for (const exits of Object.values(this.exits))

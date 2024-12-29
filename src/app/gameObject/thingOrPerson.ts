@@ -43,6 +43,10 @@ export abstract class ThingOrPerson extends GameObject {
   }
 
   override validate(game: GameService): void {
+    for (const command of Object.keys(game.defaults.commands))
+      if (!this.commands[command])
+        this.commands[command] = game.defaults.commands[command];
+
     super.validate(game);
 
     for (const commands of Object.values(this.commands))
