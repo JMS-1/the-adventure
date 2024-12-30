@@ -19,8 +19,17 @@ describe('GameRouteComponent', () => {
       imports: [GameRouteComponent],
       providers: [
         { provide: SettingsService, useValue: {} },
-        // eslint-disable-next-line @typescript-eslint/no-empty-function
-        { provide: GameService, useValue: { parse: () => {}, output$: of() } },
+
+        {
+          provide: GameService,
+          useValue: {
+            parse: () => {
+              /* */
+            },
+            output$: of(),
+            player: { state: { key: 'test' }, Inventory: new Set() },
+          },
+        },
       ],
     }).compileComponents();
 

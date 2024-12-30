@@ -12,9 +12,9 @@ export class MoveAction extends Action {
   private _target!: State;
 
   private constructor(
-    private readonly _area: string | null,
-    private readonly _room: string,
-    private readonly _self: boolean
+    public readonly area: string | null,
+    public readonly room: string,
+    public readonly self: boolean
   ) {
     super();
   }
@@ -28,19 +28,19 @@ export class MoveAction extends Action {
   override validate(game: GameService, scope: GameObject): void {
     this._target =
       game.states.states[
-        `$$${this._area || (scope instanceof State ? scope.area : '')}$${
-          this._room
+        `$$${this.area || (scope instanceof State ? scope.area : '')}$${
+          this.room
         }`
       ];
 
-    if (!this._target) throw new Error(`${this._area}: no room ${this._room}`);
+    if (!this._target) throw new Error(`${this.area}: no room ${this.room}`);
 
-    if (this._self && !(scope instanceof ThingOrPerson))
+    if (this.self && !(scope instanceof ThingOrPerson))
       throw new Error(`${scope.name} not a thing or person`);
   }
 
   protected override onRun(scope: GameObject, game: GameService): void {
-    if (this._self) {
+    if (this.self) {
       game.debug(`move ${scope.key} to ${this._target.key}`);
 
       game.player.removeThingOrPersonFromCarriers(scope as ThingOrPerson);
