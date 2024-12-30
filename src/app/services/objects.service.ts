@@ -17,9 +17,7 @@ export class ObjectsService implements OnDestroy {
 
   private _current?: ThingOrPerson;
 
-  readonly things: TThingOrPersonMap<Thing> = {};
-
-  readonly persons: TThingOrPersonMap<Thing> = {};
+  readonly thingOrPerson: TThingOrPersonMap<ThingOrPerson> = {};
 
   private _macros: TThingOrPersonMap<Macro> = {};
 
@@ -29,9 +27,7 @@ export class ObjectsService implements OnDestroy {
     macro: Macro | null
   ) => ThingOrPerson = Person;
 
-  private _map: TThingOrPersonMap<ThingOrPerson> = this.persons;
-
-  private addToMap(what: ThingOrPerson, map: TThingOrPersonMap<ThingOrPerson>) {
+  private addToMap(what: ThingOrPerson, map = this.thingOrPerson) {
     if (map[what.name]) throw new Error(`duplicate object '${what.name}`);
 
     map[what.name] = this._current = what;
@@ -67,14 +63,14 @@ export class ObjectsService implements OnDestroy {
 
         if (!macro) throw new Error(`macro ${m[1]} not found`);
 
-        this.addToMap(new this._factory(m[2], m[3], macro), this._map);
+        this.addToMap(new this._factory(m[2], m[3], macro));
 
         this._current = undefined;
       },
     ],
     [
       /^\$([^\s]+)(\s+(.*))?$/,
-      (m) => this.addToMap(new this._factory(m[1], m[2], null), this._map),
+      (m) => this.addToMap(new this._factory(m[1], m[2], null)),
     ],
     /* Can have any order. */
     [
@@ -153,16 +149,13 @@ export class ObjectsService implements OnDestroy {
     }
 
     this._factory = Thing;
-    this._map = this.things;
   }
 
   getThingOrPerson(name: string) {
-    const thing = this.things[name];
-    const person = this.persons[name];
+    const thingOrPerson = this.thingOrPerson[name];
 
-    if (!thing === !person)
-      throw new Error(`can not find thing or person ${name}`);
+    if (!thingOrPerson) throw new Error(`can not find thing or person ${name}`);
 
-    return thing ?? person;
+    return thingOrPerson;
   }
 }

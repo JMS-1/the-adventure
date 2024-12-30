@@ -22,8 +22,7 @@ export class StartAction extends Action {
       throw new Error(`${scope.name} is not a thing or person`);
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   protected override onRun(scope: GameObject, game: GameService): void {
-    throw new Error(`${typeof this} not yet implemented`);
+    game.player!.startTimers(scope as ThingOrPerson);
   }
 }

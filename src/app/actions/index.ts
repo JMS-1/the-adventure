@@ -9,7 +9,7 @@ export abstract class Action {
   protected abstract onRun(scope: GameObject, game: GameService): void;
 
   static run(actions: Action[], scope: GameObject, game: GameService) {
-    actions.forEach((a) => a.onRun(scope, game));
+    actions.forEach((a) => game.player?.dead === false && a.onRun(scope, game));
   }
 
   static runAction(

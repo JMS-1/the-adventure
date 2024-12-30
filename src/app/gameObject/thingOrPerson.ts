@@ -35,7 +35,7 @@ export abstract class ThingOrPerson extends GameObject {
     for (const time of Object.keys(times)) {
       const match = timeKeyReg.exec(time);
 
-      if (!match) throw new Error(`${this.name}: inbvalid time ${time}`);
+      if (!match) throw new Error(`${this.name}: invalid time ${time}`);
 
       if (this.times[time])
         throw new Error(`${this.name}: duplicate time ${time}`);

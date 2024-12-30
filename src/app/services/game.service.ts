@@ -87,16 +87,6 @@ export class GameService implements OnDestroy {
   }
 
   private readonly setup = (): void => {
-    const objects = [
-      ...Object.values(this.objects.persons),
-      ...Object.values(this.objects.things),
-      ...Object.values(this.states.states),
-    ];
-
-    for (const gameObject of objects) gameObject.loadDefaults(this);
-
-    for (const gameObject of objects) gameObject.validate(this);
-
     const state = this.states.states[this.defaults.state];
 
     if (!state)
@@ -105,8 +95,18 @@ export class GameService implements OnDestroy {
     this.player = new Player(
       state,
       new Weight(this.defaults.weight),
-      new Time(this.defaults.time)
+      new Time(this.defaults.time),
+      this
     );
+
+    const objects = [
+      ...Object.values(this.objects.thingOrPerson),
+      ...Object.values(this.states.states),
+    ];
+
+    for (const gameObject of objects) gameObject.loadDefaults(this);
+
+    for (const gameObject of objects) gameObject.validate(this);
 
     this._output$.next(this.info.intro);
 

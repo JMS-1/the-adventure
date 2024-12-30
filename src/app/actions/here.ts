@@ -28,6 +28,10 @@ export class HereAction extends Action {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   protected override onRun(scope: GameObject, game: GameService): void {
-    throw new Error(`${typeof this} not yet implemented`);
+    throw new Error(
+      `${
+        (this as unknown as { constructor: { name: string } }).constructor.name
+      } not yet implemented`
+    );
   }
 }

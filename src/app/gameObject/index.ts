@@ -1,7 +1,7 @@
 import { TActionMap } from '../actions';
 import { GameService } from '../services/game.service';
 import { MessagesService } from '../services/messages.service';
-import { Macro } from './macro';
+import { type Macro } from './macro';
 
 export abstract class GameObject {
   message = '';
@@ -60,12 +60,8 @@ export abstract class GameObject {
 
   validate(game: GameService) {
     for (const thing of this.things)
-      if (!game.objects.things[thing])
-        throw new Error(`${this.name}: unknown thing ${thing}`);
-
-    for (const person of this.persons)
-      if (!game.objects.persons[person])
-        throw new Error(`${this.name}: unknown person ${person}`);
+      if (!game.objects.thingOrPerson[thing])
+        throw new Error(`${this.name}: unknown thing or person ${thing}`);
 
     for (const actions of Object.values(this.actions))
       actions.forEach((a) => a.validate(game, this));
