@@ -7,7 +7,7 @@ import { ParseContext } from '../services/parseContext';
 export class PickAction extends Action {
   public static readonly Pattern = /^(@)?(#)?<([^,)\s]+)/;
 
-  thingOrPerson?: ThingOrPerson;
+  private _thingOrPerson!: ThingOrPerson;
 
   private constructor(
     public readonly what: string,
@@ -23,16 +23,23 @@ export class PickAction extends Action {
     return new PickAction(match[3], !!match[1], !!match[2]);
   }
 
-  override validate(game: GameService): void {
-    this.thingOrPerson = game.objects.getThingOrPerson(this.what);
+  override validate(game: GameService, scope: GameObject): void {
+    this._thingOrPerson = game.objects.getThingOrPerson(this.what);
+
+    if (this.self && !(scope instanceof ThingOrPerson))
+      throw new Error(`${scope.name} is no a thing or person`);
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   protected override onRun(scope: GameObject, game: GameService): void {
-    throw new Error(
-      `${
-        (this as unknown as { constructor: { name: string } }).constructor.name
-      } not yet implemented`
-    );
+    if (this.self) {
+      game.debug(`add ${this._thingOrPerson.name} to ${scope.key}.`);
+
+      game.player.removeThingOrPersonFromCarriers(this._thingOrPerson);
+      game.player.addThingOrPersonToCarrier(this._thingOrPerson, scope);
+    } else {
+      game.debug(`pick ${this._thingOrPerson.key}`);
+
+      game.player.addThingOrPersonToInventory(this._thingOrPerson);
+    }
   }
 }

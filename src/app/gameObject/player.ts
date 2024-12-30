@@ -1,42 +1,21 @@
 import { GameObject } from '.';
-import { Action } from '../actions';
 import { GameService } from '../services/game.service';
 import { State } from './state';
 import { ThingOrPerson } from './thingOrPerson';
 import { Time } from './time';
+import { Timer } from './timer';
 import { Weight } from './weight';
-
-export class Timer {
-  private _next;
-
-  constructor(
-    public readonly gameObject: GameObject,
-    private readonly _at: number,
-    private readonly _once: boolean,
-    private readonly _actions: Action[]
-  ) {
-    this._next = this._at;
-  }
-
-  nextTick(game: GameService) {
-    if (this._next <= 0) return;
-
-    this._next--;
-
-    if (this._next) return;
-
-    if (!this._once) this._next = this._at;
-
-    Action.run(this._actions, this.gameObject, game);
-  }
-}
 
 export class Player {
   dead = false;
 
   private _timers: Timer[] = [];
 
-  readonly StateObjects: Record<string, Set<string>> = {};
+  readonly CarriedObjects: Record<string, Set<string>> = {};
+
+  readonly Inventory = new Set<string>();
+
+  readonly Messages: Record<string, [string, string?]> = {};
 
   constructor(
     public state: State,
@@ -51,7 +30,7 @@ export class Player {
     this._timers.slice().forEach((t) => t.nextTick(this._game));
   }
 
-  startTimers(gameObject: ThingOrPerson) {
+  startTimers(gameObject: ThingOrPerson, game: GameService) {
     if (this._timers.some((t) => t.gameObject === gameObject))
       throw new Error(`${gameObject.name} timers already started`);
 
@@ -60,12 +39,63 @@ export class Player {
         const once = !time.startsWith('+');
         const at = parseInt(once ? time : time.substring(1));
 
+        game.debug(`time ${once ? 'at' : 'each'} ${at}`);
+
         return new Timer(gameObject, at, once, gameObject.times[time]);
       })
     );
   }
 
-  stopTimers(gameObject: ThingOrPerson) {
-    this._timers = this._timers.filter((t) => t.gameObject !== gameObject);
+  stopTimers(thingOrPerson: ThingOrPerson) {
+    this._timers = this._timers.filter((t) => t.gameObject !== thingOrPerson);
+  }
+
+  removeThingOrPersonFromCarriers(thingOrPerson: ThingOrPerson) {
+    Object.values(this.CarriedObjects).forEach((s) =>
+      s.delete(thingOrPerson.name)
+    );
+  }
+
+  addThingOrPersonToCarrier(
+    thingOrPerson: ThingOrPerson,
+    gameObject: GameObject
+  ) {
+    this.removeThingOrPersonFromInventory(thingOrPerson);
+
+    this.CarriedObjects[gameObject.key].add(thingOrPerson.name);
+  }
+
+  addThingOrPersonToInventory(thingOrPerson: ThingOrPerson) {
+    if (this.Inventory.has(thingOrPerson.name)) return;
+
+    if (!this.weight.subtract(thingOrPerson.weight)) return;
+
+    this.Inventory.add(thingOrPerson.name);
+
+    this.removeThingOrPersonFromCarriers(thingOrPerson);
+  }
+
+  removeThingOrPersonFromInventory(thingOrPerson: ThingOrPerson) {
+    if (!this.Inventory.has(thingOrPerson.name)) return;
+
+    this.weight.add(thingOrPerson.weight);
+
+    this.Inventory.delete(thingOrPerson.name);
+  }
+
+  setMessage(
+    gameObject: GameObject,
+    message: string,
+    silent: boolean,
+    game: GameService
+  ) {
+    const messages = gameObject.getMessage(game.messages, message);
+
+    const choice =
+      messages?.[Math.floor(Math.random() * (messages?.length ?? 0))];
+
+    this.Messages[gameObject.key] = [message, choice];
+
+    if (choice && !silent) game.output(choice);
   }
 }

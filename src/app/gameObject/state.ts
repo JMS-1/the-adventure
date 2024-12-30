@@ -12,7 +12,7 @@ export class State extends GameObject {
     if (!area) throw new Error(`state ${name} has no area`);
   }
 
-  get key() {
+  override get key() {
     return `$$${this.area}$${this.name}`;
   }
 
@@ -39,11 +39,6 @@ export class State extends GameObject {
 
     for (const exits of Object.values(this.exits))
       exits.forEach((a) => a.validate(game, this));
-
-    game.player!.StateObjects[this.key] = new Set([
-      ...this.persons,
-      ...this.things,
-    ]);
   }
 
   getMessageKey(message: string) {

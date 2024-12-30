@@ -7,14 +7,14 @@ import { ParseContext } from '../services/parseContext';
 export class CallAction extends Action {
   public static readonly Pattern = /^(@)?([^\s,)=]+)\s+([^\s,)=]+)/;
 
-  thingOrPerson?: ThingOrPerson;
+  private _thingOrPerson!: ThingOrPerson;
 
-  actions?: Action[];
+  private _actions!: Action[];
 
   private constructor(
-    public readonly what: string,
-    public readonly action: string,
-    public readonly silent: boolean
+    private readonly _what: string,
+    private readonly _action: string,
+    private readonly _silent: boolean
   ) {
     super();
   }
@@ -26,14 +26,20 @@ export class CallAction extends Action {
   }
 
   override validate(game: GameService): void {
-    this.thingOrPerson = game.objects.getThingOrPerson(this.what);
-    this.actions = this.thingOrPerson.actions[this.action];
+    this._thingOrPerson = game.objects.getThingOrPerson(this._what);
+    this._actions = this._thingOrPerson.actions[this._action];
 
-    if (!this.actions)
-      throw new Error(`${this.what}: no action ${this.action}`);
+    if (!this._actions)
+      throw new Error(`${this._what}: no action ${this._action}`);
   }
 
   protected override onRun(scope: GameObject, game: GameService): void {
-    Action.run(this.actions!, this.thingOrPerson!, game);
+    game.debug(
+      `call${this._silent ? '-silent' : ''} ${this._action} of ${
+        this._thingOrPerson.key
+      }`
+    );
+
+    Action.run(this._actions, this._thingOrPerson, game);
   }
 }

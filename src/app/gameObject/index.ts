@@ -21,6 +21,10 @@ export abstract class GameObject {
     }
   }
 
+  get key() {
+    return this.name;
+  }
+
   static parseWords(words: string) {
     return words?.split(',').filter((w) => w);
   }
@@ -59,12 +63,19 @@ export abstract class GameObject {
   }
 
   validate(game: GameService) {
-    for (const thing of this.things)
+    for (const thing of [...this.things, ...this.persons])
       if (!game.objects.thingOrPerson[thing])
         throw new Error(`${this.name}: unknown thing or person ${thing}`);
 
     for (const actions of Object.values(this.actions))
       actions.forEach((a) => a.validate(game, this));
+
+    game.player.CarriedObjects[this.key] = new Set([
+      ...this.persons,
+      ...this.things,
+    ]);
+
+    game.player.setMessage(this, this.message, true, game);
   }
 
   abstract getMessageKey(message: string): string;

@@ -1,18 +1,20 @@
 import { Action } from '.';
 import { GameObject } from '../gameObject';
 import { State } from '../gameObject/state';
+import { stateOperations } from '../gameObject/stateOperations';
+import { ThingOrPerson } from '../gameObject/thingOrPerson';
 import { GameService } from '../services/game.service';
 import { ParseContext } from '../services/parseContext';
 
 export class MoveAction extends Action {
   public static readonly Pattern = /^(#)?>(\$\$([^$]+)\$)?([^,)\s>]+)/;
 
-  target?: State;
+  private _target!: State;
 
   private constructor(
-    public readonly area: string | null,
-    public readonly room: string,
-    public readonly self: boolean
+    private readonly _area: string | null,
+    private readonly _room: string,
+    private readonly _self: boolean
   ) {
     super();
   }
@@ -24,22 +26,44 @@ export class MoveAction extends Action {
   }
 
   override validate(game: GameService, scope: GameObject): void {
-    this.target =
+    this._target =
       game.states.states[
-        `$$${this.area || (scope instanceof State ? scope.area : '')}$${
-          this.room
+        `$$${this._area || (scope instanceof State ? scope.area : '')}$${
+          this._room
         }`
       ];
 
-    if (!this.target) throw new Error(`${this.area}: no room ${this.room}`);
+    if (!this._target) throw new Error(`${this._area}: no room ${this._room}`);
+
+    if (this._self && !(scope instanceof ThingOrPerson))
+      throw new Error(`${scope.name} not a thing or person`);
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   protected override onRun(scope: GameObject, game: GameService): void {
-    throw new Error(
-      `${
-        (this as unknown as { constructor: { name: string } }).constructor.name
-      } not yet implemented`
-    );
+    if (this._self) {
+      game.debug(`move ${scope.key} to ${this._target.key}`);
+
+      game.player.removeThingOrPersonFromCarriers(scope as ThingOrPerson);
+
+      game.player.addThingOrPersonToCarrier(
+        scope as ThingOrPerson,
+        this._target
+      );
+    } else if (this._target !== game.player.state) {
+      game.debug(`goto ${this._target.key}`);
+
+      game.player.state.run(stateOperations.exit, game);
+
+      game.player.state = this._target;
+
+      game.player.state.run(stateOperations.enter, game);
+
+      game.player.setMessage(
+        game.player.state,
+        game.player.state.message,
+        false,
+        game
+      );
+    }
   }
 }

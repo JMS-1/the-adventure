@@ -23,12 +23,13 @@ export class MessageAction extends Action {
     scope.getMessage(game.messages, this.message);
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   protected override onRun(scope: GameObject, game: GameService): void {
-    throw new Error(
-      `${
-        (this as unknown as { constructor: { name: string } }).constructor.name
-      } not yet implemented`
+    game.debug(
+      `set-message${this.silent ? '-silent' : ''} of ${scope.key} to ${
+        this.message
+      }`
     );
+
+    game.player.setMessage(scope, this.message, this.silent, game);
   }
 }

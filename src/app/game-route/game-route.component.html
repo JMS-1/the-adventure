@@ -1,12 +1,17 @@
 <div class="game">
-  <div *ngIf="game.ready$ | async">
-    <div>{{ game.lastError }}</div>
+  <div class="info">
+    <div *ngIf="game.ready$ | async">
+      <div>{{ game.lastError }}</div>
+    </div>
+    <div>
+      <div>Time = {{ game.player.time }}</div>
+      <div>State = {{ game.player.state.key }}</div>
+      <div>Weight = {{ game.player.weight }}</div>
+      <div>Inventory = {{ setValues(game.player.Inventory) | json }}</div>
+    </div>
+    <button (click)="settings.game = undefined">
+      leave {{ settings.game }}
+    </button>
   </div>
-  <div>
-    <div>Time = {{ game.player?.time }}</div>
-    <div>State = {{ game.player?.state?.key }}</div>
-    <div>Weight = {{ game.player?.weight }}</div>
-  </div>
-  <button (click)="settings.game = undefined">leave {{ settings.game }}</button>
-  <pre *ngIf="game.player" class="output">{{ output }}</pre>
+  <div *ngIf="game.player" class="output">{{ output }}</div>
 </div>

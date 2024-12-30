@@ -1,6 +1,7 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { combineLatest, ReplaySubject, Subject, tap } from 'rxjs';
 import { Player } from '../gameObject/player';
+import { State } from '../gameObject/state';
 import { stateOperations } from '../gameObject/stateOperations';
 import { Time } from '../gameObject/time';
 import { Weight } from '../gameObject/weight';
@@ -23,7 +24,7 @@ export class GameService implements OnDestroy {
 
   lastError = '';
 
-  player?: Player;
+  player = new Player(new State('n/a', 'n/a'), null!, null!, null!);
 
   constructor(
     public readonly info: InfoService,
@@ -108,8 +109,16 @@ export class GameService implements OnDestroy {
 
     for (const gameObject of objects) gameObject.validate(this);
 
-    this._output$.next(this.info.intro);
+    this.output(this.info.intro);
 
     this.player.state.run(stateOperations.stay, this);
   };
+
+  debug(message: string) {
+    this.output(`[debug] ${message}`);
+  }
+
+  output(message: string) {
+    this._output$.next(message + '\n');
+  }
 }
