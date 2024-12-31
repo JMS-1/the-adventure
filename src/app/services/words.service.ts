@@ -2,6 +2,7 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { ReplaySubject, tap } from 'rxjs';
 import { AssetService } from './asset.service';
 import { Command, CommandMap } from './command';
+import { CommandAnalyser } from './commandAnalyser';
 import { SettingsService } from './settings.service';
 
 const wordReg = /^#([^\s]+)\s*=\s*\((.+)\)$/;
@@ -50,7 +51,7 @@ export class WordsService implements OnDestroy {
 
       const key = match[1];
 
-      for (const alternative of match[2].split(','))
+      for (const alternative of match[2].toLowerCase().split(','))
         this.addCommand(alternative, key, this.commands);
     }
   }
@@ -99,5 +100,11 @@ export class WordsService implements OnDestroy {
         command[prop].add(key);
       }
     }
+  }
+
+  *analyseCommand(cmd: string) {
+    const analyser = new CommandAnalyser(cmd);
+
+    for (const command of analyser.analyse(this.commands)) yield command;
   }
 }
