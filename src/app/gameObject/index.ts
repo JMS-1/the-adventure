@@ -41,6 +41,8 @@ export abstract class GameObject {
   }
 
   private addToObjectList(list: string, set: Set<string>) {
+    list = list.toLowerCase();
+
     if (!list.startsWith('(')) list = `(${list})`;
     else if (!list.endsWith(')')) throw new Error('bad list of objects');
 

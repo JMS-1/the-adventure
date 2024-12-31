@@ -1,5 +1,6 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { combineLatest, ReplaySubject, Subject, tap } from 'rxjs';
+import { CommandService } from '../commands/command.service';
 import { Player } from '../gameObject/player';
 import { State } from '../gameObject/state';
 import { stateOperations } from '../gameObject/stateOperations';
@@ -10,7 +11,6 @@ import { InfoService } from './info.service';
 import { MessagesService } from './messages.service';
 import { ObjectsService } from './objects.service';
 import { StatesService } from './states.service';
-import { WordsService } from './words.service';
 
 @Injectable()
 export class GameService implements OnDestroy {
@@ -18,7 +18,7 @@ export class GameService implements OnDestroy {
 
   readonly ready$ = this._parseDone$.asObservable();
 
-  private readonly _output$ = new Subject<string>();
+  private readonly _output$ = new Subject<['out' | 'debug', string]>();
 
   readonly output$ = this._output$.asObservable();
 
@@ -27,35 +27,26 @@ export class GameService implements OnDestroy {
   player = new Player(new State('n/a', 'n/a'), null!, null!, null!);
 
   constructor(
-    public readonly info: InfoService,
+    public readonly commands: CommandService,
     public readonly defaults: DefaultsService,
+    public readonly info: InfoService,
     public readonly messages: MessagesService,
     public readonly objects: ObjectsService,
-    public readonly states: StatesService,
-    public readonly words: WordsService
+    public readonly states: StatesService
   ) {
     const subscription = combineLatest([
+      commands.parseDone$,
       defaults.parseDone$,
+      info.parseDone$,
       messages.parseDone$,
       objects.parseDone$,
       states.parseDone$,
-      words.parseDone$,
-      info.parseDone$,
     ])
       .pipe(
-        tap(([defError, msgError, objError, stateError, wordError, info]) => {
-          const error = [
-            defError,
-            msgError,
-            objError,
-            stateError,
-            wordError,
-            info,
-          ]
-            .filter((e) => e)
-            .join('; ');
+        tap((errors) => {
+          errors.filter((e) => e).join('; ');
 
-          if (error) throw new Error(`parsing error: ${error}`);
+          if (errors) throw new Error(`parsing error: ${errors}`);
         }),
         tap(this.setup)
       )
@@ -74,12 +65,12 @@ export class GameService implements OnDestroy {
   }
 
   parse() {
+    this.commands.parse();
     this.defaults.parse();
     this.info.parse();
     this.messages.parse();
     this.objects.parse();
     this.states.parse();
-    this.words.parse();
   }
 
   ngOnDestroy(): void {
@@ -115,10 +106,10 @@ export class GameService implements OnDestroy {
   };
 
   debug(message: string) {
-    this.output(`[debug] ${message}`);
+    this._output$.next(['debug', message]);
   }
 
   output(message: string) {
-    this._output$.next(message + '\n');
+    this._output$.next(['out', message + '\n']);
   }
 }

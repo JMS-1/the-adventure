@@ -1,7 +1,7 @@
 import { Action } from '.';
 import { GameObject } from '../gameObject';
 import { GameService } from '../services/game.service';
-import { ParseContext } from '../services/parseContext';
+import { ParseContext } from './parseContext';
 
 export class TestMessageAction extends Action {
   public static readonly Pattern = /^if_message\s+([^\s]+)/;

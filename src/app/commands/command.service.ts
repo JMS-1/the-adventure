@@ -1,14 +1,14 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { ReplaySubject, tap } from 'rxjs';
-import { AssetService } from './asset.service';
+import { AssetService } from '../services/asset.service';
+import { SettingsService } from '../services/settings.service';
 import { Command, CommandMap } from './command';
 import { CommandAnalyser } from './commandAnalyser';
-import { SettingsService } from './settings.service';
 
 const wordReg = /^#([^\s]+)\s*=\s*\((.+)\)$/;
 
 @Injectable()
-export class WordsService implements OnDestroy {
+export class CommandService implements OnDestroy {
   private readonly _parseDone$ = new ReplaySubject<string>(1);
 
   readonly parseDone$ = this._parseDone$.asObservable();
@@ -102,9 +102,10 @@ export class WordsService implements OnDestroy {
     }
   }
 
-  *analyseCommand(cmd: string) {
+  *analyseCommand(cmd: string, thingsOrPersons: Record<string, string>) {
     const analyser = new CommandAnalyser(cmd);
 
-    for (const command of analyser.analyse(this.commands)) yield command;
+    for (const command of analyser.analyse(this.commands, thingsOrPersons))
+      yield command;
   }
 }

@@ -13,5 +13,6 @@
       leave {{ settings.game }}
     </button>
   </div>
+  <input type="text" value="" (change)="onEnter($event)" />
   <div *ngIf="game.player" class="output">{{ output }}</div>
 </div>

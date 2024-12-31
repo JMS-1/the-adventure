@@ -2,11 +2,11 @@ import { AsyncPipe, JsonPipe } from '@angular/common';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { CommandService } from './commands/command.service';
 import { DefaultsService } from './services/defaults.service';
 import { MessagesService } from './services/messages.service';
 import { ObjectsService } from './services/objects.service';
 import { StatesService } from './services/states.service';
-import { WordsService } from './services/words.service';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -25,7 +25,7 @@ describe('AppComponent', () => {
         { provide: MessagesService, useValue: {} },
         { provide: ObjectsService, useValue: {} },
         { provide: StatesService, useValue: {} },
-        { provide: WordsService, useValue: {} },
+        { provide: CommandService, useValue: {} },
       ],
     }).compileComponents();
   });

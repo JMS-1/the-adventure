@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { CommandService } from '../commands/command.service';
 import { AssetService } from '../services/asset.service';
 import { DefaultsService } from '../services/defaults.service';
 import { GameService } from '../services/game.service';
@@ -9,7 +10,6 @@ import { MessagesService } from '../services/messages.service';
 import { ObjectsService } from '../services/objects.service';
 import { SettingsService } from '../services/settings.service';
 import { StatesService } from '../services/states.service';
-import { WordsService } from '../services/words.service';
 
 @Component({
   selector: 'app-game-route',
@@ -22,7 +22,7 @@ import { WordsService } from '../services/words.service';
     MessagesService,
     ObjectsService,
     StatesService,
-    WordsService,
+    CommandService,
   ],
   templateUrl: './game-route.component.html',
   styleUrl: './game-route.component.scss',
@@ -37,7 +37,8 @@ export class GameRouteComponent implements OnInit, OnDestroy {
     public readonly game: GameService
   ) {
     this._outputSubscription = game.output$.subscribe(
-      (o) => (this.output += `${o}\n`)
+      ([mode, text]) =>
+        (this.output += mode === 'debug' ? `[debug] ${text}\n` : `${text}\n`)
     );
   }
 
@@ -59,5 +60,14 @@ export class GameRouteComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.game.parse();
+  }
+
+  onEnter(ev: Event) {
+    const input = ev.target as HTMLInputElement;
+    const command = input.value;
+
+    input.value = '';
+
+    console.log(command);
   }
 }

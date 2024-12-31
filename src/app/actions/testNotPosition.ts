@@ -2,7 +2,7 @@ import { Action } from '.';
 import { GameObject } from '../gameObject';
 import { State } from '../gameObject/state';
 import { GameService } from '../services/game.service';
-import { ParseContext } from '../services/parseContext';
+import { ParseContext } from './parseContext';
 
 export class TestNotPositionAction extends Action {
   public static readonly Pattern =

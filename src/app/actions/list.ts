@@ -1,5 +1,5 @@
 import { Action } from '.';
-import { ParseContext } from '../services/parseContext';
+import { ParseContext } from './parseContext';
 import { RandomAction } from './random';
 
 export class ListAction {

@@ -4,7 +4,7 @@ import { State } from '../gameObject/state';
 import { stateOperations } from '../gameObject/stateOperations';
 import { ThingOrPerson } from '../gameObject/thingOrPerson';
 import { GameService } from '../services/game.service';
-import { ParseContext } from '../services/parseContext';
+import { ParseContext } from './parseContext';
 
 export class MoveAction extends Action {
   public static readonly Pattern = /^(#)?>(\$\$([^$]+)\$)?([^,)\s>]+)/;

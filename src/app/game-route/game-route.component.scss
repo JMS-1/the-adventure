@@ -9,7 +9,7 @@
   height: 100%;
   overflow: hidden;
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto 1fr;
   row-gap: 0.5em;
 
   > .info {
@@ -20,6 +20,11 @@
     > button {
       justify-self: flex-start;
     }
+  }
+
+  > input {
+    font-size: 120%;
+    padding: 0.5em;
   }
 
   > .output {

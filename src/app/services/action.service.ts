@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { TActionMap } from '../actions';
-import { ParseContext } from './parseContext';
+import { ParseContext } from '../actions/parseContext';
 
 const nameReg = /^([^:\s]+)\s*:/;
 
