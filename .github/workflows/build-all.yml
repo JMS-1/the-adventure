@@ -7,9 +7,6 @@ on:
     branches: [main]
 jobs:
   build-frontend:
-    strategy:
-      matrix:
-        node-version: [22]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -28,10 +25,10 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: ${{ runner.os }}-yarn-
 
-      - name: Installing Node ${{ matrix.node-version }}
+      - name: Installing Node
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 22
 
       - name: Installing NPM Packages
         run: yarn --frozen-lockfile
