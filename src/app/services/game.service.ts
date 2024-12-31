@@ -4,6 +4,7 @@ import { CommandService } from '../commands/command.service';
 import { Player } from '../gameObject/player';
 import { State } from '../gameObject/state';
 import { stateOperations } from '../gameObject/stateOperations';
+import { systemMessages } from '../gameObject/systemMessages';
 import { Time } from '../gameObject/time';
 import { Weight } from '../gameObject/weight';
 import { DefaultsService } from './defaults.service';
@@ -18,7 +19,9 @@ export class GameService implements OnDestroy {
 
   readonly ready$ = this._parseDone$.asObservable();
 
-  private readonly _output$ = new Subject<['out' | 'debug', string]>();
+  private readonly _output$ = new Subject<
+    ['out' | 'debug' | 'error', string]
+  >();
 
   readonly output$ = this._output$.asObservable();
 
@@ -44,9 +47,9 @@ export class GameService implements OnDestroy {
     ])
       .pipe(
         tap((errors) => {
-          errors.filter((e) => e).join('; ');
+          const error = errors.filter((e) => e).join('; ');
 
-          if (errors) throw new Error(`parsing error: ${errors}`);
+          if (error) throw new Error(`parsing error: ${error}`);
         }),
         tap(this.setup)
       )
@@ -110,6 +113,44 @@ export class GameService implements OnDestroy {
   }
 
   output(message: string) {
-    this._output$.next(['out', message + '\n']);
+    this._output$.next(['out', '\n' + message + '\n']);
+  }
+
+  error(key: string) {
+    const messages = this.messages.messageMap[key];
+
+    if (!messages?.length) return;
+
+    const choice =
+      messages?.[Math.floor(Math.random() * (messages?.length ?? 0))];
+
+    this._output$.next(['error', choice + '\n']);
+  }
+
+  run(cmd: string) {
+    cmd = cmd.trim();
+
+    if (!cmd) return;
+
+    const thingsAndPersons = [
+      ...this.player.Inventory,
+      ...this.player.state.things,
+      ...this.player.state.persons,
+    ].reduce((map, name) => {
+      for (const word of this.objects.thingOrPerson[name]?.words || [])
+        map[word.toLowerCase()] = name;
+
+      return map;
+    }, {} as Record<string, string>);
+
+    for (const command of this.commands.analyseCommand(cmd, thingsAndPersons)) {
+      this.debug(`${command[0]} on ${command[1]}`);
+
+      return;
+    }
+
+    this.debug('unknown command');
+
+    this.error(`system.${systemMessages.NoComm}`);
   }
 }

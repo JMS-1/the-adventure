@@ -13,6 +13,11 @@
       leave {{ settings.game }}
     </button>
   </div>
-  <input type="text" value="" (change)="onEnter($event)" />
-  <div *ngIf="game.player" class="output">{{ output }}</div>
+  <div *ngIf="game.player" class="output" #game>{{ output }}</div>
+  <input
+    type="text"
+    value=""
+    (change)="onEnter($event)"
+    [disabled]="game.player.dead"
+  />
 </div>

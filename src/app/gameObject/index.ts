@@ -26,7 +26,10 @@ export abstract class GameObject {
   }
 
   static parseWords(words: string) {
-    return words?.split(',').filter((w) => w);
+    return words
+      ?.split(',')
+      .map((w) => w.trim())
+      .filter((w) => w);
   }
 
   setMessage(msg: string) {
@@ -41,8 +44,6 @@ export abstract class GameObject {
   }
 
   private addToObjectList(list: string, set: Set<string>) {
-    list = list.toLowerCase();
-
     if (!list.startsWith('(')) list = `(${list})`;
     else if (!list.endsWith(')')) throw new Error('bad list of objects');
 
