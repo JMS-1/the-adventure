@@ -1,7 +1,6 @@
 import { Action } from '.';
 import { GameObject } from '../gameObject';
 import { State } from '../gameObject/state';
-import { stateOperations } from '../gameObject/stateOperations';
 import { ThingOrPerson } from '../gameObject/thingOrPerson';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
@@ -40,23 +39,18 @@ export class MoveAction extends Action {
   }
 
   protected override onRun(scope: GameObject, game: GameService): void {
+    const { player } = game;
+
     if (this.self) {
       game.debug(`move ${scope.key} to ${this._target.key}`);
 
-      game.player.removeThingOrPersonFromCarriers(scope as ThingOrPerson);
+      player.removeThingOrPersonFromCarriers(scope as ThingOrPerson);
 
-      game.player.addThingOrPersonToCarrier(
-        scope as ThingOrPerson,
-        this._target
-      );
-    } else if (this._target !== game.player.state) {
+      player.addThingOrPersonToCarrier(scope as ThingOrPerson, this._target);
+    } else if (this._target !== player.state) {
       game.debug(`goto ${this._target.key}`);
 
-      game.player.state.run(stateOperations.exit, game);
-
-      game.player.state = this._target;
-
-      game.player.state.run(stateOperations.enter, game);
+      player.enterState(this._target);
     }
   }
 }

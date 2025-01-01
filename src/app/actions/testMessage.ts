@@ -23,12 +23,11 @@ export class TestMessageAction extends Action {
     this.actions.forEach((a) => a.validate(game, scope));
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   protected override onRun(scope: GameObject, game: GameService): void {
-    throw new Error(
-      `${
-        (this as unknown as { constructor: { name: string } }).constructor.name
-      } not yet implemented`
-    );
+    game.debug(`test message of ${scope.key} to be ${this.message}`);
+
+    const message = game.player.Messages[scope.key]?.[0];
+
+    if (message === this.message) Action.run(this.actions, scope, game);
   }
 }

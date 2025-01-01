@@ -23,9 +23,9 @@ export class ResetAction extends Action {
   }
 
   protected override onRun(scope: GameObject, game: GameService): void {
-    game.debug(`reset-timers of ${scope.key}`);
+    game.debug(`reset timers of ${scope.key}`);
 
     game.player.stopTimers(scope as ThingOrPerson);
-    game.player.startTimers(scope as ThingOrPerson, game);
+    game.player.startTimers(scope as ThingOrPerson);
   }
 }

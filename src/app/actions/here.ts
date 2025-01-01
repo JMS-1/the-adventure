@@ -7,7 +7,7 @@ import { ParseContext } from './parseContext';
 export class HereAction extends Action {
   public static readonly Pattern = /^if_here\s+([^\s]+)/;
 
-  thingOrPerson?: ThingOrPerson;
+  thingOrPerson!: ThingOrPerson;
 
   private constructor(
     public readonly what: string,
@@ -26,12 +26,13 @@ export class HereAction extends Action {
     this.actions.forEach((a) => a.validate(game, scope));
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   protected override onRun(scope: GameObject, game: GameService): void {
-    throw new Error(
-      `${
-        (this as unknown as { constructor: { name: string } }).constructor.name
-      } not yet implemented`
+    game.debug(`test ${this.thingOrPerson.key} to be here`);
+
+    const here = game.player.CarriedObjects[game.player.state.key].has(
+      this.thingOrPerson.key
     );
+
+    if (here) Action.run(this.actions, scope, game);
   }
 }

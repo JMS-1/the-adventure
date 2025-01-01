@@ -23,6 +23,12 @@ export class Timer {
 
     if (!this._once) this._next = this._at;
 
+    game.debug(
+      `${this.gameObject.name} ${this._once ? '' : 'interval '}timer at ${
+        this._at
+      }`
+    );
+
     Action.run(this._actions, this.gameObject, game);
   }
 }

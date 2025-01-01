@@ -23,8 +23,8 @@ export class StartAction extends Action {
   }
 
   protected override onRun(scope: GameObject, game: GameService): void {
-    game.debug(`start-timers of ${scope.key}`);
+    game.debug(`start timers of ${scope.key}`);
 
-    game.player.startTimers(scope as ThingOrPerson, game);
+    game.player.startTimers(scope as ThingOrPerson);
   }
 }

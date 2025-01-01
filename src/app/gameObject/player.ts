@@ -1,6 +1,8 @@
 import { GameObject } from '.';
-import { GameService } from '../services/game.service';
+import { type GameService } from '../services/game.service';
 import { State } from './state';
+import { stateOperations } from './stateOperations';
+import { systemMessages } from './systemMessages';
 import { ThingOrPerson } from './thingOrPerson';
 import { Time } from './time';
 import { Timer } from './timer';
@@ -30,7 +32,7 @@ export class Player {
     this._timers.slice().forEach((t) => t.nextTick(this._game));
   }
 
-  startTimers(gameObject: ThingOrPerson, game: GameService) {
+  startTimers(gameObject: ThingOrPerson) {
     if (this._timers.some((t) => t.gameObject === gameObject))
       throw new Error(`${gameObject.name} timers already started`);
 
@@ -39,7 +41,7 @@ export class Player {
         const once = !time.startsWith('+');
         const at = parseInt(once ? time : time.substring(1));
 
-        game.debug(`time ${once ? 'at' : 'each'} ${at}`);
+        this._game.debug(`time ${once ? 'at' : 'each'} ${at}`);
 
         return new Timer(gameObject, at, once, gameObject.times[time]);
       })
@@ -68,11 +70,11 @@ export class Player {
   addThingOrPersonToInventory(thingOrPerson: ThingOrPerson) {
     if (this.Inventory.has(thingOrPerson.name)) return;
 
-    if (!this.weight.subtract(thingOrPerson.weight)) return;
+    if (this.weight.subtract(thingOrPerson.weight)) {
+      this.Inventory.add(thingOrPerson.name);
 
-    this.Inventory.add(thingOrPerson.name);
-
-    this.removeThingOrPersonFromCarriers(thingOrPerson);
+      this.removeThingOrPersonFromCarriers(thingOrPerson);
+    } else this._game.error(systemMessages.Heavy);
   }
 
   removeThingOrPersonFromInventory(thingOrPerson: ThingOrPerson) {
@@ -99,11 +101,24 @@ export class Player {
     if (choice && !silent) game.output(choice);
   }
 
-  print(scope: string | GameObject, game: GameService) {
+  print(scope: string | GameObject) {
     if (scope instanceof GameObject) scope = scope.key;
 
     const info = this.Messages[scope];
 
-    if (info?.[1]) game.output(info[1]);
+    if (info?.[1]) this._game.output(info[1]);
+  }
+
+  enterState(state: State) {
+    this.state.run(stateOperations.exit, this._game);
+
+    this.state = state;
+
+    this.print(state);
+
+    for (const thingOrPerson of this.CarriedObjects[state.key])
+      this.print(thingOrPerson);
+
+    this.state.run(stateOperations.enter, this._game);
   }
 }

@@ -7,7 +7,7 @@ import { ParseContext } from './parseContext';
 export class TestPositionAction extends Action {
   public static readonly Pattern = /^(#)?if_position\s+\$\$([^$]+)\$([^\s]+)/;
 
-  target?: State;
+  target!: State;
 
   private constructor(
     public readonly area: string,
@@ -35,12 +35,13 @@ export class TestPositionAction extends Action {
     this.actions.forEach((a) => a.validate(game, scope));
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   protected override onRun(scope: GameObject, game: GameService): void {
-    throw new Error(
-      `${
-        (this as unknown as { constructor: { name: string } }).constructor.name
-      } not yet implemented`
-    );
+    const hit = this.self
+      ? game.player.CarriedObjects[this.target.key].has(scope.key)
+      : this.target === game.player.state;
+
+    game.debug(`test ${this.self ? scope.name : 'me'} at ${this.target.key}`);
+
+    if (hit) Action.run(this.actions, scope, game);
   }
 }

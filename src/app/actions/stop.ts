@@ -23,7 +23,7 @@ export class StopAction extends Action {
   }
 
   protected override onRun(scope: GameObject, game: GameService): void {
-    game.debug(`stop-timers of ${scope.key}`);
+    game.debug(`stop timers of ${scope.key}`);
 
     game.player.stopTimers(scope as ThingOrPerson);
   }

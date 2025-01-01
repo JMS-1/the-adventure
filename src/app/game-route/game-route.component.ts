@@ -1,11 +1,5 @@
 import { CommonModule } from '@angular/common';
-import {
-  Component,
-  ElementRef,
-  OnDestroy,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import * as core from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CommandService } from '../commands/command.service';
 import { AssetService } from '../services/asset.service';
@@ -17,7 +11,7 @@ import { ObjectsService } from '../services/objects.service';
 import { SettingsService } from '../services/settings.service';
 import { StatesService } from '../services/states.service';
 
-@Component({
+@core.Component({
   selector: 'app-game-route',
   imports: [CommonModule],
   providers: [
@@ -33,8 +27,8 @@ import { StatesService } from '../services/states.service';
   templateUrl: './game-route.component.html',
   styleUrl: './game-route.component.scss',
 })
-export class GameRouteComponent implements OnInit, OnDestroy {
-  @ViewChild('game') private _output?: ElementRef;
+export class GameRouteComponent implements core.OnInit, core.OnDestroy {
+  @core.ViewChild('game') private _output?: core.ElementRef;
 
   output = '';
 
@@ -51,7 +45,7 @@ export class GameRouteComponent implements OnInit, OnDestroy {
         const output = this._output?.nativeElement as HTMLElement;
 
         if (output) output.scrollTop = output.scrollHeight;
-      }, 0);
+      }, 100);
     });
   }
 

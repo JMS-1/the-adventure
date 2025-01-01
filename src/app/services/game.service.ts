@@ -116,8 +116,8 @@ export class GameService implements OnDestroy {
     this._output$.next(['out', '\n' + message]);
   }
 
-  error(key: string) {
-    const messages = this.messages.messageMap[key];
+  error(key: string | systemMessages) {
+    const messages = this.messages.messageMap[`${key}`];
 
     if (!messages?.length) return;
 
@@ -134,7 +134,7 @@ export class GameService implements OnDestroy {
 
     const thingsAndPersons = [
       ...this.player.Inventory,
-      ...this.player.state.thingsOrPersons,
+      ...this.player.CarriedObjects[this.player.state.key],
     ].reduce((map, name) => {
       for (const word of this.objects.thingOrPerson[name]?.words || [])
         map[word.toLowerCase()] = name;
@@ -142,20 +142,29 @@ export class GameService implements OnDestroy {
       return map;
     }, {} as Record<string, string>);
 
-    for (const command of this.commands.analyseCommand(cmd, thingsAndPersons)) {
-      const state = this.player.state;
+    const state = this.player.state;
 
-      this.debug(`${command[0]} on ${command[1]}`);
+    try {
+      try {
+        for (const command of this.commands.analyseCommand(
+          cmd,
+          thingsAndPersons
+        )) {
+          this.debug(`${command[0]} on ${command[1]}`);
 
-      if (this.player.state === state) state.run(stateOperations.stay, this);
+          return;
+        }
 
-      this.player.nextTick();
+        this.debug('unknown command');
 
-      return;
+        this.error(systemMessages.NoComm);
+      } finally {
+        if (this.player.state === state) state.run(stateOperations.stay, this);
+
+        this.player.nextTick();
+      }
+    } catch (e) {
+      this.debug(`${e}`);
     }
-
-    this.debug('unknown command');
-
-    this.error(`system.${systemMessages.NoComm}`);
   }
 }

@@ -25,7 +25,7 @@ export class MessageAction extends Action {
 
   protected override onRun(scope: GameObject, game: GameService): void {
     game.debug(
-      `set-message${this.silent ? '-silent' : ''} of ${scope.key} to ${
+      `${this.silent ? 'silent ' : ''} set message of ${scope.key} to ${
         this.message
       }`
     );

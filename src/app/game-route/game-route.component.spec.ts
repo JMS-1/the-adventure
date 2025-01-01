@@ -27,7 +27,11 @@ describe('GameRouteComponent', () => {
               /* */
             },
             output$: of(),
-            player: { state: { key: 'test' }, Inventory: new Set() },
+            player: {
+              state: { key: 'test' },
+              Inventory: new Set(),
+              CarriedObjects: { test: new Set() },
+            },
           },
         },
       ],
