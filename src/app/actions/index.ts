@@ -1,4 +1,4 @@
-import { GameObject } from '../gameObject';
+import { GameObject } from '../game-object';
 import { GameService } from '../services/game.service';
 
 export type TActionMap = Record<string, Action[]>;

@@ -1,12 +1,12 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { combineLatest, ReplaySubject, Subject, tap } from 'rxjs';
 import { CommandService } from '../commands/command.service';
-import { Player } from '../gameObject/player';
-import { State } from '../gameObject/state';
-import { stateOperations } from '../gameObject/stateOperations';
-import { systemMessages } from '../gameObject/systemMessages';
-import { Time } from '../gameObject/time';
-import { Weight } from '../gameObject/weight';
+import { Player } from '../game-object/player';
+import { State } from '../game-object/state';
+import { stateOperations } from '../game-object/stateOperations';
+import { systemMessages } from '../game-object/systemMessages';
+import { Time } from '../game-object/time';
+import { Weight } from '../game-object/weight';
 import { DefaultsService } from './defaults.service';
 import { InfoService } from './info.service';
 import { MessagesService } from './messages.service';

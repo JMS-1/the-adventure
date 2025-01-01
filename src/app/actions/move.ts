@@ -1,7 +1,7 @@
 import { Action } from '.';
-import { GameObject } from '../gameObject';
-import { State } from '../gameObject/state';
-import { ThingOrPerson } from '../gameObject/thingOrPerson';
+import { GameObject } from '../game-object';
+import { State } from '../game-object/state';
+import { ThingOrPerson } from '../game-object/thingOrPerson';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 

@@ -1,10 +1,10 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { concat, ReplaySubject, tap } from 'rxjs';
 import { TActionMap } from '../actions';
-import { Macro } from '../gameObject/macro';
-import { Person } from '../gameObject/person';
-import { Thing } from '../gameObject/thing';
-import { ThingOrPerson, TThingOrPersonMap } from '../gameObject/thingOrPerson';
+import { Macro } from '../game-object/macro';
+import { Person } from '../game-object/person';
+import { Thing } from '../game-object/thing';
+import { ThingOrPerson, TThingOrPersonMap } from '../game-object/thingOrPerson';
 import { ActionService } from './action.service';
 import { AssetService } from './asset.service';
 import { SettingsService } from './settings.service';

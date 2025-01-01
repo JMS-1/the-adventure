@@ -1,7 +1,7 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { ReplaySubject, tap } from 'rxjs';
 import { TActionMap } from '../actions';
-import { State } from '../gameObject/state';
+import { State } from '../game-object/state';
 import { ActionService } from './action.service';
 import { AssetService } from './asset.service';
 import { SettingsService } from './settings.service';

@@ -1,6 +1,6 @@
 import { Action } from '.';
-import { GameObject } from '../gameObject';
-import { State } from '../gameObject/state';
+import { GameObject } from '../game-object';
+import { State } from '../game-object/state';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 

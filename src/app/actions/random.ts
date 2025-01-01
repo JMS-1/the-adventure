@@ -1,5 +1,5 @@
 import { Action } from '.';
-import { GameObject } from '../gameObject';
+import { GameObject } from '../game-object';
 import { GameService } from '../services/game.service';
 
 export class RandomAction extends Action {
