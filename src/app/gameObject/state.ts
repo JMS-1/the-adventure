@@ -46,6 +46,13 @@ export class State extends GameObject {
   }
 
   run(operation: stateOperations, game: GameService) {
-    return Action.runAction(operation.toString(), this.actions, this, game);
+    Action.runAction(operation.toString(), this.actions, this, game);
+
+    if (operation !== stateOperations.enter) return;
+
+    game.player.print(this, game);
+
+    for (const thingOrPerson of this.thingsOrPersons)
+      game.player.print(thingOrPerson, game);
   }
 }

@@ -113,7 +113,7 @@ export class GameService implements OnDestroy {
   }
 
   output(message: string) {
-    this._output$.next(['out', '\n' + message + '\n']);
+    this._output$.next(['out', '\n' + message]);
   }
 
   error(key: string) {
@@ -143,7 +143,13 @@ export class GameService implements OnDestroy {
     }, {} as Record<string, string>);
 
     for (const command of this.commands.analyseCommand(cmd, thingsAndPersons)) {
+      const state = this.player.state;
+
       this.debug(`${command[0]} on ${command[1]}`);
+
+      if (this.player.state === state) state.run(stateOperations.stay, this);
+
+      this.player.nextTick();
 
       return;
     }

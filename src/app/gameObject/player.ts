@@ -98,4 +98,12 @@ export class Player {
 
     if (choice && !silent) game.output(choice);
   }
+
+  print(scope: string | GameObject, game: GameService) {
+    if (scope instanceof GameObject) scope = scope.key;
+
+    const info = this.Messages[scope];
+
+    if (info?.[1]) game.output(info[1]);
+  }
 }

@@ -5,7 +5,10 @@
     </div>
     <div>
       <div>Time = {{ game.player.time }}</div>
-      <div>State = {{ game.player.state.key }}</div>
+      <div>
+        State = {{ game.player.state.key }}
+        {{ setValues(game.player.state.thingsOrPersons) | json }}
+      </div>
       <div>Weight = {{ game.player.weight }}</div>
       <div>Inventory = {{ setValues(game.player.Inventory) | json }}</div>
     </div>

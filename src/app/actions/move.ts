@@ -57,13 +57,6 @@ export class MoveAction extends Action {
       game.player.state = this._target;
 
       game.player.state.run(stateOperations.enter, game);
-
-      game.player.setMessage(
-        game.player.state,
-        game.player.state.message,
-        false,
-        game
-      );
     }
   }
 }
