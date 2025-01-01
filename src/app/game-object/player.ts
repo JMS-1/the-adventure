@@ -85,6 +85,13 @@ export class Player {
     this.Inventory.delete(thingOrPerson.name);
   }
 
+  isVisible(gameObject: GameObject) {
+    return (
+      this.Inventory.has(gameObject.key) ||
+      this.CarriedObjects[this.state.key].has(gameObject.key)
+    );
+  }
+
   setMessage(
     gameObject: GameObject,
     message: string,
@@ -98,7 +105,7 @@ export class Player {
 
     this.Messages[gameObject.key] = [message, choice];
 
-    if (choice && !silent) game.output(choice);
+    if (choice && !silent && this.isVisible(gameObject)) game.output(choice);
   }
 
   print(scope: string | GameObject) {

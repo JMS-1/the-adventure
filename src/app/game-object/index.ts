@@ -1,4 +1,4 @@
-import { TActionMap } from '../actions';
+import { Action, TActionMap } from '../actions';
 import { GameService } from '../services/game.service';
 import { MessagesService } from '../services/messages.service';
 import { type Macro } from './macro';
@@ -85,5 +85,9 @@ export abstract class GameObject {
     if (!choices) throw new Error(`${this.name}: no message ${message}`);
 
     return choices;
+  }
+
+  runAction(action: string, game: GameService) {
+    return Action.run(this.actions[action] ?? [], this, game);
   }
 }

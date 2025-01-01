@@ -62,7 +62,7 @@ export class GameRouteComponent implements core.OnInit, core.OnDestroy {
   }
 
   setValues<T>(set: Set<T>) {
-    return Array.from(set);
+    return set && Array.from(set);
   }
 
   ngOnInit(): void {

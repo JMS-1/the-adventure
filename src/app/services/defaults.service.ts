@@ -79,7 +79,7 @@ export class DefaultsService implements OnDestroy {
       } else if ((match = regs.state.exec(line))) {
         this.state = match[1];
       } else if ((match = regs.key.exec(line))) {
-        this.keyMap[match[1]] = match[2];
+        this.keyMap[match[2]] = match[1];
       } else if ((match = regs.command.exec(line))) {
         const parsed = this._parser.parse(match[2], lines, i);
 

@@ -7,7 +7,7 @@ import { ParseContext } from './parseContext';
 export class SetMessageAction extends Action {
   public static readonly Pattern = /^(@)?([^\s,)]+)\s*=\s*([^,)\s]+)/;
 
-  thingOrPerson?: ThingOrPerson;
+  thingOrPerson!: ThingOrPerson;
 
   private constructor(
     public readonly what: string,
@@ -29,12 +29,13 @@ export class SetMessageAction extends Action {
     this.thingOrPerson.getMessage(game.messages, this.message);
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   protected override onRun(scope: GameObject, game: GameService): void {
-    throw new Error(
-      `${
-        (this as unknown as { constructor: { name: string } }).constructor.name
-      } not yet implemented`
+    game.debug(
+      `${this.silent ? 'silent ' : ''} set message of ${
+        this.thingOrPerson.key
+      } to ${this.message}`
     );
+
+    game.player.setMessage(this.thingOrPerson, this.message, this.silent, game);
   }
 }

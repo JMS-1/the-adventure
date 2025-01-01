@@ -7,7 +7,7 @@ import { ParseContext } from './parseContext';
 export class PrintAction extends Action {
   public static readonly Pattern = /^&(\$\$([^$]+)\$)?([^,)\s]+)/;
 
-  choices?: string[];
+  choices!: string[];
 
   private constructor(
     public readonly area: string | null,
@@ -32,12 +32,8 @@ export class PrintAction extends Action {
     if (!this.choices) throw new Error(`no message ${key}`);
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   protected override onRun(scope: GameObject, game: GameService): void {
-    throw new Error(
-      `${
-        (this as unknown as { constructor: { name: string } }).constructor.name
-      } not yet implemented`
-    );
+    game.debug(`print ${this.area || ''}${this.area || '.'}${this.message}`);
+    game.output(this.choices);
   }
 }

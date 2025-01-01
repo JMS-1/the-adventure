@@ -22,12 +22,11 @@ export class HasThisAction extends Action {
     this.actions.forEach((a) => a.validate(game, scope));
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   protected override onRun(scope: GameObject, game: GameService): void {
-    throw new Error(
-      `${
-        (this as unknown as { constructor: { name: string } }).constructor.name
-      } not yet implemented`
-    );
+    game.debug(`test me has ${scope.key}`);
+
+    const has = game.player.Inventory.has(scope.key);
+
+    if (has) Action.run(this.actions, scope, game);
   }
 }

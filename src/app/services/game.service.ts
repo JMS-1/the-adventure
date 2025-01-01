@@ -1,10 +1,12 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { combineLatest, ReplaySubject, Subject, tap } from 'rxjs';
+import { Action } from '../actions';
 import { CommandService } from '../commands/command.service';
 import { Player } from '../game-object/player';
 import { State } from '../game-object/state';
 import { stateOperations } from '../game-object/stateOperations';
 import { systemMessages } from '../game-object/systemMessages';
+import { systemShortcuts } from '../game-object/systemShortcuts';
 import { Time } from '../game-object/time';
 import { Weight } from '../game-object/weight';
 import { DefaultsService } from './defaults.service';
@@ -112,7 +114,10 @@ export class GameService implements OnDestroy {
     this._output$.next(['debug', message]);
   }
 
-  output(message: string) {
+  output(message: string | string[]) {
+    if (Array.isArray(message))
+      message = message[Math.floor(Math.random() * message.length)];
+
     this._output$.next(['out', '\n' + message]);
   }
 
@@ -136,7 +141,7 @@ export class GameService implements OnDestroy {
       ...this.player.Inventory,
       ...this.player.CarriedObjects[this.player.state.key],
     ].reduce((map, name) => {
-      for (const word of this.objects.thingOrPerson[name]?.words || [])
+      for (const word of this.objects.thingOrPerson[name].words)
         map[word.toLowerCase()] = name;
 
       return map;
@@ -146,11 +151,77 @@ export class GameService implements OnDestroy {
 
     try {
       try {
-        for (const command of this.commands.analyseCommand(
+        for (const [command, thingOrPerson] of this.commands.analyseCommand(
           cmd,
           thingsAndPersons
         )) {
-          this.debug(`${command[0]} on ${command[1]}`);
+          const shortcut = this.defaults.keyMap[command || '*'];
+
+          if (thingOrPerson) {
+            const scope = this.objects.getThingOrPerson(thingOrPerson);
+
+            switch (shortcut) {
+              case systemShortcuts.Drop:
+                this.debug(`drop ${scope.key}`);
+
+                break;
+              case systemShortcuts.Pick:
+                this.debug(`pick ${scope.key}`);
+
+                break;
+              case systemShortcuts.Say:
+                this.debug(`speek to ${scope.key}`);
+
+                break;
+              default:
+                this.debug(`${command} on ${scope.key}`);
+
+                scope.runAction(command, this);
+            }
+
+            return;
+          } else {
+            switch (shortcut) {
+              case systemShortcuts.Clock:
+                this.debug(`show clock ${this.player.time}`);
+
+                break;
+              case systemShortcuts.Quit:
+                this.debug('quit');
+
+                break;
+              case systemShortcuts.View:
+                this.debug(
+                  `view inventory ${JSON.stringify(
+                    Array.from(this.player.Inventory)
+                  )}`
+                );
+
+                break;
+              case systemShortcuts.Look:
+                this.debug(`show state ${this.player.state.key}`);
+
+                Action.run(
+                  this.player.state.exits[systemShortcuts.Look.toString()],
+                  this.player.state,
+                  this
+                );
+
+                break;
+              default: {
+                this.debug(`use exit ${shortcut} on ${this.player.state.key}`);
+
+                const exit =
+                  this.player.state.exits[shortcut] ||
+                  this.player.state.exits['*'] ||
+                  [];
+
+                Action.run(exit, this.player.state, this);
+
+                break;
+              }
+            }
+          }
 
           return;
         }

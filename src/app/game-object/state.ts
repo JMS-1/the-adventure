@@ -1,5 +1,5 @@
 import { GameObject } from '.';
-import { Action, TActionMap } from '../actions';
+import { TActionMap } from '../actions';
 import { GameService } from '../services/game.service';
 import { stateOperations } from './stateOperations';
 
@@ -46,6 +46,6 @@ export class State extends GameObject {
   }
 
   run(operation: stateOperations, game: GameService) {
-    Action.runAction(operation.toString(), this.actions, this, game);
+    this.runAction(operation.toString(), game);
   }
 }
