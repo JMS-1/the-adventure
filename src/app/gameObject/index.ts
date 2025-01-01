@@ -8,16 +8,13 @@ export abstract class GameObject {
 
   actions: TActionMap = {};
 
-  things = new Set<string>();
-
-  persons = new Set<string>();
+  thingsOrPersons = new Set<string>();
 
   constructor(public readonly name: string, macro: Macro | null) {
     if (macro) {
       this.actions = { ...macro.actions };
       this.message = macro.message;
-      this.persons = new Set(macro.persons);
-      this.things = new Set(macro.things);
+      this.thingsOrPersons = new Set(macro.thingsOrPersons);
     }
   }
 
@@ -43,20 +40,20 @@ export abstract class GameObject {
       else this.actions[action] = actions[action];
   }
 
-  private addToObjectList(list: string, set: Set<string>) {
+  private addToObjectList(list: string) {
     if (!list.startsWith('(')) list = `(${list})`;
     else if (!list.endsWith(')')) throw new Error('bad list of objects');
 
     for (const thingOrPerson of list.substring(1, list.length - 1).split(','))
-      set.add(thingOrPerson.trim());
+      this.thingsOrPersons.add(thingOrPerson.trim());
   }
 
   setThings(things: string) {
-    this.addToObjectList(things, this.things);
+    this.addToObjectList(things);
   }
 
   setPersons(persons: string) {
-    this.addToObjectList(persons, this.persons);
+    this.addToObjectList(persons);
   }
 
   loadDefaults(game: GameService) {
@@ -66,17 +63,14 @@ export abstract class GameObject {
   }
 
   validate(game: GameService) {
-    for (const thing of [...this.things, ...this.persons])
+    for (const thing of this.thingsOrPersons)
       if (!game.objects.thingOrPerson[thing])
         throw new Error(`${this.name}: unknown thing or person ${thing}`);
 
     for (const actions of Object.values(this.actions))
       actions.forEach((a) => a.validate(game, this));
 
-    game.player.CarriedObjects[this.key] = new Set([
-      ...this.persons,
-      ...this.things,
-    ]);
+    game.player.CarriedObjects[this.key] = new Set(this.thingsOrPersons);
 
     game.player.setMessage(this, this.message, true, game);
   }

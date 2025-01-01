@@ -134,8 +134,7 @@ export class GameService implements OnDestroy {
 
     const thingsAndPersons = [
       ...this.player.Inventory,
-      ...this.player.state.things,
-      ...this.player.state.persons,
+      ...this.player.state.thingsOrPersons,
     ].reduce((map, name) => {
       for (const word of this.objects.thingOrPerson[name]?.words || [])
         map[word.toLowerCase()] = name;
