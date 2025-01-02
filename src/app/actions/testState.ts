@@ -34,8 +34,7 @@ export class TestStateAction extends Action {
       `test message of ${this.thingOrPerson.key} to be ${this.message}`
     );
 
-    const message = game.player.Messages[this.thingOrPerson.key]?.[0];
-
-    if (message === this.message) Action.run(this.actions, scope, game);
+    if (this.message === game.player.Messages[this.thingOrPerson.key])
+      Action.run(this.actions, scope, game);
   }
 }

@@ -3,22 +3,35 @@
     <div *ngIf="game.ready$ | async">
       <div>{{ game.lastError }}</div>
     </div>
-    <div>
-      <div>Time = {{ game.player.time }}</div>
+    <div *ngIf="showDebug">
+      <div>Time = {{ game.player.time.toString() }}</div>
       <div>
         State = {{ game.player.state.key }}
         {{
           setValues(game.player.CarriedObjects[game.player.state.key]) | json
         }}
       </div>
-      <div>Weight = {{ game.player.weight }}</div>
+      <div>
+        Exits =
+        {{ mapKeys(game.player.state.exits) | json }}
+      </div>
+      <div>Weight = {{ game.player.weight.toString() }}</div>
       <div>Inventory = {{ setValues(game.player.Inventory) | json }}</div>
     </div>
-    <button (click)="settings.game = undefined">
-      leave {{ settings.game }}
-    </button>
+    <div class="actions">
+      <button mat-raised-button (click)="game.help()">Hilfe anzeigen</button>
+      <button mat-raised-button (click)="clearOutput()">Ausgabe löschen</button>
+      <mat-slide-toggle [(ngModel)]="showDebug" (ngModelChange)="scrollToEnd()"
+        >Debug Daten anzeigen</mat-slide-toggle
+      >
+    </div>
   </div>
-  <div *ngIf="game.player" class="output" #game>{{ output }}</div>
+  <div
+    *ngIf="game.player"
+    class="output"
+    #game
+    [ngClass]="{ debug: showDebug }"
+  ></div>
   <input
     type="text"
     value=""

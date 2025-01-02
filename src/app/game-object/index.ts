@@ -72,7 +72,7 @@ export abstract class GameObject {
 
     game.player.CarriedObjects[this.key] = new Set(this.thingsOrPersons);
 
-    game.player.setMessage(this, this.message, true, game);
+    game.player.setMessage(this, this.message, true);
   }
 
   abstract getMessageKey(message: string): string;

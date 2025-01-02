@@ -33,7 +33,8 @@ export class PrintAction extends Action {
   }
 
   protected override onRun(scope: GameObject, game: GameService): void {
-    game.debug(`print ${this.area || ''}${this.area || '.'}${this.message}`);
-    game.output(this.choices);
+    game.debug(`print ${this.area || ''}${this.area && '.'}${this.message}`);
+
+    game.player.printRandomMessage(this.choices);
   }
 }

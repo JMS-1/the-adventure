@@ -30,6 +30,6 @@ export class MessageAction extends Action {
       }`
     );
 
-    game.player.setMessage(scope, this.message, this.silent, game);
+    game.player.setMessage(scope, this.message, this.silent);
   }
 }

@@ -22,12 +22,11 @@ export class RemoveAction extends Action {
       throw new Error(`${scope.name} is not a thing or person`);
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   protected override onRun(scope: GameObject, game: GameService): void {
-    throw new Error(
-      `${
-        (this as unknown as { constructor: { name: string } }).constructor.name
-      } not yet implemented`
-    );
+    game.debug(`remove ${scope}}`);
+
+    game.player.stopTimers(scope as ThingOrPerson);
+
+    game.player.dropThingOrPerson(scope as ThingOrPerson, true);
   }
 }

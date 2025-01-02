@@ -2,6 +2,7 @@ import { GameObject } from '.';
 import { Action, TActionMap } from '../actions';
 import { GameService } from '../services/game.service';
 import { Macro } from './macro';
+import { systemShortcuts } from './systemShortcuts';
 import { Weight } from './weight';
 
 const timeKeyReg = /^(\+)?(\d{1,3})$/;
@@ -70,6 +71,18 @@ export abstract class ThingOrPerson extends GameObject {
 
   override getMessageKey(message: string) {
     return `things.${this.name}_${message}`;
+  }
+
+  runCommand(command: string, game: GameService) {
+    return Action.run(this.commands[command], this, game);
+  }
+
+  runSystemCommand(key: systemShortcuts, game: GameService) {
+    const keyString = key.toString();
+
+    for (const command of Object.keys(game.defaults.keyMap))
+      if (game.defaults.keyMap[command] === keyString)
+        return this.runCommand(command, game);
   }
 }
 

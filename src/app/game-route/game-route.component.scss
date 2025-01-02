@@ -17,8 +17,12 @@
     grid-auto-flow: row;
     row-gap: 0.5em;
 
-    > button {
-      justify-self: flex-start;
+    > .actions {
+      display: grid;
+      grid-auto-flow: column;
+      column-gap: 1em;
+      align-items: center;
+      justify-content: flex-start;
     }
   }
 
@@ -29,8 +33,6 @@
   }
 
   > .output {
-    font-family: "Courier New", Courier, monospace;
-    white-space: pre-line;
     width: calc(100% - 20px - 1em);
     height: calc(100% - 20px - 1em);
     overflow: auto;
@@ -39,5 +41,10 @@
     box-shadow: 2px 2px 2px grey;
     padding: 0.5em;
     background: #eeeeee;
+
+    > div {
+      white-space: pre-line;
+      font-family: "Courier New", Courier, monospace;
+    }
   }
 }

@@ -7,13 +7,25 @@ import { State } from '../game-object/state';
 import { stateOperations } from '../game-object/stateOperations';
 import { systemMessages } from '../game-object/systemMessages';
 import { systemShortcuts } from '../game-object/systemShortcuts';
+import { ThingOrPerson } from '../game-object/thingOrPerson';
 import { Time } from '../game-object/time';
 import { Weight } from '../game-object/weight';
 import { DefaultsService } from './defaults.service';
 import { InfoService } from './info.service';
 import { MessagesService } from './messages.service';
 import { ObjectsService } from './objects.service';
+import { SettingsService } from './settings.service';
 import { StatesService } from './states.service';
+
+const days: systemMessages[] = [
+  systemMessages.Day0,
+  systemMessages.Day1,
+  systemMessages.Day2,
+  systemMessages.Day3,
+  systemMessages.Day4,
+  systemMessages.Day5,
+  systemMessages.Day6,
+];
 
 @Injectable()
 export class GameService implements OnDestroy {
@@ -22,14 +34,21 @@ export class GameService implements OnDestroy {
   readonly ready$ = this._parseDone$.asObservable();
 
   private readonly _output$ = new Subject<
-    ['out' | 'debug' | 'error', string]
+    ['out' | 'debug' | 'error' | 'verbatim', string]
   >();
 
   readonly output$ = this._output$.asObservable();
 
+  private _suppressOutput = 0;
+
   lastError = '';
 
-  player = new Player(new State('n/a', 'n/a'), null!, null!, null!);
+  player = new Player(
+    new State('n/a', 'n/a'),
+    new Weight('(0,0,0)'),
+    new Time('(d0/0,h0/0,m0/1)'),
+    null!
+  );
 
   constructor(
     public readonly commands: CommandService,
@@ -37,7 +56,8 @@ export class GameService implements OnDestroy {
     public readonly info: InfoService,
     public readonly messages: MessagesService,
     public readonly objects: ObjectsService,
-    public readonly states: StatesService
+    public readonly states: StatesService,
+    public readonly settings: SettingsService
   ) {
     const subscription = combineLatest([
       commands.parseDone$,
@@ -105,18 +125,43 @@ export class GameService implements OnDestroy {
 
     for (const gameObject of objects) gameObject.validate(this);
 
-    this.output(this.info.intro);
+    this.verbatim(this.info.intro);
 
-    this.player.state.run(stateOperations.stay, this);
+    this._suppressOutput++;
+
+    try {
+      this.player.state.run(stateOperations.stay, this);
+    } finally {
+      this._suppressOutput--;
+    }
+
+    this.dumpCurrentState();
   };
+
+  private verbatim(message: string) {
+    this._output$.next(['verbatim', message]);
+  }
+
+  help() {
+    this.verbatim(this.info.help);
+  }
 
   debug(message: string) {
     this._output$.next(['debug', message]);
   }
 
+  private getMessage(message: systemMessages) {
+    const messages = this.messages.messageMap[`${message}`];
+
+    return messages?.[Math.floor(Math.random() * messages?.length)] || message;
+  }
+
   output(message: string | string[]) {
+    if (this._suppressOutput > 0) return;
+
     if (Array.isArray(message))
       message = message[Math.floor(Math.random() * message.length)];
+    else message = `${message}`;
 
     this._output$.next(['out', '\n' + message]);
   }
@@ -132,7 +177,7 @@ export class GameService implements OnDestroy {
     this._output$.next(['error', choice + '\n']);
   }
 
-  run(cmd: string) {
+  run(cmd: string): void {
     cmd = cmd.trim();
 
     if (!cmd) return;
@@ -148,6 +193,7 @@ export class GameService implements OnDestroy {
     }, {} as Record<string, string>);
 
     const state = this.player.state;
+    const dead = this.player.dead;
 
     try {
       try {
@@ -162,80 +208,127 @@ export class GameService implements OnDestroy {
 
             switch (shortcut) {
               case systemShortcuts.Drop:
-                this.debug(`drop ${scope.key}`);
-
-                break;
+                return this.dropThingOrPerson(scope);
               case systemShortcuts.Pick:
-                this.debug(`pick ${scope.key}`);
-
-                break;
+                return this.pickThingOrPerson(scope);
               case systemShortcuts.Say:
                 this.debug(`speek to ${scope.key}`);
 
-                break;
+                return;
               default:
                 this.debug(`${command} on ${scope.key}`);
 
-                scope.runAction(command, this);
-            }
+                scope.runCommand(command, this);
 
-            return;
-          } else {
-            switch (shortcut) {
-              case systemShortcuts.Clock:
-                this.debug(`show clock ${this.player.time}`);
-
-                break;
-              case systemShortcuts.Quit:
-                this.debug('quit');
-
-                break;
-              case systemShortcuts.View:
-                this.debug(
-                  `view inventory ${JSON.stringify(
-                    Array.from(this.player.Inventory)
-                  )}`
-                );
-
-                break;
-              case systemShortcuts.Look:
-                this.debug(`show state ${this.player.state.key}`);
-
-                Action.run(
-                  this.player.state.exits[systemShortcuts.Look.toString()],
-                  this.player.state,
-                  this
-                );
-
-                break;
-              default: {
-                this.debug(`use exit ${shortcut} on ${this.player.state.key}`);
-
-                const exit =
-                  this.player.state.exits[shortcut] ||
-                  this.player.state.exits['*'] ||
-                  [];
-
-                Action.run(exit, this.player.state, this);
-
-                break;
-              }
+                return;
             }
           }
 
-          return;
+          switch (shortcut) {
+            case systemShortcuts.Clock:
+              return this.dumpTime();
+            case systemShortcuts.Quit:
+              this.settings.game = undefined;
+
+              return;
+            case systemShortcuts.View:
+              this.dumpCurrentState();
+
+              return this.dumpInventory();
+            case systemShortcuts.Look:
+              return this.dumpCurrentState();
+            default: {
+              this.debug(`use exit ${shortcut} on ${state.key}`);
+
+              const exit = state.exits[shortcut] || state.exits['*'] || [];
+
+              return Action.run(exit, state, this);
+            }
+          }
         }
 
         this.debug('unknown command');
 
         this.error(systemMessages.NoComm);
       } finally {
-        if (this.player.state === state) state.run(stateOperations.stay, this);
+        if (!this.player.dead && this.player.state === state)
+          state.run(stateOperations.stay, this);
 
-        this.player.nextTick();
+        if (!this.player.dead) this.player.nextTick();
+        else if (!dead) this.verbatim(this.info.extro);
       }
     } catch (e) {
       this.debug(`${e}`);
     }
+  }
+
+  private dumpCurrentState(debug = true): void {
+    const { player } = this;
+    const { state } = player;
+
+    if (debug) this.debug(`show state ${state.key}`);
+
+    const exits = state.exits[systemShortcuts.Look.toString()];
+
+    if (exits?.length) Action.run(exits, state, this);
+    else player.print(state);
+
+    for (const thingOrPerson of player.CarriedObjects[player.state.key])
+      player.print(thingOrPerson);
+  }
+
+  private dumpInventory(debug = true): void {
+    const { player } = this;
+
+    if (debug)
+      this.debug(
+        `view inventory ${JSON.stringify(Array.from(this.player.Inventory))}`
+      );
+
+    for (const thingOrPerson of player.Inventory) player.print(thingOrPerson);
+  }
+
+  private dumpTime(): void {
+    this.debug(`show clock ${this.player.time}`);
+
+    const { hours, minutes } = this.player.time;
+
+    this.output(
+      this.getMessage(systemMessages.Clock1) +
+        ' ' +
+        this.getMessage(days[this.player.time.dayOfWeek]) +
+        ' ' +
+        `${`${hours}`.padStart(2, '0')}` +
+        ':' +
+        `${`${minutes}`.padStart(2, '0')}` +
+        ' ' +
+        this.getMessage(systemMessages.Clock2)
+    );
+  }
+
+  pickThingOrPerson(thingOrPerson: ThingOrPerson, debug = true): void {
+    if (this.player.Inventory.has(thingOrPerson.key)) return;
+
+    if (debug) this.debug(`pick ${thingOrPerson.key}`);
+
+    this.player.pickThingOrPerson(thingOrPerson);
+
+    thingOrPerson.runSystemCommand(systemShortcuts.Pick, this);
+  }
+
+  dropThingOrPerson(thingOrPerson: ThingOrPerson, debug = true): void {
+    if (!this.player.Inventory.has(thingOrPerson.key)) return;
+
+    if (debug) this.debug(`drop ${thingOrPerson.key}`);
+
+    this.player.addThingOrPersonToCarrier(
+      thingOrPerson,
+      this.player.state,
+      true
+    );
+
+    thingOrPerson.runSystemCommand(systemShortcuts.Drop, this);
+
+    return;
   }
 }

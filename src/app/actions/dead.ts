@@ -6,7 +6,7 @@ import { ParseContext } from './parseContext';
 export class DeadAction extends Action {
   public static readonly Pattern = /^>>([^,)\s]+)/;
 
-  message?: string[];
+  message!: string[];
 
   private constructor(public readonly reason: string) {
     super();
@@ -25,12 +25,11 @@ export class DeadAction extends Action {
       throw new Error(`${scope.name}: no message ${this.reason}`);
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   protected override onRun(scope: GameObject, game: GameService): void {
-    throw new Error(
-      `${
-        (this as unknown as { constructor: { name: string } }).constructor.name
-      } not yet implemented`
-    );
+    game.debug(`die ${this.reason}`);
+
+    game.output(this.message);
+
+    game.player.dead = true;
   }
 }

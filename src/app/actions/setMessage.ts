@@ -36,6 +36,6 @@ export class SetMessageAction extends Action {
       } to ${this.message}`
     );
 
-    game.player.setMessage(this.thingOrPerson, this.message, this.silent, game);
+    game.player.setMessage(this.thingOrPerson, this.message, this.silent);
   }
 }

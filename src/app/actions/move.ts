@@ -44,9 +44,11 @@ export class MoveAction extends Action {
     if (this.self) {
       game.debug(`move ${scope.key} to ${this._target.key}`);
 
-      player.removeThingOrPersonFromCarriers(scope as ThingOrPerson);
-
-      player.addThingOrPersonToCarrier(scope as ThingOrPerson, this._target);
+      player.addThingOrPersonToCarrier(
+        scope as ThingOrPerson,
+        this._target,
+        true
+      );
     } else if (this._target !== player.state) {
       game.debug(`goto ${this._target.key}`);
 

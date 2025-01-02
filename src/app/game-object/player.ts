@@ -17,7 +17,7 @@ export class Player {
 
   readonly Inventory = new Set<string>();
 
-  readonly Messages: Record<string, [string, string?]> = {};
+  readonly Messages: Record<string, string> = {};
 
   constructor(
     public state: State,
@@ -52,68 +52,79 @@ export class Player {
     this._timers = this._timers.filter((t) => t.gameObject !== thingOrPerson);
   }
 
-  removeThingOrPersonFromCarriers(thingOrPerson: ThingOrPerson) {
+  dropThingOrPerson(thingOrPerson: ThingOrPerson, silent: boolean) {
     Object.values(this.CarriedObjects).forEach((s) =>
       s.delete(thingOrPerson.name)
     );
+
+    if (this.Inventory.has(thingOrPerson.name)) {
+      this.weight.add(thingOrPerson.weight);
+
+      this.Inventory.delete(thingOrPerson.name);
+    }
+
+    if (!silent) this.print(thingOrPerson);
   }
 
   addThingOrPersonToCarrier(
     thingOrPerson: ThingOrPerson,
-    gameObject: GameObject
+    gameObject: GameObject,
+    silent: boolean
   ) {
-    this.removeThingOrPersonFromInventory(thingOrPerson);
+    this.dropThingOrPerson(thingOrPerson, silent);
 
     this.CarriedObjects[gameObject.key].add(thingOrPerson.name);
+
+    if (!silent) this.print(thingOrPerson);
   }
 
-  addThingOrPersonToInventory(thingOrPerson: ThingOrPerson) {
+  pickThingOrPerson(thingOrPerson: ThingOrPerson) {
     if (this.Inventory.has(thingOrPerson.name)) return;
 
-    if (this.weight.subtract(thingOrPerson.weight)) {
+    if (!this.weight.subtract(thingOrPerson.weight))
+      this._game.error(systemMessages.Heavy);
+    else {
+      this.dropThingOrPerson(thingOrPerson, false);
+
       this.Inventory.add(thingOrPerson.name);
-
-      this.removeThingOrPersonFromCarriers(thingOrPerson);
-    } else this._game.error(systemMessages.Heavy);
+    }
   }
 
-  removeThingOrPersonFromInventory(thingOrPerson: ThingOrPerson) {
-    if (!this.Inventory.has(thingOrPerson.name)) return;
+  isVisible(gameObject: GameObject | undefined) {
+    if (!gameObject) return false;
 
-    this.weight.add(thingOrPerson.weight);
-
-    this.Inventory.delete(thingOrPerson.name);
-  }
-
-  isVisible(gameObject: GameObject) {
     return (
+      gameObject === this.state ||
       this.Inventory.has(gameObject.key) ||
       this.CarriedObjects[this.state.key].has(gameObject.key)
     );
   }
 
-  setMessage(
-    gameObject: GameObject,
-    message: string,
-    silent: boolean,
-    game: GameService
-  ) {
-    const messages = gameObject.getMessage(game.messages, message);
+  setMessage(gameObject: GameObject, message: string, silent: boolean) {
+    this.Messages[gameObject.key] = message;
 
-    const choice =
-      messages?.[Math.floor(Math.random() * (messages?.length ?? 0))];
-
-    this.Messages[gameObject.key] = [message, choice];
-
-    if (choice && !silent && this.isVisible(gameObject)) game.output(choice);
+    if (!silent) this.print(gameObject);
   }
 
-  print(scope: string | GameObject) {
-    if (scope instanceof GameObject) scope = scope.key;
+  print(gameObject: GameObject | string | undefined) {
+    if (typeof gameObject === 'string')
+      gameObject = this._game.objects.thingOrPerson[gameObject];
 
-    const info = this.Messages[scope];
+    if (this.isVisible(gameObject))
+      this.printRandomMessage(
+        gameObject!.getMessage(
+          this._game.messages,
+          this.Messages[gameObject!.key]
+        )
+      );
+  }
 
-    if (info?.[1]) this._game.output(info[1]);
+  printRandomMessage(messages: string[] | undefined) {
+    if (!messages?.length) return;
+
+    const choice = messages[Math.floor(Math.random() * messages.length)];
+
+    if (choice) this._game.output(choice);
   }
 
   enterState(state: State) {

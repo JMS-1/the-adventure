@@ -34,12 +34,9 @@ export class PickAction extends Action {
     if (this.self) {
       game.debug(`add ${this._thingOrPerson.name} to ${scope.key}.`);
 
-      game.player.removeThingOrPersonFromCarriers(this._thingOrPerson);
-      game.player.addThingOrPersonToCarrier(this._thingOrPerson, scope);
+      game.player.addThingOrPersonToCarrier(this._thingOrPerson, scope, true);
     } else {
-      game.debug(`pick ${this._thingOrPerson.key}`);
-
-      game.player.addThingOrPersonToInventory(this._thingOrPerson);
+      game.pickThingOrPerson(this._thingOrPerson);
     }
   }
 }

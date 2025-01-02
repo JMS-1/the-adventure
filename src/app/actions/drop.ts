@@ -7,7 +7,7 @@ import { ParseContext } from './parseContext';
 export class DropAction extends Action {
   public static readonly Pattern = /^(@)?(#)?!([^,)\s]+)/;
 
-  thingOrPerson?: ThingOrPerson;
+  thingOrPerson!: ThingOrPerson;
 
   private constructor(
     public readonly what: string,
@@ -27,12 +27,17 @@ export class DropAction extends Action {
     this.thingOrPerson = game.objects.getThingOrPerson(this.what);
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   protected override onRun(scope: GameObject, game: GameService): void {
-    throw new Error(
-      `${
-        (this as unknown as { constructor: { name: string } }).constructor.name
-      } not yet implemented`
-    );
+    if (this.self) {
+      game.debug(
+        `${this.silent ? 'silent ' : ''}${scope.key} drop ${
+          this.thingOrPerson.key
+        }`
+      );
+
+      game.player.dropThingOrPerson(this.thingOrPerson, this.silent);
+    } else {
+      game.dropThingOrPerson(this.thingOrPerson);
+    }
   }
 }

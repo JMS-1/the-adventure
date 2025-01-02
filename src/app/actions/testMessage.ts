@@ -26,8 +26,7 @@ export class TestMessageAction extends Action {
   protected override onRun(scope: GameObject, game: GameService): void {
     game.debug(`test message of ${scope.key} to be ${this.message}`);
 
-    const message = game.player.Messages[scope.key]?.[0];
-
-    if (message === this.message) Action.run(this.actions, scope, game);
+    if (this.message === game.player.Messages[scope.key])
+      Action.run(this.actions, scope, game);
   }
 }

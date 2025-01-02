@@ -1,5 +1,8 @@
 import { CommonModule } from '@angular/common';
 import * as core from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { Subscription } from 'rxjs';
 import { CommandService } from '../commands/command.service';
 import { AssetService } from '../services/asset.service';
@@ -13,7 +16,7 @@ import { StatesService } from '../services/states.service';
 
 @core.Component({
   selector: 'app-game-route',
-  imports: [CommonModule],
+  imports: [CommonModule, MatButtonModule, MatSlideToggleModule, FormsModule],
   providers: [
     AssetService,
     DefaultsService,
@@ -27,26 +30,34 @@ import { StatesService } from '../services/states.service';
   templateUrl: './game-route.component.html',
   styleUrl: './game-route.component.scss',
 })
-export class GameRouteComponent implements core.OnInit, core.OnDestroy {
+export class GameRouteComponent implements core.AfterViewInit, core.OnDestroy {
   @core.ViewChild('game') private _output?: core.ElementRef;
 
-  output = '';
+  showDebug = true;
 
-  private readonly _outputSubscription: Subscription;
+  private _outputSubscription?: Subscription;
 
   constructor(
     public readonly settings: SettingsService,
     public readonly game: GameService
-  ) {
-    this._outputSubscription = game.output$.subscribe(([mode, text]) => {
-      this.output += mode === 'debug' ? `[debug] ${text}\n` : `${text}\n`;
+  ) {}
 
-      setTimeout(() => {
-        const output = this._output?.nativeElement as HTMLElement;
+  ngAfterViewInit(): void {
+    const output = this._output?.nativeElement as HTMLElement;
 
-        if (output) output.scrollTop = output.scrollHeight;
-      }, 100);
-    });
+    if (output)
+      this._outputSubscription = this.game.output$.subscribe(([mode, text]) => {
+        const div = document.createElement('div');
+
+        div.innerText = `${text}`;
+        div.classList.add(`output-${mode}`);
+
+        output.appendChild(div);
+
+        this.scrollToEnd();
+      });
+
+    this.game.parse();
   }
 
   ngOnDestroy(): void {
@@ -65,10 +76,6 @@ export class GameRouteComponent implements core.OnInit, core.OnDestroy {
     return set && Array.from(set);
   }
 
-  ngOnInit(): void {
-    this.game.parse();
-  }
-
   onEnter(ev: Event) {
     const input = ev.target as HTMLInputElement;
     const command = input.value;
@@ -76,5 +83,21 @@ export class GameRouteComponent implements core.OnInit, core.OnDestroy {
     input.value = '';
 
     if (command) this.game.run(command);
+  }
+
+  scrollToEnd() {
+    const output = this._output?.nativeElement as HTMLElement;
+
+    if (output)
+      setTimeout(
+        () => output.scroll({ behavior: 'smooth', top: output.scrollHeight }),
+        100
+      );
+  }
+
+  clearOutput() {
+    const output = this._output?.nativeElement as HTMLElement;
+
+    if (output) output.innerText = '';
   }
 }

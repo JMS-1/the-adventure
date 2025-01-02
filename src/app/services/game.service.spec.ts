@@ -7,6 +7,7 @@ import { GameService } from './game.service';
 import { InfoService } from './info.service';
 import { MessagesService } from './messages.service';
 import { ObjectsService } from './objects.service';
+import { SettingsService } from './settings.service';
 import { StatesService } from './states.service';
 
 describe('GameService', () => {
@@ -16,12 +17,13 @@ describe('GameService', () => {
     TestBed.configureTestingModule({
       providers: [
         GameService,
+        { provide: CommandService, useValue: { parseDone$: of() } },
         { provide: DefaultsService, useValue: { parseDone$: of() } },
         { provide: InfoService, useValue: { parseDone$: of() } },
         { provide: MessagesService, useValue: { parseDone$: of() } },
         { provide: ObjectsService, useValue: { parseDone$: of() } },
+        { provide: SettingsService, useValue: {} },
         { provide: StatesService, useValue: { parseDone$: of() } },
-        { provide: CommandService, useValue: { parseDone$: of() } },
       ],
     });
     service = TestBed.inject(GameService);

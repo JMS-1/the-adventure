@@ -27,7 +27,7 @@ export class InfoService {
       this._assets.download(`${this._settings.game}.HELP`, true),
     ]).subscribe({
       next: ([intro, extro, help]) => {
-        this.intro = intro;
+        this.intro = intro.replace('©', '999999').replace('®', 'Alle');
         this.extro = extro;
         this.help = help;
 
