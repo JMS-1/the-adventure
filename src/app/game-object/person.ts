@@ -1,7 +1,7 @@
+import { Entitiy } from './entity';
 import { Macro } from './macro';
-import { ThingOrPerson } from './thingOrPerson';
 
-export class Person extends ThingOrPerson {
+export class Person extends Entitiy {
   constructor(name: string, words: string, macro: Macro | null) {
     super(name, words, macro);
   }

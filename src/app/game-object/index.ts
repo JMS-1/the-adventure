@@ -8,13 +8,13 @@ export abstract class GameObject {
 
   actions: TActionMap = {};
 
-  thingsOrPersons = new Set<string>();
+  entities = new Set<string>();
 
   constructor(public readonly name: string, macro: Macro | null) {
     if (macro) {
       this.actions = { ...macro.actions };
       this.message = macro.message;
-      this.thingsOrPersons = new Set(macro.thingsOrPersons);
+      this.entities = new Set(macro.entities);
     }
   }
 
@@ -44,8 +44,8 @@ export abstract class GameObject {
     if (!list.startsWith('(')) list = `(${list})`;
     else if (!list.endsWith(')')) throw new Error('bad list of objects');
 
-    for (const thingOrPerson of list.substring(1, list.length - 1).split(','))
-      this.thingsOrPersons.add(thingOrPerson.trim());
+    for (const entity of list.substring(1, list.length - 1).split(','))
+      this.entities.add(entity.trim());
   }
 
   setThings(things: string) {
@@ -63,14 +63,14 @@ export abstract class GameObject {
   }
 
   validate(game: GameService) {
-    for (const thing of this.thingsOrPersons)
-      if (!game.objects.thingOrPerson[thing])
+    for (const thing of this.entities)
+      if (!game.objects.entity[thing])
         throw new Error(`${this.name}: unknown thing or person ${thing}`);
 
     for (const actions of Object.values(this.actions))
       actions.forEach((a) => a.validate(game, this));
 
-    game.player.CarriedObjects[this.key] = new Set(this.thingsOrPersons);
+    game.player.CarriedObjects[this.key] = new Set(this.entities);
 
     game.player.setMessage(this, this.message, true);
   }

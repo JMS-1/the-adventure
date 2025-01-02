@@ -1,13 +1,13 @@
 import { Action } from '.';
 import { GameObject } from '../game-object';
-import { ThingOrPerson } from '../game-object/thingOrPerson';
+import { Entitiy } from '../game-object/entity';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
 export class CallAction extends Action {
   public static readonly Pattern = /^(@)?([^\s,)=]+)\s+([^\s,)=]+)/;
 
-  private _thingOrPerson!: ThingOrPerson;
+  private _entity!: Entitiy;
 
   private _actions!: Action[];
 
@@ -26,8 +26,8 @@ export class CallAction extends Action {
   }
 
   override validate(game: GameService): void {
-    this._thingOrPerson = game.objects.getThingOrPerson(this._what);
-    this._actions = this._thingOrPerson.actions[this._action];
+    this._entity = game.objects.findEntity(this._what);
+    this._actions = this._entity.actions[this._action];
 
     if (!this._actions)
       throw new Error(`${this._what}: no action ${this._action}`);
@@ -36,10 +36,10 @@ export class CallAction extends Action {
   protected override onRun(scope: GameObject, game: GameService): void {
     game.debug(
       `call${this._silent ? '-silent' : ''} ${this._action} of ${
-        this._thingOrPerson.key
+        this._entity.key
       }`
     );
 
-    Action.run(this._actions, this._thingOrPerson, game);
+    Action.run(this._actions, this._entity, game);
   }
 }

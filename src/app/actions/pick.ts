@@ -1,13 +1,13 @@
 import { Action } from '.';
 import { GameObject } from '../game-object';
-import { ThingOrPerson } from '../game-object/thingOrPerson';
+import { Entitiy } from '../game-object/entity';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
 export class PickAction extends Action {
   public static readonly Pattern = /^(@)?(#)?<([^,)\s]+)/;
 
-  private _thingOrPerson!: ThingOrPerson;
+  private _entity!: Entitiy;
 
   private constructor(
     public readonly what: string,
@@ -24,19 +24,19 @@ export class PickAction extends Action {
   }
 
   override validate(game: GameService, scope: GameObject): void {
-    this._thingOrPerson = game.objects.getThingOrPerson(this.what);
+    this._entity = game.objects.findEntity(this.what);
 
-    if (this.self && !(scope instanceof ThingOrPerson))
+    if (this.self && !(scope instanceof Entitiy))
       throw new Error(`${scope.name} is no a thing or person`);
   }
 
   protected override onRun(scope: GameObject, game: GameService): void {
     if (this.self) {
-      game.debug(`add ${this._thingOrPerson.name} to ${scope.key}.`);
+      game.debug(`add ${this._entity.name} to ${scope.key}.`);
 
-      game.player.addThingOrPersonToCarrier(this._thingOrPerson, scope, true);
+      game.player.addEntityToParent(this._entity, scope, true);
     } else {
-      game.pickThingOrPerson(this._thingOrPerson);
+      game.pickEntity(this._entity);
     }
   }
 }

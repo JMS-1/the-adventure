@@ -2,12 +2,12 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { combineLatest, ReplaySubject, Subject, tap } from 'rxjs';
 import { Action } from '../actions';
 import { CommandService } from '../commands/command.service';
+import { Entitiy } from '../game-object/entity';
 import { Player } from '../game-object/player';
 import { State } from '../game-object/state';
 import { stateOperations } from '../game-object/stateOperations';
 import { systemMessages } from '../game-object/systemMessages';
 import { systemShortcuts } from '../game-object/systemShortcuts';
-import { ThingOrPerson } from '../game-object/thingOrPerson';
 import { Time } from '../game-object/time';
 import { Weight } from '../game-object/weight';
 import { DefaultsService } from './defaults.service';
@@ -117,7 +117,7 @@ export class GameService implements OnDestroy {
     );
 
     const objects = [
-      ...Object.values(this.objects.thingOrPerson),
+      ...Object.values(this.objects.entity),
       ...Object.values(this.states.states),
     ];
 
@@ -186,7 +186,7 @@ export class GameService implements OnDestroy {
       ...this.player.Inventory,
       ...this.player.CarriedObjects[this.player.state.key],
     ].reduce((map, name) => {
-      for (const word of this.objects.thingOrPerson[name].words)
+      for (const word of this.objects.entity[name].words)
         map[word.toLowerCase()] = name;
 
       return map;
@@ -197,20 +197,20 @@ export class GameService implements OnDestroy {
 
     try {
       try {
-        for (const [command, thingOrPerson] of this.commands.analyseCommand(
+        for (const [command, entity] of this.commands.analyseCommand(
           cmd,
           thingsAndPersons
         )) {
           const shortcut = this.defaults.keyMap[command || '*'];
 
-          if (thingOrPerson) {
-            const scope = this.objects.getThingOrPerson(thingOrPerson);
+          if (entity) {
+            const scope = this.objects.findEntity(entity);
 
             switch (shortcut) {
               case systemShortcuts.Drop:
-                return this.dropThingOrPerson(scope);
+                return this.dropEntity(scope);
               case systemShortcuts.Pick:
-                return this.pickThingOrPerson(scope);
+                return this.pickEntity(scope);
               case systemShortcuts.Say:
                 this.debug(`speek to ${scope.key}`);
 
@@ -273,8 +273,8 @@ export class GameService implements OnDestroy {
     if (exits?.length) Action.run(exits, state, this);
     else player.print(state);
 
-    for (const thingOrPerson of player.CarriedObjects[player.state.key])
-      player.print(thingOrPerson);
+    for (const entity of player.CarriedObjects[player.state.key])
+      player.print(entity);
   }
 
   private dumpInventory(debug = true): void {
@@ -285,7 +285,7 @@ export class GameService implements OnDestroy {
         `view inventory ${JSON.stringify(Array.from(this.player.Inventory))}`
       );
 
-    for (const thingOrPerson of player.Inventory) player.print(thingOrPerson);
+    for (const entity of player.Inventory) player.print(entity);
   }
 
   private dumpTime(): void {
@@ -306,28 +306,24 @@ export class GameService implements OnDestroy {
     );
   }
 
-  pickThingOrPerson(thingOrPerson: ThingOrPerson, debug = true): void {
-    if (this.player.Inventory.has(thingOrPerson.key)) return;
+  pickEntity(entity: Entitiy, debug = true): void {
+    if (this.player.Inventory.has(entity.key)) return;
 
-    if (debug) this.debug(`pick ${thingOrPerson.key}`);
+    if (debug) this.debug(`pick ${entity.key}`);
 
-    this.player.pickThingOrPerson(thingOrPerson);
+    this.player.pickEntity(entity);
 
-    thingOrPerson.runSystemCommand(systemShortcuts.Pick, this);
+    entity.runSystemCommand(systemShortcuts.Pick, this);
   }
 
-  dropThingOrPerson(thingOrPerson: ThingOrPerson, debug = true): void {
-    if (!this.player.Inventory.has(thingOrPerson.key)) return;
+  dropEntity(entity: Entitiy, debug = true): void {
+    if (!this.player.Inventory.has(entity.key)) return;
 
-    if (debug) this.debug(`drop ${thingOrPerson.key}`);
+    if (debug) this.debug(`drop ${entity.key}`);
 
-    this.player.addThingOrPersonToCarrier(
-      thingOrPerson,
-      this.player.state,
-      true
-    );
+    this.player.addEntityToParent(entity, this.player.state, true);
 
-    thingOrPerson.runSystemCommand(systemShortcuts.Drop, this);
+    entity.runSystemCommand(systemShortcuts.Drop, this);
 
     return;
   }

@@ -1,13 +1,13 @@
 import { Action } from '.';
 import { GameObject } from '../game-object';
-import { ThingOrPerson } from '../game-object/thingOrPerson';
+import { Entitiy } from '../game-object/entity';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
 export class SetMessageAction extends Action {
   public static readonly Pattern = /^(@)?([^\s,)]+)\s*=\s*([^,)\s]+)/;
 
-  thingOrPerson!: ThingOrPerson;
+  entity!: Entitiy;
 
   private constructor(
     public readonly what: string,
@@ -24,18 +24,18 @@ export class SetMessageAction extends Action {
   }
 
   override validate(game: GameService): void {
-    this.thingOrPerson = game.objects.getThingOrPerson(this.what);
+    this.entity = game.objects.findEntity(this.what);
 
-    this.thingOrPerson.getMessage(game.messages, this.message);
+    this.entity.getMessage(game.messages, this.message);
   }
 
   protected override onRun(scope: GameObject, game: GameService): void {
     game.debug(
-      `${this.silent ? 'silent ' : ''} set message of ${
-        this.thingOrPerson.key
-      } to ${this.message}`
+      `${this.silent ? 'silent ' : ''} set message of ${this.entity.key} to ${
+        this.message
+      }`
     );
 
-    game.player.setMessage(this.thingOrPerson, this.message, this.silent);
+    game.player.setMessage(this.entity, this.message, this.silent);
   }
 }

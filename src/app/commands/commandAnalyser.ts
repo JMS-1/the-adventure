@@ -28,10 +28,10 @@ export class CommandAnalyser {
 
   *analyse(
     map: CommandMap,
-    thingsOrPersons: Record<string, string>
+    entities: Record<string, string>
   ): Generator<[string, string]> {
     /* May reference at least one thing or person. */
-    let thingOrPerson: string = null!;
+    let entity: string = null!;
 
     /* The command which will report. */
     let lastCommand: Command = null!;
@@ -45,21 +45,21 @@ export class CommandAnalyser {
       if (command) {
         /* Word recognized as part of the command tree. */
         lastCommand = command;
-      } else if (thingsOrPersons[word] && !thingOrPerson) {
+      } else if (entities[word] && !entity) {
         /* Word is a thing or person. */
         command = map['%'];
 
         if (command) {
           /* Explizit thing or persoen named in sentence. */
           lastCommand = map['%'];
-          thingOrPerson = thingsOrPersons[word];
+          entity = entities[word];
         } else if (
           i === this.words.length - 1 &&
           lastCommand?.objectKeys.size
         ) {
           /* Thing or person at the very end. */
           command = lastCommand;
-          thingOrPerson = thingsOrPersons[word];
+          entity = entities[word];
         }
       }
 
@@ -78,8 +78,7 @@ export class CommandAnalyser {
       /* Sentence is fully analysed. */
       if (i === this.words.length - 1) {
         /* Always prefer reporting a command on a thing or person. */
-        if (thingOrPerson)
-          for (const key of command.objectKeys) yield [key, thingOrPerson];
+        if (entity) for (const key of command.objectKeys) yield [key, entity];
         else for (const key of command.keys) yield [key, ''];
 
         break;

@@ -1,6 +1,6 @@
 import { Action } from '.';
 import { GameObject } from '../game-object';
-import { ThingOrPerson } from '../game-object/thingOrPerson';
+import { Entitiy } from '../game-object/entity';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
@@ -18,15 +18,15 @@ export class RemoveAction extends Action {
   }
 
   override validate(game: GameService, scope: GameObject): void {
-    if (!(scope instanceof ThingOrPerson))
+    if (!(scope instanceof Entitiy))
       throw new Error(`${scope.name} is not a thing or person`);
   }
 
   protected override onRun(scope: GameObject, game: GameService): void {
     game.debug(`remove ${scope}}`);
 
-    game.player.stopTimers(scope as ThingOrPerson);
+    game.player.stopTimers(scope as Entitiy);
 
-    game.player.dropThingOrPerson(scope as ThingOrPerson, true);
+    game.player.dropEntity(scope as Entitiy, true);
   }
 }

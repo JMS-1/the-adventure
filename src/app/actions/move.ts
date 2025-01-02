@@ -1,7 +1,7 @@
 import { Action } from '.';
 import { GameObject } from '../game-object';
+import { Entitiy } from '../game-object/entity';
 import { State } from '../game-object/state';
-import { ThingOrPerson } from '../game-object/thingOrPerson';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
@@ -34,7 +34,7 @@ export class MoveAction extends Action {
 
     if (!this._target) throw new Error(`${this.area}: no room ${this.room}`);
 
-    if (this.self && !(scope instanceof ThingOrPerson))
+    if (this.self && !(scope instanceof Entitiy))
       throw new Error(`${scope.name} not a thing or person`);
   }
 
@@ -44,11 +44,7 @@ export class MoveAction extends Action {
     if (this.self) {
       game.debug(`move ${scope.key} to ${this._target.key}`);
 
-      player.addThingOrPersonToCarrier(
-        scope as ThingOrPerson,
-        this._target,
-        true
-      );
+      player.addEntityToParent(scope as Entitiy, this._target, true);
     } else if (this._target !== player.state) {
       game.debug(`goto ${this._target.key}`);
 

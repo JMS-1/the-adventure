@@ -1,10 +1,10 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { concat, ReplaySubject, tap } from 'rxjs';
 import { TActionMap } from '../actions';
+import { Entitiy, EntityMap } from '../game-object/entity';
 import { Macro } from '../game-object/macro';
 import { Person } from '../game-object/person';
 import { Thing } from '../game-object/thing';
-import { ThingOrPerson, TThingOrPersonMap } from '../game-object/thingOrPerson';
 import { ActionService } from './action.service';
 import { AssetService } from './asset.service';
 import { SettingsService } from './settings.service';
@@ -15,19 +15,19 @@ export class ObjectsService implements OnDestroy {
 
   readonly parseDone$ = this._parseDone$.asObservable();
 
-  private _current?: ThingOrPerson;
+  private _current?: Entitiy;
 
-  readonly thingOrPerson: TThingOrPersonMap<ThingOrPerson> = {};
+  readonly entity: EntityMap<Entitiy> = {};
 
-  private _macros: TThingOrPersonMap<Macro> = {};
+  private _macros: EntityMap<Macro> = {};
 
   private _factory: new (
     name: string,
     words: string,
     macro: Macro | null
-  ) => ThingOrPerson = Person;
+  ) => Entitiy = Person;
 
-  private addToMap(what: ThingOrPerson, map = this.thingOrPerson) {
+  private addToMap(what: Entitiy, map = this.entity) {
     if (map[what.name]) throw new Error(`duplicate object '${what.name}`);
 
     map[what.name] = this._current = what;
@@ -151,11 +151,11 @@ export class ObjectsService implements OnDestroy {
     this._factory = Thing;
   }
 
-  getThingOrPerson(name: string) {
-    const thingOrPerson = this.thingOrPerson[name];
+  findEntity(name: string) {
+    const entity = this.entity[name];
 
-    if (!thingOrPerson) throw new Error(`can not find thing or person ${name}`);
+    if (!entity) throw new Error(`can not find thing or person ${name}`);
 
-    return thingOrPerson;
+    return entity;
   }
 }

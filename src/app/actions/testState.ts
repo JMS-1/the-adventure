@@ -1,13 +1,13 @@
 import { Action } from '.';
 import { GameObject } from '../game-object';
-import { ThingOrPerson } from '../game-object/thingOrPerson';
+import { Entitiy } from '../game-object/entity';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
 export class TestStateAction extends Action {
   public static readonly Pattern = /^if_state\s+([^\s]+)\s+([^\s]+)/;
 
-  thingOrPerson!: ThingOrPerson;
+  entity!: Entitiy;
 
   private constructor(
     public readonly what: string,
@@ -22,19 +22,17 @@ export class TestStateAction extends Action {
   }
 
   override validate(game: GameService, scope: GameObject): void {
-    this.thingOrPerson = game.objects.getThingOrPerson(this.what);
+    this.entity = game.objects.findEntity(this.what);
 
-    this.thingOrPerson.getMessage(game.messages, this.message);
+    this.entity.getMessage(game.messages, this.message);
 
     this.actions.forEach((a) => a.validate(game, scope));
   }
 
   protected override onRun(scope: GameObject, game: GameService): void {
-    game.debug(
-      `test message of ${this.thingOrPerson.key} to be ${this.message}`
-    );
+    game.debug(`test message of ${this.entity.key} to be ${this.message}`);
 
-    if (this.message === game.player.Messages[this.thingOrPerson.key])
+    if (this.message === game.player.Messages[this.entity.key])
       Action.run(this.actions, scope, game);
   }
 }

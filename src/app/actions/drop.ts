@@ -1,13 +1,13 @@
 import { Action } from '.';
 import { GameObject } from '../game-object';
-import { ThingOrPerson } from '../game-object/thingOrPerson';
+import { Entitiy } from '../game-object/entity';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
 export class DropAction extends Action {
   public static readonly Pattern = /^(@)?(#)?!([^,)\s]+)/;
 
-  thingOrPerson!: ThingOrPerson;
+  entity!: Entitiy;
 
   private constructor(
     public readonly what: string,
@@ -24,20 +24,18 @@ export class DropAction extends Action {
   }
 
   override validate(game: GameService): void {
-    this.thingOrPerson = game.objects.getThingOrPerson(this.what);
+    this.entity = game.objects.findEntity(this.what);
   }
 
   protected override onRun(scope: GameObject, game: GameService): void {
     if (this.self) {
       game.debug(
-        `${this.silent ? 'silent ' : ''}${scope.key} drop ${
-          this.thingOrPerson.key
-        }`
+        `${this.silent ? 'silent ' : ''}${scope.key} drop ${this.entity.key}`
       );
 
-      game.player.dropThingOrPerson(this.thingOrPerson, this.silent);
+      game.player.dropEntity(this.entity, this.silent);
     } else {
-      game.dropThingOrPerson(this.thingOrPerson);
+      game.dropEntity(this.entity);
     }
   }
 }

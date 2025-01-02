@@ -102,10 +102,10 @@ export class CommandService implements OnDestroy {
     }
   }
 
-  *analyseCommand(cmd: string, thingsOrPersons: Record<string, string>) {
+  *analyseCommand(cmd: string, entities: Record<string, string>) {
     const analyser = new CommandAnalyser(cmd);
 
-    for (const command of analyser.analyse(this.commands, thingsOrPersons))
+    for (const command of analyser.analyse(this.commands, entities))
       yield command;
   }
 }
