@@ -29,9 +29,7 @@ export class HereAction extends Action {
   protected override onRun(scope: GameObject, game: GameService): void {
     game.debug(`test ${this.entity.key} to be here`);
 
-    const here = game.player.CarriedObjects[game.player.state.key].has(
-      this.entity.key
-    );
+    const here = game.player.carriedObjects.has(game.player.state, this.entity);
 
     if (here) Action.run(this.actions, scope, game);
   }

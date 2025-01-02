@@ -32,7 +32,7 @@ export class TestStateAction extends Action {
   protected override onRun(scope: GameObject, game: GameService): void {
     game.debug(`test message of ${this.entity.key} to be ${this.message}`);
 
-    if (this.message === game.player.Messages[this.entity.key])
+    if (this.message === game.player.messages[this.entity.key])
       Action.run(this.actions, scope, game);
   }
 }

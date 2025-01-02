@@ -2,7 +2,7 @@ import { GameObject } from '.';
 import { Action, TActionMap } from '../actions';
 import { GameService } from '../services/game.service';
 import { Macro } from './macro';
-import { systemShortcuts } from './systemShortcuts';
+import { systemShortcuts } from './shortcuts';
 import { Weight } from './weight';
 
 const timeKeyReg = /^(\+)?(\d{1,3})$/;

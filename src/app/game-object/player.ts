@@ -1,9 +1,10 @@
 import { GameObject } from '.';
 import { type GameService } from '../services/game.service';
 import { Entity } from './entity';
+import { EntityAssignments } from './entity-assignments';
+import { systemMessages } from './messages';
+import { stateOperations } from './operations';
 import { State } from './state';
-import { stateOperations } from './stateOperations';
-import { systemMessages } from './systemMessages';
 import { Time } from './time';
 import { Timers } from './timers';
 import { Weight } from './weight';
@@ -13,11 +14,11 @@ export class Player {
 
   private _timers = new Timers();
 
-  readonly CarriedObjects: Record<string, Set<string>> = {};
+  readonly carriedObjects = new EntityAssignments();
 
-  readonly Inventory = new Set<string>();
+  readonly inventory = new Set<string>();
 
-  readonly Messages: Record<string, string> = {};
+  readonly messages: Record<string, string> = {};
 
   constructor(
     public state: State,
@@ -41,49 +42,50 @@ export class Player {
   }
 
   dropEntity(entity: Entity, silent: boolean) {
-    Object.values(this.CarriedObjects).forEach((s) => s.delete(entity.name));
+    this.carriedObjects.delete(entity);
 
-    if (this.Inventory.has(entity.name)) {
+    if (this.inventory.has(entity.name)) {
       this.weight.add(entity.weight);
 
-      this.Inventory.delete(entity.name);
+      this.inventory.delete(entity.name);
     }
 
     if (!silent) this.print(entity);
   }
 
-  addEntityToParent(entity: Entity, gameObject: GameObject, silent: boolean) {
+  addEntityToParent(entity: Entity, parent: GameObject, silent: boolean) {
     this.dropEntity(entity, silent);
 
-    this.CarriedObjects[gameObject.key].add(entity.name);
+    this.carriedObjects.add(entity, parent);
 
     if (!silent) this.print(entity);
   }
 
   pickEntity(entity: Entity) {
-    if (this.Inventory.has(entity.name)) return;
+    if (this.inventory.has(entity.name)) return;
 
     if (!this.weight.subtract(entity.weight))
       this._game.error(systemMessages.Heavy);
     else {
       this.dropEntity(entity, false);
 
-      this.Inventory.add(entity.name);
+      this.inventory.add(entity.name);
     }
   }
 
   isVisible(gameObject: GameObject | undefined) {
+    if (gameObject instanceof State) return gameObject === this.state;
+
     if (!gameObject) return false;
 
     return (
-      gameObject === this.state ||
-      this.Inventory.has(gameObject.key) ||
-      this.CarriedObjects[this.state.key].has(gameObject.key)
+      this.inventory.has(gameObject.key) ||
+      this.carriedObjects.has(this.state, gameObject)
     );
   }
 
   setMessage(gameObject: GameObject, message: string, silent: boolean) {
-    this.Messages[gameObject.key] = message;
+    this.messages[gameObject.key] = message;
 
     if (!silent) this.print(gameObject);
   }
@@ -96,7 +98,7 @@ export class Player {
       this.printRandomMessage(
         gameObject!.getMessage(
           this._game.messages,
-          this.Messages[gameObject!.key]
+          this.messages[gameObject!.key]
         )
       );
   }
@@ -116,7 +118,8 @@ export class Player {
 
     this.print(state);
 
-    for (const entity of this.CarriedObjects[state.key]) this.print(entity);
+    for (const entity of this.carriedObjects.children(state))
+      this.print(entity);
 
     this.state.run(stateOperations.enter, this._game);
   }

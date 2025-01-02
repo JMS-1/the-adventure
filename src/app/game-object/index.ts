@@ -70,7 +70,7 @@ export abstract class GameObject {
     for (const actions of Object.values(this.actions))
       actions.forEach((a) => a.validate(game, this));
 
-    game.player.CarriedObjects[this.key] = new Set(this.entities);
+    game.player.carriedObjects.set(this, this.entities);
 
     game.player.setMessage(this, this.message, true);
   }

@@ -3,11 +3,11 @@ import { combineLatest, ReplaySubject, Subject, tap } from 'rxjs';
 import { Action } from '../actions';
 import { CommandService } from '../commands/command.service';
 import { Entity } from '../game-object/entity';
+import { systemMessages } from '../game-object/messages';
+import { stateOperations } from '../game-object/operations';
 import { Player } from '../game-object/player';
+import { systemShortcuts } from '../game-object/shortcuts';
 import { State } from '../game-object/state';
-import { stateOperations } from '../game-object/stateOperations';
-import { systemMessages } from '../game-object/systemMessages';
-import { systemShortcuts } from '../game-object/systemShortcuts';
 import { Time } from '../game-object/time';
 import { Weight } from '../game-object/weight';
 import { DefaultsService } from './defaults.service';
@@ -183,8 +183,8 @@ export class GameService implements OnDestroy {
     if (!cmd) return;
 
     const thingsAndPersons = [
-      ...this.player.Inventory,
-      ...this.player.CarriedObjects[this.player.state.key],
+      ...this.player.inventory,
+      ...this.player.carriedObjects.children(this.player.state),
     ].reduce((map, name) => {
       for (const word of this.objects.entity[name].words)
         map[word.toLowerCase()] = name;
@@ -273,7 +273,7 @@ export class GameService implements OnDestroy {
     if (exits?.length) Action.run(exits, state, this);
     else player.print(state);
 
-    for (const entity of player.CarriedObjects[player.state.key])
+    for (const entity of player.carriedObjects.children(player.state))
       player.print(entity);
   }
 
@@ -282,10 +282,10 @@ export class GameService implements OnDestroy {
 
     if (debug)
       this.debug(
-        `view inventory ${JSON.stringify(Array.from(this.player.Inventory))}`
+        `view inventory ${JSON.stringify(Array.from(this.player.inventory))}`
       );
 
-    for (const entity of player.Inventory) player.print(entity);
+    for (const entity of player.inventory) player.print(entity);
   }
 
   private dumpTime(): void {
@@ -307,7 +307,7 @@ export class GameService implements OnDestroy {
   }
 
   pickEntity(entity: Entity, debug = true): void {
-    if (this.player.Inventory.has(entity.key)) return;
+    if (this.player.inventory.has(entity.key)) return;
 
     if (debug) this.debug(`pick ${entity.key}`);
 
@@ -317,7 +317,7 @@ export class GameService implements OnDestroy {
   }
 
   dropEntity(entity: Entity, debug = true): void {
-    if (!this.player.Inventory.has(entity.key)) return;
+    if (!this.player.inventory.has(entity.key)) return;
 
     if (debug) this.debug(`drop ${entity.key}`);
 

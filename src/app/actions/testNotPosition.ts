@@ -38,7 +38,7 @@ export class TestNotPositionAction extends Action {
 
   protected override onRun(scope: GameObject, game: GameService): void {
     const hit = this.self
-      ? game.player.CarriedObjects[this.target.key].has(scope.key)
+      ? game.player.carriedObjects.has(this.target, scope)
       : this.target === game.player.state;
 
     game.debug(

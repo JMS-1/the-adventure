@@ -31,8 +31,8 @@ export class HasAction extends Action {
     game.debug(`test ${this.self ? scope.key : 'me'} has ${this.entity.key}`);
 
     const has = this.self
-      ? game.player.CarriedObjects[scope.key].has(this.entity.key)
-      : game.player.Inventory.has(this.entity.key);
+      ? game.player.carriedObjects.has(scope, this.entity)
+      : game.player.inventory.has(this.entity.key);
 
     if (has) Action.run(this.actions, scope, game);
   }

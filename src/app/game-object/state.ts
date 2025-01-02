@@ -1,7 +1,7 @@
 import { GameObject } from '.';
 import { TActionMap } from '../actions';
 import { GameService } from '../services/game.service';
-import { stateOperations } from './stateOperations';
+import { stateOperations } from './operations';
 
 export class State extends GameObject {
   exits: TActionMap = {};

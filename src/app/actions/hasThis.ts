@@ -25,7 +25,7 @@ export class HasThisAction extends Action {
   protected override onRun(scope: GameObject, game: GameService): void {
     game.debug(`test me has ${scope.key}`);
 
-    const has = game.player.Inventory.has(scope.key);
+    const has = game.player.inventory.has(scope.key);
 
     if (has) Action.run(this.actions, scope, game);
   }

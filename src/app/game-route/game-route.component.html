@@ -8,7 +8,8 @@
       <div>
         State = {{ game.player.state.key }}
         {{
-          setValues(game.player.CarriedObjects[game.player.state.key]) | json
+          setValues(game.player.carriedObjects.children(game.player.state))
+            | json
         }}
       </div>
       <div>
@@ -16,7 +17,7 @@
         {{ mapKeys(game.player.state.exits) | json }}
       </div>
       <div>Weight = {{ game.player.weight.toString() }}</div>
-      <div>Inventory = {{ setValues(game.player.Inventory) | json }}</div>
+      <div>Inventory = {{ setValues(game.player.inventory) | json }}</div>
     </div>
     <div class="actions">
       <button mat-raised-button (click)="game.help()">Hilfe anzeigen</button>
