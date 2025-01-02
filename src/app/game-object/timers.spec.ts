@@ -51,7 +51,9 @@ describe('Timers', () => {
   });
 
   it('can de-serialize', () => {
-    const timers = Timers.load(
+    const timers = new Timers();
+
+    timers.load(
       {
         timers: [
           { at: 10, entity: 'testP', key: '10', once: true },

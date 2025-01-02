@@ -22,6 +22,15 @@
     <div class="actions">
       <button mat-raised-button (click)="game.help()">Hilfe anzeigen</button>
       <button mat-raised-button (click)="clearOutput()">Ausgabe löschen</button>
+      <button
+        mat-raised-button
+        color="warn"
+        (click)="game.save()"
+        [disabled]="game.player.dead"
+      >
+        Speichern
+      </button>
+      <button mat-raised-button color="warn" (click)="load()">Laden</button>
       <mat-slide-toggle [(ngModel)]="showDebug" (ngModelChange)="scrollToEnd()"
         >Debug Daten anzeigen</mat-slide-toggle
       >

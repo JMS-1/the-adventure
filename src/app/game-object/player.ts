@@ -123,4 +123,41 @@ export class Player {
 
     this.state.run(stateOperations.enter, this._game);
   }
+
+  save() {
+    return {
+      assignments: this.carriedObjects.save(),
+      dead: this.dead,
+      inventory: Array.from(this.inventory),
+      messages: this.messages,
+      state: this.state.key,
+      time: this.time.save(),
+      timers: this._timers.save(),
+      weight: this.weight.save(),
+    };
+  }
+
+  static load(serialized: unknown, game: GameService) {
+    const json = serialized as ReturnType<Player['save']>;
+
+    const player = new Player(
+      game.states.states[json.state],
+      Weight.load(json.weight),
+      Time.load(json.time),
+      game
+    );
+
+    player.dead = json.dead;
+
+    player.carriedObjects.load(json.assignments, game);
+
+    player._timers.load(json.timers, game);
+
+    for (const entity of json.inventory) player.inventory.add(entity);
+
+    for (const key of Object.keys(json.messages))
+      player.messages[key] = json.messages[key];
+
+    return player;
+  }
 }

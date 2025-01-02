@@ -1,11 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
+import { GameService } from '../services/game.service';
 import { EntityAssignments } from './entity-assignments';
 import { Person } from './person';
 import { State } from './state';
 import { Thing } from './thing';
 
 describe('EntityAssignments', () => {
+  let game: GameService;
   let person: Person;
   let thing: Thing;
   let state: State;
@@ -13,6 +15,13 @@ describe('EntityAssignments', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
+        {
+          provide: GameService,
+          useValue: {
+            objects: { findEntity: (key: string) => ({ name: key, key }) },
+            states: { states: {} },
+          },
+        },
         {
           provide: Person,
           useValue: { key: 'testP', name: 'testP' },
@@ -28,6 +37,7 @@ describe('EntityAssignments', () => {
       ],
     });
 
+    game = TestBed.inject(GameService);
     state = TestBed.inject(State);
     person = TestBed.inject(Person);
     thing = TestBed.inject(Thing);
@@ -53,13 +63,18 @@ describe('EntityAssignments', () => {
   });
 
   it('can de-serialize', () => {
-    const assigments = EntityAssignments.load({
-      entities: {
-        $$area$testS: ['testP', 'testT'],
-        testP: [],
-        testT: ['testP'],
+    const assigments = new EntityAssignments();
+
+    assigments.load(
+      {
+        entities: {
+          $$area$testS: ['testP', 'testT'],
+          testP: [],
+          testT: ['testP'],
+        },
       },
-    });
+      game
+    );
 
     expect(assigments.save()).toEqual({
       entities: {

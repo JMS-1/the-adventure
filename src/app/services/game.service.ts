@@ -27,6 +27,8 @@ const days: systemMessages[] = [
   systemMessages.Day6,
 ];
 
+const storageKeyPrefix = 'W3ADV.';
+
 @Injectable()
 export class GameService implements OnDestroy {
   private readonly _parseDone$ = new ReplaySubject<boolean>(1);
@@ -262,7 +264,7 @@ export class GameService implements OnDestroy {
     }
   }
 
-  private dumpCurrentState(debug = true): void {
+  dumpCurrentState(debug = true): void {
     const { player } = this;
     const { state } = player;
 
@@ -277,7 +279,7 @@ export class GameService implements OnDestroy {
       player.print(entity);
   }
 
-  private dumpInventory(debug = true): void {
+  dumpInventory(debug = true): void {
     const { player } = this;
 
     if (debug)
@@ -324,7 +326,29 @@ export class GameService implements OnDestroy {
     this.player.addEntityToParent(entity, this.player.state, true);
 
     entity.runSystemCommand(systemShortcuts.Drop, this);
+  }
 
-    return;
+  private get storageKey() {
+    return `${storageKeyPrefix}.${this.settings.game}.state`;
+  }
+
+  save() {
+    localStorage.setItem(this.storageKey, JSON.stringify(this.player.save()));
+  }
+
+  load() {
+    try {
+      const json = localStorage.getItem(this.storageKey);
+
+      if (!json) return false;
+
+      this.player = Player.load(JSON.parse(json), this);
+
+      return true;
+    } catch (e) {
+      this.lastError = (e as Error).message;
+
+      return false;
+    }
   }
 }

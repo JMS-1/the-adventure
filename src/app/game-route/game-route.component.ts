@@ -100,4 +100,13 @@ export class GameRouteComponent implements core.AfterViewInit, core.OnDestroy {
 
     if (output) output.innerText = '';
   }
+
+  load() {
+    if (!this.game.load()) return;
+
+    this.clearOutput();
+
+    this.game.dumpCurrentState();
+    this.game.dumpInventory();
+  }
 }

@@ -68,12 +68,9 @@ export class Timers {
    *
    * @returns The timer management the JSON representation.
    */
-  static load(saved: unknown, game: GameService) {
+  load(saved: unknown, game: GameService) {
     const json = saved as ReturnType<Timers['save']>;
-    const timers = new Timers();
 
-    timers._timers = json.timers.map((t) => Timer.load(t, game));
-
-    return timers;
+    this._timers = json.timers.map((t) => Timer.load(t, game));
   }
 }

@@ -1,4 +1,5 @@
 import { GameObject } from '.';
+import { GameService } from '../services/game.service';
 
 /** Manager the active dynamic positions of entities. */
 export class EntityAssignments {
@@ -78,13 +79,13 @@ export class EntityAssignments {
    *
    * @returns The assigmentse representing the JSON representation.
    */
-  static load(saved: unknown) {
-    const assigments = new EntityAssignments();
+  load(saved: unknown, game: GameService) {
     const json = saved as ReturnType<EntityAssignments['save']>;
 
     for (const p of Object.keys(json.entities))
-      assigments._carried[p] = new Set(json.entities[p]);
-
-    return assigments;
+      this.set(
+        game.states.states[p] ?? game.objects.findEntity(p),
+        new Set(json.entities[p])
+      );
   }
 }
