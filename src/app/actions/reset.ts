@@ -1,6 +1,6 @@
 import { Action } from '.';
 import { GameObject } from '../game-object';
-import { Entitiy } from '../game-object/entity';
+import { Entity } from '../game-object/entity';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
@@ -18,14 +18,14 @@ export class ResetAction extends Action {
   }
 
   override validate(game: GameService, scope: GameObject): void {
-    if (!(scope instanceof Entitiy))
+    if (!(scope instanceof Entity))
       throw new Error(`${scope.name} is not a thing or person`);
   }
 
   protected override onRun(scope: GameObject, game: GameService): void {
     game.debug(`reset timers of ${scope.key}`);
 
-    game.player.stopTimers(scope as Entitiy);
-    game.player.startTimers(scope as Entitiy);
+    game.player.stopTimers(scope as Entity);
+    game.player.startTimers(scope as Entity);
   }
 }

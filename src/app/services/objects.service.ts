@@ -1,7 +1,7 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { concat, ReplaySubject, tap } from 'rxjs';
 import { TActionMap } from '../actions';
-import { Entitiy, EntityMap } from '../game-object/entity';
+import { Entity, EntityMap } from '../game-object/entity';
 import { Macro } from '../game-object/macro';
 import { Person } from '../game-object/person';
 import { Thing } from '../game-object/thing';
@@ -15,9 +15,9 @@ export class ObjectsService implements OnDestroy {
 
   readonly parseDone$ = this._parseDone$.asObservable();
 
-  private _current?: Entitiy;
+  private _current?: Entity;
 
-  readonly entity: EntityMap<Entitiy> = {};
+  readonly entity: EntityMap<Entity> = {};
 
   private _macros: EntityMap<Macro> = {};
 
@@ -25,9 +25,9 @@ export class ObjectsService implements OnDestroy {
     name: string,
     words: string,
     macro: Macro | null
-  ) => Entitiy = Person;
+  ) => Entity = Person;
 
-  private addToMap(what: Entitiy, map = this.entity) {
+  private addToMap(what: Entity, map = this.entity) {
     if (map[what.name]) throw new Error(`duplicate object '${what.name}`);
 
     map[what.name] = this._current = what;

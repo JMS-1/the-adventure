@@ -13,8 +13,6 @@ export abstract class Action {
     scope: GameObject,
     game: GameService
   ) {
-    actions?.forEach(
-      (a) => game.player?.dead === false && a.onRun(scope, game)
-    );
+    actions?.forEach((a) => game.player.dead === false && a.onRun(scope, game));
   }
 }

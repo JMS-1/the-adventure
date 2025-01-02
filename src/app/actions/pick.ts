@@ -1,13 +1,13 @@
 import { Action } from '.';
 import { GameObject } from '../game-object';
-import { Entitiy } from '../game-object/entity';
+import { Entity } from '../game-object/entity';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
 export class PickAction extends Action {
   public static readonly Pattern = /^(@)?(#)?<([^,)\s]+)/;
 
-  private _entity!: Entitiy;
+  private _entity!: Entity;
 
   private constructor(
     public readonly what: string,
@@ -26,7 +26,7 @@ export class PickAction extends Action {
   override validate(game: GameService, scope: GameObject): void {
     this._entity = game.objects.findEntity(this.what);
 
-    if (this.self && !(scope instanceof Entitiy))
+    if (this.self && !(scope instanceof Entity))
       throw new Error(`${scope.name} is no a thing or person`);
   }
 

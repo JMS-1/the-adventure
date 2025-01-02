@@ -1,13 +1,13 @@
 import { Action } from '.';
 import { GameObject } from '../game-object';
-import { Entitiy } from '../game-object/entity';
+import { Entity } from '../game-object/entity';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
 export class NotHasAction extends Action {
   public static readonly Pattern = /^(#)?if_nothas\s+([^\s]+)/;
 
-  entity!: Entitiy;
+  entity!: Entity;
 
   private constructor(
     public readonly what: string,

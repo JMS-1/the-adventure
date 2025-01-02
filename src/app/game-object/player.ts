@@ -1,17 +1,17 @@
 import { GameObject } from '.';
 import { type GameService } from '../services/game.service';
-import { Entitiy } from './entity';
+import { Entity } from './entity';
 import { State } from './state';
 import { stateOperations } from './stateOperations';
 import { systemMessages } from './systemMessages';
 import { Time } from './time';
-import { Timer } from './timer';
+import { Timers } from './timers';
 import { Weight } from './weight';
 
 export class Player {
   dead = false;
 
-  private _timers: Timer[] = [];
+  private _timers = new Timers();
 
   readonly CarriedObjects: Record<string, Set<string>> = {};
 
@@ -29,30 +29,18 @@ export class Player {
   nextTick() {
     this.time.increment();
 
-    this._timers.slice().forEach((t) => t.nextTick(this._game));
+    this._timers.advance(this._game);
   }
 
-  startTimers(gameObject: Entitiy) {
-    if (this._timers.some((t) => t.gameObject === gameObject))
-      throw new Error(`${gameObject.name} timers already started`);
-
-    this._timers.push(
-      ...Object.keys(gameObject.times).map((time) => {
-        const once = !time.startsWith('+');
-        const at = parseInt(once ? time : time.substring(1));
-
-        this._game.debug(`time ${once ? 'at' : 'each'} ${at}`);
-
-        return new Timer(gameObject, at, once, gameObject.times[time]);
-      })
-    );
+  startTimers(entity: Entity) {
+    this._timers.start(entity, this._game);
   }
 
-  stopTimers(entity: Entitiy) {
-    this._timers = this._timers.filter((t) => t.gameObject !== entity);
+  stopTimers(entity: Entity) {
+    this._timers.stop(entity);
   }
 
-  dropEntity(entity: Entitiy, silent: boolean) {
+  dropEntity(entity: Entity, silent: boolean) {
     Object.values(this.CarriedObjects).forEach((s) => s.delete(entity.name));
 
     if (this.Inventory.has(entity.name)) {
@@ -64,7 +52,7 @@ export class Player {
     if (!silent) this.print(entity);
   }
 
-  addEntityToParent(entity: Entitiy, gameObject: GameObject, silent: boolean) {
+  addEntityToParent(entity: Entity, gameObject: GameObject, silent: boolean) {
     this.dropEntity(entity, silent);
 
     this.CarriedObjects[gameObject.key].add(entity.name);
@@ -72,7 +60,7 @@ export class Player {
     if (!silent) this.print(entity);
   }
 
-  pickEntity(entity: Entitiy) {
+  pickEntity(entity: Entity) {
     if (this.Inventory.has(entity.name)) return;
 
     if (!this.weight.subtract(entity.weight))

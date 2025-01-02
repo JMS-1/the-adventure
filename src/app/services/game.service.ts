@@ -2,7 +2,7 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { combineLatest, ReplaySubject, Subject, tap } from 'rxjs';
 import { Action } from '../actions';
 import { CommandService } from '../commands/command.service';
-import { Entitiy } from '../game-object/entity';
+import { Entity } from '../game-object/entity';
 import { Player } from '../game-object/player';
 import { State } from '../game-object/state';
 import { stateOperations } from '../game-object/stateOperations';
@@ -306,7 +306,7 @@ export class GameService implements OnDestroy {
     );
   }
 
-  pickEntity(entity: Entitiy, debug = true): void {
+  pickEntity(entity: Entity, debug = true): void {
     if (this.player.Inventory.has(entity.key)) return;
 
     if (debug) this.debug(`pick ${entity.key}`);
@@ -316,7 +316,7 @@ export class GameService implements OnDestroy {
     entity.runSystemCommand(systemShortcuts.Pick, this);
   }
 
-  dropEntity(entity: Entitiy, debug = true): void {
+  dropEntity(entity: Entity, debug = true): void {
     if (!this.player.Inventory.has(entity.key)) return;
 
     if (debug) this.debug(`drop ${entity.key}`);

@@ -7,7 +7,7 @@ import { Weight } from './weight';
 
 const timeKeyReg = /^(\+)?(\d{1,3})$/;
 
-export abstract class Entitiy extends GameObject {
+export abstract class Entity extends GameObject {
   words: Set<string>;
 
   times: TActionMap = {};
@@ -86,4 +86,4 @@ export abstract class Entitiy extends GameObject {
   }
 }
 
-export type EntityMap<T extends Entitiy> = Record<string, T>;
+export type EntityMap<T extends Entity> = Record<string, T>;
