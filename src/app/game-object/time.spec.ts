@@ -34,4 +34,22 @@ describe('Time', () => {
     expect(time.hours).toBe(1);
     expect(time.minutes).toBe(6);
   });
+
+  it('can serialize', () => {
+    const time = new Time('(d6/0,h22/1,m52/7)');
+
+    expect(time.save()).toEqual({
+      times: [6, 22, 52],
+      deltas: [0, 1, 7],
+    });
+  });
+
+  it('can de-serialize', () => {
+    const time = Time.load({ times: [6, 22, 52], deltas: [0, 1, 7] });
+
+    expect(time.save()).toEqual({
+      times: [6, 22, 52],
+      deltas: [0, 1, 7],
+    });
+  });
 });

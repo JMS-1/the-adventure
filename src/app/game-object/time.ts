@@ -61,4 +61,21 @@ export class Time {
   toString() {
     return JSON.stringify(this._times);
   }
+
+  save() {
+    return {
+      times: this._times,
+      deltas: this._deltas,
+    };
+  }
+
+  static load(serialize: unknown) {
+    const time = new Time('(d0/0,h0/0,m0/1)');
+    const json = serialize as ReturnType<Time['save']>;
+
+    time._times.splice(0, time._times.length, ...json.times);
+    time._deltas.splice(0, time._deltas.length, ...json.deltas);
+
+    return time;
+  }
 }
