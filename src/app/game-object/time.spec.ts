@@ -45,11 +45,21 @@ describe('Time', () => {
   });
 
   it('can de-serialize', () => {
-    const time = Time.load({ times: [6, 22, 52], deltas: [0, 1, 7] });
+    const time = Time.load({ times: [6, 22, 52], deltas: [2, 1, 7] });
 
     expect(time.save()).toEqual({
       times: [6, 22, 52],
-      deltas: [0, 1, 7],
+      deltas: [2, 1, 7],
     });
+
+    expect(time.dayOfWeek).toBe(6);
+    expect(time.hours).toBe(22);
+    expect(time.minutes).toBe(52);
+
+    time.increment();
+
+    expect(time.dayOfWeek).toBe(1);
+    expect(time.hours).toBe(23);
+    expect(time.minutes).toBe(59);
   });
 });

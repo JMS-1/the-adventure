@@ -1,17 +1,17 @@
 const weightReg = /^\(\s*(\d{1,4})\s*,\s*(\d{1,4})\s*,\s*(\d{1,4})\s*\)$/;
 
 export class Weight {
-  readonly weights: number[];
+  private readonly _weights: number[];
 
   constructor(weight: string | Weight) {
     if (weight instanceof Weight) {
-      this.weights = [...weight.weights];
+      this._weights = [...weight._weights];
     } else {
       const match = weightReg.exec(weight);
 
       if (!match) throw new Error(`invalid weight ${weight}`);
 
-      this.weights = [
+      this._weights = [
         parseInt(match[1]),
         parseInt(match[2]),
         parseInt(match[3]),
@@ -20,28 +20,41 @@ export class Weight {
   }
 
   toString() {
-    return JSON.stringify(this.weights);
+    return JSON.stringify(this._weights);
   }
 
   subtract(weight: Weight) {
     const weights = [
-      this.weights[0] - weight.weights[0],
-      this.weights[1] - weight.weights[1],
-      this.weights[2] - weight.weights[2],
+      this._weights[0] - weight._weights[0],
+      this._weights[1] - weight._weights[1],
+      this._weights[2] - weight._weights[2],
     ];
 
     if (weights.some((w) => w < 0)) return false;
 
-    this.weights[0] = weights[0];
-    this.weights[1] = weights[1];
-    this.weights[2] = weights[2];
+    this._weights[0] = weights[0];
+    this._weights[1] = weights[1];
+    this._weights[2] = weights[2];
 
     return true;
   }
 
   add(weight: Weight) {
-    this.weights[0] = this.weights[0] + weight.weights[0];
-    this.weights[1] = this.weights[1] + weight.weights[1];
-    this.weights[2] = this.weights[2] + weight.weights[2];
+    this._weights[0] = this._weights[0] + weight._weights[0];
+    this._weights[1] = this._weights[1] + weight._weights[1];
+    this._weights[2] = this._weights[2] + weight._weights[2];
+  }
+
+  save() {
+    return { weights: this._weights };
+  }
+
+  static load(serialize: unknown) {
+    const weight = new Weight('(0,0,0)');
+    const json = serialize as ReturnType<Weight['save']>;
+
+    weight._weights.splice(0, weight._weights.length, ...json.weights);
+
+    return weight;
   }
 }
