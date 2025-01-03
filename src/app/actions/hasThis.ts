@@ -1,12 +1,19 @@
 import { Action } from '.';
 import { GameObject } from '../game-object';
-import { Thing } from '../game-object/thing';
+import { Entity } from '../game-object/entity';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
+/** See if the player holds an entity. */
 export class HasThisAction extends Action {
+  /** 'if_hasthis' */
   public static readonly Pattern = /^if_hasthis/;
 
+  /**
+   * Create the action.
+   *
+   * @param actions list of actions to execute.
+   */
   private constructor(public readonly actions: Action[]) {
     super();
   }
@@ -23,15 +30,18 @@ export class HasThisAction extends Action {
   }
 
   override validate(game: GameService, scope: GameObject): void {
-    if (!(scope instanceof Thing))
-      throw new Error(`${scope.name} is not a thing`);
+    /** Can only carry entities. */
+    if (!(scope instanceof Entity))
+      throw new Error(`${scope.name} is not a thing or person`);
 
+    /** Validate all actions in body. */
     this.actions.forEach((a) => a.validate(game, scope));
   }
 
   protected override onRun(scope: GameObject, game: GameService): void {
     game.debug(`test me has ${scope.key}`);
 
+    /** See if we are carrying the entity and proceed as necessary. */
     const has = game.player.inventory.has(scope.key);
 
     if (has) Action.run(this.actions, scope, game);
