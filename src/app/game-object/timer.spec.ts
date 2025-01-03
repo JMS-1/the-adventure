@@ -98,13 +98,14 @@ describe('Timer', () => {
       at: 5,
       entity: 'test',
       key: '+5',
+      next: 5,
       once: false,
     });
   });
 
   it('can de-serialize', () => {
     const timer = Timer.load(
-      { at: 10, entity: 'test2', key: '10', once: true },
+      { at: 10, entity: 'test2', key: '10', next: 10, once: true },
       game
     );
 
@@ -112,6 +113,7 @@ describe('Timer', () => {
       at: 10,
       entity: 'test2',
       key: '10',
+      next: 10,
       once: true,
     });
   });

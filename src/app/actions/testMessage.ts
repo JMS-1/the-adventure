@@ -14,7 +14,7 @@ export class TestMessageAction extends Action {
   }
 
   /**
-   * Analyse the call statement.
+   * Analyse the parsed statement.
    *
    * @param match match according to out pattern.
    * @param context current parings context.

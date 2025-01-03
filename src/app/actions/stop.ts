@@ -4,15 +4,18 @@ import { Entity } from '../game-object/entity';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
+/** Stop all timers of an entity. */
 export class StopAction extends Action {
+  /** stop */
   public static readonly Pattern = /^stop/;
 
+  /** Create a new action. */
   private constructor() {
     super();
   }
 
   /**
-   * Analyse the call statement.
+   * Analyse the parsed statement.
    *
    * @param match match according to out pattern.
    * @param context current parings context.
@@ -25,6 +28,7 @@ export class StopAction extends Action {
   }
 
   override validate(game: GameService, scope: GameObject): void {
+    /** See if stop is executed only on an entity. */
     if (!(scope instanceof Entity))
       throw new Error(`${scope.name} is not a thing or person`);
   }

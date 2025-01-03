@@ -60,6 +60,7 @@ export class Timer {
       at: this._at,
       entity: this.entity.name,
       key: this._key,
+      next: this._next,
       once: this._once,
     };
   }
@@ -75,11 +76,15 @@ export class Timer {
   static load(saved: unknown, game: GameService) {
     const json = saved as ReturnType<Timer['save']>;
 
-    return new Timer(
+    const timer = new Timer(
       game.objects.findEntity(json.entity),
       json.at,
       json.once,
       json.key
     );
+
+    timer._next = json.next;
+
+    return timer;
   }
 }

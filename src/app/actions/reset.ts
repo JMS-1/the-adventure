@@ -4,15 +4,18 @@ import { Entity } from '../game-object/entity';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
+/** Restart all timers. */
 export class ResetAction extends Action {
+  /** reset */
   public static readonly Pattern = /^reset/;
 
+  /** Create a new action. */
   private constructor() {
     super();
   }
 
   /**
-   * Analyse the call statement.
+   * Analyse the parsed statement.
    *
    * @param match match according to out pattern.
    * @param context current parings context.
@@ -25,6 +28,7 @@ export class ResetAction extends Action {
   }
 
   override validate(game: GameService, scope: GameObject): void {
+    /** See if reset is executed only on an entity. */
     if (!(scope instanceof Entity))
       throw new Error(`${scope.name} is not a thing or person`);
   }
@@ -32,6 +36,7 @@ export class ResetAction extends Action {
   protected override onRun(scope: GameObject, game: GameService): void {
     game.debug(`reset timers of ${scope.key}`);
 
+    /** Remove all timers and start it again. */
     game.player.stopTimers(scope as Entity);
     game.player.startTimers(scope as Entity);
   }

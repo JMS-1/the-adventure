@@ -44,8 +44,8 @@ describe('Timers', () => {
 
     expect(timers.save()).toEqual({
       timers: [
-        { at: 10, entity: 'testP', key: '10', once: true },
-        { at: 5, entity: 'testT', key: '+5', once: false },
+        { at: 10, entity: 'testP', key: '10', next: 10, once: true },
+        { at: 5, entity: 'testT', key: '+5', next: 5, once: false },
       ],
     });
   });
@@ -56,8 +56,8 @@ describe('Timers', () => {
     timers.load(
       {
         timers: [
-          { at: 10, entity: 'testP', key: '10', once: true },
-          { at: 5, entity: 'testT', key: '+5', once: false },
+          { at: 10, entity: 'testP', key: '10', next: 10, once: true },
+          { at: 5, entity: 'testT', key: '+5', next: 5, once: false },
         ],
       },
       game
@@ -65,8 +65,8 @@ describe('Timers', () => {
 
     expect(timers.save()).toEqual({
       timers: [
-        { at: 10, entity: 'testP', key: '10', once: true },
-        { at: 5, entity: 'testT', key: '+5', once: false },
+        { at: 10, entity: 'testP', key: '10', next: 10, once: true },
+        { at: 5, entity: 'testT', key: '+5', next: 5, once: false },
       ],
     });
   });

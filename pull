@@ -1,0 +1,1 @@
+yarn && yarn auto-test && yarn build && echo ok

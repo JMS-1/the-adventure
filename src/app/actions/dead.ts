@@ -3,17 +3,25 @@ import { GameObject } from '../game-object';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
+/** End the game. */
 export class DeadAction extends Action {
+  /** '>' '>' <message> */
   public static readonly Pattern = /^>>([^,)\s]+)/;
 
+  /** Message to report. */
   message!: string[];
 
+  /**
+   * Create a new action
+   *
+   * @param reason message to report.
+   */
   private constructor(public readonly reason: string) {
     super();
   }
 
   /**
-   * Analyse the call statement.
+   * Analyse the parsed statement.
    *
    * @param match match according to out pattern.
    * @param context current parings context.
@@ -26,6 +34,7 @@ export class DeadAction extends Action {
   }
 
   override validate(game: GameService, scope: GameObject): void {
+    /** Validate the message. */
     this.message = game.messages.messageMap[`exit.${this.reason}`];
 
     if (!this.message)
@@ -35,8 +44,10 @@ export class DeadAction extends Action {
   protected override onRun(scope: GameObject, game: GameService): void {
     game.debug(`die ${this.reason}`);
 
-    game.output(this.message);
+    /** Report message not respecting silent mode. */
+    game.output(this.message, true);
 
+    /** Mark game as ended. */
     game.player.dead = true;
   }
 }

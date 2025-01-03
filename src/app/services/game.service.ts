@@ -152,8 +152,8 @@ export class GameService implements OnDestroy {
     return messages?.[Math.floor(Math.random() * messages?.length)] || message;
   }
 
-  output(message: string | string[]) {
-    if (this._suppressOutput > 0) return;
+  output(message: string | string[], force = true) {
+    if (this._suppressOutput > 0 && !force) return;
 
     if (Array.isArray(message))
       message = message[Math.floor(Math.random() * message.length)];

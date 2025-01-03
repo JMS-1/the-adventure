@@ -6,7 +6,7 @@ import { ParseContext } from './parseContext';
 
 /** Set a message on any entity. */
 export class SetMessageAction extends Action {
-  /** [@]<entity>=<message> */
+  /** ['@']<entity> '=' <message> */
   public static readonly Pattern = /^(@)?([^\s,)]+)\s*=\s*([^,)\s]+)/;
 
   /** The entity to change. */
@@ -28,7 +28,7 @@ export class SetMessageAction extends Action {
   }
 
   /**
-   * Analyse the call statement.
+   * Analyse the parsed statement.
    *
    * @param match match according to out pattern.
    * @param context current parings context.
