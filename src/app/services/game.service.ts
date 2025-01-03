@@ -100,12 +100,12 @@ export class GameService implements OnDestroy {
     this.states.parse();
   }
 
-  ngOnDestroy(): void {
+  ngOnDestroy() {
     this._parseDone$.complete();
     this._output$.complete();
   }
 
-  private readonly setup = (): void => {
+  private readonly setup = () => {
     const state = this.states.states[this.defaults.state];
 
     if (!state)
@@ -171,7 +171,7 @@ export class GameService implements OnDestroy {
     this._output$.next(['error', choice + '\n']);
   }
 
-  run(cmd: string): void {
+  run(cmd: string) {
     cmd = cmd.trim();
 
     if (!cmd) return;
@@ -192,7 +192,7 @@ export class GameService implements OnDestroy {
           cmd,
           thingsAndPersons
         )) {
-          const shortcut = this.defaults.keyMap[command || '*'];
+          const shortcut = this.defaults.keyMap[command];
 
           if (entity) {
             const scope = this.objects.findEntity(entity);
@@ -206,6 +206,18 @@ export class GameService implements OnDestroy {
                 this.debug(`${command} on ${scope.key}`);
 
                 return scope.runCommand(command, this);
+            }
+          }
+
+          /** See if any entity understands the command. */
+          for (const key of this.player.entities) {
+            const entity = this.objects.entities[key];
+            const actions = entity.commands[command];
+
+            if (actions?.length) {
+              this.debug(`command ${command} on ${entity.key}`);
+
+              return Action.run(actions, entity, this);
             }
           }
 
@@ -225,23 +237,16 @@ export class GameService implements OnDestroy {
             case systemShortcuts.Say: {
               this.debug(`say something`);
 
-              for (const key of this.player.carriedObjects.children(
-                this.player.state
-              )) {
-                const entity = this.objects.entities[key];
-                const actions = entity.commands[command];
-
-                if (actions?.length) return Action.run(actions, entity, this);
-              }
-
               return Action.run(this.defaults.commands[command], null!, this);
             }
             default: {
-              this.debug(`use exit ${shortcut} on ${state.key}`);
+              if (shortcut) {
+                this.debug(`use exit ${shortcut} on ${state.key}`);
 
-              const exit = state.exits[shortcut] || state.exits['*'] || [];
+                const exit = state.exits[shortcut] || state.exits['*'] || [];
 
-              return Action.run(exit, state, this);
+                return Action.run(exit, state, this);
+              }
             }
           }
         }
@@ -261,7 +266,7 @@ export class GameService implements OnDestroy {
     }
   }
 
-  dumpCurrentState(debug = true): void {
+  dumpCurrentState(debug = true) {
     const { player } = this;
     const { state } = player;
 
@@ -276,7 +281,7 @@ export class GameService implements OnDestroy {
       player.print(entity);
   }
 
-  dumpInventory(debug = true): void {
+  dumpInventory(debug = true) {
     const { player } = this;
 
     if (debug)
@@ -287,7 +292,7 @@ export class GameService implements OnDestroy {
     for (const entity of player.inventory) player.print(entity);
   }
 
-  private dumpTime(): void {
+  private dumpTime() {
     this.debug(`show clock ${this.player.time}`);
 
     const { hours, minutes } = this.player.time;
@@ -305,22 +310,35 @@ export class GameService implements OnDestroy {
     );
   }
 
-  pickEntity(entity: Entity, debug = true): void {
+  /**
+   * Add an entity to the players inventory.
+   *
+   * @param entity The entity to pick up.
+   */
+  pickEntity(entity: Entity) {
+    /** Can only have each entity once in the inventory. */
     if (this.player.inventory.has(entity.key)) return;
 
-    if (debug) this.debug(`pick ${entity.key}`);
+    this.debug(`pick ${entity.key}`);
 
     this.player.pickEntity(entity);
 
     entity.runSystemCommand(systemShortcuts.Pick, this);
   }
 
-  dropEntity(entity: Entity, debug = true): void {
+  /**
+   * Drop something from the inventory or the player.
+   *
+   * @param entity entity to drop.
+   */
+  dropEntity(entity: Entity) {
+    /** Can only drop if the player has it. */
     if (!this.player.inventory.has(entity.key)) return;
 
-    if (debug) this.debug(`drop ${entity.key}`);
+    /** Just drop in the current state. */
+    this.debug(`drop ${entity.key}`);
 
-    this.player.addEntityToParent(entity, this.player.state);
+    this.player.attachEntity(entity, this.player.state);
 
     entity.runSystemCommand(systemShortcuts.Drop, this);
   }

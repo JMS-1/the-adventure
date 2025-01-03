@@ -4,11 +4,21 @@ import { Entity } from '../game-object/entity';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
+/** Add an entity to the players inventory or another entity. */
 export class PickAction extends Action {
+  /** ['@'] ['#'] '<' <entity> */
   public static readonly Pattern = /^(@)?(#)?<([^,)\s]+)/;
 
+  /** The entity to pick. */
   private _entity!: Entity;
 
+  /**
+   * Create a new action.
+   *
+   * @param what entity to pick up.
+   * @param silent set to suppress output.
+   * @param self if not set the player picks up the entity.
+   */
   private constructor(
     public readonly what: string,
     public readonly silent: boolean,
@@ -31,8 +41,10 @@ export class PickAction extends Action {
   }
 
   override validate(game: GameService, scope: GameObject): void {
+    /** Make sure entity exists. */
     this._entity = game.objects.findEntity(this.what);
 
+    /** Only entities or the player can pick up entities - for rooms use the move action. */
     if (this.self && !(scope instanceof Entity))
       throw new Error(`${scope.name} is no a thing or person`);
   }
@@ -42,11 +54,11 @@ export class PickAction extends Action {
       game.debug(`add ${this._entity.name} to ${scope.key}.`);
 
       game.execute(
-        () => game.player.addEntityToParent(this._entity, scope),
-        true
+        () => game.player.attachEntity(this._entity, scope),
+        this.silent
       );
     } else {
-      game.pickEntity(this._entity);
+      game.execute(() => game.pickEntity(this._entity), this.silent);
     }
   }
 }

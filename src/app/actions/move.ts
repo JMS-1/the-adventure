@@ -64,10 +64,7 @@ export class MoveAction extends Action {
       /** Just place the entity in the indicated room. */
       game.debug(`move ${scope.key} to ${this._target.key}`);
 
-      game.execute(
-        () => player.addEntityToParent(scope as Entity, this._target),
-        true
-      );
+      player.attachEntity(scope as Entity, this._target);
     } else {
       /** Move the player to the indicated state. */
       game.debug(`goto ${this._target.key}`);

@@ -41,34 +41,59 @@ export class Player {
     this._timers.stop(entity);
   }
 
-  dropEntity(entity: Entity) {
+  /**
+   * Make sure an entity is not attach to any game object or
+   * carried by the player.
+   *
+   * @param entity Entity to remove.
+   */
+  detachEntity(entity: Entity) {
+    /** Remove from all game objects. */
     this.carriedObjects.delete(entity);
 
+    /** Remove from player. */
     if (this.inventory.has(entity.name)) {
-      this.weight.add(entity.weight);
-
       this.inventory.delete(entity.name);
-    }
 
-    this.print(entity);
+      /** Must adjust total weight of the inventory. */
+      this.weight.add(entity.weight);
+    }
   }
 
-  addEntityToParent(entity: Entity, parent: GameObject) {
-    this.dropEntity(entity);
+  /**
+   * Add an entity to a room or another entity.
+   *
+   * @param entity entity to add.
+   * @param parent new parent game object for the entity.
+   */
+  attachEntity(entity: Entity, parent: GameObject) {
+    /* Silent remove first - just in case. */
+    this.detachEntity(entity);
 
+    /** Add to new parent. */
     this.carriedObjects.add(entity, parent);
 
+    /** Show entity state if entity is now visible. */
     this.print(entity);
   }
 
+  /**
+   * Add an entity to the inventory.
+   *
+   * @param entity entity to add.
+   */
   pickEntity(entity: Entity) {
+    /** Can have an entity at most once in the inventory. */
     if (this.inventory.has(entity.name)) return;
 
+    /** Check if the maximum strength of the player is not exceeded. */
     if (!this.weight.subtract(entity.weight))
       this._game.error(systemMessages.Heavy);
     else {
-      this.dropEntity(entity);
+      /** Remove the entity from all parent. */
+      this.detachEntity(entity);
 
+      /** Add the entity to inventory. */
       this.inventory.add(entity.name);
     }
   }
@@ -178,6 +203,6 @@ export class Player {
   }
 
   get entities() {
-    return [...this.inventory, ...this.carriedObjects.children(this.state)];
+    return [...this.carriedObjects.children(this.state), ...this.inventory];
   }
 }

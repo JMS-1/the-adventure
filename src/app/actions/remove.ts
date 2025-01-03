@@ -4,9 +4,12 @@ import { Entity } from '../game-object/entity';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
+/** Remove the current entity from the game. */
 export class RemoveAction extends Action {
+  /** 'remove' */
   public static readonly Pattern = /^remove/;
 
+  /** Create a new action. */
   private constructor() {
     super();
   }
@@ -25,6 +28,7 @@ export class RemoveAction extends Action {
   }
 
   override validate(game: GameService, scope: GameObject): void {
+    /** Only entities can be removed. */
     if (!(scope instanceof Entity))
       throw new Error(`${scope.name} is not a thing or person`);
   }
@@ -32,8 +36,10 @@ export class RemoveAction extends Action {
   protected override onRun(scope: GameObject, game: GameService): void {
     game.debug(`remove ${scope}}`);
 
+    /** Make sure no timers are active. */
     game.player.stopTimers(scope as Entity);
 
-    game.execute(() => game.player.dropEntity(scope as Entity), true);
+    /** Remove from all parents - player, room or other entities. */
+    game.player.detachEntity(scope as Entity);
   }
 }

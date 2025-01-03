@@ -23,6 +23,12 @@ export class Weight {
     return JSON.stringify(this._weights);
   }
 
+  /**
+   * Try to subtract another wight from this one.
+   *
+   * @param weight weight to subtract.
+   * @returns set if this weight is still positive.
+   */
   subtract(weight: Weight) {
     const weights = [
       this._weights[0] - weight._weights[0],

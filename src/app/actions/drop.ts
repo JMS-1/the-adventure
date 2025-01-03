@@ -4,11 +4,21 @@ import { Entity } from '../game-object/entity';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
+/** Drop some entity. */
 export class DropAction extends Action {
+  /** ['@'] ['#'] ! <entity> */
   public static readonly Pattern = /^(@)?(#)?!([^,)\s]+)/;
 
+  /** Entity to drop. */
   entity!: Entity;
 
+  /**
+   * Create a new action.
+   *
+   * @param what entity to drop.
+   * @param silent set to suppress any output.
+   * @param self not set if the entity is in the players inventory.
+   */
   private constructor(
     public readonly what: string,
     public readonly silent: boolean,
@@ -31,6 +41,7 @@ export class DropAction extends Action {
   }
 
   override validate(game: GameService): void {
+    /** Make sure entity exists. */
     this.entity = game.objects.findEntity(this.what);
   }
 
@@ -40,9 +51,12 @@ export class DropAction extends Action {
         `${this.silent ? 'silent ' : ''}${scope.key} drop ${this.entity.key}`
       );
 
-      game.execute(() => game.player.dropEntity(this.entity), this.silent);
+      game.execute(
+        () => game.player.attachEntity(this.entity, game.player.state),
+        this.silent
+      );
     } else {
-      game.dropEntity(this.entity);
+      game.execute(() => game.dropEntity(this.entity), this.silent);
     }
   }
 }
