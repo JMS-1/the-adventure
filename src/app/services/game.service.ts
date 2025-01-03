@@ -133,6 +133,7 @@ export class GameService implements OnDestroy {
 
     this.dumpCurrentState();
   };
+
   private verbatim(message: string) {
     this._output$.next(['verbatim', message]);
   }
@@ -177,10 +178,7 @@ export class GameService implements OnDestroy {
 
     if (!cmd) return;
 
-    const thingsAndPersons = [
-      ...this.player.inventory,
-      ...this.player.carriedObjects.children(this.player.state),
-    ].reduce((map, name) => {
+    const thingsAndPersons = this.player.entities.reduce((map, name) => {
       for (const word of this.objects.entities[name].words)
         map[word.toLowerCase()] = name;
 
@@ -238,7 +236,7 @@ export class GameService implements OnDestroy {
                 if (actions?.length) return Action.run(actions, entity, this);
               }
 
-              return;
+              return Action.run(this.defaults.commands[command], null!, this);
             }
             default: {
               this.debug(`use exit ${shortcut} on ${state.key}`);
@@ -324,7 +322,7 @@ export class GameService implements OnDestroy {
 
     if (debug) this.debug(`drop ${entity.key}`);
 
-    this.player.addEntityToParent(entity, this.player.state, true);
+    this.player.addEntityToParent(entity, this.player.state);
 
     entity.runSystemCommand(systemShortcuts.Drop, this);
   }

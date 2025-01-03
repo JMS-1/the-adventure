@@ -34,6 +34,6 @@ export class RemoveAction extends Action {
 
     game.player.stopTimers(scope as Entity);
 
-    game.player.dropEntity(scope as Entity, true);
+    game.execute(() => game.player.dropEntity(scope as Entity), true);
   }
 }

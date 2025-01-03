@@ -51,18 +51,13 @@ export abstract class Entity extends GameObject {
     else this.commands[command] = actions;
   }
 
-  override loadDefaults(game: GameService): void {
-    super.loadDefaults(game);
-
-    for (const command of Object.keys(game.defaults.commands))
-      if (!this.commands[command])
-        this.commands[command] = game.defaults.commands[command];
-  }
-
   override validate(game: GameService): void {
     super.validate(game);
 
     for (const commands of Object.values(this.commands))
+      commands.forEach((a) => a.validate(game, this));
+
+    for (const commands of Object.values(game.defaults.commands))
       commands.forEach((a) => a.validate(game, this));
 
     for (const times of Object.values(this.times))
@@ -74,7 +69,11 @@ export abstract class Entity extends GameObject {
   }
 
   runCommand(command: string, game: GameService) {
-    return Action.run(this.commands[command], this, game);
+    return Action.run(
+      this.commands[command] ?? game.defaults.commands[command],
+      this,
+      game
+    );
   }
 
   runSystemCommand(key: systemShortcuts, game: GameService) {

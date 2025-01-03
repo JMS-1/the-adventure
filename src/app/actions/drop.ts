@@ -40,7 +40,7 @@ export class DropAction extends Action {
         `${this.silent ? 'silent ' : ''}${scope.key} drop ${this.entity.key}`
       );
 
-      game.player.dropEntity(this.entity, this.silent);
+      game.execute(() => game.player.dropEntity(this.entity), this.silent);
     } else {
       game.dropEntity(this.entity);
     }

@@ -41,7 +41,7 @@ export class Player {
     this._timers.stop(entity);
   }
 
-  dropEntity(entity: Entity, silent: boolean) {
+  dropEntity(entity: Entity) {
     this.carriedObjects.delete(entity);
 
     if (this.inventory.has(entity.name)) {
@@ -50,15 +50,15 @@ export class Player {
       this.inventory.delete(entity.name);
     }
 
-    if (!silent) this.print(entity);
+    this.print(entity);
   }
 
-  addEntityToParent(entity: Entity, parent: GameObject, silent: boolean) {
-    this.dropEntity(entity, silent);
+  addEntityToParent(entity: Entity, parent: GameObject) {
+    this.dropEntity(entity);
 
     this.carriedObjects.add(entity, parent);
 
-    if (!silent) this.print(entity);
+    this.print(entity);
   }
 
   pickEntity(entity: Entity) {
@@ -67,7 +67,7 @@ export class Player {
     if (!this.weight.subtract(entity.weight))
       this._game.error(systemMessages.Heavy);
     else {
-      this.dropEntity(entity, false);
+      this.dropEntity(entity);
 
       this.inventory.add(entity.name);
     }
@@ -84,10 +84,10 @@ export class Player {
     );
   }
 
-  setMessage(gameObject: GameObject, message: string, silent: boolean) {
+  setMessage(gameObject: GameObject, message: string) {
     this.messages[gameObject.key] = message;
 
-    if (!silent) this.print(gameObject);
+    this.print(gameObject);
   }
 
   print(gameObject: GameObject | string | undefined) {
@@ -159,5 +159,9 @@ export class Player {
       player.messages[key] = json.messages[key];
 
     return player;
+  }
+
+  get entities() {
+    return [...this.inventory, ...this.carriedObjects.children(this.state)];
   }
 }

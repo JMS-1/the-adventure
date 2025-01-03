@@ -44,7 +44,7 @@ export class EntityAssignments {
    * @returns set if the entity belongs to the parent.
    */
   has(parent: GameObject, entity: GameObject) {
-    return this._carried[parent.key].has(entity.key);
+    return this._carried[parent.key]?.has(entity.key);
   }
 
   /**

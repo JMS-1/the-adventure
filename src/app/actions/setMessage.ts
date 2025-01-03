@@ -4,11 +4,21 @@ import { Entity } from '../game-object/entity';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
+/** Set a message on any entity. */
 export class SetMessageAction extends Action {
+  /** [@]<entity>=<message> */
   public static readonly Pattern = /^(@)?([^\s,)]+)\s*=\s*([^,)\s]+)/;
 
+  /** The entity to change. */
   entity!: Entity;
 
+  /**
+   * Create a new action.
+   *
+   * @param what name of the entity.
+   * @param message message to use.
+   * @param silent set to suppress output.
+   */
   private constructor(
     public readonly what: string,
     public readonly message: string,
@@ -31,8 +41,10 @@ export class SetMessageAction extends Action {
   }
 
   override validate(game: GameService): void {
+    /** Resolve the entity. */
     this.entity = game.objects.findEntity(this.what);
 
+    /** Test if the message exists. */
     this.entity.getMessage(game.messages, this.message);
   }
 
@@ -43,6 +55,9 @@ export class SetMessageAction extends Action {
       }`
     );
 
-    game.player.setMessage(this.entity, this.message, this.silent);
+    game.execute(
+      () => game.player.setMessage(this.entity, this.message),
+      this.silent
+    );
   }
 }

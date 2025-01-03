@@ -51,7 +51,10 @@ export class MoveAction extends Action {
     if (this.self) {
       game.debug(`move ${scope.key} to ${this._target.key}`);
 
-      player.addEntityToParent(scope as Entity, this._target, true);
+      game.execute(
+        () => player.addEntityToParent(scope as Entity, this._target),
+        true
+      );
     } else if (this._target !== player.state) {
       game.debug(`goto ${this._target.key}`);
 
