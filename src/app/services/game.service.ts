@@ -129,17 +129,10 @@ export class GameService implements OnDestroy {
 
     this.verbatim(this.info.intro);
 
-    this._suppressOutput++;
-
-    try {
-      this.player.state.run(stateOperations.stay, this);
-    } finally {
-      this._suppressOutput--;
-    }
+    this.execute(() => this.player.state.run(stateOperations.stay, this), true);
 
     this.dumpCurrentState();
   };
-
   private verbatim(message: string) {
     this._output$.next(['verbatim', message]);
   }
@@ -357,6 +350,18 @@ export class GameService implements OnDestroy {
       this.lastError = (e as Error).message;
 
       return false;
+    }
+  }
+
+  execute(action: () => void, silent: boolean) {
+    if (!silent) return action();
+
+    this._suppressOutput++;
+
+    try {
+      return action();
+    } finally {
+      this._suppressOutput--;
     }
   }
 }

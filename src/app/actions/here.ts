@@ -16,6 +16,13 @@ export class HereAction extends Action {
     super();
   }
 
+  /**
+   * Analyse the call statement.
+   *
+   * @param match match according to out pattern.
+   * @param context current parings context.
+   * @returns a new action instance.
+   */
   static parse(match: RegExpMatchArray, context: ParseContext) {
     return new HereAction(match[1], context.parseBody(match[0]));
   }

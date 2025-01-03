@@ -151,6 +151,12 @@ export class ObjectsService implements OnDestroy {
     this._factory = Thing;
   }
 
+  /**
+   * Find an entity.
+   *
+   * @param name name of the entity.
+   * @returns the entity - will throw an error if entity is not known.
+   */
   findEntity(name: string) {
     const entity = this.entities[name];
 

@@ -4,13 +4,24 @@ import { Entity } from '../game-object/entity';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
+/** Call one action of an entity. */
 export class CallAction extends Action {
+  /** [@]<entity> <action> */
   public static readonly Pattern = /^(@)?([^\s,)=]+)\s+([^\s,)=]+)/;
 
+  /** The entity to use. */
   private _entity!: Entity;
 
+  /** List of actions to call. */
   private _actions!: Action[];
 
+  /**
+   * Create a new action.
+   *
+   * @param _what name of the entity.
+   * @param _action name of the action.
+   * @param _silent suppress any output.
+   */
   private constructor(
     private readonly _what: string,
     private readonly _action: string,
@@ -19,6 +30,13 @@ export class CallAction extends Action {
     super();
   }
 
+  /**
+   * Analyse the call statement.
+   *
+   * @param match match according to out pattern.
+   * @param context current parings context.
+   * @returns a new action instance.
+   */
   static parse(match: RegExpMatchArray, context: ParseContext) {
     context.skip(match[0].length);
 
@@ -26,6 +44,7 @@ export class CallAction extends Action {
   }
 
   override validate(game: GameService): void {
+    /** Resolve entity and action. */
     this._entity = game.objects.findEntity(this._what);
     this._actions = this._entity.actions[this._action];
 
@@ -35,11 +54,14 @@ export class CallAction extends Action {
 
   protected override onRun(scope: GameObject, game: GameService): void {
     game.debug(
-      `call${this._silent ? '-silent' : ''} ${this._action} of ${
+      `${this._silent ? 'silent ' : ''} call ${this._action} of ${
         this._entity.key
       }`
     );
 
-    Action.run(this._actions, this._entity, game);
+    game.execute(
+      () => Action.run(this._actions, this._entity, game),
+      this._silent
+    );
   }
 }

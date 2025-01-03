@@ -39,13 +39,7 @@ Befehlen:
      WIE SPÄT IST ES
   4. Steuerungen
      Um das Spiel zu beenden kann man einfach SCHLUß oder
-     so etwas eingeben. In der CLI-Version des Spiels gibt
-     es auch noch folgende Befehle, die einzeln ohne Para-
-     meter einzugeben sind:
-     SAVE
-     LOAD
-     QUIT
-     Was dann zu tun ist, erfährt man im Dialog.
+     so etwas eingeben.
 Ich habe hier nicht alle Befehle verraten, da einige schon
 deutlich auf ihren Verwendungszweck und damit die Lösung
 eines Problems hinweisen. Da hilft nur Probieren und etwas
