@@ -4,18 +4,18 @@ import { Action } from '../actions';
 import { CommandService } from '../commands/command.service';
 import { Entity } from '../game-object/entity';
 import { systemMessages } from '../game-object/messages';
-import { stateOperations } from '../game-object/operations';
+import { roomOperations } from '../game-object/operations';
 import { Player } from '../game-object/player';
+import { Room } from '../game-object/room';
 import { systemShortcuts } from '../game-object/shortcuts';
-import { State } from '../game-object/state';
 import { Time } from '../game-object/time';
 import { Weight } from '../game-object/weight';
 import { DefaultsService } from './defaults.service';
 import { InfoService } from './info.service';
 import { MessagesService } from './messages.service';
 import { ObjectsService } from './objects.service';
+import { RoomsService } from './rooms.service';
 import { SettingsService } from './settings.service';
-import { StatesService } from './states.service';
 
 const days: systemMessages[] = [
   systemMessages.Day0,
@@ -46,7 +46,7 @@ export class GameService implements OnDestroy {
   lastError = '';
 
   player = new Player(
-    new State('n/a', 'n/a'),
+    new Room('n/a', 'n/a'),
     new Weight('(0,0,0)'),
     new Time('(d0/0,h0/0,m0/1)'),
     null!
@@ -58,7 +58,7 @@ export class GameService implements OnDestroy {
     public readonly info: InfoService,
     public readonly messages: MessagesService,
     public readonly objects: ObjectsService,
-    public readonly states: StatesService,
+    public readonly rooms: RoomsService,
     public readonly settings: SettingsService
   ) {
     const subscription = combineLatest([
@@ -67,7 +67,7 @@ export class GameService implements OnDestroy {
       info.parseDone$,
       messages.parseDone$,
       objects.parseDone$,
-      states.parseDone$,
+      rooms.parseDone$,
     ])
       .pipe(
         tap((errors) => {
@@ -97,7 +97,7 @@ export class GameService implements OnDestroy {
     this.info.parse();
     this.messages.parse();
     this.objects.parse();
-    this.states.parse();
+    this.rooms.parse();
   }
 
   ngOnDestroy() {
@@ -106,13 +106,13 @@ export class GameService implements OnDestroy {
   }
 
   private readonly setup = () => {
-    const state = this.states.states[this.defaults.state];
+    const room = this.rooms.rooms[this.defaults.room];
 
-    if (!state)
-      throw new Error(`initial state '${this.defaults.state}' not found`);
+    if (!room)
+      throw new Error(`initial room '${this.defaults.room}' not found`);
 
     this.player = new Player(
-      state,
+      room,
       new Weight(this.defaults.weight),
       new Time(this.defaults.time),
       this
@@ -120,7 +120,7 @@ export class GameService implements OnDestroy {
 
     const objects = [
       ...Object.values(this.objects.entities),
-      ...Object.values(this.states.states),
+      ...Object.values(this.rooms.rooms),
     ];
 
     for (const gameObject of objects) gameObject.loadDefaults(this);
@@ -129,7 +129,7 @@ export class GameService implements OnDestroy {
 
     this.verbatim(this.info.intro);
 
-    this.execute(() => this.player.state.run(stateOperations.stay, this), true);
+    this.execute(() => this.player.room.run(roomOperations.stay, this), true);
   };
 
   private verbatim(message: string) {
@@ -183,7 +183,7 @@ export class GameService implements OnDestroy {
       return map;
     }, {} as Record<string, string>);
 
-    const state = this.player.state;
+    const room = this.player.room;
     const dead = this.player.dead;
 
     try {
@@ -229,11 +229,11 @@ export class GameService implements OnDestroy {
 
               return;
             case systemShortcuts.View:
-              this.dumpCurrentState();
+              this.dumpCurrentRoom();
 
               return this.dumpInventory();
             case systemShortcuts.Look:
-              return this.dumpCurrentState();
+              return this.dumpCurrentRoom();
             case systemShortcuts.Say: {
               this.debug(`say something`);
 
@@ -241,11 +241,16 @@ export class GameService implements OnDestroy {
             }
             default: {
               if (shortcut) {
-                this.debug(`use exit ${shortcut} on ${state.key}`);
+                this.debug(`use exit ${shortcut} on ${room.key}`);
 
-                const exit = state.exits[shortcut] || state.exits['*'] || [];
+                const exits =
+                  room.exits[shortcut] ||
+                  this.defaults.exits[shortcut] ||
+                  room.exits['*'] ||
+                  this.defaults.exits['*'] ||
+                  [];
 
-                return Action.run(exit, state, this);
+                return Action.run(exits, room, this);
               }
             }
           }
@@ -255,8 +260,8 @@ export class GameService implements OnDestroy {
 
         this.error(systemMessages.NoComm);
       } finally {
-        if (!this.player.dead && this.player.state === state)
-          state.run(stateOperations.stay, this);
+        if (!this.player.dead && this.player.room === room)
+          room.run(roomOperations.stay, this);
 
         if (!this.player.dead) this.player.nextTick();
         else if (!dead) this.verbatim(this.info.extro);
@@ -266,18 +271,18 @@ export class GameService implements OnDestroy {
     }
   }
 
-  dumpCurrentState(debug = true) {
+  dumpCurrentRoom(debug = true) {
     const { player } = this;
-    const { state } = player;
+    const { room } = player;
 
-    if (debug) this.debug(`show state ${state.key}`);
+    if (debug) this.debug(`show room ${room.key}`);
 
-    const exits = state.exits[systemShortcuts.Look.toString()];
+    const exits = room.exits[systemShortcuts.Look.toString()];
 
-    if (exits?.length) Action.run(exits, state, this);
-    else player.print(state);
+    if (exits?.length) Action.run(exits, room, this);
+    else player.print(room);
 
-    for (const entity of player.carriedObjects.children(state))
+    for (const entity of player.carriedObjects.children(room))
       player.print(entity);
   }
 
@@ -338,7 +343,7 @@ export class GameService implements OnDestroy {
     /** Just drop in the current state. */
     this.debug(`drop ${entity.key}`);
 
-    this.player.attachEntity(entity, this.player.state);
+    this.player.attachEntity(entity, this.player.room);
 
     entity.runSystemCommand(systemShortcuts.Drop, this);
   }

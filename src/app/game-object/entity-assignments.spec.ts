@@ -3,14 +3,14 @@ import { TestBed } from '@angular/core/testing';
 import { GameService } from '../services/game.service';
 import { EntityAssignments } from './entity-assignments';
 import { Person } from './person';
-import { State } from './state';
+import { Room } from './room';
 import { Thing } from './thing';
 
 describe('EntityAssignments', () => {
   let game: GameService;
   let person: Person;
   let thing: Thing;
-  let state: State;
+  let room: Room;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -19,7 +19,7 @@ describe('EntityAssignments', () => {
           provide: GameService,
           useValue: {
             objects: { findEntity: (key: string) => ({ name: key, key }) },
-            states: { states: {} },
+            rooms: { rooms: {} },
           },
         },
         {
@@ -31,14 +31,14 @@ describe('EntityAssignments', () => {
           useValue: { key: 'testT', name: 'testT' },
         },
         {
-          provide: State,
+          provide: Room,
           useValue: { key: '$$area$testS' },
         },
       ],
     });
 
     game = TestBed.inject(GameService);
-    state = TestBed.inject(State);
+    room = TestBed.inject(Room);
     person = TestBed.inject(Person);
     thing = TestBed.inject(Thing);
   });
@@ -47,11 +47,11 @@ describe('EntityAssignments', () => {
     const assigments = new EntityAssignments();
 
     assigments.set(person, new Set());
-    assigments.set(state, new Set());
+    assigments.set(room, new Set());
     assigments.set(thing, new Set([person.key]));
 
-    assigments.add(person, state);
-    assigments.add(thing, state);
+    assigments.add(person, room);
+    assigments.add(thing, room);
 
     expect(assigments.save()).toEqual({
       entities: {
@@ -86,7 +86,7 @@ describe('EntityAssignments', () => {
 
     expect(Array.from(assigments.children(person))).toEqual([]);
     expect(Array.from(assigments.children(thing))).toEqual([person.name]);
-    expect(Array.from(assigments.children(state))).toEqual([
+    expect(Array.from(assigments.children(room))).toEqual([
       person.name,
       thing.name,
     ]);
@@ -97,7 +97,7 @@ describe('EntityAssignments', () => {
     expect(assigments.has(thing, thing)).toBeFalse();
     expect(assigments.has(thing, person)).toBeTrue();
 
-    expect(assigments.has(state, thing)).toBeTrue();
-    expect(assigments.has(state, person)).toBeTrue();
+    expect(assigments.has(room, thing)).toBeTrue();
+    expect(assigments.has(room, person)).toBeTrue();
   });
 });

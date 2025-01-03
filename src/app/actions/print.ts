@@ -1,6 +1,6 @@
 import { Action } from '.';
 import { GameObject } from '../game-object';
-import { State } from '../game-object/state';
+import { Room } from '../game-object/room';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
@@ -15,7 +15,7 @@ export class PrintAction extends Action {
   /**
    * Create a new action.
    *
-   * @param area optional area - not needed if action belongs to a state.
+   * @param area optional area - not needed if action belongs to a room.
    * @param message message to display.
    */
   private constructor(
@@ -39,8 +39,8 @@ export class PrintAction extends Action {
   }
 
   override validate(game: GameService, scope: GameObject): void {
-    /** Get the fill key of the message - area may come from the state. */
-    const key = `${this.area || (scope instanceof State ? scope.area : '')}.${
+    /** Get the fill key of the message - area may come from the room. */
+    const key = `${this.area || (scope instanceof Room ? scope.area : '')}.${
       this.message
     }`;
 

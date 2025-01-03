@@ -6,15 +6,15 @@
     <div *ngIf="settings.debug">
       <div>Time = {{ game.player.time.toString() }}</div>
       <div>
-        State = {{ game.player.state.key }}
+        State = {{ game.player.room.key }}
         {{
-          setValues(game.player.carriedObjects.children(game.player.state))
+          setValues(game.player.carriedObjects.children(game.player.room))
             | json
         }}
       </div>
       <div>
         Exits =
-        {{ mapKeys(game.player.state.exits) | json }}
+        {{ mapKeys(game.player.room.exits) | json }}
       </div>
       <div>Weight = {{ game.player.weight.toString() }}</div>
       <div>Inventory = {{ setValues(game.player.inventory) | json }}</div>

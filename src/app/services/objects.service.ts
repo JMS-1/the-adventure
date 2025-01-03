@@ -52,10 +52,7 @@ export class ObjectsService implements OnDestroy {
     (match: RegExpMatchArray, lines: string[], i: number) => void | number
   ][] = [
     /* Order required. */
-    [
-      /^\$\$macro\s+(.*)$/,
-      (m) => this.addToMap(new Macro(m[1], m[2]), this._macros),
-    ],
+    [/^\$\$macro\s+(.*)$/, (m) => this.addToMap(new Macro(m[1]), this._macros)],
     [
       /^\$\$([^\s]+)\s+([^\s]+)(\s+(.*))?$/,
       (m) => {
@@ -94,7 +91,7 @@ export class ObjectsService implements OnDestroy {
       /^\s*time\s*=\s*(.*)$/,
       (m, lines, i) =>
         this.parseActions(m[1], lines, i, 'parseMultiple', (actions) =>
-          this._current!.setTimes(actions)
+          this._current!.addTimes(actions)
         ),
     ],
     [/^\s*weight\s*=\s*(.*)$/, (m) => this._current!.setWeight(m[1])],

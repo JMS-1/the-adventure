@@ -1,28 +1,27 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { ReplaySubject, tap } from 'rxjs';
 import { TActionMap } from '../actions';
-import { State } from '../game-object/state';
+import { Room } from '../game-object/room';
 import { ActionService } from './action.service';
 import { AssetService } from './asset.service';
 import { SettingsService } from './settings.service';
 
 @Injectable()
-export class StatesService implements OnDestroy {
+export class RoomsService implements OnDestroy {
   private readonly _parseDone$ = new ReplaySubject<string>(1);
 
   readonly parseDone$ = this._parseDone$.asObservable();
 
-  private _current?: State;
+  private _current?: Room;
 
   private _areaName?: string;
 
-  states: Record<string, State> = {};
+  readonly rooms: Record<string, Room> = {};
 
-  private addToMap(state: State) {
-    if (this.states[state.key])
-      throw new Error(`duplicate state '${state.key}`);
+  private addRoom(room: Room) {
+    if (this.rooms[room.key]) throw new Error(`duplicate room '${room.key}`);
 
-    this.states[state.key] = this._current = state;
+    this.rooms[room.key] = this._current = room;
   }
 
   private parseActions(
@@ -50,7 +49,7 @@ export class StatesService implements OnDestroy {
         this._current = undefined;
       },
     ],
-    [/^\$([^\s]+)\s*$/, (m) => this.addToMap(new State(this._areaName!, m[1]))],
+    [/^\$([^\s]+)\s*$/, (m) => this.addRoom(new Room(this._areaName!, m[1]))],
     /* Can have any order. */
     [
       /^\s*actions\s*=\s*(.*)$/,

@@ -12,7 +12,7 @@ export abstract class GameObject {
   readonly actions: TActionMap = {};
 
   /** Configured list ot things and persons attached to this game object. */
-  entities = new Set<string>();
+  readonly entities = new Set<string>();
 
   /**
    * Initialize a new game object.

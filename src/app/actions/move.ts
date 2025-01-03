@@ -1,7 +1,7 @@
 import { Action } from '.';
 import { GameObject } from '../game-object';
 import { Entity } from '../game-object/entity';
-import { State } from '../game-object/state';
+import { Room } from '../game-object/room';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
@@ -11,12 +11,12 @@ export class MoveAction extends Action {
   public static readonly Pattern = /^(#)?>(\$\$([^$]+)\$)?([^,)\s>]+)/;
 
   /** The room to move to. */
-  private _target!: State;
+  private _target!: Room;
 
   /**
    * Create the action.
    *
-   * @param area optional area of the room - map be taken from the current state.
+   * @param area optional area of the room - map be taken from the current room.
    * @param room room to move to.
    * @param self set to move not the player but the entity owning this action.
    */
@@ -48,8 +48,8 @@ export class MoveAction extends Action {
 
     /** Validate the target room - if the current game object is a room and no area is given the area from the game object is used. */
     this._target =
-      game.states.states[
-        `$$${this.area || (scope instanceof State ? scope.area : '')}$${
+      game.rooms.rooms[
+        `$$${this.area || (scope instanceof Room ? scope.area : '')}$${
           this.room
         }`
       ];
@@ -66,10 +66,10 @@ export class MoveAction extends Action {
 
       player.attachEntity(scope as Entity, this._target);
     } else {
-      /** Move the player to the indicated state. */
+      /** Move the player to the indicated room. */
       game.debug(`goto ${this._target.key}`);
 
-      player.enterState(this._target);
+      player.enterRoom(this._target);
     }
   }
 }

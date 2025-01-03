@@ -3,7 +3,7 @@ import { GameObject } from '../game-object';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
-/** See if the current game object is in a specific state. */
+/** See if the current game object is in a specific room. */
 export class TestMessageAction extends Action {
   /** 'if_message' ' ' <message> */
   public static readonly Pattern = /^if_message\s+([^\s]+)/;
@@ -11,7 +11,7 @@ export class TestMessageAction extends Action {
   /**
    * Create a new action.
    *
-   * @param message state to test for.
+   * @param message to test for.
    * @param actions actions to execute on match.
    */
   private constructor(

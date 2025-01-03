@@ -1,6 +1,6 @@
 import { Action } from '.';
 import { GameObject } from '../game-object';
-import { State } from '../game-object/state';
+import { Room } from '../game-object/room';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
@@ -10,7 +10,7 @@ export class TestPositionAction extends Action {
   public static readonly Pattern = /^(#)?if_position\s+\$\$([^$]+)\$([^\s]+)/;
 
   /** State to inspect. */
-  target!: State;
+  target!: Room;
 
   /**
    * Create a new action.
@@ -47,7 +47,7 @@ export class TestPositionAction extends Action {
 
   override validate(game: GameService, scope: GameObject): void {
     /** See if room exists. */
-    this.target = game.states.states[`$$${this.area}$${this.room}`];
+    this.target = game.rooms.rooms[`$$${this.area}$${this.room}`];
 
     if (!this.target) throw new Error(`${this.area}: no room ${this.room}`);
 
@@ -59,7 +59,7 @@ export class TestPositionAction extends Action {
     /** See if player or entity of this action is in the room. */
     const hit = this.self
       ? game.player.carriedObjects.has(this.target, scope)
-      : this.target === game.player.state;
+      : this.target === game.player.room;
 
     game.debug(`test ${this.self ? scope.name : 'me'} at ${this.target.key}`);
 

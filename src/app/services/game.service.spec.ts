@@ -7,8 +7,8 @@ import { GameService } from './game.service';
 import { InfoService } from './info.service';
 import { MessagesService } from './messages.service';
 import { ObjectsService } from './objects.service';
+import { RoomsService } from './rooms.service';
 import { SettingsService } from './settings.service';
-import { StatesService } from './states.service';
 
 describe('GameService', () => {
   let service: GameService;
@@ -23,7 +23,7 @@ describe('GameService', () => {
         { provide: MessagesService, useValue: { parseDone$: of() } },
         { provide: ObjectsService, useValue: { parseDone$: of() } },
         { provide: SettingsService, useValue: {} },
-        { provide: StatesService, useValue: { parseDone$: of() } },
+        { provide: RoomsService, useValue: { parseDone$: of() } },
       ],
     });
     service = TestBed.inject(GameService);

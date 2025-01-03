@@ -3,7 +3,7 @@ import { GameService } from '../services/game.service';
 
 /** Manager the active dynamic positions of entities. */
 export class EntityAssignments {
-  /** Entities for each entity or state. */
+  /** Entities for each entity or room. */
   private readonly _carried: Record<string, Set<string>> = {};
 
   /**
@@ -84,7 +84,7 @@ export class EntityAssignments {
 
     for (const p of Object.keys(json.entities))
       this.set(
-        game.states.states[p] ?? game.objects.findEntity(p),
+        game.rooms.rooms[p] ?? game.objects.findEntity(p),
         new Set(json.entities[p])
       );
   }

@@ -52,7 +52,7 @@ export class DropAction extends Action {
       );
 
       game.execute(
-        () => game.player.attachEntity(this.entity, game.player.state),
+        () => game.player.attachEntity(this.entity, game.player.room),
         this.silent
       );
     } else {

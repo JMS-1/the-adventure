@@ -1,15 +1,23 @@
 import { GameObject } from '.';
 import { Action, TActionMap } from '../actions';
 import { GameService } from '../services/game.service';
-import { stateOperations } from './operations';
+import { roomOperations } from './operations';
 
-export class State extends GameObject {
-  exits: TActionMap = {};
+/** Game object representing a room. */
+export class Room extends GameObject {
+  /** All declared exits - defaults will me merge in prior to starting the game. */
+  readonly exits: TActionMap = {};
 
+  /**
+   * Create a new room.
+   *
+   * @param area
+   * @param name
+   */
   constructor(public readonly area: string, name: string) {
     super(name, null);
 
-    if (!area) throw new Error(`state ${name} has no area`);
+    if (!area) throw new Error(`room ${name} has no area`);
   }
 
   override get key() {
@@ -26,9 +34,6 @@ export class State extends GameObject {
   override loadDefaults(game: GameService): void {
     super.loadDefaults(game);
 
-    for (const exit of Object.keys(game.defaults.exits))
-      if (!this.exits[exit]) this.exits[exit] = game.defaults.exits[exit];
-
     for (const action of Object.keys(game.defaults.actions))
       if (!this.actions[action])
         this.actions[action] = game.defaults.actions[action];
@@ -39,13 +44,16 @@ export class State extends GameObject {
 
     for (const exits of Object.values(this.exits))
       exits.forEach((a) => a.validate(game, this));
+
+    for (const exits of Object.values(game.defaults.exits))
+      exits.forEach((a) => a.validate(game, this));
   }
 
   getMessageKey(message: string) {
     return `${this.area}.${this.name}_${message}`;
   }
 
-  run(operation: stateOperations, game: GameService) {
+  run(operation: roomOperations, game: GameService) {
     Action.run(this.actions[operation.toString()], this, game);
   }
 }

@@ -3,8 +3,8 @@ import { type GameService } from '../services/game.service';
 import { Entity } from './entity';
 import { EntityAssignments } from './entity-assignments';
 import { systemMessages } from './messages';
-import { stateOperations } from './operations';
-import { State } from './state';
+import { roomOperations } from './operations';
+import { Room } from './room';
 import { Time } from './time';
 import { Timers } from './timers';
 import { Weight } from './weight';
@@ -21,7 +21,7 @@ export class Player {
   readonly messages: Record<string, string> = {};
 
   constructor(
-    public state: State,
+    public room: Room,
     public weight: Weight,
     public time: Time,
     private readonly _game: GameService
@@ -99,13 +99,13 @@ export class Player {
   }
 
   isVisible(gameObject: GameObject | undefined) {
-    if (gameObject instanceof State) return gameObject === this.state;
+    if (gameObject instanceof Room) return gameObject === this.room;
 
     if (!gameObject) return false;
 
     return (
       this.inventory.has(gameObject.key) ||
-      this.carriedObjects.has(this.state, gameObject)
+      this.carriedObjects.has(this.room, gameObject)
     );
   }
 
@@ -139,29 +139,29 @@ export class Player {
   /**
    * Leve the current room and move to another.
    *
-   * @param state room to move the player to
+   * @param room room to move the player to
    */
-  enterState(state: State) {
+  enterRoom(room: Room) {
     /** We are already there. */
-    if (state === this.state) return;
+    if (room === this.room) return;
 
-    /** Exit the current state. */
-    this.state.run(stateOperations.exit, this._game);
+    /** Exit the current room. */
+    this.room.run(roomOperations.exit, this._game);
 
-    /** Show the new state. */
-    this.state = state;
+    /** Show the new room. */
+    this.room = room;
 
-    this.dumpState();
+    this.dumpRoom();
 
-    /** Enter the new state. */
-    this.state.run(stateOperations.enter, this._game);
+    /** Enter the new room. */
+    this.room.run(roomOperations.enter, this._game);
   }
 
-  /** Report the current state and everything laying around. */
-  dumpState() {
-    this.print(this.state);
+  /** Report the current room and everything laying around. */
+  dumpRoom() {
+    this.print(this.room);
 
-    for (const entity of this.carriedObjects.children(this.state))
+    for (const entity of this.carriedObjects.children(this.room))
       this.print(entity);
   }
 
@@ -171,7 +171,7 @@ export class Player {
       dead: this.dead,
       inventory: Array.from(this.inventory),
       messages: this.messages,
-      state: this.state.key,
+      room: this.room.key,
       time: this.time.save(),
       timers: this._timers.save(),
       weight: this.weight.save(),
@@ -182,7 +182,7 @@ export class Player {
     const json = serialized as ReturnType<Player['save']>;
 
     const player = new Player(
-      game.states.states[json.state],
+      game.rooms.rooms[json.room],
       Weight.load(json.weight),
       Time.load(json.time),
       game
@@ -203,6 +203,6 @@ export class Player {
   }
 
   get entities() {
-    return [...this.carriedObjects.children(this.state), ...this.inventory];
+    return [...this.carriedObjects.children(this.room), ...this.inventory];
   }
 }

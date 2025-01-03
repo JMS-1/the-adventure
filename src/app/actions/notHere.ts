@@ -48,7 +48,7 @@ export class NotHereAction extends Action {
     game.debug(`test ${this.entity.key} not to be here`);
 
     /** See if the entity lies in the current room and proceed accordingly. */
-    const here = game.player.carriedObjects.has(game.player.state, this.entity);
+    const here = game.player.carriedObjects.has(game.player.room, this.entity);
 
     if (!here) Action.run(this.actions, scope, game);
   }

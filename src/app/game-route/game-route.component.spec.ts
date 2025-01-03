@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { of } from 'rxjs';
 import { Player } from '../game-object/player';
-import { State } from '../game-object/state';
+import { Room } from '../game-object/room';
 import { Time } from '../game-object/time';
 import { Weight } from '../game-object/weight';
 import { GameService } from '../services/game.service';
@@ -37,7 +37,7 @@ describe('GameRouteComponent', () => {
             },
             output$: of(),
             player: new Player(
-              new State('n/a', 'n/a'),
+              new Room('n/a', 'n/a'),
               new Weight('(0,0,0)'),
               new Time('(d0/0,h0/0,m0/1)'),
               null!

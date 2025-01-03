@@ -6,7 +6,7 @@ import { CommandService } from './commands/command.service';
 import { DefaultsService } from './services/defaults.service';
 import { MessagesService } from './services/messages.service';
 import { ObjectsService } from './services/objects.service';
-import { StatesService } from './services/states.service';
+import { RoomsService } from './services/rooms.service';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -24,7 +24,7 @@ describe('AppComponent', () => {
         { provide: DefaultsService, useValue: {} },
         { provide: MessagesService, useValue: {} },
         { provide: ObjectsService, useValue: {} },
-        { provide: StatesService, useValue: {} },
+        { provide: RoomsService, useValue: {} },
         { provide: CommandService, useValue: {} },
       ],
     }).compileComponents();

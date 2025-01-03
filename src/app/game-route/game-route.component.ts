@@ -11,8 +11,8 @@ import { GameService } from '../services/game.service';
 import { InfoService } from '../services/info.service';
 import { MessagesService } from '../services/messages.service';
 import { ObjectsService } from '../services/objects.service';
+import { RoomsService } from '../services/rooms.service';
 import { SettingsService } from '../services/settings.service';
-import { StatesService } from '../services/states.service';
 
 @core.Component({
   selector: 'app-game-route',
@@ -24,7 +24,7 @@ import { StatesService } from '../services/states.service';
     InfoService,
     MessagesService,
     ObjectsService,
-    StatesService,
+    RoomsService,
     CommandService,
   ],
   templateUrl: './game-route.component.html',
@@ -104,7 +104,7 @@ export class GameRouteComponent implements core.AfterViewInit, core.OnDestroy {
 
     this.clearOutput();
 
-    this.game.dumpCurrentState();
+    this.game.dumpCurrentRoom();
     this.game.dumpInventory();
   }
 }

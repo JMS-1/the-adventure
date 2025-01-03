@@ -13,7 +13,7 @@ const regs = {
   exits: /^\s*exits\s*=\s*(.*)$/,
   key: /^\s*([^=])\s*=\s*#(.+)$/,
   message: /^\s*message\s*=\s*(.*)$/,
-  state: /^\s*state\s*=\s*(.*)$/,
+  room: /^\s*state\s*=\s*(.*)$/,
   time: /^\s*time\s*=\s*(.*)$/,
   weight: /^\s*weight\s*=\s*(.*)$/,
 };
@@ -38,7 +38,7 @@ export class DefaultsService implements OnDestroy {
 
   readonly keyMap: Record<string, string> = {};
 
-  state = '';
+  room = '';
 
   constructor(
     private readonly _settings: SettingsService,
@@ -76,8 +76,8 @@ export class DefaultsService implements OnDestroy {
         this.weight = new Weight(match[1]);
       } else if ((match = regs.time.exec(line))) {
         this.time = new Time(match[1]);
-      } else if ((match = regs.state.exec(line))) {
-        this.state = match[1];
+      } else if ((match = regs.room.exec(line))) {
+        this.room = match[1];
       } else if ((match = regs.key.exec(line))) {
         this.keyMap[match[2]] = match[1];
       } else if ((match = regs.command.exec(line))) {
