@@ -17,7 +17,7 @@ export class ObjectsService implements OnDestroy {
 
   private _current?: Entity;
 
-  readonly entity: EntityMap<Entity> = {};
+  readonly entities: EntityMap<Entity> = {};
 
   private _macros: EntityMap<Macro> = {};
 
@@ -27,7 +27,7 @@ export class ObjectsService implements OnDestroy {
     macro: Macro | null
   ) => Entity = Person;
 
-  private addToMap(what: Entity, map = this.entity) {
+  private addToMap(what: Entity, map = this.entities) {
     if (map[what.name]) throw new Error(`duplicate object '${what.name}`);
 
     map[what.name] = this._current = what;
@@ -152,7 +152,7 @@ export class ObjectsService implements OnDestroy {
   }
 
   findEntity(name: string) {
-    const entity = this.entity[name];
+    const entity = this.entities[name];
 
     if (!entity) throw new Error(`can not find thing or person ${name}`);
 

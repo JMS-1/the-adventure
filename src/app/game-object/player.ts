@@ -92,7 +92,7 @@ export class Player {
 
   print(gameObject: GameObject | string | undefined) {
     if (typeof gameObject === 'string')
-      gameObject = this._game.objects.entity[gameObject];
+      gameObject = this._game.objects.entities[gameObject];
 
     if (this.isVisible(gameObject))
       this.printRandomMessage(

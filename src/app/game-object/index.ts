@@ -64,7 +64,7 @@ export abstract class GameObject {
 
   validate(game: GameService) {
     for (const thing of this.entities)
-      if (!game.objects.entity[thing])
+      if (!game.objects.entities[thing])
         throw new Error(`${this.name}: unknown thing or person ${thing}`);
 
     for (const actions of Object.values(this.actions))

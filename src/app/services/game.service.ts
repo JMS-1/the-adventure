@@ -119,7 +119,7 @@ export class GameService implements OnDestroy {
     );
 
     const objects = [
-      ...Object.values(this.objects.entity),
+      ...Object.values(this.objects.entities),
       ...Object.values(this.states.states),
     ];
 
@@ -188,7 +188,7 @@ export class GameService implements OnDestroy {
       ...this.player.inventory,
       ...this.player.carriedObjects.children(this.player.state),
     ].reduce((map, name) => {
-      for (const word of this.objects.entity[name].words)
+      for (const word of this.objects.entities[name].words)
         map[word.toLowerCase()] = name;
 
       return map;
@@ -213,16 +213,10 @@ export class GameService implements OnDestroy {
                 return this.dropEntity(scope);
               case systemShortcuts.Pick:
                 return this.pickEntity(scope);
-              case systemShortcuts.Say:
-                this.debug(`speek to ${scope.key}`);
-
-                return;
               default:
                 this.debug(`${command} on ${scope.key}`);
 
-                scope.runCommand(command, this);
-
-                return;
+                return scope.runCommand(command, this);
             }
           }
 
@@ -239,6 +233,20 @@ export class GameService implements OnDestroy {
               return this.dumpInventory();
             case systemShortcuts.Look:
               return this.dumpCurrentState();
+            case systemShortcuts.Say: {
+              this.debug(`say something`);
+
+              for (const key of this.player.carriedObjects.children(
+                this.player.state
+              )) {
+                const entity = this.objects.entities[key];
+                const actions = entity.commands[command];
+
+                if (actions?.length) return Action.run(actions, entity, this);
+              }
+
+              return;
+            }
             default: {
               this.debug(`use exit ${shortcut} on ${state.key}`);
 
