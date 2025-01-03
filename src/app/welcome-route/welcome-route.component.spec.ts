@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { ActivatedRoute } from '@angular/router';
 import { WelcomeRouteComponent } from './welcome-route.component';
 
 describe('WelcomeRouteComponent', () => {
@@ -8,9 +9,9 @@ describe('WelcomeRouteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [WelcomeRouteComponent]
-    })
-    .compileComponents();
+      imports: [WelcomeRouteComponent],
+      providers: [{ provide: ActivatedRoute, useValue: {} }],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(WelcomeRouteComponent);
     component = fixture.componentInstance;

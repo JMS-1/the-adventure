@@ -1,0 +1,6 @@
+.games {
+  display: grid;
+  grid-auto-flow: row;
+  justify-content: flex-start;
+  row-gap: 0.5em;
+}

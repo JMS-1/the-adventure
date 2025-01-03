@@ -3,7 +3,7 @@
     <div *ngIf="game.ready$ | async">
       <div>{{ game.lastError }}</div>
     </div>
-    <div *ngIf="showDebug">
+    <div *ngIf="settings.debug">
       <div>Time = {{ game.player.time.toString() }}</div>
       <div>
         State = {{ game.player.state.key }}
@@ -31,7 +31,9 @@
         Speichern
       </button>
       <button mat-raised-button color="warn" (click)="load()">Laden</button>
-      <mat-slide-toggle [(ngModel)]="showDebug" (ngModelChange)="scrollToEnd()"
+      <mat-slide-toggle
+        [(ngModel)]="settings.debug"
+        (ngModelChange)="scrollToEnd()"
         >Debug Daten anzeigen</mat-slide-toggle
       >
     </div>
@@ -40,7 +42,7 @@
     *ngIf="game.player"
     class="output"
     #game
-    [ngClass]="{ debug: showDebug }"
+    [ngClass]="{ debug: settings.debug }"
   ></div>
   <input
     type="text"

@@ -33,8 +33,6 @@ import { StatesService } from '../services/states.service';
 export class GameRouteComponent implements core.AfterViewInit, core.OnDestroy {
   @core.ViewChild('game') private _output?: core.ElementRef;
 
-  showDebug = true;
-
   private _outputSubscription?: Subscription;
 
   constructor(

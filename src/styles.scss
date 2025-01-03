@@ -7,25 +7,29 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-}
 
-div {
-  > div.output-verbatim {
-    white-space: pre;
+  .mdc-button {
+    border-radius: 4px;
   }
 
-  > div.output-debug {
-    display: none;
-    font-style: italic;
-    color: #444444;
-    margin-left: 2em;
-  }
+  div {
+    > div.output-verbatim {
+      white-space: pre;
+    }
 
-  > div.output-error {
-    color: #800000;
-  }
+    > div.output-debug {
+      display: none;
+      font-style: italic;
+      color: #444444;
+      margin-left: 2em;
+    }
 
-  &.debug > div.output-debug {
-    display: block;
+    > div.output-error {
+      color: #800000;
+    }
+
+    &.debug > div.output-debug {
+      display: block;
+    }
   }
 }

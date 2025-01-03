@@ -16,6 +16,8 @@ const urlReg = /^\/([^/]+)?$/;
 
 @Injectable()
 export class SettingsService implements OnDestroy {
+  debug = false;
+
   private readonly _idSubscription: Subscription;
 
   private _game?: TGame;
