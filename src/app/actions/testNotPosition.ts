@@ -4,7 +4,7 @@ import { State } from '../game-object/state';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
-/** See if the player or an entity is at a specifc place. */
+/** See if the player or an entity is not at a specifc place. */
 export class TestNotPositionAction extends Action {
   /** 'if_notposition' ' ' '$' '$' <area> '$' <room> */
   public static readonly Pattern =
