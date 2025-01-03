@@ -1,5 +1,5 @@
 import { GameObject } from '.';
-import { TActionMap } from '../actions';
+import { Action, TActionMap } from '../actions';
 import { GameService } from '../services/game.service';
 import { stateOperations } from './operations';
 
@@ -34,8 +34,8 @@ export class State extends GameObject {
         this.actions[action] = game.defaults.actions[action];
   }
 
-  override validate(game: GameService): void {
-    super.validate(game);
+  override prepare(game: GameService): void {
+    super.prepare(game);
 
     for (const exits of Object.values(this.exits))
       exits.forEach((a) => a.validate(game, this));
@@ -46,6 +46,6 @@ export class State extends GameObject {
   }
 
   run(operation: stateOperations, game: GameService) {
-    this.runAction(operation.toString(), game);
+    Action.run(this.actions[operation.toString()], this, game);
   }
 }

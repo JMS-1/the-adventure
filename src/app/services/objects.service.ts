@@ -77,7 +77,7 @@ export class ObjectsService implements OnDestroy {
       /^\s*actions\s*=\s*(.*)$/,
       (m, lines, i) =>
         this.parseActions(m[1], lines, i, 'parseMultiple', (actions) =>
-          this._current!.setActions(actions)
+          this._current!.addActions(actions)
         ),
     ],
     [

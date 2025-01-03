@@ -56,7 +56,7 @@ export class StatesService implements OnDestroy {
       /^\s*actions\s*=\s*(.*)$/,
       (m, lines, i) =>
         this.parseActions(m[1], lines, i, (actions) =>
-          this._current!.setActions(actions)
+          this._current!.addActions(actions)
         ),
     ],
     [

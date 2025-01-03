@@ -51,8 +51,8 @@ export abstract class Entity extends GameObject {
     else this.commands[command] = actions;
   }
 
-  override validate(game: GameService): void {
-    super.validate(game);
+  override prepare(game: GameService): void {
+    super.prepare(game);
 
     for (const commands of Object.values(this.commands))
       commands.forEach((a) => a.validate(game, this));

@@ -125,7 +125,7 @@ export class GameService implements OnDestroy {
 
     for (const gameObject of objects) gameObject.loadDefaults(this);
 
-    for (const gameObject of objects) gameObject.validate(this);
+    for (const gameObject of objects) gameObject.prepare(this);
 
     this.verbatim(this.info.intro);
 
