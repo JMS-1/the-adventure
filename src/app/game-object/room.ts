@@ -11,8 +11,8 @@ export class Room extends GameObject {
   /**
    * Create a new room.
    *
-   * @param area
-   * @param name
+   * @param area area of the room.
+   * @param name unique name of the room inside the area.
    */
   constructor(public readonly area: string, name: string) {
     super(name, null);
@@ -20,11 +20,18 @@ export class Room extends GameObject {
     if (!area) throw new Error(`room ${name} has no area`);
   }
 
+  /** Get global unique name if the room. */
   override get key() {
     return `$$${this.area}$${this.name}`;
   }
 
-  setExits(exits: TActionMap) {
+  /**
+   * Define additional exits from the room.
+   *
+   * @param exits list of exits to add - duplicate declaration
+   * will throw an error.
+   */
+  addExits(exits: TActionMap) {
     for (const exit of Object.keys(exits))
       if (this.exits[exit])
         throw new Error(`duplicate exit ${this.name}.${exit}`);
@@ -34,6 +41,7 @@ export class Room extends GameObject {
   override loadDefaults(game: GameService): void {
     super.loadDefaults(game);
 
+    /** Merge in all default actions. */
     for (const action of Object.keys(game.defaults.actions))
       if (!this.actions[action])
         this.actions[action] = game.defaults.actions[action];
@@ -42,6 +50,7 @@ export class Room extends GameObject {
   override prepare(game: GameService): void {
     super.prepare(game);
 
+    /** Validate all exits - either directly declared or inherited as default. */
     for (const exits of Object.values(this.exits))
       exits.forEach((a) => a.validate(game, this));
 
@@ -49,10 +58,22 @@ export class Room extends GameObject {
       exits.forEach((a) => a.validate(game, this));
   }
 
+  /**
+   * Get the unique identifier of a message for this room.
+   *
+   * @param message message to look up.
+   * @returns the key to the message.
+   */
   getMessageKey(message: string) {
     return `${this.area}.${this.name}_${message}`;
   }
 
+  /**
+   * Run a room operation.
+   *
+   * @param operation operation to execute.
+   * @param game active game.
+   */
   run(operation: roomOperations, game: GameService) {
     Action.run(this.actions[operation.toString()], this, game);
   }

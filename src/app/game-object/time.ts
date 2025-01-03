@@ -1,25 +1,38 @@
+/** '(' 'd' <0..6> '/' <0..99> ',' 'h' <0..99> '/' <0..23> ',' 'm' <0..59> '/' <0..99> ')' */
 const timeReg =
   /^\(\s*d(\d{1,2})\/(\d{1,2})\s*,\s*h(\d{1,2})\/(\d{1,2})\s*,\s*m(\d{1,2})\/(\d{1,2})\s*\)$/;
 
+/** Limits of each time element - 7 week days, 24 hours each day, 60 minutes each hour. */
 const ranges = [7, 24, 60];
 
+/** Represents the game time as weekday, hour of day and minute of hour. */
 export class Time {
+  /** Current time. */
   private readonly _times: number[];
 
+  /** Time advance. */
   private readonly _deltas: number[];
 
+  /** Report day of week. */
   get dayOfWeek() {
     return this._times[0];
   }
 
+  /** Report hour of day. */
   get hours() {
     return this._times[1];
   }
 
+  /** Report minute of hour. */
   get minutes() {
     return this._times[2];
   }
 
+  /**
+   * Create a new time representation.
+   *
+   * @param time well formatted string or another time to be cloned.
+   */
   constructor(time: string | Time) {
     if (time instanceof Time) {
       this._times = [...time._times];
@@ -48,27 +61,36 @@ export class Time {
     }
   }
 
+  /** Add the time deltas to the current time. */
   increment() {
     for (let i = Math.max(this._times.length, this._deltas.length); i-- > 0; ) {
+      /** Simple advance. */
       const time = this._times[i] + this._deltas[i];
 
+      /** Clip to related limit. */
       this._times[i] = time % ranges[i];
 
+      /** Carry over to next higher granularity - weekday will just move on. */
       if (i > 0) this._times[i - 1] += Math.floor(time / ranges[i]);
     }
   }
 
+  /** Helper for debugging purpuses. */
   toString() {
     return JSON.stringify(this._times);
   }
 
+  /** Create a JSON representation. */
   save() {
-    return {
-      times: this._times,
-      deltas: this._deltas,
-    };
+    return { times: this._times, deltas: this._deltas };
   }
 
+  /**
+   * Reconstruct from the JSON representation.
+   *
+   * @param serialize as reconstructed by parsing the result from a call to save.
+   * @returns a new time instance according to the JSON representation.
+   */
   static load(serialize: unknown) {
     const time = new Time('(d0/0,h0/0,m0/1)');
     const json = serialize as ReturnType<Time['save']>;

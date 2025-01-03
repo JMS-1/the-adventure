@@ -62,7 +62,7 @@ export class RoomsService implements OnDestroy {
       /^\s*exits\s*=\s*(.*)$/,
       (m, lines, i) =>
         this.parseActions(m[1], lines, i, (actions) =>
-          this._current!.setExits(actions)
+          this._current!.addExits(actions)
         ),
     ],
     [/^\s*message\s*=(.*)$/, (m) => this._current!.setMessage(m[1])],

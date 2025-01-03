@@ -9,17 +9,31 @@ import { Time } from './time';
 import { Timers } from './timers';
 import { Weight } from './weight';
 
+/** A player instance represents the current game state. */
 export class Player {
+  /** Set as soon as the player died - game is over. */
   dead = false;
 
+  /** All currently active timers - from multiple emtities. */
   private _timers = new Timers();
 
+  /** Which entity or room holds which entities. */
   readonly carriedObjects = new EntityAssignments();
 
+  /** Name of the entities hold by the player itself. */
   readonly inventory = new Set<string>();
 
+  /** Current message for each game object - will often be different from the declared values. */
   readonly messages: Record<string, string> = {};
 
+  /**
+   * Create a new player.
+   *
+   * @param room room to start with.
+   * @param weight strength of the player.
+   * @param time game time.
+   * @param _game active game.
+   */
   constructor(
     public room: Room,
     public weight: Weight,
@@ -27,16 +41,29 @@ export class Player {
     private readonly _game: GameService
   ) {}
 
+  /** Advance the time. */
   nextTick() {
+    /** Just to display the time to the user. */
     this.time.increment();
 
+    /** Eventually execute elapsed timers. */
     this._timers.advance(this._game);
   }
 
+  /**
+   * Start all timers of an entity.
+   *
+   * @param entity entity to use.
+   */
   startTimers(entity: Entity) {
     this._timers.start(entity, this._game);
   }
 
+  /**
+   * Stop all timers of an entity.
+   *
+   * @param entity entity to use.
+   */
   stopTimers(entity: Entity) {
     this._timers.stop(entity);
   }
@@ -98,27 +125,52 @@ export class Player {
     }
   }
 
-  isVisible(gameObject: GameObject | undefined) {
+  /**
+   * Check if an game object is visible. Typically used to
+   * decide if the current message of the object should be
+   * displayed.
+   *
+   * @param gameObject any game object.
+   * @returns set if the game object is visible.
+   */
+  private isVisible(gameObject: GameObject | undefined) {
+    /** Of all rooms only the room in which the player is will be visible. */
     if (gameObject instanceof Room) return gameObject === this.room;
 
-    if (!gameObject) return false;
+    /** Just in case. */
+    if (!(gameObject instanceof Entity)) return false;
 
+    /** All entities in the players inventory or lying around in the current rooms are visible. */
     return (
       this.inventory.has(gameObject.key) ||
       this.carriedObjects.has(this.room, gameObject)
     );
   }
 
+  /**
+   * Set the active message of an entity or an room.
+   *
+   * @param gameObject game object to change.
+   * @param message new message to use.
+   */
   setMessage(gameObject: GameObject, message: string) {
+    /** Update message and display. */
     this.messages[gameObject.key] = message;
 
     this.print(gameObject);
   }
 
+  /**
+   * Output the current state of an entity or room.
+   *
+   * @param gameObject game object to show.
+   */
   print(gameObject: GameObject | string | undefined) {
+    /** If the parameter is only the key of an entity make sure it exists - rooms can only be displayed using the instance. */
     if (typeof gameObject === 'string')
       gameObject = this._game.objects.entities[gameObject];
 
+    /** Display the message if the game object is visible. */
     if (this.isVisible(gameObject))
       this.printRandomMessage(
         gameObject!.getMessage(
@@ -128,9 +180,16 @@ export class Player {
       );
   }
 
+  /**
+   * Choose one message out of a set of messages to display.
+   *
+   * @param messages list of alternate messages to display.
+   */
   printRandomMessage(messages: string[] | undefined) {
+    /** Message parameter may be empty - in case message is *. */
     if (!messages?.length) return;
 
+    /** Choose one message from the variants - works for a single alternative as well. */
     const choice = messages[Math.floor(Math.random() * messages.length)];
 
     if (choice) this._game.output(choice);
@@ -165,6 +224,7 @@ export class Player {
       this.print(entity);
   }
 
+  /** Create a JSON represenation of the current game state. */
   save() {
     return {
       assignments: this.carriedObjects.save(),
@@ -178,6 +238,13 @@ export class Player {
     };
   }
 
+  /**
+   * Reconstruct a game state from the JSON representation.
+   *
+   * @param serialized JSON representation as a result from a call to save.
+   * @param game active game.
+   * @returns new player instance representing the previously saved game state.
+   */
   static load(serialized: unknown, game: GameService) {
     const json = serialized as ReturnType<Player['save']>;
 
@@ -188,6 +255,7 @@ export class Player {
       game
     );
 
+    /** Copy all the stuff not available in the constructor. */
     player.dead = json.dead;
 
     player.carriedObjects.load(json.assignments, game);
@@ -202,6 +270,7 @@ export class Player {
     return player;
   }
 
+  /** Report all visible entities, starting with the entities lying in the current room and followed by the inventory. */
   get entities() {
     return [...this.carriedObjects.children(this.room), ...this.inventory];
   }
