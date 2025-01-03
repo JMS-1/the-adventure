@@ -111,17 +111,33 @@ export class Player {
     if (choice) this._game.output(choice);
   }
 
+  /**
+   * Leve the current room and move to another.
+   *
+   * @param state room to move the player to
+   */
   enterState(state: State) {
+    /** We are already there. */
+    if (state === this.state) return;
+
+    /** Exit the current state. */
     this.state.run(stateOperations.exit, this._game);
 
+    /** Show the new state. */
     this.state = state;
 
-    this.print(state);
+    this.dumpState();
 
-    for (const entity of this.carriedObjects.children(state))
-      this.print(entity);
-
+    /** Enter the new state. */
     this.state.run(stateOperations.enter, this._game);
+  }
+
+  /** Report the current state and everything laying around. */
+  dumpState() {
+    this.print(this.state);
+
+    for (const entity of this.carriedObjects.children(this.state))
+      this.print(entity);
   }
 
   save() {

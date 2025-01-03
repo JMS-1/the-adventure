@@ -130,8 +130,6 @@ export class GameService implements OnDestroy {
     this.verbatim(this.info.intro);
 
     this.execute(() => this.player.state.run(stateOperations.stay, this), true);
-
-    this.dumpCurrentState();
   };
 
   private verbatim(message: string) {
@@ -274,7 +272,7 @@ export class GameService implements OnDestroy {
     if (exits?.length) Action.run(exits, state, this);
     else player.print(state);
 
-    for (const entity of player.carriedObjects.children(player.state))
+    for (const entity of player.carriedObjects.children(state))
       player.print(entity);
   }
 

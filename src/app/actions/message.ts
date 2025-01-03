@@ -3,9 +3,17 @@ import { GameObject } from '../game-object';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
+/** Set the message of a game object. */
 export class MessageAction extends Action {
+  /** ['@'] 'message' '=' <message> */
   public static readonly Pattern = /^(@)?message\s*=\s*([^,)\s]+)/;
 
+  /**
+   * Create the action to set.
+   *
+   * @param message message to set.
+   * @param silent set to supress output of the mew message.
+   */
   private constructor(
     public readonly message: string,
     public readonly silent: boolean
@@ -27,6 +35,7 @@ export class MessageAction extends Action {
   }
 
   override validate(game: GameService, scope: GameObject): void {
+    /** Make sure the message is defined. */
     scope.getMessage(game.messages, this.message);
   }
 

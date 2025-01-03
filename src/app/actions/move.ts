@@ -5,11 +5,21 @@ import { State } from '../game-object/state';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
+/** Move the player or and entity to a room. */
 export class MoveAction extends Action {
+  /** ['#'] '>' ['$' '$' <area> '$'] <room> */
   public static readonly Pattern = /^(#)?>(\$\$([^$]+)\$)?([^,)\s>]+)/;
 
+  /** The room to move to. */
   private _target!: State;
 
+  /**
+   * Create the action.
+   *
+   * @param area optional area of the room - map be taken from the current state.
+   * @param room room to move to.
+   * @param self set to move not the player but the entity owning this action.
+   */
   private constructor(
     public readonly area: string | null,
     public readonly room: string,
@@ -32,6 +42,11 @@ export class MoveAction extends Action {
   }
 
   override validate(game: GameService, scope: GameObject): void {
+    /** Can only move the player and entities. */
+    if (this.self && !(scope instanceof Entity))
+      throw new Error(`${scope.name} not a thing or person`);
+
+    /** Validate the target room - if the current game object is a room and no area is given the area from the game object is used. */
     this._target =
       game.states.states[
         `$$${this.area || (scope instanceof State ? scope.area : '')}$${
@@ -40,22 +55,21 @@ export class MoveAction extends Action {
       ];
 
     if (!this._target) throw new Error(`${this.area}: no room ${this.room}`);
-
-    if (this.self && !(scope instanceof Entity))
-      throw new Error(`${scope.name} not a thing or person`);
   }
 
   protected override onRun(scope: GameObject, game: GameService): void {
     const { player } = game;
 
     if (this.self) {
+      /** Just place the entity in the indicated room. */
       game.debug(`move ${scope.key} to ${this._target.key}`);
 
       game.execute(
         () => player.addEntityToParent(scope as Entity, this._target),
         true
       );
-    } else if (this._target !== player.state) {
+    } else {
+      /** Move the player to the indicated state. */
       game.debug(`goto ${this._target.key}`);
 
       player.enterState(this._target);
