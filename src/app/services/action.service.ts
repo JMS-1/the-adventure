@@ -1,9 +1,40 @@
 import { Injectable } from '@angular/core';
-import { TActionMap } from '../actions';
+import { Action, TActionMap } from '../actions';
+import { CountedAction } from '../actions/counted';
 import { ParseContext } from '../actions/parseContext';
 import { GameObject } from '../game-object';
 
 const nameReg = /^([^:\s]+)\s*:/;
+
+const repeatReg = /^([^/]+)((\/\d{1,2})*)$/;
+
+function splitKey(key: string, actions: Action[]) {
+  const match = repeatReg.exec(key);
+
+  if (!match) throw Error(`bad key ${key}`);
+
+  return {
+    key: match[1],
+    actions: match[2]
+      ? [
+          new CountedAction(
+            match[1],
+            match[2]
+              .split('/')
+              .slice(1)
+              .map((n) => parseInt(n)),
+            actions
+          ),
+        ]
+      : actions,
+  };
+}
+
+function splitKeys(keys: string, actions: Action[]) {
+  return keys
+    ? GameObject.parseWords(keys).map((key) => splitKey(key, actions))
+    : [{ key: '', actions }];
+}
 
 @Injectable({ providedIn: 'root' })
 export class ActionService {
@@ -23,8 +54,8 @@ export class ActionService {
         else {
           const actions: TActionMap = {};
 
-          for (const word of key ? GameObject.parseWords(key) : [key])
-            actions[word] = generated;
+          for (const keyInfo of splitKeys(key, generated))
+            actions[keyInfo.key] = keyInfo.actions;
 
           return [actions, context.index];
         }
@@ -77,10 +108,8 @@ export class ActionService {
 
       if (!match) throw new Error(`key missing: ${context.start}`);
 
-      const actions = context.parseBody(match[0]);
-
-      for (const key of GameObject.parseWords(match[1]))
-        map[key] = [...(map[key] || []), ...actions];
+      for (const keyInfo of splitKeys(match[1], context.parseBody(match[0])))
+        map[keyInfo.key] = [...(map[keyInfo.key] || []), ...keyInfo.actions];
 
       context.enforceStart();
     } while (context.start.startsWith(','));

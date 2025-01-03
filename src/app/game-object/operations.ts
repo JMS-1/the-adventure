@@ -1,7 +1,7 @@
 /** Operations on rooms. */
 export enum roomOperations {
   /** Enter a room. */
-  enter = 'enter',
+  enter = 'entry',
 
   /** Leave a room. */
   exit = 'exit',

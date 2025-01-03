@@ -129,7 +129,7 @@ export class GameService implements OnDestroy {
 
     this.verbatim(this.info.intro);
 
-    this.execute(() => this.player.room.run(roomOperations.stay, this), true);
+    this.player.room.run(roomOperations.stay, this);
   };
 
   private verbatim(message: string) {
@@ -150,7 +150,7 @@ export class GameService implements OnDestroy {
     return messages?.[Math.floor(Math.random() * messages?.length)] || message;
   }
 
-  output(message: string | string[], force = true) {
+  output(message: string | string[], force = false) {
     if (this._suppressOutput > 0 && !force) return;
 
     if (Array.isArray(message))

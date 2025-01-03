@@ -37,9 +37,7 @@ export class Room extends GameObject {
    */
   addExits(exits: TActionMap) {
     for (const exit of Object.keys(exits))
-      if (this.exits[exit])
-        throw new Error(`duplicate exit ${this.name}.${exit}`);
-      else this.exits[exit] = exits[exit];
+      this.exits[exit] = [...(this.exits[exit] || []), ...exits[exit]];
   }
 
   override loadDefaults(game: GameService): void {
@@ -47,8 +45,10 @@ export class Room extends GameObject {
 
     /** Merge in all default actions. */
     for (const action of Object.keys(game.defaults.actions))
-      if (!this.actions[action])
-        this.actions[action] = game.defaults.actions[action];
+      this.actions[action] = [
+        ...game.defaults.actions[action],
+        ...(this.actions[action] || []),
+      ];
   }
 
   override prepare(game: GameService): void {
