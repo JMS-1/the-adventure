@@ -6,7 +6,7 @@ import { ParseContext } from './parseContext';
 
 /** Call one action of an entity. */
 export class CallAction extends Action {
-  /** ['@']<entity> <action> */
+  /** ['@']<entity> ' ' <action> */
   public static readonly Pattern = /^(@)?([^\s,)=]+)\s+([^\s,)=]+)/;
 
   /** The entity to use. */

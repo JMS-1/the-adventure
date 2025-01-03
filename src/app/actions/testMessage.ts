@@ -5,7 +5,7 @@ import { ParseContext } from './parseContext';
 
 /** See if the current game object is in a specific state. */
 export class TestMessageAction extends Action {
-  /** 'if_message' <message> */
+  /** 'if_message' ' ' <message> */
   public static readonly Pattern = /^if_message\s+([^\s]+)/;
 
   /**
