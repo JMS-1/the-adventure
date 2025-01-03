@@ -1,6 +1,6 @@
 import { Action } from '.';
-import { GameObject } from '../game-object';
 import { Entity } from '../game-object/entity';
+import { Room } from '../game-object/room';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
@@ -29,7 +29,7 @@ export class NotHasThisAction extends Action {
     return new NotHasThisAction(context.parseBody(match[0]));
   }
 
-  override validate(game: GameService, scope: GameObject): void {
+  override validate(game: GameService, scope: Entity | Room): void {
     /** Can only carry entities. */
     if (!(scope instanceof Entity))
       throw new Error(`${scope.name} is not a thing or person`);
@@ -38,7 +38,7 @@ export class NotHasThisAction extends Action {
     this.actions.forEach((a) => a.validate(game, scope));
   }
 
-  protected override onRun(scope: GameObject, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService): void {
     game.debug(`test me not has ${scope.key}`);
 
     /** See if we are carrying the entity and proceed as necessary. */

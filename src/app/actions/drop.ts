@@ -1,6 +1,6 @@
 import { Action } from '.';
-import { GameObject } from '../game-object';
 import { Entity } from '../game-object/entity';
+import { Room } from '../game-object/room';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
@@ -45,7 +45,7 @@ export class DropAction extends Action {
     this.entity = game.objects.findEntity(this.what);
   }
 
-  protected override onRun(scope: GameObject, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService): void {
     if (this.self) {
       game.debug(
         `${this.silent ? 'silent ' : ''}${scope.key} drop ${this.entity.key}`

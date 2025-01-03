@@ -1,6 +1,6 @@
 import { Action } from '.';
-import { GameObject } from '../game-object';
 import { Entity } from '../game-object/entity';
+import { Room } from '../game-object/room';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
@@ -36,7 +36,7 @@ export class NotHereAction extends Action {
     return new NotHereAction(match[1], context.parseBody(match[0]));
   }
 
-  override validate(game: GameService, scope: GameObject): void {
+  override validate(game: GameService, scope: Entity | Room): void {
     /** Make sure the entity exists. */
     this.entity = game.objects.findEntity(this.what);
 
@@ -44,7 +44,7 @@ export class NotHereAction extends Action {
     this.actions.forEach((a) => a.validate(game, scope));
   }
 
-  protected override onRun(scope: GameObject, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService): void {
     game.debug(`test ${this.entity.key} not to be here`);
 
     /** See if the entity lies in the current room and proceed accordingly. */

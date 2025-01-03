@@ -41,6 +41,10 @@ export abstract class Entity extends GameObject {
     }
   }
 
+  override get self() {
+    return this;
+  }
+
   /**
    * Set the configured weight of this entity.
    *

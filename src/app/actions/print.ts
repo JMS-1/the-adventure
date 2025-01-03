@@ -1,5 +1,5 @@
 import { Action } from '.';
-import { GameObject } from '../game-object';
+import { Entity } from '../game-object/entity';
 import { Room } from '../game-object/room';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
@@ -38,7 +38,7 @@ export class PrintAction extends Action {
     return new PrintAction(match[2] ?? null, match[3]);
   }
 
-  override validate(game: GameService, scope: GameObject): void {
+  override validate(game: GameService, scope: Entity | Room): void {
     /** Get the fill key of the message - area may come from the room. */
     const key = `${this.area || (scope instanceof Room ? scope.area : '')}.${
       this.message
@@ -50,7 +50,7 @@ export class PrintAction extends Action {
     if (!this.choices) throw new Error(`no message ${key}`);
   }
 
-  protected override onRun(scope: GameObject, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService): void {
     game.debug(`print ${this.area || ''}${this.area && '.'}${this.message}`);
 
     game.player.printRandomMessage(this.choices);

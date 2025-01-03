@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TActionMap } from '../actions';
 import { ParseContext } from '../actions/parseContext';
+import { GameObject } from '../game-object';
 
 const nameReg = /^([^:\s]+)\s*:/;
 
@@ -19,7 +20,14 @@ export class ActionService {
 
       if (generated?.length)
         if (context.start) throw new Error('unterminated action');
-        else return [{ [key]: generated }, context.index];
+        else {
+          const actions: TActionMap = {};
+
+          for (const word of key ? GameObject.parseWords(key) : [key])
+            actions[word] = generated;
+
+          return [actions, context.index];
+        }
 
       context.joinNext();
     }
@@ -69,9 +77,10 @@ export class ActionService {
 
       if (!match) throw new Error(`key missing: ${context.start}`);
 
-      if (map[match[1]]) throw new Error(`duplicate key '${match[1]}'`);
+      const actions = context.parseBody(match[0]);
 
-      map[match[1]] = context.parseBody(match[0]);
+      for (const key of GameObject.parseWords(match[1]))
+        map[key] = [...(map[key] || []), ...actions];
 
       context.enforceStart();
     } while (context.start.startsWith(','));

@@ -1,7 +1,9 @@
 import { TActionMap } from '../actions';
 import { GameService } from '../services/game.service';
 import { MessagesService } from '../services/messages.service';
+import { Entity } from './entity';
 import { type Macro } from './macro';
+import { Room } from './room';
 
 /** Base of a game object. */
 export abstract class GameObject {
@@ -117,6 +119,11 @@ export abstract class GameObject {
     this.getMessage(game.messages, this.message);
   }
 
+  /** Convert to some real type. */
+  get self(): Entity | Room {
+    throw new Error('not a thing, person or room');
+  }
+
   /**
    * Validate the configuration of this game object.
    *
@@ -130,13 +137,13 @@ export abstract class GameObject {
 
     /** Validate all actions. */
     for (const actions of Object.values(this.actions))
-      actions.forEach((a) => a.validate(game, this));
+      actions.forEach((a) => a.validate(game, this.self));
 
     /** Prepare the dynamic entity assigments for this game object - use the set shortcut for performance reasons. */
-    game.player.carriedObjects.set(this, this.entities);
+    game.player.carriedObjects.set(this.self, this.entities);
 
     /** Set the dynamic message - but do not print it out. */
-    game.execute(() => game.player.setMessage(this, this.message), true);
+    game.execute(() => game.player.setMessage(this.self, this.message), true);
   }
 
   /**

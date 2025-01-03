@@ -1,5 +1,5 @@
 import { Action } from '.';
-import { GameObject } from '../game-object';
+import { Entity } from '../game-object/entity';
 import { Room } from '../game-object/room';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
@@ -45,7 +45,11 @@ export class TestPositionAction extends Action {
     );
   }
 
-  override validate(game: GameService, scope: GameObject): void {
+  override validate(game: GameService, scope: Entity | Room): void {
+    /** Only entities can placed in rooms. */
+    if (this.self && !(scope instanceof Entity))
+      throw new Error(`${scope.key} not a thing or person`);
+
     /** See if room exists. */
     this.target = game.rooms.rooms[`$$${this.area}$${this.room}`];
 
@@ -55,10 +59,10 @@ export class TestPositionAction extends Action {
     this.actions.forEach((a) => a.validate(game, scope));
   }
 
-  protected override onRun(scope: GameObject, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService): void {
     /** See if player or entity of this action is in the room. */
     const hit = this.self
-      ? game.player.carriedObjects.has(this.target, scope)
+      ? game.player.carriedObjects.has(this.target, scope as Entity)
       : this.target === game.player.room;
 
     game.debug(`test ${this.self ? scope.name : 'me'} at ${this.target.key}`);

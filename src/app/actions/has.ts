@@ -1,6 +1,6 @@
 import { Action } from '.';
-import { GameObject } from '../game-object';
 import { Entity } from '../game-object/entity';
+import { Room } from '../game-object/room';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
@@ -38,7 +38,7 @@ export class HasAction extends Action {
     return new HasAction(match[2], !!match[1], context.parseBody(match[0]));
   }
 
-  override validate(game: GameService, scope: GameObject): void {
+  override validate(game: GameService, scope: Entity | Room): void {
     /** Make sure entity exists. */
     this.entity = game.objects.findEntity(this.what);
 
@@ -46,7 +46,7 @@ export class HasAction extends Action {
     this.actions.forEach((a) => a.validate(game, scope));
   }
 
-  protected override onRun(scope: GameObject, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService): void {
     game.debug(`test ${this.self ? scope.key : 'me'} has ${this.entity.key}`);
 
     /** Check against the parent and execute actions. */

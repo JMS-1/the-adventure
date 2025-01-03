@@ -1,6 +1,6 @@
 import { Action } from '.';
-import { GameObject } from '../game-object';
 import { Entity } from '../game-object/entity';
+import { Room } from '../game-object/room';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
@@ -40,7 +40,7 @@ export class PickAction extends Action {
     return new PickAction(match[3], !!match[1], !!match[2]);
   }
 
-  override validate(game: GameService, scope: GameObject): void {
+  override validate(game: GameService, scope: Entity | Room): void {
     /** Make sure entity exists. */
     this._entity = game.objects.findEntity(this.what);
 
@@ -49,7 +49,7 @@ export class PickAction extends Action {
       throw new Error(`${scope.name} is no a thing or person`);
   }
 
-  protected override onRun(scope: GameObject, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService): void {
     if (this.self) {
       game.debug(`add ${this._entity.name} to ${scope.key}.`);
 

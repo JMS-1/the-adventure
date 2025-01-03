@@ -1,4 +1,5 @@
-import { GameObject } from '../game-object';
+import { Entity } from '../game-object/entity';
+import { Room } from '../game-object/room';
 import { GameService } from '../services/game.service';
 
 /** Map of actions */
@@ -12,7 +13,7 @@ export abstract class Action {
    * @param game active game.
    * @param scope current game object validated.
    */
-  abstract validate(game: GameService, scope: GameObject): void;
+  abstract validate(game: GameService, scope: Entity | Room): void;
 
   /**
    * Execute the action.
@@ -20,7 +21,7 @@ export abstract class Action {
    * @param scope current game object executing the action.
    * @param game active game.
    */
-  protected abstract onRun(scope: GameObject, game: GameService): void;
+  protected abstract onRun(scope: Entity | Room, game: GameService): void;
 
   /**
    * Run a list of actions.
@@ -31,7 +32,7 @@ export abstract class Action {
    */
   static run(
     actions: Action[] | undefined,
-    scope: GameObject,
+    scope: Entity | Room,
     game: GameService
   ) {
     /** Stop as soon as the player died. */

@@ -1,6 +1,6 @@
 import { Action } from '.';
-import { GameObject } from '../game-object';
 import { Entity } from '../game-object/entity';
+import { Room } from '../game-object/room';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
@@ -27,13 +27,13 @@ export class StopAction extends Action {
     return new StopAction();
   }
 
-  override validate(game: GameService, scope: GameObject): void {
+  override validate(game: GameService, scope: Entity | Room): void {
     /** See if stop is executed only on an entity. */
     if (!(scope instanceof Entity))
       throw new Error(`${scope.name} is not a thing or person`);
   }
 
-  protected override onRun(scope: GameObject, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService): void {
     game.debug(`stop timers of ${scope.key}`);
 
     game.player.stopTimers(scope as Entity);

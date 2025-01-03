@@ -1,5 +1,6 @@
-import { GameObject } from '.';
 import { GameService } from '../services/game.service';
+import { Entity } from './entity';
+import { Room } from './room';
 
 /** Manager the active dynamic positions of entities. */
 export class EntityAssignments {
@@ -12,7 +13,7 @@ export class EntityAssignments {
    * @param entity entity to add.
    * @param parent parent the entity should belong to.
    */
-  add(entity: GameObject, parent: GameObject) {
+  add(entity: Entity, parent: Entity | Room) {
     this._carried[parent.key].add(entity.name);
   }
 
@@ -23,7 +24,7 @@ export class EntityAssignments {
    * @param children the original set of entities for the parent -
    * must be cloned since may change during the game.
    */
-  set(parent: GameObject, children: Set<string>) {
+  set(parent: Entity | Room, children: Set<string>) {
     this._carried[parent.key] = new Set(children);
   }
 
@@ -32,7 +33,7 @@ export class EntityAssignments {
    *
    * @param entity entity to get rid of.
    */
-  delete(entity: GameObject) {
+  delete(entity: Entity) {
     Object.values(this._carried).forEach((s) => s.delete(entity.name));
   }
 
@@ -43,7 +44,7 @@ export class EntityAssignments {
    * @param entity the entity of interest.
    * @returns set if the entity belongs to the parent.
    */
-  has(parent: GameObject, entity: GameObject) {
+  has(parent: Entity | Room, entity: Entity) {
     return this._carried[parent.key]?.has(entity.key);
   }
 
@@ -53,7 +54,7 @@ export class EntityAssignments {
    * @param parent parent to check.
    * @returns list of associated entities.
    */
-  children(parent: GameObject) {
+  children(parent: Entity | Room) {
     return this._carried[parent.key] ?? new Set();
   }
 

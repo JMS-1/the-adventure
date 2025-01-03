@@ -1,4 +1,3 @@
-import { GameObject } from '.';
 import { type GameService } from '../services/game.service';
 import { Entity } from './entity';
 import { EntityAssignments } from './entity-assignments';
@@ -93,7 +92,7 @@ export class Player {
    * @param entity entity to add.
    * @param parent new parent game object for the entity.
    */
-  attachEntity(entity: Entity, parent: GameObject) {
+  attachEntity(entity: Entity, parent: Entity | Room) {
     /* Silent remove first - just in case. */
     this.detachEntity(entity);
 
@@ -133,7 +132,7 @@ export class Player {
    * @param gameObject any game object.
    * @returns set if the game object is visible.
    */
-  private isVisible(gameObject: GameObject | undefined) {
+  private isVisible(gameObject: Entity | Room | undefined) {
     /** Of all rooms only the room in which the player is will be visible. */
     if (gameObject instanceof Room) return gameObject === this.room;
 
@@ -153,7 +152,7 @@ export class Player {
    * @param gameObject game object to change.
    * @param message new message to use.
    */
-  setMessage(gameObject: GameObject, message: string) {
+  setMessage(gameObject: Entity | Room, message: string) {
     /** Update message and display. */
     this.messages[gameObject.key] = message;
 
@@ -165,7 +164,7 @@ export class Player {
    *
    * @param gameObject game object to show.
    */
-  print(gameObject: GameObject | string | undefined) {
+  print(gameObject: Entity | Room | string | undefined) {
     /** If the parameter is only the key of an entity make sure it exists - rooms can only be displayed using the instance. */
     if (typeof gameObject === 'string')
       gameObject = this._game.objects.entities[gameObject];

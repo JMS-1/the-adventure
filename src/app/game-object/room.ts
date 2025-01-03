@@ -20,6 +20,10 @@ export class Room extends GameObject {
     if (!area) throw new Error(`room ${name} has no area`);
   }
 
+  override get self() {
+    return this;
+  }
+
   /** Get global unique name if the room. */
   override get key() {
     return `$$${this.area}$${this.name}`;

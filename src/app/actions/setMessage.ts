@@ -1,6 +1,6 @@
 import { Action } from '.';
-import { GameObject } from '../game-object';
 import { Entity } from '../game-object/entity';
+import { Room } from '../game-object/room';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
@@ -48,7 +48,7 @@ export class SetMessageAction extends Action {
     this.entity.getMessage(game.messages, this.message);
   }
 
-  protected override onRun(scope: GameObject, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService): void {
     game.debug(
       `${this.silent ? 'silent ' : ''} set message of ${this.entity.key} to ${
         this.message

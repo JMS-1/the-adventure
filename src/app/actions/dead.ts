@@ -1,5 +1,6 @@
 import { Action } from '.';
-import { GameObject } from '../game-object';
+import { Entity } from '../game-object/entity';
+import { Room } from '../game-object/room';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parseContext';
 
@@ -33,7 +34,7 @@ export class DeadAction extends Action {
     return new DeadAction(match[1]);
   }
 
-  override validate(game: GameService, scope: GameObject): void {
+  override validate(game: GameService, scope: Entity | Room): void {
     /** Validate the message. */
     this.message = game.messages.messageMap[`exit.${this.reason}`];
 
@@ -41,7 +42,7 @@ export class DeadAction extends Action {
       throw new Error(`${scope.name}: no message ${this.reason}`);
   }
 
-  protected override onRun(scope: GameObject, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService): void {
     game.debug(`die ${this.reason}`);
 
     /** Report message not respecting silent mode. */

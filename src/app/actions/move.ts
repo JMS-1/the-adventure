@@ -1,5 +1,4 @@
 import { Action } from '.';
-import { GameObject } from '../game-object';
 import { Entity } from '../game-object/entity';
 import { Room } from '../game-object/room';
 import { GameService } from '../services/game.service';
@@ -41,7 +40,7 @@ export class MoveAction extends Action {
     return new MoveAction(match[3] ?? null, match[4], !!match[1]);
   }
 
-  override validate(game: GameService, scope: GameObject): void {
+  override validate(game: GameService, scope: Entity | Room): void {
     /** Can only move the player and entities. */
     if (this.self && !(scope instanceof Entity))
       throw new Error(`${scope.name} not a thing or person`);
@@ -57,7 +56,7 @@ export class MoveAction extends Action {
     if (!this._target) throw new Error(`${this.area}: no room ${this.room}`);
   }
 
-  protected override onRun(scope: GameObject, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService): void {
     const { player } = game;
 
     if (this.self) {
