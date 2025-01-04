@@ -43,13 +43,16 @@ export class RoomsService implements OnDestroy {
   ][] = [
     /* Order required. */
     [
-      /^\$\$([^\s]+)\s*$/,
+      /^\$\$([a-zA-Z0-9äöüß_]+)\s*$/,
       (m) => {
         this._areaName = m[1];
         this._current = undefined;
       },
     ],
-    [/^\$([^\s]+)\s*$/, (m) => this.addRoom(new Room(this._areaName!, m[1]))],
+    [
+      /^\$([a-zA-Z0-9äöüß_]+)\s*$/,
+      (m) => this.addRoom(new Room(this._areaName!, m[1])),
+    ],
     /* Can have any order. */
     [
       /^\s*actions\s*=\s*(.*)$/,

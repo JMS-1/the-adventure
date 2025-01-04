@@ -52,9 +52,12 @@ export class ObjectsService implements OnDestroy {
     (match: RegExpMatchArray, lines: string[], i: number) => void | number
   ][] = [
     /* Order required. */
-    [/^\$\$macro\s+(.*)$/, (m) => this.addToMap(new Macro(m[1]), this._macros)],
     [
-      /^\$\$([^\s]+)\s+([^\s]+)(\s+(.*))?$/,
+      /^\$\$macro\s+([a-zA-Z0-9äöüß]+)$/,
+      (m) => this.addToMap(new Macro(m[1]), this._macros),
+    ],
+    [
+      /^\$\$([a-zA-Z0-9äöüß]+)\s+([a-zA-Z0-9äöüß_]+)(\s+(.*))?$/,
       (m) => {
         const macro = this._macros[m[1]];
 
@@ -66,7 +69,7 @@ export class ObjectsService implements OnDestroy {
       },
     ],
     [
-      /^\$([^\s]+)(\s+(.*))?$/,
+      /^\$([a-zA-Z0-9äöüß_]+)(\s+(.*))?$/,
       (m) => this.addToMap(new this._factory(m[1], m[2], null)),
     ],
     /* Can have any order. */
@@ -78,7 +81,7 @@ export class ObjectsService implements OnDestroy {
         ),
     ],
     [
-      /^\s*#([^\s=]+)\s*=\s*(.*)$/,
+      /^\s*#([a-zA-Z0-9äöüß_]+)\s*=\s*(.*)$/,
       (m, lines, i) =>
         this.parseActions(m[2], lines, i, 'parse', (actions) =>
           this._current!.addCommand(m[1], actions[''])
