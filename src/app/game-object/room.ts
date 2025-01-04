@@ -79,6 +79,14 @@ export class Room extends GameObject {
    * @param game active game.
    */
   run(operation: roomOperations, game: GameService) {
-    Action.run(this.actions[operation.toString()], this, game);
+    const action = operation.toString();
+
+    /** Adjust counter to allow action called on various stages of the game. */
+    game.player.incrementActionCounter(this.self, action);
+
+    if (operation === roomOperations.enter)
+      game.player.resetActionCounter(this.self, roomOperations.stay.toString());
+
+    Action.run(this.actions[action], this, game);
   }
 }

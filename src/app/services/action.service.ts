@@ -6,7 +6,7 @@ import { GameObject } from '../game-object';
 
 const nameReg = /^([^:\s]+)\s*:/;
 
-const repeatReg = /^([^/]+)((\/\d{1,2})*)$/;
+const repeatReg = /^([^/]+)((\/[1-9]\d?)*)$/;
 
 function splitKey(key: string, actions: Action[]) {
   const match = repeatReg.exec(key);

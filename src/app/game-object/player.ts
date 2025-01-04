@@ -1,4 +1,5 @@
 import { type GameService } from '../services/game.service';
+import { ActionCounters } from './counters';
 import { Entity } from './entity';
 import { EntityAssignments } from './entity-assignments';
 import { systemMessages } from './messages';
@@ -24,6 +25,9 @@ export class Player {
 
   /** Current message for each game object - will often be different from the declared values. */
   readonly messages: Record<string, string> = {};
+
+  /** Count action calls. */
+  readonly _counters = new ActionCounters();
 
   /**
    * Create a new player.
@@ -227,6 +231,7 @@ export class Player {
   save() {
     return {
       assignments: this.carriedObjects.save(),
+      counters: this._counters.save(),
       dead: this.dead,
       inventory: Array.from(this.inventory),
       messages: this.messages,
@@ -261,6 +266,8 @@ export class Player {
 
     player._timers.load(json.timers, game);
 
+    player._counters.load(json.counters);
+
     for (const entity of json.inventory) player.inventory.add(entity);
 
     for (const key of Object.keys(json.messages))
@@ -272,5 +279,37 @@ export class Player {
   /** Report all visible entities, starting with the entities lying in the current room and followed by the inventory. */
   get entities() {
     return [...this.carriedObjects.children(this.room), ...this.inventory];
+  }
+
+  /**
+   * See if a counted action is allowed to execute.
+   *
+   * @param scope game object for the action.
+   * @param action name of the action.
+   * @param counts counters to check.
+   * @returns set if the action can be executed.
+   */
+  allowAction(scope: Entity | Room, action: string, counts: number[]) {
+    return this._counters.allowAction(`${scope.key}.${action}`, counts);
+  }
+
+  /**
+   * Reset a specific action counter.
+   *
+   * @param scope game object for the action.
+   * @param action name of the action.
+   */
+  resetActionCounter(scope: Entity | Room, action: string) {
+    this._counters.resetActionCounter(`${scope.key}.${action}`);
+  }
+
+  /**
+   * Increment some action counter.
+   *
+   * @param scope game object for the action.
+   * @param action name of the action.
+   */
+  incrementActionCounter(scope: Entity | Room, action: string) {
+    this._counters.incrementActionCounter(`${scope.key}.${action}`);
   }
 }
