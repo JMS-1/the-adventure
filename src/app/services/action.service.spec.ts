@@ -2,19 +2,19 @@ import { TestBed } from '@angular/core/testing';
 import { DeadAction } from '../actions/dead';
 import { DropAction } from '../actions/drop';
 import { HasAction } from '../actions/has';
-import { HasThisAction } from '../actions/hasThis';
+import { HasThisAction } from '../actions/has-this';
 import { HereAction } from '../actions/here';
 import { MessageAction } from '../actions/message';
 import { MoveAction } from '../actions/move';
-import { NotHasAction } from '../actions/notHas';
-import { NotHasThisAction } from '../actions/notHasThis';
-import { NotHereAction } from '../actions/notHere';
+import { NotHasAction } from '../actions/not-has';
+import { NotHasThisAction } from '../actions/not-has-this';
+import { NotHereAction } from '../actions/not-here';
 import { PickAction } from '../actions/pick';
 import { PrintAction } from '../actions/print';
 import { RandomAction } from '../actions/random';
-import { TestMessageAction } from '../actions/testMessage';
-import { TestPositionAction } from '../actions/testPosition';
-import { TestStateAction } from '../actions/testState';
+import { TestMessageAction } from '../actions/test-message';
+import { TestPositionAction } from '../actions/test-position';
+import { TestStateAction } from '../actions/test-state';
 import { ActionService } from './action.service';
 
 describe('ActionService', () => {

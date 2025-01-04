@@ -2,8 +2,8 @@ import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { AssetService } from '../services/asset.service';
 import { SettingsService } from '../services/settings.service';
+import { CommandAnalyser } from './command-analyser';
 import { CommandService } from './command.service';
-import { CommandAnalyser } from './commandAnalyser';
 import words from './test-commands';
 
 describe('CommandService', () => {

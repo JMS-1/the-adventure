@@ -1,5 +1,5 @@
 import { Action } from '.';
-import { ParseContext } from './parseContext';
+import { ParseContext } from './parse-context';
 import { RandomAction } from './random';
 
 /** Create a list of actions - optional with a random choice. */

@@ -1,31 +1,52 @@
 import { Command, CommandMap } from './command';
 
+/** Given a string input find the corresponding command. */
 export class CommandAnalyser {
+  /** Input split into single words - quoted parts will be taken as a single wod which still includes the quotes. */
   readonly words: string[];
 
+  /**
+   * Create a new analyser.
+   *
+   * @param cmd Input from the user.
+   */
   constructor(cmd: string) {
     this.words = Array.from(this.split(cmd.toLowerCase()));
   }
 
+  /**
+   * Split some input into words.
+   *
+   * @param cmd Input from the user.
+   */
   private *split(cmd: string) {
+    /** Ignore leading and trailing whitespace. */
     cmd = cmd.trim();
 
     while (cmd) {
+      /** Check for quote. */
       const quoted = cmd.startsWith('"');
 
+      /** Find the appropriate end of the word - quote escaping is not supported. */
       let end = cmd.indexOf(quoted ? '"' : ' ', quoted ? 1 : 0);
 
       if (end < 0) end = cmd.length;
       else if (quoted) end++;
 
-      const word = cmd.substring(0, end);
+      /** Extract the word and report it. */
+      yield cmd.substring(0, end);
 
+      /** Remove word from input.  */
       cmd = cmd.substring(end).trim();
-
-      yield word;
     }
   }
 
+  /**
+   * Analse the words we detected.
+   *
+   * @param map Root tree of the command declarations.
+   * @param entities All entities which can be addressed by name.
+   */
   *analyse(
     map: CommandMap,
     entities: Record<string, string>

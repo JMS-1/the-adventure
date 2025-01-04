@@ -17,6 +17,7 @@ import { ObjectsService } from './objects.service';
 import { RoomsService } from './rooms.service';
 import { SettingsService } from './settings.service';
 
+/** All messages for the days of week. */
 const days: systemMessages[] = [
   systemMessages.Day0,
   systemMessages.Day1,
@@ -27,24 +28,31 @@ const days: systemMessages[] = [
   systemMessages.Day6,
 ];
 
+/** Key of this application in the local storage. */
 const storageKeyPrefix = 'W3ADV.';
 
+/** Game management service. */
 @Injectable()
 export class GameService implements OnDestroy {
+  /** Signaled as soon as all declarations are read - successfull or not. */
   private readonly _parseDone$ = new ReplaySubject<boolean>(1);
 
   readonly ready$ = this._parseDone$.asObservable();
 
+  /** Observable reporting any type of output the game may produce. */
   private readonly _output$ = new Subject<
     ['out' | 'debug' | 'error' | 'verbatim', string]
   >();
 
   readonly output$ = this._output$.asObservable();
 
+  /** Incremented to suppress regular output - error messages et al are still shown. */
   private _suppressOutput = 0;
 
+  /** Set after parsing is complete and may contain an error. */
   lastError = '';
 
+  /** The current state of the game. */
   player = new Player(
     new Room('n/a', 'n/a'),
     new Weight('(0,0,0)'),
@@ -52,6 +60,7 @@ export class GameService implements OnDestroy {
     null!
   );
 
+  /** Create a new game - will hold references to all managers. */
   constructor(
     public readonly commands: CommandService,
     public readonly defaults: DefaultsService,
@@ -61,6 +70,7 @@ export class GameService implements OnDestroy {
     public readonly rooms: RoomsService,
     public readonly settings: SettingsService
   ) {
+    /** Wait for all parsings. */
     const subscription = combineLatest([
       commands.parseDone$,
       defaults.parseDone$,
@@ -71,19 +81,22 @@ export class GameService implements OnDestroy {
     ])
       .pipe(
         tap((errors) => {
+          /** Combine error message into one. */
           const error = errors.filter((e) => e).join('; ');
 
           if (error) throw new Error(`parsing error: ${error}`);
         }),
-        tap(this.setup)
+        tap(() => this.setup())
       )
       .subscribe({
         error: (e) => {
+          /** Done with parsing error. */
           this.lastError = e.message;
 
           this._parseDone$.next(true);
         },
         next: () => {
+          /** Game is now ready. */
           subscription.unsubscribe();
 
           this._parseDone$.next(true);
@@ -91,6 +104,7 @@ export class GameService implements OnDestroy {
       });
   }
 
+  /** Parse everything. */
   parse() {
     this.commands.parse();
     this.defaults.parse();
@@ -105,12 +119,15 @@ export class GameService implements OnDestroy {
     this._output$.complete();
   }
 
-  private readonly setup = () => {
+  /** Startup the game. */
+  private setup() {
+    /** Fetch the initial room. */
     const room = this.rooms.rooms[this.defaults.room];
 
     if (!room)
       throw new Error(`initial room '${this.defaults.room}' not found`);
 
+    /** Initialize the state of the game. */
     this.player = new Player(
       room,
       new Weight(this.defaults.weight),
@@ -118,64 +135,108 @@ export class GameService implements OnDestroy {
       this
     );
 
+    /** Just every game object. */
     const objects = [
       ...Object.values(this.objects.entities),
       ...Object.values(this.rooms.rooms),
     ];
 
+    /** Merge in defaults. */
     for (const gameObject of objects) gameObject.loadDefaults(this);
 
+    /** Validate everything. */
     for (const gameObject of objects) gameObject.prepare(this);
 
+    /** Show the game introduction. */
     this.verbatim(this.info.intro);
 
+    /** Start the game itself. */
     this.player.room.run(roomOperations.stay, this);
-  };
+  }
 
+  /**
+   * Give some text output keeping formattings.
+   *
+   * @param message message to report.
+   */
   private verbatim(message: string) {
     this._output$.next(['verbatim', message]);
   }
 
+  /** Show help informaation. */
   help() {
-    this.verbatim(this.info.help);
+    this.verbatim('\n\n' + this.info.help);
   }
 
+  /**
+   * Output debug text.
+   *
+   * @param message trace information.
+   */
   debug(message: string) {
     this._output$.next(['debug', message]);
   }
 
+  /**
+   * Retrieve a system message.
+   *
+   * @param message system message key.
+   * @returns system message.
+   */
   private getMessage(message: systemMessages) {
     const messages = this.messages.messageMap[`${message}`];
 
+    /** May want to randomize. */
     return messages?.[Math.floor(Math.random() * messages?.length)] || message;
   }
 
+  /**
+   * Output some regular in-game message.
+   *
+   * @param message message to display.
+   * @param force display even if output is suppressed.
+   */
   output(message: string | string[], force = false) {
+    /* See if output is allowed. */
     if (this._suppressOutput > 0 && !force) return;
 
+    /** May want to choose of multiple alternatives. */
     if (Array.isArray(message))
       message = message[Math.floor(Math.random() * message.length)];
-    else message = `${message}`;
 
+    /** Report the new message. */
     this._output$.next(['out', '\n' + message]);
   }
 
+  /**
+   * Report an error.
+   *
+   * @param key message key for the error.
+   */
   error(key: string | systemMessages) {
+    /** Make enumeration a key. */
     const messages = this.messages.messageMap[`${key}`];
 
     if (!messages?.length) return;
 
-    const choice =
-      messages?.[Math.floor(Math.random() * (messages?.length ?? 0))];
+    /** May choose from multiple alternatives. */
+    const choice = messages[Math.floor(Math.random() * (messages.length ?? 0))];
 
     this._output$.next(['error', choice + '\n']);
   }
 
-  run(cmd: string) {
-    cmd = cmd.trim();
+  /**
+   * Take a step in the game.
+   *
+   * @param input Input from the user.
+   */
+  run(input: string) {
+    /** Just skip empty lines - especially no time is advanced. */
+    input = input.trim();
 
-    if (!cmd) return;
+    if (!input) return;
 
+    /** Create a mapping of the input names of all visible objects to the entity names. */
     const thingsAndPersons = this.player.entities.reduce((map, name) => {
       for (const word of this.objects.entities[name].words)
         map[word.toLowerCase()] = name;
@@ -183,18 +244,21 @@ export class GameService implements OnDestroy {
       return map;
     }, {} as Record<string, string>);
 
-    const room = this.player.room;
-    const dead = this.player.dead;
+    /** The current state. */
+    const { room, dead } = this.player;
 
     try {
       try {
+        /** Check any command available from the input. */
         for (const [command, entity] of this.commands.analyseCommand(
-          cmd,
+          input,
           thingsAndPersons
         )) {
+          /** Command may be a well known short-cut. */
           const shortcut = this.defaults.keyMap[command];
 
           if (entity) {
+            /** Use has addressed an entity. */
             const scope = this.objects.findEntity(entity);
 
             switch (shortcut) {
@@ -203,6 +267,7 @@ export class GameService implements OnDestroy {
               case systemShortcuts.Pick:
                 return this.pickEntity(scope);
               default:
+                /** Must check for declared commands - will include defaults as well */
                 this.debug(`${command} on ${scope.key}`);
 
                 return scope.runCommand(command, this);
@@ -221,6 +286,7 @@ export class GameService implements OnDestroy {
             }
           }
 
+          /** Entity free command. */
           switch (shortcut) {
             case systemShortcuts.Clock:
               return this.dumpTime();
@@ -237,12 +303,15 @@ export class GameService implements OnDestroy {
             case systemShortcuts.Say: {
               this.debug(`say something`);
 
+              /** The default say command must not include entity related actions. */
               return Action.run(this.defaults.commands[command], null!, this);
             }
             default: {
               if (shortcut) {
+                /** All other short-cuts are exists. */
                 this.debug(`use exit ${shortcut} on ${room.key}`);
 
+                /** Respect defaults as well - including the * wildcard exit normally connected to some error message. */
                 const exits =
                   room.exits[shortcut] ||
                   this.defaults.exits[shortcut] ||
@@ -256,26 +325,31 @@ export class GameService implements OnDestroy {
           }
         }
 
+        /** Not matching any command. */
         this.debug('unknown command');
 
         this.error(systemMessages.NoComm);
       } finally {
+        /** We are still in the same room. */
         if (!this.player.dead && this.player.room === room)
           room.run(roomOperations.stay, this);
 
+        /** Advance time now or report final message if player is now dead. */
         if (!this.player.dead) this.player.nextTick();
         else if (!dead) this.verbatim(this.info.extro);
       }
     } catch (e) {
+      /** Actually a very bad thing to happen. */
       this.debug(`${e}`);
     }
   }
 
-  dumpCurrentRoom(debug = true) {
+  /** Show the current room and the things lying around. */
+  dumpCurrentRoom() {
     const { player } = this;
     const { room } = player;
 
-    if (debug) this.debug(`show room ${room.key}`);
+    this.debug(`show room ${room.key}`);
 
     const exits = room.exits[systemShortcuts.Look.toString()];
 
@@ -286,17 +360,18 @@ export class GameService implements OnDestroy {
       player.print(entity);
   }
 
-  dumpInventory(debug = true) {
+  /** List what we are carrying around. */
+  dumpInventory() {
     const { player } = this;
 
-    if (debug)
-      this.debug(
-        `view inventory ${JSON.stringify(Array.from(this.player.inventory))}`
-      );
+    this.debug(
+      `view inventory ${JSON.stringify(Array.from(this.player.inventory))}`
+    );
 
     for (const entity of player.inventory) player.print(entity);
   }
 
+  /** Show the current time. */
   private dumpTime() {
     this.debug(`show clock ${this.player.time}`);
 
@@ -348,38 +423,54 @@ export class GameService implements OnDestroy {
     entity.runSystemCommand(systemShortcuts.Drop, this);
   }
 
+  /** Get the local storage key where games are saved. */
   private get storageKey() {
     return `${storageKeyPrefix}.${this.settings.game}.state`;
   }
 
+  /** Write the current game state to the local storage. */
   save() {
     localStorage.setItem(this.storageKey, JSON.stringify(this.player.save()));
   }
 
+  /** Load the game state from the local storage. */
   load() {
     try {
+      /** Check for saved game. */
       const json = localStorage.getItem(this.storageKey);
 
       if (!json) return false;
 
+      /** Reload the state but do not start the game. */
       this.player = Player.load(JSON.parse(json), this);
 
       return true;
     } catch (e) {
+      /** Something went wrong. */
       this.lastError = (e as Error).message;
 
       return false;
     }
   }
 
+  /**
+   * Execute something.
+   *
+   * @param action what to execute.
+   * @param silent set to supress output during processing - may be nested.
+   */
   execute(action: () => void, silent: boolean) {
+    /** Nothign tu suppress. */
     if (!silent) return action();
 
+    /** Add a level of suppressing output. */
     this._suppressOutput++;
 
     try {
+      /** Execute as requested. */
       return action();
     } finally {
+      /** Restore to previous level of suppression. */
       this._suppressOutput--;
     }
   }

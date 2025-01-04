@@ -2,7 +2,7 @@ import { Action } from '.';
 import { Entity } from '../game-object/entity';
 import { Room } from '../game-object/room';
 import { GameService } from '../services/game.service';
-import { ParseContext } from './parseContext';
+import { ParseContext } from './parse-context';
 
 /** See if any entity is in an indicated state. */
 export class TestStateAction extends Action {

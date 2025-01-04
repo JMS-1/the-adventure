@@ -2,15 +2,14 @@ import { Action } from '.';
 import { Entity } from '../game-object/entity';
 import { Room } from '../game-object/room';
 import { GameService } from '../services/game.service';
-import { ParseContext } from './parseContext';
+import { ParseContext } from './parse-context';
 
-/** See if the player or an entity is not at a specifc place. */
-export class TestNotPositionAction extends Action {
-  /** 'if_notposition' ' ' '$' '$' <area> '$' <room> */
-  public static readonly Pattern =
-    /^(#)?if_notposition\s+\$\$([^$]+)\$([^\s]+)/;
+/** See if the player or an entity is at a specifc place. */
+export class TestPositionAction extends Action {
+  /** 'if_position' ' ' '$' '$' <area> '$' <room> */
+  public static readonly Pattern = /^(#)?if_position\s+\$\$([^$]+)\$([^\s]+)/;
 
-  /** to inspect. */
+  /** State to inspect. */
   target!: Room;
 
   /**
@@ -38,7 +37,7 @@ export class TestNotPositionAction extends Action {
    * @returns a new action instance.
    */
   static parse(match: RegExpMatchArray, context: ParseContext) {
-    return new TestNotPositionAction(
+    return new TestPositionAction(
       match[2],
       match[3],
       !!match[1],
@@ -66,10 +65,8 @@ export class TestNotPositionAction extends Action {
       ? game.player.carriedObjects.has(this.target, scope as Entity)
       : this.target === game.player.room;
 
-    game.debug(
-      `test ${this.self ? scope.name : 'me'} not at ${this.target.key}`
-    );
+    game.debug(`test ${this.self ? scope.name : 'me'} at ${this.target.key}`);
 
-    if (!hit) Action.run(this.actions, scope, game);
+    if (hit) Action.run(this.actions, scope, game);
   }
 }

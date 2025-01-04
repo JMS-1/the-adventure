@@ -2,7 +2,7 @@ import { Action } from '.';
 import { Entity } from '../game-object/entity';
 import { Room } from '../game-object/room';
 import { GameService } from '../services/game.service';
-import { ParseContext } from './parseContext';
+import { ParseContext } from './parse-context';
 
 /** Call one action of an entity. */
 export class CallAction extends Action {

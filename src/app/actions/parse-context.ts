@@ -3,25 +3,25 @@ import { CallAction } from './call';
 import { DeadAction } from './dead';
 import { DropAction } from './drop';
 import { HasAction } from './has';
-import { HasThisAction } from './hasThis';
+import { HasThisAction } from './has-this';
 import { HereAction } from './here';
 import { ListAction } from './list';
 import { MessageAction } from './message';
 import { MoveAction } from './move';
-import { NotHasAction } from './notHas';
-import { NotHasThisAction } from './notHasThis';
-import { NotHereAction } from './notHere';
+import { NotHasAction } from './not-has';
+import { NotHasThisAction } from './not-has-this';
+import { NotHereAction } from './not-here';
 import { PickAction } from './pick';
 import { PrintAction } from './print';
 import { RemoveAction } from './remove';
 import { ResetAction } from './reset';
-import { SetMessageAction } from './setMessage';
+import { SetMessageAction } from './set-message';
 import { StartAction } from './start';
 import { StopAction } from './stop';
-import { TestMessageAction } from './testMessage';
-import { TestNotPositionAction } from './testNotPosition';
-import { TestPositionAction } from './testPosition';
-import { TestStateAction } from './testState';
+import { TestMessageAction } from './test-message';
+import { TestNotPositionAction } from './test-not-position';
+import { TestPositionAction } from './test-position';
+import { TestStateAction } from './test-state';
 
 /** Signature of a parsable action class. */
 interface IActionParser {

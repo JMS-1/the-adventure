@@ -2,7 +2,7 @@ import { Action } from '.';
 import { Entity } from '../game-object/entity';
 import { Room } from '../game-object/room';
 import { GameService } from '../services/game.service';
-import { ParseContext } from './parseContext';
+import { ParseContext } from './parse-context';
 
 /** See if some entity is not lying around in the current room. */
 export class NotHereAction extends Action {
