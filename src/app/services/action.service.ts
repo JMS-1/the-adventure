@@ -4,7 +4,7 @@ import { CountedAction } from '../actions/counted';
 import { ParseContext } from '../actions/parseContext';
 import { GameObject } from '../game-object';
 
-const nameReg = /^([^:\s]+)\s*:/;
+const nameReg = /^([+a-zA-Zäöüß0-9_*/,]+)\s*:/;
 
 const repeatReg = /^([^/]+)((\/[1-9]\d?)*)$/;
 
