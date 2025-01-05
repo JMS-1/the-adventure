@@ -3,9 +3,10 @@ import { Entity } from '../game-object/entity';
 import { Room } from '../game-object/room';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parse-context';
+import { ActionWithActions } from './with-actions';
 
 /** See if any entity is in an indicated state. */
-export class TestStateAction extends Action {
+export class TestStateAction extends ActionWithActions {
   /** 'if_state' ' ' <entity> ' ' <message> */
   public static readonly Pattern =
     /^if_state\s+([^\s]+)\s+([[a-zA-Z0-9*äöüß_]+)/;
@@ -23,9 +24,9 @@ export class TestStateAction extends Action {
   private constructor(
     public readonly what: string,
     public readonly message: string,
-    public readonly actions: Action[]
+    actions: Action[]
   ) {
-    super();
+    super(actions);
   }
 
   /**
@@ -40,13 +41,12 @@ export class TestStateAction extends Action {
   }
 
   override validate(game: GameService, scope: Entity | Room): void {
+    super.validate(game, scope);
+
     /** Validate entity and make sure state is known. */
     this.entity = game.objects.findEntity(this.what);
 
     this.entity.getMessage(game.messages, this.message);
-
-    /** Validate all actions as well. */
-    this.actions.forEach((a) => a.validate(game, scope));
   }
 
   protected override onRun(scope: Entity | Room, game: GameService): void {

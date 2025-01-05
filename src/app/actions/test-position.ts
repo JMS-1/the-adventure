@@ -3,9 +3,10 @@ import { Entity } from '../game-object/entity';
 import { Room } from '../game-object/room';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parse-context';
+import { ActionWithActions } from './with-actions';
 
 /** See if the player or an entity is at a specifc place. */
-export class TestPositionAction extends Action {
+export class TestPositionAction extends ActionWithActions {
   /** 'if_position' ' ' '$' '$' <area> '$' <room> */
   public static readonly Pattern = /^(#)?if_position\s+\$\$([^$]+)\$([^\s]+)/;
 
@@ -24,9 +25,9 @@ export class TestPositionAction extends Action {
     public readonly area: string,
     public readonly room: string,
     public readonly self: boolean,
-    public readonly actions: Action[]
+    actions: Action[]
   ) {
-    super();
+    super(actions);
   }
 
   /**
@@ -46,6 +47,8 @@ export class TestPositionAction extends Action {
   }
 
   override validate(game: GameService, scope: Entity | Room): void {
+    super.validate(game, scope);
+
     /** Only entities can placed in rooms. */
     if (this.self && !(scope instanceof Entity))
       throw new Error(`${scope.key} not a thing or person`);
@@ -54,9 +57,6 @@ export class TestPositionAction extends Action {
     this.target = game.rooms.rooms[`$$${this.area}$${this.room}`];
 
     if (!this.target) throw new Error(`${this.area}: no room ${this.room}`);
-
-    /** Check actions of body. */
-    this.actions.forEach((a) => a.validate(game, scope));
   }
 
   protected override onRun(scope: Entity | Room, game: GameService): void {

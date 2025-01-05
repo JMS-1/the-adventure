@@ -3,9 +3,10 @@ import { Entity } from '../game-object/entity';
 import { Room } from '../game-object/room';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parse-context';
+import { ActionWithActions } from './with-actions';
 
 /** See if some entity is not lying around in the current room. */
-export class NotHereAction extends Action {
+export class NotHereAction extends ActionWithActions {
   /** 'if_nothere' ' ' <entity> */
   public static readonly Pattern = /^if_nothere\s+([^\s]+)/;
 
@@ -18,11 +19,8 @@ export class NotHereAction extends Action {
    * @param what entity of interest.
    * @param actions actions to execute.
    */
-  private constructor(
-    public readonly what: string,
-    public readonly actions: Action[]
-  ) {
-    super();
+  private constructor(public readonly what: string, actions: Action[]) {
+    super(actions);
   }
 
   /**
@@ -37,11 +35,10 @@ export class NotHereAction extends Action {
   }
 
   override validate(game: GameService, scope: Entity | Room): void {
+    super.validate(game, scope);
+
     /** Make sure the entity exists. */
     this.entity = game.objects.findEntity(this.what);
-
-    /** Forward to all actions in body. */
-    this.actions.forEach((a) => a.validate(game, scope));
   }
 
   protected override onRun(scope: Entity | Room, game: GameService): void {

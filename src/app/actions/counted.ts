@@ -3,6 +3,7 @@ import { Entity } from '../game-object/entity';
 import { roomOperations } from '../game-object/operations';
 import { Room } from '../game-object/room';
 import { GameService } from '../services/game.service';
+import { ActionWithActions } from './with-actions';
 
 /** We will only allow room operations to be counted. */
 const _allowedActions: Record<roomOperations, 1> = {
@@ -16,22 +17,17 @@ const allowedActions = new Set(
 );
 
 /** Allow actions to be called on specific repetitions of room operations. */
-export class CountedAction extends Action {
+export class CountedAction extends ActionWithActions {
   constructor(
     public readonly action: string,
     public readonly counts: number[],
-    public readonly actions: Action[]
+    actions: Action[]
   ) {
-    super();
+    super(actions);
 
     /** Make sure that only room operations are allowed. */
     if (!allowedActions.has(action))
       throw new Error(`${action} can not be counted`);
-  }
-
-  override validate(game: GameService, scope: Entity | Room): void {
-    /** Forward to actions. */
-    this.actions.forEach((a) => a.validate(game, scope));
   }
 
   protected override onRun(scope: Entity | Room, game: GameService): void {

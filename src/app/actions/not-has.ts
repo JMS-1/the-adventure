@@ -3,9 +3,10 @@ import { Entity } from '../game-object/entity';
 import { Room } from '../game-object/room';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parse-context';
+import { ActionWithActions } from './with-actions';
 
 /** Check if the player or a game objects does not hold a sepcific entity */
-export class NotHasAction extends Action {
+export class NotHasAction extends ActionWithActions {
   /** 'if_nothas' ' ' <entity> */
   public static readonly Pattern = /^(#)?if_nothas\s+([^\s]+)/;
 
@@ -23,9 +24,9 @@ export class NotHasAction extends Action {
   private constructor(
     public readonly what: string,
     public readonly self: boolean,
-    public readonly actions: Action[]
+    actions: Action[]
   ) {
-    super();
+    super(actions);
   }
 
   /**
@@ -40,11 +41,10 @@ export class NotHasAction extends Action {
   }
 
   override validate(game: GameService, scope: Entity | Room): void {
+    super.validate(game, scope);
+
     /** Make sure entity exists. */
     this.entity = game.objects.findEntity(this.what);
-
-    /** Validate all actions of the body. */
-    this.actions.forEach((a) => a.validate(game, scope));
   }
 
   protected override onRun(scope: Entity | Room, game: GameService): void {

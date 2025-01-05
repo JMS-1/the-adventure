@@ -2,31 +2,31 @@ import { Action } from '.';
 import { Entity } from '../game-object/entity';
 import { Room } from '../game-object/room';
 import { GameService } from '../services/game.service';
+import { ActionWithActions } from './with-actions';
 
 /** Execute one of a list of actions. */
-export class RandomAction extends Action {
+export class RandomAction extends ActionWithActions {
   /**
    * Create the action.
    *
-   * @param choices List of actions to choose from.
+   * @param actions List of actions to choose from.
    */
-  constructor(public readonly choices: Action[]) {
-    super();
+  constructor(actions: Action[]) {
+    super(actions);
   }
 
   override validate(game: GameService, scope: Entity | Room): void {
-    if (this.choices.length < 1) throw new Error('empty action list');
+    super.validate(game, scope);
 
-    /** Validate each action. */
-    this.choices.forEach((a) => a.validate(game, scope));
+    if (this.actions.length < 1) throw new Error('empty action list');
   }
 
   protected override onRun(scope: Entity | Room, game: GameService): void {
     /** Choose a random action from the list on each call. */
-    const choice = Math.floor(Math.random() * this.choices.length);
+    const choice = Math.floor(Math.random() * this.actions.length);
 
-    game.debug(`choose action ${choice + 1} from ${this.choices.length}`);
+    game.debug(`choose action ${choice + 1} from ${this.actions.length}`);
 
-    Action.run([this.choices[choice]], scope, game);
+    Action.run([this.actions[choice]], scope, game);
   }
 }

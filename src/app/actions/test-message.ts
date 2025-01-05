@@ -3,9 +3,10 @@ import { Entity } from '../game-object/entity';
 import { Room } from '../game-object/room';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parse-context';
+import { ActionWithActions } from './with-actions';
 
 /** See if the current game object is in a specific room. */
-export class TestMessageAction extends Action {
+export class TestMessageAction extends ActionWithActions {
   /** 'if_message' ' ' <message> */
   public static readonly Pattern = /^if_message\s+([a-zA-Z0-9*äöüß_]+)/;
 
@@ -15,11 +16,8 @@ export class TestMessageAction extends Action {
    * @param message to test for.
    * @param actions actions to execute on match.
    */
-  private constructor(
-    public readonly message: string,
-    public readonly actions: Action[]
-  ) {
-    super();
+  private constructor(public readonly message: string, actions: Action[]) {
+    super(actions);
   }
 
   /**
@@ -34,11 +32,10 @@ export class TestMessageAction extends Action {
   }
 
   override validate(game: GameService, scope: Entity | Room): void {
+    super.validate(game, scope);
+
     /** See if message is known. */
     scope.getMessage(game.messages, this.message);
-
-    /** Validate actions in body as well. */
-    this.actions.forEach((a) => a.validate(game, scope));
   }
 
   protected override onRun(scope: Entity | Room, game: GameService): void {

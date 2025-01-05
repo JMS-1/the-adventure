@@ -3,9 +3,10 @@ import { Entity } from '../game-object/entity';
 import { Room } from '../game-object/room';
 import { GameService } from '../services/game.service';
 import { ParseContext } from './parse-context';
+import { ActionWithActions } from './with-actions';
 
 /** See if the player does not hold an entity. */
-export class NotHasThisAction extends Action {
+export class NotHasThisAction extends ActionWithActions {
   /** 'if_nothasthis' */
   public static readonly Pattern = /^if_nothasthis/;
 
@@ -14,8 +15,8 @@ export class NotHasThisAction extends Action {
    *
    * @param actions list of actions to execute.
    */
-  private constructor(public readonly actions: Action[]) {
-    super();
+  private constructor(actions: Action[]) {
+    super(actions);
   }
 
   /**
@@ -30,12 +31,11 @@ export class NotHasThisAction extends Action {
   }
 
   override validate(game: GameService, scope: Entity | Room): void {
+    super.validate(game, scope);
+
     /** Can only carry entities. */
     if (!(scope instanceof Entity))
       throw new Error(`${scope.name} is not a thing or person`);
-
-    /** Validate all actions in body. */
-    this.actions.forEach((a) => a.validate(game, scope));
   }
 
   protected override onRun(scope: Entity | Room, game: GameService): void {

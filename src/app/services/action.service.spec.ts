@@ -184,7 +184,7 @@ describe('ActionService random choice', () => {
     const action = actions[0] as RandomAction;
 
     expect(action).toBeInstanceOf(RandomAction);
-    expect(action.choices.length).toBe(2);
+    expect(action.actions.length).toBe(2);
   });
 });
 
