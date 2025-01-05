@@ -32,6 +32,7 @@
       </button>
       <button mat-raised-button color="warn" (click)="load()">Laden</button>
       <mat-slide-toggle
+        *ngIf="settings.developer"
         [(ngModel)]="settings.debug"
         (ngModelChange)="scrollToEnd()"
         >Debug Daten anzeigen</mat-slide-toggle

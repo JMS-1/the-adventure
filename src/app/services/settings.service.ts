@@ -18,6 +18,8 @@ const urlReg = /^\/([^/]+)?$/;
 export class SettingsService implements OnDestroy {
   debug = false;
 
+  developer = false;
+
   private readonly _idSubscription: Subscription;
 
   private _game?: TGame;
