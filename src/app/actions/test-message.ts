@@ -7,7 +7,7 @@ import { ParseContext } from './parse-context';
 /** See if the current game object is in a specific room. */
 export class TestMessageAction extends Action {
   /** 'if_message' ' ' <message> */
-  public static readonly Pattern = /^if_message\s+([^\s]+)/;
+  public static readonly Pattern = /^if_message\s+([a-zA-Z0-9*äöüß_]+)/;
 
   /**
    * Create a new action.

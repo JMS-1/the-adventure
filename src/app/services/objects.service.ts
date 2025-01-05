@@ -87,7 +87,10 @@ export class ObjectsService implements OnDestroy {
           this._current!.addCommand(m[1], actions[''])
         ),
     ],
-    [/^\s*message\s*=(.*)$/, (m) => this._current!.setMessage(m[1])],
+    [
+      /^\s*message\s*=\s*([a-zA-Z0-9*äöüß_]*)\s*$/,
+      (m) => this._current!.setMessage(m[1]),
+    ],
     [/^\s*persons\s*=\s*(.*)$/, (m) => this._current!.setPersons(m[1])],
     [/^\s*things\s*=\s*(.*)$/, (m) => this._current!.setThings(m[1])],
     [

@@ -7,7 +7,7 @@ import { ParseContext } from './parse-context';
 /** Set a message on any entity. */
 export class SetMessageAction extends Action {
   /** ['@']<entity> '=' <message> */
-  public static readonly Pattern = /^(@)?([^\s,)]+)\s*=\s*([^,)\s]+)/;
+  public static readonly Pattern = /^(@)?([^\s,)]+)\s*=\s*([a-zA-Z0-9*äöüß_]+)/;
 
   /** The entity to change. */
   entity!: Entity;

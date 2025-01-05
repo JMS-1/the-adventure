@@ -7,7 +7,8 @@ import { ParseContext } from './parse-context';
 /** See if any entity is in an indicated state. */
 export class TestStateAction extends Action {
   /** 'if_state' ' ' <entity> ' ' <message> */
-  public static readonly Pattern = /^if_state\s+([^\s]+)\s+([^\s]+)/;
+  public static readonly Pattern =
+    /^if_state\s+([^\s]+)\s+([[a-zA-Z0-9*äöüß_]+)/;
 
   /** The entity of interest. */
   entity!: Entity;

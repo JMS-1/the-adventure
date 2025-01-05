@@ -7,7 +7,7 @@ import { ParseContext } from './parse-context';
 /** Set the message of a game object. */
 export class MessageAction extends Action {
   /** ['@'] 'message' '=' <message> */
-  public static readonly Pattern = /^(@)?message\s*=\s*([^,)\s]+)/;
+  public static readonly Pattern = /^(@)?message\s*=\s*([a-zA-Z0-9*äöüß_]+)/;
 
   /**
    * Create the action to set.
