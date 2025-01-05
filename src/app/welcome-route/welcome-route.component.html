@@ -1,5 +1,5 @@
 <div class="games">
-  <a mat-flat-button routerLink="ROAR">Der Schrei des Monsters (deutsch)</a>
-  <a mat-flat-button routerLink="REV">Die Rache des Monsters (deutsch)</a>
-  <a mat-flat-button routerLink="b5">The Babylon Project (english)</a>
+  <a mat-flat-button *ngFor="let game of games" [routerLink]="game">{{
+    names[game]
+  }}</a>
 </div>
