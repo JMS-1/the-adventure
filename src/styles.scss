@@ -28,6 +28,11 @@ body {
       color: #800000;
     }
 
+    > div.output-input {
+      font-style: italic;
+      color: #008000;
+    }
+
     &.debug > div.output-debug {
       display: block;
     }

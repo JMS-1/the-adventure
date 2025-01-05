@@ -4,14 +4,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { games, TGame } from '../services/settings.service';
 
+/** Initial display of the game application - mostly to choose a game to play. */
 @Component({
   selector: 'app-welcome-route',
-  imports: [RouterModule, MatButtonModule, CommonModule],
+  imports: [CommonModule, MatButtonModule, RouterModule],
   templateUrl: './welcome-route.component.html',
   styleUrl: './welcome-route.component.scss',
 })
 export class WelcomeRouteComponent {
+  /** Name of all games. */
   readonly names = games;
 
+  /** List of all games. */
   readonly games = Object.keys(games) as TGame[];
 }

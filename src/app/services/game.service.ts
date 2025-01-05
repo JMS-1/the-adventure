@@ -41,7 +41,7 @@ export class GameService implements OnDestroy {
 
   /** Observable reporting any type of output the game may produce. */
   private readonly _output$ = new Subject<
-    ['out' | 'debug' | 'error' | 'verbatim', string]
+    ['out' | 'debug' | 'error' | 'verbatim' | 'input', string]
   >();
 
   readonly output$ = this._output$.asObservable();
@@ -235,6 +235,9 @@ export class GameService implements OnDestroy {
     input = input.trim();
 
     if (!input) return;
+
+    /** Show what we process. */
+    this._output$.next(['input', '\n>> ' + input + '\n']);
 
     /** Create a mapping of the input names of all visible objects to the entity names. */
     const thingsAndPersons = this.player.entities.reduce((map, name) => {

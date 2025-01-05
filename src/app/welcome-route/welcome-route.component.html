@@ -1,5 +1,10 @@
-<div class="games">
-  <a mat-flat-button *ngFor="let game of games" [routerLink]="game">{{
-    names[game]
-  }}</a>
+<div
+  class="welcome"
+  [ngStyle]="{ 'background-image': 'url(images/background.gif)' }"
+>
+  <div class="games">
+    <a mat-flat-button *ngFor="let game of games" [routerLink]="game">{{
+      names[game]
+    }}</a>
+  </div>
 </div>
