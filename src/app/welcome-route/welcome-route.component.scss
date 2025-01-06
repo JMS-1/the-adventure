@@ -10,5 +10,11 @@
     grid-auto-flow: row;
     justify-content: flex-start;
     row-gap: 0.5em;
+
+    > .ROAR,
+    > .REV,
+    > .b5 {
+      opacity: 0.5;
+    }
   }
 }

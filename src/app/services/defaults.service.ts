@@ -126,7 +126,7 @@ export class DefaultsService implements OnDestroy {
         i = exits[1];
 
         /** Allow to have multiple exit declaration lines. */
-        this.mergeActions(exits[0], this.exits);
+        this.mergeExits(exits[0], this.exits);
       } else {
         /** Not a recognized declaration format. */
         throw new Error(line);
@@ -143,5 +143,16 @@ export class DefaultsService implements OnDestroy {
   private mergeActions(from: TActionMap, to: TActionMap) {
     for (const action of Object.keys(from))
       to[action] = [...(to[action] || []), ...from[action]];
+  }
+
+  /**
+   * Merge a read map of actions into the existing map.
+   *
+   * @param from actions from the declaration line.
+   * @param to actions collected to far.
+   */
+  private mergeExits(from: TActionMap, to: TActionMap) {
+    for (const action of Object.keys(from))
+      for (const key of action) to[key] = [...(to[key] || []), ...from[action]];
   }
 }

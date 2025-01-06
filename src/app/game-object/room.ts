@@ -36,8 +36,12 @@ export class Room extends GameObject {
    * will throw an error.
    */
   addExits(exits: TActionMap) {
-    for (const exit of Object.keys(exits))
-      this.exits[exit] = [...(this.exits[exit] || []), ...exits[exit]];
+    for (const exit of Object.keys(exits)) {
+      const actions = exits[exit];
+
+      for (const key of exit)
+        this.exits[key] = [...(this.exits[key] || []), ...actions];
+    }
   }
 
   override loadDefaults(game: GameService): void {
