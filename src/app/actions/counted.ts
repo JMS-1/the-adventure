@@ -30,7 +30,7 @@ export class CountedAction extends ActionWithActions {
       throw new Error(`${action} can not be counted`);
   }
 
-  protected override onRun(scope: Entity | Room, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService) {
     game.debug(
       `test ${this.action} of ${scope.key} count to be in ${JSON.stringify(
         this.counts
@@ -38,7 +38,9 @@ export class CountedAction extends ActionWithActions {
     );
 
     /** See if the indicated count is hit. */
-    if (game.player.allowAction(scope, this.action, this.counts))
+    if (!game.player.allowAction(scope, this.action, this.counts))
       Action.run(this.actions, scope, game);
+
+    return true;
   }
 }

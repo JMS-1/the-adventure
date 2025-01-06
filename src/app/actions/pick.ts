@@ -49,7 +49,7 @@ export class PickAction extends Action {
       throw new Error(`${scope.name} is no a thing or person`);
   }
 
-  protected override onRun(scope: Entity | Room, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService) {
     if (this.self) {
       game.debug(`add ${this._entity.name} to ${scope.key}.`);
 
@@ -60,5 +60,7 @@ export class PickAction extends Action {
     } else {
       game.execute(() => game.pickEntity(this._entity), this.silent);
     }
+
+    return true;
   }
 }

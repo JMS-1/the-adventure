@@ -21,12 +21,14 @@ export class RandomAction extends ActionWithActions {
     if (this.actions.length < 1) throw new Error('empty action list');
   }
 
-  protected override onRun(scope: Entity | Room, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService) {
     /** Choose a random action from the list on each call. */
     const choice = Math.floor(Math.random() * this.actions.length);
 
     game.debug(`choose action ${choice + 1} from ${this.actions.length}`);
 
     Action.run([this.actions[choice]], scope, game);
+
+    return true;
   }
 }

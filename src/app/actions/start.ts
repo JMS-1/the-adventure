@@ -33,9 +33,11 @@ export class StartAction extends Action {
       throw new Error(`${scope.name} is not a thing or person`);
   }
 
-  protected override onRun(scope: Entity | Room, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService) {
     game.debug(`start timers of ${scope.key}`);
 
     game.player.startTimers(scope as Entity);
+
+    return true;
   }
 }

@@ -40,7 +40,7 @@ export class MessageAction extends Action {
     scope.getMessage(game.messages, this.message);
   }
 
-  protected override onRun(scope: Entity | Room, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService) {
     game.debug(
       `${this.silent ? 'silent ' : ''} set message of ${scope.key} to ${
         this.message
@@ -51,5 +51,7 @@ export class MessageAction extends Action {
       () => game.player.setMessage(scope, this.message),
       this.silent
     );
+
+    return true;
   }
 }

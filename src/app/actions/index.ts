@@ -21,7 +21,7 @@ export abstract class Action {
    * @param scope current game object executing the action.
    * @param game active game.
    */
-  protected abstract onRun(scope: Entity | Room, game: GameService): void;
+  protected abstract onRun(scope: Entity | Room, game: GameService): boolean;
 
   /**
    * Run a list of actions.
@@ -29,6 +29,7 @@ export abstract class Action {
    * @param actions actions to execute.
    * @param scope game object repsonsible for the action.
    * @param game active game.
+   * @return not set if processing of following actions in list should be skipped.
    */
   static run(
     actions: Action[] | undefined,
@@ -36,6 +37,12 @@ export abstract class Action {
     game: GameService
   ) {
     /** Stop as soon as the player died. */
-    actions?.forEach((a) => game.player.dead === false && a.onRun(scope, game));
+    for (const action of actions ?? []) {
+      /** Already dead. */
+      if (game.player.dead) break;
+
+      /** Should not continue other actions - typically after some condition was met. */
+      if (!action.onRun(scope, game)) break;
+    }
   }
 }

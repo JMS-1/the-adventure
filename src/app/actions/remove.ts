@@ -33,7 +33,7 @@ export class RemoveAction extends Action {
       throw new Error(`${scope.name} is not a thing or person`);
   }
 
-  protected override onRun(scope: Entity | Room, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService) {
     game.debug(`remove ${scope}}`);
 
     /** Make sure no timers are active. */
@@ -41,5 +41,7 @@ export class RemoveAction extends Action {
 
     /** Remove from all parents - player, room or other entities. */
     game.player.detachEntity(scope as Entity);
+
+    return true;
   }
 }

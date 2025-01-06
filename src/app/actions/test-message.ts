@@ -38,11 +38,14 @@ export class TestMessageAction extends ActionWithActions {
     scope.getMessage(game.messages, this.message);
   }
 
-  protected override onRun(scope: Entity | Room, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService) {
     game.debug(`test message of ${scope.key} to be ${this.message}`);
 
     /** On match execute indicated actions from body. */
-    if (this.message === game.player.messages[scope.key])
-      Action.run(this.actions, scope, game);
+    if (this.message !== game.player.messages[scope.key]) return true;
+
+    Action.run(this.actions, scope, game);
+
+    return false;
   }
 }

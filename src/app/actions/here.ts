@@ -41,12 +41,14 @@ export class HereAction extends ActionWithActions {
     this.entity = game.objects.findEntity(this.what);
   }
 
-  protected override onRun(scope: Entity | Room, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService) {
     game.debug(`test ${this.entity.key} to be here`);
 
     /** See if the entity lies in the current room and proceed accordingly. */
     const here = game.player.carriedObjects.has(game.player.room, this.entity);
 
     if (here) Action.run(this.actions, scope, game);
+
+    return !here;
   }
 }

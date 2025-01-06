@@ -42,7 +42,7 @@ export class DeadAction extends Action {
       throw new Error(`${scope.name}: no message ${this.reason}`);
   }
 
-  protected override onRun(scope: Entity | Room, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService) {
     game.debug(`die ${this.reason}`);
 
     /** Report message not respecting silent mode. */
@@ -50,5 +50,7 @@ export class DeadAction extends Action {
 
     /** Mark game as ended. */
     game.player.dead = true;
+
+    return false;
   }
 }

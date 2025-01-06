@@ -46,7 +46,7 @@ export class HasAction extends ActionWithActions {
     this.entity = game.objects.findEntity(this.what);
   }
 
-  protected override onRun(scope: Entity | Room, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService) {
     game.debug(`test ${this.self ? scope.key : 'me'} has ${this.entity.key}`);
 
     /** Check against the parent and execute actions. */
@@ -55,5 +55,7 @@ export class HasAction extends ActionWithActions {
       : game.player.inventory.has(this.entity.key);
 
     if (has) Action.run(this.actions, scope, game);
+
+    return !has;
   }
 }

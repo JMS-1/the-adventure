@@ -49,11 +49,14 @@ export class TestStateAction extends ActionWithActions {
     this.entity.getMessage(game.messages, this.message);
   }
 
-  protected override onRun(scope: Entity | Room, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService) {
     game.debug(`test message of ${this.entity.key} to be ${this.message}`);
 
     /** On match execute the actions from the body. */
-    if (this.message === game.player.messages[this.entity.key])
-      Action.run(this.actions, scope, game);
+    if (this.message !== game.player.messages[this.entity.key]) return true;
+
+    Action.run(this.actions, scope, game);
+
+    return false;
   }
 }

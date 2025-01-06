@@ -33,11 +33,13 @@ export class ResetAction extends Action {
       throw new Error(`${scope.name} is not a thing or person`);
   }
 
-  protected override onRun(scope: Entity | Room, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService) {
     game.debug(`reset timers of ${scope.key}`);
 
     /** Remove all timers and start it again. */
     game.player.stopTimers(scope as Entity);
     game.player.startTimers(scope as Entity);
+
+    return true;
   }
 }

@@ -50,9 +50,11 @@ export class PrintAction extends Action {
     if (!this.choices) throw new Error(`no message ${key}`);
   }
 
-  protected override onRun(scope: Entity | Room, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService) {
     game.debug(`print ${this.area || ''}${this.area && '.'}${this.message}`);
 
     game.player.printRandomMessage(this.choices);
+
+    return true;
   }
 }

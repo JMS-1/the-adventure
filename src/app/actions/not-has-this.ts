@@ -38,12 +38,14 @@ export class NotHasThisAction extends ActionWithActions {
       throw new Error(`${scope.name} is not a thing or person`);
   }
 
-  protected override onRun(scope: Entity | Room, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService) {
     game.debug(`test me not has ${scope.key}`);
 
     /** See if we are carrying the entity and proceed as necessary. */
     const has = game.player.inventory.has(scope.key);
 
     if (!has) Action.run(this.actions, scope, game);
+
+    return has;
   }
 }

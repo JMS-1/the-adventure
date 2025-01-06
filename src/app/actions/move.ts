@@ -56,7 +56,7 @@ export class MoveAction extends Action {
     if (!this._target) throw new Error(`${this.area}: no room ${this.room}`);
   }
 
-  protected override onRun(scope: Entity | Room, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService) {
     const { player } = game;
 
     if (this.self) {
@@ -70,5 +70,7 @@ export class MoveAction extends Action {
 
       player.enterRoom(this._target);
     }
+
+    return true;
   }
 }

@@ -12,8 +12,10 @@ class SomeAction extends Action {
     throw new Error('validate not implemented.');
   }
 
-  protected override onRun(): void {
+  protected override onRun() {
     this.executed = true;
+
+    return true;
   }
 }
 

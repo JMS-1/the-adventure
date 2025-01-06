@@ -60,7 +60,7 @@ export class TestNotPositionAction extends ActionWithActions {
     if (!this.target) throw new Error(`${this.area}: no room ${this.room}`);
   }
 
-  protected override onRun(scope: Entity | Room, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService) {
     /** See if player or entity of this action is in the room. */
     const hit = this.self
       ? game.player.carriedObjects.has(this.target, scope as Entity)
@@ -71,5 +71,7 @@ export class TestNotPositionAction extends ActionWithActions {
     );
 
     if (!hit) Action.run(this.actions, scope, game);
+
+    return hit;
   }
 }

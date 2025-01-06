@@ -52,7 +52,7 @@ export class CallAction extends Action {
       throw new Error(`${this._what}: no action ${this._action}`);
   }
 
-  protected override onRun(scope: Entity | Room, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService) {
     game.debug(
       `${this._silent ? 'silent ' : ''} call ${this._action} of ${
         this._entity.key
@@ -63,5 +63,7 @@ export class CallAction extends Action {
       () => Action.run(this._actions, this._entity, game),
       this._silent
     );
+
+    return true;
   }
 }

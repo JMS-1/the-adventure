@@ -45,7 +45,7 @@ export class DropAction extends Action {
     this.entity = game.objects.findEntity(this.what);
   }
 
-  protected override onRun(scope: Entity | Room, game: GameService): void {
+  protected override onRun(scope: Entity | Room, game: GameService) {
     if (this.self) {
       game.debug(
         `${this.silent ? 'silent ' : ''}${scope.key} drop ${this.entity.key}`
@@ -58,5 +58,7 @@ export class DropAction extends Action {
     } else {
       game.execute(() => game.dropEntity(this.entity), this.silent);
     }
+
+    return true;
   }
 }
