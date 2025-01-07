@@ -34,7 +34,7 @@ export class RemoveAction extends Action {
   }
 
   protected override onRun(scope: Entity | Room, game: GameService) {
-    game.debug(`remove ${scope}}`);
+    game.debug(`remove ${scope.key}`);
 
     /** Make sure no timers are active. */
     game.player.stopTimers(scope as Entity);
