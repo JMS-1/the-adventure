@@ -17,6 +17,9 @@ const dosNames = new Set<TGame>(['ROAR', 'REV']);
 /** [ '/' ] <game> */
 const urlReg = /^\/([^/]+)?$/;
 
+/** Key of this application in the local storage. */
+const storageDeveloper = 'W3ADV.Settings.Developer';
+
 /** Provide overall settings. */
 @Injectable()
 export class SettingsService implements OnDestroy {
@@ -24,7 +27,13 @@ export class SettingsService implements OnDestroy {
   debug = false;
 
   /** Set to switch to developer mode. */
-  developer = false;
+  get developer() {
+    return !!localStorage.getItem(storageDeveloper);
+  }
+
+  set developer(developer: boolean) {
+    localStorage.setItem(storageDeveloper, developer ? 'yes' : '');
+  }
 
   /** Subscription to detect game selection using routes. */
   private readonly _idSubscription: Subscription;
@@ -65,7 +74,7 @@ export class SettingsService implements OnDestroy {
 
     ev.preventDefault();
 
-    this.developer = true;
+    this.developer = !this.developer;
   };
 
   /** Current game running. */

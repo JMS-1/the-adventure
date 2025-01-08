@@ -55,8 +55,6 @@ export class TestStateAction extends ActionWithActions {
     /** On match execute the actions from the body. */
     if (this.message !== game.player.messages[this.entity.key]) return true;
 
-    Action.run(this.actions, scope, game);
-
-    return false;
+    return Action.run(this.actions, scope, game);
   }
 }

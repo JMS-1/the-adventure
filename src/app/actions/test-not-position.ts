@@ -70,8 +70,6 @@ export class TestNotPositionAction extends ActionWithActions {
       `test ${this.self ? scope.name : 'me'} not at ${this.target.key}`
     );
 
-    if (!hit) Action.run(this.actions, scope, game);
-
-    return hit;
+    return hit || Action.run(this.actions, scope, game);
   }
 }

@@ -27,8 +27,6 @@ export class RandomAction extends ActionWithActions {
 
     game.debug(`choose action ${choice + 1} from ${this.actions.length}`);
 
-    Action.run([this.actions[choice]], scope, game);
-
-    return true;
+    return Action.run([this.actions[choice]], scope, game);
   }
 }

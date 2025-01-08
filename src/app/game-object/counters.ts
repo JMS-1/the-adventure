@@ -8,11 +8,18 @@ export class ActionCounters {
    *
    * @param key unique name of the action.
    * @param counts counters to check.
+   * @param debug debug helper.
    * @returns set if the action can be executed.
    */
-  allowAction(key: string, counts: number[]) {
+  allowAction(
+    key: string,
+    counts: number[],
+    debug?: (message: string) => void
+  ) {
     /** Technically the key may be not yet initialized. */
     let count = this._counts[key];
+
+    debug?.(`${key} at ${count}`);
 
     if (typeof count !== 'number') return false;
 

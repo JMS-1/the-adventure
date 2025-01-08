@@ -53,14 +53,15 @@ export class PickAction extends Action {
     if (this.self) {
       game.debug(`add ${this._entity.name} to ${scope.key}.`);
 
-      game.execute(
-        () => game.player.attachEntity(this._entity, scope),
+      return game.execute(
+        () => (game.player.attachEntity(this._entity, scope), true),
         this.silent
       );
-    } else {
-      game.execute(() => game.pickEntity(this._entity), this.silent);
     }
 
-    return true;
+    return game.execute(
+      () => (game.pickEntity(this._entity), this.silent),
+      true
+    );
   }
 }

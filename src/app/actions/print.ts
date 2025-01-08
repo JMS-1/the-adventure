@@ -38,11 +38,20 @@ export class PrintAction extends Action {
     return new PrintAction(match[2] ?? null, match[3]);
   }
 
-  override validate(game: GameService, scope: Entity | Room): void {
-    /** Get the fill key of the message - area may come from the room. */
-    const key = `${this.area || (scope instanceof Room ? scope.area : '')}.${
+  /**
+   * Get the message key.
+   *
+   * @param scope current game object.
+   */
+  private getKey(scope: Entity | Room) {
+    return `${this.area || (scope instanceof Room ? scope.area : '')}.${
       this.message
     }`;
+  }
+
+  override validate(game: GameService, scope: Entity | Room): void {
+    /** Get the fill key of the message - area may come from the room. */
+    const key = this.getKey(scope);
 
     this.choices = game.messages.messageMap[key];
 
@@ -51,7 +60,7 @@ export class PrintAction extends Action {
   }
 
   protected override onRun(scope: Entity | Room, game: GameService) {
-    game.debug(`print ${this.area || ''}${this.area && '.'}${this.message}`);
+    game.debug(`print ${this.getKey(scope)}`);
 
     game.player.printRandomMessage(this.choices);
 

@@ -15,7 +15,7 @@ export class Player {
   dead = false;
 
   /** All currently active timers - from multiple emtities. */
-  private _timers = new Timers();
+  private readonly _timers = new Timers();
 
   /** Which entity or room holds which entities. */
   readonly carriedObjects = new EntityAssignments();
@@ -27,7 +27,10 @@ export class Player {
   readonly messages: Record<string, string> = {};
 
   /** Count action calls. */
-  readonly _counters = new ActionCounters();
+  private readonly _counters = new ActionCounters();
+
+  /** Any messages printed in the current step. */
+  private readonly _printed = new Set<string>();
 
   /**
    * Create a new player.
@@ -43,6 +46,11 @@ export class Player {
     public time: Time,
     private readonly _game: GameService
   ) {}
+
+  /** Ausgabe zurücksetzen. */
+  resetPrint() {
+    this._printed.clear();
+  }
 
   /** Advance the time. */
   nextTick() {
@@ -86,7 +94,7 @@ export class Player {
       this.inventory.delete(entity.name);
 
       /** Must adjust total weight of the inventory. */
-      this.weight.add(entity.weight);
+      if (entity.weight) this.weight.add(entity.weight);
     }
   }
 
@@ -102,9 +110,6 @@ export class Player {
 
     /** Add to new parent. */
     this.carriedObjects.add(entity, parent);
-
-    /** Show entity state if entity is now visible. */
-    this.print(entity);
   }
 
   /**
@@ -114,17 +119,25 @@ export class Player {
    */
   pickEntity(entity: Entity) {
     /** Can have an entity at most once in the inventory. */
-    if (this.inventory.has(entity.name)) return;
+    if (this.inventory.has(entity.name)) return false;
 
     /** Check if the maximum strength of the player is not exceeded. */
-    if (!this.weight.subtract(entity.weight))
+    if (!entity.weight) {
+      this._game.error(systemMessages.NoMove);
+
+      return false;
+    } else if (!this.weight.subtract(entity.weight)) {
       this._game.error(systemMessages.Heavy);
-    else {
+
+      return false;
+    } else {
       /** Remove the entity from all parent. */
       this.detachEntity(entity);
 
       /** Add the entity to inventory. */
       this.inventory.add(entity.name);
+
+      return true;
     }
   }
 
@@ -136,12 +149,9 @@ export class Player {
    * @param gameObject any game object.
    * @returns set if the game object is visible.
    */
-  private isVisible(gameObject: Entity | Room | undefined) {
+  private isVisible(gameObject: Entity | Room) {
     /** Of all rooms only the room in which the player is will be visible. */
     if (gameObject instanceof Room) return gameObject === this.room;
-
-    /** Just in case. */
-    if (!(gameObject instanceof Entity)) return false;
 
     /** All entities in the players inventory or lying around in the current rooms are visible. */
     return (
@@ -160,7 +170,11 @@ export class Player {
     /** Update message and display. */
     this.messages[gameObject.key] = message;
 
+    this._printed.delete(gameObject.key);
+
     this.print(gameObject);
+
+    return true;
   }
 
   /**
@@ -174,13 +188,16 @@ export class Player {
       gameObject = this._game.objects.entities[gameObject];
 
     /** Display the message if the game object is visible. */
-    if (this.isVisible(gameObject))
-      this.printRandomMessage(
-        gameObject!.getMessage(
-          this._game.messages,
-          this.messages[gameObject!.key]
-        )
-      );
+    if (!gameObject || !this.isVisible(gameObject)) return;
+
+    /** In each iteration print each message only once. */
+    if (this._printed.has(gameObject.key)) return;
+
+    this._printed.add(gameObject.key);
+
+    this.printRandomMessage(
+      gameObject.getMessage(this._game.messages, this.messages[gameObject!.key])
+    );
   }
 
   /**
@@ -290,7 +307,9 @@ export class Player {
    * @returns set if the action can be executed.
    */
   allowAction(scope: Entity | Room, action: string, counts: number[]) {
-    return this._counters.allowAction(`${scope.key}.${action}`, counts);
+    return this._counters.allowAction(`${scope.key}.${action}`, counts, (m) =>
+      this._game.debug(m)
+    );
   }
 
   /**

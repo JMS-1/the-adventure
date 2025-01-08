@@ -64,13 +64,15 @@ export class MoveAction extends Action {
       game.debug(`move ${scope.key} to ${this._target.key}`);
 
       player.attachEntity(scope as Entity, this._target);
-    } else {
-      /** Move the player to the indicated room. */
-      game.debug(`goto ${this._target.key}`);
 
-      player.enterRoom(this._target);
+      return true;
     }
 
-    return true;
+    /** Move the player to the indicated room. */
+    game.debug(`goto ${this._target.key}`);
+
+    player.enterRoom(this._target);
+
+    return false;
   }
 }

@@ -51,14 +51,15 @@ export class DropAction extends Action {
         `${this.silent ? 'silent ' : ''}${scope.key} drop ${this.entity.key}`
       );
 
-      game.execute(
-        () => game.player.attachEntity(this.entity, game.player.room),
+      return game.execute(
+        () => (game.player.attachEntity(this.entity, game.player.room), true),
         this.silent
       );
-    } else {
-      game.execute(() => game.dropEntity(this.entity), this.silent);
     }
 
-    return true;
+    return game.execute(
+      () => (game.dropEntity(this.entity), this.silent),
+      true
+    );
   }
 }

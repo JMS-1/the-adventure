@@ -44,8 +44,6 @@ export class NotHasThisAction extends ActionWithActions {
     /** See if we are carrying the entity and proceed as necessary. */
     const has = game.player.inventory.has(scope.key);
 
-    if (!has) Action.run(this.actions, scope, game);
-
-    return has;
+    return has || Action.run(this.actions, scope, game);
   }
 }

@@ -54,8 +54,6 @@ export class HasAction extends ActionWithActions {
       ? game.player.carriedObjects.has(scope, this.entity)
       : game.player.inventory.has(this.entity.key);
 
-    if (has) Action.run(this.actions, scope, game);
-
-    return !has;
+    return !has || Action.run(this.actions, scope, game);
   }
 }

@@ -1,6 +1,6 @@
 message  = lang
 exits    = (*:&$$botanik$verboten)
-actions  = (entry:if_message lang @message = kurz) 
+actions  = (entry:if_message lang @message = kurz)
 #nehmen	 = (message = trägt)
 #ablegen = (message = lang)
 time     = (d2/0,h14/0,m0/1)

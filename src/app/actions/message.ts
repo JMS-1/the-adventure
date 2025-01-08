@@ -47,11 +47,9 @@ export class MessageAction extends Action {
       }`
     );
 
-    game.execute(
+    return game.execute(
       () => game.player.setMessage(scope, this.message),
       this.silent
     );
-
-    return true;
   }
 }

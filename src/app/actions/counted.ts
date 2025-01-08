@@ -38,8 +38,8 @@ export class CountedAction extends ActionWithActions {
     );
 
     /** See if the indicated count is hit. */
-    if (!game.player.allowAction(scope, this.action, this.counts))
-      Action.run(this.actions, scope, game);
+    if (game.player.allowAction(scope, this.action, this.counts))
+      return Action.run(this.actions, scope, game);
 
     return true;
   }

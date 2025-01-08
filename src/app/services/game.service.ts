@@ -29,7 +29,7 @@ const days: systemMessages[] = [
 ];
 
 /** Key of this application in the local storage. */
-const storageKeyPrefix = 'W3ADV.';
+const storageKeyPrefix = 'W3ADV.State.';
 
 /** Game management service. */
 @Injectable()
@@ -250,6 +250,9 @@ export class GameService implements OnDestroy {
     /** The current state. */
     const { room, dead } = this.player;
 
+    /** Reset all outputs. */
+    this.player.resetPrint();
+
     try {
       try {
         /** Check any command available from the input. */
@@ -337,8 +340,11 @@ export class GameService implements OnDestroy {
         if (!this.player.dead && this.player.room === room)
           room.run(roomOperations.stay, this);
 
-        /** Advance time now or report final message if player is now dead. */
+        /** Advance time now if we are still alive aka playing. */
         if (!this.player.dead) this.player.nextTick();
+
+        /** Display current room with things or report final message if player is now dead. */
+        if (!this.player.dead) this.dumpCurrentRoom(true);
         else if (!dead) this.verbatim(this.info.extro);
       }
     } catch (e) {
@@ -347,14 +353,18 @@ export class GameService implements OnDestroy {
     }
   }
 
-  /** Show the current room and the things lying around. */
-  dumpCurrentRoom() {
+  /**
+   * Show the current room and the things lying around.
+   *
+   * @param short set to display the short description.
+   */
+  dumpCurrentRoom(short = false) {
     const { player } = this;
     const { room } = player;
 
     this.debug(`show room ${room.key}`);
 
-    const exits = room.exits[systemShortcuts.Look.toString()];
+    const exits = short ? [] : room.exits[systemShortcuts.Look.toString()];
 
     if (exits?.length) Action.run(exits, room, this);
     else player.print(room);
@@ -404,9 +414,8 @@ export class GameService implements OnDestroy {
 
     this.debug(`pick ${entity.key}`);
 
-    this.player.pickEntity(entity);
-
-    entity.runSystemCommand(systemShortcuts.Pick, this);
+    if (this.player.pickEntity(entity))
+      entity.runSystemCommand(systemShortcuts.Pick, this);
   }
 
   /**
@@ -428,7 +437,7 @@ export class GameService implements OnDestroy {
 
   /** Get the local storage key where games are saved. */
   private get storageKey() {
-    return `${storageKeyPrefix}.${this.settings.game}.state`;
+    return `${storageKeyPrefix}${this.settings.game}.state`;
   }
 
   /** Write the current game state to the local storage. */
@@ -462,7 +471,7 @@ export class GameService implements OnDestroy {
    * @param action what to execute.
    * @param silent set to supress output during processing - may be nested.
    */
-  execute(action: () => void, silent: boolean) {
+  execute(action: () => boolean, silent: boolean) {
     /** Nothign tu suppress. */
     if (!silent) return action();
 

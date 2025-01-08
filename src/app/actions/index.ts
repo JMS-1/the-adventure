@@ -39,10 +39,13 @@ export abstract class Action {
     /** Stop as soon as the player died. */
     for (const action of actions ?? []) {
       /** Already dead. */
-      if (game.player.dead) break;
+      if (game.player.dead) return false;
 
       /** Should not continue other actions - typically after some condition was met. */
-      if (!action.onRun(scope, game)) break;
+      if (!action.onRun(scope, game)) return false;
     }
+
+    /** All done, go on. */
+    return true;
   }
 }

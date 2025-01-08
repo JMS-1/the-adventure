@@ -67,8 +67,6 @@ export class TestPositionAction extends ActionWithActions {
 
     game.debug(`test ${this.self ? scope.name : 'me'} at ${this.target.key}`);
 
-    if (hit) Action.run(this.actions, scope, game);
-
-    return !hit;
+    return !hit || Action.run(this.actions, scope, game);
   }
 }

@@ -20,7 +20,7 @@ export abstract class Entity extends GameObject {
   readonly commands: TActionMap = {};
 
   /** Configured weight of the entity. */
-  weight = new Weight('(0,0,0)');
+  weight?: Weight;
 
   /**
    * Initialize a new entity.
@@ -136,6 +136,8 @@ export abstract class Entity extends GameObject {
     for (const command of Object.keys(game.defaults.keyMap))
       if (game.defaults.keyMap[command] === keyString)
         return this.runCommand(command, game);
+
+    return true;
   }
 }
 

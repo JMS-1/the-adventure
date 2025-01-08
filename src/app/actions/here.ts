@@ -47,8 +47,6 @@ export class HereAction extends ActionWithActions {
     /** See if the entity lies in the current room and proceed accordingly. */
     const here = game.player.carriedObjects.has(game.player.room, this.entity);
 
-    if (here) Action.run(this.actions, scope, game);
-
-    return !here;
+    return !here || Action.run(this.actions, scope, game);
   }
 }

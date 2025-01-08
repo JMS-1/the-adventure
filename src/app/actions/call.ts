@@ -59,11 +59,9 @@ export class CallAction extends Action {
       }`
     );
 
-    game.execute(
+    return game.execute(
       () => Action.run(this._actions, this._entity, game),
       this._silent
     );
-
-    return true;
   }
 }
