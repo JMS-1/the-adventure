@@ -80,7 +80,7 @@ export class ParseContext {
     if (++this.index >= this.lines.length)
       throw new Error('unterminated action');
 
-    this.start = this.lines[this.index];
+    this.start += this.lines[this.index];
   }
 
   /** Make sure the command to analyse is not emtpy. */
