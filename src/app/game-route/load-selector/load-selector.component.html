@@ -1,0 +1,19 @@
+<div mat-dialog-title>Gespeicherten Spielstand auswählen</div>
+
+<div mat-dialog-content>
+  @if(all.length){
+  <button
+    mat-raised-button
+    [mat-dialog-close]="state"
+    *ngFor="let state of all; let i = index"
+  >
+    {{ i + 1 }}
+  </button>
+  }@else{
+  <div>Du hast noch keine Spielstände gespeichert.</div>
+  }
+</div>
+
+<div mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close>Abbrechen</button>
+</div>

@@ -82,7 +82,7 @@ export class CommandAnalyser {
           command = lastCommand;
           entity = entities[word];
         }
-      } else if ((command = map['*'])) {
+      } else if (word.length >= 4 && (command = map['*'])) {
         /** Rest of line. */
         i = this.words.length - 1;
 

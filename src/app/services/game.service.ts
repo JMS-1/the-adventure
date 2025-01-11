@@ -441,7 +441,7 @@ export class GameService implements OnDestroy {
   }
 
   /** Retrieve the current saved states. */
-  private get currentSavedStates(): unknown[] {
+  get currentSavedStates(): unknown[] {
     try {
       return JSON.parse(localStorage.getItem(this.storageKey) || '[]');
     } catch {
@@ -455,7 +455,7 @@ export class GameService implements OnDestroy {
     const saved = this.currentSavedStates;
 
     /** Keep at most 10. */
-    saved.splice(9);
+    saved.splice(0, Math.max(0, saved.length - 9));
 
     /** Add the new one. */
     saved.push(this.player.save());
@@ -464,17 +464,19 @@ export class GameService implements OnDestroy {
     localStorage.setItem(this.storageKey, JSON.stringify(saved));
   }
 
-  /** Load the game state from the local storage. */
-  load() {
+  /**
+   * @param state Load the game state from the local storage.
+   *
+   * @param state state to load.
+   * @returns set if a new state has been loaded.
+   */
+  load(state: unknown) {
     try {
       /** Check for saved games. */
-      const saved = this.currentSavedStates;
-      const latest = saved[saved.length - 1];
-
-      if (!latest) return false;
+      if (!state) return false;
 
       /** Reload the state but do not start the game. */
-      this.player = Player.load(latest, this);
+      this.player = Player.load(state, this);
 
       return true;
     } catch (e) {

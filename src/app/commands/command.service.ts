@@ -133,9 +133,8 @@ export class CommandService implements OnDestroy {
           key,
           final && word !== '%'
         );
-      /** Register the command on the position inside the tree. */ else if (
-        final
-      )
+      else if (final)
+        /** Register the command on the position inside the tree. */
         command.keys.add(key);
       else command.objectKeys.add(key);
     }

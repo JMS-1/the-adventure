@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import * as core from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { Subscription } from 'rxjs';
 import { CommandService } from '../commands/command.service';
@@ -13,11 +14,18 @@ import { MessagesService } from '../services/messages.service';
 import { ObjectsService } from '../services/objects.service';
 import { RoomsService } from '../services/rooms.service';
 import { SettingsService } from '../services/settings.service';
+import { LoadSelectorComponent } from './load-selector/load-selector.component';
 
 /** Represents a single active game - especially provides all per-game service instances. */
 @core.Component({
   selector: 'app-game-route',
-  imports: [CommonModule, FormsModule, MatButtonModule, MatSlideToggleModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatSlideToggleModule,
+  ],
   providers: [
     AssetService,
     CommandService,
@@ -49,7 +57,9 @@ export class GameRouteComponent implements core.AfterViewInit, core.OnDestroy {
    */
   constructor(
     public readonly settings: SettingsService,
-    public readonly game: GameService
+    public readonly game: GameService,
+    private readonly _dialog: MatDialog,
+    private readonly _viewContainerRef: core.ViewContainerRef
   ) {}
 
   ngAfterViewInit(): void {
@@ -142,17 +152,24 @@ export class GameRouteComponent implements core.AfterViewInit, core.OnDestroy {
 
   /** Try to reload the game state from the local storage of the browser. */
   load() {
-    /** See if state can be reconstructed. */
-    if (!this.game.load()) return;
+    this._dialog
+      .open(LoadSelectorComponent, {
+        autoFocus: false,
+        viewContainerRef: this._viewContainerRef,
+      })
+      .afterClosed()
+      .subscribe((state) => {
+        if (!this.game.load(state)) return;
 
-    /** Wipe out all output. */
-    this.clearOutput();
+        /** Wipe out all output. */
+        this.clearOutput();
 
-    /** Visualize the state. */
-    this.game.dumpCurrentRoom();
-    this.game.dumpInventory();
+        /** Visualize the state. */
+        this.game.dumpCurrentRoom();
+        this.game.dumpInventory();
 
-    this.focusToInput();
+        this.focusToInput();
+      });
   }
 
   /** Set focus to input. */
