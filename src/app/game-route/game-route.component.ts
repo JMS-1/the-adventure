@@ -33,7 +33,10 @@ import { SettingsService } from '../services/settings.service';
 })
 export class GameRouteComponent implements core.AfterViewInit, core.OnDestroy {
   /** DOM element to show all game output. */
-  @core.ViewChild('game') private _output?: core.ElementRef;
+  @core.ViewChild('output') private _output?: core.ElementRef;
+
+  /** DOM element with the command input. */
+  @core.ViewChild('input') private _input?: core.ElementRef;
 
   /** Subscription to the game output. */
   private _outputSubscription?: Subscription;
@@ -130,6 +133,13 @@ export class GameRouteComponent implements core.AfterViewInit, core.OnDestroy {
     if (output) output.innerText = '';
   }
 
+  /** Save the current game set. */
+  save() {
+    this.game.save();
+
+    this.focusToInput();
+  }
+
   /** Try to reload the game state from the local storage of the browser. */
   load() {
     /** See if state can be reconstructed. */
@@ -141,5 +151,12 @@ export class GameRouteComponent implements core.AfterViewInit, core.OnDestroy {
     /** Visualize the state. */
     this.game.dumpCurrentRoom();
     this.game.dumpInventory();
+
+    this.focusToInput();
+  }
+
+  /** Set focus to input. */
+  private focusToInput() {
+    setTimeout(() => this._input?.nativeElement.focus(), 100);
   }
 }

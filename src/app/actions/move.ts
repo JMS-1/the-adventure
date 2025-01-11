@@ -6,8 +6,8 @@ import { ParseContext } from './parse-context';
 
 /** Move the player or and entity to a room. */
 export class MoveAction extends Action {
-  /** ['#'] '>' ['$' '$' <area> '$'] <room> */
-  public static readonly Pattern = /^(#)?>(\$\$([^$]+)\$)?([^,)\s>]+)/;
+  /** ['@'] ['#'] '>' ['$' '$' <area> '$'] <room> */
+  public static readonly Pattern = /^(@)?(#)?>(\$\$([^$]+)\$)?([^,)\s>]+)/;
 
   /** The room to move to. */
   private _target!: Room;
@@ -17,11 +17,13 @@ export class MoveAction extends Action {
    *
    * @param area optional area of the room - map be taken from the current room.
    * @param room room to move to.
+   * @param silent set to disable output.
    * @param self set to move not the player but the entity owning this action.
    */
   private constructor(
     public readonly area: string | null,
     public readonly room: string,
+    private readonly silent: boolean,
     public readonly self: boolean
   ) {
     super();
@@ -37,7 +39,7 @@ export class MoveAction extends Action {
   static parse(match: RegExpMatchArray, context: ParseContext) {
     context.skip(match[0].length);
 
-    return new MoveAction(match[3] ?? null, match[4], !!match[1]);
+    return new MoveAction(match[4] ?? null, match[5], !!match[1], !!match[2]);
   }
 
   override validate(game: GameService, scope: Entity | Room): void {
@@ -61,15 +63,17 @@ export class MoveAction extends Action {
 
     if (this.self) {
       /** Just place the entity in the indicated room. */
-      game.debug(`move ${scope.key} to ${this._target.key}`);
+      game.debug(
+        `${this.silent ? 'silent ' : ''}move ${scope.key} to ${
+          this._target.key
+        }`
+      );
 
-      player.attachEntity(scope as Entity, this._target);
-
-      return true;
+      return game.execute(
+        () => (player.attachEntity(scope as Entity, this._target), true),
+        this.silent
+      );
     }
-
-    /** Move the player to the indicated room. */
-    game.debug(`goto ${this._target.key}`);
 
     player.enterRoom(this._target);
 
