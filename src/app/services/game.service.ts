@@ -29,7 +29,7 @@ const days: systemMessages[] = [
 ];
 
 /** Key of this application in the local storage. */
-const storageKeyPrefix = 'W3ADV.State.';
+const storageKeyPrefix = 'W3ADV.States.';
 
 /** Game management service. */
 @Injectable()
@@ -440,21 +440,41 @@ export class GameService implements OnDestroy {
     return `${storageKeyPrefix}${this.settings.game}.state`;
   }
 
+  /** Retrieve the current saved states. */
+  private get currentSavedStates(): unknown[] {
+    try {
+      return JSON.parse(localStorage.getItem(this.storageKey) || '[]');
+    } catch {
+      return [];
+    }
+  }
+
   /** Write the current game state to the local storage. */
   save() {
-    localStorage.setItem(this.storageKey, JSON.stringify(this.player.save()));
+    /** All saved stated. */
+    const saved = this.currentSavedStates;
+
+    /** Keep at most 10. */
+    saved.splice(9);
+
+    /** Add the new one. */
+    saved.push(this.player.save());
+
+    /** Remember. */
+    localStorage.setItem(this.storageKey, JSON.stringify(saved));
   }
 
   /** Load the game state from the local storage. */
   load() {
     try {
-      /** Check for saved game. */
-      const json = localStorage.getItem(this.storageKey);
+      /** Check for saved games. */
+      const saved = this.currentSavedStates;
+      const latest = saved[saved.length - 1];
 
-      if (!json) return false;
+      if (!latest) return false;
 
       /** Reload the state but do not start the game. */
-      this.player = Player.load(JSON.parse(json), this);
+      this.player = Player.load(latest, this);
 
       return true;
     } catch (e) {
