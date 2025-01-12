@@ -5,9 +5,9 @@
   <button
     mat-raised-button
     [mat-dialog-close]="state"
-    *ngFor="let state of all; let i = index"
+    *ngFor="let state of all"
   >
-    {{ i + 1 }}
+    {{ state.when | date : "dd.MM.yyyy HH:mm:ss" }}
   </button>
   }@else{
   <div>Du hast noch keine Spielstände gespeichert.</div>

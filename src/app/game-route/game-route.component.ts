@@ -159,7 +159,7 @@ export class GameRouteComponent implements core.AfterViewInit, core.OnDestroy {
       })
       .afterClosed()
       .subscribe((state) => {
-        if (!this.game.load(state)) return;
+        if (!state || !this.game.load(state.state)) return;
 
         /** Wipe out all output. */
         this.clearOutput();

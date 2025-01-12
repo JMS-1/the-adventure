@@ -441,7 +441,7 @@ export class GameService implements OnDestroy {
   }
 
   /** Retrieve the current saved states. */
-  get currentSavedStates(): unknown[] {
+  get currentSavedStates(): { when: number; state: unknown }[] {
     try {
       return JSON.parse(localStorage.getItem(this.storageKey) || '[]');
     } catch {
@@ -458,7 +458,7 @@ export class GameService implements OnDestroy {
     saved.splice(0, Math.max(0, saved.length - 9));
 
     /** Add the new one. */
-    saved.push(this.player.save());
+    saved.push({ when: Date.now(), state: this.player.save() });
 
     /** Remember. */
     localStorage.setItem(this.storageKey, JSON.stringify(saved));
