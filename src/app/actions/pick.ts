@@ -60,8 +60,8 @@ export class PickAction extends Action {
     }
 
     return game.execute(
-      () => (game.pickEntity(this._entity), this.silent),
-      true
+      () => (game.pickEntity(this._entity), true),
+      this.silent
     );
   }
 }

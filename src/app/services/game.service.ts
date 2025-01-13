@@ -536,7 +536,9 @@ export class GameService implements OnDestroy {
       ignore.add(name);
 
       /** Check for entities carried by this one. */
-      sum.add(this.calcWeight(entity.entities, ignore));
+      sum.add(
+        this.calcWeight(this.player.carriedObjects.children(entity), ignore)
+      );
     }
 
     return sum;

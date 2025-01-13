@@ -49,7 +49,7 @@ export class Player {
 
   /** Weight of all we are currently carring. */
   get carry() {
-    return this._game.calcWeight(this.inventory);
+    return this._game?.calcWeight(this.inventory) ?? new Weight('(0,0,0)');
   }
 
   /** Ausgabe zurücksetzen. */
