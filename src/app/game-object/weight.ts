@@ -34,26 +34,16 @@ export class Weight {
   }
 
   /**
-   * Try to subtract another wight from this one.
+   * See if this weight is smaller than another.
    *
-   * @param weight weight to subtract.
-   * @returns set if this weight is still positive.
+   * @param weight wome other weight.
+   * @returns set if this weight is smaller than the parameter.
    */
-  subtract(weight: Weight) {
-    const weights = [
-      this._weights[0] - weight._weights[0],
-      this._weights[1] - weight._weights[1],
-      this._weights[2] - weight._weights[2],
-    ];
+  isLessThan(weight: Weight) {
+    for (let i = this._weights.length; i-- > 0; )
+      if (this._weights[i] < weight._weights[i]) return true;
 
-    /** No element must become negative. */
-    if (weights.some((w) => w < 0)) return false;
-
-    this._weights[0] = weights[0];
-    this._weights[1] = weights[1];
-    this._weights[2] = weights[2];
-
-    return true;
+    return false;
   }
 
   /**

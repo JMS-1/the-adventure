@@ -16,8 +16,11 @@
         Exits =
         {{ mapKeys(game.player.room.exits) | json }}
       </div>
-      <div>Weight = {{ game.player.weight.toString() }}</div>
       <div>Inventory = {{ setValues(game.player.inventory) | json }}</div>
+      <div>
+        Inventory Weight = {{ game.player.carry.toString() }} out of
+        {{ game.player.strength.toString() }}
+      </div>
     </div>
     <div class="actions">
       <button mat-raised-button (click)="game.help()">Hilfe anzeigen</button>

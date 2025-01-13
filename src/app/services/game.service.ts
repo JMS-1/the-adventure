@@ -508,4 +508,37 @@ export class GameService implements OnDestroy {
       this._suppressOutput--;
     }
   }
+
+  /**
+   * Caluclate the full weight of a single entity or a list of entities..
+   *
+   * @param entities where to start.
+   * @param ignore all enties processed so far - avoid cyles.
+   * @returns total weight of the entities including nested entitites in any depth.
+   */
+  calcWeight(entities: Set<string>, ignore = new Set<string>()) {
+    /** Process all entities. */
+    const sum = new Weight('(0,0,0)');
+
+    for (const name of entities) {
+      /** Ups already did it - should never happen but better be save than sorry. */
+      if (ignore.has(name)) continue;
+
+      /** See if entiy exists and is movable. */
+      const entity = this.objects.entities[name];
+
+      if (!entity?.entityWeight) continue;
+
+      /** Sum up.  */
+      sum.add(entity.entityWeight);
+
+      /** Cycle check - count this entity never again. */
+      ignore.add(name);
+
+      /** Check for entities carried by this one. */
+      sum.add(this.calcWeight(entity.entities, ignore));
+    }
+
+    return sum;
+  }
 }

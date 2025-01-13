@@ -20,7 +20,7 @@ export abstract class Entity extends GameObject {
   readonly commands: TActionMap = {};
 
   /** Configured weight of the entity. */
-  weight?: Weight;
+  entityWeight?: Weight;
 
   /**
    * Initialize a new entity.
@@ -37,7 +37,7 @@ export abstract class Entity extends GameObject {
     if (macro) {
       this.commands = { ...macro.commands };
       this.times = { ...macro.times };
-      this.weight = macro.weight;
+      this.entityWeight = macro.entityWeight;
     }
   }
 
@@ -51,7 +51,7 @@ export abstract class Entity extends GameObject {
    * @param weight the weight.
    */
   setWeight(weight: string) {
-    this.weight = new Weight(weight);
+    this.entityWeight = new Weight(weight);
   }
 
   /**

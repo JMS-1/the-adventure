@@ -36,16 +36,21 @@ export class Player {
    * Create a new player.
    *
    * @param room room to start with.
-   * @param weight strength of the player.
+   * @param strength strength of the player.
    * @param time game time.
    * @param _game active game.
    */
   constructor(
     public room: Room,
-    public weight: Weight,
+    public strength: Weight,
     public time: Time,
     private readonly _game: GameService
   ) {}
+
+  /** Weight of all we are currently carring. */
+  get carry() {
+    return this._game.calcWeight(this.inventory);
+  }
 
   /** Ausgabe zurücksetzen. */
   resetPrint() {
@@ -90,12 +95,7 @@ export class Player {
     this.carriedObjects.delete(entity);
 
     /** Remove from player. */
-    if (this.inventory.has(entity.name)) {
-      this.inventory.delete(entity.name);
-
-      /** Must adjust total weight of the inventory. */
-      if (entity.weight) this.weight.add(entity.weight);
-    }
+    if (this.inventory.has(entity.name)) this.inventory.delete(entity.name);
   }
 
   /**
@@ -122,15 +122,26 @@ export class Player {
     if (this.inventory.has(entity.name)) return false;
 
     /** Check if the maximum strength of the player is not exceeded. */
-    if (!entity.weight) {
+    if (!entity.entityWeight) {
       this._game.error(systemMessages.NoMove);
 
       return false;
-    } else if (!this.weight.subtract(entity.weight)) {
-      this._game.error(systemMessages.Heavy);
-
-      return false;
     } else {
+      /** What we allready carry. */
+      const carry = new Set(this.inventory);
+
+      /** Add the thing. */
+      carry.add(entity.name);
+
+      /** Get the total weight after we pick this up. */
+      const weight = this._game.calcWeight(carry);
+
+      if (this.strength.isLessThan(weight)) {
+        this._game.error(systemMessages.Heavy);
+
+        return false;
+      }
+
       /** Remove the entity from all parent. */
       this.detachEntity(entity);
 
@@ -255,7 +266,7 @@ export class Player {
       room: this.room.key,
       time: this.time.save(),
       timers: this._timers.save(),
-      weight: this.weight.save(),
+      weight: this.strength.save(),
     };
   }
 
