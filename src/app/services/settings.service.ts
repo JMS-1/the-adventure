@@ -6,7 +6,7 @@ import { Subscription } from 'rxjs';
 export const games = {
   ROAR: 'Der Schrei des Monsters (deutsch)',
   REV: 'Die Rache des Monsters (deutsch)',
-  b5: 'The Babylon project (english)',
+  b5: 'The Babylon Project (english)',
 };
 
 export type TGame = keyof typeof games;

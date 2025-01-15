@@ -110,6 +110,9 @@ export class Player {
 
     /** Add to new parent. */
     this.carriedObjects.add(entity, parent);
+
+    /** May need to display. */
+    if (parent === this.room) this.print(entity);
   }
 
   /**
@@ -126,30 +129,33 @@ export class Player {
       this._game.error(systemMessages.NoMove);
 
       return false;
-    } else {
-      /** What we allready carry. */
-      const carry = new Set(this.inventory);
-
-      /** Add the thing. */
-      carry.add(entity.name);
-
-      /** Get the total weight after we pick this up. */
-      const weight = this._game.calcWeight(carry);
-
-      if (this.strength.isLessThan(weight)) {
-        this._game.error(systemMessages.Heavy);
-
-        return false;
-      }
-
-      /** Remove the entity from all parent. */
-      this.detachEntity(entity);
-
-      /** Add the entity to inventory. */
-      this.inventory.add(entity.name);
-
-      return true;
     }
+
+    /** What we allready carry. */
+    const carry = new Set(this.inventory);
+
+    /** Add the thing. */
+    carry.add(entity.name);
+
+    /** Get the total weight after we pick this up. */
+    const weight = this._game.calcWeight(carry);
+
+    if (this.strength.isLessThan(weight)) {
+      this._game.error(systemMessages.Heavy);
+
+      return false;
+    }
+
+    /** Remove the entity from all parent. */
+    this.detachEntity(entity);
+
+    /** Add the entity to inventory. */
+    this.inventory.add(entity.name);
+
+    /** Show it. */
+    this.print(entity);
+
+    return true;
   }
 
   /**
@@ -179,6 +185,8 @@ export class Player {
    */
   setMessage(gameObject: Entity | Room, message: string) {
     /** Update message and display. */
+    if (message === this.messages[gameObject.key]) return true;
+
     this.messages[gameObject.key] = message;
 
     this._printed.delete(gameObject.key);
@@ -194,6 +202,9 @@ export class Player {
    * @param gameObject game object to show.
    */
   print(gameObject: Entity | Room | string | undefined) {
+    /** We are no longer able to see anything. */
+    if (this.dead) return;
+
     /** If the parameter is only the key of an entity make sure it exists - rooms can only be displayed using the instance. */
     if (typeof gameObject === 'string')
       gameObject = this._game.objects.entities[gameObject];
