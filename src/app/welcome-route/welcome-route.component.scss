@@ -4,6 +4,7 @@
   overflow: auto;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
 
   > .games {
     display: grid;
@@ -14,6 +15,27 @@
     > .REV,
     > .b5 {
       opacity: 0.5;
+    }
+  }
+
+  > a {
+    $infoSize: 2em;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $infoSize;
+    height: $infoSize;
+    color: #000000;
+
+    &:active {
+      color: unset;
+    }
+
+    > mat-icon {
+      font-size: $infoSize;
+      width: 100%;
+      height: 100%;
     }
   }
 }
