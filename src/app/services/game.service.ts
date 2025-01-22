@@ -430,7 +430,7 @@ export class GameService implements OnDestroy {
     /** Just drop in the current state. */
     this.debug(`drop ${entity.key}`);
 
-    this.player.attachEntity(entity, this.player.room);
+    this.player.attachEntity(entity, this.player.room, true);
 
     entity.runSystemCommand(systemShortcuts.Drop, this);
   }

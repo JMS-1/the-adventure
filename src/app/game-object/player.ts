@@ -103,8 +103,9 @@ export class Player {
    *
    * @param entity entity to add.
    * @param parent new parent game object for the entity.
+   * @param silent set to suppress printing the state.
    */
-  attachEntity(entity: Entity, parent: Entity | Room) {
+  attachEntity(entity: Entity, parent: Entity | Room, silent = false) {
     /* Silent remove first - just in case. */
     this.detachEntity(entity);
 
@@ -112,7 +113,7 @@ export class Player {
     this.carriedObjects.add(entity, parent);
 
     /** May need to display. */
-    if (parent === this.room) this.print(entity);
+    if (parent === this.room && !silent) this.print(entity);
   }
 
   /**

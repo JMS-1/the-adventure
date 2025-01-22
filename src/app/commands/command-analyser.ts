@@ -75,8 +75,8 @@ export class CommandAnalyser {
           lastCommand = map['%'];
           entity = entities[word];
         } else if (
-          i === this.words.length - 1 &&
-          lastCommand?.objectKeys.size
+          lastCommand?.objectKeys.size &&
+          this.words.slice(i + 1).every((w) => w.length < 4)
         ) {
           /* Thing or person at the very end. */
           command = lastCommand;
