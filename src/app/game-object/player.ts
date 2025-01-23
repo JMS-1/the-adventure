@@ -153,9 +153,6 @@ export class Player {
     /** Add the entity to inventory. */
     this.inventory.add(entity.name);
 
-    /** Show it. */
-    this.print(entity);
-
     return true;
   }
 
