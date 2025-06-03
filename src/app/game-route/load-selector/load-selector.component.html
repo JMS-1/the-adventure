@@ -1,17 +1,12 @@
 <div mat-dialog-title>Gespeicherten Spielstand auswählen</div>
 
 <div mat-dialog-content>
-  @if(all.length){
-    @for (state of all; track state) {
-      <button
-        mat-raised-button
-        [mat-dialog-close]="state"
-        >
-        {{ state.when | date : "dd.MM.yyyy HH:mm:ss" }}
-      </button>
-    }
-    }@else{
-    <div>Du hast noch keine Spielstände gespeichert.</div>
+  @if(all.length){ @for (state of all; track state.when) {
+  <button mat-raised-button [mat-dialog-close]="state">
+    {{ state.when | date : "dd.MM.yyyy HH:mm:ss" }}
+  </button>
+  } }@else{
+  <div>Du hast noch keine Spielstände gespeichert.</div>
   }
 </div>
 

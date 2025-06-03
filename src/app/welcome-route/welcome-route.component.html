@@ -1,21 +1,18 @@
 <div
   class="welcome"
   [ngStyle]="{ 'background-image': 'url(images/background.gif)' }"
-  >
+>
   <div class="games">
     @for (game of games; track game) {
-      <a
-        mat-flat-button
-        [ngClass]="game"
-        [routerLink]="game"
-        >{{ names[game] }}</a
-        >
-      }
-    </div>
+    <a mat-flat-button [ngClass]="game" [routerLink]="game">{{
+      names[game]
+    }}</a>
+    }
+  </div>
 
-    <a
-      href="https://github.com/JMS-1/the-adventure/blob/main/README.md"
-      target="readme"
-      ><mat-icon>info</mat-icon></a
-      >
-    </div>
+  <a
+    href="https://github.com/JMS-1/the-adventure/blob/main/README.md"
+    target="readme"
+    ><mat-icon>info</mat-icon></a
+  >
+</div>
