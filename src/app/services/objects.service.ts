@@ -1,4 +1,4 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import { Injectable, OnDestroy, inject } from '@angular/core';
 import { concat, ReplaySubject, tap } from 'rxjs';
 import { TActionMap } from '../actions';
 import { Entity, EntityMap } from '../game-object/entity';
@@ -12,6 +12,10 @@ import { SettingsService } from './settings.service';
 /** The entity manager. */
 @Injectable()
 export class ObjectsService implements OnDestroy {
+  private readonly _settings = inject(SettingsService);
+  private readonly _assets = inject(AssetService);
+  private readonly _parser = inject(ActionService);
+
   /** Set to empty or any error when all configuration files are processed. */
   private readonly _parseDone$ = new ReplaySubject<string>(1);
 
@@ -137,19 +141,6 @@ export class ObjectsService implements OnDestroy {
     /** Define the weight of the entity. */
     [/^\s*weight\s*=\s*(.*)$/, (m) => this._current!.setWeight(m[1])],
   ];
-
-  /**
-   * Create a new entity manager.
-   *
-   * @param _settings overall settings.
-   * @param _assets file access helper.
-   * @param _parser action parser.
-   */
-  constructor(
-    private readonly _settings: SettingsService,
-    private readonly _assets: AssetService,
-    private readonly _parser: ActionService
-  ) {}
 
   /** Start parsing the declaration files of persons and things. */
   parse() {

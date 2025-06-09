@@ -1,4 +1,4 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import { Injectable, OnDestroy, inject } from '@angular/core';
 import { ReplaySubject, tap } from 'rxjs';
 import { AssetService } from './asset.service';
 import { SettingsService } from './settings.service';
@@ -9,6 +9,9 @@ const messageReg = /^\$([a-zA-Z0-9*äöüß_]+)(\/([1-9]\d?))?$/;
 /** Provides all message texts. */
 @Injectable()
 export class MessagesService implements OnDestroy {
+  private readonly _settings = inject(SettingsService);
+  private readonly _assets = inject(AssetService);
+
   /** Set to empty or any error when parsing all message files is finished. */
   private readonly _parseDone$ = new ReplaySubject<string>(1);
 
@@ -31,17 +34,6 @@ export class MessagesService implements OnDestroy {
 
   /** Current collection of alternatives. */
   private _messages: string[] = [];
-
-  /**
-   * Create a new service.
-   *
-   * @param _settings overall settings.
-   * @param _assets access to files.
-   */
-  constructor(
-    private readonly _settings: SettingsService,
-    private readonly _assets: AssetService
-  ) {}
 
   /** Start parsing messages beginning with the global message file. */
   parse() {

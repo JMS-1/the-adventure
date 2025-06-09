@@ -1,4 +1,4 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import { Injectable, OnDestroy, inject } from '@angular/core';
 import { ReplaySubject, tap } from 'rxjs';
 import { AssetService } from '../services/asset.service';
 import { SettingsService } from '../services/settings.service';
@@ -11,6 +11,9 @@ const wordReg = /^#([a-zA-Z0-9äöüß_]+)\s*=\s*\((.+)\)$/;
 /** Management of commands. */
 @Injectable()
 export class CommandService implements OnDestroy {
+  private readonly _settings = inject(SettingsService);
+  private readonly _assets = inject(AssetService);
+
   /** Signaled with an error or empty as soon as file parsing has been done. */
   private readonly _parseDone$ = new ReplaySubject<string>(1);
 
@@ -18,17 +21,6 @@ export class CommandService implements OnDestroy {
 
   /** All command declarations. */
   readonly commands: CommandMap = {};
-
-  /**
-   * Create a new manager.
-   *
-   * @param _settings overall configuration.
-   * @param _assets file access helper.
-   */
-  constructor(
-    private readonly _settings: SettingsService,
-    private readonly _assets: AssetService
-  ) {}
 
   /** Load the command declaration file an analyse it. */
   parse() {

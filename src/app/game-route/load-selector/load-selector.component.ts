@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { GameService } from '../../services/game.service';
@@ -13,7 +13,9 @@ import { GameService } from '../../services/game.service';
 export class LoadSelectorComponent {
   readonly all;
 
-  constructor(game: GameService) {
+  constructor() {
+    const game = inject(GameService);
+
     this.all = game.currentSavedStates;
   }
 }

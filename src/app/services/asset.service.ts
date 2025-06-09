@@ -1,21 +1,14 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { tap } from 'rxjs';
 import { SettingsService } from './settings.service';
 
 /** Helper to download definition files. */
 @Injectable()
 export class AssetService {
-  /**
-   * Create a new helper.
-   *
-   * @param _http HTTP access client.
-   * @param _settings overall configuration.
-   */
-  constructor(
-    private readonly _http: HttpClient,
-    private readonly _settings: SettingsService
-  ) {}
+  private readonly _http = inject(HttpClient);
+  private readonly _settings = inject(SettingsService);
+
 
   /**
    * Download a single file.

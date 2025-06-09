@@ -1,4 +1,4 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import { Injectable, OnDestroy, inject } from '@angular/core';
 import { ReplaySubject, tap } from 'rxjs';
 import { TActionMap } from '../actions';
 import { Room } from '../game-object/room';
@@ -8,6 +8,10 @@ import { SettingsService } from './settings.service';
 
 @Injectable()
 export class RoomsService implements OnDestroy {
+  private readonly _settings = inject(SettingsService);
+  private readonly _assets = inject(AssetService);
+  private readonly _parser = inject(ActionService);
+
   private readonly _parseDone$ = new ReplaySubject<string>(1);
 
   readonly parseDone$ = this._parseDone$.asObservable();
@@ -72,12 +76,6 @@ export class RoomsService implements OnDestroy {
     [/^\s*persons\s*=\s*(.*)$/, (m) => this._current!.setPersons(m[1])],
     [/^\s*things\s*=\s*(.*)$/, (m) => this._current!.setThings(m[1])],
   ];
-
-  constructor(
-    private readonly _settings: SettingsService,
-    private readonly _assets: AssetService,
-    private readonly _parser: ActionService
-  ) {}
 
   parse() {
     this._assets

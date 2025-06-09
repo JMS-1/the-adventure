@@ -1,4 +1,4 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import { Injectable, OnDestroy, inject } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
@@ -23,6 +23,8 @@ const storageDeveloper = 'W3ADV.Settings.Developer';
 /** Provide overall settings. */
 @Injectable()
 export class SettingsService implements OnDestroy {
+  private readonly _router = inject(Router);
+
   /** Set to show debug information. */
   debug = false;
 
@@ -46,7 +48,7 @@ export class SettingsService implements OnDestroy {
    *
    * @param _router router service.
    */
-  constructor(private readonly _router: Router) {
+  constructor() {
     /** Register for switch to developer mode. */
     document.addEventListener('keydown', this.testDeveloper);
 

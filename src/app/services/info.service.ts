@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { combineLatest, ReplaySubject } from 'rxjs';
 import { AssetService } from './asset.service';
 import { SettingsService } from './settings.service';
@@ -6,6 +6,9 @@ import { SettingsService } from './settings.service';
 /** Manager for special information files. */
 @Injectable()
 export class InfoService {
+  private readonly _settings = inject(SettingsService);
+  private readonly _assets = inject(AssetService);
+
   /** Set to an error after files are loaded - or empty if anything is ok. */
   private readonly _parseDone$ = new ReplaySubject<string>(1);
 
@@ -19,17 +22,6 @@ export class InfoService {
 
   /** Help information. */
   help = '';
-
-  /**
-   * Create a new service.
-   *
-   * @param _settings overall settings.
-   * @param _assets file access helper.
-   */
-  constructor(
-    private readonly _settings: SettingsService,
-    private readonly _assets: AssetService
-  ) {}
 
   /** Just load all files. */
   parse() {

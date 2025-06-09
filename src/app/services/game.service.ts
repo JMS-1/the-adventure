@@ -1,4 +1,4 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import { inject, Injectable, OnDestroy } from '@angular/core';
 import { combineLatest, ReplaySubject, Subject, tap } from 'rxjs';
 import { Action } from '../actions';
 import { CommandService } from '../commands/command.service';
@@ -34,6 +34,14 @@ const storageKeyPrefix = 'W3ADV.States.';
 /** Game management service. */
 @Injectable()
 export class GameService implements OnDestroy {
+  readonly commands = inject(CommandService);
+  readonly defaults = inject(DefaultsService);
+  readonly info = inject(InfoService);
+  readonly messages = inject(MessagesService);
+  readonly objects = inject(ObjectsService);
+  readonly rooms = inject(RoomsService);
+  readonly settings = inject(SettingsService);
+
   /** Signaled as soon as all declarations are read - successfull or not. */
   private readonly _parseDone$ = new ReplaySubject<boolean>(1);
 
@@ -61,23 +69,15 @@ export class GameService implements OnDestroy {
   );
 
   /** Create a new game - will hold references to all managers. */
-  constructor(
-    public readonly commands: CommandService,
-    public readonly defaults: DefaultsService,
-    public readonly info: InfoService,
-    public readonly messages: MessagesService,
-    public readonly objects: ObjectsService,
-    public readonly rooms: RoomsService,
-    public readonly settings: SettingsService
-  ) {
+  constructor() {
     /** Wait for all parsings. */
     const subscription = combineLatest([
-      commands.parseDone$,
-      defaults.parseDone$,
-      info.parseDone$,
-      messages.parseDone$,
-      objects.parseDone$,
-      rooms.parseDone$,
+      this.commands.parseDone$,
+      this.defaults.parseDone$,
+      this.info.parseDone$,
+      this.messages.parseDone$,
+      this.objects.parseDone$,
+      this.rooms.parseDone$,
     ])
       .pipe(
         tap((errors) => {

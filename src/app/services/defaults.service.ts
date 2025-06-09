@@ -1,4 +1,4 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import { Injectable, OnDestroy, inject } from '@angular/core';
 import { ReplaySubject, tap } from 'rxjs';
 import { TActionMap } from '../actions';
 import { Time } from '../game-object/time';
@@ -22,6 +22,10 @@ const regs = {
 /** Provide all default values. */
 @Injectable()
 export class DefaultsService implements OnDestroy {
+  private readonly _settings = inject(SettingsService);
+  private readonly _assets = inject(AssetService);
+  private readonly _parser = inject(ActionService);
+
   /** Set to empty or an error message after defaults file is processed. */
   private readonly _parseDone$ = new ReplaySubject<string>(1);
 
@@ -50,19 +54,6 @@ export class DefaultsService implements OnDestroy {
 
   /** Initial room. */
   room = '';
-
-  /**
-   * Create a new service.
-   *
-   * @param _settings overall settings.
-   * @param _assets service to load files.
-   * @param _parser action parser.
-   */
-  constructor(
-    private readonly _settings: SettingsService,
-    private readonly _assets: AssetService,
-    private readonly _parser: ActionService
-  ) {}
 
   /** Load the defaults file and analyse it. */
   parse() {
