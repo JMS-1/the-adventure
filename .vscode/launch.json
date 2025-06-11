@@ -17,13 +17,6 @@
       "type": "chrome",
       "url": "http://localhost:4200/",
       "userDataDir": "${workspaceFolder}/.vscode/chrome"
-    },
-    {
-      "name": "Test",
-      "preLaunchTask": "npm: test",
-      "request": "launch",
-      "type": "chrome",
-      "url": "http://localhost:9876/debug.html"
     }
   ]
 }

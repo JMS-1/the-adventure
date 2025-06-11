@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { beforeEach, describe, expect, it } from 'vitest';
 
 import { Action } from '../actions';
 import { GameService } from '../services/game.service';
@@ -50,7 +51,7 @@ describe('Timer', () => {
   });
 
   it('action is initially not executed', () => {
-    expect(action.executed).toBeFalse();
+    expect(action.executed).toBe(false);
   });
 
   it('can execute one-shot action', () => {
@@ -59,19 +60,19 @@ describe('Timer', () => {
     for (let i = 9; i-- > 0; ) {
       timer.nextTick(game);
 
-      expect(action.executed).toBeFalse();
+      expect(action.executed).toBe(false);
     }
 
     timer.nextTick(game);
 
-    expect(action.executed).toBeTrue();
+    expect(action.executed).toBe(true);
 
     action.executed = false;
 
     for (let i = 100; i-- > 0; ) {
       timer.nextTick(game);
 
-      expect(action.executed).toBeFalse();
+      expect(action.executed).toBe(false);
     }
   });
 
@@ -82,12 +83,12 @@ describe('Timer', () => {
       for (let i = 4; i-- > 0; ) {
         timer.nextTick(game);
 
-        expect(action.executed).toBeFalse();
+        expect(action.executed).toBe(false);
       }
 
       timer.nextTick(game);
 
-      expect(action.executed).toBeTrue();
+      expect(action.executed).toBe(true);
 
       action.executed = false;
     }

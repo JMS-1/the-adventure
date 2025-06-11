@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { beforeEach, describe, expect, it } from 'vitest';
 
 import { GameService } from '../services/game.service';
 import { EntityAssignments } from './entity-assignments';
@@ -91,13 +92,13 @@ describe('EntityAssignments', () => {
       thing.name,
     ]);
 
-    expect(assigments.has(person, thing)).toBeFalse();
-    expect(assigments.has(person, person)).toBeFalse();
+    expect(assigments.has(person, thing)).toBe(false);
+    expect(assigments.has(person, person)).toBe(false);
 
-    expect(assigments.has(thing, thing)).toBeFalse();
-    expect(assigments.has(thing, person)).toBeTrue();
+    expect(assigments.has(thing, thing)).toBe(false);
+    expect(assigments.has(thing, person)).toBe(true);
 
-    expect(assigments.has(room, thing)).toBeTrue();
-    expect(assigments.has(room, person)).toBeTrue();
+    expect(assigments.has(room, thing)).toBe(true);
+    expect(assigments.has(room, person)).toBe(true);
   });
 });

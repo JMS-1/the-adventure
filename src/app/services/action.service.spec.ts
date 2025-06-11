@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { beforeEach, describe, expect, it } from 'vitest';
 import { DeadAction } from '../actions/dead';
 import { DropAction } from '../actions/drop';
 import { HasAction } from '../actions/has';
@@ -58,7 +59,7 @@ describe('ActionService assign message', () => {
 
     expect(action).toBeInstanceOf(MessageAction);
     expect(action.message).toBe('test');
-    expect(action.silent).toBeFalse();
+    expect(action.silent).toBe(false);
 
     [map, index] = service.parse('@message = test', [], 0);
 
@@ -71,7 +72,7 @@ describe('ActionService assign message', () => {
 
     expect(action).toBeInstanceOf(MessageAction);
     expect(action.message).toBe('test');
-    expect(action.silent).toBeTrue();
+    expect(action.silent).toBe(true);
 
     [map, index] = service.parse('', ['', 'message = test'], 0);
 
@@ -84,7 +85,7 @@ describe('ActionService assign message', () => {
 
     expect(action).toBeInstanceOf(MessageAction);
     expect(action.message).toBe('test');
-    expect(action.silent).toBeFalse();
+    expect(action.silent).toBe(false);
 
     [map, index] = service.parse('@message = *', [], 0);
 
@@ -97,7 +98,7 @@ describe('ActionService assign message', () => {
 
     expect(action).toBeInstanceOf(MessageAction);
     expect(action.message).toBe('*');
-    expect(action.silent).toBeTrue();
+    expect(action.silent).toBe(true);
   });
 });
 
@@ -126,13 +127,13 @@ describe('ActionService sequence', () => {
 
     expect(action).toBeInstanceOf(MessageAction);
     expect(action.message).toBe('1');
-    expect(action.silent).toBeFalse();
+    expect(action.silent).toBe(false);
 
     action = actions[1] as MessageAction;
 
     expect(action).toBeInstanceOf(MessageAction);
     expect(action.message).toBe('2');
-    expect(action.silent).toBeTrue();
+    expect(action.silent).toBe(true);
 
     [map, index] = service.parse(
       '',
@@ -150,13 +151,13 @@ describe('ActionService sequence', () => {
 
     expect(action).toBeInstanceOf(MessageAction);
     expect(action.message).toBe('1');
-    expect(action.silent).toBeFalse();
+    expect(action.silent).toBe(false);
 
     action = actions[1] as MessageAction;
 
     expect(action).toBeInstanceOf(MessageAction);
     expect(action.message).toBe('2');
-    expect(action.silent).toBeTrue();
+    expect(action.silent).toBe(true);
   });
 });
 
@@ -208,8 +209,8 @@ describe('ActionService pick something', () => {
 
     expect(action).toBeInstanceOf(PickAction);
     expect(action.what).toBe('test');
-    expect(action.silent).toBeFalse();
-    expect(action.self).toBeFalse();
+    expect(action.silent).toBe(false);
+    expect(action.self).toBe(false);
 
     [map, index] = service.parse('@<test', [], 0);
 
@@ -222,8 +223,8 @@ describe('ActionService pick something', () => {
 
     expect(action).toBeInstanceOf(PickAction);
     expect(action.what).toBe('test');
-    expect(action.silent).toBeTrue();
-    expect(action.self).toBeFalse();
+    expect(action.silent).toBe(true);
+    expect(action.self).toBe(false);
 
     [map, index] = service.parse('#<test', [], 0);
 
@@ -236,8 +237,8 @@ describe('ActionService pick something', () => {
 
     expect(action).toBeInstanceOf(PickAction);
     expect(action.what).toBe('test');
-    expect(action.silent).toBeFalse();
-    expect(action.self).toBeTrue();
+    expect(action.silent).toBe(false);
+    expect(action.self).toBe(true);
 
     [map, index] = service.parse('@#<test', [], 0);
 
@@ -250,8 +251,8 @@ describe('ActionService pick something', () => {
 
     expect(action).toBeInstanceOf(PickAction);
     expect(action.what).toBe('test');
-    expect(action.silent).toBeTrue();
-    expect(action.self).toBeTrue();
+    expect(action.silent).toBe(true);
+    expect(action.self).toBe(true);
   });
 });
 
@@ -299,7 +300,7 @@ describe('ActionService move', () => {
     expect(action).toBeInstanceOf(MoveAction);
     expect(action.area).toBeNull();
     expect(action.room).toBe('room');
-    expect(action.self).toBeFalse();
+    expect(action.self).toBe(false);
 
     [map, index] = service.parse('#>$$area$room', [], 0);
 
@@ -313,7 +314,7 @@ describe('ActionService move', () => {
     expect(action).toBeInstanceOf(MoveAction);
     expect(action.area).toBe('area');
     expect(action.room).toBe('room');
-    expect(action.self).toBeTrue();
+    expect(action.self).toBe(true);
   });
 });
 
@@ -491,7 +492,7 @@ describe('ActionService test position', () => {
     expect(action).toBeInstanceOf(TestPositionAction);
     expect(action.area).toBe('area');
     expect(action.room).toBe('room');
-    expect(action.self).toBeFalse();
+    expect(action.self).toBe(false);
     expect(action.actions.length).toBe(1);
 
     [map, index] = service.parse(
@@ -511,7 +512,7 @@ describe('ActionService test position', () => {
     expect(action).toBeInstanceOf(TestPositionAction);
     expect(action.area).toBe('area');
     expect(action.room).toBe('room');
-    expect(action.self).toBeTrue();
+    expect(action.self).toBe(true);
     expect(action.actions.length).toBe(2);
   });
 });
@@ -672,8 +673,8 @@ describe('ActionService drop something', () => {
 
     expect(action).toBeInstanceOf(DropAction);
     expect(action.what).toBe('test');
-    expect(action.silent).toBeFalse();
-    expect(action.self).toBeFalse();
+    expect(action.silent).toBe(false);
+    expect(action.self).toBe(false);
 
     [map, index] = service.parse('@!test', [], 0);
 
@@ -686,8 +687,8 @@ describe('ActionService drop something', () => {
 
     expect(action).toBeInstanceOf(DropAction);
     expect(action.what).toBe('test');
-    expect(action.silent).toBeTrue();
-    expect(action.self).toBeFalse();
+    expect(action.silent).toBe(true);
+    expect(action.self).toBe(false);
 
     [map, index] = service.parse('#!test', [], 0);
 
@@ -700,8 +701,8 @@ describe('ActionService drop something', () => {
 
     expect(action).toBeInstanceOf(DropAction);
     expect(action.what).toBe('test');
-    expect(action.silent).toBeFalse();
-    expect(action.self).toBeTrue();
+    expect(action.silent).toBe(false);
+    expect(action.self).toBe(true);
 
     [map, index] = service.parse('@#!test', [], 0);
 
@@ -714,8 +715,8 @@ describe('ActionService drop something', () => {
 
     expect(action).toBeInstanceOf(DropAction);
     expect(action.what).toBe('test');
-    expect(action.silent).toBeTrue();
-    expect(action.self).toBeTrue();
+    expect(action.silent).toBe(true);
+    expect(action.self).toBe(true);
   });
 });
 
@@ -739,7 +740,7 @@ describe('ActionService single key', () => {
 
     expect(action).toBeInstanceOf(MessageAction);
     expect(action.message).toBe('test');
-    expect(action.silent).toBeFalse();
+    expect(action.silent).toBe(false);
   });
 });
 
@@ -763,7 +764,7 @@ describe('ActionService multi key', () => {
 
     expect(action).toBeInstanceOf(MessageAction);
     expect(action.message).toBe('test');
-    expect(action.silent).toBeFalse();
+    expect(action.silent).toBe(false);
 
     [map, index] = service.parseMultiple('(+13: message=test)', [], 0);
 
@@ -776,7 +777,7 @@ describe('ActionService multi key', () => {
 
     expect(action).toBeInstanceOf(MessageAction);
     expect(action.message).toBe('test');
-    expect(action.silent).toBeFalse();
+    expect(action.silent).toBe(false);
 
     [map, index] = service.parseMultiple(
       '(+13: message=test, +14: message=more)',
@@ -793,7 +794,7 @@ describe('ActionService multi key', () => {
 
     expect(action).toBeInstanceOf(MessageAction);
     expect(action.message).toBe('test');
-    expect(action.silent).toBeFalse();
+    expect(action.silent).toBe(false);
 
     actions = map['+14'];
 
@@ -804,6 +805,6 @@ describe('ActionService multi key', () => {
 
     expect(action).toBeInstanceOf(MessageAction);
     expect(action.message).toBe('more');
-    expect(action.silent).toBeFalse();
+    expect(action.silent).toBe(false);
   });
 });

@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { ActionCounters } from './counters';
 
 describe('ActionCounters', () => {
@@ -6,7 +7,7 @@ describe('ActionCounters', () => {
 
     const test = [3, 4, 2];
 
-    expect(counters.allowAction('one', test)).toBeFalse();
+    expect(counters.allowAction('one', test)).toBe(false);
 
     const expected = [
       false,
