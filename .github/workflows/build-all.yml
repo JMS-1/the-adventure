@@ -34,7 +34,9 @@ jobs:
         run: yarn --frozen-lockfile
 
       - name: run tests
-        run: echo yarn auto-test disabled
+        run: |
+          yarn playwright install
+          yarn auto-test
 
       - name: regular build
         run: yarn build

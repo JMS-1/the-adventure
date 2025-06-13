@@ -34,7 +34,7 @@
   "packageManager": "yarn@1.22.22",
   "private": true,
   "scripts": {
-    "auto-test": "ng test --browsers=ChromeHeadless --watch=false",
+    "auto-test": "ng test --browsers=chromium --watch=false",
     "build": "ng lint && ng build",
     "lint": "ng lint",
     "ng": "ng",
