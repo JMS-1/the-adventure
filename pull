@@ -1,1 +1,1 @@
-yarn && yarn auto-test && yarn build && echo ok
+git pull && yarn && yarn playwright install && yarn auto-test && yarn build && echo ok
