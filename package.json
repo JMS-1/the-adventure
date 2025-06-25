@@ -19,7 +19,7 @@
     "@angular/build": "^20.0.3",
     "@angular/cli": "^20.0.3",
     "@angular/compiler-cli": "^20.0.4",
-    "@types/node": "^24.0.3",
+    "@types/node": "^24.0.4",
     "@vitest/browser": "^3.2.4",
     "angular-eslint": "^20.1.1",
     "eslint": "^9.29.0",
