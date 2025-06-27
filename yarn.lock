@@ -10,10 +10,10 @@
     "@jridgewell/gen-mapping" "^0.3.5"
     "@jridgewell/trace-mapping" "^0.3.24"
 
-"@analogjs/vite-plugin-angular@^1.18.0":
-  version "1.18.0"
-  resolved "https://registry.yarnpkg.com/@analogjs/vite-plugin-angular/-/vite-plugin-angular-1.18.0.tgz#7103f7432a161fcfb71401144c9526b31e416993"
-  integrity sha512-d3uk/bC/ykoAWl3XMX2ZwowIyBR+uk1ua5//bzgf9oPWJcJ/8LG9YnsbLq7CKRvi/WNYCGOdFXXZOdIrwUYpeQ==
+"@analogjs/vite-plugin-angular@^1.19.0":
+  version "1.19.0"
+  resolved "https://registry.yarnpkg.com/@analogjs/vite-plugin-angular/-/vite-plugin-angular-1.19.0.tgz#12a997eb7137e977c69b279b18bd0d8f87ebe770"
+  integrity sha512-89DroTDX+Ndpsag5BF/H49jQXshb/Oec4tPiEFqYtHHX2FAQ7Zl5YZoXe41ECabZgYJJ5uRLlPrSqq40OmIL+A==
   dependencies:
     ts-morph "^21.0.0"
     vfile "^6.0.3"
