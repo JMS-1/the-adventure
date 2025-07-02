@@ -22,7 +22,7 @@
     "@types/node": "^24.0.8",
     "@vitest/browser": "^3.2.4",
     "angular-eslint": "^20.1.1",
-    "eslint": "^9.30.0",
+    "eslint": "^9.30.1",
     "jsdom": "^26.1.0",
     "playwright": "^1.53.2",
     "typescript": "^5.8.3",
