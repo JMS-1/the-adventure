@@ -35,7 +35,6 @@ jobs:
 
       - name: run tests
         run: |
-          yarn playwright install
           yarn auto-test
 
       - name: regular build

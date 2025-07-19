@@ -38,6 +38,7 @@
     "build": "ng lint && ng build",
     "lint": "ng lint",
     "ng": "ng",
+    "postinstall": "playwright install",
     "start": "ng serve",
     "test": "ng test --browsers=chromium",
     "watch": "ng build --watch --configuration development"
