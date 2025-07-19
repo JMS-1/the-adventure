@@ -225,7 +225,7 @@
   dependencies:
     "@angular-eslint/bundled-angular-compiler" "20.1.1"
 
-"@angular/animations@^20.1.1":
+"@angular/animations@^20.1.2":
   version "20.1.2"
   resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-20.1.2.tgz#e28cfcf0944233050746906cdad4b0e644ee36e3"
   integrity sha512-r1JnNXZEg2Rrz53Mr4D4/S7v6ozZ3FPzJJo38lDq2WJKSkKc09R9fjFWIB/rXwEXUuiWEfNfxx+O4g6rrbXWWA==
@@ -299,14 +299,14 @@
     yargs "18.0.0"
     zod "3.25.75"
 
-"@angular/common@^20.1.1":
+"@angular/common@^20.1.2":
   version "20.1.2"
   resolved "https://registry.yarnpkg.com/@angular/common/-/common-20.1.2.tgz#e9f2c9bc6d811bd01d3e35cfabdbc1ed85feb8aa"
   integrity sha512-MQYP+4lvw81jBRknNYgIye7N36SD68SADUB7xO+7pF5+KbGundfmZkO29uWCnTBU86C4xU4DshlFVhzFK1lreQ==
   dependencies:
     tslib "^2.3.0"
 
-"@angular/compiler-cli@^20.1.1":
+"@angular/compiler-cli@^20.1.2":
   version "20.1.2"
   resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-20.1.2.tgz#97f7c67d965eb3f8a421befd56a4cb5a050968d9"
   integrity sha512-NMSDavN+CJYvSze6wq7DpbrUA/EqiAD7GQoeJtuOknzUpPlWQmFOoHzTMKW+S34XlNEw+YQT0trv3DKcrE+T/w==
@@ -320,21 +320,21 @@
     tslib "^2.3.0"
     yargs "^18.0.0"
 
-"@angular/compiler@^20.1.1":
+"@angular/compiler@^20.1.2":
   version "20.1.2"
   resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-20.1.2.tgz#db73cdda6eb274362c499ebf15513beee0efe782"
   integrity sha512-BCYQArXAknOyMB5rgx9yK3p5uYFhgN91Jxo5Fbuso6M+7p1PoxOE4E9XrqQfhpVJOl9hcz7vNFnQ4Oer0R83UQ==
   dependencies:
     tslib "^2.3.0"
 
-"@angular/core@^20.1.1":
+"@angular/core@^20.1.2":
   version "20.1.2"
   resolved "https://registry.yarnpkg.com/@angular/core/-/core-20.1.2.tgz#5519523580596aae4e4c1fc77911d995879081a5"
   integrity sha512-8jAvpkHoXHSH0HoqNVgPstSMGmC0oaYN93HW7K2rMRxj1Uhtahkeb/7/kfnj7yLi5FDfm98ofOFT4Lxzf2eZXQ==
   dependencies:
     tslib "^2.3.0"
 
-"@angular/forms@^20.1.1":
+"@angular/forms@^20.1.2":
   version "20.1.2"
   resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-20.1.2.tgz#103e79dbe714e2927571687791bec2f655bd7993"
   integrity sha512-ziOaeN0by1cTCNzwCo/IC2ekFzrM7ehc8uQHMQ6dYprSX45lJmdCsNnn+R0lx68VugvbMhHHO5ieOORf5sEmew==
@@ -348,21 +348,21 @@
   dependencies:
     tslib "^2.3.0"
 
-"@angular/platform-browser-dynamic@^20.1.1":
+"@angular/platform-browser-dynamic@^20.1.2":
   version "20.1.2"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-20.1.2.tgz#d210a831005bcad53d64f65e6aaa6d1c68a4041d"
   integrity sha512-KssXr0nDZxNjJChdyNFE1wFGaR374qEKBU6mburr2dTauV+jfaL7NrBRzQuTh7GfOOwHnW0uJ4b2dGK6m1tkNw==
   dependencies:
     tslib "^2.3.0"
 
-"@angular/platform-browser@^20.1.1":
+"@angular/platform-browser@^20.1.2":
   version "20.1.2"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-20.1.2.tgz#f830c30959956beb81e7347ecd098dea5dafc2a3"
   integrity sha512-jsgO4atyh6T3Rt+idHI29ENaq1a4VKfvtTgWf1S0qSCsfMt2kv5AAO+LkL6lYx8TtJu5zjAETiUwSiWUqY1jOg==
   dependencies:
     tslib "^2.3.0"
 
-"@angular/router@^20.1.1":
+"@angular/router@^20.1.2":
   version "20.1.2"
   resolved "https://registry.yarnpkg.com/@angular/router/-/router-20.1.2.tgz#afdfc137f59fd8c3c136fff55907a0abd0b0b7d1"
   integrity sha512-xMRDARfSgwDZSorrTMtv9Gdb9UtWflwn8LOgmPbj3waXyuGWUbgpoJCD0Mh6necc9fhQ60GbBRG5K2EVVr3ATQ==
@@ -1843,7 +1843,7 @@
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.15.tgz#596a1747233694d50f6ad8a7869fcb6f56cf5841"
   integrity sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==
 
-"@types/node@^24.0.14":
+"@types/node@^24.0.15":
   version "24.0.15"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-24.0.15.tgz#f34fbc973e7d64217106e0c59ed8761e6b51381e"
   integrity sha512-oaeTSbCef7U/z7rDeJA138xpG3NuKc64/rZ2qmUFkFJmnMsAPaluIifqyWd8hSSMxyP9oie3dLAqYPblag9KgA==
@@ -5061,7 +5061,7 @@ vite@7.0.0:
   optionalDependencies:
     fsevents "~2.3.3"
 
-"vite@^5.0.0 || ^6.0.0 || ^7.0.0-0", vite@^7.0.4:
+"vite@^5.0.0 || ^6.0.0 || ^7.0.0-0", vite@^7.0.5:
   version "7.0.5"
   resolved "https://registry.yarnpkg.com/vite/-/vite-7.0.5.tgz#deb2d3b777378f6d3e47c3d41b59f3c93f485738"
   integrity sha512-1mncVwJxy2C9ThLwz0+2GKZyEXuC3MyWtAAlNftlZZXZDP3AJt5FmwcMit/IGGaNZ8ZOB2BNO/HFUB+CpN0NQw==
