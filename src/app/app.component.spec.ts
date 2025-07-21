@@ -1,5 +1,5 @@
 import { AsyncPipe, JsonPipe } from '@angular/common';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import * as core from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { AppComponent } from './app.component';
@@ -15,7 +15,7 @@ describe('AppComponent', () => {
       set: {
         imports: [AsyncPipe, JsonPipe],
         providers: [],
-        schemas: [NO_ERRORS_SCHEMA],
+        schemas: [core.NO_ERRORS_SCHEMA],
       },
     });
 
@@ -29,6 +29,8 @@ describe('AppComponent', () => {
         { provide: CommandService, useValue: {} },
       ],
     }).compileComponents();
+
+    await core.ɵresolveComponentResources(fetch);
   });
 
   it('should create the app', () => {

@@ -40,6 +40,14 @@ import { LoadSelectorComponent } from './load-selector/load-selector.component';
   styleUrl: './game-route.component.scss',
 })
 export class GameRouteComponent implements core.AfterViewInit, core.OnDestroy {
+  readonly settings = core.inject(SettingsService);
+
+  readonly game = core.inject(GameService);
+
+  readonly _dialog = core.inject(MatDialog);
+
+  readonly _viewContainerRef = core.inject(core.ViewContainerRef);
+
   /** DOM element to show all game output. */
   @core.ViewChild('output') private _output?: core.ElementRef;
 
@@ -48,19 +56,6 @@ export class GameRouteComponent implements core.AfterViewInit, core.OnDestroy {
 
   /** Subscription to the game output. */
   private _outputSubscription?: Subscription;
-
-  /**
-   * Create a new active game visualisation.
-   *
-   * @param settings overall settings.
-   * @param game active game.
-   */
-  constructor(
-    public readonly settings: SettingsService,
-    public readonly game: GameService,
-    private readonly _dialog: MatDialog,
-    private readonly _viewContainerRef: core.ViewContainerRef
-  ) {}
 
   ngAfterViewInit(): void {
     /** Just make sure template is valid. */

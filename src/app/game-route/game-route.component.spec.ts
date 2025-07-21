@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { beforeEach, describe, expect, it } from 'vitest';
 
 import { CommonModule } from '@angular/common';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import * as core from '@angular/core';
 import { of } from 'rxjs';
 import { Player } from '../game-object/player';
 import { Room } from '../game-object/room';
@@ -21,7 +21,7 @@ describe('GameRouteComponent', () => {
       set: {
         imports: [CommonModule],
         providers: [],
-        schemas: [NO_ERRORS_SCHEMA],
+        schemas: [core.NO_ERRORS_SCHEMA],
       },
     });
 
@@ -29,7 +29,6 @@ describe('GameRouteComponent', () => {
       imports: [GameRouteComponent],
       providers: [
         { provide: SettingsService, useValue: {} },
-
         {
           provide: GameService,
           useValue: {
@@ -47,6 +46,8 @@ describe('GameRouteComponent', () => {
         },
       ],
     }).compileComponents();
+
+    await core.ɵresolveComponentResources(fetch);
 
     fixture = TestBed.createComponent(GameRouteComponent);
     component = fixture.componentInstance;
