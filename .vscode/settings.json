@@ -30,5 +30,7 @@
     "source.fixAll": "explicit",
     "source.organizeImports": "explicit"
   },
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "vitest.configSearchPatternInclude": "vitest-ide.config.ts",
+  "vitest.cliArguments": "--browser=chrome"
 }

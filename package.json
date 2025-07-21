@@ -35,13 +35,13 @@
   "packageManager": "yarn@1.22.22",
   "private": true,
   "scripts": {
-    "auto-test": "ng test --browsers=chromium --watch=false",
+    "auto-test": "vitest -c vitest-auto.config.ts --watch=false",
     "build": "ng lint && ng build",
     "lint": "ng lint",
     "ng": "ng",
-    "postinstall": "playwright install",
+    "postinstall": "playwright install >/tmp/playwright.log 2>&1",
     "start": "ng serve",
-    "test": "ng test --browsers=chromium",
+    "test": "vitest -c src/app/vitest.config.ts",
     "watch": "ng build --watch --configuration development"
   },
   "version": "0.0.0"

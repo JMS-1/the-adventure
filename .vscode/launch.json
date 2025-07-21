@@ -19,19 +19,11 @@
       "userDataDir": "${workspaceFolder}/.vscode/chrome"
     },
     {
-      "type": "node",
-      "request": "launch",
       "name": "Test",
-      "runtimeExecutable": "yarn",
-      "runtimeArgs": ["vitest", "run", "src/**/*.spec.ts"],
-      "autoAttachChildProcesses": true,
-      "smartStep": true,
-      "skipFiles": ["<node_internals>/**"],
-      "sourceMaps": true,
-      "resolveSourceMapLocations": [
-        "${workspaceFolder}/**",
-        "!**/node_modules/**"
-      ]
+      "port": 29872,
+      "request": "attach",
+      "type": "chrome",
+      "webRoot": "${workspaceFolder}"
     }
   ]
 }

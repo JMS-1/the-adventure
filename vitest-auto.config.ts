@@ -5,16 +5,9 @@ export default defineConfig({
     setupFiles: ['src/app/vitest-setup.ts'],
     browser: {
       enabled: true,
+      headless: true,
       provider: 'playwright',
-      instances: [
-        {
-          browser: 'chromium',
-          launch: {
-            devtools: true,
-            args: ['--remote-debugging-port=29872'],
-          },
-        },
-      ],
+      instances: [{ browser: 'chromium' }],
     },
   },
 });
