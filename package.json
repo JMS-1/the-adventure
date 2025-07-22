@@ -39,7 +39,7 @@
     "build": "ng lint && ng build",
     "lint": "ng lint",
     "ng": "ng",
-    "postinstall": "playwright install >/tmp/playwright.log 2>&1",
+    "postinstall": "playwright install chromium",
     "start": "ng serve",
     "test": "vitest -c src/app/vitest.config.ts",
     "watch": "ng build --watch --configuration development"
