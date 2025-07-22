@@ -41,7 +41,7 @@
     "ng": "ng",
     "postinstall": "playwright install chromium",
     "start": "ng serve",
-    "test": "vitest -c src/app/vitest.config.ts",
+    "test": "vitest",
     "watch": "ng build --watch --configuration development"
   },
   "version": "0.0.0"

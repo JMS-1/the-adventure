@@ -10,7 +10,6 @@ export default defineConfig({
         {
           browser: 'chromium',
           launch: {
-            devtools: true,
             args: ['--remote-debugging-port=29872'],
           },
         },

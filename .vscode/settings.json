@@ -31,6 +31,7 @@
     "source.organizeImports": "explicit"
   },
   "editor.formatOnSave": true,
-  "vitest.configSearchPatternInclude": "vitest-ide.config.ts",
-  "vitest.cliArguments": "--browser=chrome"
+  "vitest.cliArguments": "--config vitest.config.ts",
+  "vitest.debuggerPort": "29872",
+  "vitest.logLevel": "info"
 }
