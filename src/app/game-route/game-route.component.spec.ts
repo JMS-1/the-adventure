@@ -46,8 +46,6 @@ describe('GameRouteComponent', () => {
       ],
     }).compileComponents();
 
-    await core.ɵresolveComponentResources(fetch);
-
     fixture = TestBed.createComponent(GameRouteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

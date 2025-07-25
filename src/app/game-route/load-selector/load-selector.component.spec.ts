@@ -1,7 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ɵresolveComponentResources as resolve } from '@angular/core';
-
 import { GameService } from '../../services/game.service';
 import { LoadSelectorComponent } from './load-selector.component';
 
@@ -18,8 +16,6 @@ describe('LoadSelectorComponent', () => {
         { provide: GameService, useValue: { currentSavedStates: [] } },
       ],
     }).compileComponents();
-
-    await resolve(fetch);
 
     fixture = TestBed.createComponent(LoadSelectorComponent);
     component = fixture.componentInstance;

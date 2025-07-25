@@ -29,8 +29,6 @@ describe('AppComponent', () => {
         { provide: CommandService, useValue: {} },
       ],
     }).compileComponents();
-
-    await core.ɵresolveComponentResources(fetch);
   });
 
   it('should create the app', () => {
