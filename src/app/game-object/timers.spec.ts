@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-import { beforeEach, describe, expect, it } from 'vitest';
 
 import { GameService } from '../services/game.service';
 import { Person } from './person';
