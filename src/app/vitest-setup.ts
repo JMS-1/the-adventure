@@ -8,10 +8,12 @@ import { beforeAll } from 'vitest';
 const testBed = getTestBed();
 const comp = testBed.compileComponents;
 
+const fetcher = (url: string) => fetch('/src/app/' + url);
+
 testBed.compileComponents = async () => {
   const res = await comp.apply(testBed);
 
-  await ɵresolveComponentResources(fetch);
+  await ɵresolveComponentResources(fetcher);
 
   return res;
 };
@@ -21,4 +23,4 @@ TestBed.initTestEnvironment(
   testing.platformBrowserTesting()
 );
 
-beforeAll(() => ɵresolveComponentResources(fetch));
+beforeAll(() => ɵresolveComponentResources(fetcher));
