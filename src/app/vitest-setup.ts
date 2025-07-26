@@ -32,6 +32,6 @@ TestBed.initTestEnvironment(
   testing.platformBrowserTesting()
 );
 
-beforeAll(() => ɵresolveComponentResources(fetcher));
+beforeAll(() => ɵresolveComponentResources(fetch));
 
 afterAll(() => setTestScope(''));
