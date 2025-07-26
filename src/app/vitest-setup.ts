@@ -9,20 +9,18 @@ import { getTestScope, setTestScope } from './testScope';
 const testBed = getTestBed();
 const comp = testBed.compileComponents;
 
-const fetcher = (url: string) => {
-  if (!url.startsWith('.')) return Promise.resolve('');
-
-  const scope = getTestScope();
-
-  if (!scope) return Promise.resolve('');
-
-  return fetch(scope + url);
-};
-
 testBed.compileComponents = async () => {
   const res = await comp.apply(testBed);
 
-  await ɵresolveComponentResources(fetcher);
+  await ɵresolveComponentResources((url: string) => {
+    if (!url.startsWith('.')) return Promise.resolve('');
+
+    const scope = getTestScope();
+
+    if (!scope) return Promise.resolve('');
+
+    return fetch(scope + url);
+  });
 
   return res;
 };
