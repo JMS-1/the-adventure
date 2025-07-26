@@ -7,6 +7,7 @@
   },
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "importHelpers": true,
@@ -18,6 +19,9 @@
     "noImplicitReturns": true,
     "noPropertyAccessFromIndexSignature": true,
     "outDir": "./dist/out-tsc",
+    "paths": {
+      "src/*": ["src/*"]
+    },
     "skipLibCheck": true,
     "strict": true,
     "target": "ES2022",
