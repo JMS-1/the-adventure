@@ -3,8 +3,9 @@ import 'zone.js';
 import { ɵresolveComponentResources } from '@angular/core';
 import { getTestBed } from '@angular/core/testing';
 import * as testing from '@angular/platform-browser/testing';
-import { beforeAll } from 'vitest';
-import { getTestScope, setupTestScope } from './testScope';
+import { beforeAll, RunnerTestSuite } from 'vitest';
+
+let testScope: string | undefined;
 
 const testBed = getTestBed();
 const comp = testBed.compileComponents;
@@ -12,11 +13,9 @@ const comp = testBed.compileComponents;
 const fetcher = (url: string) => {
   if (!url.startsWith('.')) return Promise.resolve('');
 
-  const scope = getTestScope();
+  if (!testScope) return Promise.resolve('');
 
-  if (!scope) return Promise.resolve('');
-
-  return fetch(scope + url);
+  return fetch(testScope + url);
 };
 
 testBed.compileComponents = async () => {
@@ -32,6 +31,12 @@ testBed.initTestEnvironment(
   testing.platformBrowserTesting()
 );
 
-beforeAll(() => ɵresolveComponentResources(fetcher));
+beforeAll((ctx: RunnerTestSuite) => {
+  testScope = '/' + ctx.name.substring(0, ctx.name.lastIndexOf('/') + 1);
 
-setupTestScope();
+  return ɵresolveComponentResources(fetcher);
+});
+
+afterAll(() => {
+  testScope = undefined;
+});
