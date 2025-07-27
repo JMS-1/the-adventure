@@ -1,10 +1,10 @@
 import 'zone.js';
 
 import { ɵresolveComponentResources } from '@angular/core';
-import { getTestBed, TestBed } from '@angular/core/testing';
+import { getTestBed } from '@angular/core/testing';
 import * as testing from '@angular/platform-browser/testing';
 import { beforeAll } from 'vitest';
-import { getTestScope, setTestScope } from './testScope';
+import { getTestScope, setupTestScope } from './testScope';
 
 const testBed = getTestBed();
 const comp = testBed.compileComponents;
@@ -27,11 +27,11 @@ testBed.compileComponents = async () => {
   return res;
 };
 
-TestBed.initTestEnvironment(
+testBed.initTestEnvironment(
   testing.BrowserTestingModule,
   testing.platformBrowserTesting()
 );
 
 beforeAll(() => ɵresolveComponentResources(fetcher));
 
-afterAll(() => setTestScope(''));
+setupTestScope();

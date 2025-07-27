@@ -1,9 +1,13 @@
+import { resolve } from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  resolve: { alias: { src: resolve(__dirname, './src') } },
   test: {
+    environment: 'jsdom',
     setupFiles: ['src/app/vitest-setup.ts'],
     globals: true,
+    sequence: { concurrent: false, shuffle: false, seed: 29091963 },
     browser: {
       enabled: true,
       provider: 'playwright',
@@ -11,9 +15,7 @@ export default defineConfig({
       instances: [
         {
           browser: 'chromium',
-          launch: {
-            args: ['--remote-debugging-port=29872'],
-          },
+          launch: { args: ['--remote-debugging-port=29872'] },
         },
       ],
     },

@@ -9,12 +9,9 @@ import { Time } from '../game-object/time';
 import { Weight } from '../game-object/weight';
 import { GameService } from '../services/game.service';
 import { SettingsService } from '../services/settings.service';
-import { setTestScope } from '../testScope';
 import { GameRouteComponent } from './game-route.component';
 
 describe('GameRouteComponent', () => {
-  setTestScope(import.meta.url);
-
   let component: GameRouteComponent;
   let fixture: ComponentFixture<GameRouteComponent>;
 
