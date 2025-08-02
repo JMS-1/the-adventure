@@ -8,6 +8,7 @@ export default defineConfig({
     setupFiles: ['src/app/vitest-setup.ts'],
     globals: true,
     sequence: { concurrent: false, shuffle: false, seed: 29091963 },
+    isolate: false,
     browser: {
       enabled: true,
       provider: 'playwright',
