@@ -9,6 +9,7 @@ export default defineConfig({
     globals: true,
     sequence: { concurrent: false, shuffle: false, seed: 29091963 },
     isolate: false,
+    pool: 'threads',
     browser: {
       enabled: true,
       headless: true,
