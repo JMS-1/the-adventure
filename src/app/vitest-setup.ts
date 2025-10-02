@@ -15,7 +15,9 @@ const fetcher = (url: string) => {
 
   if (!testScope) return Promise.resolve('');
 
-  return fetch(testScope + url);
+  return fetch(testScope + url).then((r) =>
+    r.status === 200 ? r.text() : Promise.resolve('')
+  );
 };
 
 testBed.compileComponents = async () => {
