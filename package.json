@@ -19,7 +19,7 @@
     "@angular/cli": "^20.3.7",
     "@angular/compiler-cli": "^20.3.7",
     "@types/node": "^24.9.1",
-    "@vitest/browser": "^3.2.4",
+    "@vitest/browser": "^4.0.2",
     "angular-eslint": "^20.4.0",
     "eslint": "^9.38.0",
     "jsdom": "^27.0.1",
@@ -28,7 +28,7 @@
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.46.2",
     "vite": "^7.1.12",
-    "vitest": "^3.2.4"
+    "vitest": "^4.0.2"
   },
   "name": "adv",
   "packageManager": "yarn@1.22.22",
