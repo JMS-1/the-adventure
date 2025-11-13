@@ -1,3 +1,4 @@
+import { playwright } from '@vitest/browser-playwright';
 import { resolve } from 'path';
 import { defineConfig } from 'vitest/config';
 
@@ -8,11 +9,12 @@ export default defineConfig({
     setupFiles: ['src/app/vitest-setup.ts'],
     globals: true,
     sequence: { concurrent: false, shuffle: false, seed: 29091963 },
-    isolate: false,
+    isolate: true,
     pool: 'threads',
+    include: ['src/**/*.spec.ts'],
     browser: {
       enabled: true,
-      provider: 'playwright',
+      provider: playwright(),
       screenshotFailures: false,
       instances: [
         {
