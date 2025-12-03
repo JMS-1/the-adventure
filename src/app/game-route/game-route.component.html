@@ -1,9 +1,11 @@
 <div class="game">
   <div class="info">
-    <div *ngIf="game.ready$ | async">
+    @if(game.ready$ | async){
+    <div>
       <div>{{ game.lastError }}</div>
     </div>
-    <div *ngIf="settings.debug">
+    } @if(settings.debug){
+    <div>
       <div>Time = {{ game.player.time.toString() }}</div>
       <div>
         State = {{ game.player.room.key }}
@@ -22,6 +24,7 @@
         {{ game.player.strength.toString() }}
       </div>
     </div>
+    }
     <div class="actions">
       <button mat-raised-button (click)="game.help()">Hilfe anzeigen</button>
       <button mat-raised-button (click)="clearOutput()">Ausgabe löschen</button>
@@ -34,20 +37,16 @@
         Speichern
       </button>
       <button mat-raised-button color="warn" (click)="load()">Laden</button>
-      <mat-slide-toggle
-        *ngIf="settings.developer"
+      @if(settings.developer){<mat-slide-toggle
         [(ngModel)]="settings.debug"
         (ngModelChange)="scrollToEnd()"
         >Debug Daten anzeigen</mat-slide-toggle
-      >
+      >}
     </div>
   </div>
-  <div
-    *ngIf="game.player"
-    class="output"
-    #output
-    [ngClass]="{ debug: settings.debug }"
-  ></div>
+  @if(game.player){
+  <div class="output" #output [ngClass]="{ debug: settings.debug }"></div>
+  }
   <input
     type="text"
     value=""
