@@ -15,33 +15,36 @@
     "zone.js": "^0.16.1"
   },
   "devDependencies": {
+    "@analogjs/vite-plugin-angular": "^2.4.0",
+    "@analogjs/vitest-angular": "^2.4.0",
     "@angular/build": "^21.2.5",
     "@angular/cli": "^21.2.5",
     "@angular/compiler-cli": "^21.2.6",
+    "@eslint/js": "^10.0.1",
     "@types/node": "^25.5.0",
-    "@vitest/browser": "^4.0.15",
-    "@vitest/browser-playwright": "^4.0.15",
+    "@vitest/browser": "^4.1.2",
+    "@vitest/browser-playwright": "^4.1.2",
     "angular-eslint": "^21.3.1",
-    "eslint": "^9.39.2",
+    "eslint": "^10.1.0",
     "jsdom": "^29.0.1",
-    "playwright": "^1.58.2",
+    "playwright": "^1.59.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.58.0",
     "vite": "^8.0.3",
-    "vitest": "^4.0.15"
+    "vitest": "^4.1.2"
   },
   "name": "adv",
   "packageManager": "yarn@1.22.22",
   "private": true,
   "scripts": {
-    "auto-test": "vitest -c vitest-auto.config.ts --watch=false",
+    "auto-test": "ng test --config vitest-auto.config.mts",
     "build": "ng lint && ng build",
     "lint": "ng lint",
     "ng": "ng",
     "postinstall": "playwright install chromium",
     "start": "ng serve",
-    "test": "vitest",
+    "test": "ng test --watch",
     "watch": "ng build --watch --configuration development"
   },
   "version": "0.0.0"

@@ -1,44 +1,7 @@
-import 'zone.js';
+import '@angular/compiler';
 
-import { ɵresolveComponentResources } from '@angular/core';
-import { getTestBed } from '@angular/core/testing';
-import * as testing from '@angular/platform-browser/testing';
-import { beforeAll, RunnerTestSuite } from 'vitest';
+import '@analogjs/vitest-angular/setup-snapshots';
 
-let testScope: string | undefined;
+import { setupTestBed } from '@analogjs/vitest-angular/setup-testbed';
 
-const testBed = getTestBed();
-const comp = testBed.compileComponents;
-
-const fetcher = (url: string) => {
-  if (!url.startsWith('.')) return Promise.resolve('');
-
-  if (!testScope) return Promise.resolve('');
-
-  return fetch(testScope + url).then((r) =>
-    r.status === 200 ? r.text() : Promise.resolve('')
-  );
-};
-
-testBed.compileComponents = async () => {
-  const res = await comp.apply(testBed);
-
-  await ɵresolveComponentResources(fetcher);
-
-  return res;
-};
-
-testBed.initTestEnvironment(
-  testing.BrowserTestingModule,
-  testing.platformBrowserTesting()
-);
-
-beforeAll((ctx: RunnerTestSuite) => {
-  testScope = '/' + ctx.name.substring(0, ctx.name.lastIndexOf('/') + 1);
-
-  return ɵresolveComponentResources(fetcher);
-});
-
-afterAll(() => {
-  testScope = undefined;
-});
+setupTestBed({ browserMode: true });
