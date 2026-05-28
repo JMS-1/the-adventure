@@ -136,10 +136,10 @@
     "@jridgewell/gen-mapping" "^0.3.5"
     "@jridgewell/trace-mapping" "^0.3.24"
 
-"@analogjs/vite-plugin-angular@^2.5.1":
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/@analogjs/vite-plugin-angular/-/vite-plugin-angular-2.5.1.tgz#7c9fa4fa867435fe557300c223c59d56435d7291"
-  integrity sha512-69qNVlDulbw3NiNrt8hyoS4DXYsBYtQe1rT5BElMRLM6Q05zM3zcM0MrCXnpw5+rTtF8hoEP9eXpuHroHOTnPw==
+"@analogjs/vite-plugin-angular@^2.5.2":
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/@analogjs/vite-plugin-angular/-/vite-plugin-angular-2.5.2.tgz#eb3614389f981fcf68c29a872fad12997328f3f5"
+  integrity sha512-zJdmYb6B+qwMzcv9N6fWD4uYarrulqyJSPvNg8yzmVABbRV3YkAQXFMlr6ZgwkV9jSNK5CaqiSQSB238wX7RpA==
   dependencies:
     magic-string "^0.30.21"
     obug "^2.1.1"
