@@ -21,7 +21,7 @@
     "@angular/cli": "^21.2.14",
     "@angular/compiler-cli": "^21.2.16",
     "@eslint/js": "^10.0.1",
-    "@types/node": "^25.9.1",
+    "@types/node": "^25.9.2",
     "@vitest/browser": "^4.1.6",
     "@vitest/browser-playwright": "^4.1.6",
     "angular-eslint": "^21.4.0",
