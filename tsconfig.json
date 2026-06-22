@@ -8,6 +8,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "ignoreDeprecations": "6.0",
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "importHelpers": true,
