@@ -49,17 +49,17 @@ export class GameRouteComponent implements core.AfterViewInit, core.OnDestroy {
   readonly _viewContainerRef = core.inject(core.ViewContainerRef);
 
   /** DOM element to show all game output. */
-  @core.ViewChild('output') private _output?: core.ElementRef;
+  private readonly _output = core.viewChild<core.ElementRef>('output');
 
   /** DOM element with the command input. */
-  @core.ViewChild('input') private _input?: core.ElementRef;
+  private readonly _input = core.viewChild<core.ElementRef>('input');
 
   /** Subscription to the game output. */
   private _outputSubscription?: Subscription;
 
   ngAfterViewInit(): void {
     /** Just make sure template is valid. */
-    const output = this._output?.nativeElement as HTMLElement;
+    const output = this._output()?.nativeElement as HTMLElement;
 
     if (output)
       /** Watch out for all output fromn the game - regular, debug, error or verbatim information file. */
@@ -122,18 +122,18 @@ export class GameRouteComponent implements core.AfterViewInit, core.OnDestroy {
 
   /** Scroll the output display to the very end. */
   scrollToEnd() {
-    const output = this._output?.nativeElement as HTMLElement;
+    const output = this._output()?.nativeElement as HTMLElement;
 
     if (output)
       setTimeout(
         () => output.scroll({ behavior: 'smooth', top: output.scrollHeight }),
-        100
+        100,
       );
   }
 
   /** Wipe out all output from the game. */
   clearOutput() {
-    const output = this._output?.nativeElement as HTMLElement;
+    const output = this._output()?.nativeElement as HTMLElement;
 
     if (output) output.innerText = '';
   }
@@ -169,6 +169,6 @@ export class GameRouteComponent implements core.AfterViewInit, core.OnDestroy {
 
   /** Set focus to input. */
   private focusToInput() {
-    setTimeout(() => this._input?.nativeElement.focus(), 100);
+    setTimeout(() => this._input()?.nativeElement.focus(), 100);
   }
 }
