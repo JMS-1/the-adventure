@@ -147,10 +147,10 @@
     tinyglobby "^0.2.14"
     ts-morph "^21.0.0"
 
-"@analogjs/vitest-angular@^2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@analogjs/vitest-angular/-/vitest-angular-2.6.1.tgz#ccb15ede2846844c3a7c108049bc1ba2c7e9baaf"
-  integrity sha512-Hi6LF+uPDH6scV4EpA7gYu/08Ox/SIKBUj8cxwLxxCpGxPhW1DiR8PlfeiquJyVHzci7OXEBI7aSHymQbkbXUg==
+"@analogjs/vitest-angular@^2.6.2":
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/@analogjs/vitest-angular/-/vitest-angular-2.6.2.tgz#c8a7c96c5c9aefa766bc7214ad84d3f16c32ef97"
+  integrity sha512-aLyvyqv2bpgNXDhWwR5M974RVuF2TFfFfFIn2OuwRO7hf+w60v/GaJxvbFob8f7VJgztvoVGgDhWpu2Qon/dmg==
 
 "@angular-devkit/architect@0.2200.4", "@angular-devkit/architect@>= 0.2200.0 < 0.2300.0":
   version "0.2200.4"
