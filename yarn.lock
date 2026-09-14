@@ -20,10 +20,10 @@
     oxc-parser "^0.121.0"
     tinyglobby "^0.2.14"
 
-"@analogjs/vitest-angular@^2.7.1":
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/@analogjs/vitest-angular/-/vitest-angular-2.7.1.tgz#482c4f21e79d093941c7acae5b4d4c63e510c1c4"
-  integrity sha512-Ra+XrsjlA5NvG0u94dxOE5ZE1gRVA/HMauYXiWEFTddeltJoI8bJ4Tc0du62iZo2AdJxUADaei8Liu0nm0GRBQ==
+"@analogjs/vitest-angular@^2.7.2":
+  version "2.7.2"
+  resolved "https://registry.yarnpkg.com/@analogjs/vitest-angular/-/vitest-angular-2.7.2.tgz#e2d4538093b1a0b4b30fde12e0f7fbb6f5894471"
+  integrity sha512-S4wb0EXrm6Yi2YBsN707cH9Sr8rrXyAw0HFvEmaZwZpk1yi9n5r5vHl1VWXXoVdT5ikWcmcdZgjPgcpYOhiy7A==
 
 "@angular-devkit/architect@0.2201.8", "@angular-devkit/architect@>= 0.2200.0 < 0.2300.0":
   version "0.2201.8"
